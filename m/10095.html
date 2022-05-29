@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Agent 007 Med Rätt Att Döda | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Agent 007 Med Rätt Att Döda <a href="#" class="grade">+++</a></h2>
+										<h3>Dr. No</h3>
+										<p>
+										Film från <time datetime="1962"><a href="#">1962</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Terence Young</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1866.html">Sean Connery</a> – James Bond</li><li>Ursula Andress – Honeychile 'Honey' Ryder</li><li>Joseph Wiseman – Dr. Julius No</li><li>Jack Lord – Felix Leiter</li><li>Bernard Lee – M</li><li>Anthony Dawson – Professor R.J. Dent</li><li>Zena Marshall – Miss Taro</li><li>John Kitzmiller – Quarrel</li><li>Eunice Gayson – Sylvia Trench</li><li>Lois Maxwell – Miss Moneypenny</li><li>Peter Burton – Major Boothroyd</li><li>Yvonne Shima – Sister Lily</li><li>Michel Mok – Sister Rose</li><li>Marguerite LeWars – Annabelle Chung - Photographer (also as Marguerite Le Wars)</li><li>William Foster-Davis – Superintendent</li><li>Dolores Keator – Mary Trueblood</li><li>Reggie Carter – Jones</li><li>Louis Blaazer – Pleydell-Smith</li><li>Colonel Burton – General Potter</li><li>Anthony Chinn – Decontamination Technician (uncredited)</li><li>Eric Coverley – Three Blind Mice Assassin (uncredited)</li><li>Margaret Ellery – Stewardess (uncredited)</li><li>John Hatton – Radio Operator (uncredited)</li><li>Bettina Le Beau – Prof. Dent's Secretary (uncredited)</li><li>Byron Lee – Singer at Puss Feller's (uncredited)</li><li>Henry Lopez – Three Blind Mice Assassin (uncredited)</li><li>Stanley Morgan – Concierge in Casino (uncredited)</li><li>Tim Moxon – John Strangways (uncredited)</li><li>Malou Pantera – Hotel Receptionist (uncredited)</li><li>Lester Prendergast – Puss Feller (uncredited)</li><li>Milton Reid – Dr. No's Guard (uncredited)</li><li class="voice">Robert Rietty – John Strangways (röst) (uncredited)</li><li>Maxwell Shaw – Communications Foreman (uncredited)</li><li>Bob Simmons – James Bond in Gunbarrel Sequence (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Globe - Most Promising Newcomer - Female 1964 (Ursula Andress)</li><li>Laurel Awards, Golden Laurel - Top Action Drama (2:a plats) 1964</li><li>Laurel Awards, Golden Laurel - Top Action Performance (3:e plats) 1964 (1866)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Author Ian Fleming wanted his cousin [Christopher Lee][/p?id=1169] to play Dr. No. ([Lee][/p?id=1169] would later appear as Scaramanga in the 007 flick [The Man with the Golden Gun][/f?id=16015] (1974), and would play the character that inspired Fleming to create Dr. No, Dr. Fu Manchu, in several films.) Fleming also asked [Noel Coward][/p?id=Noel%20Coward] to play the part of Dr. No. [Coward][/p?id=Noel%20Coward] turned down the part by replying with a telegram that read, &quot;Dr. No? No! No! No!&quot; One of [Coward's][/p?id=Noel%20Coward] objections was having to wear metal hands. [Max von Sydow][/p?id=1632] turned down the part in order to play Jesus Christ in [The Greatest Story Ever Told][/f?id=16008] (1965), and would finally play a Bond villain in [Never Say Never Again][/f?id=16985] (1983). The role went to [Joseph Wiseman][/p?id=Joseph%20Wiseman], the only early Bond villain not to have his voice dubbed by another actor.</li><li> This is the only James Bond movie to feature SPECTRE (SPecial Executive for Counter-intelligence, Terrorism, Revenge and Extortion) without showing its supreme commander Ernst Stavro Blofeld.</li><li> [Sean Connery][/p?id=1866] wears a toupee in all the James Bond movies.</li><li> The directing job was originally offered to [Guy Hamilton][/p?id=Guy%20Hamilton], [Guy Green[ and ][/p?id=Guy%20Green%3A%3A%20and%20]Ken Hughes[. ][/p?id=.%20]Bryan Forbes[ was also asked to direct. They all turned it down. ][/p?id=%20was%20also%20asked%20to%20direct.%20They%20all%20turned%20it%20down.%20]Phil Karlson[ was also considered. In the end, ][/p?id=%20was%20also%20considered.%20In%20the%20end%2C%20]Terence Young<strong> directed Dr. No (1962), and then returned for ][/f?id=%20and%20%5D%5B%2Fp%3Fid%3DGuy%2520Green%253A%253A%2520and%2520%5DKen%20Hughes%5B.%20%5D%5B%2Fp%3Fid%3D.%2520%5DBryan%20Forbes%5B%20was%20also%20asked%20to%20direct.%20They%20all%20turned%20it%20down.%20%5D%5B%2Fp%3Fid%3D%2520was%2520also%2520asked%2520to%2520direct.%2520They%2520all%2520turned%2520it%2520down.%2520%5DPhil%20Karlson%5B%20was%20also%20considered.%20In%20the%20end%2C%20%5D%5B%2Fp%3Fid%3D%2520was%2520also%2520considered.%2520In%2520the%2520end%252C%2520%5DTerence%20Young</strong>%20directed%20Dr.%20No%20(1962)%2C%20and%20then%20returned%20for%20]Agent 007 Ser Rött||From Russia with Love[ (1963) and ][/f?id=%20(1963)%20and%20]Åskbollen||Thunderball:: (1965).</li><li> [Sean Connery][/p?id=1866] is morbidly afraid of spiders. The shot of the spider in his bed was originally done with a sheet of glass between him and the spider, but when this didn't look realistic enough, the scene was re-shot with stuntman [Bob Simmons][/p?id=Bob%20Simmons]. [Simmons][/p?id=Bob%20Simmons] reported that the tarantula crawling over Bond was the scariest stunt he had ever performed. According to Steven Jay Rubin's 1981 book &quot;The James Bond Films&quot;, this tarantula was named Rosie.</li><li> The only James Bond movie that does not feature a pre-titles sequence.</li><li> Ken Adam's sets so impressed [Stanley Kubrick][/p?id=1891] that he hired him the following year to be production designer on [Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb][/f?id=12943] (1964).</li><li> Ian Fleming didn't originally like the casting of [Sean Connery][/p?id=1866] as James Bond. Bond was English and [Connery][/p?id=1866] was Scottish, Bond was upper-class and [Connery][/p?id=1866] was working-class, Bond was refined and educated and [Connery][/p?id=1866] was too rugged. After seeing the film, Fleming softened and decided that [Connery][/p?id=1866] was perfectly cast. In the novel &quot;[On Her Majesty's Secret Service][/f?id=14989],&quot; Bond was revealed to have Scottish ancestry and Bond's girlfriend Tracy Vicenzo was described with [Ursula Andress'][/p?id=Ursula%20Andress] details. Ironically, in the movie version of [On Her Majesty's Secret Service][/f?id=14989] (1969), Bond and Tracy are played by [George Lazenby][/p?id=George%20Lazenby] and [Diana Rigg][/p?id=Diana%20Rigg] who do not fit these descriptions.</li><li> Producers Albert R. Broccoli and Harry Saltzman used [Alfred Hitchcock's][/p?id=1021] [North by Northwest][/f?id=15005] (1959) as the template for this film and the subsequent early James Bond films. In fact, the role of James Bond was first offered to [Cary Grant][/p?id=1134], the star of [North by Northwest][/f?id=15005] (1959), who would commit to one film only and was otherwise too old, and then to its suave and urbane villain, [James Mason][/p?id=1422], who would commit to only two, while Broccoli and Saltzman wanted an actor willing to make a multi-film commitment to the role and the projected series. American actor [Steve Reeves][/p?id=Steve%20Reeves] who turned the role down. At the time, [Reeves][/p?id=Steve%20Reeves] had become an international box office sensation in a group of European-made mythological/historical spectacles. Acoording to legend, Irish actor [Patrick McGoohan][/p?id=Patrick%20McGoohan] of &quot;Danger Man&quot; (1960) turned the role down on moral grounds. Other actors considered for the lead role included [Trevor Howard][/p?id=1964], [Rex Harrison][/p?id=1778], [Richard Johnson][/p?id=Richard%20Johnson], William Franklyn, [Stanley Baker][/p?id=Stanley%20Baker], [Ian Hendry][/p?id=Ian%20Hendry] (co-star of &quot;The Avengers&quot; (1961)) and [Richard Burton][/p?id=1782]. Director [John Frankenheimer][/p?id=John%20Frankenheimer] claims Broccoli offered him the role of James Bond. According to Albert R. Broccoli's autobiography &quot;When the Snow Melts&quot;, [Roger Moore][/p?id=1835] was Ian Fleming's choice to play Bond, largely based on his performance as &quot;The Saint&quot; (1962). This, however, turns out not to be true, as &quot;The Saint&quot; (1962) didn't begin airing in the UK until October 1962, one day after the premiere of Dr. No (1962). [David Niven][/p?id=1221], too old for a serious Bond, played the parody Bond in [Casino Royale (1967)][/f?id=11457], and [Roger Moore][/p?id=1835] played the official James Bond in [Live and Let Die][/f?id=15719] (1973) and 6 other movies.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

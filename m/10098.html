@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aguirre - Guds Vrede | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Aguirre - Guds Vrede <a href="#" class="grade">+++</a></h2>
+										<h3>Aguirre, der Zorn Gottes</h3>
+										<p>
+										Film från <time datetime="1972"><a href="#">1972</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Werner Herzog</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Klaus Kinski – Don Lope de Aguirre</li><li>Helena Rojo – Inez de Atienza</li><li>Del Negro – Brother Gaspar de Carvajal</li><li>Ruy Guerra – Don Pedro de Ursua</li><li>Peter Berling – Don Fernando de Guzman</li><li>Cecilia Rivera – Flores</li><li>Daniel Ades – Perucho</li><li>Edward Roland – Okello</li><li>Alexandra Cheves –  (as Alejandro Chavez)</li><li>Armando Polanah – Armando</li><li>Daniel Farfán – </li><li>Julio E. Martínez –  (as Julio Martinez)</li><li>Alejandro Repullés – Gonzalo Pizarro</li><li>Indianern der Kooperative Lauramarca – </li><li class="voice">Claus Biederstaedt – Brother Gaspar de Carvajal (röst) (uncredited)</li><li class="voice">Lothar Blumhagen – Don Pedro de Ursua (röst) (uncredited)</li><li class="voice">Heinz Theo Branding – Don Fernando de Guzman (röst) (uncredited)</li><li class="voice">Christian Brückner – Balthasar (röst) (uncredited)</li><li class="voice">Michael Chevalier – Conqueror Being Beheaded (röst) (uncredited)</li><li class="voice">Norbert Gescher – Conqueror (röst) (uncredited)</li><li>Justo González – González (uncredited)</li><li class="voice">Uta Hallant – Inez / Flores (röst) (uncredited)</li><li class="voice">Manfred Lehmann – Conqueror (röst) (uncredited)</li><li>Antonio Marquez –  (uncredited)</li><li class="voice">Gerd Martienzen – Don Lope de Aguirre (röst) (uncredited)</li><li class="voice">Edgar Ott – Gonzalo Pizarro (röst) (uncredited)</li><li class="voice">Uwe Paulsen – Okello (röst) (uncredited)</li><li class="voice">Dieter Ranspach – Perucho (röst) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Faro Island Film Festival, Golden Train Award - Jury Prize 1972 (Werner Herzog)</li><li>German Film Awards, Film Award in Gold - Bästa foto 1973</li><li>French Syndicate of Cinema Critics, Critics Award - Bästa utländska film 1976 (Werner Herzog)</li><li>Grand Prix de l'UCC 1976</li><li>NSFC Award - Bästa foto 1977</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Faro Island Film Festival, Golden Train Award - Best Film 1972 (Werner Herzog)</li><li>German Film Awards, Challenge Award 'Golden Bowl' - Bästa film 1973 (Werner Herzog)</li><li>German Film Awards, Film Award in Gold - Bästa skådespelare 1973 (Klaus Kinski)</li><li>César Awards, César - Bästa utländska film 1976 (Werner Herzog)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>During a particularly rowdy night of production, [Klaus Kinski][/p?id=Klaus%20Kinski], irritated by the noise from a hut where cast and crew were playing cards, repeatedly fired a Winchester rifle into it. One of the bullets took the tip of an unnamed extra's finger off. [Werner Herzog][/p?id=Werner%20Herzog] immediately confiscated the weapon and it remains his property to this day.</li><li>Many of the scenes were unrehearsed and unstaged, blurring the line between the cast acting in character and simply reacting to their situations. In one opening scene, when the carriage holding Aguirre's daughter tips over and threatens to collapse, a hand comes in from the right side of the frame to assist the actors in steadying their hold. That hand belongs to director [Werner Herzog][/p?id=Werner%20Herzog].</li><li>According to [Werner Herzog's][/p?id=Werner%20Herzog] commentary, he paid the men who were to provide the monkeys at the end of the film only half of what they asked for, thinking they would try to run off with the money. The dealers took the money, then sold the monkeys to someone else, and prepared to fly them to Florida. In desperation, [Herzog][/p?id=Werner%20Herzog] pretended he was a veterinarian and said the monkeys didn't have their vaccination documents. After filming, he released the monkeys into the wild.</li><li>During one scene in a native village, [Klaus Kinski][/p?id=Klaus%20Kinski] hit a crewmen over the head with his sword. If not for his helmet, the man would have been killed.</li><li>In his commentary, [Werner Herzog][/p?id=Werner%20Herzog] explained how he manipulated star [Klaus Kinski][/p?id=Klaus%20Kinski] into giving the performance he wanted. [Kinski][/p?id=Klaus%20Kinski] wanted to express Aguirre's madness at the end of the film with very loud shouting. [Herzog][/p?id=Werner%20Herzog] had him do that for an hour and a half until [Kinski][/p?id=Klaus%20Kinski] grew tired. Then, he was very quiet and much more contained.</li><li>[Werner Herzog][/p?id=Werner%20Herzog] claims to have written the screenplay in two and a half days. He wrote a good portion of it while traveling with his soccer team, during games and on bus rides. Following one game, the team was very drunk, and the player seated behind [Herzog][/p?id=Werner%20Herzog] vomited on his typewriter, ruining many pages of the script. [Herzog][/p?id=Werner%20Herzog] was unable to salvage the pages, and tossed them out the window. He was also unable to recall what he'd written on them.</li><li>The complete crew comprised only eight people.</li><li>The film was originally shot in English, the only language the multi-national cast and crew had in common. The original production sound was recorded on location, but not used because of its poor quality. The whole film was later dubbed into German. [Werner Herzog][/p?id=Werner%20Herzog] claims that [Klaus Kinski][/p?id=Klaus%20Kinski] wanted too much money for the recording sessions, so Gerd Martienzen dubbed him. Even audiences that have seen [Kinski's][/p?id=Klaus%20Kinski] other performances often can't tell the difference.</li><li>This was [Werner Herzog's][/p?id=Werner%20Herzog] first film with [Klaus Kinski][/p?id=Klaus%20Kinski]. It was the start of an extremely stormy, sometimes violent, professional relationship that lasted 15 years.</li><li>The pan flute player was a beggar with intellectual disabilities. He scared easily, and could be difficult to manage.</li><li>[Francis Ford Coppola][/p?id=1299] cited this film as an influence on Apocalypse Now (1979).</li><li>[Werner Herzog][/p?id=Werner%20Herzog] and [Klaus Kinski][/p?id=Klaus%20Kinski] had met many years earlier, when the struggling young actor rented a room in [Herzog's][/p?id=Werner%20Herzog] family's apartment. [Kinski's][/p?id=Klaus%20Kinski] antics during the three months he lived there left a lasting impression. Years later, [Herzog][/p?id=Werner%20Herzog] knew the volatile actor was the only possible man who could play the mad Aguirre, and sent [Kinski][/p?id=Klaus%20Kinski] a copy of the screenplay. &quot;Between three and four in the morning, the phone rang,&quot; [Herzog][/p?id=Werner%20Herzog] recalled. &quot;It took me at least a couple of minutes before I realized that it was [Kinski][/p?id=Klaus%20Kinski] who was the source of this inarticulate screaming. And after an hour of this, it dawned on me that he found it the most fascinating screenplay and wanted to be Aguirre.&quot;</li><li>According to [Werner Herzog][/p?id=Werner%20Herzog], [Klaus Kinski][/p?id=Klaus%20Kinski] threatened to abandon the film entirely at one point during the shooting over [Herzog's][/p?id=Werner%20Herzog] refusal to fire a sound assistant. [Herzog][/p?id=Werner%20Herzog] says he threatened to kill [Kinski][/p?id=Klaus%20Kinski] and then turn the gun on himself if [Kinski][/p?id=Klaus%20Kinski] left - and later declared he was quite prepared to do so, knowing that the authorities would write it off as a hunting accident. [Kinski][/p?id=Klaus%20Kinski] stated in interviews that [Herzog][/p?id=Werner%20Herzog] wielded a pistol to emphasize the threat, but [Herzog][/p?id=Werner%20Herzog] denies this.</li><li>The finale is significantly different from [Werner Herzog's][/p?id=Werner%20Herzog] original script. The director recalled, &quot;I only remember that the end of the film was totally different. The end was actually the raft going out into the open ocean and being swept back inland, because for many miles you have a counter-current, the Amazon actually goes backwards. And it was tossed to and fro. And a parrot would scream: &quot;[El Dorado][/f?id=13330], [El Dorado][/f?id=13330]&quot;...&quot;</li><li>[Werner Herzog][/p?id=Werner%20Herzog] was attacked by fire ants when he was chopping a tree branch with his machete. He didn't cut it down completely, so the ants poured down on him and bit him &quot;about 150 times&quot;. As a result, he got a bad fever.</li><li>This film, as well as several other early films by [Werner Herzog][/p?id=Werner%20Herzog], were shot on a 35mm camera that he stole as a young man from the Munich Film School, a predecessor to today's prestigious film school 'HFF [München'][/f?id=16492]. [Herzog][/p?id=Werner%20Herzog] himself never was a film student there or anywhere. He readily admits to the theft but also justifies it with the significance of the films he's made with the camera and his right to artistic expression: &quot;It was a very simple 35mm camera, one I used on many other films, so I do not consider it a theft. For me, it was truly a necessity. I wanted to make films and needed a camera. I had some sort of natural right to this tool. If you need air to breathe, and you are locked in a room, you have to take a chisel and hammer and break down a wall. It is your absolute right.&quot;[Cronin, 2003]</li><li>[Klaus Kinski's][/p?id=Klaus%20Kinski] crazed performance bore similarities to the real Aguirre, a &quot;true homicidal megalomaniac&quot;. Many of his fellow soldiers considered his actions to be that of a madman. [Kinski's][/p?id=Klaus%20Kinski] use of a limp reflected one that Aguirre actually had, the result of a battle injury. Aguirre's frequent short but impassioned speeches to his men in the film were accurately based on the man's noted &quot;simple but effective rhetorical ability.&quot;</li><li>Aguirre's costume has many leather straps in place to suggest that without them he would fall to pieces. This is mentioned by [Werner Herzog][/p?id=Werner%20Herzog] in his commentary.</li><li>The idea for the film began when [Werner Herzog][/p?id=Werner%20Herzog] borrowed a book on historical adventurers from a friend. The plot was inspired by a half-page about Lope de Aguirre.</li><li>The low budget meant the production couldn't afford stuntmen or elaborate special effects. The cast and crew climbed up mountains, hacked through thick jungle, and rode ferocious river rapids on rafts built by natives. At one point, a storm caused a river to flood, covering the sets in several feet of water and destroying all the rafts. The flooding was immediately incorporated into the story, as a sequence including a flood and rebuilding the rafts.</li><li>The film was shot in chronological order, because [Werner Herzog][/p?id=Werner%20Herzog] believed the film crew's progress on the river directly mirrored that of the explorers' journey in the story.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

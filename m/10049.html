@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>A Mighty Wind | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>A Mighty Wind <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2003"><a href="#">2003</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1166.html">Christopher Guest</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Jim Moret – Newscaster</li><li>Stuart Luce – Irving Steinbloom</li><li>Mary Gross – Ma Klapper</li><li>Marty Belafsky – Ramblin' Sandy Pitnik (also as Marty Belasky)</li><li>Michael Baser – Pa Klapper</li><li>Jared Nelson Smith – Young Chuck Wiseman</li><li>Ryan Raddatz – Bill Weyburn</li><li>Todd Lieberman – Fred Knox</li><li>Matthew Joy – Boy Klapper</li><li>Laura Harris – Girl Klapper</li><li>Brian Riley – Young George Menschell</li><li><a href="/svenusling/p/1363.html">Harry Shearer</a> – Mark Shubb</li><li><a href="/svenusling/p/1659.html">Michael McKean</a> – Jerry Palter</li><li><a href="/svenusling/p/1166.html">Christopher Guest</a> – Alan Barrows</li><li><a href="/svenusling/p/1291.html">Eugene Levy</a> – Mitch Cohen</li><li><a href="/svenusling/p/1138.html">Catherine O'Hara</a> – Mickey Crabbe</li><li><a href="/svenusling/p/1090.html">Bob Balaban</a> – Jonathan Steinbloom</li><li>Rachael Harris – Steinbloom's Assistant</li><li>Tyler Forsberg – Young Jonathan Steinbloom</li><li>Paul Dooley – George Menschell</li><li>Jim Ortlieb – David Kantor</li><li>Andrew Dickler – 1971 Dell Wiseman</li><li>Thomas Lowry – 1971 Howard Wiseman</li><li>Keva Rosenfeld – 1971 Chuck Wiseman</li><li>Brian Allen – 1960s Mitch & Mickey Bass</li><li>Danny Merritt – 1960s Mitch & Mickey Guitar</li><li>Paul Benedict – Martin Berg</li><li>Floyd Van Buskirk – Steve Lang</li><li>Jane Lynch – Laurie Bohner</li><li>John Michael Higgins – Terry Bohner</li><li>Parker Posey – Sissy Knox</li><li>Christopher Moynihan – Sean Halloran</li><li>David Blasucci – Tony Pollono</li><li>Patrick Sauber – Jerald Smithers</li><li>Steve Pandis – Johnny Athenakis</li><li>Mark Nonisa – Mike Maryama</li><li>Cameron Sprague – Young Terry Bohner</li><li>LeShay N. Tomlinson – Steinbloom's Secretary</li><li>Mina Kolb – Dr. Mildred Wickes</li><li><a href="/svenusling/p/1462.html">Jim Piddock</a> – Leonard Crabbe</li><li>Don Lake – Elliott Steinbloom</li><li>Deborah Theaker – Naomi Steinbloom</li><li><a href="/svenusling/p/1306.html">Fred Willard</a> – Mike LaFontaine</li><li><a href="/svenusling/p/1257.html">Ed Begley Jr.</a> – Lars Olfen</li><li>Wendel Meldrum – Witch #1</li><li>Diane Delano – Witch #2</li><li>Jim Jennewein – Witch #3</li><li>Richard Hicks – Witch #4</li><li>Michael Hitchcock – Lawrence E. Turpin</li><li>Larry Miller – Wally Fenton</li><li>Jennifer Coolidge – Amber Cole</li><li>Michael Mantell – Deputy Mayor</li><li>Bill Cobbs – Blues Musician</li><li>Freda Foh Shen – Melinda Barrows</li><li>Darlene Kardon – Shirley Steinbloom</li><li>Scott Williamson – PBN TV Director</li><li>Joe Godfrey – Mitch & Mickey Bass</li><li>Bruce Gaitsch – Mitch & Mickey Guitar</li><li>Diane Baker – Supreme Folk Defense Lawyer</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>NYFCC Award - Bästa manliga biroll 2003 (1291)</li><li>Seattle Film Critics Award - Bästa musik 2003</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa sång (For the song "A Mighty Wind".) 2004</li><li>Canadian Comedy Award - Film - Pretty Funny Performance - Male 2004 (1291)</li><li>Canadian Comedy Award - Film - Pretty Funny Writing 2004 (1291)</li><li>CDG Award - Excellence in Costume Design for Film - Contemporary 2004</li><li>FFCC Award - Bästa skådespelarensemble 2004</li><li>Grammy - Best Song Written for a Motion Picture, Television or Other Visual Media (For the song "A Mighty Wind".) 2004</li><li>LAFCA Award - Bästa musik (2:a plats) 2004</li><li>Golden Reel Award - Best Sound Editing in a Feature - Music - Musical 2004</li><li>Golden Satellite Award - Bästa manliga biroll - Komedi eller Musikal 2004 (1291)</li><li>U.S. Comedy Arts Festival, Comedy Film Honor - Bästa regi 2004 (1166)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>WAFCA Award - Bästa skådespelarensemble 2003</li><li>Oscar - Bästa originalsång (For the song "A Kiss at the End of the Rainbow".) 2004</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa skådespelarensemble 2004</li><li>Canadian Comedy Award - Film - Pretty Funny Performance - Male 2004 (Don Lake)</li><li>Grammy - Best Compilation Soundtrack Album for a Motion Picture, Television or Other Visual Media 2004</li><li>Independent Spirit Award - Bästa manus 2004</li><li>PFCS Award - Bästa skådespelarensemble 2004</li><li>PFCS Award - Bästa musik 2004</li><li>PFCS Award - Overlooked Film of the Year 2004</li><li>Golden Satellite Award - Bästa film - Komedi eller Musikal 2004</li><li>Golden Satellite Award - Bästa kvinnliga biroll - Komedi eller Musikal 2004 (1138)</li><li>Golden Satellite Award - Bästa originalsång (For the song "A Kiss at the End of the Rainbow".) 2004</li><li>Young Artist Award - Best Family Feature Film - Comedy or Musical 2004</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The Folksmen was originally a sketch performed on Saturday Night Live during the 1984-85 season, when [Christopher Guest][/p?id=1166] and [Harry Shearer][/p?id=1363] were cast members and [Michael McKean][/p?id=1659] was the host.</li><li>In an early-'90s, and again in late 90's/ early 2000's, Spinal Tap tour, [Michael McKean][/p?id=1659], [Harry Shearer][/p?id=1363] and [Christopher Guest][/p?id=1166] opened for themselves as The Folksmen and were booed during the first act, as people did not know or cared that the two bands had the same musicians.</li><li>All of the songs were written by [Eugene Levy][/p?id=1291], [Christopher Guest][/p?id=1166] and other actors in the cast who also played all their own instruments.</li><li>In September 2003, much of the cast did a brief tour. They appeared in character, recreating the &quot;reunion concert&quot; as seen at the end of the film.</li><li>The cover of Mitch and Mickey's record &quot;Meet Mitch and Mickey&quot; is a reference to the cover of &quot;Meet The Beatles&quot;.</li><li>The moaning woman heard through Mitch's ([Eugene Levy's][/p?id=1291]) hotel-room wall was voiced by [Christopher Guest][/p?id=1166].</li><li>[John Michael Higgins][/p?id=John%20Michael%20Higgins] wrote all of the vocal arrangements for The New Main Street Singers. Originally the group was going to be a nine-piece ensemble that sang in unison (everyone singing the same part) but it was decided to give [Higgins][/p?id=John%20Michael%20Higgins] free reign with it.</li><li>The Folksmen are a parody of The Kingston Trio, right down to some of the album covers, the uniforms, and the way they perform their songs.</li><li>According to an interview with [Michael McKean's][/p?id=1659] wife [Annette O'Toole][/p?id=1051], the songs were written by her and [McKean][/p?id=1659] during a car journey to Vancouver from their home in LA. Planes were grounded following the terrorist attacks on the USA on 11 September 2001 and [O'Toole][/p?id=1051] had to get to Vancover to film her TV show Smallville.</li><li>[Parker Posey][/p?id=Parker%20Posey] learned to play the mandolin for her role as Sissy Knox.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

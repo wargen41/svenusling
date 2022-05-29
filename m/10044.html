@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>A History Of Violence | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>A History Of Violence <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2005"><a href="#">2005</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>David Cronenberg</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Tom Stall</li><li><a href="/svenusling/p/1607.html">Maria Bello</a> – Edie Stall</li><li><a href="/svenusling/p/1267.html">Ed Harris</a> – Carl Fogarty</li><li><a href="/svenusling/p/2006.html">William Hurt</a> – Richie Cusack</li><li>Ashton Holmes – Jack Stall</li><li>Peter MacNeill – Sheriff Sam Carney</li><li>Stephen McHattie – Leland</li><li>Greg Bryk – Billy</li><li>Kyle Schmid – Bobby Singer</li><li>Sumela Kay – Judy Danvers</li><li>Gerry Quigley – Mick</li><li>Deborah Drakeford – Charlotte</li><li>Heidi Hayes – Sarah Stall</li><li>Aidan Devine – Charlie Roarke</li><li>Bill MacDonald – Frank Mulligan</li><li>Michelle McCree – Jenny Wyeth</li><li>Ian Matthews – Ruben</li><li>R.D. Reid – Pat</li><li>Morgan Kelly – Bobby's Buddy</li><li>Martha Reilly – Shoe Saleswoman</li><li>Jason Barbeck – Richie's Thug</li><li>Bruce Beaton – Richie's Thug</li><li>Neven Pajkic – Richie's Thug</li><li>Brendan Connor – Local TV Reporter</li><li>Nick Antonacci – Local TV Reporter</li><li>John Watson – Baseball Coach</li><li>Don Allison – TV Broadcaster</li><li>Brittany Payer – Motel Girl</li><li>Mitch Boughs – Kid in Diner</li><li>April Mullen – Kid in Diner</li><li>George King – Hospital Well-Wisher</li><li>Shawn Campbell – Orderly</li><li>Steve Arbuckle – Jared (uncredited)</li><li>Connor Price – Kid (uncredited)</li><li>Evan Rose – 'Hulk' Boy (uncredited)</li><li>Michael Stevens – Guy on the Street (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>LAFCA Award - Bästa manliga biroll 2005 (2006)</li><li>NYFCC Award - Bästa manliga biroll 2005 (2006)</li><li>NYFCC Award - Bästa kvinnliga biroll 2005 (1607)</li><li>NYFCC Award - Bästa film (2:a plats) 2005</li><li>NYFCC Award - Bästa regi (2:a plats) 2005 (David Cronenberg)</li><li>SDFCS Award - Bästa klippning 2005</li><li>TFCA Award - Bästa film 2005</li><li>TFCA Award - Bästa kanadensiska film 2005</li><li>TFCA Award - Bästa regi 2005 (David Cronenberg)</li><li>Austin Film Critics Award - Bästa manliga biroll 2006 (2006)</li><li>Bodil Awards, Bodil - Bästa amerikanska film 2006 (David Cronenberg)</li><li>COFCA Award - Bästa film 2006</li><li>COFCA Award - Bästa regi 2006 (David Cronenberg)</li><li>COFCA Award - Bästa kvinnliga biroll 2006 (1607)</li><li>CFCA Award - Bästa regi 2006 (David Cronenberg)</li><li>CFCA Award - Bästa kvinnliga biroll 2006 (1607)</li><li>DGC Team Award - Bästa film 2006</li><li>DGC Team Award - Bästa film 2006</li><li>DGC Craft Award - Bästa regi 2006 (David Cronenberg)</li><li>DGC Craft Award - Bästa ljudklippning 2006</li><li>DGC Craft Award - Bästa klippning 2006</li><li>French Syndicate of Cinema Critics, Critics Award - Bästa utländska film 2006 (David Cronenberg)</li><li>KCFCC Award - Bästa kvinnliga biroll 2006 (1607)</li><li>NSFC Award - Bästa regi 2006 (David Cronenberg)</li><li>NSFC Award - Bästa manliga biroll 2006 (1267)</li><li>NSFC Award - Bästa film (2:a plats) 2006</li><li>OFCS Award - Bästa film 2006</li><li>OFCS Award - Bästa regi 2006 (David Cronenberg)</li><li>OFCS Award - Bästa kvinnliga biroll 2006 (1607)</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska film 2006 (David Cronenberg)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cannes Film Festival, Palme d'Or 2005 (David Cronenberg)</li><li>Gotham Awards, Best Film 2005 (David Cronenberg)</li><li>Satellite Award - Bästa film - Drama 2005</li><li>Satellite Award - Bästa skådespelare - Drama 2005 (1977)</li><li>Satellite Award - Bästa kvinnliga biroll - Drama 2005 (1607)</li><li>Oscar - Bästa manliga biroll 2006 (2006)</li><li>Oscar - Bästa manus baserad på annan förlaga 2006 (Josh Olson)</li><li>Golden Globe - Bästa film - Drama 2006</li><li>Golden Globe - Bästa skådespelerska - Drama 2006 (1607)</li><li>BAFTA Film Award - Bästa manus baserad på annan förlaga 2006 (Josh Olson)</li><li>Saturn Award - Bästa Action/Äventyr/Thriller Film 2006</li><li>Saturn Award - Bästa skådespelare 2006 (1977)</li><li>Saturn Award - Bästa manliga biroll 2006 (2006)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa kvinnliga biroll 2006 (1607)</li><li>CFCA Award - Bästa film 2006</li><li>CFCA Award - Bästa manus 2006 (Josh Olson)</li><li>César Awards, César - Bästa utländska film 2006 (David Cronenberg)</li><li>David di Donatello Awards, David - Bästa utländska film 2006 (David Cronenberg)</li><li>DGC Craft Award - Bästa scenografi 2006</li><li>Edgar Allan Poe Awards, Edgar - Bästa manus 2006</li><li>Empire Award - Bästa Thriller 2006</li><li>Empire Award - Bästa skådespelare 2006 (1977)</li><li>ALFS Award - Årets film 2006</li><li>ALFS Award - Årets regissör 2006 (David Cronenberg)</li><li>ALFS Award - Årets skådespelare 2006 (1977)</li><li>ALFS Award - Årets skådespelerska 2006 (1607)</li><li>OFCS Award - Bästa manliga biroll 2006 (2006)</li><li>OFCS Award - Bästa manus baserad på annan förlaga 2006 (Josh Olson)</li><li>OFCS Award - Bästa klippning 2006</li><li>Satellite Award - Best Overall DVD 2006</li><li>USC Scripter Award 2006</li><li>WGA Award (Screen) - Bästa manus baserad på annan förlaga 2006 (Josh Olson)</li><li>Young Artist Award - Best Performance in a Feature Film - Young Actress Age Ten or Younger 2006 (Heidi Hayes)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The fictitious town that the film is set in (Millbrook, Indiana) is named after the town where the film was actually shot (Millbrook, Ontario, Canada). The scenes set in Philadelphia were actually shot in Toronto, Canada.</li><li>For the sex scene on the stairs, [David Cronenberg][/p?id=David%20Cronenberg] was concerned about the two actors getting hurt on the hard wooden steps. He asked his stunt man whether or not he had any stunt pads to soften up the stairs. The stunt man laughed, saying that in the twenty years he had been working as a stunt man, no director had ever asked him for stunt pads for a sex scene. Pads were not used for most of the scene however, and in the shot when Edie is naked on the bed with bruises visible on her back, make-up was used to hide the amount of bruises that [Maria Bello][/p?id=1607] received from the scene.</li><li>[Thomas Jane][/p?id=Thomas%20Jane] and [Harrison Ford][/p?id=1358] turned down the role of Tom Stall.</li><li>The names of &quot;William Orser&quot; and &quot;LeLand Jones&quot; are a play on the name of the character actor [Leland Orser][/p?id=Leland%20Orser].</li><li>[William Hurt][/p?id=2006] received an Oscar nomination for this film for Best Supporting Actor despite only being in one scene which lasted less than 10 minutes.</li><li>During an interview, [Viggo Mortensen][/p?id=1977] stated that during the shooting of the first bar scene with [Ed Harris][/p?id=1267] he could not stop laughing, and as a result, the scene had to be re-shot several times. Due to [Viggo Mortensen's][/p?id=1977] behavior, [Ed Harris][/p?id=1267] completed the scene without pants; he only wore his underwear, yet this cannot be seen as the bar table impedes our view. Thus, [Viggo Mortensen][/p?id=1977] had to act seriously while [Ed Harris][/p?id=1267] was not wearing any pants, and this is the scene that is used in the movie.</li><li>The actors who played the two robbers in the cafe came up with their own backstory about why the men were travelling together. According to them the older man was the younger man's uncle and was taking him across country after the younger man had been released from prison.</li><li>The mobsters were originally supposed to be Italian, but after the casting of [Ed Harris][/p?id=1267] and [William Hurt][/p?id=2006], [David Cronenberg][/p?id=David%20Cronenberg] decided to change the mob to Irish. He felt [Harris][/p?id=1267] and [Hurt][/p?id=2006] wouldn't make convincing Italians.</li><li>Has the distinction of being the last major Hollywood movie to be released in the VHS format.</li><li>During the robbery scene at the diner, Orser crudely rubbing his hand down Charlotte's breast and then sniffing his hand, was thought up by the two actors themselves ([Greg Bryk][/p?id=Greg%20Bryk] and [Deborah Drakeford][/p?id=Deborah%20Drakeford]).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
