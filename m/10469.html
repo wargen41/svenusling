@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Arsenik Och Gamla Spetsar | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Arsenik Och Gamla Spetsar <a href="#" class="grade">+++</a></h2>
+										<h3>Arsenic and Old Lace</h3>
+										<p>
+										Film från <time datetime="1944"><a href="#">1944</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Frank Capra</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1134.html">Cary Grant</a> – Mortimer Brewster</li><li>Priscilla Lane – Elaine Harper</li><li>Raymond Massey – Jonathan Brewster</li><li>Jack Carson – O'Hara</li><li>Edward Everett Horton – Mr. Witherspoon</li><li><a href="/svenusling/p/1746.html">Peter Lorre</a> – Dr. Einstein</li><li>James Gleason – Lt. Rooney</li><li>Josephine Hull – Abby Brewster</li><li>Jean Adair – Martha Brewster</li><li>John Alexander – 'Teddy Roosevelt' Brewster</li><li>Grant Mitchell – Reverend Harper</li><li>Edward McNamara – Brophy</li><li>Garry Owen – Taxi Cab Driver</li><li>John Ridgely – Saunders</li><li>Vaughan Glaser – Judge Cullman</li><li>Chester Clute – Dr. Gilchrist</li><li>Charles Lane – Reporter</li><li>Edward McWade – Gibbs</li><li>Spencer Charters – Marriage License Clerk (uncredited)</li><li>Jimmy the Crow – Graveyard Raven (uncredited)</li><li>Sol Gorss – New York Pitcher (uncredited)</li><li>Herbert Gunn – Undetermined Supporting Role (uncredited)</li><li>Roland Jones – Undetermined Supporting Role (uncredited)</li><li>Hank Mann – Photographer at Marriage License Office (uncredited)</li><li>Spec O'Donnell – Young Man in Line (uncredited)</li><li>Lee Phelps – Umpire (uncredited)</li><li>Don Phillips – Undetermined Supporting Role (uncredited)</li><li>Raymond Walburn – Drummer at baseball game (uncredited)</li><li>Leo White – Man in Phone Booth (uncredited)</li><li>Jean Wong – Young Woman in Line (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Cary Grant][/p?id=1134] considered his acting in this film to be horribly over the top and often called it his least favorite of all his movies.</li><li>[Cary Grant][/p?id=1134] donated his entire salary, $100,000, to the U.S. War Relief Fund.</li><li>On stage, [Boris Karloff][/p?id=1095] played the monstrous Jonathan Brewster, [Raymond Massey's][/p?id=Raymond%20Ma] film character, who, in eerie-looking screen makeup, resembled [Karloff][/p?id=1095], which was a running gag throughout the picture. Because [Karloff][/p?id=1095] was still appearing in the Broadway play during the film's production, he was unable to do the picture.</li><li>[Frank Capra][/p?id=Frank%20Capra] pushed his actors to the broadest comedy takes, a fact that did not sit well with [Cary Grant][/p?id=1134]. As a result, his (and [Jack Carson's][/p?id=Jack%20Carson]) performances were singled out by reviewers for going dangerously over the top, while [Raymond Massey][/p?id=Raymond%20Ma] and the stage performers managed to look rather restrained by comparison. [Grant][/p?id=1134] hated working this way, although in his more generous moments he credited [Capra][/p?id=Frank%20Capra] with helping him to get the comic effect he was unable to do on his own (it may have been his subtle way of blaming the director).</li><li>[Ronald Reagan][/p?id=1840] and [Jack Benny][/p?id=Jack%20Benny] were offered the role of Mortimer Brewster, but turned it down. [Bob Hope][/p?id=Bob%20Hope] was offered the part and was eager to do it but Paramount Pictures refused to loan him out to Warner Bros. for the project.</li><li>[Boris Karloff][/p?id=1095] did not abandon his commitment to the Broadway version of Arsenic and Old Lace in order to appear in this film. He did, however, graciously allow Warner Bros. to use his name and likeness, an issue that the studio had considered a potentially-devastating legal obstacle had he not done so.</li><li>[Cary Grant][/p?id=1134] later said in interviews that his role would have been better accomplished by [Allyn Joslyn][/p?id=Allyn%20Joslyn], the Broadway play's lead, or even by [James Stewart][/p?id=1425].</li><li>For his role as Jonathan, [Boris Karloff][/p?id=1095] got top billing in the Broadway production. For this film version, [Cary Grant][/p?id=1134] got top billing for his role as Mortimer.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Arthur | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Arthur <a href="#" class="grade">+</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2011"><a href="#">2011</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Jason Winer</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Russell Brand – Arthur</li><li><a href="/svenusling/p/1369.html">Helen Mirren</a> – Hobson</li><li><a href="/svenusling/p/1346.html">Greta Gerwig</a> – Naomi Quinn</li><li>Jennifer Garner – Susan Johnson</li><li>Geraldine James – Vivienne</li><li>Luis Guzmán – Bitterman</li><li><a href="/svenusling/p/1693.html">Nick Nolte</a> – Burt Johnson</li><li>Christina Jacquelyn Calph – Tiffany</li><li>Murphy Guyer – Officer Kaplan</li><li>José Ramón Rosario – Employment Clerk</li><li>John Hodgman – Candy Store Manager</li><li>Scott Adsit – Gummy Bear Man</li><li>Evander Holyfield – Boxing Trainer</li><li>Peter Van Wagner – Naomi's Dad</li><li>Robert Clohessy – Veteran Cop</li><li>Ed Herbstman – Rookie Cop</li><li>Jared Parker – Wedding Kid</li><li>Tom Toner – Wedding Priest</li><li>Richard Bekins – Chancellor</li><li>Matt Malloy – Spoon Guy</li><li>Nigel Barker – Photographer</li><li>Tuffy Questell – Tito</li><li>Sara Chase – Journalist #1</li><li>Ali Reza – Journalist #2</li><li>Kimberly Pauley – Journalist #3</li><li>Brian McElhaney – College Student</li><li>Charlie Hewson – Receptionist / Best Man</li><li>Peter Brouwer – Auctioneer</li><li>Saul Stein – Officer #2</li><li>Stink Fisher – Foreman</li><li>Debbie Lee Jones – Kissed Woman</li><li>Pascal Yen-Pfister – Maitre D'</li><li>Dylan Clark Marshall – Boy on Tour</li><li>Steve Rosen – Grand Central Waiter</li><li>Leslie Hendrix – Alice Johnson</li><li>George Feaster – James</li><li>Ed Jewett – Group Leader</li><li>John Carrafa – Choreographer</li><li>Jennie Eisenhower – Maid of Honor</li><li>Sean Gustavus Tarjyoto – Bookstore Clerk</li><li>Pamela Stewart – Librarian</li><li>Skai Jackson – Library Girl #1</li><li>Tori Feinstein – Library Girl #2</li><li>Jackson Nicoll – Library Boy #1</li><li>Caden Draper – Library Boy #2</li><li>Jase Draper – Library Boy #3</li><li>Devin Almonte – Susan's Bridesmaid (uncredited)</li><li>Anthony Amodeo – ATM User (uncredited)</li><li>Marc Alan Austen – Hasidic (uncredited)</li><li>Kayla Ayler-McCormick – Customer in Candy Store (uncredited)</li><li>Ryan Barratt – Waiter (uncredited)</li><li>Joseph Basile – Job Hunter at Unemployment Office (uncredited)</li><li>Denny Bess – Police Sergeant (uncredited)</li><li>Jasmine Hope Bloch – Astoria Resident (uncredited)</li><li>Peter Bond – Happy Birthday Prisoner (uncredited)</li><li>David Boston – Hospital Guest (uncredited)</li><li>Jackie Brown – Surprised Wedding Guest (uncredited)</li><li>Farouk Chakwa – Wedding Guest (uncredited)</li><li>Jamie Choi – Bridesmaid (uncredited)</li><li>Andrew Justin Cohen – Wedding Guest (uncredited)</li><li>Avery Davis – Kid at Dylan's Candy Store (uncredited)</li><li>Donato DeMarinis – Waiter (uncredited)</li><li>Chelsey Donn – Clerk (uncredited)</li><li>Dawn Douglas – AA Support Client (uncredited)</li><li>Elli – Rabbi Elli (uncredited)</li><li>Melody Garcia – Justin Bieber Mom (uncredited)</li><li>Kathryn Gerhardt – Woman at AA Group (uncredited)</li><li>Takako Haywood – Member of Grand Central Tour Group (uncredited)</li><li>Gina Hernandez – Bodega Woman #1 (uncredited)</li><li>Rosemary Howard – Le Cirque Patron (uncredited)</li><li>Anne Bergstedt Jordanova – Party Girl (uncredited)</li><li>Tony Kost – Naomi's Neighbor (uncredited)</li><li>Anna Kuchma – Tiffany's Friend (uncredited)</li><li>Dylan Lauren – Herself (uncredited)</li><li>Geoff Lee – Asian Tourist 'Korean John Lennon' (uncredited)</li><li>Ronald Scott Maestri – A Walking Stephen Hawking (uncredited)</li><li>John Mancini – NYPD Police Officer (uncredited)</li><li>Jeremy McLain – Wedding Guest (uncredited)</li><li>Scott O'Grady – Wedding Guest (uncredited)</li><li>Toshiko Onizawa – Party Guest (uncredited)</li><li>Evan Elise Owens – Girl in Plaid Shirt at Dylan's (uncredited)</li><li>Frederick Piña – Extra (uncredited)</li><li>Julianna Rigoglioso – Little Girl at Dillons (uncredited)</li><li>Tatsumi Romano – Tour Girl (uncredited)</li><li>Ilana Seagull – Grand Central Station Commuter (uncredited)</li><li>Madisyn Shipman – Little Girl (uncredited)</li><li>Robert Shulman – MOMA Benefit Attendee (uncredited)</li><li>Nate Steinwachs – Restaurant Patron (uncredited)</li><li>Joseph Urban – Happy Birthday Prisoner (uncredited)</li><li>Uzimann – Hot Dog Vendor (uncredited)</li><li>Barbara Vincent – Le Cirque Patron (uncredited)</li><li>Sylvia Ward – Bridal Shower Guest (uncredited)</li><li>Alex Ziwak – Casual New Yorker (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>IFMCA Award - Best Archival Re-Recording of an Existing Score (Album Produced by John Morgan; Liner Notes by Ryan Brennan and Curt Hardaway.) 2012</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Arthur][/f?id=10470] states his father died at the age of 44 in homage to [Steve Gordon][/p?id=Steve%20Gordon] who directed the original [Arthur][/f?id=10470] (1981) and also died at the age of 44.</li><li>[Ricky Gervais][/p?id=1796] turned down the lead role. He told the press, &quot;I said 'no' straight-away. Why would I mess with a perfect comedy? They know people don't watch films that have the wrong font - it's got an '80s font&quot;.</li><li>[Kevin Smith][/p?id=1549] was approached to direct at one point.</li><li>The '[Arthur'][/f?id=10470] films are considered a modern reworking of the P.G. Wodehouse's Jeeves and Wooster tales, [Arthur][/f?id=10470] is the equivalent of Bertie Wooster and his servant Hobson the equivalent of Jeeves.</li><li>Theatrical film debut of director [Jason Winer][/p?id=Jason%20Winer].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
