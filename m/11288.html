@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bowling for Columbine | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bowling for Columbine <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre5">Dokumentär</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Michael Moore</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Jacobo Arbenz – Himself, President of Guatemala (archive footage)</li><li>Mike Bradley – Himself, Mayor of Sarnia, Ontario, Canada</li><li>Arthur A. Busch – Himself, County prosecutor, Flint, Michigan</li><li>George Bush – Himself (archive footage)</li><li>George W. Bush – Himself, President of the United States (archive footage)</li><li>Michael Caldwell – Himself, police detective</li><li>Richard Castaldo – Himself, Columbine victim</li><li>Dick Clark – Himself, restaurant owner</li><li>Steve Davis – Himself, deputy sheriff (archive footage)</li><li>Ngo Dinh Diem – Himself, President of South Vietnam (archive footage)</li><li>Byron Dorgan – Himself (archive footage)</li><li>Mike Epstein – Shopper in Mall</li><li>Joe Farmer – Himself, superintendent of schools (archive footage)</li><li>Mike Fasolo – Corporate Criminal (DVD only|archive footage)</li><li>Denny Fennell – Himself, home security consultant</li><li>Barry Glassner – Himself, author of The Culture of Fear""</li><li class="voice">John Harris – Himself (röst)</li><li>Dick Herlan – Himself</li><li><a href="/svenusling/p/1151.html">Charlton Heston</a> – Himself, actor / NRA president</li><li>Jeremy Hicks – Himself, suspended student for wearing kilts (archive footage)</li><li>Ernest F. Hollings – Himself (archive footage)</li><li>Jimmie Hughes – Herself, principal of Buell Elementary School</li><li>Dick Hurlin – Himself, former producer of Cops""</li><li>Amanda Lamante – Herself, Columbine student</li><li>Mary Lorenz – Herself, K-Mart official</li><li>Marilyn Manson – Himself, entertainer</li><li>Daniel Mauser – Himself (archive footage)</li><li>Tom Mauser – Himself, father of victim</li><li>Evan McCollum – Himself, Lockheed Martin public relations</li><li>Timothy McVeigh – Himself, Oklahoma City bomber (archive footage)</li><li>Carey McWilliams – Himself, blind gun owner (archive footage)</li><li>Gerald Miller – Himself, Welfare-to-Work creator (archive footage)</li><li>Michael Moore – Himself / Narrator</li><li>Mohammed Mossadegh – Himself, Prime Minister of Iran (archive footage)</li><li>James Nichols – Himself, brother of Terry Nichols</li><li>Terry Nichols – Himself, Oklahoma City bombing accomplice (archive footage)</li><li>Manuel Noriega – Himself, President of Panama (archive footage)</li><li>Tamarla Owens – Herself, mother of boy who shot girl (archive footage)</li><li>Shah Mohammed Reza Pahlavi – Himself, Shah of Iran (archive footage)</li><li>Robert J. Pickell – Himself, sheriff of Flint, Michigan</li><li>Augusto Pinochet – Himself, Chilean dictator (archive footage)</li><li>Jeff Rossen – Himself, FOX reporter (archive footage)</li><li>David Satcher – Himself (archive footage)</li><li>Nicole Schlief – Herself</li><li class="voice">David Smith – Himself, Sarah's husband (röst) (archive footage)</li><li>Susan Smith – Herself, child murderess (archive footage)</li><li>Matt Stone – Himself, former Columbine student</li><li>Mark Taylor – Himself, Columbine victim</li><li>Salvador Allende – Himself, President of Salvador (uncredited|archive footage)</li><li>Denise Ames – Sexy girl with gun (uncredited)</li><li>John Ashcroft – Himself, Attorney General (uncredited|archive footage)</li><li>Dick Cheney – Himself, Vice President of the United States (uncredited|archive footage)</li><li>Bill Clinton – Himself, President of the United States, 1993-2001 (uncredited|archive footage)</li><li>Jeff Doucett – Himself, man shot at airport (uncredited|archive footage)</li><li>R. Budd Dwyer – Himself (uncredited|archive footage)</li><li>Leon Errol – Actor in movie clip (uncredited|archive footage)</li><li>Eric Harris – Himself, Columbine murderer (uncredited|archive footage)</li><li>Adolf Hitler – Himself (uncredited|archive footage)</li><li>Rob Huebel – Man getting frisked (uncredited)</li><li>Brandon T. Jackson – Himself (uncredited)</li><li>Daniel V. Jones – Himself (uncredited|archive footage)</li><li>John Kerry – Himself (uncredited|archive footage)</li><li>Dylan Klebold – Himself, Columbine murderer (uncredited|archive footage)</li><li>Joseph Lieberman – Himself (uncredited|archive footage)</li><li>Dennis Morgan – Actor in movie clip (uncredited|archive footage)</li><li class="voice">Harold Moss – Character in 'A Brief History of the United States of America' (röst) (uncredited)</li><li>Oliver North – Himself (uncredited|archive footage)</li><li>Gary Plauche – Himself, gunman at airport (uncredited|archive footage)</li><li>Prince Charles – Himself (uncredited|archive footage)</li><li>Pat Robertson – Himself (uncredited|archive footage)</li><li><a href="/svenusling/p/1333.html">Chris Rock</a> – Himself (uncredited|archive footage)</li><li>Donald Rumsfeld – Himself (uncredited|archive footage)</li><li>Jessica Savitch – Herself (uncredited|archive footage)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>ASCAP Award - Top Box Office Films 2003</li><li>American Choreography Award - Outstanding Achievement in Fight Choreography 2003</li><li>Taurus Award - Best Work With a Vehicle (Stunt drivers perform a car chase through the crowded streets of a European city. This chase includes driving on sidewalks filled with people, navigating through small alleys, driving down stairs, a motorcycle slide, crashing through a glass door and a stunt man crashing a motorcycle into a car and flipping over the vehicle.) 2003</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Best Action/Adventure/Thriller Film 2003</li><li>Art Directors Guild, Excellence in Production Design Award - Feature Film - Contemporary Films 2003</li><li>Golden Reel Award - Best Sound Editing in Domestic Features - Dialogue & ADR 2003</li><li>Golden Reel Award - Best Sound Editing in Domestic Features - Sound Effects & Foley 2003</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>In May 2002, became first documentary to compete in the Cannes Film Festival's main competition in 46 years.</li><li>After two years of trying to get an interview with [Charlton Heston][/p?id=1151], [Michael Moore][/p?id=Michael%20Moore] was going to give up. Showing up at [Heston's][/p?id=1151] house was totally spontaneous - on the way to the airport, a staff member suggested that they find his house using a star map.</li><li>Highest-grossing documentary until 2004 when [Fahrenheit 9/11][/f?id=13542] (2004) made more in its opening weekend than this movie did in its entire run.</li><li>Because the film didn't fit neatly into any established categories at Cannes, the Jury created a special 55th Anniversary Award just for the film.</li><li>At the Cannes film festival, the movie received a standing ovation that lasted 13 minutes.</li><li>In 2003 became the first documentary to be nominated for and then to win a WGA Award for its screenplay.</li><li>When the movie won the Best Documentary award at the Oscars, [Michael Moore][/p?id=Michael%20Moore] sparked a controversy by denouncing the [George W. Bush][/p?id=George%20W.%20Bush] administration on stage.</li><li>The first rough cut of the film ran about six hours.</li><li>After [Charlton Heston][/p?id=1151] abruptly ended the interview, [Michael Moore][/p?id=Michael%20Moore] and his film crew walked down [Heston's][/p?id=1151] driveway to find themselves temporarily trapped as the gate closed. Fearing that [Heston][/p?id=1151] may have called someone to try and confiscate the interview footage, [Moore][/p?id=Michael%20Moore] had his cameraman pass the film through the bars of the gate to staffers waiting outside. [Moore][/p?id=Michael%20Moore] then told the staffers to depart immediately with the film. [Moore][/p?id=Michael%20Moore] and his crew eventually left [Heston's][/p?id=1151] estate without incident.</li><li>The quote of [Charlton Heston][/p?id=1151] saying &quot;From my cold dead hands!&quot; was from the NRA convention in Charlotte, North Carolina, in spring 2000.</li><li>Contrary to popular belief, &quot;South Park&quot; (1997) creator [Trey Parker][/p?id=Trey%20Parker] and co-creator [Matt Stone][/p?id=Matt%20Stone] had nothing to do with the animated section of this film. [Stone][/p?id=Matt%20Stone] was enraged, believing that the impression that they had done the animated section was intentional. For that reason, [Michael Moore][/p?id=Michael%20Moore] was portrayed in an amusing negative fashion in [Parker][/p?id=Trey%20Parker] and [Stone's][/p?id=Matt%20Stone] film [Team America][/f?id=20059]: World Police (2004).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

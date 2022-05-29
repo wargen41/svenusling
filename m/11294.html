@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bram Stoker's Dracula | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bram Stoker's Dracula <a href="#" class="grade">+++</a></h2>
+										<h3>Dracula</h3>
+										<p>
+										Film från <time datetime="1992"><a href="#">1992</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1299.html">Francis Ford Coppola</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Gary Oldman – Dracula</li><li>Winona Ryder – Mina Murray / Elisabeta</li><li><a href="/svenusling/p/1053.html">Anthony Hopkins</a> – Professor Abraham Van Helsing</li><li><a href="/svenusling/p/1536.html">Keanu Reeves</a> – Jonathan Harker</li><li>Richard E. Grant – Dr. Jack Seward</li><li><a href="/svenusling/p/1133.html">Cary Elwes</a> – Lord Arthur Holmwood</li><li>Bill Campbell – Quincey P. Morris</li><li>Sadie Frost – Lucy Westenra</li><li>Tom Waits – R.M. Renfield</li><li>Monica Bellucci – Dracula's Bride</li><li>Michaela Bercu – Dracula's Bride</li><li>Florina Kendrick – Dracula's Bride</li><li>Jay Robinson – Mr. Hawkins</li><li>I.M. Hobson – Hobbs</li><li>Laurie Franks – Lucy's Maid</li><li>Maud Winchester – Downstairs Maid</li><li>Octavian Cadia – Deacon</li><li>Robert Getz – Priest</li><li>Dagmar Stanec – Sister Agatha</li><li>Eniko Öss – Sister Sylva</li><li>Nancy Linehan Charles – Older Woman</li><li>Tatiana von Furstenberg – Younger Woman</li><li>Jules Sylvester – Zookeeper</li><li>Hubert Wells – Zookeeper</li><li>Daniel Newman – News Hawker</li><li>Honey Lauren – Peep Show Girl</li><li>Judi Diamond – Peep Show Girl</li><li>Robert Buckingham – Husband</li><li>Cully Fredricksen – Van Helsing's Assistant</li><li>Ele Bardha – Grave Digger (uncredited)</li><li>Christina Fulton – Vampire Girl (uncredited)</li><li>Michael Laren – Priest (uncredited)</li><li>Moreen Littrell – Impaled Dancer (uncredited)</li><li>Joe Murkijanian – Monk (uncredited)</li><li>Adamo Palladino – Dock Loader (uncredited)</li><li>Philip Pucci – Lorryman (uncredited)</li><li>Heidi Schooler – Courtesan (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Los Angeles Film Critics Association Awards, New Generation Award 1991 (John Singleton)</li><li>NBR Award - Topp tio filmer 1991</li><li>NYFCC Award - Bästa nya regissör 1991 (John Singleton)</li><li>BMI Film Music Award 1992</li><li>CFCA Award - Mest lovande skådespelare 1992 (1390)</li><li>Image Award - Bästa film 1992</li><li>MTV Movie Award - Bästa nya filmskapare 1992 (John Singleton)</li><li>PFS Award - Human Rights 1992</li><li>PFS Award - Peace 1992</li><li>Young Artist Award -  Outstanding Young Ensemble Cast in a Motion Picture 1992</li><li>National Film Preservation Board, National Film Registry 2002</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>ACCA - Bästa film 1991</li><li>ACCA - Bästa regi 1991 (John Singleton)</li><li>ACCA - Bästa manliga biroll 1991 (1567)</li><li>ACCA - Bästa kvinnliga biroll 1991 (1041)</li><li>ACCA - Bästa originalmanus 1991 (John Singleton)</li><li>ACCA - Bästa skådespelarensemble 1991</li><li>ACCA - Bästa klippning 1991</li><li>Stockholm Film Festival, Bronze Horse 1991 (John Singleton)</li><li>Oscar - Bästa regi 1992 (John Singleton)</li><li>Oscar - Bästa originalmanus 1992 (John Singleton)</li><li>CFCA Award - Bästa film 1992</li><li>CFCA Award - Bästa regi 1992 (John Singleton)</li><li>CFCA Award - Bästa manliga biroll 1992 (1390)</li><li>CFCA Award - Bästa manliga biroll 1992 (1567)</li><li>CFCA Award - Bästa manus 1992 (John Singleton)</li><li>CFCA Award - Mest lovande skådespelare 1992 (1193)</li><li>DFWFCA Award - Bästa film 1992</li><li>DFWFCA Award - Bästa regi 1992 (John Singleton)</li><li>MTV Movie Award - Bästa film 1992</li><li>PFS Award - Exposé 1992</li><li>WGA Award (Screen) - Bästa originalmanus 1992 (John Singleton)</li><li>Blimp Award - Favorite Movie 1993</li><li>Blimp Award - Favorite Movie Actor 1993 (1390)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Director [Francis Ford Coppola][/p?id=1299] was insistent that he didn't want to use any kind of elaborate special effects or computer trickery when making the movie. He initially hired a standard visual effects team, but they told him that the things he wanted to achieve were impossible without using modern digital technology. Coppola disagreed and fired them, replacing them with his 29 year old son Roman Coppola, who set about achieving some the effects by using old-school cinematic trickery.</li><li>During preproduction of the movie, director [Francis Ford Coppola][/p?id=1299] came up with the idea that when in the presence of a being such as a vampire, the laws of physics don't work correctly. This is why shadows often seem to act independently of the figure casting them, why rats can run along a ceiling upside-down and why liquid drips up instead of down.</li><li>[Francis Ford Coppola][/p?id=1299] considered at one point of giving the film the title, &quot;D&quot; in order to distinguish it from previous Dracula adaptations.</li><li>In an attempt to elicit more emotion, director [Francis Ford Coppola][/p?id=1299] shouted &quot;whore&quot; and &quot;slut&quot; at [Winona Ryder][/p?id=Winona%20Ryder] while filming the scene when [Van Helsing][/f?id=21273] catches Mina with Dracula.</li><li>[Steve Buscemi][/p?id=1900] was the first choice to play Renfield but turned down.</li><li>[Francis Ford Coppola][/p?id=1299] has openly criticized his own reasoning for casting [Keanu Reeves][/p?id=1536] as Jonathan Harker. According to him, he needed a young, hot star that would connect with the girls.</li><li>At the first &quot;cast meeting&quot; called by [Francis Ford Coppola][/p?id=1299], he got all the principal actors to read the entire Bram Stoker novel out loud to get a feel for the story. According to [Anthony Hopkins][/p?id=1053], it took two whole days to complete.</li><li>Among those who auditioned for the part of Dracula were [Andy Garcia][/p?id=Andy%20Garcia] (who had concerns over the number of sex scenes), [Gabriel Byrne][/p?id=Gabriel%20Byrne], [Armand Assante][/p?id=Armand%20Assante], [Antonio Banderas][/p?id=1059] and [Viggo Mortensen][/p?id=1977].</li><li>[Francis Ford Coppola][/p?id=1299] had [Richard E. Grant][/p?id=Richard%20E.%20Grant], [Cary Elwes][/p?id=1133] and [Bill Campbell][/p?id=Bill%20Campbell] embark on a series of &quot;adventures&quot; including horse back riding and hot air ballooning to build the camaraderie between the three.</li><li>Originally, director [Francis Ford Coppola][/p?id=1299] had wanted to use highly impressionistic sets using only lights and shadows with minimum props. Instead he wanted to spend the entirety of the production design budget on the costumes. The studio however wouldn't allow this, and ordered him to build 'proper' sets.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

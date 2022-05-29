@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Borg | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Borg <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2017"><a href="#">2017</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre24">Sport</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Janus Metz</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1877.html">Shia LaBeouf</a> – John McEnroe</li><li><a href="/svenusling/p/1893.html">Stellan Skarsgård</a> – Lennart Bergelin</li><li><a href="/svenusling/p/1966.html">Tuva Novotny</a> – Mariana Simionescu</li><li><a href="/svenusling/p/1089.html">Björn Granath</a> – Bengt Grive</li><li>Sverrir Gudnason – Björn Borg</li><li>David Bamber – George Barnes</li><li>Robert Emms – Vitas Gerulaitis</li><li>Jane Perry – Kay McEnroe</li><li>Scott Arthur – Peter Fleming</li><li>Colin Stinton – Talk Show Host</li><li>Demetri Goritsas – Peter - Björns Agent 1</li><li>Claes Ljungmark – Mats Hasselqvist</li><li>Dag Malmberg – Club Chairman - Södertälje</li><li>Tom Datnow – Jimmy Connors</li><li>Leo Borg – Young Björn Borg, age 9-13</li><li>Janis Ahern – Psychologist</li><li>Ian Blackman – John McEnroe's Father</li><li>Ronnie Sandahl – Swedish Reporter Heathrow</li><li>Christopher Wagelin – Ulf Nordal - Swedish Journalist</li><li>David Bark-Jones – Hotel Doctor</li><li>Thomas Hedengran – Lennart Hyland</li><li>James Sobol Kelly – Phil</li><li>Marcus Mossberg – Young Björn Borg, age 15+</li><li>Linnea Tagesson – Air stewardess</li><li>Zuzana Geislerová – Monaco Club Owner's Wife</li><li>Jackson Gann – Young John McEnroe</li><li>Brendan Douglas – Umpire</li><li>Jim High – UK Reporter 4 McE Press Conference</li><li>Henrik Norman – Umpire Kungens Kanna</li><li>Peter Hosking – Umpire Connors</li><li>Val Jobara – Ille Nastase</li><li>Roy McCrerey – Andy - Borg's Agent</li><li>Felix Engström – Tennis Youth Coach</li><li>Ben Bradshaw – Umpire Finals Wimbledon</li><li>Annika Ryberg Whittembury – Silvana Ruiz - Argentinian TV-reporter</li><li>Jennifer K Preston – Cafe guest</li><li>Mats Blomgren – Rune Borg</li><li>Anders Berg – Södertälje Tennis Coach</li><li>Michael Pitthan – UK Reporter 1 Heathrow</li><li>Jason Forbes – Arthur Ashe</li><li>David Bowles – French Commentator</li><li>Wille Glyt – National Teamplayer 2</li><li>Booda – BBC Sound Engineer</li><li>Henrik Sillanpää – Björn Borg Tennis Double</li><li>Logan Hillier – British Reporter</li><li>Bob Boudreaux – Mr. Henderson</li><li>Kevin Clarke – Field Engineer</li><li>Ida Karolin Johansson – Hånglande Guldtjej</li><li>Johan Greby – Studio 54 Organizer</li><li>Thomas Kromann – John Mcenroe Tennis Double</li><li>Marc Cram – American Commentator</li><li>Jamie Marshall – British Commentator</li><li>Christopher Fänge – Kjell Johansson</li><li>Peter Diaz – Guest at night club</li><li>Lucy Ter-Berg – Bianca Jagger</li><li>Julia Marko-Nord – Margareta Borg</li><li>Filip Antonio – Boy Wanting Autograph</li><li>Camille Jones – Female Singer</li><li>Daniel Zappi – BBC-Man Volume</li><li>Philipp Schenker – German Commentator</li><li>Dan Anders Carrigan – Ove Bengtsson</li><li>Vincent Eriksson – Brian Gottfried</li><li>Maximilian Winnberg – Studio 54 Bartender</li><li>Rune Borup – Pianist</li><li>Disa Stigh – Vitas Friend</li><li>Adam Wiklund – Guy in Bar</li><li>Mohamed Shabib – Ismail El-Shafei</li><li>Marcus Johansson – National Teamplayer 1</li><li>Raphaël Bonnet – Olsson 17 Years</li><li>Cornelia Sjöblom – Eva 1</li><li>Jaromir Becicka – Wimbledon Official 2</li><li>Robert Russell – Café Guest 2 / Monaco Club Owner</li><li>Gustav Ström – Björn Borg 15 Year Tennis Double</li><li>Henrik Täljedal – Bartender</li><li>Emelie Dahlskog – Eva 2</li><li>Federico Cafaro – Argentinian TV Translator</li><li>Robert De Castello – Bartender</li><li>Logan Hiller – UK Reporter 2 Press Conference</li><li>Richard Drazny – Butch Waltz, USA</li><li>Pavel Benes – Umpire Match BB / El-Shafei</li><li>David Fisher – UK Reporter 3 McE Press Conference</li><li>Jan Maulik – Umpire Borg vs Frawley</li><li>Fredrik Janacek – Swedish Reporter - Press conference 1</li><li>Milan Duvsund – Studioman</li><li>Bill Roberts – Wimbledon Official 1</li><li>Inger Järpedal – Mrs. Henderson</li><li>Chrudos Tajtl – Umpire US Open 1974</li><li>Dan Brown – American Reporter Heathrow</li><li>John Runestam – Tenny Svensson</li><li>Adrian Sikora – Peter Fleming Tennis Double</li><li>Igor Tubic – Rod Frawley</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>ASCAP Award - Top Box Office Films 2007</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Annie Awards, Annie - Best Animated Feature 2007</li><li>Annie Awards, Annie - Best Animated Effects 2007</li><li>Annie Awards, Annie - Best Character Design in an Animated Feature Production 2007</li><li>Annie Awards, Annie - Best Production Design in an Animated Feature Production 2007</li><li>Annie Awards, Annie - Best Production Design in an Animated Feature Production 2007</li><li>Annie Awards, Annie - Best Storyboarding in an Animated Feature Production 2007</li><li>Blimp Award - Favorite Voice from an Animated Movie 2007 (Ashton Kutcher)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
