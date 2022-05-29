@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Constantine | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Constantine <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2005"><a href="#">2005</a></time><br>										<ul class="genres"><li><a href="#genre9">Fantasy</a></li><li><a href="#genre22">Skräck</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Francis Lawrence</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1536.html">Keanu Reeves</a> – John Constantine</li><li><a href="/svenusling/p/1766.html">Rachel Weisz</a> – Angela Dodson / Isabel Dodson</li><li><a href="/svenusling/p/1877.html">Shia LaBeouf</a> – Chas Kramer</li><li><a href="/svenusling/p/1245.html">Djimon Hounsou</a> – Midnite</li><li>Max Baker – Beeman</li><li>Pruitt Taylor Vince – Father Hennessy</li><li>Gavin Rossdale – Balthazar</li><li><a href="/svenusling/p/1934.html">Tilda Swinton</a> – Gabriel</li><li><a href="/svenusling/p/1752.html">Peter Stormare</a> – Satan</li><li>Jesse Ramirez – Scavenger</li><li>José Zúñiga – Detective Weiss</li><li>Francis Guinan – Father Garret</li><li>Larry Cedar – Vermin Man</li><li>April Grace – Dr. Leslie Archer</li><li>Suzanne Whang – Mother</li><li>Jhoanna Trias – Possessed Girl</li><li>Alice Lo – Old Woman</li><li>Nicholas Downs – Church Attendant</li><li>Tanoai Reed – Midnite Bouncer</li><li>Quinn Buniel – 10 Year-Old Constantine</li><li>Ann Ryerson – Old Woman on Bus</li><li>Stephanie Fabian – Molly's Server</li><li>Connor Dylan Wryn – Teenage Constantine</li><li>Laz Alonso – Morgue Security Guard</li><li>Jeremy Ray Valdez – Liquor Store Clerk Nico</li><li>Jose Molina – Scavenger #2</li><li>Barbara Pilavin – Old Woman on Bus - Demon</li><li>C.W. Pyun – Korean man</li><li>Sharon Omi – Female Tenant</li><li>Edward J. Rosen – Liquor Store Clerk</li><li>John Gipson – Smoking Man</li><li>Roberto Kawata – Police Officer</li><li>Kevin Alejandro – Border Partrol (uncredited)</li><li>Valerie Azlynn – Angel (uncredited)</li><li>Eileen Dietz – Zombie (uncredited)</li><li>Domino Harvey – Angel in Nightclub (uncredited)</li><li>Mohammed Hassan – Club Patron (uncredited)</li><li>Wesley John – Male Tenant (uncredited)</li><li>Andres Londono – Demon - Nightclub (uncredited)</li><li>April Malina – Demon (uncredited)</li><li>Matthew McGrory – Demon (uncredited)</li><li>Billy Million – Bar Boy (uncredited)</li><li>Michelle Monaghan – Ellie (uncredited)</li><li>Abe Pagtama – Tenant (uncredited)</li><li>Martin Pierron – Club Dancer (uncredited)</li><li>R.A. Rondell – Man in Jeep (uncredited)</li><li>Erik Rusnak – Nightclub Patron (uncredited)</li><li>Robbin Ryan – Angel (uncredited)</li><li>Mahryah Shain – Hospital Worker (uncredited)</li><li>Chad Stahelski – Demon in Hospital (uncredited)</li><li>Tony Swift – Nightclub Patron (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Sci-Fi Universe Magazine, Universe Reader's Choice Award - Best Supporting Actor in a Genre Motion Picture 1995 (1288)</li><li>BMI Film Music Award 1996 (Jerry Goldsmith)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Bästa Science-Fiction film 1996</li><li>Saturn Award - Bästa regi 1996 (Frank Marshall)</li><li>Saturn Award - Bästa specialeffekter 1996</li><li>Blimp Award - Favorite Animal Star (Amy, the gorilla) 1996</li><li>Razzie Award - Sämsta film 1996</li><li>Razzie Award - Sämsta regi 1996 (Frank Marshall)</li><li>Razzie Award - Sämsta manliga biroll 1996 (1938)</li><li>Razzie Award - Sämsta kvinnliga biroll 1996 ("Amy the Talking Gorilla")</li><li>Razzie Award - Worst New Star ("Amy the Talking Gorilla")</li><li>Razzie Award - Sämsta manus 1996</li><li>Razzie Award - Sämsta originalsång (For the song "(Feel The) Spirit of Africa".) 1996</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Peter Stormare][/p?id=1752] originally auditioned for the role of Balthazar.</li><li>Originally, Tarsem Singh was attached to direct with [Nicolas Cage][/p?id=1696] to star. However, the director said that &quot;with [Cage][/p?id=1696], I cannot make the film I had wanted to&quot;. Soon after Singh left the picture, [Cage][/p?id=1696] did as well.</li><li>[Shia LaBeouf][/p?id=1877] was recommended to producer [Akiva Goldsman][/p?id=Akiva%20Goldsman] for the role of Chaz by [Will Smith][/p?id=2002] following his impressive performance in [I, Robot][/f?id=15001] (2004). The three of them worked in that film, with [Smith][/p?id=2002] and [Goldsman][/p?id=Akiva%20Goldsman] as producers.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

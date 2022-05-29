@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cop Out | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Cop Out <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2010"><a href="#">2010</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1549.html">Kevin Smith</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1117.html">Bruce Willis</a> – Jimmy Monroe</li><li>Tracy Morgan – Paul Hodges</li><li>Juan Carlos Hernández – Raul</li><li>Cory Fernandez – Juan</li><li>Jason Hurt – Youth 1</li><li>Jeff Lima – Youth 2</li><li>Sean Cullen – Captain Romans</li><li>Kevin Pollak – Hunsaker</li><li>Adam Brody – Barry Mangold</li><li>Guillermo Díaz – Poh Boy</li><li>Alberto Bonilla – Julio</li><li>Robinson Aponte – Banger 1</li><li>Jeremy Dash – Banger 2</li><li>Mando Alvarado – Mexican Man 1</li><li>Michelle Trachtenberg – Ava</li><li><a href="/svenusling/p/1436.html">Jason Lee</a> – Roy</li><li>Francie Swift – Pam</li><li>Rashida Jones – Debbie</li><li>Keith Joe Dick – Big Al</li><li>Seann William Scott – Dave</li><li>Ernest O'Donnell – Masked Man 1</li><li>Jim Norton – George</li><li>Susie Essman – Laura</li><li>John D'Leo – Kevin</li><li>Adrian Martinez – Tino</li><li>Marcus I. Morton – Tommy</li><li>Fred Armisen – Russian Lawyer</li><li>Hannah Ware – Russian Lawyer's Wife</li><li>Ana de la Reguera – Gabriela</li><li>Ephraim López – Busboy</li><li>Mark Consuelos – Manuel</li><li>Jayce Bartok – Eddie</li><li>Larissa Drekonja – Hourly Housekeeper</li><li>Jacinto Taras Riddick – Darnell</li><li>Jeff Chena – Cop</li><li>Jordan Carlos – Eric</li><li>Robb Cullen – Coroner</li><li>Ray Quinlan – Priest</li><li>Ryan Quinlan – Groom</li><li>Michael Pitt – Henry - the Neighbor</li><li>John Auer – Wedding Guest (uncredited)</li><li>Sarah Burns – Mortuary Attendant (uncredited)</li><li>Kevin Cannon – Precinct Most Wanted (uncredited)</li><li>JR Carter – Wedding guest (uncredited)</li><li>Joseph Cintron – Jose (uncredited)</li><li>Stracy Diaz – Bruja (uncredited)</li><li>Joe Dolinsky – Cop (uncredited)</li><li>Aristedes Philip DuVal – Pizza Parlor Patron (uncredited)</li><li>Elli – Elli the Gyro Vendor (uncredited)</li><li>Eddie J. Fernandez – Junior (uncredited)</li><li>Joey Giambattista – Pito (uncredited)</li><li>Chris Haemmerle – NYPD Sergeant Genz (uncredited)</li><li>Gina Hernandez – Pedestrian (uncredited)</li><li>Omar Hernandez – Inmate #2 (uncredited)</li><li>Tanzeel Kayani – NYPD Officer (uncredited)</li><li>Anna Kuchma – Car Accident Witness (uncredited)</li><li>Dennis Larkin – Detective (uncredited)</li><li>Hans Marrero – Goon #4 (uncredited)</li><li>Chazz Menendez – Jose (uncredited)</li><li>Jacqueline Murphy – News Reporter (uncredited)</li><li>Michael Angelo Ortiz – Goon #3 (uncredited)</li><li>Michael Perez – Guy Chaser (uncredited)</li><li>Elliot Santiago – Lonzo (uncredited)</li><li>Harry L. Seddon – N.Y.C. Police E.S.U. - SWAT (uncredited)</li><li>Richard Shankman – EMT (uncredited)</li><li>Philip J Silvera – Goon #1 (uncredited)</li><li>Bill Walters – Subway Rider (uncredited)</li><li>Steven Weisz – CSU Officer West (uncredited)</li><li>Deantre Williams – EMS (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>MTV Movie Award - Most Desirable Female 1993 (Kim Basinger)</li><li>Razzie Award - Sämsta skådespelerska 1993 (Kim Basinger)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The first film by [Kevin Smith][/p?id=1549] to not be written by him, as well as his first produced by a major studio.</li><li>Warner Bros. picked up the project in turnaround in 2008 from Gold Circle Films, where it had been in development with [Robin Williams][/p?id=1828] and [James Gandolfini][/p?id=1420] in the lead roles.</li><li>[Jason Mewes][/p?id=Jason%20Mewes] and [Ben Affleck][/p?id=1070] were approached for roles in this film, but couldn't make it due to scheduling conflicts.</li><li>[Kevin Smith][/p?id=1549] personally thought of Harold Faltermeyer to compose the score, feeling that the film was an homage to the '80s cop comedy genre, and needed one of the genre's most prominent composers. Faltermeyer was previously in retirement, but was looking to come back, and after seeing a rough cut of the film, signed on.</li><li>[Seann ][/p?id=Seann%20]William Scott[[ said on ][/p?id=][/p?id=%20said%20on%20%5D%5B%2Fp%3Fid%3D]%20said%20on%20]Kevin Pollak|'s[ Chat Show that a lot of his scenes were improvised, like the scene where he finishes ][/p?id=%20Chat%20Show%20that%20a%20lot%20of%20his%20scenes%20were%20improvised%2C%20like%20the%20scene%20where%20he%20finishes%20]Tracy Morgan|'s** lines and the jail scene.</li><li>[Kevin Smith's][/p?id=1549] highest grossing movie.</li><li>[Kevin Smith][/p?id=1549] and [Bruce Willis][/p?id=1117] did not get on well at all on set. [Willis][/p?id=1117] was really annoyed at [Smith's][/p?id=1549] lackadaisical approach to directing, not interacting with his performers and generally smoking too much marijuana.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

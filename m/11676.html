@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cotton Club | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Cotton Club <a href="#" class="grade">++</a></h2>
+										<h3>The Cotton Club</h3>
+										<p>
+										Film från <time datetime="1984"><a href="#">1984</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1299.html">Francis Ford Coppola</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1787.html">Richard Gere</a> – Dixie Dwyer</li><li>Gregory Hines – Sandman Williams</li><li>Diane Lane – Vera Cicero</li><li>Lonette McKee – Lila Rose Oliver</li><li><a href="/svenusling/p/1091.html">Bob Hoskins</a> – Owney Madden</li><li>James Remar – Dutch Schultz</li><li><a href="/svenusling/p/1696.html">Nicolas Cage</a> – Vincent Dwyer</li><li>Allen Garfield – Abbadabba Berman</li><li>Fred Gwynne – Frenchy Demange</li><li>Gwen Verdon – Tish Dwyer</li><li>Lisa Jane Persky – Frances Flegenheimer</li><li>Maurice Hines – Clay Williams</li><li>Julian Beck – Sol Weinstein</li><li>Novella Nelson – Madame St. Clair</li><li><a href="/svenusling/p/1567.html">Laurence Fishburne</a> – Bumpy Rhodes</li><li>John P. Ryan – Joe Flynn</li><li>Tom Waits – Irving Stark</li><li>Ron Karabatsos – Mike Best</li><li>Glenn Withrow – Ed Popke</li><li>Jennifer Grey – Patsy Dwyer</li><li>Wynonna Smith – Winnie Williams</li><li>Thelma Carpenter – Norma Williams</li><li>Charles 'Honi' Coles – Suger Coates</li><li>Larry Marshall – Cab Calloway</li><li>Joe Dallesandro – Charles 'Lucky' Luciano</li><li>Ed O'Ross – Monk</li><li>Frederick Downs Jr. – Sullen Man</li><li>Diane Venora – Gloria Swanson</li><li>Tucker Smallwood – Kid Griffin</li><li><a href="/svenusling/p/2012.html">Woody Strode</a> – Holmes</li><li>Bill Graham – J.W.</li><li>Dayton Allen – Solly</li><li>Kim Chan – Ling</li><li>Ed Rowan – Messiah</li><li>Leonard Termo – Danny</li><li>George Cantero – Vince Hood</li><li>Brian Tarantina – Vince Hood</li><li>Bruce MacVittie – Vince Hood</li><li>James Russo – Vince Hood</li><li>Giancarlo Esposito – Bumpy Hood</li><li>Bruce Hubbard – Bumpy Hood</li><li>Rony Clanton – Caspar Holstein</li><li>Damien Leake – Bub Jewett</li><li>Bill Cobbs – Big Joe Ison</li><li>Joe Lynn – Marcial Flores</li><li>Oscar Barnes – Spanish Henry</li><li>Ed Zang – Hotel Clerk</li><li>Sandra Beall – Myrtle Fay</li><li>Zane Mark – Duke Ellington</li><li>Tom Signorelli – Butch Murdock</li><li>Paul Herman – Policeman #1</li><li>Randle Mell – Policeman #2</li><li>Steve Vignari – Trigger Mike Coppola</li><li>Susan Mechsner – Gypsie</li><li>Gregory Rozakis – Charlie Chaplin</li><li>Marc Coppola – Ted Husing</li><li>Norma Jean Darden – Elda Webb</li><li>Robert Earl Jones – Stage Door Joe</li><li>Vincent Jerman-Jerosa – James Cagney</li><li>Rosalind Harris – Fanny Brice</li><li>Steve Cafiso – Child in Street</li><li>John Cafiso – Child in Street</li><li>Sofia Coppola – Child in Street</li><li>Ninon Digiorgio – Child in Street</li><li>Daria Hines – Child in Street</li><li>Patricia LeTang – Child in Street</li><li>Christopher Lewis – Child in Street</li><li>Danielle Osborne – Child in Street</li><li>Jason Papalardo – Child in Street</li><li>Demetrius Pena – Child in Street</li><li>Priscilla Baskerville – 'Creole Love Call' sung by</li><li>Ethel Beatty – Bandana Babies Lead Vocal / Dancer</li><li>Sydney Goldsmith – Barbecue Bess sung by</li><li>James 'Buster' Brown – Hoofer</li><li>Ralph Brown – Hoofer</li><li>Harold Cromer – Hoofer</li><li>Bubba Gaines – Hoofer</li><li>George Hillman – Hoofer</li><li>Henry Phace Roberts – Hoofer</li><li>Howard 'Sandman' Sims – Hoofer</li><li>Jimmy Slyde – Hoofer</li><li>Henry LeTang – Hoofer</li><li>Charles Young – Hoofer</li><li>Skip Cunningham – Tip, Tap & Toe</li><li>Luther Fontaine – Tip, Tap & Toe</li><li>Jan Mickens – Tip, Tap & Toe</li><li>Lydia Abarca – Dancer</li><li>Sarita Allen – Dancer</li><li>Tracey Bass – Dancer</li><li>Jacquelyn Bird – Dancer</li><li>Shirley Black-Brown – Dancer</li><li>Jhoe Breedlove – Dancer</li><li>Leslie Caldwell – Dancer</li><li>Melanie Caldwell – Dancer</li><li>Benny Clorey – Dancer</li><li>Sheri Cowart – Dancer</li><li>Karen DiBianco – Dancer</li><li>Cisco Drayton – Dancer</li><li>Ann Duquesnay – Dancer</li><li>Carla Earle – Dancer</li><li>Wendy Edmead – Dancer</li><li>Debbie Fitts – Dancer</li><li>Ruddy L. Garner – Dancer</li><li>Ruthanna Graves – Dancer</li><li>Terri Griffin – Dancer</li><li>Robin Harmon – Dancer</li><li>Jackée Harry – Dancer</li><li>Sonya Hensley – Dancer</li><li>Dave Jackson – Dancer</li><li>Gail Kendricks – Dancer</li><li>Christina Kumi Kimball – Dancer</li><li>Mary Beth Kurdock – Dancer</li><li>Alde Lewis – Dancer</li><li>Paula Lynn – Dancer</li><li>Bernard Manners – Dancer</li><li>Bernard Marsh – Dancer</li><li>David McHarris – Dancer</li><li>Delores McHarris – Dancer</li><li>Vody Najac – Dancer</li><li>Vya Negromonte – Dancer</li><li>Alice Anne Oates – Dancer</li><li>Anne Palmer – Dancer</li><li>Julie Pars – Dancer</li><li>Antonia Pettiford – Dancer</li><li>Valarie Pettiford – Dancer</li><li>Janet Powell – Dancer</li><li>Renee Rodriguez – Dancer</li><li>Tracey Ross – Dancer</li><li>Kiki Shepard – Dancer</li><li>Gary Thomas – Dancer</li><li>Mario Van Peebles – Dancer</li><li>Rima Vetter – Dancer</li><li>Karen Wadkins – Dancer</li><li>Ivery Wheeler – Dancer</li><li>Donald Williams – Dancer</li><li>Alexis Wilson – Dancer</li><li>George Coutoupis – Gangster (uncredited)</li><li>Scott Crawford – Gangster (uncredited)</li><li>Kimberly Dorsey – Joan Blondell (uncredited)</li><li>Anton Evangelista – Ownie Hood (uncredited)</li><li>Nicholas J. Giangiulio – Screen Test Thug (uncredited)</li><li class="voice">Linda Gillen –  (röst) (uncredited)</li><li>Sandra Gray – Dancer (uncredited)</li><li>Bella Jarrett –  (uncredited)</li><li>Suzanne Kaaren – The Duchess of Park Avenue (uncredited)</li><li>Robin Karfo – Vera's Side Kick / Banville Club (uncredited)</li><li>Mark Margolis – Charlie Workman (uncredited)</li><li>Naylon Mitchell – Busboy (uncredited)</li><li>Ray Negron – Waiter (uncredited)</li><li>D.J. Sharp – Doorman (uncredited)</li><li>Larry Stewart – Singer (uncredited)</li><li>Kirk Taylor – Cotton Club Waiter (uncredited)</li><li>Stan Tracy – Legs Diamond's Bodyguard (uncredited)</li><li>Vince Giordano and The Nighthawks – Guitar player (uncredited)</li><li>Rick Washburn – Hitman (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Richard Gere][/p?id=1787] really is an accomplished trumpet player and performed his own solos in this movie.</li><li>The character of Dixie Dwyer is likely based on actor [George Raft][/p?id=George%20Raft]. [Raft][/p?id=George%20Raft] grew up dirt poor in New York's Hell's Kitchen. As a young man he worked as a driver/gopher for gangster Owney Madden (also depicted in this film). After his stint working for Madden he went to California and tried his hand at acting, eventually achieving considerable success playing tough-guy roles in various gangster movies, performances he based largely on Madden and Bugsy Siegel, with whom [Raft][/p?id=George%20Raft] was known to associate.</li><li>At one point relations were so strained between director [Francis Ford Coppola][/p?id=1299] and producer [Robert Evans][/p?id=Robert%20Evans] that Coppola had [Evans][/p?id=Robert%20Evans] banned from the set.</li><li>When [Francis Ford Coppola][/p?id=1299] called up [Bob Hoskins][/p?id=1091] to offer him a part, the actor didn't believe it was really him. Coppola introduced himself, to which [Hoskins][/p?id=1091] replied, &quot;Yeah, and this is Henry the fucking Eighth&quot;, and hung up.</li><li>The relationship in the film between the characters played by [Gregory Hines][/p?id=Gregory%20Hines] and Maurice [Hines][/p?id=Gregory%20Hines] was partly based on their real lives.</li><li>[Laurence Fishburne's][/p?id=1567] character, Bumpy Rhodes, was based on real-life Harlem gangster Ellsworth &quot;Bumpy&quot; Johnson. [Fishburne][/p?id=1567] would play Bumpy in [Hoodlum][/f?id=Hoodlum] (1997) 13 years later.</li><li>According to producer [Robert Evans][/p?id=Robert%20Evans], [Richard Pryor][/p?id=1790] was originally cast as Sandman Williams but the budget could not accommodate his salary.</li><li>Although the film features several fictional murders, it is associated with one real-life murder. When [Robert Evans][/p?id=Robert%20Evans] was raising money for the film, he became associated with a promoter named [Roy Radin][/p?id=Roy%20Radin]. [Radin][/p?id=Roy%20Radin] was reportedly murdered on May 13, 1983, but his body was not found for several weeks. [Evans][/p?id=Robert%20Evans] was not accused of murder but was implicated in the investigation because he was dealing with [Radin][/p?id=Roy%20Radin] and Karen Jacobs-Greenberger, who introduced [Radin][/p?id=Roy%20Radin] to [Evans][/p?id=Robert%20Evans]. She was convicted of ordering the murder of [Radin][/p?id=Roy%20Radin] and is serving a life sentence for the crime.</li><li>Pulitzer-Prize winning novelist William Kennedy was brought in to do a quick draft on the script to polish it. He ended up doing over 20 drafts.</li><li>[Francis Ford Coppola][/p?id=1299] made this film to pay off his debts from [One from the Heart][/f?id=%C3%84lskling%2C%20Jag%20Hatar%20Dig] (1981).</li><li>As depicted in the movie, Owney Madden and Big Frenchy DeMange were close friends and partners in the Cotton Club. Ironically, as younger men they belonged to rival crime syndicates and were bitter enemies.</li><li>Allegedly, the reconciliation scene between Owney Madden and Frenchy was written by [Fred Gwynne][/p?id=Fred%20Gwynne]. [Francis Ford Coppola][/p?id=1299] considered removing the scene during editing but was convinced by co-screenwriter William Kennedy to leave it in.</li><li>[Sylvester Stallone][/p?id=1915] was the original choice for the lead, but backed out angrily when he found out producer [Robert Evans][/p?id=Robert%20Evans] was having an affair with his then girlfriend.</li><li>The role of Vera Cicero was originally assigned to [Brooke Shields][/p?id=Brooke%20Shields]. However, she turned down the offer in order to study French Literature at Princeton University.</li><li>Enticed by a script by [Mario Puzo][/p?id=Mario%20Puzo] and the promise of funding from Las Vegas casino-owning brothers Edward Doumani and Fred Doumani, Paramount offered producer [Robert Evans][/p?id=Robert%20Evans] the talents of [Richard Gere][/p?id=1787] as leading man and access to its studio facilities along with further production funds. However, determined to re-establish his reputation as a major player in Hollywood, [Evans][/p?id=Robert%20Evans] turned down the latter offer in favor of the services of Orion Pictures--which was in the business of marketing and distributing films rather than producing them, meaning that [Evans][/p?id=Robert%20Evans] would need to raise more production money and find a studio in which to shoot the film, causing further delays and adding to the already bloated budget.</li><li>[Francis Ford Coppola's][/p?id=1299] quasi-improvisational approach to directing the actors meant the script was in a constant state of flux, and actors would frequently spend all day on set without shooting a single frame of film.</li><li>There were frequent clashes between [Francis Ford Coppola][/p?id=1299] and [Richard Gere][/p?id=1787], who insisted on showing off his skills on the cornet in the film, and seemed more concerned about possible damage to his reputation than about the film itself.</li><li>Over 600 people built sets, created costumes and arranged music at a reported $250,000 a day.</li><li>According to [Gregory Hines][/p?id=Gregory%20Hines], a three-hour film was shot during rehearsals.</li><li>[Sigourney Weaver][/p?id=1882] turned down the role of Lila Rose Oliver.</li><li>[Al Pacino][/p?id=1008] turned down the lead role, feeling it was too close to [The Godfather][/f?id=14369] (1972). This was before [Francis Ford Coppola][/p?id=1299] was brought in to direct.</li><li>[Francis Ford Coppola][/p?id=1299] considered [Matt Dillon][/p?id=Matt%20Dillon] for the lead role.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
