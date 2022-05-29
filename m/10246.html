@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Säger I Love You | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Säger I Love You <a href="#" class="grade">+++</a></h2>
+										<h3>Everyone Says I Love You</h3>
+										<p>
+										Film från <time datetime="1996"><a href="#">1996</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre18">Musikal</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2010.html">Woody Allen</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1266.html">Edward Norton</a> – Holden Spence</li><li><a href="/svenusling/p/1252.html">Drew Barrymore</a> – Skylar Dandridge</li><li>Diva Gray – Nanny</li><li>Ami Almendral – Nanny</li><li>Madeline Balmaceda – Nanny</li><li>Vivian Cherry – Nurse</li><li>Tommie Baxter – Old Woman</li><li>Jeff DeRocker – Homeless Man</li><li>Cherylyn Jones – Mannequin</li><li>Tina Paul – Mannequin / Harry Winston Dancer</li><li>Vikki Schnurr – Mannequin</li><li>Natasha Lyonne – Djuna 'D.J.' Berlin</li><li>Kevin Hagan – Doorman</li><li><a href="/svenusling/p/1009.html">Alan Alda</a> – Bob Dandridge</li><li>Gaby Hoffmann – Lane Dandridge</li><li><a href="/svenusling/p/1687.html">Natalie Portman</a> – Laura Dandridge</li><li>Lukas Haas – Scott Dandridge</li><li>Trude Klein – Frieda</li><li><a href="/svenusling/p/1340.html">Goldie Hawn</a> – Steffi Dandridge</li><li>Itzhak Perlman – Himself</li><li>Pamela Everett – Harry Winston Dancer</li><li>Navah Perlman – Pianist</li><li>Barbara Hollander – Claire</li><li>John Griffin – Jeffrey Vandermost</li><li><a href="/svenusling/p/1522.html">Julia Roberts</a> – Von Sidell</li><li>Waltrudis Buck – Psychiatrist</li><li>Patrick Cranshaw – Grandpa</li><li>Isiah Whitlock Jr. – Cop</li><li><a href="/svenusling/p/2010.html">Woody Allen</a> – Joe Berlin</li><li>Edward Hibbert – Harry Winston Salesman</li><li>Kevin Bogue – Harry Winston Dancer</li><li>Colleen Dunn – Harry Winston Dancer</li><li>Susan Misner – Harry Winston Dancer</li><li>Gregory Mitchell – Harry Winston Dancer</li><li>Dana Moore – Harry Winston Dancer</li><li>Troy Myers – Harry Winston Dancer</li><li>Joe Orrach – Harry Winston Dancer</li><li>Michael O'Steen – Harry Winston Dancer</li><li>Luis Martin Perez – Harry Winston Dancer / Hospital Dancer / Ghost Dancer / Groucho Party Dancer</li><li>Krissy Richmond – Harry Winston Dancer</li><li>Frederick Rolf – Le Cirque Waiter</li><li>Timothy Jerome – X-Ray Room Doctor</li><li>Daisy Prince – Nurse</li><li>Linda Maurel-Sithole – Nurse</li><li>Helen Miles – Nurse / The Helen Miles Singers</li><li>Arlene Martel – Nurse / The Helen Miles Singers</li><li>Rene Ceballos – Hospital Dancer</li><li>Ruth Gottschall – Hospital Dancer</li><li>Colton Green – Hospital Dancer</li><li>Lisa LeGuillou – Hospital Dancer</li><li>Joe Locarro – Hospital Dancer</li><li>Monica McSwain – Hospital Dancer</li><li>Jill Nicklaus – Hospital Dancer</li><li>Andrew Pacho – Hospital Dancer</li><li>John Selya – Hospital Dancer</li><li>Myra Lucretia Taylor – Hospital Dancer</li><li>Jo Telford – Hospital Dancer</li><li>Paolo Seganti – DJ's Venice Date</li><li>Andrea Piedimonte – Alberto</li><li>Robert Knepper – Greg</li><li>Billy Crudup – Ken</li><li>Robert Khakh – Cab Driver</li><li>Tim Roth – Charles Ferry</li><li>Scotty Bloch – Lynn Spence</li><li><a href="/svenusling/p/1222.html">David Ogden Stiers</a> – Arnold Spence</li><li>Gerry Burkhardt – Ghost Dancer</li><li>Eileen Casey – Ghost Dancer</li><li>Shelley Frankel – Ghost Dancer</li><li>Fred Mann III – Ghost Dancer</li><li>Kathy Sanson – Ghost Dancer</li><li>Valda Setterfield – Ghost Dancer</li><li>Frank Pietri – Ghost Dancer</li><li>Robert Walker – Rapper</li><li>Devalle Hayes – Rapper</li><li>Damon McCloud – Rapper</li><li>Tony Sirico – Escaped Convict</li><li>Ray Garvey – Escaped Convict</li><li>Tommy John – Trick-or-Treat Child</li><li>Lindsy Canuel – Trick-or-Treat Child</li><li>Richard Cummings – Trick-or-Treat Child</li><li>Kristen Pettet – Trick-or-Treat Child</li><li>Patrick Lavery – Trick-or-Treat Child</li><li>Christy Carlson Romano – Trick-or-Treat Child</li><li>Jonathan Giordano – Trick-or-Treat Child</li><li>Gabriel Millman – Trick-or-Treat Child</li><li>Ed Hodson – Scott's Doctor</li><li>Michel Moinot – Bob's Doctor</li><li>Don Correia – Groucho Party Dancer</li><li>Sean Grant – Groucho Party Dancer</li><li>Roland Hayes – Groucho Party Dancer</li><li>Darren Lee – Groucho Party Dancer</li><li>Delphine T. Mantz – Groucho Party Dancer</li><li>Joanne McHugh – Groucho Party Dancer</li><li>John Mineo – Groucho Party Dancer</li><li>Cynthia Onrubia – Groucho Party Dancer</li><li>Willie Rosario – Groucho Party Dancer</li><li>Nancy Ticotin – Groucho Party Dancer</li><li>Jerome Vivona – Groucho Party Dancer</li><li>Emily Bindiger – Helen Miles Singer</li><li>Cindy Cobitt – Helen Miles Singer</li><li>Al Dana – Helen Miles Singer</li><li>Kevin De Simone – Helen Miles Singer</li><li>Paul Evans – Helen Miles Singer</li><li>Chrissy Faith – Helen Miles Singer</li><li>Jeff Lyons – Helen Miles Singer</li><li>Michael Mark – Helen Miles Singer</li><li>Jenna Miles – Helen Miles Singer</li><li>Robert Ragaini – Helen Miles Singer</li><li>Lenny Roberts – Helen Miles Singer</li><li>Annette Sanders – Helen Miles Singer</li><li>Terry Textor – Helen Miles Singer</li><li>Vanéese Y. Thomas – Helen Miles Singer</li><li>Ashley H. Wilkinson – Helen Miles Singer</li><li>Lisa Cangelosi – Cigar Girl (uncredited)</li><li>Chris Cardona – Italy Dinner Guest (uncredited)</li><li>Olivia Hayman – Skylar (singing voice) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BSFC Award - Bästa manliga biroll 1996 (1266)</li><li>LAFCA Award - Bästa manliga biroll 1996 (1266)</li><li>NBR Award - Bästa manliga biroll 1996 (1266)</li><li>American Choreography Award - Outstanding Achievement in Feature Film 1997</li><li>Butaca Awards, Butaca - Best Art House Film 1997 (2010)</li><li>CFCA Award - Mest lovande skådespelare 1997 (1266)</li><li>FFCC Award - Bästa manliga biroll 1997 (1266)</li><li>SEFCA Award - Bästa manliga biroll 1997 (1266)</li><li>Turia Awards, Turia Awards - Bästa utländska film 1998 (2010)</li><li>Turia Awards, Audience Award - Bästa utländska film 1998 (2010)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa film - Komedi eller Musikal 1997</li><li>Casting Society of America, Artios - Best Casting for Feature Film, Comedy 1997</li><li>European Film Awards, Screen International Award 1997 (2010)</li><li>Golden Satellite Award - Bästa film - Komedi eller Musikal 1997</li><li>Golden Satellite Award - Bästa manliga biroll - Komedi eller Musikal 1997 (2010)</li><li>Golden Satellite Award - Bästa kvinnliga biroll - Komedi eller Musikal 1997 (1340)</li><li>YoungStar Award - Best Performance by a Young Actress in a Comedy Film 1997 (Gaby Hoffmann)</li><li>YoungStar Award - Best Performance by a Young Actress in a Comedy Film 1997 (1687)</li><li>César Awards, César - Bästa utländska film 1998 (2010)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Tracey Ullman][/p?id=Tracey%20Ullman] and [Liv Tyler][/p?id=Liv%20Tyler] filmed scenes for this film, but all were cut by director [Woody Allen][/p?id=2010] to reduce running time.</li><li> [Woody Allen][/p?id=2010] had to tell [Goldie Hawn][/p?id=1340] to try to sing worse because she sang too well to be believable as a normal person just breaking into song.</li><li> The actors sing their own songs except for [Drew Barrymore][/p?id=1252], who convinced [Woody Allen][/p?id=2010] that her singing was too awful even for the realistic singing voices he was after. She said she doesn't even sing in the shower.</li><li> [Woody Allen][/p?id=2010] did not tell the actors that it was a musical until after they signed their contracts.</li><li> The first [Woody Allen][/p?id=2010] film since [Love and Death][/f?id=D%C3%B6d%20Och%20Pina] (1975) to be shot outside of New York.</li><li> [Drew Barrymore][/p?id=1252] had to wear a wig because her hair was purple at the time.</li><li> [Drew Barrymore][/p?id=1252] was the only member of the cast to be dubbed for her singing. [Olivia Hayman][/p?id=Olivia%20Hayman] provided her voice.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

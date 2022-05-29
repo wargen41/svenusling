@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Amazing Spider-Man 2 | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Amazing Spider-Man 2 <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2014"><a href="#">2014</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Marc Webb</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1035.html">Andrew Garfield</a> – Spider-Man / Peter Parker</li><li><a href="/svenusling/p/1281.html">Emma Stone</a> – Gwen Stacy</li><li><a href="/svenusling/p/1427.html">Jamie Foxx</a> – Electro / Max Dillon</li><li>Dane DeHaan – Green Goblin / Harry Osborn</li><li><a href="/svenusling/p/1189.html">Colm Feore</a> – Donald Menken</li><li>Felicity Jones – Felicia</li><li><a href="/svenusling/p/1725.html">Paul Giamatti</a> – Aleksei Sytsevich</li><li>Sally Field – Aunt May</li><li>Embeth Davidtz – Mary Parker</li><li>Campbell Scott – Richard Parker</li><li><a href="/svenusling/p/1621.html">Marton Csokas</a> – Dr. Ashley Kafka</li><li>Louis Cancelmi – Man in Black Suit</li><li>Max Charles – Young Peter Parker</li><li>B.J. Novak – Alistair Smythe</li><li>Sarah Gadon – Kari</li><li>Michael Massee – Gustav Fiers (The Gentleman)</li><li>Jorge Vega – Jorge</li><li>Bill Heck – G-5 Co-Pilot</li><li>Teddy Coluca – Gwen's Cabbie</li><li>Helen Stern – British Desk Attendant</li><li>Cal McCrystal – Principal Conway</li><li>Anslem Richardson – Times Square Cop</li><li>Mark Doherty – Swat Team Leader</li><li>James Colby – Lead Officer</li><li>Kari Coleman – Helen Stacy</li><li>Skyler Gisondo – Howard Stacy</li><li>Charlie DePew – Philip Stacy</li><li>Robert Newman – Police Captain</li><li>Adrian Martinez – Bodega Cashier</li><li>Thaddeus Phillips – Robber</li><li>James McCauley – Air Traffic Controller</li><li>Rachael McOwen – Dispatcher</li><li>David Shabtai – Dispatcher</li><li>Greg Connolly – Osborn Butler</li><li>Timothy Adams – Pilot</li><li>Tug Coker – Pilot</li><li>Jabari Gray – Pilot</li><li>Jamie Lynn Concepcion – Jorge's Mother</li><li>Pat Kiernan – NY1 News Anchor</li><li>Jessica Abo – NY1 Reporter</li><li>Clem Cheung – Chinese Grandpa</li><li>Dusan Hyska – Armed Robber</li><li>Andrei Runtso – Armed Robber</li><li>Brennan Taylor – Ravencroft Guard</li><li>Slate Holmgren – Ravencroft Guard</li><li>Drew Beasley – Bully</li><li>Matthew Tronieri – Bully</li><li>Dario Barosso – Bully</li><li>Salvatore Rossi – Bully</li><li>Peter Tzotchev – Bully</li><li>Paul Urcioli – Doctor</li><li>David Shih – Doctor</li><li>Daniel Gerroll – OsCorp Department Head</li><li>Brian McElhaney – Times Square Bystander</li><li>Jonathan Braylock – Times Square Bystander</li><li>Steven Hauck – Corporate Lawyer</li><li>J.D. Walsh – Dr. Jallings - Science Investigator</li><li>Stan Lee – Graduation Guest</li><li>Hana Alvarez – Graduating Senior (uncredited)</li><li>Jessica Shea Alverson – Graduation Parent (uncredited)</li><li>Kayla Ayler-McCormick – ER Patient (uncredited)</li><li>Vic Bagratuni – Graduate (uncredited)</li><li>Elwaldo Baptiste – Airplane Passenger (uncredited)</li><li>Reginald L. Barnes – Boyfriend in Times Square (uncredited)</li><li>Kirrilee Berger – Girl at Funeral (uncredited)</li><li>Lorenzo Beronilla – Union Square Shopper (uncredited)</li><li>Joshua Black – Carousel Kid (uncredited)</li><li>Will Blomker – Security Tech (uncredited)</li><li>Rick Bolander – Pedestrian (uncredited)</li><li>Ian Boyd – Pedestrian / Frightened Driver (uncredited)</li><li>Chris Brennan – Gwen Stacy's Friend (uncredited)</li><li>Gregory M. Brown – ER Patient (uncredited)</li><li>Olivia Brown – Graduate (uncredited)</li><li>Aidy Bryant – Woman in Statue of Liberty Costume (uncredited)</li><li>Jeremiah Burch III – Young Peters Friend (uncredited)</li><li>Sean Buttimer – Graduation Attendee (uncredited)</li><li>Lex Campbell – Office Worker (uncredited)</li><li>Michael Carey – Background (uncredited)</li><li>Kenneth Carrella – Midwest Tourist (uncredited)</li><li>Grace Chai – Chinatown tourist (uncredited)</li><li>Kymberly Clark – Street Fair Pedestrian (uncredited)</li><li><a href="/svenusling/p/1157.html">Chris Cooper</a> – Norman Osborn (uncredited)</li><li>Richard R. Corapi – Pedestrian (uncredited)</li><li>Amanda Leigh Corbett – Graduating Senior (uncredited)</li><li>Mario Corry – Pedestrian (uncredited)</li><li>Twanta Craig – Pedestrian (uncredited)</li><li>Chris J. Cullen – News Cameraman (uncredited)</li><li>William Currid – Simon Stacy (uncredited)</li><li>Julia Davis – Taxicab Driver / NYPD Officer (uncredited)</li><li>Frank Deal – Agent Berkley (uncredited)</li><li>Daniel Delano – Graduate's Friend (uncredited)</li><li>Jacob Devik – Panicked Pedestrian (uncredited)</li><li>Nick Diamantis – OsCorp's Engineer (uncredited)</li><li>Joseph A. DiPietro – Concerned Bystander (uncredited)</li><li>John Donchak – Graduating Senior (uncredited)</li><li>Jedidiah Dore – Businessman (uncredited)</li><li>Rita Duran – Tourist (uncredited)</li><li>Adriana Dushaj – Pedestrian in Times Square (uncredited)</li><li>Amanda Dyar – Times Square Pedestrian (uncredited)</li><li>Mercedes Díaz – Pedestrian in Times Square (uncredited)</li><li>Lalaine Fabi – Graduation Parent (uncredited)</li><li>Tim Falter – Ravencroft Doctor (uncredited)</li><li>Jordan Fargo – Chinatown Pedestrian / Funeral Guest (uncredited)</li><li>Leon Feingold – Graduate Parent (uncredited)</li><li>Steve Ferrarie – Graduation Guest (uncredited)</li><li>Joe Fionda – Fleeing Pedestrian (uncredited)</li><li>Tanner Flood – Son on Plane (uncredited)</li><li>Z. Frankie – NYC Pedestrian (uncredited)</li><li>Abigail Friend – Girl on Boardwalk (uncredited)</li><li>Lori Frio – Graduation Guest (uncredited)</li><li>Karen Goeller – Graduation Guest (uncredited)</li><li>Jamie Greco – Graduation Parent (uncredited)</li><li>Philip Greene – Teacher (uncredited)</li><li>Najee Griffin – Pedestrian (uncredited)</li><li>Marc Guzman – High School Graduate (uncredited)</li><li>Lindsay-Elizabeth Hand – Graduating Senior (uncredited)</li><li>Amyrh Harris – Young Peter's Friend (uncredited)</li><li>Odette Warder Henderson – Pedestrian (uncredited)</li><li>Patricia Hodges – Pedestrian (uncredited)</li><li>James Hook – Time Square Sniper (uncredited)</li><li>Rosemary Howard – Pedestrian (uncredited)</li><li>Tony Joe – Businessman (uncredited)</li><li>Lanii Johnson – Accident Pedestrian (uncredited)</li><li>Vivian Kalinov – NYC Tourist in Chelsea (uncredited)</li><li>Shana Kaplan – Pedestrian in Times Square (uncredited)</li><li>Fukumi Kashiwagi – Graduate Parent (uncredited)</li><li>Kevin Michael Kennedy – Airplane Passenger (uncredited)</li><li>Laura Klibanoff – Woman on Street (uncredited)</li><li>Christopher Kolling – Times Square Bystander (uncredited)</li><li>Kenneth Kopolovicz – Graduation Attendee (uncredited)</li><li>John Larkin – Friend of Family (uncredited)</li><li>Jordan Lazieh – Union Square Shopper (uncredited)</li><li>Denis Leary – Captain Stacy (uncredited)</li><li>Lloyd LeBaron – Graduation Parent (uncredited)</li><li>Paul Jude Letersky – Oscorp Control Tower Tech (uncredited)</li><li>Kris Lundberg – Woman on Street (uncredited)</li><li>Raymond Mamrak – Cop (uncredited)</li><li>Pedro Marcelino – Passer By (uncredited)</li><li>Mota Maria – Parent at High School Graduation (uncredited)</li><li>Lynn Marocola – Times Square Tourist (uncredited)</li><li>Daniel T. Martin – Pedestrian (uncredited)</li><li>Meghan Mazurczyk – Cafe Patron (uncredited)</li><li>Doris McCarthy – Oscorp Board Member (uncredited)</li><li>Lauren Michele – Frantic Pedestrian / Passenger (uncredited)</li><li>Rikki-lee Millbank – Pedestrian (uncredited)</li><li>Drew Moore – OsCorp Scientist (uncredited)</li><li>Peter Muggleworth – Graduation Guest (uncredited)</li><li>Brian Murray – Graduate (uncredited)</li><li>Edgar Nicholson – Graduation Parent (uncredited)</li><li>Ryan Nicolls – Spidey Supporter (uncredited)</li><li>Thelma O'Leary – Tourist (uncredited)</li><li>Ebony Obsidian – Graduate (uncredited)</li><li>And Palladino – Times Square Pedestrian (uncredited)</li><li>Evie Paller – Child Pedestrian / Carousel Rider (uncredited)</li><li>Nora Paller – Child Pedestrian / Carousel Rider (uncredited)</li><li>Alex Parada – Pedestrian (uncredited)</li><li>D.J. Paris – Chinatown Shopper (uncredited)</li><li>Ladell Parks – Pedestrian (uncredited)</li><li>Rich Petrillo – Times Sq Vendor (uncredited)</li><li>Jamie Lee Petronis – Gwen's Friend (uncredited)</li><li>Joshua Elliott Pickel – Bully Kid (uncredited)</li><li>Richie Piper – Business Man Pedestrian (uncredited)</li><li>Lauren Quirolgico – Graduate's Friend (uncredited)</li><li>Romesh Radhakrishnan – Pedestrian (uncredited)</li><li>Prashant Rai – Tourist (uncredited)</li><li>Jon Douglas Rainey – Times Square Man in Danger (uncredited)</li><li>Neil Reese – Times Square Pedestrian (uncredited)</li><li>Casey Roberts – Graduation Guest (uncredited)</li><li>Ronke – Graduate's Friend (uncredited)</li><li>Fernando Rosas – Pedestrian (uncredited)</li><li>Paula Rossman – Parent at Graduation Photographer of Gwen and Her family) (uncredited)</li><li>Alyssa Ruland – Granddaughter in Times Square (uncredited)</li><li>Rob Scebelo – Riot Guard (uncredited)</li><li>Chuck Schanamann – News Cameraman (uncredited)</li><li>Gary Schnakenberg – Scared Pedestrian (uncredited)</li><li>George Schroeder – Construction Worker (uncredited)</li><li>Lynette Scire – Graduation Guest (uncredited)</li><li>Leetopher Scott – Times Square Merchant (uncredited)</li><li>Noah Shaffer – Extra (uncredited)</li><li>Marshall Sharer – University Faculty (uncredited)</li><li><a href="/svenusling/p/1620.html">Martin Sheen</a> – Uncle Ben (uncredited)</li><li>Nancy Ellen Shore – Midwestern Tourist / NYC Businesswoman (uncredited)</li><li>Katherine Stephens-Miller – Funeral Attendee (uncredited)</li><li>Zhivko Stoyanov – NYC Tourist at Times Square (uncredited)</li><li>Ruth Sundell – Times Square Girlfriend (uncredited)</li><li>Rafael Svarin – Pedestrian (uncredited)</li><li>Mario Tarquinio – Time Square Crowd (uncredited)</li><li>Frank Todaro – Graduation Attendee (uncredited)</li><li>Millie Torchetti – Times Square Tourist (uncredited)</li><li>Emily Song Tyler – Chinatown Shopper (uncredited)</li><li>Theo van Golen – Carousel Rider / Graduation Guest (uncredited)</li><li>Lee Vang – Chinatown Pedestrian (uncredited)</li><li>Daniel Ventura – Pedestrian (uncredited)</li><li>Chris Victor – Boom Operator News Crew (uncredited)</li><li>Stefano Villabona – Times Square Pedestrian (uncredited)</li><li>Barbara Vincent – Car Accident Victim (uncredited)</li><li>Emily Vitek – New York Tourist (uncredited)</li><li>Darren Whitfield – Core Times Square Merchant (uncredited)</li><li>Kelli Wilcoxen – Times Square Tourist (uncredited)</li><li>Cris Williams – College Student (uncredited)</li><li>Royal Yates – Tourist (uncredited)</li><li>James Zeiss – Tourist (uncredited)</li><li>Dante Zuccaro – Businessman (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Schmoes - Årets största besvikelse 2014</li><li>ASCAP Award - Top Box Office Films 2015</li><li>Blimp Award - Favorite Movie Actress 2015 (1281)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Schmoes - Årets sämsta film 2014</li><li>Golden Trailer - Best Action TV Spot 2014</li><li>Golden Trailer - Most Original TV Spot 2014</li><li>Golden Trailer - Best Summer 2014 Blockbuster Trailer 2014</li><li>Golden Trailer - Best Summer Blockbuster 2014 TV Spot 2014</li><li>Golden Trailer - Best Summer Blockbuster 2014 TV Spot 2014</li><li>HMMA Award - Bästa Soundtrack album 2014</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa klippning 2014</li><li>Teen Choice Award - Choice Movie: Sci-Fi/Fantasy 2014</li><li>Teen Choice Award - Choice Movie Actor: Sci-Fi/Fantasy 2014 (1035)</li><li>Teen Choice Award - Choice Movie Actress: Sci-Fi/Fantasy 2014 (1281)</li><li>Teen Choice Award - Choice Movie: Villain 2014 (1427)</li><li>Teen Choice Award - Choice Movie: Liplock 2014</li><li>Young Hollywood Award - Super Superhero 2014 (1035)</li><li>Young Hollywood Award - We Love to Hate You 2014</li><li>Young Hollywood Award - Best On-Screen Couple 2014</li><li>Saturn Award - Best Comic-to-Film Motion Picture 2015</li><li>Annie Awards, Annie - Outstanding Achievement in Animated Effects in a Live Action Production 2015</li><li>Black Reel - Outstanding Original Song (Song: "It's On Again") 2015</li><li>Blimp Award - Favorite Movie 2015</li><li>Blimp Award - Favorite Movie Actor 2015 (1427)</li><li>Blimp Award - Favorite Male Action Star 2015 (1035)</li><li>Blimp Award - Favorite Villain 2015 (1427)</li><li>International 3D & Advanced Imaging Society's Creative Arts Awards, Creative Arts Award - 3D Feature - Live Action 2015</li><li>International 3D & Advanced Imaging Society's Creative Arts Awards, Creative Arts Award - Outstanding Use of 2D to 3D Conversion 2015</li><li>MTV Movie Award - Bästa kyss 2015</li><li>People's Choice Award - Favorite Action Movie 2015</li><li>People's Choice Award - Favorite Movie Duo 2015</li><li>Young Artist Award - Best Performance in a Feature Film - Supporting Young Actor 2015 (Max Charles)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Emma Stone][/p?id=1281] personally wrote Gwen's graduation speech.</li><li>[Shailene Woodley][/p?id=Shailene%20Woodley] was cast as Mary-[Jane Watson][/p?id=Jane%20Watson], and even filmed scenes. But her role was cut from the film because the filmmakers felt there were too many characters and wanted to streamline the series.</li><li>The humorously hateful news boss J. Jonah Jameson, one of the most iconic characters in [Spider-Man's][/f?id=18668] mythos, was never mentioned in The Amazing [Spider-Man][/f?id=18668] (2012). In this sequel he is spoken of frequently but never appears. The producers claimed they could not find an actor to measure up to [J.K. Simmons'][/p?id=J.K.%20Simmons] legendary portrayal of this character in [Sam Raimi's][/p?id=Sam%20Raimi] [Spider-Man][/f?id=18668] films. [Stan Lee][/p?id=Stan%20Lee], the writer who came up with the idea for these characters and makes cameo appearances in all the films, has often said he would volunteer to play Jameson if he ([Lee][/p?id=Stan%20Lee]) were 30 or 40 years younger.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

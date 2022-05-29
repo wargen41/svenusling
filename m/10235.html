@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Helgons Blodiga Natt | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Helgons Blodiga Natt <a href="#" class="grade">+++++</a></h2>
+										<h3>Halloween</h3>
+										<p>
+										Film från <time datetime="1978"><a href="#">1978</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John Carpenter</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1250.html">Donald Pleasence</a> – Dr. Sam Loomis</li><li><a href="/svenusling/p/1428.html">Jamie Lee Curtis</a> – Laurie Strode</li><li>Nancy Kyes – Annie Brackett</li><li>P.J. Soles – Lynda van der Klok</li><li>Charles Cyphers – Sheriff Leigh Brackett</li><li>Kyle Richards – Lindsey Wallace</li><li>Brian Andrews – Tommy Doyle</li><li>John Michael Graham – Bob Simms</li><li>Nancy Stephens – Marion Chambers</li><li>Arthur Malet – Graveyard Keeper</li><li>Mickey Yablans – Richie</li><li>Brent Le Page – Lonnie Elamb</li><li>Adam Hollander – Keith</li><li>Robert Phalen – Dr. Terence Wynn</li><li>Tony Moran – Michael Myers (age 23)</li><li>Will Sandin – Michael Myers (age 6)</li><li>Sandy Johnson – Judith Margaret Myers</li><li>David Kyle – Judith's Boyfriend</li><li>Peter Griffith – Morgan Strode</li><li>Nick Castle – The Shape</li><li>Barry Bernardi – Dead Mechanic (uncredited)</li><li class="voice">John Carpenter – Paul, Annie's Boyfriend (röst) (uncredited)</li><li>George O'Hanlon Jr. – Mr. Peter Myers (uncredited)</li><li>Darla Rae – Student (uncredited)</li><li>Jennifer Rhodes – Psych Ward Nurse (uncredited)</li><li>Gwen Van Dam – Sanitarium Nurse (uncredited)</li><li>Tommy Lee Wallace – Michael Myers (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Los Angeles Film Critics Association Awards, Los Angeles Film Critics Association Awards 1979 (John Carpenter)</li><li>Avoriaz Fantastic Film Festival, Critics Award 1979 (John Carpenter)</li><li>National Film Preservation Board, National Film Registry 2006</li><li>Saturn Award - Best DVD/Blu-Ray Special Edition Release (For the 35th Anniversary Edition Blu-Ray.) 2014</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Chicago International Film Festival, Gold Hugo - Bästa film 1979 (John Carpenter)</li><li>Saturn Award - Bästa Skräckfuilm 1979</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Due to its shoestring budget, the prop department had to use the cheapest $2 mask that they could find in the costume store: a [Star Trek][/f?id=19154] (1966) [William Shatner][/p?id=2008] mask. They later spray-painted the face white, teased out the hair, and reshaped the eye holes. [Shatner][/p?id=2008] admitted that for years he had no idea his likeness was used for this film. It was only during an interview that someone mentioned his mask was being used. He has since stated that he is honored by this gesture.</li><li>For years after 'Halloween' was released, people would tell writer/director [John Carpenter][/p?id=John%20Carpenter] how horrified they were by Michael Myers grotesquely disfigured face, glimpsed when Laurie pulls his mask off for a moment towards the end of the film. But actually all they saw was the ordinary face of the actor [Tony Moran][/p?id=Tony%20Moran] playing the role, perfectly normal except for the small knife wound inflicted by Laurie during their struggle in the closet which was created using Special Effects makeup. [Carpenter][/p?id=John%20Carpenter] cites this as evidence of the power of suggestion in cinema, that the audience saw a monster on-screen so assumed that he must look like a monster underneath the mask.</li><li>From a budget of $300,000 the film went on to gross $47 million at the US box office. In 2008 takings that would be the equivalent of $150 million, making [Halloween][/f?id=10235] (1978) one of the most successful independent films of all time.</li><li>[John Carpenter][/p?id=John%20Carpenter] and [Debra Hill][/p?id=Debra%20Hill] have stated many times over the years that they did not consciously set out to depict virginity as a way of defeating a rampaging killer. The reason why the horny teens all die is simply that they're so preoccupied with getting laid that they don't notice that there's a killer at large. Laurie Strode, on the other hand, spends a lot of time on her own and is therefore more alert.</li><li>Of the female leads (all the girls are supposed to be in high school), only [Jamie ][/p?id=Jamie%20]Christopher Lee||Lee[ Curtis][/p?id=%20Curtis] was actually a teenager at the time of shooting.</li><li>A young [Jamie ][/p?id=Jamie%20]Christopher Lee||Lee[ Curtis][/p?id=%20Curtis] was so disappointed with her performance that she became convinced she would be fired after only the first day of filming. When her phone rang that night and it was [John Carpenter][/p?id=John%20Carpenter] on the phone, Curtis was certain it was the end of her movie career. Instead, [Carpenter][/p?id=John%20Carpenter] called to congratulate her and tell her he was very happy with the way things had gone.</li><li>[John Carpenter][/p?id=John%20Carpenter] considered the hiring of [Jamie ][/p?id=Jamie%20]Christopher Lee||Lee[ Curtis][/p?id=%20Curtis] as the ultimate tribute to Alfred [Hitchcock][/f?id=14588] who had given her mother, [Janet Leigh][/p?id=Janet%20Leigh], legendary status in [Psycho (1960)][/f?id=17541].</li><li>As the film was shot out of sequence, [John Carpenter][/p?id=John%20Carpenter] created a fear meter so that [Jamie ][/p?id=Jamie%20]Christopher Lee||Lee[ Curtis][/p?id=%20Curtis] would know what level of terror she should be exhibiting.</li><li>[John Carpenter's][/p?id=John%20Carpenter] intent with the character of Michael Myers was that the audience should never be able to relate to him.</li><li>The original script, titled &quot;The Babysitter Murders&quot;, had the events take place over the space of several days. It was a budgetary decision to change the script to have everything happen on the same day (doing this reduced the number of costume changes and locations required) and it was decided that Halloween, the scariest night of the year, was the perfect night for this to happen.</li><li>[Carpenter][/p?id=John%20Carpenter] approached [Peter Cushing][/p?id=1738] and [Christopher Lee][/p?id=1169] to play the Sam Loomis role (that was eventually played by [Donald Pleasence][/p?id=1250]) but both turned him down. [Lee][/p?id=1169] later said it was the biggest mistake he had ever made in his career.</li><li>In the documentary short, 'Halloween' Unmasked 2000 (1999), it was revealed that the crew had chosen two masks for Michael Myers to decide on. The first was a Don Post [Emmett Kelly][/p?id=Emmett%20Kelly] smiling clown mask that they put frizzy red hair on. This was an homage to how he killed his sister, Judith, in a clown costume. They tested it out and it appeared very demented and creepy. The other mask was a 1975 Captain James T. Kirk mask that was purchased for around a dollar. It had the eyebrows and sideburns ripped off, the face was painted fish belly white, and the hair was spray painted brown, and the eyes were opened up more. They tested out the Kirk mask and the crew decided that it was much more creepy because it was emotionless. This became the Michael Myers mask.</li><li>Half of the $300,000 budget was spent on the Panavison cameras so the film would have a 2.35:1 scope. [Donald Pleasence][/p?id=1250] was paid $20,000 for 5 days work.</li><li>[John Carpenter][/p?id=John%20Carpenter] was quite intimidated by [Donald Pleasence][/p?id=1250], of whom he was a big fan and who was easily the oldest and most experienced person on set. Although [Pleasence][/p?id=1250] asked [Carpenter][/p?id=John%20Carpenter] difficult questions about his character, [Pleasence][/p?id=1250] turned out to be a good-humored, big-hearted individual and the two became great friends. [Pleasence][/p?id=1250] went on to appear in two other [Carpenter][/p?id=John%20Carpenter] films.</li><li>[Jamie ][/p?id=Jamie%20]Christopher Lee||Lee[ Curtis'][/p?id=%20Curtis] first feature film. She was paid a reported $8,000 for her efforts.</li><li>Originally, [Nick Castle][/p?id=Nick%20Castle] was on set just to watch the movie be filmed. It was at the suggestion of [John Carpenter][/p?id=John%20Carpenter] that he took up the role of Michael Myers.</li><li>[Donald Pleasence][/p?id=1250] confessed to [John Carpenter][/p?id=John%20Carpenter] that the main reason why he took the part of Loomis was because his daughter Angela (who was a musician) had loved [Carpenter's][/p?id=John%20Carpenter] musical score for his previous movie [Assault on Precinct 13][/f?id=10499] (1976).</li><li>In an interview, Moustapha Akkad said that [John Carpenter][/p?id=John%20Carpenter] had envisioned making the movie for around $300,000. Coincidentally, Akkad said he was producing and filming a major motion picture at the same time starring [Laurence Olivier][/p?id=1568] which was costing his company roughly around $300,000 a day. When [Carpenter][/p?id=John%20Carpenter] told him the fixed price of his movie, he immediately funded it.</li><li>[Donald Pleasence][/p?id=1250] did all of his scenes in only 5 days of shooting. The total duration of his scenes is just over 18 minutes.</li><li>[Peter O'Toole][/p?id=1748], [Mel Brooks][/p?id=1634], [Steven Hill][/p?id=Steven%20Hill], [Walter Matthau][/p?id=1987], [Jerry Van Dyke][/p?id=Jerry%20Van%20Dyke], [Lawrence Tierney][/p?id=Lawrence%20Tierney], [Kirk Douglas][/p?id=1554], [John Belushi][/p?id=1472], [Lloyd Bridges][/p?id=1589], [Abe Vigoda][/p?id=Abe%20Vigoda], [Kris Kristofferson][/p?id=1558], [Sterling Hayden][/p?id=Sterling%20Hayden], [David Carradine][/p?id=1213], [Dennis][/f?id=12020] Hopper, [Charles Napier][/p?id=Charles%20Napier], [Yul Brynner][/p?id=2014] and [Edward Bunker][/p?id=Edward%20Bunker] were considered for the role of Dr. Sam Loomis.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

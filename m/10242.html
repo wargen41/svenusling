@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Helgons Blodiga Natt: Resurrection | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Helgons Blodiga Natt: Resurrection <a href="#" class="grade">+</a></h2>
+										<h3>Halloween: Resurrection</h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre22">Skräck</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Rick Rosenthal</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1428.html">Jamie Lee Curtis</a> – Laurie Strode</li><li>Brad Loree – Michael Myers</li><li>Busta Rhymes – Freddie Harris</li><li>Bianca Kajlich – Sara Moyer</li><li>Sean Patrick Thomas – Rudy</li><li>Daisy McCrackin – Donna</li><li>Katee Sackhoff – Jen</li><li>Luke Kirby – Jim</li><li>Thomas Ian Nicholas – Bill</li><li>Ryan Merriman – Myles Barton</li><li>Tyra Banks – Nora</li><li>Billy Kay – Scott</li><li>Gus Lynch – Harold</li><li>Lorena Gale – Nurse Wells</li><li>Marisa Rudiak – Nurse Phillips</li><li>Brent Chapman – Franklin</li><li>Dan Joffre – Willie</li><li>Haig Sutherland – Aron</li><li>Brad Sihvon – Charley</li><li>Kelly Nielson – Officer</li><li>Gary J. Tunnicliffe – Officer</li><li>Ryan McDonald – Letter Sweater Guy</li><li>Charisse Baker – Teen Girl #2</li><li>Natassia Malthe – French Maid</li><li>Kyle Labine – Teen Party Guy</li><li>Rick Rosenthal – Professor</li><li>David Lewis – Bob Green</li><li>Chris Edwards – Fireman</li><li>Michael McCartney – Orderly</li><li>Ananda Thorson – Coroner</li><li><a href="/svenusling/p/1001.html">Adam Arkin</a> – Will Brennan (uncredited|archive footage)</li><li>Michael Arthur – Police Officer #2 (uncredited)</li><li>Artine Brown – Arresting Officer (uncredited)</li><li>Chris Durand – The Shape (uncredited|archive footage)</li><li>Josh Hartnett – John Strode / John Tate (uncredited|archive footage)</li><li>Jaida Hay – Girlfriend (uncredited)</li><li>Jason McKinnon – Boyfriend (uncredited)</li><li>Robert Musnicki – Fireman (uncredited)</li><li><a href="/svenusling/p/1250.html">Donald Pleasence</a> – Dr. Samuel 'Sam' Loomis (uncredited|archive footage)</li><li>Nancy Stephens – Marion Chambers Whittington (uncredited|archive footage)</li><li>Tamara Taggart – News Reporter (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Chainsaw Award - SÄmsta film (2:a plats) 2003</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Jamie Lee Curtis][/p?id=1428] agreed to do her part, only to make sure her character, Laurie Strode (or herself) wouldn't appear in another sequel. (At the time of the film's initial release, executive producers Malek Akkad, and Moustapha Akkad tried to explain it by claiming [Jamie Lee Curtis][/p?id=1428] &quot;was so impressed with the screenplay, that she wanted a large part in it&quot;. She has publicly stated that was not the case, she was under contract to do it.)</li><li>Several new endings were written during production and the cast was never sure how the film was actually going to end. Four different endings were filmed, and the director wanted the studio to ship a different ending to each theater, a technique used before during the theatrical release of Clue (1985). However, the studio disagreed and the endings now appear on the DVD and the Internet.</li><li>Was first named &quot;Halloween: The Homecoming&quot;, but producers wanted a title that said Michael Myers is alive so in February 2002, the film was officially named &quot;[Halloween: Resurrection][/f?id=Halloween%3A%20Resurrection].&quot;</li><li>Originally, the executives of Miramax wanted to continue the series by creating a whole new story of which didn't have anything to do with Michael Myers after the last film, in a similar manner to ::Alla Helgons Blodiga Natt 3||Halloween 3 (1982). However, poll results conducted throughout fan websites proved to the producers that fans wanted Michael Myers to return again.</li><li>Director [Rick Rosenthal][/p?id=Rick%20Rosenthal] previously directed [Halloween 2][/f?id=10236] (1981) - 21 years earlier.</li><li>[Halloween: Resurrection][/f?id=Halloween%3A%20Resurrection] concludes with the potential for another sequel to continue the story, [Josh Hartnett][/p?id=Josh%20Hartnett] was originally planned to reprise his role as John Tate and seek revenge for his mother's death.</li><li>[Katee Sackhoff][/p?id=Katee%20Sackhoff] originally was supposed to portray Donna Chang.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

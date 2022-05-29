@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alien | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alien <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1979"><a href="#">1979</a></time><br>										<ul class="genres"><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1797.html">Ridley Scott</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Tom Skerritt – Dallas</li><li><a href="/svenusling/p/1882.html">Sigourney Weaver</a> – Ripley</li><li>Veronica Cartwright – Lambert</li><li><a href="/svenusling/p/1361.html">Harry Dean Stanton</a> – Brett</li><li><a href="/svenusling/p/1488.html">John Hurt</a> – Kane</li><li><a href="/svenusling/p/1386.html">Ian Holm</a> – Ash</li><li>Yaphet Kotto – Parker</li><li>Bolaji Badejo – Alien</li><li class="voice">Helen Horton – Mother (röst)</li><li>Eddie Powell – Alien (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>San Sebastián International Film Festival, Silver Seashell - Best Cinematography and Special Effects 1979</li><li>Oscar - Bästa specialeffekter 1980</li><li>BAFTA Film Award - Bästa ljudspår 1980</li><li>BAFTA Film Award - Bästa scenografi 1980</li><li>Saturn Award - Bästa Science Fiction-film 1980</li><li>Saturn Award - Bästa regi 1980 (1797)</li><li>Saturn Award - Bästa kvinnliga biroll 1980 (Veronica Cartwright)</li><li>Hugo Awards, Hugo - Best Dramatic Presentation 1980</li><li>National Film Preservation Board, National Film Registry 2002</li><li>DVDX Award - Best Audio Commentary (New for DVD) ((Alien Quadrilogy).) 2003</li><li>DVDX Award - Best Overall DVD, Classic Movie (Including All Extra Features) ((Alien Quadrilogy).) 2004</li><li>Sierra Award - Best DVD (For "The Alien Quadrilogy".) 2004</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>British Society of Cinematographers, Best Cinematography Award 1979</li><li>Oscar - Bästa scenografi 1979</li><li>Golden Globe - Bästa musik 1980</li><li>BAFTA Film Award - Bästa manliga biroll 1980 (1488)</li><li>BAFTA Film Award - Mest lovande nykomling i en huvudroll 1980 (1882)</li><li>BAFTA Film Award - Bästa kostym 1980</li><li>BAFTA Film Award - Bästa klippning 1980</li><li>BAFTA Film Award, Anthony Asquith Award for Film Music 1980 (Jerry Goldsmith)</li><li>Saturn Award - Bästa skådespelerska 1980 (1882)</li><li>Saturn Award - Bästa manus 1980 (Dan O'Bannon)</li><li>Saturn Award - Bästa specialeffekter 1980</li><li>Saturn Award - Bästa smink 1980</li><li>Grammy - Best Album of Original Score Written for a Motion Picture or Television Special 1980 (Jerry Goldsmith)</li><li>DVDX Award - Best Behind-the-Scenes Program (New for DVD) (Alien Quadrilogy) 2003</li><li>DVDX Award - Best Menu Design (For "The Alien Quadrilogy".) 2003</li><li>Saturn Award - Best DVD Collection (For the "Alien Quadrilogy".) 2004</li><li>Golden Satellite Award - Best Overall DVD (For "The Alien Quadrilogy".) 2004</li><li>Golden Satellite Award - Best DVD Extras (For "The Alien Quadrilogy".) 2004</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Originally to be directed by [Walter Hill][/p?id=1986], but he pulled out and gave the job to [Ridley Scott][/p?id=1797].</li><li> [Veronica Cartwright][/p?id=Veronica%20Cartwright] was originally to play Ripley, but producers opted for [Sigourney Weaver][/p?id=1882].</li><li> All of the names of the main characters were changed by [Walter Hill][/p?id=1986] and David Giler during the revision of the original script by [Dan O'Bannon][/p?id=Dan%20O'Bannon] and Ronald Shusett. The script by [O'Bannon][/p?id=Dan%20O'Bannon] and Shusett also had a clause indicating that all of the characters are &quot;unisex&quot;, meaning they could be cast with male or female actors. However, Shusett and [O'Bannon][/p?id=Dan%20O'Bannon] never thought of casting Ripley as a female character.</li><li> [Ridley Scott][/p?id=1797] is reportedly quoted as saying that originally he wanted a much darker ending. He planned on having the alien bite off Ripley's head in the escape shuttle, sit in her chair, and then start speaking with her voice in a message to Earth. Apparently, 20th Century Fox wasn't too pleased with such a dark ending.</li><li> The rumor that the cast, except for [John Hurt][/p?id=1488], did not know what would happen during the chestburster scene is partly true. The scene had been explained for them, but they did not know specifics. For instance, [Veronica Cartwright][/p?id=Veronica%20Cartwright] did not expect to be sprayed with blood.</li><li> 130 alien eggs were made for the egg chamber inside the downed spacecraft.</li><li> The chestbursting scene was filmed in one take with four cameras.</li><li> It was conceptual artist 'Ron Cobb (I)' who came up with the idea that the Alien should bleed acid. This came about when [Dan O'Bannon][/p?id=Dan%20O'Bannon] couldn't find a reason why the Nostromo crew just wouldn't shoot the Alien with a gun.</li><li> There is no dialog for the first 6 minutes.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

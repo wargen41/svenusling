@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Kungens Män (1949) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Kungens Män (1949) <a href="#" class="grade">+++</a></h2>
+										<h3>All the King's Men</h3>
+										<p>
+										Film från <time datetime="1949"><a href="#">1949</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Robert Rossen</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Broderick Crawford – Willie Stark</li><li>John Ireland – Jack Burden</li><li>Joanne Dru – Anne Stanton</li><li>John Derek – Tom Stark</li><li>Mercedes McCambridge – Sadie Burke</li><li>Shepperd Strudwick – Adam Stanton</li><li>Ralph Dumke – Tiny Duffy</li><li>Anne Seymour – Mrs. Lucy Stark</li><li>Katherine Warren – Mrs. Burden</li><li>Raymond Greenleaf – Judge Monte Stanton</li><li>Walter Burke – Sugar Boy</li><li>Will Wright – Dolph Pillsbury</li><li>Grandon Rhodes – Floyd McEvoy</li><li>Beau Anderson – Undetermined Role (uncredited)</li><li>Sam Ash – Undetermined Role (uncredited)</li><li>Richard Bartell – Undetermined Role (uncredited)</li><li>Mary Bear – File Clerk (uncredited)</li><li>Helena Benda – Undetermined Role (uncredited)</li><li>Stanley Blystone – Undetermined Role (uncredited)</li><li>Marshall Bradford – Senator (uncredited)</li><li>William Bruce – Commissioner (uncredited)</li><li>Wheaton Chambers – Senator (uncredited)</li><li>Edwin Chandler – Radio Announcer (uncredited)</li><li>Alden 'Stephen' Chase – Puckett (uncredited)</li><li>James Conaty – Party Guest (uncredited)</li><li>William Cottrell – Reporter (uncredited)</li><li>Kenneth Cutler – Undetermined Role (uncredited)</li><li>Roy Darmour – Politician at Harrison's Headquarters (uncredited)</li><li>Earle S. Dewey – Joe Harrison (uncredited)</li><li>King Donovan – Reporter (uncredited)</li><li>Jack Evans – Undetermined Role (uncredited)</li><li>George Farmer – Bus Man (uncredited)</li><li>Tom Ferrandini – Politician (uncredited)</li><li>Robert Filmer – Editor (uncredited)</li><li>Paul Ford – Spokesman for Impeachment (uncredited)</li><li>Ted French – Dance Caller (uncredited)</li><li>Gil Frye – Party Guest (uncredited)</li><li>Jack Gargan – Undetermined Role (uncredited)</li><li>John Giles – Young Boy (uncredited)</li><li>Dick Gordon – Politician (uncredited)</li><li>Jack Gordon – Undetermined Role (uncredited)</li><li>Avery Graves – Senator (uncredited)</li><li>William E. Green – Senator (uncredited)</li><li>Charles Haefeli – Man in Cheap Bar (uncredited)</li><li>Richard Hale – Richard Hale (uncredited)</li><li>Bert Hanlon – Editor (uncredited)</li><li>Sam Harris – Politician (uncredited)</li><li>Judd Holdren – Politician (uncredited)</li><li>Beulah Hutton – Undetermined Role (uncredited)</li><li>Robert Karnes – Legislator (uncredited)</li><li>Kenner G. Kemp – Legislator (uncredited)</li><li>Donald Kerr – Spectator (uncredited)</li><li>Tom Kingston – Undetermined Role (uncredited)</li><li>Mike Lally – Undetermined Role (uncredited)</li><li>Nolan Leary – Senator (uncredited)</li><li>James Linn – Politician (uncredited)</li><li>Louis Mason – Minister (uncredited)</li><li>Paul Maxey – Local Chairman (uncredited)</li><li>Frank McClure – Doctor (uncredited)</li><li>Walter Merrill – Man in City Bar (uncredited)</li><li>Harold Miller – Speaker of the House (uncredited)</li><li>H.C. Miller – Pa Stark (uncredited)</li><li>John 'Skins' Miller – Drunk at Football Game (uncredited)</li><li>Bob Milton – Undetermined Role (uncredited)</li><li>George Morrell – Undetermined Role (uncredited)</li><li>Truett Myers – Minister at Funeral (uncredited)</li><li>Pat O'Malley – Politician (uncredited)</li><li>Gil Perkins – Spectator (uncredited)</li><li>Charles Perry – Bit Role (uncredited)</li><li>Charles Sherlock – Politician at Harrison's Headquarters (uncredited)</li><li>Leslie Sketchley – Undetermined Role (uncredited)</li><li>Irving Smith – Butler (uncredited)</li><li>Helene Stanley – Helene Hale (uncredited)</li><li>Larry Steers – Undetermined Role (uncredited)</li><li>Houseley Stevenson – Madison - the Editor (uncredited)</li><li>Charles Sullivan – Spectator (uncredited)</li><li>William Tannen – Man in City Bar (uncredited)</li><li>George Taylor – Politician (uncredited)</li><li>Al Thompson – Man in Cheap Bar (uncredited)</li><li>Glen Thompson – State Trooper (uncredited)</li><li>A.C. Tillman – Sheriff (uncredited)</li><li>Phil Tully – Football Coach (uncredited)</li><li>Reba Waterson – Receptionist (uncredited)</li><li>Frank Wilcox – Public Relations Man (uncredited)</li><li>Rhoda Williams – Undetermined Role (uncredited)</li><li>Harry Wilson – One of Duffy's Goons (uncredited)</li><li>Bill Wolfe – Farmer (uncredited)</li><li>Al Wyatt – State Trooper (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>NYFCC Award - Bästa film 1949</li><li>NYFCC Award - Bästa skådespelerska 1949 (Broderick Crawford)</li><li>Oscar - Bästa film 1950</li><li>Oscar - Bästa skådespelare 1950 (Broderick Crawford)</li><li>Oscar - Bästa kvinnliga biroll 1950 (Mercedes McCambridge)</li><li>Golden Globe - Bästa film - Drama 1950</li><li>Golden Globe - Bästa regi 1950 (Robert Rossen)</li><li>Golden Globe - Bästa skådespelare 1950 (Broderick Crawford)</li><li>Golden Globe - Bästa kvinnliga biroll 1950 (Mercedes McCambridge)</li><li>Golden Globe - Most Promising Newcomer - Female (Mercedes McCambridge)</li><li>DGA Award - Bästa regi 1950 (Robert Rossen)</li><li>WGA Award (Screen) - Best Written American Drama 1950 (Robert Rossen)</li><li>WGA Award (Screen) - The Robert Meltzer Award (Screenplay Dealing Most Ably with Problems of the American Scene) 1950 (Robert Rossen)</li><li>National Film Preservation Board, National Film Registry 2001</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa regi 1950 (Robert Rossen)</li><li>Oscar - Bästa manliga biroll 1950 (John Ireland)</li><li>Oscar - Bästa manus 1950 (Robert Rossen)</li><li>Oscar - Bästa klippning 1950</li><li>Golden Globe - Bästa foto 1950</li><li>Golden Globe - Bästa musik 1950</li><li>Venice Film Festival, Golden Lion 1950 (Robert Rossen)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Producer-Director [Robert Rossen][/p?id=Robert%20Rossen] offered the role of Willie Stark to [John Wayne][/p?id=1504]. [Rossen][/p?id=Robert%20Rossen] sent a copy of the script to [Wayne's][/p?id=1504] agent, Charles K. Feldman, who forwarded it to [Wayne][/p?id=1504]. After reading the script, [Wayne][/p?id=1504] sent it back with an angry letter attached. In it, he told Feldman that before he sent the script to any of his other clients, he should ask them if they wanted to star in a film that &quot;smears the machinery of government for no purpose of humor or enlightenment,&quot; that &quot;degrades all relationships,&quot; and that is populated by &quot;drunken mothers; conniving fathers; double-crossing sweethearts; bad, bad, rich people; and bad, bad poor people if they want to get ahead.&quot; He accused [Rossen][/p?id=Robert%20Rossen] of wanting to make a movie that threw acid on &quot;the American way of life.&quot; If Feldman had such clients, [Wayne][/p?id=1504] wrote that the agent should &quot;rush this script... to them.&quot; [Wayne][/p?id=1504], however, said to the agent that &quot;You can take this script and shove it up [Robert Rossen's][/p?id=Robert%20Rossen] derri?re...&quot; [Wayne][/p?id=1504] later remarked that &quot;To make Huey Long a wonderful, rough pirate was great,&quot; he said; &quot;but, according to this picture, everybody was s - t except for this weakling intern doctor who was trying to find a place in the world.&quot; [Broderick Crawford][/p?id=Broderick%20Crawford], who had played a supporting role in [Wayne's][/p?id=1504] [Seven Sinners][/f?id=18480] (1940), eventually received the part of Stark. In a bit of irony, [Crawford][/p?id=Broderick%20Crawford] was Oscar-nominated for the part of Stark and found himself competing against [Wayne][/p?id=1504], who was nominated the same year for Sands of Iwo Jima (1949). [Crawford][/p?id=Broderick%20Crawford] won the Best Actor Oscar, giving [Rossen][/p?id=Robert%20Rossen] the last laugh.</li><li> [Mercedes McCambridge's][/p?id=Mercedes%20McCambridge] film debut.</li><li>[Mercedes McCambridge][/p?id=Mercedes%20McCambridge] was cast after she got angry with the producers. She and other actresses were kept waiting in an office in New York City during open auditions. [McCambridge][/p?id=Mercedes%20McCambridge] told the producers off and stormed out of the office. They called her back and eventually cast her because she fit the part of Sadie.</li><li> Residents of the area around Stockton, California were used as extras in the film; often, director [Robert Rossen][/p?id=Robert%20Rossen] would give them speaking parts and film the &quot;rehearsals&quot; to get a more spontaneous effect.</li><li> To prepare for the role of Willie Stark, [Broderick Crawford][/p?id=Broderick%20Crawford] watched newsreels of Huey Long, the former Louisiana senator and governor on whose life the novel was loosely based.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>American Assassin | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>American Assassin <a href="#" class="grade">+</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2017"><a href="#">2017</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Michael Cuesta</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Dylan O'Brien – Mitch Rapp</li><li>Charlotte Vega – Katrina</li><li>Christopher Bomford – Bartender</li><li>Chris Webster – Mansur Recruit Video</li><li>Shahid Ahmed – Adnan Al-Mansur</li><li>Buster Reeves – Martial Arts Instructor</li><li>Nick Cavaliere – Building Superintendent</li><li>Simon Connolly – NSA Techie</li><li>Yousef 'Joe' Sweid – Khaled</li><li>Joost Janssen – American Operator (Mansur Compound)</li><li>Adam Collins – American Operator #2 (Mansur Compound)</li><li>Trevor White – Dr. Frain</li><li>Sanaa Lathan – Irene Kennedy</li><li>Jeff Davis – CIA Officer Giving Nuke Intel</li><li>David Suchet – Director Stansfield</li><li><a href="/svenusling/p/1655.html">Michael Keaton</a> – Stan Hurley</li><li>Michael Wildman – Orion Instructor</li><li><a href="/svenusling/p/1863.html">Scott Adkins</a> – Victor</li><li>Joseph Long – General Rostami</li><li>Mohammad Bakri – Ashani</li><li>Navid Negahban – Minister Behurz</li><li>Taylor Kitsch – Ghost</li><li>Gjevat Kelmendi – Vladik</li><li>Damian Dudkiewicz – Warsaw Cop</li><li>Alexis Barron – Pregnant Woman</li><li>Shiva Negar – Annika</li><li>Nej Adamson – Turkish Operative</li><li>Khalid Laith – Sharif</li><li>Aso Sherabayani – Turkish MP</li><li>Tolga Safer – Kamil, Sharif's Assistant</li><li>Göksun Çam – Sharif's Mistress</li><li>Jake Mann – Ben</li><li>Alaa Safi – Javeed</li><li>Bruno Bilotta – Keys</li><li>Martina Brusco – Hotel Concierge</li><li>Vladimir Friedman – Borys Bartosh</li><li>Roberto Sgarbi – Stolen Car Owner</li><li>Sydney White – Emily (Rome Safe House)</li><li>Sharif Dorani – Iranian Nuclear Physicist</li><li>Shani Erez – Female Mossad Agent</li><li>Bentley Kalu – Delta One Lead</li><li>Josh Danford – CIA Officer #3</li><li>Ronan Summers – Office of the Deck</li><li>Andrew Pleavin – Eisenhower Captain</li><li>Stephen Shafer – Blackhawk Pilot</li><li>Matt Rippy – USS Flynn Captain</li><li>Adam Robertson – Damage Control Officer</li><li>other cast: – </li><li>Steve Aldis – Market Trader (uncredited)</li><li>Rodrig Andrisan – Client Warsaw Antiques Market (uncredited)</li><li>Roy Beck – CIA Director (uncredited)</li><li>Kiera Bell – Flynn / Eisenhower crew (uncredited)</li><li>Kola Bokinni – Destroyer Boson (uncredited)</li><li>Dacio Caballero – Camorra (uncredited)</li><li>Ross Carter – Passerby (uncredited)</li><li>Morgan Chetcuti – Bagging Jihadi (uncredited)</li><li>David Cohen – Soviet Official (uncredited)</li><li>Bern Collaço – CIA Agent (uncredited)</li><li>Stacey Lynn Crowe – Market Stall Keeper (uncredited)</li><li>Gioacchino Jim Cuffaro – Passerby (uncredited)</li><li>Graham Curry – Tourist (uncredited)</li><li>Tom Dab – Market Trader (uncredited)</li><li>Christian Di Sciullo – Flight Deck Handler (uncredited)</li><li>Dino Fazzani – Shooter (uncredited)</li><li>Fatah Ghedi – CIA Target (uncredited)</li><li>Rod Glenn – Orion Instructor (uncredited)</li><li>Tuncay Gunes – Tourist (uncredited)</li><li>Erkan Halil – Turkish Citizen (uncredited)</li><li>Pierre Hammar – Tourist (uncredited)</li><li>Jason Hunjan – Body Guard (uncredited)</li><li>Roheel Hussain – Turkish Taxi Driver (uncredited)</li><li>Iurii Koriagin – Soviet Official (uncredited)</li><li>Kamil Lemieszewski – Waiter (uncredited)</li><li>Jorge Leon Martinez – CIA Agent (uncredited)</li><li>Ramzi Marouani – Passerby (uncredited)</li><li>Kenny-Lee Mbanefo – Jackson / Eisenhower Crew Officer (uncredited)</li><li>Zackary Momoh – Zach (uncredited)</li><li>Demelza O'Sullivan – Passerby (uncredited)</li><li>Richard Price – Flower Seller (uncredited)</li><li>Nig Richards – Shopper (uncredited)</li><li>Samantha Russell – Passerby (uncredited)</li><li>Nick Salsbury – Beggar in Polish Market (uncredited)</li><li>Melissa Sirol – Andrews (Flynn Crew) (uncredited)</li><li>Lamin Tamba – Johnson (uncredited)</li><li>Matt Townsend – Flynn Officer Lt. Rodriguez (uncredited)</li><li>Luke Tumber – Mossad Officer (uncredited)</li><li>Alexander Winters – Tourist Victim (uncredited)</li><li>Evie Wray – Video Game Assassin (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

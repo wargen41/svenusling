@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Allt Eller Inget | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Allt Eller Inget <a href="#" class="grade">++++</a></h2>
+										<h3>The Full Monty</h3>
+										<p>
+										Film från <time datetime="1997"><a href="#">1997</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Peter Cattaneo</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1805.html">Robert Carlyle</a> – Gaz</li><li>Mark Addy – David aka Dave</li><li>William Snape – Nathan</li><li>Steve Huison – Lomper</li><li><a href="/svenusling/p/1955.html">Tom Wilkinson</a> – Gerald</li><li>Paul Barber – Horse</li><li>Hugo Speer – Guy</li><li>Lesley Sharp – Jean</li><li>Emily Woof – Mandy</li><li>Deirdre Costello – Linda</li><li>Paul Butterworth – Barry</li><li>Dave Hill – Alan</li><li>Bruce Jones – Reg</li><li>Andrew Livingston – Terry</li><li>Vinny Dhillon – Sharon</li><li>Kate Layden – Bee</li><li>Joanna Swain – Sheryl</li><li>Diane Lane – Louise</li><li>Kate Rutter – Dole Clerk</li><li>June Broughton – Lomper's Mum</li><li>Glenn Cunningham – Police Inspector</li><li>Chris Brailsford – Duty Sergeant</li><li>Steve Garti – Policeman</li><li>Malcolm Pitt – Job Club Manager</li><li>Dennis Blanch – Director</li><li>Daryl Fishwick – Social Worker</li><li>David Lonsdale – Repossession Man</li><li>Muriel Hunt – Horse's Mum</li><li>Fiona Watts – Beryl</li><li>Theresa Maduemezia – Horse's Sister</li><li>Fiona Nelson – Horse's Sister</li><li>The British Steel Stocksbridge Band – Brass Band</li><li>Enn Reitel – Narrator (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>British Comedy Award - Bästa komedi 1997</li><li>Dinard British Film Festival, Audience Award 1997 (Peter Cattaneo)</li><li>Dinard British Film Festival, Golden Hitchcock 1997 (Peter Cattaneo)</li><li>Edinburgh International Film Festival, Audience Award 1997 (Peter Cattaneo)</li><li>European Film Award - Bästa film 1997</li><li>European Film Awards, Audience Award 1997</li><li>OCIC Award 1997</li><li>Torino International Festival of Young Cinema, Cipputi Award (For its original and strongly ironic ways to portray all aspects, human, social and cultural, of a crisis in a factory town.) 1997 (Peter Cattaneo)</li><li>Warsaw International Film Festival, Audience Award 1997 (Peter Cattaneo)</li><li>Oscar - Bästa musik 1998 (Anne Dudley)</li><li>BAFTA Film Award - Bästa film 1998</li><li>BAFTA Film Award - Bästa skådespelare 1998 (1805)</li><li>BAFTA Film Award - Bästa manliga biroll 1998 (1955)</li><li>BAFTA Film Award, Audience Award 1998</li><li>American Choreography Award - Outstanding Achievement in Feature Film 1998</li><li>Bodil Awards, Bodil - Bästa icke amerikanska film 1998 (Peter Cattaneo)</li><li>Brit Awards, Brit - Best Soundtrack 1998</li><li>Butaca Awards, Butaca - Best Art House Film 1998 (Peter Cattaneo)</li><li>David di Donatello Awards, David - Bästa utländska film 1998 (Peter Cattaneo)</li><li>Empire Award - Bästa brittiska film 1998</li><li>Evening Standard British Film Award - Bästa film 1998 (Peter Cattaneo)</li><li>Evening Standard British Film Award - Bästa skådespelare 1998 (1805)</li><li>German Film Awards, Best Foreign Film 1998 (Peter Cattaneo)</li><li>Goya Awards, Goya - Bästa europeiska film 1998</li><li>ALFS Award - British Film of the Year 1998</li><li>ALFS Award - British Actor of the Year 1998 (1805)</li><li>ALFS Award - British Producer of the Year 1998</li><li>ALFS Award - British Screenwriter of the Year 1998</li><li>ALFS Award - British Newcomer of the Year 1998 (Peter Cattaneo)</li><li>MTV Movie Award - Best New Filmmaker 1998 (Peter Cattaneo)</li><li>PGA Awards, Nova Award - Most Promising Producer in Theatrical Motion Pictures 1998</li><li>Robert Festival, Robert - Bästa utländska film 1998 (Peter Cattaneo)</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska skådespelare 1998 (1805)</li><li>Screen Actors Guild Awards, Actor - Bästa skådespelarensemble 1998</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa film 1998</li><li>Oscar - Bästa regi 1998 (Peter Cattaneo)</li><li>Oscar - Bästa manus 1998</li><li>Golden Globe - Bästa film - Komedi eller Musikal 1998</li><li>BAFTA Film Award, David Lean Award for Direction 1998 (Peter Cattaneo)</li><li>BAFTA Film Award - Bästa manliga biroll 1998 (Mark Addy)</li><li>BAFTA Film Award - Bästa kvinnliga biroll 1998 (Lesley Sharp)</li><li>BAFTA Film Award - Bästa manus 1998</li><li>BAFTA Film Award - Bästa ljud 1998</li><li>BAFTA Film Award, Alexander Korda Award for Best British Film 1998</li><li>BAFTA Film Award, Anthony Asquith Award for Film Music 1998 (Anne Dudley)</li><li>Australian Film Institute, Best Foreign Film Award 1998 (Peter Cattaneo)</li><li>Broadcast Film Critics Association Awards - Bästa film 1998</li><li>Chlotrudis Award - Bästa film 1998</li><li>Chlotrudis Award - Bästa manliga biroll 1998 (Mark Addy)</li><li>César Awards, César - Bästa utländska film 1998 (Peter Cattaneo)</li><li>MTV Movie Award - Bästa danssekvens 1998</li><li>Golden Reel Award - Best Sound Editing - Foreign Feature 1998</li><li>Golden Reel Award - Best Sound Editing - Music (Foreign & Domestic) 1998</li><li>Golden Satellite Award - Bästa film - Komedi eller Musikal 1998</li><li>Golden Satellite Award - Bästa skådespelare - Komedi eller Musikal 1998 (1805)</li><li>Golden Satellite Award - Bästa manliga biroll - Komedi eller Musikal 1998 (Mark Addy)</li><li>Golden Satellite Award - Bästa manus 1998</li><li>WGA Award (Screen) - Best Screenplay Written Directly for the Screen 1998</li><li>Satellite Award - Best Classic DVD (For the fully exposed edition.) 2007</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The title is a British slang phrase meaning &quot;the whole thing.&quot; According to screenwriter Simon Beaufoy, US studio executives found it perplexing since nobody in the film is named Monty.</li><li> The six leads did in fact perform a full-frontal strip-tease in front of 400 extras. Director [Peter Cattaneo][/p?id=Peter%20Cattaneo] described it as &quot;a one-take deal.&quot;</li><li> For the final sequence, the films choreographer was lying just in front of the stage, out of sight of the cameras, shouting out instructions to the actors.</li><li> [Danny Boyle][/p?id=Danny%20Boyle] was offered the chance to direct the movie, but turned it down because he wasn't impressed with the story.</li><li> The film holds the record for the highest-grossing UK film in history. It grossed a total of $256.9 million (£160.5 million).</li><li> First cinema film of '[Emily Woof][/p?id=Emily%20Woof]'.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

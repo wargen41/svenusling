@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Helgons Blodiga Natt - 20 År Senare | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Helgons Blodiga Natt - 20 År Senare <a href="#" class="grade">++</a></h2>
+										<h3>Halloween H20: 20 Years Later</h3>
+										<p>
+										Film från <time datetime="1998"><a href="#">1998</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Steve Miner</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1428.html">Jamie Lee Curtis</a> – Laurie Strode / Keri Tate</li><li><a href="/svenusling/p/1001.html">Adam Arkin</a> – Will Brennan</li><li><a href="/svenusling/p/1669.html">Michelle Williams</a> – Molly</li><li>Adam Hann-Byrd – Charlie</li><li>Jodi Lyn O'Keefe – Sarah</li><li>Janet Leigh – Norma</li><li>Josh Hartnett – John</li><li>LL Cool J – Ronny</li><li><a href="/svenusling/p/1514.html">Joseph Gordon-Levitt</a> – Jimmy</li><li>Branden Williams – Tony</li><li>Nancy Stephens – Marion</li><li>Beau Billingslea – Fitz</li><li>Matt Winston – Matt</li><li>Larisa Miller – Claudia</li><li>Emmalee Thompson – Casey</li><li>David Blanchard – Waiter</li><li>John Cassini – Cop #1</li><li>Jody Wood – Cop #2</li><li class="voice">LisaGay Hamilton – Shirl (röst)</li><li>Chris Durand – Michael</li><li class="voice">Tom Kane – Voice Over (röst)</li><li>Tiffani DiGregorio – Student (uncredited)</li><li>Rachel Galvin – Student (uncredited)</li><li>Arden James – Student (uncredited)</li><li>Steve Miner – School Financial Advisor (uncredited)</li><li>Carrie Phenix – Student (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>FMCJ Award - Bästa musik Skräck/Thriller 1998</li><li>Sitges - Catalonian International Film Festival, Best Film 1998 (Steve Miner)</li><li>Saturn Award - Bästa skräckfilm 1999</li><li>Saturn Award - Bästa skådespelerska 1999 (1428)</li><li>Blockbuster Entertainment Award - Favorite Actor - Horror 1999 (1001)</li><li>Blockbuster Entertainment Award - Favorite Actress - Horror 1999 (1428)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actor - Horror 1999 (LL Cool J)</li><li>Blockbuster Entertainment Award - Favorite Male Newcomer 1999 (Josh Hartnett)</li><li>MTV Movie Award - Best Breakthrough Male Performance 1999 (Josh Hartnett)</li><li>Young Artist Award - Best Performance in a Feature Film - Supporting Young Actor 1999 (1514)</li><li>Young Artist Award - Best Performance in a Feature Film - Supporting Young Actress 1999 (1669)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>On the television in the girls' room a clip from [Scream 2][/f?id=18023] (1997) is showing, reciprocating numerous Alla helgons blodiga natt (1978) references and clips in [Scream][/f?id=18022] (1996). However, according to producer Moustapha Akkad when the scene was filmed, the girls were actually watching En brud på hugget (1993), making an entirely different joke: a movie featuring Michael [Myers][/p?id=1674] had its characters watching [Mike Myers][/p?id=1674]. The clip was changed to [Scream 2][/f?id=18023] (1997) in post-production.</li><li>The reports that [Kevin Williamson's][/p?id=Kevin%20Will] original treatment for &quot;H20&quot; included a scene in which &quot;Halloween 4&quot; through &quot;6&quot; are acknowledged as being &quot;in continuity&quot; and &quot;canon&quot; are completely accurate. The scene did exist, and involved a bitchy student at Keri/Laurie's school giving a class report on the &quot;Haddonfield Murders&quot;, and going into great detail about Jamie Lloyd, [Danielle Harris][/p?id=Danielle%20Harris] and [J.C. Brandy's][/p?id=J.C.%20Brandy] character from &quot;Halloween 4&quot; through &quot;6&quot;. The student talks about Jamie losing her parents in an auto accident, as was the explanation in those sequels for Laurie Strode's absence. (In fact, the only reason for Laurie to be in the Witness Protection Program with her son under an assumed name as &quot;Keri Tate&quot; at all was because the original story for &quot;H20&quot; was conceived like this, with &quot;Halloween 4&quot; through &quot;6&quot; in continuity, and [Williamson][/p?id=1669] thus being required to create an explanation for Laurie's &quot;death&quot; in the previous movies and her subsequent resurrection.) The student's report chronicles Jamie's being hunted and eventually killed by her brother, Michael [Myers][/p?id=1674]. Upon hearing this oral presentation in the classroom, a grief-stricken Keri/Laurie then retreats to a restroom and throws up. This scene was of course omitted from the actual film.</li><li>[John Carpenter][/p?id=John%20Carpenter] was originally in the running to be the director for this particular follow-up since [Jamie Lee Curtis][/p?id=1428] wanted to reunite the cast and crew of the original to have active involvement in it. It was believed that [Carpenter][/p?id=John%20Carpenter] opted out because he wanted no active part in the sequel; however, this is not the case. [Carpenter][/p?id=John%20Carpenter] agreed to direct the movie, but his starting fee as director was $10 million. [Carpenter][/p?id=John%20Carpenter] rationalised this by believing the hefty fee was compensation for revenue he never received from the original Halloween, a matter that was still a point of contention between [Carpenter][/p?id=John%20Carpenter] and Akkad even after twenty years had passed. When Moustapha Akkad balked at [Carpenter's][/p?id=John%20Carpenter] fee, [Carpenter][/p?id=John%20Carpenter] walked away from the project.</li><li>[Josh Hartnett's][/p?id=Josh%20Hartnett] film debut.</li><li>During the scene where Norma is leaving, she stands in front the car from [Psycho (1960)][/f?id=17541]. The music playing in the background at this part is also from Psycho. [Janet Leigh][/p?id=Janet%20Leigh], who plays Norma, played Marion in Psycho. The license plate on the car is also the same as the second car Marion buys in Psycho, NFB 418, which are Norman Bates' initials.</li><li>[P.J. Soles][/p?id=P.J.%20Soles] was originally approached for the role of Keri Tate's/Laurie Strode's secretary. [Soles][/p?id=P.J.%20Soles] never gave a straight answer as to what she wanted to do, skeptical about returning to the series as someone completely different than her character Lynda, originally killed off in [Halloween][/f?id=10235] (1978). She eventually lost the role to [Jamie Lee Curtis's][/p?id=1428] mother, [Janet Leigh][/p?id=Janet%20Leigh], who was approached after not getting an answer from [Soles][/p?id=P.J.%20Soles].</li><li>[Janet Leigh's][/p?id=Janet%20Leigh] first role in a feature film for 18 years. Her previous theatrical film was Dimman (1980), which also starred her daughter, [Jamie Lee Curtis][/p?id=1428].</li><li>The director and writers decided to treat this movie as if Halloweens 3-6 never took place. This was a decision made to keep the plot simple and focus on the Laurie character.</li><li>During the credits in the prologue, Dr. Samuel J. Loomis' dialog from the first film about Michael's incarceration is heard. The studio, instead of recovering the original audio from the original scene, decided to use a sound-alike actor named [Tom Kane][/p?id=Tom%20Kane] to provide the voice-over.</li><li>[Michelle Williams][/p?id=1669] signed on never having seen any of the Halloween movies.</li><li>&quot;Halloween: H20&quot; is the seventh film in the series. H2O is the chemical symbol for water which has a pH balance of 7.0.</li><li>[Charles S. Dutton][/p?id=Charles%20S.%20Dutton] originally had a small role in the film as a detective, however his part was removed as script rewrites came in.</li><li>[LL Cool J][/p?id=LL%20Cool%20J] had always been a fan of the Halloween movies. His mother took him to see the original when he was just nine years old.</li><li>[Jamie Lee Curtis][/p?id=1428] considers the film a thank you note to her fans. Curtis: &quot;Without that early career, I truly don't think I would have been an actor.&quot;</li><li>Even after 20 years, [Jamie Lee Curtis][/p?id=1428] said that seeing Michael [Myers][/p?id=1674] on set still scared her.</li><li>[Jamie Lee Curtis][/p?id=1428] originally wanted Laurie's life to be in a shambles at the start of the film. Executive producer [Kevin Williamson][/p?id=Kevin%20Will] convinced her that Laurie should have more to lose.</li><li>This film's sequel [Halloween: Resurrection][/f?id=10242] (2002) is so reviled by fans of the &quot;Halloween&quot; franchise, some wish to ignore it as if it never existed, and view this as the serie's finale.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

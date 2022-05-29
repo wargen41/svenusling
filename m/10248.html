@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Tiders Kvinnor | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Tiders Kvinnor <a href="#" class="grade">++++</a></h2>
+										<h3>20th Century Women</h3>
+										<p>
+										Film från <time datetime="2016"><a href="#">2016</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mike Mills</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1050.html">Annette Bening</a> – Dorothea</li><li>Elle Fanning – Julie</li><li><a href="/svenusling/p/1346.html">Greta Gerwig</a> – Abbie</li><li>Billy Crudup – William</li><li>Lucas Jade Zumann – Jamie</li><li>Alison Elliott – Julie's Mother</li><li>Thea Gill – Abbie's Mother</li><li>Vitaly Andrew LeBeau – Young Jamie</li><li>Olivia Hone – Julie's Sister</li><li>Waleed Zuaiter – Charlie</li><li>Curran Walters – Matt</li><li>Darrell Britt-Gibson – Julian</li><li>Alia Shawkat – Trish</li><li>Nathalie Love – Cindy</li><li>Cameron Protzman – Teen in Therapy</li><li>Victoria Bruno – Teen in Therapy</li><li>John Billingsley – Abbie's OBGYN</li><li>Cameron Gellman – Mark</li><li>Finnegan Seeker Bell – Brian</li><li>Zoë Nanos – Tanya</li><li>Lauren Foley – Michelle</li><li>Gareth Williams – Fire Chief</li><li>J. Francisco Rodriguez – Fireman</li><li>Zoë Worth – Planned Parenthood Worker</li><li>Finn Roberts – Tim Drammer</li><li>Laura Wiggins – Lynette Winters</li><li>Rick Gifford – Police Officer</li><li>Paul Tigue – Jamie's School Principal</li><li>Matthew Foster – Dorothea's Bank Manager</li><li>Kirk Bovill – Dorothea's Dinner Guest</li><li>Victoria Hoffman – Dorothea's Dinner Guest</li><li>Christina Offley – Dorothea's Dinner Guest</li><li>Randy Ryan – Dorothea's Dinner Guest</li><li>Diana Bostan – William's Woman</li><li>Toni Gaal – William's Woman</li><li>Tanya Young – William's Woman</li><li>Hans-Peter Thomas – Abbie's NYC Boyfriend</li><li>Kai Lennox – Reporter / Abbie's Future Husband</li><li>Paul Messinger – Santa Barbara City Official</li><li>Eric Wentz – Emergency Room Doctor</li><li>Samantha Gros – Emergency Room Nurse</li><li>Britt Sanborn – Emergency Room Nurse</li><li>Alexis Turner – Girls Choir</li><li>Catherine Zelensky – Girls Choir</li><li>Boyce Buchanan – Girls Choir</li><li>Kyle Olivia Green – Girls Choir</li><li>Sam Marsh – Girls Choir</li><li>Antonia Marie Vivino – Girls Choir</li><li>Sara Pelayo – Girls Choir</li><li>Annabelle Lee Moncrief – Girls Choir</li><li>Avi Boyko – Phlask (Club Band)</li><li>Tyler Leyva – Phlask (Club Band)</li><li>Cameron Simon – Phlask (Club Band)</li><li>Jesse Sanes – Snake Fang (House Party Band)</li><li>Sam Bosson – Snake Fang (House Party Band)</li><li>Ian Logan – Snake Fang (House Party Band)</li><li>Patrick Pastor – Snake Fang (House Party Band)</li><li>Trent Bowman – Ramp Skater</li><li>Justin Rivera – Ramp Skater</li><li>Desmond Shepherd – Ramp Skater</li><li>Joshua Burge – Abbie's Friend</li><li>Daniel Dorr – Abbie's Friend</li><li>Christopher Carroll – Pharmacist</li><li>Hayden Gold – Julie's Hesher Friend</li><li>Alex Wexo – Julie's Stepdad</li><li>Pete Mason – Bi Plane Pilot</li><li>Padraic Cassidy – Drafting Office Manager</li><li>Matty Cardarople – Bartender</li><li>Toni Christopher – Woman at Bar</li><li>Lucy Angelo – Stoner Kid (uncredited)</li><li>Aleana Anthony – Nurse (uncredited)</li><li><a href="/svenusling/p/1392.html">Ingrid Bergman</a> – Ilsa Lund (uncredited|archive footage)</li><li><a href="/svenusling/p/1383.html">Humphrey Bogart</a> – Rick Blaine (uncredited|archive footage)</li><li>Casey Burke – Group Therapy Patient (uncredited)</li><li>Jimmy Carter – Himself (uncredited|archive footage)</li><li>Susie Ganiere – School Secretary (uncredited)</li><li>David James Goulard – A Passer-By (uncredited)</li><li>Sean Michael Guess – William's Customer (uncredited)</li><li>Lisa-Beth Harris – Viv, French Mother (uncredited)</li><li>Cindy Jo Hinkleman – Cindy (uncredited)</li><li>Gwen Holloway – Jamie's Nurse (uncredited)</li><li>Daniel D. Houy – Driver (uncredited)</li><li>Henry Knotts – Dirtbag (uncredited)</li><li>Zoë Lillian – French Teen Tourist (uncredited)</li><li>Richard Nixon – Himself (uncredited|archive footage)</li><li>Jacob Peacock – Carpenter #3 (uncredited)</li><li><a href="/svenusling/p/1840.html">Ronald Reagan</a> – Himself (uncredited|archive footage)</li><li>Haleigh Ward – Pregnant Teen (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar _ Bästa originalmanus 2017 (Mike Mills)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

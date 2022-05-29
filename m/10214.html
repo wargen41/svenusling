@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alice I Underlandet (2010) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alice I Underlandet (2010) <a href="#" class="grade">+++</a></h2>
+										<h3>Alice in Wonderland</h3>
+										<p>
+										Film från <time datetime="2010"><a href="#">2010</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1937.html">Tim Burton</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1505.html">Johnny Depp</a> – Mad Hatter</li><li>Mia Wasikowska – Alice</li><li><a href="/svenusling/p/1370.html">Helena Bonham Carter</a> – Red Queen</li><li><a href="/svenusling/p/1049.html">Anne Hathaway</a> – White Queen</li><li>Crispin Glover – Stayne - Knave of Hearts</li><li>Matt Lucas – Tweedledee / Tweedledum</li><li class="voice"><a href="/svenusling/p/1664.html">Michael Sheen</a> – White Rabbit (röst)</li><li class="voice"><a href="/svenusling/p/1896.html">Stephen Fry</a> – Cheshire Cat (röst)</li><li class="voice"><a href="/svenusling/p/1012.html">Alan Rickman</a> – Blue Caterpillar (röst)</li><li class="voice">Barbara Windsor – Dormouse (röst)</li><li class="voice">Paul Whitehouse – March Hare (röst)</li><li class="voice"><a href="/svenusling/p/1945.html">Timothy Spall</a> – Bayard (röst)</li><li><a href="/svenusling/p/1621.html">Marton Csokas</a> – Charles Kingsleigh</li><li><a href="/svenusling/p/1941.html">Tim Pigott-Smith</a> – Lord Ascot</li><li>John Surman – Colleague #1</li><li>Peter Mattinson – Colleague #2</li><li>Lindsay Duncan – Helen Kingsleigh</li><li>Geraldine James – Lady Ascot</li><li>Leo Bill – Hamish</li><li>Frances de la Tour – Aunt Imogene</li><li>Jemma Powell – Margaret Kingsleigh</li><li>John Hopkins – Lowell</li><li>Eleanor Gecks – Faith Chattaway</li><li>Eleanor Tomlinson – Fiona Chattaway</li><li>Rebecca Crookshank – Strange Woman Kisser</li><li class="voice">Michael Gough – Dodo Bird (röst)</li><li class="voice">Imelda Staunton – Tall Flower Faces (röst)</li><li class="voice"><a href="/svenusling/p/1169.html">Christopher Lee</a> – Jabberwocky (röst)</li><li>Mairi Ella Challen – 6-Year-Old Alice</li><li>Holly Hawkins – Woman with Large Nose</li><li>Lucy Davenport – Woman with Big Ears</li><li>Joel Swetow – Man with Large Belly</li><li>Jessica Oyelowo – Woman with Large Poitrine</li><li>Ethan Cohn – Man with Large Chin</li><li>Richard Alonzo – Man with Big Forehead</li><li>Harry Taylor – Ship Captain</li><li>Jim Carter – Executioner</li><li class="voice"><a href="/svenusling/p/1303.html">Frank Welker</a> – Additional Vocal Effects (röst)</li><li>David 'Elsewhere' Bernal – Hatter Futterwacken Dance Double</li><li>Chris Grabher – High Top Hat Juggler</li><li>Caroline Royce – Party Dancer</li><li>Bonnie Parker – Party Dancer</li><li>Simone Sault – Party Dancer</li><li>Leigh Daniels – Party Dancer</li><li>Carl Walker – Party Dancer</li><li>Matt Dempsey – Party Dancer</li><li>Chris Grierson – Party Dancer</li><li>Dale Mercer – Party Dancer</li><li>David Lale – Party Musician</li><li>John Bass – Party Musician</li><li>Nicholas Levy – Party Musician</li><li>Patrick Roberts – Party Musician</li><li>Phillip Granell – Party Musician</li><li>Stephen Giles – Party Musician</li><li>Hilary Morris – Maypole Dancer</li><li>Jacqueline Delamora – White Queen Loyalist</li><li>Amy Bailey – Hatteress</li><li>Libby Brien – Courtier (uncredited)</li><li>Michael Chomiak – Reader 4 (uncredited)</li><li>Parker Contreras – May Pole Kid (uncredited)</li><li>Xavier Declie – Red Queens Court (uncredited)</li><li>Greg Fellows – Partygoer (uncredited)</li><li>Brighid Fleming – Maypole Dancer (uncredited)</li><li>Brooke Forbes – White Queen's Court (uncredited)</li><li>Jessica Godber – Red Queen Courtier (uncredited)</li><li>Geoffrey Gould – Party Guest (uncredited)</li><li>Daniel Hepner – Servant to Red Queen (uncredited)</li><li>Jack Kalvan – Fire Juggler (uncredited)</li><li>Lindsay Lane – Red Queen Courtier (uncredited)</li><li>Regan Licciardello – May Pole Dancer (uncredited)</li><li>Matisse Mazur – Red Queen Henchman (uncredited)</li><li>Savannah McReynolds – Maypole Dancer (uncredited)</li><li>Cortney Palm – Red Queen's Court (uncredited)</li><li>Keith Roenke – Red Queen Courtier (uncredited)</li><li>Mandana Rothschild – Reader 6 (uncredited)</li><li>Arick Salmea – Red Queen Nobleman (uncredited)</li><li>Erin Sharkey – White Queen Courtier (uncredited)</li><li>Gary Sievers – Red Queen Courtier (uncredited)</li><li>Jinny Lee Story – White Queen Courtier (uncredited)</li><li>Janaya Sultze – Courtier (uncredited)</li><li>Nick Thomas-Webster – Red Queen Courtier (uncredited)</li><li>Austin James Wolff – May Pole Dancer (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>MTV Movie Awards - Bästa film 2010</li><li>MTV Movie Awards - Bästa skurk 2010 (1370)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Actress [Mia Wasikowska][/p?id=Mia%20Wasikowska] beat out several candidates for the role of Alice, including [Amanda Seyfried][/p?id=Amanda%20Seyfried] and [Lindsay Lohan][/p?id=Lindsay%20Lohan], who lobbied for the role.</li><li>This film marks the 7th time [Johnny Depp][/p?id=1505] has worked under the direction of [Tim Burton][/p?id=1937] and the 6th time for [Helena Bonham Carter][/p?id=1370].</li><li>Despite the fact that there have been many other Alice in Wonderland films, [Tim Burton][/p?id=1937]  has said he never felt a emotional connection to it and always thought it was a series of some girl wondering around from one crazy character to another. (In fact, the original books are part of a once-popular fantasy genre in which the character does nothing except wander around from one crazy encounter to another. Those films which replicated this were being true to the spirit of the original books.) So with this, he attempted to create a framework, an emotional grounding, which he felt he never really had seen in any version before. Tim said that was the challenge for him - to make Alice feel like a story as opposed to a series of events.</li><li>[Tim Burton][/p?id=1937] and [Johnny Depp][/p?id=1505]  worked hard to give the Mad Hatter more depth and presence than in past portrayals. In fact, the pair swapped sketches and themes for the character prior to creating this new version.</li><li>This marks the 3rd time [Michael Gough][/p?id=Michael%20Gough] has come out of retirement to appear in a film by [Tim Burton][/p?id=1937]. This also marks his 5th film under [Burton's][/p?id=1937] direction.</li><li>[Johnny Depp][/p?id=1505], who says that he likes &quot;an obstacle&quot; whilst filming, admitted that he found the process of filming on a green screen &quot;exhausting&quot;, and that he felt &quot;befuddled by the end of the day&quot;.</li><li>[Danny Elfman][/p?id=Danny%20Elfman] scored the film to green screen footage.</li><li>Before [Tim Burton][/p?id=1937] was involved with the project, [Anne Hathaway][/p?id=1049]  was offered the titular role of Alice, but she turned it down because it was too similar to other roles she had previously played. However, she was keen to work with [Burton][/p?id=1937], so was pleased to be cast as the White Queen.</li><li>The first [Tim Burton][/p?id=1937] film not to have opening credits.</li><li>[Michael Sheen][/p?id=1664] was originally cast as the Cheshire Cat, but backed out due to scheduling conflicts.</li><li>[Dwayne Johnson][/p?id=1255] and [David Walliams][/p?id=David%20Walliams] were considered for the role of The Mad Hatter.</li><li>The Red Queen asks Stayne at one point whether it is better to be feared than loved, if not of both, he affirms, as she does later, that it is better to be feared than loved. This is a reference to a famous quote from Niccolo Machiavelli's The Prince, where he asks the same question, and answers: &quot;It may be answered that one should wish to be both, but, because it is difficult to unite them in one person, it is much safer to be feared than loved.&quot;</li><li>[Stephen Fry][/p?id=1896], [Alan Rickman][/p?id=1012], [Barbara Windsor][/p?id=Barbara%20Windsor], [Christopher Lee][/p?id=1169], [Michael Gough][/p?id=Michael%20Gough], [Imelda Staunton][/p?id=Imelda%20Staunton], and [Jim Carter][/p?id=Jim%20Carter] all recorded their dialogue in one day.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

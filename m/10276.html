@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Always | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Always <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1989"><a href="#">1989</a></time><br>										<ul class="genres"><li><a href="#genre9">Fantasy</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1907.html">Steven Spielberg</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1785.html">Richard Dreyfuss</a> – Pete Sandich</li><li><a href="/svenusling/p/1375.html">Holly Hunter</a> – Dorinda Durston</li><li>Brad Johnson – Ted Baker</li><li><a href="/svenusling/p/1485.html">John Goodman</a> – Al Yackey</li><li><a href="/svenusling/p/1064.html">Audrey Hepburn</a> – Hap</li><li>Roberts Blossom – Dave</li><li>Keith David – Powerhouse</li><li>Ed Van Nuys – Nails</li><li>Marg Helgenberger – Rachel</li><li>Dale Dye – Don</li><li>Brian Haley – Alex</li><li>James Lashly – Charlie</li><li>Michael Steve Jones – Grey</li><li>Kim Robillard – Air Traffic Controller</li><li>Jim Sparkman – Dispatcher</li><li>Doug McGrath – Bus Driver</li><li>Shereil L. Bowens – Child on Bus</li><li>Acencion Fuentes – Child on Bus</li><li>Todd Jacobson – Child on Bus</li><li>DeMarious T. Morganfield – Child on Bus</li><li>Mike O'Neal – Ground Pounder #1</li><li>Larry Landless – Ground Pounder #2</li><li>Steve Shatnyski – Ground Pounder #3</li><li>James Pruitt – Ground Pounder #4</li><li>Joseph McCrossin – Mechanic #1</li><li>J.D. Souther – The Singer</li><li>David Jackson – Band</li><li>David Kitay – Band</li><li>Gene Strimling – Band</li><li>Roy E. Harrison – Fisherman #1</li><li>Ted Grossman – Fisherman #2</li><li>Gerry Rothschild – Carl the Barkeep</li><li>Loren Smothers – Bartender</li><li>Taleena Ottwell – Bar Girl</li><li>Tim Hiser – Pilot (uncredited)</li><li>Joseph Michael Roth – Fireman (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Best Fantasy Film 1991</li><li>Saturn Award - Bästa manus 1991</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>When Dorinda returns home in the plane, she is dressed like Ripley from [Aliens][/f?id=10227] (1986), and similarly, she has a ginger tom cat. The cat, however, is named [Linda Blair][/p?id=Linda%20Blair].</li><li> This film is a remake of [A Guy Named Joe][/f?id=14596] (1943), which was watched on television in [Poltergeist][/f?id=Poltergeist] (1982), which was co-written by director [Steven Spielberg][/p?id=1907].</li><li> The tune Pete Sandich whistles when he's nervous is an Irish jig titled &quot;[Garry Owen][/p?id=Garry%20Owen]&quot;. This song was the official song of the Seventh Cavalry of the U.S. Army - General Custer's cavalry. When he is nervous, Pete whistles the theme song of a doomed man.</li><li> The final film for [Audrey Hepburn][/p?id=1064].</li><li> [Tom Cruise][/p?id=1949] was originally asked to play the Ted Baker role, he passed.</li><li> Whilst filming this, [Steven Spielberg][/p?id=1907] told [John Goodman][/p?id=1485] that he would make the perfect Fred Flintstone. Five years later, [Goodman][/p?id=1485] indeed played the famous cartoon character in The [Flintstones][/f?id=Flintstones] (1994).</li><li> [Richard Dreyfuss][/p?id=1785], [Holly Hunter][/p?id=1375] and [John Goodman][/p?id=1485] each received a Mazda Miata as a gift from [Steven Spielberg][/p?id=1907] upon completing the film.</li><li> The incident where Dorinda mistakes Ted's [John Wayne][/p?id=1504] imitation as [James Stewart][/p?id=1425] actually occurred between [Holly Hunter][/p?id=1375] and [Brad Johnson][/p?id=Brad%20Johnson] during filming. [Steven Spielberg][/p?id=1907] found the incident so comical that he reproduced this in the final movie.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

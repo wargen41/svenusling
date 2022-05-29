@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alla Helgons Blodiga Natt 2 | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alla Helgons Blodiga Natt 2 <a href="#" class="grade">+</a></h2>
+										<h3>Halloween II</h3>
+										<p>
+										Film från <time datetime="1981"><a href="#">1981</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Rick Rosenthal</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1428.html">Jamie Lee Curtis</a> – Laurie Strode</li><li><a href="/svenusling/p/1250.html">Donald Pleasence</a> – Sam Loomis</li><li>Charles Cyphers – Leigh Brackett</li><li>Jeffrey Kramer – Graham</li><li>Lance Guest – Jimmy</li><li>Pamela Susan Shoop – Karen</li><li>Hunter von Leer – Gary Hunt</li><li>Dick Warlock – The Shape / Patrolman #3</li><li>Leo Rossi – Budd</li><li>Gloria Gifford – Mrs. Alves</li><li>Tawny Moyer – Jill</li><li>Ana Alicia – Janet</li><li>Ford Rainey – Dr. Mixter</li><li>Cliff Emmich – Mr. Garrett</li><li>Nancy Stephens – Marion</li><li>John Zenda – Marshall</li><li>Catherine Bergstrom – Producer</li><li>Alan Haufrect – Announcer</li><li>Lucille Benson – Mrs. Elrod</li><li>Howard Culver – Man in Pajamas</li><li>Dana Carvey – Assistant</li><li>Billy Warlock – Craig</li><li>Jonathan Prince – Randy</li><li>Leigh French – Gary's Mother</li><li>Ty Mitchell – Young Gary</li><li>Nancy Kyes – Annie</li><li>Pamela McMyler – Laurie's Mother</li><li>Dennis Holahan – Laurie's Father</li><li>Nichole Drucker – Young Laurie</li><li>Ken Smolka – 1st Patrolman</li><li>Adam Gunn – Young Michael Myers</li><li>Roger Hampton – Patrolman #2</li><li>Robin Coleman – Medic</li><li>Jack Verbois – Bennett Tramer</li><li>Tony Moran – Michael Myers (age 23) (archive footage)</li><li>Kyle Richards – Lindsey (archive footage)</li><li>Brian Andrews – Tommy (archive footage)</li><li>Anne Bruner – Alice</li><li>Kim Gottlieb – Photographer at Hospital (uncredited)</li><li>Helen Kelly – Nurse at the Hospital (uncredited)</li><li>Anne-Marie Martin – Darcy Essmont (uncredited)</li><li>Nancy Platt Jacoby – WWAR Sound Assistant (uncredited)</li><li>Lance Warlock – Radio-Carrying Teen (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Stinker Award - Sämsta uppföljare 1981</li><li>Saturn Award - Bästa Skräckfuilm 1982</li><li>Saturn Award - Bästa skådespelare 1982 (Donald Pleasance)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>To get the role of Michael [Myers][/p?id=1674], Dick [Warlock][/f?id=21885] revealed that as he passed by a room, the Michael [Myers][/p?id=1674] mask was on a table. He put the mask on and walked into [Rick Rosenthal's][/p?id=Rick%20Rosenthal] office and stood there. After [Rosenthal][/p?id=Rick%20Rosenthal] continuously asked him who he was and he didn't reply, he took off the mask and asked if he could play Michael [Myers][/p?id=1674].</li><li>Believing [Rick Rosenthal's][/p?id=Rick%20Rosenthal] version of the film to be too tame, [John Carpenter][/p?id=John%20Carpenter] shot a few gory scenes that were added into the film despite [Rosenthal's][/p?id=Rick%20Rosenthal] objections. This annoyed [Rosenthal][/p?id=Rick%20Rosenthal] because he had wanted the sequel to emulate the way the original avoided explicit violence and gore in favor of well-crafted suspense and terror. In fact, [Carpenter][/p?id=John%20Carpenter] had intended for &quot;Halloween II&quot; to do just that, but the success of the new wave of slasher films in 1979 and 1980 made him afraid that a film which was scary and R-rated but lacked bloodshed and nudity would do poorly at the box office, leading to the extra graphic material inclusions.</li><li>This is the only Halloween film to show the morning after the 31st, every other movie ends on Halloween night.</li><li>The film is set immediately after the first [Halloween][/f?id=10235] (1978). Since [Jamie Lee Curtis][/p?id=1428] had begun to wear a much shorter hairstyle in the 1980s, she had to wear a wig that matched her original hairstyle for the film.</li><li>[John Carpenter][/p?id=John%20Carpenter] and [Debra Hill][/p?id=Debra%20Hill] had no interest in making a sequel as they believed the original [Halloween][/f?id=10235] (1978) was a standalone movie. When the studio offered him to write the script and pay them more money ([Carpenter][/p?id=John%20Carpenter] states that to this day he saw very little earnings from the success of the original movie) he took the job so he could earn back what he believes was his owed pay. However, the script was not forming out as well as he thought, and he has personally stated that the only thing helping him through the screenplay process was a six pack of Budweiser every day which led to what he believes an inferior script and bad choices in the movie's story.</li><li>[John Carpenter][/p?id=John%20Carpenter] turned down an offer to direct, but remained involved with the production by writing the screenplay.</li><li>[Dana Carvey][/p?id=Dana%20Carvey], who has a brief cameo in this film, went on to star with [Mike Myers][/p?id=1674] in the two &quot;[Wayne's World][/f?id=21901]&quot; films.</li><li>[Tommy Lee Wallace][/p?id=Tommy%20Lee%20Wallace] was originally offered the opportunity to direct this film, but turned down said offer because he didn't like the script.</li><li>Debut feature film as a director for [Rick Rosenthal][/p?id=Rick%20Rosenthal].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

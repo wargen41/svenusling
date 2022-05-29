@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Amadeus | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Amadeus <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1984"><a href="#">1984</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Milos Forman</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1293.html">F. Murray Abraham</a> – Antonio Salieri</li><li><a href="/svenusling/p/1951.html">Tom Hulce</a> – Wolfgang Amadeus Mozart</li><li>Elizabeth Berridge – Constanze Mozart</li><li>Roy Dotrice – Leopold Mozart</li><li><a href="/svenusling/p/1883.html">Simon Callow</a> – Emanuel Schikaneder / Papageno in 'The Magic Flute'</li><li>Christine Ebersole – Katerina Cavalieri / Constanza in 'Abduction from the Seraglio'</li><li><a href="/svenusling/p/1444.html">Jeffrey Jones</a> – Emperor Joseph II</li><li>Charles Kay – Count Orsini-Rosenberg</li><li>Kenneth McMillan – Michael Schlumberg (2002 Director's Cut)</li><li>Kenny Baker – Parody Commendatore</li><li>Lisabeth Bartlett – Papagena</li><li>Barbara Bryne – Frau Weber</li><li>Martin Cavina – Young Salieri</li><li>Roderick Cook – Count Von Strack</li><li>Milan Demjanenko – Karl Mozart</li><li>Peter DiGesu – Francesco Salieri</li><li>Michele Esposito – Salieri's Student</li><li>Richard Frank – Father Vogler</li><li>Patrick Hines – Kappelmeister Bonno</li><li>Nicholas Kepros – Archbishop Colloredo</li><li>Philip Lenkowsky – Salieri's Servant</li><li>Herman Meckler – Priest</li><li>Jonathan Moore – Baron Van Swieten</li><li>Cynthia Nixon – Lorl</li><li>Brian Pettifer – Hospital Attendant</li><li>Vincent Schiavelli – Salieri's Valet</li><li>Douglas Seale – Count Arco</li><li>Miroslav Sekera – Young Mozart</li><li>Cassie Stuart – Gertrude Schlumberg (2002 Director's Cut)</li><li>John Strauss – Conductor</li><li>Karl-Heinz Teuber – Wig Salesman</li><li>Rita Zohar – Frau Schlumberg (2002 Director's Cut)</li><li>Miro Grisa – Figaro in 'The Marriage of Figaro'</li><li>Helena Cihelnikova – Countess in 'The Marriage of Figaro'</li><li>Karel Gult – Count Almaviva in 'The Marriage of Figaro'</li><li>Zuzana Kadlecova – Susanna in 'The Marriage of Figaro'</li><li>Magda Celakovska – Cherubino in 'The Marriage of Figaro'</li><li>Slavena Drasilova – Barbarina in 'The Marriage of Figaro'</li><li>Eva Senková – Marcellina in 'The Marriage of Figaro'</li><li>Leos Kratochvil – Basilio in 'The Marriage of Figaro'</li><li>Gino Zeman – Don Curzio in 'The Marriage of Figaro'</li><li>Janoslav Mikulín – Dr. Bartolo in 'The Marriage of Figaro'</li><li>Ladislav Krecmer – Antonio in 'The Marriage of Figaro'</li><li>Karel Fiala – Don Giovanni in 'Don Giovanni'</li><li>Jan Blazek – Commendatore in 'Don Giovanni'</li><li>Zdenek Jelen – Leporello in 'Don Giovanni'</li><li>Milada Cechalova – Queen of the Night in 'The Magic Flute'</li><li>John Carrafa – Dancer</li><li>Sara Clifford – Dancer</li><li>Richard Colton – Dancer</li><li>Shelley Freydont – Dancer</li><li>Anne Glasner – Dancer</li><li>Barbara Hoom – Dancer</li><li>Mary Kellogg – Dancer</li><li>Raymond Kurshals – Dancer</li><li>John Malashock – Dancer</li><li>Jennifer Rawe – Dancer</li><li>Tom Rawe – Dancer</li><li>William Whitener – Dancer</li><li>Hana Brejchová – Czechoslovakian Actor</li><li>Miriam Chytilová – Czechoslovakian Actor</li><li>Karel Effa – Czechoslovakian Actor</li><li>Radka Fiedlerová – Czechoslovakian Actor</li><li>Rene Gabzdyl – Czechoslovakian Actor</li><li>Karel Hábl – Czechoslovakian Actor</li><li>Atka Janousková – Czechoslovakian Actor</li><li>Marta Jarolimkova – Czechoslovakian Actor</li><li>Gabriela Krckova – Czechoslovakian Actor</li><li>Vladimir Krousky – Czechoslovakian Actor</li><li>Jirí Krytinár – Czechoslovakian Actor</li><li>Radka Kucharova – Czechoslovakian Actor</li><li>Jan Kuzelka – Czechoslovakian Actor</li><li>Jirí Lír – Czechoslovakian Actor</li><li>Lenka Loubalová – Czechoslovakian Actor</li><li>Dagmar Maskova – Czechoslovakian Actor</li><li>Ladislav Mikes – Czechoslovakian Actor</li><li>Jitka Molavcová – Czechoslovakian Actor</li><li>Jana Musilova – Czechoslovakian Actor</li><li>Vojtech Nalezenec – Czechoslovakian Actor</li><li>Pavel Nový – Czechoslovakian Actor</li><li>Jiri Opsatko – Czechoslovakian Actor</li><li>Jan Pohan – Czechoslovakian Actor</li><li>Therese Herz – Czechoslovakian Actor</li><li>Ivan Pokorny – Czechoslovakian Actor</li><li>Milan Riehs – Czechoslovakian Actor</li><li>Iva Sebkova – Czechoslovakian Actor</li><li>Zdenek Sklenar – Czechoslovakian Actor</li><li>Renata Vackova – Czechoslovakian Actor</li><li>Jiri Vancura – Czechoslovakian Actor</li><li>Dana Vávrová – Czechoslovakian Actor</li><li>Petra Vogelova – Czechoslovakian Actor</li><li>Josef Zeman – Czechoslovakian Actor</li><li>Zdenek Mahler – Cardinal (uncredited)</li><li>Vladimír Svitácek – Pope Clement (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>LAFCA Award - Bästa film 1984</li><li>LAFCA Award - Bästa regi 1984 (Milos Forman)</li><li>LAFCA Award - Bästa skådespelare 1984 (1293)</li><li>LAFCA Award - Bästa manus 1984 (Peter Shaffer)</li><li>Oscar - Bästa film 1985</li><li>Oscar - Bästa regi 1985 (Milos Forman)</li><li>Oscar - Bästa skådespelare 1985 (1293)</li><li>Oscar - Bästa manus 1985 (Peter Shaffer)</li><li>Oscar - Bästa kostym 1985</li><li>Oscar - Bästa scenografi 1985</li><li>Oscar - Bästa ljud 1985</li><li>Oscar - Bästa smink 1985</li><li>Golden Globe - Bästa film - Drama 1985</li><li>Golden Globe - Bästa regi 1985 (Milos Forman)</li><li>Golden Globe - Bästa skådespelare - Drama 1985 (1293)</li><li>Golden Globe - Bästa manus 1985 (Peter Shaffer)</li><li>Amanda Awards, Amanda - Bästa utländska film 1985 (Milos Forman)</li><li>American Cinema Editors, Eddie - Best Edited Feature Film 1985</li><li>Casting Society of America, Artios - Best Casting for Feature Film 1985</li><li>César Awards, César - Bästa utländska film 1985 (Milos Forman)</li><li>David di Donatello Awards, David - Bästa utländska film 1985 (Milos Forman)</li><li>David di Donatello Awards, David - Bästa regi - Utländsk film 1985 (Milos Forman)</li><li>David di Donatello Awards, David - Bästa utländska skådespelare 1985 (1951)</li><li>DGA Award - Bästa regi 1985 (Milos Forman)</li><li>Golden Screen, Golden Screen 1985</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa regi - Utländsk film 1985 (Milos Forman)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa utländska skådespelare 1985 (1951)</li><li>Joseph Plateau Award - Bästa film 1985</li><li>Joseph Plateau Award - Bästa regissör 1985 (Milos Forman)</li><li>Joseph Plateau Award - Best Artistic Contribution 1985</li><li>Jussi Awards, Jussi - Best Foreign Filmmaker 1985 (Milos Forman)</li><li>KCFCC Award - Bästa skådespelare 1985 (1293)</li><li>Robert Festival, Robert - Bästa utländska film 1985 (Milos Forman)</li><li>BAFTA Film Award - Bästa foto 1986</li><li>BAFTA Film Award - Bästa ljud 1986</li><li>BAFTA Film Award - Bästa klippning 1986</li><li>BAFTA Film Award - Bästa smink 1986</li><li>Award of the Japanese Academy - Bästa utländska film 1986</li><li>Guild of German Art House Cinemas, Guild Film Award - Gold - Utländsk film 1986 (Milos Forman)</li><li>Kinema Junpo Award - Bästa utländska film 1986</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa skådespelare 1985 (1951)</li><li>Oscar - Bästa foto 1985</li><li>Oscar - Bästa klippning 1985</li><li>Golden Globe - Bästa skådespelare - Drama 1985 (1951)</li><li>Golden Globe - Bästa manliga biroll 1985 (1444)</li><li>British Society of Cinematographers, Best Cinematography Award 1985</li><li>BAFTA Film Award - Bästa film 1986 (Milos Forman)</li><li>BAFTA Film Award - Bästa skådespelare 1986 (1293)</li><li>BAFTA Film Award - Bästa manus baserad på annan förlaga 1986 (Peter Shaffer)</li><li>BAFTA Film Award - Bästa kostym 1986</li><li>BAFTA Film Award - Bästa scenografi 1986</li><li>DVD Premiere Award - Best Audio Commentary, Library Release (For the Director's Edition.) 2003 (Milos Forman)</li><li>DVD Premiere Award - Best Audio Commentary, Library Release (For the Director's Edition.) 2003 (Peter Shaffer)</li><li>DVD Premiere Award - Original Retrospective Documentary, Library Release (For the Director's Edition.) 2003</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Cast member [Simon Callow][/p?id=1883] originally portrayed the part of Mozart in the 1979 stage production.</li><li>[Mel Gibson][/p?id=1635], [Mick Jagger][/p?id=Mick%20Jagger], [Sam Waterston][/p?id=Sam%20Waterston], and [Tim Curry][/p?id=1938] all auditioned for the role of Mozart.</li><li>The music was pre-recorded and played in the background as scenes were filmed. [Tom Hulce][/p?id=1951] practiced four hours a day at the piano to appear convincing.</li><li>[Tim Curry][/p?id=1938] auditioned for the role of Mozart (and played Mozart on Broadway).</li><li>[Mark Hamill][/p?id=1609] also played the role of Mozart on Broadway and lobbied heavily for the role in the film.</li><li>Originally, a very young [Kenneth Branagh][/p?id=1540] was cast as Mozart, but [Milos Forman][/p?id=Milos%20Forman] changed his mind and decided to go with American actors for the principal roles.</li><li>Several professors of music stated, after studying all of the musical keys struck on pianos throughout the film, that not one key is struck incorrectly when compared to what is heard at the exact same moment. In other words, what you see is exactly what you hear.</li><li>[Elizabeth Berridge][/p?id=Elizabeth%20Berridge], during the Nipples of Venus scene, did not know she could spit out the candy (which was really lumps of marzipan) between takes and ate about 15 whole pieces. She later describes how she thought that they were disgusting and that she eventually made herself sick.</li><li>According to [Milos Forman's][/p?id=Milos%20Forman] autobiography, one studio offered to provide funding for [Amadeus][/f?id=10277] (1984) on the one condition that [Forman][/p?id=Milos%20Forman] cast [Walter Matthau][/p?id=1987] (a reported Mozart enthusiast) for the role of Mozart. [Forman][/p?id=Milos%20Forman] refused the offer, considering [Matthau][/p?id=1987] to be too old for the role.</li><li>When shooting the scene in which Salieri is writing down death mass under Mozart dictation, [Tom Hulce][/p?id=1951] was deliberately skipping lines to confuse [F. Murray Abraham][/p?id=1293], in order to achieve the impression that Salieri wasn't able to fully understand the music he was dictated.</li><li>[Meg Tilly][/p?id=Meg%20Tilly] originally was cast as Stanze but tore a leg ligament in a street soccer game the day before she was to film her first scene. [Elizabeth Berridge][/p?id=Elizabeth%20Berridge] replaced her.</li><li>One of only 4 productions to win both the Best Play Tony (1981) and the Best Picture Oscar (1984). The other 3 are My Fair lady (1957/1964), The Sound of Music (1960/1965) and A Man For All Seasons (1962/1966).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

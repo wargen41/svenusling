@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alive | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alive <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1993"><a href="#">1993</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre24">Sport</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Frank Marshall</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Ethan Hawke – Nando Parrado</li><li>Vincent Spano – Antonio Balbi</li><li>Josh Hamilton – Roberto Canessa</li><li>Bruce Ramsay – Carlitos Páez</li><li>John Newton – Antonio 'Tintín' Vizintín</li><li>David Kriegel – Gustavo Zerbino</li><li>Kevin Breznahan – Roy Harley</li><li>Sam Behrens – Javier Methol</li><li>Illeana Douglas – Lilliana Methol</li><li>Jack Noseworthy – Bobby François</li><li>Christian J. Meoli – Federico Aranda</li><li>Jake Carpenter – Alberto Artuna</li><li>Michael DeLorenzo – Rafael Cano</li><li>José Zúñiga – Fraga, the Mechanic</li><li>Danny Nucci – Hugo Díaz</li><li>David Cubitt – Fito Strauch</li><li>Gian DiDonna – Eduardo Strauch</li><li>John Cassini – Daniel Fernández</li><li>Michael Woolson – Juan Martino</li><li>Chad Willett – Pablo Montero</li><li>Richard Ian Cox – Moncho Sabella</li><li>Gordon Currie – Coche Inciarte</li><li>Ele Keats – Susana Parrado</li><li>Josh Lucas – Felipe Restano</li><li>Silvio Pollio – Álex Morales</li><li>Nuno Antunes – Álvaro Mangino</li><li>Michael Tayles – Pancho Delgado</li><li>Steven Shayler – Pedro Algorta</li><li>Jason Gaffney – Víctor Bolarich</li><li>Jerry Wasserman – Co-Pilot</li><li>Michael Sicoly – Pilot Julio César Ferradas</li><li>Diana Barrington – Mrs. Alfonsín</li><li>Jan D'Arcy – Eugenia Parrado</li><li>Frank Pellegrino – Steward</li><li>Seth Arnett – Tomás Alonso</li><li>Aurelio Dinunzio – Dr. Solana</li><li>Fiona Roeske – Mrs. Solana</li><li>Tony Morelli – Martínez, the Navigator</li><li>Pat Romano – Jorge Armas</li><li><a href="/svenusling/p/1493.html">John Malkovich</a> – Old Carlitos / Narrator (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Australian Cinematographers Society, Cinematographer of the Year 1993</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Emmy - Outstanding Individual Achievement - Informational Programming 1993</li><li>MTV Movie Award - Bästa actionsekvens (For the plane crash.) 1993</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The real Nando Parrado ([Ethan Hawke's][/p?id=Ethan%20Hawke] character) was technical advisor to the film.</li><li> Shot in sequence, an unusual practice for a film of this size.</li><li> The crash sequence took nine days to film. As the set was mounted on a huge gimbel, most of the cast were taking motion sickness pills as they spent a large amount of time being tossed about.</li><li> The film's main location was the ski town of Panorama in the Canadian Rockies. To get all 150 cast and crew members to the location every morning took a fleet of five helicopters.</li><li> The real plane crashed on Friday the 13 October 1972.</li><li> The opening and closing statements narrated by [John Malkovich][/p?id=1493] (playing an older Carlitos Paez) were written by the real Carlitos Paez for the film.</li><li> Director [Frank Marshall][/p?id=Frank%20Marshall] auditioned novice actor [Brad Pitt][/p?id=1096] for the Roberto Canessa part, but [Pitt's][/p?id=1096] reading was poor, and the part went to Josh [Hamilton][/f?id=14417] instead.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
