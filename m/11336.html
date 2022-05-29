@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brudens Far 2 | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Brudens Far 2 <a href="#" class="grade">+++</a></h2>
+										<h3>Father of the Bride Part II</h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Charles Shyer</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1903.html">Steve Martin</a> – George Banks</li><li><a href="/svenusling/p/1242.html">Diane Keaton</a> – Nina Banks</li><li>Martin Short – Franck Eggelhoffer</li><li>Kimberly Williams-Paisley – Annie Banks-MacKenzie</li><li>George Newbern – Bryan MacKenzie</li><li><a href="/svenusling/p/1552.html">Kieran Culkin</a> – Matty Banks</li><li>B.D. Wong – Howard Weinstein</li><li>Peter Michael Goetz – John MacKenzie</li><li>Kate McGregor-Stewart – Joanna MacKenzie</li><li>Jane Adams – Dr. Megan Eisenberg</li><li><a href="/svenusling/p/1291.html">Eugene Levy</a> – Mr. Habib</li><li>Rebecca Chambers – Young Woman at Gym</li><li>April Ortiz – Olivia</li><li>Dulcy Rogers – Ava (the Beautician)</li><li>Kathy Anthony – Beautician #2</li><li>Adrian Canzoneri – Justin</li><li>Lori Alan – Wife Mrs. Habib</li><li>Stephanie Miller – Anne Elizabeth 'Annie' Banks (Age Four)</li><li>Hallie Meyers-Shyer – Anne Elizabeth 'Annie' Banks (Age Seven)</li><li>Jay Wolpert – Dr. Brooks</li><li>Ann Walker – Dr. Brooks' Nurse</li><li>Sandra Silvestri – Jogging Mom</li><li>William Akey – Frantic Father #1</li><li>Seth Kaplan – Wild Four-Year-Old</li><li>Jonathan Emerson – Frantic Father #2</li><li>Joshua Preston – Tantrum Toddler</li><li>K.C. Colwell – Father Heading off to Work</li><li>Chase Colwell – Adorable Toddler</li><li>Tony Simotes – Construction Foreman</li><li>Annie Meyers-Shyer – Shower Guest</li><li>Linda DeScenna – Shower Guest</li><li>Heidi Averill – Shower Guest</li><li>Chelsea Lynn – Matty's Friend</li><li>Sue Colwell – Nina's Customer</li><li>Rodrigo Botero – Gang Kid</li><li>Vince Lozano – Gang Kid</li><li>Caroline Lagerfelt – Check-In Nurse</li><li>Ilene Waterstone – Check-In Nurse</li><li>Wendy Worthington – Prostate Nurse</li><li>Dorian Spencer – E.R. Nurse</li><li>Harris Laskaway – Prostate Doctor</li><li>Roxanne Beckford – Nina's Nurse</li><li>Valerie Hemmerich – Nina's Nurse</li><li>Peter Spears – Dr. Wagner</li><li>Susan Beaubian – Annie's Nurse</li><li>Mychael Bates – Hospital Orderly</li><li>Jerri Rose White – Baby Megan Banks</li><li>Shannon Kennedy – Baby Megan Banks</li><li>Casey Boersma – Baby George Banks-MacKenzie</li><li>Dylan Boersma – Baby George Banks-MacKenzie</li><li>Katie Pierce – Two-Month-Old Megan Banks</li><li>Jonathan Selstad – Two-Month-Old George Banks-MacKenzie</li><li>Thomas Selstad – Two-Month-Old George Banks-MacKenzie</li><li>Christian Boeving – Trainer in Gym (uncredited)</li><li>Ashlyn Messick – Baby in Stroller (uncredited)</li><li>Kayley Messick – Baby in Stroller (uncredited)</li><li>Kylie Travis – Girl in Car (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Teen Choice Award - Choice Movie Actor - Comedy 2003 (1460)</li><li>ASCAP Award - Top Box Office Films 2004</li><li>ASCAP Award - Most Performed Song from a Motion Picture (For the song "I'm With You".) 2004</li><li>Image Award - Bästa manliga biroll 2004 (1682)</li><li>Blimp Award - Favorite Movie Actor 2004 (1460)</li><li>MTV Movie Awards, Mexico, MTV Movie Award - Most Divine Miracle in a Movie (For the chest of Grace (Bruce grows the breasts of his wife).) 2004 (1460)</li><li>People's Choice Award, People's Choice Award - Favorite Comedy Motion Picture 2004</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Teen Choice Award - Choice Movie Actress - Comedy 2003 (1446)</li><li>Teen Choice Award - Choice Movie Chemistry 2003</li><li>BET Comedy Award - Outstanding Supporting Actor in a Box Office Movie 2004 (1682)</li><li>Black Reel - Bästa manliga biroll 2004 (1682)</li><li>Blimp Award - Favorite Movie 2004</li><li>MTV Movie Award - Bästa komiska prestation 2004 (1460)</li><li>MTV Movie Award - Bästa kyss 2004</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The board in the Scrabble game has several words relating to pregnancy and childbirth. In particular, one of the players somehow managed to play &quot;episiotomy.&quot;</li><li>Although this sequel to [Father of the Bride][/f?id=11335] (1991) is not a remake of [Father's Little Dividend][/f?id=16434] (1951), (the sequel to the original [Father of the Bride][/f?id=11334]), the opening scenes of the two films, including the narration spoken to camera by the father character, are virtually identical.</li><li>When [Diane Keaton][/p?id=1242] was given the script for the movie, she nearly refused to film when she found out she had to pretend to be pregnant as she was nearly 50. It took a bag of humbugs and a lot of pleading from [Steve Martin][/p?id=1903] and [Nancy Meyers][/p?id=Nancy%20Meyers] to get her to join.</li><li>The set used for the interior of the Banks' home had to be rebuilt from scratch for the sequel. With no presumption of a sequel during production of the original movie, the set was destroyed after production completed. Set crew had to recreate the entirety of the set based only on a few remnant sketches of the original set, and had to infer most measurements based on the known sizes of various reference items in the original film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

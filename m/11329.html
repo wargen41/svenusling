@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bron Över Floden Kwai | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bron Över Floden Kwai <a href="#" class="grade">++++</a></h2>
+										<h3>The Bridge on the River Kwai</h3>
+										<p>
+										Film från <time datetime="1957"><a href="#">1957</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>David Lean</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2005.html">William Holden</a> – Shears</li><li><a href="/svenusling/p/1018.html">Alec Guinness</a> – Colonel Nicholson</li><li><a href="/svenusling/p/1399.html">Jack Hawkins</a> – Major Warden</li><li>Sessue Hayakawa – Colonel Saito</li><li>James Donald – Major Clipton</li><li>Geoffrey Horne – Lieutenant Joyce</li><li>André Morell – Colonel Green</li><li>Peter Williams – Captain Reeves</li><li>John Boxer – Major Hughes</li><li>Percy Herbert – Grogan</li><li>Harold Goodwin – Baker</li><li>Ann Sears – Nurse</li><li>Heihachirô Ôkawa – Captain Kanematsu</li><li>Keiichiro Katsumoto – Lieutenant Miura</li><li>M.R.B. Chakrabandhu – Col. Broome Yai</li><li>Vilaiwan Seeboonreaung – Siamese Girl</li><li>Ngamta Suphaphongs – Siamese Girl</li><li>Javanart Punynchoti – Siamese Girl</li><li>Kannikar Dowklee – Siamese Girl</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Cannes Film Festival, Grand Prize of the Jury 2005 (Jim Jarmusch)</li><li>Cambridge Film Festival, Audience Award - Bästa film 2005 (Jim Jarmusch)</li><li>SDFCS Award - Bästa manliga biroll 2005 (1445)</li><li>Czech Lion - Bästa utländskspråkiga film 2006 (Jim Jarmusch)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cannes Film Festival, Palme d'Or 2005 (Jim Jarmusch)</li><li>British Independent Film Award - Bästa utländska film 2005</li><li>European Film Awards, Screen International Award 2005 (Jim Jarmusch)</li><li>Satellite Award - Bästa skådespelare - Komedi eller Musikal 2005 (1081)</li><li>Bodil Awards, Bodil - Bästa amerikanska film 2006 (Jim Jarmusch)</li><li>Chlotrudis Award - Bästa manliga biroll 2006 (1445)</li><li>CEC Award - Bästa utländska film 2006</li><li>Independent Spirit Award - Bästa manliga biroll 2006 (1445)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa utländska regissör 2006 (Jim Jarmusch)</li><li>OFCS Award - Bästa originalmanus 2006 (Jim Jarmusch)</li><li>Robert Festival, Robert - Bästa amerikanska film 2006 (Jim Jarmusch)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Carl Foreman wrote the screenplay with [Humphrey Bogart][/p?id=1383] in mind for the role of Shears, but Columbia Studios head [Harry Cohn][/p?id=Harry%20Cohn] refused to allow [Bogart][/p?id=1383] out of another project. [Cary Grant][/p?id=1134] then was briefly considered to star as Colonel Nicholson, but his flop in a serious role in [Crisis][/f?id=Operation%20X] (1950) concerned the producer, Sam Spiegel. The role was offered to [Laurence Olivier][/p?id=1568] who turned it down. [Alec Guinness][/p?id=1018] was the next choice.</li><li>There are many rumors about the casting of the film, but most sources claim that [Charles Laughton][/p?id=1147] was the original choice of to play the role of Colonel Nicholson in The Bridge on the River Kwai (1957). [Laughton][/p?id=1147] turned down the part as he did not know how to play it convincingly as he did not understand the motivations of the character. He said he only understood the character after seeing the completed film and [Alec Guinness'][/p?id=1018] performance as Colonel Nicholson.</li><li>At one point, Sam Spiegel wanted [Humphrey Bogart][/p?id=1383] to star and [Nicholas Ray][/p?id=Nicholas%20Ray] to direct.</li><li>[Alec Guinness][/p?id=1018] initially turned down the role of Colonel Nicholson, saying, &quot;I can't imagine anyone wanting to watch a stiff-upper-lip British colonel for two and a half hours.&quot; He had also clashed with [David Lean][/p?id=David%20Lean] when they made [Oliver Twist][/f?id=Oliver%20Twist] (1948).</li><li>[Howard Hawks][/p?id=1376] was asked to direct, but declined. After the box-office failure of [Land of the Pharaohs][/f?id=13735] (1955), he didn't want a second one in a row, and he thought the critics would love this movie but the public would stay away. One particular concern was the all-male lead roles.</li><li>Screenwriters Michael Wilson and Carl Foreman were on the blacklist of people with accused Communist ties at the time the film was made, and went uncredited. The sole writing credit, and therefore the Oscar for best adapted screenplay, went to Pierre Boulle, who wrote the original French novel but did not speak English. Clearly Pierre had not written the English script and this became a long-running controversy between the Academy and the actual authors to achieve recognition for their work. 1984 the Academy retrospectively awarded the Oscar to Wilson and Foreman. Sadly Wilson did not live to see this; Foreman died the day after it was announced. When the film was restored, their names were added to the credits.</li><li>In some prints of this movie, star [Alec Guinness's][/p?id=1018] surname is written as &quot;Guiness&quot;.</li><li>[Charles Laughton][/p?id=1147] was announced as the star, but decided he couldn't handle the heat of Ceylon and withdrew. Among the actors considered as replacements were [Ronald Colman][/p?id=Ronald%20Colman], [Noel Coward][/p?id=Noel%20Coward], [Ralph Richardson][/p?id=Ralph%20Richardson], [Ray Milland][/p?id=Ray%20Milland] and [James Mason][/p?id=1422].</li><li>The bridge cost $250,000 to build; construction began before anyone had been cast.</li><li>The title of the English translation of the French novel &quot;Le pont de la rivière Kwai&quot; was &quot;The Bridge Over the River Kwai&quot;.</li><li>It was [Percy Herbert][/p?id=Percy%20Herbert] who suggested the idea of using Kenneth Alford's &quot;Colonel Bogey March&quot; to [David Lean][/p?id=David%20Lean].</li><li>The film's story was loosely based on a true World War II incident, and the real-life character of Lieutenant Colonel Philip Toosey. One of a number of Allied POW's, Toosey was in charge of his men from late 1942 through May 1943 when they were ordered to build two Kwai River bridges in Burma (one of steel, one of wood), to help move Japanese supplies and troops from Bangkok to Rangoon. In reality, the actual bridge took 8 months to build (rather than two months), and they were actually used for two years, and were only destroyed two years after their construction - in late June 1945. The memoirs of the 'real' Colonel Nicholson were compiled into a 1991 book by [Peter Davies][/p?id=Peter%20Davies] entitled The Man Behind the Bridge.</li><li>The actual Major Saito, unlike the character portrayed in the film by [Sessue Hayakawa][/p?id=Sessue%20Hayakawa], was said by some to be one of the most reasonable and humane of all of the Japanese officers, usually willing to negotiate with the POWs in return for their labor. Such was the respect between Saito and the real-life Lieutenant-Colonel Toosey that Toosey spoke up on Saito's behalf at the war-crimes tribunal after the war, saving him from the gallows. Ten years after Toosey's 1975 death, Saito made a pilgrimage to England to visit his grave.</li><li>The real life construction of the bridge over the River Kwai used about 100,000 conscripted Asian laborers. 12,000 prisoners of war died on the project.</li><li>[John Ford][/p?id=1483], like [Howard Hawks][/p?id=1376], was considered as a director before [David Lean][/p?id=David%20Lean] was chosen.</li><li>[Fred Zinnemann][/p?id=Fred%20Zinnemann] was another choice to direct; Sam Spiegel very much wanted him to take the job, due to his box-office clout, but [Zinneman][/p?id=Fred%20Zinneman] didn't understand the novel and declined. [Orson Welles][/p?id=1711] was reportedly approached to co-star and direct, but [Welles][/p?id=1711], too, dropped out after reading the script. [William Wyler][/p?id=2009] was considered but never formally approached. Ultimately, Spiegel explained the decision to hire '[David Lean][/p?id=David%20Lean]' as being &quot;In absence of anybody else.&quot;</li><li>[John Gielgud][/p?id=1484] was the first choice to play Major Warden (played by [Jack Hawkins][/p?id=1399] in the film) but rejected the role, saying it was &quot;anybody's part&quot;.</li><li>[Alec Guinness][/p?id=1018] was always the first choice to play Colonel Nicholson, although he actually turned the part down when first offered it as he disliked the character and thought Pierre Boulle's original novel to be anti-British. [Charles Laughton][/p?id=1147], [James Mason][/p?id=1422], [Ralph Richardson][/p?id=Ralph%20Richardson], [Noel Coward][/p?id=Noel%20Coward] and [Anthony Quayle][/p?id=1056] were all approached. It was only after [Jack Hawkins][/p?id=1399] had been cast in the part of Major Warden that [Guinness][/p?id=1018] reconsidered his position, largely at [Hawkins'][/p?id=1399] instigation.</li><li>[William Holden][/p?id=2005], then a major star, was brought into the project to provide &quot;box office appeal&quot; after [Cary Grant][/p?id=1134] turned down the role. He received $300,000 up front, and was guaranteed a 10% share of the profits, to be paid at the rate of $50,000 a year. This is one reason why [Holden][/p?id=2005] sued to stop the first American TV showing of the film in 1966, claiming it would hurt future box office receipts, on which he was dependent (The lawsuit was unsuccessful). Because the film made so much money, his shares eventually accumulated to the point where the studio was making more off the interest on the unpaid balance than [Holden][/p?id=2005] was paid per year. A settlement was reached where [Holden][/p?id=2005] was paid a lump sum, and any future payments were willed to a motion picture relief fund.</li><li>[David Lean][/p?id=David%20Lean] initially wanted Nicholson's soldiers to enter the camp while singing &quot;Hitler Has Only Got One Ball&quot;, a popular (during World War II) parody version of the &quot;Colonel Bogey March&quot; poking fun at [Adolf Hitler][/p?id=Adolf%20Hitler] and various other Nazi leaders. Sam Spiegel told him it was too vulgar, and the whistling-only version was used instead.</li><li>Original novelist Pierre Boulle actually had been a prisoner of war in Thailand. His creation of Colonel Nicholson was an amalgam of his memories of various French officers who collaborated with his captors.</li><li>[Sessue Hayakawa][/p?id=Sessue%20Hayakawa] edited his copy of the script to contain only his lines of dialog. This way, he remained oblivious to the real nature of his character's fate.</li><li>For the scene when Colonel Nicholson emerges from the oven after several days confined there, [Alec Guinness][/p?id=1018] based his faltering walk on that of his son Matthew when he was recovering from polio. [Guinness][/p?id=1018] regarded this one tiny scene as some of the finest work he did throughout his entire career.</li><li>At one point during filming, [David Lean][/p?id=David%20Lean] nearly drowned when he was swept away by a river current. [Geoffrey Horne][/p?id=Geoffrey%20Horne] saved his life.</li><li>Sam Spiegel was en route from Paris to London when he bought the then much-talked about novel by Pierre Boulle out of curiosity. By the time he arrived in London, he had read the novel and decided what his next film was going to be. He immediately flew back to Paris for a meeting with a surprised Boulle who agreed to sell him the film rights.</li><li>Producer Sam Spiegel - in his efforts for securing rights, casting, locations, etc. - flew around the world 4 times in the 3 years it took to get the film from page to screen.</li><li>For one sunset scene, [David Lean][/p?id=David%20Lean] specifically traveled 150 miles to capture it.</li><li>The Suez crisis of 1956 badly affected production, too. Vital equipment that would normally have been shipped through the canal had to be flown out to the location instead.</li><li>There were no facilities on the island of Ceylon to process film rushes so the day's filming had to be flown to London to be processed and then flown back out to Ceylon.</li><li>For the scenes where [William Holden][/p?id=2005], [Jack Hawkins][/p?id=1399], [Geoffrey Horne][/p?id=Geoffrey%20Horne] and the native girls had to wade through swamps, they were wading through specially created ones. The real swamps in Ceylon were deemed to be too dangerous. Nevertheless, the leeches in the recreated swamps were real.</li><li>Producer Sam Spiegel wanted to release the movie by the December 31, 1957 deadline for the movie to be eligible for Academy Award consideration for that year, but by early-December 1957, the movie had yet no music score and no composer. Spiegel hired Malcolm Arnold to compose the score, which Arnold completed in a mere ten days. The movie was released prior to the 1957 Academy Award consideration deadline, and Arnold was rewarded with the 1957 Academy Award for Best Music Score for his speedy effort.</li><li>[William Holden][/p?id=2005] shaved his chest for his many &quot;beefcake&quot; scenes in the movie.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

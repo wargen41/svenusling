@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bumblebee | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bumblebee <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2018"><a href="#">2018</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Travis Knight</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Hailee Steinfeld – Charlie</li><li>Jorge Lendeborg Jr. – Memo</li><li>John Cena – Agent Burns</li><li>Jason Drucker – Otis</li><li>Pamela Adlon – Sally</li><li>Stephen Schneider – Ron</li><li>Ricardo Hoyos – Tripp</li><li>John Ortiz – Dr. Powell</li><li>Glynn Turman – General Whalen</li><li>Len Cariou – Uncle Hank</li><li>Kollin Holtz – Craig</li><li>Gracie Dzienny – Tina</li><li>Fred Dryer – Sheriff Lock</li><li>Isabelle Ellingson – Mean Girlfriend</li><li>Mika Kubo – Mean Girlfriend</li><li>Felicia Stiles – Party Goer</li><li>George Anagnostou – Party Goer</li><li>Brandon Wardle – Party Goer</li><li>Lenny Jacobson – Roy</li><li>Megyn Price – Amber</li><li>Krystin Goodwin – News Reporter</li><li>Nick Pilla – Young Agent Simmons</li><li>Sachin Bhatt – Pilot Hutton</li><li>Tim Martin Gleason – Charlie's Dad</li><li>David Waters – Impatient Guy</li><li>Antonio D. Charity – Bill the Mechanic</li><li>Courtney Coker – Young Agent</li><li>Edwin Hodge – Danny</li><li>Jake Huang – Danny's Paintball Team</li><li>Holland Diaz – Danny's Paintball Team</li><li>David Cutler – Danny's Paintball Team</li><li>Lars Slind – Humvee Driver</li><li class="voice">Dylan O'Brien – Bumblebee (röst)</li><li class="voice">Peter Cullen – Optimus Prime (röst)</li><li class="voice"><a href="/svenusling/p/1041.html">Angela Bassett</a> – Shatter (röst)</li><li class="voice">Justin Theroux – Dropkick (röst)</li><li class="voice">David Sobolov – Blitzwing (röst)</li><li class="voice">Grey Griffin – Arcee (röst)</li><li class="voice">Jon Bailey – Shockwave / Soundwave (röst)</li><li class="voice">Steve Blum – Wheeljack (röst)</li><li class="voice">Andrew Morgado – Cliffjumper (röst)</li><li class="voice">Kirk Baily – Brawn / Decepticon Soldier (röst)</li><li class="voice">Dennis Singletary – Ratchet (röst)</li><li>Nico Abiera – Boardwalk Patron (uncredited)</li><li>Yianni Apostolopolous – Teen Party Goer (uncredited)</li><li>Jace Areff – Karate Studio Friend (uncredited)</li><li>Manny Avina – Karate Student (uncredited)</li><li>William W. Barbour – Neighbor (uncredited)</li><li>Meghan Barrett – Party Goer / Mean Girl (uncredited)</li><li>Emilee Bickert – Mean Girl (uncredited)</li><li>Robert Perry Bierman – Neighbor (uncredited)</li><li>Paul Black – Agent Scott (uncredited)</li><li>Marcella Bragio – 80's girl (uncredited)</li><li>Walker Brinskele – Party Goer (uncredited)</li><li>Natalie Conneely – Camper (uncredited)</li><li>Steve Dakota – Townie (uncredited)</li><li>Ryan Day – Party Goer (uncredited)</li><li>Rachel DeAngelis – Boardwalk Goer (uncredited)</li><li>Matthew Dunn – Agent Marks (uncredited)</li><li>Chance Falcon – YoYo Kid (uncredited)</li><li>Michelle Fang – Mean Girl / Party Goer (uncredited)</li><li>Logan Fromme – Ride Enthusiast (uncredited)</li><li>Mateo Garcia – Otis Dojo's Friend (uncredited)</li><li>Apollo Garza – Sheriff Deputy (uncredited)</li><li>Travis Grenke – Agent Burn's Agent (uncredited)</li><li>Stephanie Heiner – Party Goer (uncredited)</li><li>Matthew B. Henry – Sector 7 Agent (uncredited)</li><li>Damon Hoffman – Soldier (uncredited)</li><li>Stephanie Holden – Teen Party Goer (uncredited)</li><li>Antoine Holmes Sr. – Sector 7 Army Soldier (uncredited)</li><li>Spencer Holmes – Sector 7 Army Soldier (uncredited)</li><li>William Shay House – Soldier (uncredited)</li><li>Logan Hunt – Young Agent (uncredited)</li><li>Christian Hutcherson – Howie (Sector 7 Tech) (uncredited)</li><li>Mia Jómor – Party-Goer (uncredited)</li><li>Paul Kennedy Jr. – Lance Corporal Martin (uncredited)</li><li>Kevin Kent – Sector 7 Machine Gunner (uncredited)</li><li>Brian Korsmeier – Boardwalk Pedestrian With Camera (uncredited)</li><li>Joseph Krachenfels – Sheriff (uncredited)</li><li>Anthony Latona – Agent Crest (uncredited)</li><li>Reuben J. Lee – Army APC .50 Cal Gunner (uncredited)</li><li>Alivia Levie – Sector 7 Agent (uncredited)</li><li>John Lobato – Party Goer (uncredited)</li><li>Rory Markham – Agent Adams (uncredited)</li><li>Chris Markle – Corporal Taylor (uncredited)</li><li>Eric Martinez – Teenager (uncredited)</li><li>Andrea Lea Martzipan – Boardwalk Patron (uncredited)</li><li>Sasha McCulloch – Boardwalk Teenager (uncredited)</li><li>Maximilian Merritt – Smoker Boy / Partygoer (uncredited)</li><li>Heidi Michaelis – Neighbor (uncredited)</li><li>Ed Moy – Karate Instructor (uncredited)</li><li>Sierra Anne Murphy – Boardwalk Teenager (uncredited)</li><li>Braydin Anthony Myers – Officer Myers (uncredited)</li><li>Erin Nolan – Townie (uncredited)</li><li>Lindsay Peak – Townsfolk / Boardwalk Pedestrian (uncredited)</li><li>Dave Reaves – Humvee Machine Gunner (uncredited)</li><li>Jeff Redlick – Neighbor (uncredited)</li><li>Agustin Reiter – Boardwalk Teen (uncredited)</li><li>Rick Richardson – Sheriff (uncredited)</li><li>Christopher Mark Rodriguez – Sector 7 Agent (uncredited)</li><li>Antonio Rosa – Sector 7 Agent (uncredited)</li><li>Vanessa Ross – The Mean Girl (uncredited)</li><li>Boston Rush Freeman – Otis' Dojo Friend (uncredited)</li><li>Gregory Schwabe – Sector 7 Tank .50 Cal Gunner (uncredited)</li><li>Andrew Spach – Drunk guy (uncredited)</li><li>Thomas W. Stewart – Townie (uncredited)</li><li>Jesse Stoudt – Boardwalk Pedestrian (uncredited)</li><li>DeMark Thompson – Sector 7 Agent (uncredited)</li><li>Ken Thrift – Local (uncredited)</li><li>Tony Toste – Roller Coaster Rider (uncredited)</li><li>Deena Trudy – Sector 7 Agent (uncredited)</li><li>Nick Ventra – Army Soldier (uncredited)</li><li>Etienne Vick – Townie (uncredited)</li><li>Barry Alan Williams – Boardwalk Patron (uncredited)</li><li>Ronnie Yelverton – Townie (uncredited)</li><li>Pablo Zavala – Neighbor (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Razzie Award - Sämsta skådespelare 1997 (1003)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

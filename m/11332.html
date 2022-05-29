@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brottslig Drift | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Brottslig Drift <a href="#" class="grade">++++</a></h2>
+										<h3>Compulsion</h3>
+										<p>
+										Film från <time datetime="1959"><a href="#">1959</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1786.html">Richard Fleischer</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1711.html">Orson Welles</a> – Jonathan Wilk</li><li>Diane Varsi – Ruth Evans</li><li><a href="/svenusling/p/1232.html">Dean Stockwell</a> – Judd Steiner</li><li><a href="/svenusling/p/1097.html">Bradford Dillman</a> – Arthur A. Straus</li><li>E.G. Marshall – District Attorney Harold Horn</li><li>Martin Milner – Sid Brooks</li><li>Richard Anderson – Max Steiner</li><li>Robert F. Simon – Police Lt. Johnson</li><li>Edward Binns – Tom Daly</li><li>Robert Burton – Charles Straus</li><li>Wilton Graff – Mr. Steiner</li><li>Louise Lorimer – Mrs. Straus aka 'Mumsy'</li><li>Gavin MacLeod – Padua - Horn's Assistant</li><li>Ina Balin – Mike's girlfriend (scenes deleted)</li><li>Edmund Cobb – Policeman (scenes deleted)</li><li>Frank Conroy –  (scenes deleted)</li><li>Terry Becker – Angry Reporter (uncredited)</li><li>Russ Bender – Edgar Llewellyn - Attorney (uncredited)</li><li>Peter Brocco – Albert, Steiner's Chauffeur (uncredited)</li><li>Alan Carney – Globe Newspaper Editior (uncredited)</li><li>Harry Carter – Detective Davis (uncredited)</li><li>Wendell Holmes – Jonas Kessler (uncredited)</li><li>Kenner G. Kemp – Juror (uncredited)</li><li>Henry Kulky – Tough Waiter (uncredited)</li><li>Mike Lally – Courtroom Spectator (uncredited)</li><li>Gerry Lock – Emma (uncredited)</li><li>Jack Lomas – Medical Examiner (uncredited)</li><li>Dayton Lummis – Dr. Allwyn - Psychiatrist (uncredited)</li><li>Hank Mann – Courtroom Spectator (uncredited)</li><li>Frank McClure – Reporter (uncredited)</li><li>Ralph Montgomery – Courtroom Reporter (uncredited)</li><li>William H. O'Brien – Waiter (uncredited)</li><li>Voltaire Perkins – Judge Matthews (uncredited)</li><li>Jack Raine – Professor McKinnon (uncredited)</li><li>Jeffrey Sayre – Reporter on Telephone (uncredited)</li><li>Simon Scott – Detective Brown (uncredited)</li><li>Nina Shipman – Girlfriend (uncredited)</li><li>Hal Taggart – Reporter (uncredited)</li><li>Arthur Tovey – Courtroom Spectator (uncredited)</li><li>Tom Wilson – Juror (uncredited)</li><li>Wilson Wood – Reporter (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa film 1958 (Sam Spiegel)</li><li>Oscar - Bästa regi 1958 (David Lean)</li><li>Oscar - Bästa skådespelare 1958 (1018)</li><li>Oscar - Bästa manus baserat på annan förlaga 1958</li><li>Oscar - Bästa foto 1958</li><li>Oscar - Bästa musik 1958</li><li>Oscar - Bästa klippning 1958</li><li>BAFTA Film Award - Best Film from any Source 1958</li><li>BAFTA Film Award - Bästa brittiska film 1958</li><li>BAFTA Film Award - Bästa brittiska skådespelare 1958 (1018)</li><li>BAFTA Film Award - Bästa brittiska manus 1958</li><li>British Society of Cinematographers, Best Cinematography Award 1958</li><li>DGA Award - Bästa regi 1958 (David Lean)</li><li>Golden Globe - Bästa film - Drama 1958</li><li>Golden Globe - Bästa regi 1958 (David Lean)</li><li>Golden Globe - Bästa skådespelare - Drama 1958 (1018)</li><li>NBR Award - Bästa film 1957</li><li>NBR Award - Bästa regi 1957 (David Lean)</li><li>NBR Award - Bästa skådespelare 1957 (1018)</li><li>NBR Award - Bästa manliga biroll 1957 (Sessue Hayakawa)</li><li>NYFCC Award - Bästa film 1957</li><li>NYFCC Award - Bästa regi 1957 (David Lean)</li><li>NYFCC Award - Bästa skådespelare 1957 (1018)</li><li>Laurel Awards, Golden Laurel - Top Drama 3:e plats 1958</li><li>Laurel Awards, Golden Laurel - Top Male Dramatic Performance (2:a plats) 1958 (1018)</li><li>David di Donatello Awards, David - Bästa utländska produktion 1958 (Sam Spiegel)</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska skådespelare 1959 (1018)</li><li>Golden Screen, Germany, Golden Screen 1984</li><li>Golden Screen, Germany, Golden Screen with 1 Star 1984</li><li>National Film Preservation Board, National Film Registry 1997</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa manliga biroll 1958 (Sessue Hayakawa)</li><li>Golden Globe - Bästa manliga biroll 1958 (Sessue Hayakawa)</li><li>Grammy - Best Soundtrack Album, Dramatic Picture Score or Original Cast 1959</li><li>DVD Exclusive Awards, Video Premiere Award - Best DVD Menu Design 2001</li><li>DVD Exclusive Awards, Video Premiere Award - Best DVD Original Retrospective Documentary/Featurette (For "The Making of 'The Bridge on the River Kwai'".) 2001</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The closing arguments monologue was the longest in film history.</li><li>Although the story was obviously a thinly-disguised recreation of the Nathan Leopold and Richard Loeb murder case, the legal department of 20th Century Fox was still concerned about a possible lawsuit from the still-living Leopold. A great effort was made not to mention Leopold or Loeb in the movie, press releases, and interviews. However, there was apparently poor communication with the advertising department, since when the movie came out, newspaper ads stated, &quot;Based on the famous Leopold and Loeb murder case.&quot; Leopold sued the filmmakers. He did not claim libel, slander or anything false or defamatory about the film. Instead, he claimed an invasion of privacy. The court rejected his claim in part because Leopold had already published his own autobiography &quot;Life Plus 99 Years&quot;, publicizing essentially the same facts.</li><li>Because [Orson Welles][/p?id=1711] was having tax problems during the production, at the end of shooting his salary for the movie was garnisheed by the Los Angeles County Sheriff's Department. This upset [Welles][/p?id=1711] so much that just before he finished looping his dialogue in post-production, he stormed off the studio and left the country. All that was left to be looped was the last 20 seconds of his end speech in the courtroom. Incredibly, editor [William Reynolds][/p?id=William%20Reynolds] fixed this problem without needing [Welles][/p?id=1711]. [Reynolds][/p?id=William%20Reynolds] took words and pieces of words [Welles][/p?id=1711] had spoken earlier in the movie, and pieced them one by one into those 20 seconds.</li><li>The original play included what was then a modern-day sequence. This was omitted from the film. It showed several of the characters thirty years after the story took place.</li><li>In his treatment of the Leopold-Loeb case, [Rope][/f?id=17654] (1948), [Alfred Hitchcock][/p?id=1021] used his famous &quot;ten minute takes&quot; and segued from one to the other with a &quot;natural wipe&quot; generally focusing on the back of one of the character's suit jackets. Perhaps as an homage to [The Master][/p?id=1021], Compulsion (1959) director [Richard Fleischer][/p?id=1786] uses a &quot;natural wipe&quot; focusing on the front of [Bradford Dillman's][/p?id=1097] suit to end a scene.</li><li>For some reason the appropriately gravelly voice of actor/wrestler [Henry Kulky][/p?id=Henry%20Kulky], nicknamed &quot;Bomber&quot; playing the part of a speakeasy waiter, is dubbed by another actor.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

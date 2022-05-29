@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Butch Cassidy Och Sundance Kid | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Butch Cassidy Och Sundance Kid <a href="#" class="grade">++++</a></h2>
+										<h3>Butch Cassidy And The Sundance Kid</h3>
+										<p>
+										Film från <time datetime="1969"><a href="#">1969</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>George Roy Hill</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1727.html">Paul Newman</a> – Butch Cassidy</li><li><a href="/svenusling/p/1821.html">Robert Redford</a> – The Sundance Kid</li><li>Katharine Ross – Etta Place</li><li>Strother Martin – Percy Garris</li><li>Henry Jones – Bike Salesman</li><li>Jeff Corey – Sheriff Bledsoe</li><li>George Furth – Woodcock</li><li>Cloris Leachman – Agnes</li><li>Ted Cassidy – Harvey Logan</li><li>Kenneth Mars – Marshal</li><li>Donnelly Rhodes – Macon</li><li>Jody Gilbert – Large Woman Train Passenger</li><li>Timothy Scott – News Carver</li><li>Don Keefer – Fireman</li><li>Charles Dierkop – Flat Nose Curry</li><li>Pancho Córdova – Bank Manager</li><li>Nelson Olmsted – Photographer</li><li>Paul Bryar – Card Player #1</li><li><a href="/svenusling/p/1851.html">Sam Elliott</a> – Card Player #2</li><li>Charles Akins – Bank Teller</li><li>Eric Sinclair – Tiffany's Salesman</li><li>Douglas Bank – Citizen (uncredited)</li><li>Larry Barton – Citizen (uncredited)</li><li>Rico Cattani – Bank Guard (uncredited)</li><li>José Chávez – Bolivian Police Commander (uncredited)</li><li>Dave Dunlop – Gunman (uncredited)</li><li>Jill Hall – Minor Role (uncredited)</li><li>Percy Helton – Sweetface (uncredited)</li><li>Buck Holland – Posse Member (uncredited)</li><li>Jack Isbell – Posseman (uncredited)</li><li>Enrique Lucero – Guard in the 1st Bolivian Bank (uncredited)</li><li>Jorge Russek – Bolivian Army Officer (uncredited)</li><li>José Torvay – Bolivian Bandit (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Noomaraton, Jury Prize - Best Film Skåne 2015 (Jarno Lee Vinsencius)</li><li>Noomaraton, Jury Prize - National Honorary Award 2015 (Jarno Lee Vinsencius)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>The Monthly Film Festival (TMFF) - Månadens skådespelare 2016, July Award (Demis Tzivis)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Paul Newman][/p?id=1727] and [Robert Redford][/p?id=1821] really leaped off the cliff; however, they landed on a ledge with a mattress roughly six feet below. That now famous leap to elude capture was done earlier by [Tyrone Power][/p?id=Tyrone%20Power] as [Jessie James][/f?id=21203] (1939).</li><li>They tried to get [Bob Dylan][/p?id=Bob%20Dylan] to sing [Burt Bacharach's][/p?id=Burt%20Bacharach] famous song for the movie. He declined.</li><li>[Dustin Hoffman][/p?id=1254] was considered for the role of Butch.</li><li>[Katharine Ross][/p?id=Katharine%20Ross] enjoyed shooting the silent, bicycle riding sequence best, because it was handled by the film crew's second unit rather than the director. She said, &quot;Any day away from [George Roy Hill][/p?id=George%20Roy%20Hill] was a good one.&quot;</li><li>[Paul Newman][/p?id=1727] did his own bicycle stunts, after his stunt man was unable to stay on the bike, except for the scene where Butch crashes backwards into the fence, which was performed by cinematographer Conrad L. Hall.</li><li>The actual name of Butch and Sundance's gang was The Wild Bunch. However, when the [Sam Peckinpah][/p?id=Sam%20Peckinpah] film, The Wild Bunch (1969), was released a few months earlier, the name of the gang was changed to the Hole in the Wall Gang to avoid confusion with [Peckinpah's][/p?id=Sam%20Peckinpah] film.</li><li>According to screenwriter William Goldman, his screenplay originally was entitled &quot;The Sundance Kid and [Butch Cassidy][/p?id=Butch%20Cassidy].&quot; Both [Steve McQueen][/p?id=1904] and [Paul Newman][/p?id=1727] read the script at approximately the same time, and agreed to do it, with [McQueen][/p?id=1904] playing the Sundance Kid. When [McQueen][/p?id=1904] dropped out, the names reversed in the title, as [Newman][/p?id=1727] was a superstar.</li><li>Other actors that were under consideration for the role of Sundance were [Steve McQueen][/p?id=1904] and [Warren Beatty][/p?id=1991]. [McQueen][/p?id=1904] withdrew due to billing disagreements, and [Beatty][/p?id=1991] declined as he found the film too similar to Bonnie and Clyde (1967).</li><li>[Sam Elliott's][/p?id=1851] feature film debut.</li><li>[Jack Lemmon][/p?id=1400] turned down the role of Sundance because of a scheduling conflict with The Odd Couple (1968).</li><li>All the Bolivia scenes were filmed in Mexico, where almost the entire cast and crew, and the director, came down with [Montezuma's][/f?id=16381] Revenge (severe diarrhea caused by drinking Mexico's notoriously polluted water). Only [Robert Redford][/p?id=1821], [Paul Newman][/p?id=1727] and [Katharine Ross][/p?id=Katharine%20Ross] were spared, because they refused to drink the water catered on the set and stuck to drinking soda and alcohol for the duration of the shoot.</li><li>The sister of the real [Butch Cassidy][/p?id=Butch%20Cassidy] often visited the set, and her presence was welcome to the cast and crew. During lulls in shooting she would tell stories about her famous brother's escapades, and was amazed at how accurately the script and [Paul Newman][/p?id=1727] portrayed him. Before the film was released, the studio found out about her visits and tried to convince her to endorse the movie in a series of ads to be shown in theatres across the country. She said that she would, but only if she saw the film first and truly stood behind it. The studio refused, saying that allowing her to see the film before its release could harm its reputation. Finally, at [Robert Redford's][/p?id=1821] suggestion, she agreed to do the endorsements - for a small &quot;fee.&quot;</li><li>[Marlon Brando][/p?id=1616] was seriously considered to team with [Paul Newman][/p?id=1727] for one of the roles.</li><li>On the first day of shooting, involving the train robbery scenes, [Katharine Ross][/p?id=Katharine%20Ross] came to the set to watch. There were five cameras and only four operators, so the DP put her on the extra camera. He showed her how to operate it, and how to move it to get her shot. Director [George Roy Hill][/p?id=George%20Roy%20Hill] was furious, but said nothing the whole day. At the end of the day, however, he banned her from the set except when she was working.</li><li>With nine wins it currently holds the record for the British Academy Awards (BAFTAs). It won for picture, actor ([Robert Redford][/p?id=1821]), actress ([Katharine Ross][/p?id=Katharine%20Ross], direction ([George Roy Hill][/p?id=George%20Roy%20Hill], screenplay, cinematography, film editing, sound and score.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

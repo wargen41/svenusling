@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Butler | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Butler <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2013"><a href="#">2013</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Lee Daniels</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1297.html">Forest Whitaker</a> – Cecil Gaines</li><li>David Banner – Earl Gaines</li><li>Michael Rainey Jr. – Cecil Gaines (8)</li><li>LaJessie Smith – Abraham</li><li>Mariah Carey – Hattie Pearl</li><li>Alex Pettyfer – Thomas Westfall</li><li>Vanessa Redgrave – Annabeth Westfall</li><li>Aml Ameen – Cecil Gaines (15)</li><li>Clarence Williams III – Maynard</li><li>John P. Fertitta – Mr. Jenkins</li><li>Jim Gleason – R.D. Warner</li><li>Oprah Winfrey – Gloria Gaines</li><li>Isaac White – Charlie Gaines (10)</li><li>David Oyelowo – Louis Gaines</li><li>Joe Chrest – White Usher</li><li>Colman Domingo – Freddie Fallows</li><li>Adriane Lenox – Gina</li><li>Terrence Howard – Howard</li><li>Tyson Ford – Elroy</li><li><a href="/svenusling/p/1193.html">Cuba Gooding Jr.</a> – Carter Wilson</li><li>Lenny Kravitz – James Holloway</li><li>Pernell Walker – Lorraine</li><li>James DuMont – Sherman Adams</li><li>Robert Aberdeen – Herbert Brownell</li><li><a href="/svenusling/p/1828.html">Robin Williams</a> – Dwight D. Eisenhower</li><li><a href="/svenusling/p/1480.html">John Cusack</a> – Richard Nixon</li><li>Olivia Washington – Olivia</li><li>Yaya Alafia – Carol Hammie</li><li>Jesse Williams – James Lawson</li><li>Margaret M. Owens – Woolworth Diner Patron #1</li><li>Eric Ducote – Woolworth Diner Patron #2</li><li>James Marsden – John F. Kennedy</li><li>Minka Kelly – Jacqueline Kennedy</li><li>Chloe Barach – Caroline Kennedy</li><li>Danny Strong – Freedom Bus Journalist</li><li>Clara Hopkins Daniels – Freedom Bus Rider</li><li>Elijah Kelley – Charlie Gaines (15-18)</li><li>Liev Schreiber – Lyndon B. Johnson</li><li>Dana Gourrier – Helen Holloway</li><li>Shirley Pugh – Malcolm X Goer</li><li>Bill Newman – Pastor</li><li>Nelsan Ellis – Martin Luther King Jr.</li><li>Colin Walker – John Ehrlichman</li><li>Alex Manette – Bob Haldeman</li><li>Mo McRae – Eldridge Huggins</li><li><a href="/svenusling/p/1012.html">Alan Rickman</a> – Ronald Reagan</li><li><a href="/svenusling/p/1430.html">Jane Fonda</a> – Nancy Reagan</li><li>Rusty Robertson – Senator Robertson</li><li>Nealla Gordon – Senator Kassebaum</li><li>Stephen Rider – Admiral Rochon</li><li>Jazzy Ellis – College Student</li><li>Gerald Ford – Himself (archive footage)</li><li>Douglas M. Griffin – White Mob Leader</li><li>Andre Allemand – Bridge Protester (uncredited)</li><li>John L. Armijo – Eisenhowers Military Adviser (uncredited)</li><li>Jon Arthur – BET Videographer (uncredited)</li><li>Rex Baker – Protester (uncredited)</li><li>Joshua Braud – Josh (uncredited)</li><li>Blake Burt – Protester (uncredited)</li><li>Carroll Burt – Man at Water Fountain (uncredited)</li><li>Jonathan Aaron Butler – College Student (uncredited)</li><li>Tom Cain – Arresting Officer (uncredited)</li><li>Edward J. Clare – Two Star General (uncredited)</li><li>JJ Coker – James Baker (uncredited)</li><li>Markeith Coleman – Prisoner (uncredited)</li><li>Ross P. Cook – Embassy Protester (uncredited)</li><li>Duane Cothren – Military Social Aide (uncredited)</li><li>Haylie Creppel – White House Child (uncredited)</li><li>Steven J. Daniels – Protestor (uncredited)</li><li>Justin Edward Davis – Pool Teenager (uncredited)</li><li>Donna Duplantier – Barbara Gaines (uncredited)</li><li>Adrienne Esteen – Protestor (uncredited)</li><li>Guy Fernandez – Black Panther (uncredited)</li><li>Justin Gant – Diner Attacker (uncredited)</li><li>Ray Gaspard – Pat Buchanan (uncredited)</li><li>Tyler Gibbs – Jim counter mgr (uncredited)</li><li>Russell M. Haeuser – Redneck Bar Patron (uncredited)</li><li>A. Michelle Harleston – D.C. Bus Station Passengers Parent (uncredited)</li><li>Sadarias Harrell – DC Bus Rider / Prisoner / Rioter (uncredited)</li><li>Rodney Hebert – White House Engineer (uncredited)</li><li>Donna Hubbs – 1930's Lady Served Martini (uncredited)</li><li>Rahsaana Ison – Woman in Waiting Room (uncredited)</li><li>David Jensen – MacGeorge Bundy (uncredited)</li><li>Jim Johnson – Eisenhower Dinner Guest (uncredited)</li><li>Mark Joyce – Barfly (uncredited)</li><li>Elton LeBlanc – Admiral, US Navy (uncredited)</li><li>Wanda Leigh – Lady Bird Johnson (uncredited)</li><li>Sam Malone – Young Abraham (uncredited)</li><li>John R Mangus – Mississippi Jail Guard (uncredited)</li><li>Starlette Miariaunii – College Student (uncredited)</li><li>Dorian Morrison – Rioter (uncredited)</li><li>Mary Katherine Oglesby – White House Child (uncredited)</li><li>Monicah Owino – Church Congregation Member (uncredited)</li><li>Darryl Perrilloux – Washington DC Rioter (uncredited)</li><li>Jeffrey Poitier – White House Butler (uncredited)</li><li>Renato Powell – Kitchen Chef (uncredited)</li><li>Philippe Radelet – Houseman (uncredited)</li><li>Tarra Riggs – Sophie Wilson (uncredited)</li><li>Xosha Roquemore – Foxy (uncredited)</li><li>Corrina Roshea – White House Guest (uncredited)</li><li>Aaron Saxton – Prison Guard (uncredited)</li><li>Carl Singleton – White House Butler (uncredited)</li><li>Chaz Smith – Reagan Reception Attendee (uncredited)</li><li>Kay Smith – Diane Nash (uncredited)</li><li>Jim Sojka – White House Engineer (uncredited)</li><li>Marco St. John – Chief Justice Warren Burger (uncredited)</li><li>Jason Stanly – Reagan Marine Color Guard (uncredited)</li><li>Valerie Strecker – Excelsior Hotel Guest (uncredited)</li><li>Craig Tate – Hobo (uncredited)</li><li>Shirley Tregre – Mob Woman (uncredited)</li><li>Joseph Uzzell – Angry Mob Member (uncredited)</li><li>Bob Walker – JFK VIP Friend (uncredited)</li><li>Dean J. West – White House Reporter (uncredited)</li><li>Michael Whitener –  (uncredited)</li><li>Jake Wynne-Wilson – Reagan's Body Man (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Emmy - Outstanding Made for Television Movie 2007</li><li>Emmy - Outstanding Cinematography for a Miniseries or Movie 2007</li><li>Emmy - Outstanding Sound Editing for a Miniseries, Movie or a Special 2007</li><li>Emmy - Outstanding Single Camera Picture Editing for a Miniseries or a Movie 2007</li><li>Emmy - Outstanding Sound Mixing for a Miniseries or a Movie 2007</li><li>Emmy - Outstanding Makeup for a Miniseries, Movie or a Special (Non-Prosthetic) 2007</li><li>Casting Society of America, Artios - Best Movie of the Week Casting 2007</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film gjord för TV 2008</li><li>C.A.S. Award - Outstanding Achievement in Sound Mixing for Television Movies and Mini-Series 2008</li><li>CDG Award - Outstanding Costume Design for Television Movie/Mini-Series 2008</li><li>DGA Award - 	 Outstanding Directorial Achievement in Movies for Television/Miniseries 2008 (Yves Simoneau)</li><li>Humanitas Prize - 90 Minute Category 2008 (Daniel Gait)</li><li>Golden Reel Award - Best Sound Editing - Dialogue and ADR for Long Form Television 2008</li><li>Golden Reel Award - Best Sound Editing - Sound Effects and Foley for Long Form Television 2008</li><li>NAMIC Vision Awards, Vision Award - Drama 2008</li><li>NAMIC Vision Awards, Vision Award - Bästa skådespelare - Drama 2008 (Adam Beach)</li><li>PGA Awards - Television Producer of the Year Award in Longform 2008</li><li>VES Award - Outstanding Created Environment in a Live Action Broadcast Program or Commercial (For 002_05.) 2008</li><li>Western Heritage Awards, Bronze Wrangler - Bästa TV-film 2008</li><li>Young Artist Award - Best Performance in a TV Movie, Miniseries or Special - Leading Young Actor 2008 (Chevez Ezaneh)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Emmy - Outstanding Directing for a Miniseries, Movie or a Dramatic Special 2007 (Yves Simoneau)</li><li>Emmy - Outstanding Supporting Actor in a Miniseries or Movie 2007 (1005)</li><li>Emmy - Outstanding Supporting Actor in a Miniseries or Movie 2007 (August Schellenberg)</li><li>Emmy - Outstanding Supporting Actress in a Miniseries or Movie 2007 (1047)</li><li>Emmy - Outstanding Writing for a Miniseries, Movie or a Dramatic Special 2007 (Daniel Giat)</li><li>Emmy - Outstanding Casting for a Miniseries, Movie or a Special 2007</li><li>Emmy - Outstanding Costumes for a Miniseries, Movie or a Special 2007</li><li>Emmy - Outstanding Art Direction for a Miniseries, or Movie 2007</li><li>Emmy - Outstanding Hairstyling for a Miniseries, Movie or a Special 2007</li><li>Emmy - Outstanding Music Composition for a Miniseries, Movie or a Special (Original Dramatic Score 2007 (George S. Clinton)</li><li>Emmy - Outstanding Special Visual Effects for a Miniseries, Movie or a Special 2007</li><li>Satellite Award - Bästa TV-film 2007</li><li>Satellite Award - Bästa manliga biroll i en miniserie eller TV-film 2007 (1005)</li><li>Golden Globe - Bästa minserie eller TV-film 2008</li><li>Golden Globe - Bästa skådespelare i en miniserie eller TV-film 2008 (Adam Beach)</li><li>Golden Globe - Bästa kvinnliga biroll i en miniserie eller TV-film 2008 (1047)</li><li>American Cinema Editors, Eddie - Best Edited Miniseries or Motion Picture for Non-Commercial Television 2008</li><li>ASC Award - 	 Outstanding Achievement in Cinematography in Movies of the Week/Mini-Series'/Pilot 2008</li><li>Image Award - Outstanding Television Movie, Mini-Series or Dramatic Special 2008</li><li>Image Award - Outstanding Actor in a Television Movie, Mini-Series or Dramatic Special 2008 (Adam Beach)</li><li>Screen Actors Guild Awards, Actor - Outstanding Performance by a Female Actor in a Television Movie or Miniseries 2008 (1047)</li><li>WGA Award (TV) - Long Form - Adaptation 2008 (Daniel Gait)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

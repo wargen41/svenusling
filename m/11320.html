@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brinner Paris? | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Brinner Paris? <a href="#" class="grade">+++</a></h2>
+										<h3>Paris brûle-t-il?</h3>
+										<p>
+										Film från <time datetime="1966"><a href="#">1966</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>René Clément</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Jean-Paul Belmondo – Pierrelot - Yvon Morandat</li><li><a href="/svenusling/p/1143.html">Charles Boyer</a> – Docteur Monod</li><li>Leslie Caron – Françoise Labé</li><li>Jean-Pierre Cassel – Lieutenant Henri Karcher</li><li>George Chakiris – G.I. devant Notre Dame / GI in Tank</li><li>Bruno Cremer – Colonel Rol Tanguy</li><li>Claude Dauphin – Colonel Lebel</li><li>Alain Delon – Jacques Chaban-Delmas</li><li><a href="/svenusling/p/1554.html">Kirk Douglas</a> – Général Patton / Gen. George S. Patton Jr.</li><li>Pierre Dux – Cerat - Alexandre Parodi</li><li><a href="/svenusling/p/1337.html">Glenn Ford</a> – Général Bradley / Lt. Gen. Omar N. Bradley</li><li>Gert Fröbe – Général Von Choltitz / General Dietrich von Choltitz</li><li>Daniel Gélin – Yves Bayet</li><li>Georges Géret – Le boulanger / Baker</li><li>Hannes Messemer – Général Jodl / General Jodl</li><li>Harry Meyen – Lieutenant Von Arnim / Lieutenant von Arnim</li><li>Yves Montand – Sgt. Marcel Bizien / Sergent tankiste</li><li><a href="/svenusling/p/1055.html">Anthony Perkins</a> – Sergent U.S. / Sgt. Warren</li><li>Michel Piccoli – Edgar Pisani</li><li>Wolfgang Preiss – Capitaine Ebernach</li><li>Claude Rich – Général Leclerc / Commandant de la Fouchardière</li><li>Simone Signoret – La patronne du bistrot / Cafe Owner</li><li><a href="/svenusling/p/1823.html">Robert Stack</a> – Général Sibert / Brig. General Wm L. Sibert</li><li>Jean-Louis Trintignant – Capitaine Serge</li><li>Pierre Vaneck – Maj. Roger Gallois</li><li>Marie Versini – Claire Morandat</li><li>Skip Ward – Charlie, un soldat U.S.</li><li><a href="/svenusling/p/1711.html">Orson Welles</a> – Consul Raoul Nordling</li><li>Michel Etcheverry – Préfet Luizet</li><li>Billy Frick – Adolf Hitler</li><li>Ernst Fritz Fürbringer – Général Von Boineburg / General von Voineburg</li><li>Konrad Georg – Maréchal Model / Gen. Feldmarschall Model</li><li>Joachim Hansen – Commandant prison de Fresnes</li><li>Félix Marten – Georges Landrieu</li><li>Paloma Matta – Lilane Charvet, la jeune mariée</li><li>Günter Meisner – Commandant SS à Pantin</li><li>Sacha Pitoëff – Joliot-Curie</li><li>Albert Rémy – Policeman / Le gendarme</li><li>Christian Rode – Soldat allemand brûlé</li><li>Helmuth Schneider – Adjudant allemand métro</li><li>Otto Stern – Soldat allemand métro</li><li>Tony Taffin – Bernard Labé</li><li>Jean Valmont – F.F.I. bazooka</li><li>Karl-Otto Alberty – SS - tapisserie de Bayeux</li><li>Pierre Collet – Un policier résistant</li><li>Paul Crauchet – Le curé / Priest</li><li>Germaine de France – Une vieille dame / Old lady</li><li>Bernard Fresson – Agent de liaison F.F.I.</li><li>Michel Gonzalès – Étudiant résistant</li><li>Peter Jacob – Génaral Burgdorf / Gen. Burgdorf</li><li>Hubert de Lapparent – L'huissier à Matignon</li><li>Roger Lumont – Jade Amicol</li><li>Pierre Mirat – Patron du bistro Medicis</li><li>Francis Nani – Étudiant resistant</li><li>Peter Neusser – SS - tapisserie de Bayeux</li><li>Sébastien Poitrenaud – Étudiant resistant</li><li>Jean-Michel Rouzière – Le monsieur au petit chien</li><li>Georges Staquet – Capitaine Dronne</li><li>Hénia Suchar – La standardiste de la préfecture</li><li>Claude Vernier – Prisonnier allemand</li><li>Roland Armontel – Un passant / Foot passenger (uncredited)</li><li>Georges Ass – Un prisonnier à Pantin (uncredited)</li><li>Philippe Baronnet – Un résistant / A resistant (uncredited)</li><li>Georges Béreux –  (uncredited)</li><li>Michel Berger – Chief of Explosives (uncredited)</li><li>Georges Bidault – Himself (in victory walk) (uncredited|archive footage)</li><li>Paul Bisciglia – Un homme sur un char (uncredited)</li><li>Paul Bonifas – Mayor (uncredited)</li><li>Gerhard Bormann –  (uncredited)</li><li>Colette Brosset –  (uncredited)</li><li>Georges Carnazzo –  (uncredited)</li><li>Adrien Cayla-Legrand – Un prisonnier à Pantin (uncredited)</li><li>Georges Claisse – Intern with Monod (uncredited)</li><li>Louis Daquin –  (uncredited)</li><li>Charles de Gaulle – Himself (in victory walk) (uncredited|archive footage)</li><li>Suzy Delair – Une Parisienne (uncredited)</li><li>Patrick Dewaere – Un jeune résistant fusillé / A young resistant (uncredited)</li><li>Guy Di Rigo – A G.I. (uncredited)</li><li>C.O. Erickson –  (uncredited)</li><li>Pierre Fabrice –  (uncredited)</li><li>André Falcon – Member of Resistance council (uncredited)</li><li>Pascal Fardoulis – Gilet (uncredited)</li><li>Roland Fleury – A G.I. (uncredited)</li><li>Michel Fugain – A young resistant (uncredited)</li><li>Monique Fusier –  (uncredited)</li><li>Lutz Gabor – German officer (uncredited)</li><li>Clara Gansard – Wife of Col. Tanguy (uncredited)</li><li>Marcel Gassouk – Un prisonnier allemand (uncredited)</li><li>Rol Gauffin –  (uncredited)</li><li>Jeanne Herviale – Bit part (uncredited)</li><li>Claus Holm – Huhm (uncredited)</li><li>Jean-Pierre Honoré – Alain Perpezat (uncredited)</li><li>Nicole Jonesco –  (uncredited)</li><li>Catherine Kamenka – Diane (uncredited)</li><li>Billy Kearns – Patton Aide (uncredited)</li><li>Pierre Koenig – Himself (in victory walk) (uncredited|archive footage)</li><li>Jacques Lalande – Policeman (uncredited)</li><li>Viviane Landford –  (uncredited)</li><li>Joëlle LaTour – Young Girl with Warren (uncredited)</li><li>Jacques Leclerc – Himself (in victory walk) (uncredited|archive footage)</li><li>Rudy Lenoir – German officer (uncredited)</li><li>Jacques Léonard – American soldier (uncredited)</li><li>Yves le Trocquer – Himself (in victory walk) (uncredited|archive footage)</li><li><a href="/svenusling/p/1656.html">Michael Lonsdale</a> – Debu-Bridel (uncredited)</li><li>Rico López –  (uncredited)</li><li>Maria Machado – Stella (uncredited)</li><li>Philippe March – Roland Pré (uncredited)</li><li>E.G. Marshall – Intelligence Officer Powell (uncredited)</li><li>Mike Marshall – F.F.I. (uncredited)</li><li>Yves-Marie Maurin –  (uncredited)</li><li>Raymond Meunier –  (uncredited)</li><li>Jean Michaud – Le commandant à Matignon (uncredited)</li><li>Harald Momm – Colonel Jay (uncredited)</li><li>Georges Montant – A doctor (uncredited)</li><li>Russ Moro –  (uncredited)</li><li>Del Negro – Officer with Chaban-Delmas (uncredited)</li><li>Jean Négroni – Villon (uncredited)</li><li>Alexandre Parodi – Himself (in victory walk) (uncredited|archive footage)</li><li>Roger Pera – A G.I. (uncredited)</li><li>Raymond Pierson –  (uncredited)</li><li>Policard –  (uncredited)</li><li>Alain Pommier – Franjoux (uncredited)</li><li>Georges Poujouly – Landrieux (uncredited)</li><li>Jacques Préboist – L'homme qui se rase à sa fenêtre (uncredited)</li><li>Michel Puterflam – Laffont (uncredited)</li><li>Tony Rödel – Un officier allemand invité de Von Choltiz / German officer (uncredited)</li><li>Serge Rousseau – Col. Fabien (uncredited)</li><li>André Rouyer –  (uncredited)</li><li>Michel Sales – Galois's friend (uncredited)</li><li>Jacques Santi – A resistant (uncredited)</li><li>Michel Sardou – A young resistant (uncredited)</li><li>Wolfgang Sauer – Hégel (uncredited)</li><li>Pierre Tamin – Maurannes (uncredited)</li><li>Jean-Paul Tribout – A young resistant (uncredited)</li><li>Ronald Urban – German soldier (uncredited)</li><li>Cécile Vassort – Une jeune femme (uncredited)</li><li>Pierre Vaudier –  (uncredited)</li><li>Hans Verner –  (uncredited)</li><li>Joe Warfield – Major with Chaban-Delmas (uncredited)</li><li>Joachim Westhoff – German officer with Claire (uncredited)</li><li>Dominique Zardi –  (uncredited)</li><li>Jean-Pierre Zola – La caporal Mayer / Cpl. Mayer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>British Independent Film Award - Best Technical Achievement (For cinematography.) 2009</li><li>Heartland Film Festival, Truly Moving Sound Award 2009 (Jane Campion)</li><li>SDFCS Award - Bästa skådespelerska (2:a plats) 2009 (Abbie Cornish)</li><li>AFI Award - Bästa foto 2010</li><li>AFI Award - Bästa kostym 2010</li><li>AFI Award - Bästa scenografi 2010</li><li>IF Award - Bästa scenografi 2010</li><li>NSFC Award - Bästa manliga biroll 2010 (Paul Schneider)</li><li>NSFC Award - Bästa skådespelerska (3:e plats) 2010 (Abbie Cornish)</li><li>Australian Cinematographers Society, Cinematographer of the Year 2011</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>British Independent Film Award - Bästa regi 2009 (Jane Campion)</li><li>British Independent Film Award - Bästa skådespelerska 2009 (Abbie Cornish)</li><li>British Independent Film Award - Bästa kvinnliga biroll 2009 (Kerry Fox)</li><li>Cannes Film Festival, Palme d'Or 2009 (Jane Campion)</li><li>CFCA Award - Bästa skådespelerska 2009 (Abbie Cornish)</li><li>CFCA Award - Bästa foto 2009</li><li>SDFCS Award - Bästa manliga biroll 2009 (Paul Schneider)</li><li>Satellite Award - Bästa film - Drama 2009</li><li>Satellite Award - Bästa regi 2009 (Jane Campion)</li><li>Satellite Award - Bästa skådespelerska - Drama 2009 (Abbie Cornish)</li><li>Satellite Award - Bästa originalmanus 2009 (Jane Campion)</li><li>Satellite Award - Bästa kostym 2010</li><li>BAFTA Film Award - Bästa kostym 2010</li><li>AFI Award - Samsung Mobile AFI Award for Best Film 2010</li><li>AFI Award - Bästa regi 2010 (Jane Campion)</li><li>AFI Award - Bästa skådespelerska 2010 (Abbie Cornish)</li><li>AFI Award - Bästa kvinnliga biroll 2010 (Abbie Cornish)</li><li>AFI Award - Macquarie AFI Award for Best Original Screenplay 2010 (Jane Campion)</li><li>AFI Award - Bästa musik 2010</li><li>AFI Award - Bästa klippning 2010</li><li>Australian Film Institute, AFI Members’ Choice Award 2010</li><li>ASE Award - Avid Award for Best Editing on a Feature Film 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa kostym 2010</li><li>Chlotrudis Award - Bästa skådespelerska 2010 (Abbie Cornish)</li><li>Evening Standard British Film Award - Bästa film 2010 (Jane Campion)</li><li>IF Award - Bästa foto 2010</li><li>IF Award - Bästa ljud 2010</li><li>IF Award - Bästa klippning 2010</li><li>ALFS Award - Årets brittiska film 2010</li><li>ALFS Award - Årets skådespelerska 2010 (Abbie Cornish)</li><li>César Awards, César - Bästa utländska film 2011 (Jane Campion)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>A French postman felt off his bicycle on the Champs Elysées, when he saw some extras dressed as German soldiers crossing the avenue during a lunch pause. He ran out screaming, &quot;They're back! They're back!&quot;</li><li>Some of the French actors, such as [Charles Boyer][/p?id=1143], [Leslie Caron][/p?id=Leslie%20Caron] and [Jean-Pierre Cassel][/p?id=Jean-Pierre%20Cassel], dubbed their own dialogue into English. The American theatrical release of this film had all the French dialogue parts of the film dubbed into English language.</li><li>One of the main reasons for the movie being filmed in B&amp;W was the Nazi flags. The French authorities refused to allow red and black Nazi flags to fly in Paris, even for a movie. They agreed only to have black and gray flags.</li><li>During this movie a Nazi propaganda film is shown, saying that Poland had attacked Germany and started the war. The truth is that the Germans staged a &quot;Polish attack&quot; by dressing Polish prisoners in military uniforms and filming the &quot;invasion&quot; as an excuse to invade Poland.</li><li>[Roddy McDowell][/p?id=Roddy%20McDowell] was booked for a major cameo role but was replaced before filming.</li><li>The meaning and relevance of this film's title Is Paris Burning? relates to the order given by Nazi high-command to bomb and destroy the city of Paris during the Second World War. During the film, when the resistance and Allied forces take back the city of Paris, on the phone can be heard a high-ranking Nazi (probably [Adolf Hitler][/p?id=Adolf%20Hitler] played by [Billy Frick][/p?id=Billy%20Frick]) ask the question: Is Paris Burning? Apparently, during August 1944 in the actual Second World War, [Adolf Hitler][/p?id=Adolf%20Hitler] ordered a response to this Is Paris Burning? question from the Nazi German Commander of Paris, General Dietrich von Choltitz (played by [Gert Fröbe][/p?id=Gert%20Fr%C3%B6be] in this film). Other reports state that the origin of the Is Paris Burning? question was that it was [Hitler's][/p?id=Adolf%20Hitler] question to his Chief of Staff of Operations Alfred Jodl and not to von Choltitz.</li><li>French actor [Claude Rich][/p?id=Claude%20Rich] actually plays two characters in this film. [Rich][/p?id=Claude%20Rich] plays the young Lieutenant Pierre de la Fouchardière and the mustached Général Leclerc, the Commandant de la Fouchardière, but [Rich][/p?id=Claude%20Rich] is only credited in the film's closing credits for playing Leclerc. In real life, as a teenage boy during the Second World War, whilst looking at soldiers in a street, [Rich][/p?id=Claude%20Rich] had been protected by the real de la Fouchardière when he motioned him to come into a building where he was.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

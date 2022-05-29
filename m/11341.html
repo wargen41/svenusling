@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bröllopsduellen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bröllopsduellen <a href="#" class="grade">+</a></h2>
+										<h3>Bride Wars</h3>
+										<p>
+										Film från <time datetime="2009"><a href="#">2009</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Gary Winick</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1529.html">Kate Hudson</a> – Liv</li><li><a href="/svenusling/p/1049.html">Anne Hathaway</a> – Emma</li><li>Bryan Greenberg – Nate</li><li><a href="/svenusling/p/1161.html">Chris Pratt</a> – Fletcher</li><li>Steve Howey – Daniel</li><li><a href="/svenusling/p/1126.html">Candice Bergen</a> – Marion</li><li>Kristen Johnston – Deb</li><li>Michael Arden – Kevin</li><li>Victor Slezak – Colson</li><li>Kelly Coffield Park – Kathy</li><li><a href="/svenusling/p/1495.html">John Pankow</a> – John</li><li>Zoe O'Grady – Young Liv</li><li>Shannon Ferber – Young Emma</li><li>June Diane Raphael – Amanda</li><li>Charles Bernard – Wedding DJ</li><li>Emily Sarah Stikeman – Student #1</li><li>Robert Capron – Student #2</li><li>Kallie Tabor – Student #3</li><li>Bruce Altman – Simmons</li><li>Hettienne Park – Marissa</li><li>Lauren Bittner – Amie</li><li>Jeremy Brothers – Nerdy Colleague</li><li>Rena Maliszewski – Female Colleague</li><li>Casey Wilson – Stacy</li><li>Sarah Kate Jackson – Salesgirl</li><li>Jason Kolotouros – Delivery Guy</li><li>Paul Scheer – Ricky Coo</li><li>Kristofer Stock – Officer 'Not Your Husband'</li><li>André Holland – DJ Jazzles</li><li>Anna Madigan – Tanorexic</li><li>Daniel Raymont – Colorist</li><li>Jon Daly – Head Set</li><li>Dennis Parlato – Dance Instructor</li><li>Michael Anastasia – Geeky Neighbor</li><li>Georgia Lyman – Airbrush Technician</li><li>Ryan A. Shaw – Singer</li><li>Derek Yuen – Hair Stylist</li><li>Eryn Gruttadauria – Locker Student</li><li>Nicole Stuart – Receptionist</li><li>Kayce Brown – Bespectacled Colleague</li><li>Manuel Lopes – Miguel</li><li>Robert Scott Wilson – Rob</li><li>Pamela Figueiredo – Pamela</li><li>Ryan Young – Head Set #2</li><li>Hannah Yun – Head Set #3</li><li>Sam Pannier – Stationery Clerk</li><li>Ariel Shafir – Security Guard</li><li class="voice">Steve Alterman –  (röst)</li><li class="voice">Jacqueline Pinol –  (röst)</li><li class="voice">Jennifer Crystal Foley –  (röst)</li><li class="voice">Michelle Ruff –  (röst)</li><li class="voice">Zolee Griggs –  (röst)</li><li class="voice">Karen Strassman –  (röst)</li><li class="voice">Bridget Hoffman –  (röst)</li><li class="voice">William Brent –  (röst)</li><li class="voice">Mary Mouser –  (röst)</li><li class="voice">Paul Pape –  (röst)</li><li class="voice">Kat Cressida –  (röst)</li><li class="voice">Zoë Raye –  (röst)</li><li class="voice">Elisa Gabrielli –  (röst)</li><li class="voice">Dennis Singletary –  (röst)</li><li class="voice">Gina Hirsch –  (röst)</li><li class="voice">Hudson Thames –  (röst)</li><li class="voice">Matthew Labyorteaux –  (röst)</li><li class="voice">Darian Bryant –  (röst)</li><li class="voice">Cassidy K. Rawlinson –  (röst)</li><li class="voice">Colin Ford –  (röst)</li><li class="voice">Justin Shenkarow –  (röst)</li><li class="voice">Kerry Gutierrez –  (röst)</li><li class="voice">Laura Summer –  (röst)</li><li class="voice">Karen Huie –  (röst)</li><li class="voice">Claudette Wells –  (röst)</li><li class="voice">Lynnanne Zager –  (röst)</li><li>Dale F. Appel – Wedding Guest (uncredited)</li><li>Ellen Becker-Gray – Fletcher's Aunt (uncredited)</li><li>Leigh Belair – Wedding Guest (uncredited)</li><li>Nick Cairis – Taxi Driver (uncredited)</li><li>Loraine Calderon – Bachelorette (uncredited)</li><li>Patrick Canty – Daniel's Best Man (uncredited)</li><li>Shannon Carter – Wedding Guest (uncredited)</li><li>Danny Connelly – Formal Wedding Guest (uncredited)</li><li>Desiree April Connolly – Wedding Guest / Teacher (uncredited)</li><li>Michael Anthony Coppola – Daniel's Father (uncredited)</li><li>Richard DeAgazio – Wedding Guest (uncredited)</li><li>Marcia DeBonis – Angela (uncredited)</li><li>Sean Patrick Doherty – Bartender (uncredited)</li><li>Keith Fluker – Groomsman (uncredited)</li><li>John Franchi – New York Cabbie (uncredited)</li><li>Lara Fury – Wedding Guest (uncredited)</li><li>Sari Gagnon – Bachelorette (uncredited)</li><li>Albert Gornie – Wedding Guest (uncredited)</li><li>Dane Grigas – Sales Clerk (uncredited)</li><li>Sophya Gudelman – Hot Girl (uncredited)</li><li>Mackenzie Hawe – Student (uncredited)</li><li>Patrick Mel Hayes – Wedding Guest (uncredited)</li><li>Quincy Heath – Wedding Guest (uncredited)</li><li>Haytham Kandil – Bartender (uncredited)</li><li>Ren Knopf – Dancer (uncredited)</li><li>Dan Marshall – Dancing Wedding Guest / Best Friend of '80s Groom (uncredited)</li><li>Robert Masiello – Wedding Guest (uncredited)</li><li>Todd Mello – Wedding Guest (uncredited)</li><li>Jason Mulcahy – The Palm Court Caterer (uncredited)</li><li>Alyson Muzila – Wedding guest (uncredited)</li><li>Giovanni Pantaleo – Bridal Shower Bartender (uncredited)</li><li>Valerie Parker – Liz's Friend (uncredited)</li><li>Donna Glee Reim – Wedding Guest (uncredited)</li><li>Steve Ricard – Wedding Guest (uncredited)</li><li>Seth Malvín Romero – Laughing Student (uncredited)</li><li>Sabe Schoeneg – Wedding Guest (uncredited)</li><li>Vyvian B. Stevens – Wedding Guest (uncredited)</li><li>Melanie Tamberino – Bar Patron (uncredited)</li><li>Jillian Taylor – Wedding Guest (uncredited)</li><li>Fraser Townley – Hotel Manager (uncredited)</li><li>Marc Vos – Wedding Guest (uncredited)</li><li>Melissa Whiteman – Salesgirl (uncredited)</li><li>Darryl Wooten – Wedding Guest (uncredited)</li><li>Adam Zalt – The Palm Court Caterer (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Originally, the film was conceived as a teen comedy with [Emma Roberts][/p?id=Emma%20Roberts] as Liv and [Nikki Reed][/p?id=Nikki%20Reed] as Emma.</li><li>One shot during the reception includes a complicated series of dance steps. After many failed attempts, an extra who happened to be a dance instructor asked to teach the actors how to perform the steps correctly.</li><li>This was [Kate Hudson's][/p?id=1529] first producing credit on a feature film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bull Durham | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bull Durham <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1988"><a href="#">1988</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre24">Sport</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ron Shelton</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1544.html">Kevin Costner</a> – Crash Davis</li><li><a href="/svenusling/p/1911.html">Susan Sarandon</a> – Annie Savoy</li><li><a href="/svenusling/p/1942.html">Tim Robbins</a> – Ebby Calvin 'Nuke' LaLoosh</li><li>Trey Wilson – Joe Riggins</li><li>Robert Wuhl – Larry Hockett</li><li>William O'Leary – Jimmy</li><li>David Neidorf – Bobby</li><li>Danny Gans – Deke</li><li>Tom Silardi – Tony</li><li>Lloyd T. Williams – Mickey McFee</li><li>Rick Marzan – Jose</li><li>George Buck – Mr. Laloosh</li><li>Jenny Robertson – Millie</li><li>Gregory Avellone – Doc</li><li>Garland Bunting – Teddy Cullinane</li><li>Robert Dickman – Whitey Sherrard</li><li>Timothy Kirk – Ed</li><li>Don Davis – Scared batter</li><li>Stephen Ware – Umpire</li><li>Tobi Eshelman – Bat boy</li><li>C.K. Bibby – Mayor Mutt Clark</li><li>Henry G. Sanders – Sandy</li><li>Antoinette Forsyth – Ballpark announcer</li><li>Shirley Anne Ritter – Cocktail waitress</li><li>Pete Bock – Minister</li><li>Alan Mejia – Chu Chu</li><li>Max Patkin – Himself (The Clown Prince of Baseball)</li><li>Sid Akins – Core baseball player</li><li>Craig Brown – Core baseball player</li><li>Wes Currin – Core baseball player</li><li>Butch Davis – Core baseball player</li><li>Paul Devlin – Core baseball player</li><li>Jeff Greene – Core baseball player</li><li>Kelly Heath – Core baseball player</li><li>Mo Johnson – Core baseball player</li><li>Tim Kirk – Core baseball player</li><li>Todd Kopeznski – Core baseball player</li><li>John Lovingood – Core baseball player</li><li>Eddie Matthews – Core baseball player</li><li>Alan Paternoster – Core baseball player</li><li>Bill Robinson – Core baseball player</li><li>Dean Robinson – Core baseball player</li><li>Tom Schultz – Core baseball player</li><li>Sam Veraldi – Core baseball player</li><li>El Chico Williams – Core baseball player</li><li>Mark Jeffrey Miller – Grounds crewman (uncredited)</li><li>Rachel Singer – Fan (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The movie was filmed on location in North Carolina in October and November, 1987, which is why the grass had to be touched up with green paint. It is also why the breath of the actors can be seen in many of the night scenes.</li><li>[Kevin Costner][/p?id=1544] (Crash Davis) is a switch hitter; he is shown hitting both left and right-handed at different points in the film.</li><li>In the scene where the bat boy tells Crash Davis &quot;Get a hit, Crash&quot;, [Kevin Costner][/p?id=1544] ad-libbed the response of &quot;Shut up.&quot; Since the kid actor playing the bat boy obviously didn't know this response was coming, he started crying.</li><li>[Kurt Russell][/p?id=1562] helped [Ron Shelton][/p?id=Ron%20Shelton] develop the script and was originally penciled in to play Crash, the part that went to [Kevin Costner][/p?id=1544]. After the film was made, [Russell][/p?id=1562] was so impressed, he actually wrote fan letters to [Costner][/p?id=1544] and [Shelton][/p?id=Ron%20Shelton].</li><li>[Ron Shelton][/p?id=Ron%20Shelton] was a former minor league baseball player and used his experience as the basis for the story.</li><li>[Kurt Russell][/p?id=1562], who helped [Ron Shelton][/p?id=Ron%20Shelton] develop the script, also played minor league baseball in the early-1970s.</li><li>[Ron Shelton][/p?id=Ron%20Shelton] reportedly based the character of Nuke LaLoosh on a minor league teammate from his playing days named Steve Dalkowski. Dalkowski is something of a legend among baseball fans and is widely regarded as the fastest throwing pitcher ever. Unlike the character in the film, Dalkowski never made the major leagues.</li><li>[Tim Robbins][/p?id=1942] and [Susan Sarandon][/p?id=1911] first met during the filming of this movie.</li><li>Real-life couple [Susan Sarandon][/p?id=1911] and [Tim Robbins][/p?id=1942] have stated that of all the films they have made during their respective careers, this remains their personal favorite.</li><li>There really was a ballplayer named &quot;Crash&quot; Davis. [Ron Shelton][/p?id=Ron%20Shelton] found his name in a baseball listing as a minor leaguer and American Legion player. Realizing that he would have to have the permission of the real Davis to use his name (and thus avoid a lawsuit). When [Shelton][/p?id=Ron%20Shelton] approached Davis, he was asked &quot;Do I (Meaning [Kevin Costner][/p?id=1544]) get the girl in the end?&quot; [Shelton][/p?id=Ron%20Shelton] told him he does and Davis signed off his permission.</li><li>Although [Kevin Costner][/p?id=1544] plays the 'older' more experienced ball player, in real life he's only three years older than [Tim Robbins][/p?id=1942] (33 and 30 respectively during filming), and [Susan Sarandon][/p?id=1911] was actually in her early forties (42).</li><li>[Kay Lenz][/p?id=Kay%20Lenz] was originally offered the female lead role but turned it down.</li><li>[Kim Basinger][/p?id=Kim%20Basinger], [Mary Steenburgen][/p?id=Mary%20Steenburgen] and [Pamela Stephenson][/p?id=Pamela%20Stephenson] auditioned for the role of Annie.</li><li>[Harrison Ford][/p?id=1358] was considered for the male lead role.</li><li>[Cybill Shepherd][/p?id=Cybill%20Shepherd] and [Bruce Willis][/p?id=1117] were considered to play the parts of Annie and Crash but declined due to their commitment to the TV series &quot;[Moonlighting][/f?id=Par%20I%20Brott]&quot; (1985).</li><li>Both [Carrie Fisher][/p?id=1131] and [Debra Winger][/p?id=Debra%20Winger] auditioned for the role of Annie but backed out.</li><li>[Glenn Close][/p?id=1336] auditioned for the role of Annie but was forced to turn the role down due to her commitment to the film [Dangerous Liaisons][/f?id=Farligt%20Beg%C3%A4r] (1988).</li><li>Both [Jeff Bridges][/p?id=1441] and [Don Johnson][/p?id=Don%20Johnson] turned down the role of 'Crash'.</li><li>[Nick Nolte][/p?id=1693], one of the biggest male stars at the time, turned down the lead because he had just finished several movies back-to-back, and, most importantly, because he isn't a fan of baseball.</li><li>[Tom Berenger][/p?id=1948] was considered to play Crash. He later starred in [Major League][/f?id=21796] (1989).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

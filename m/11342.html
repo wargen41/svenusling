@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bröllopsprovet | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bröllopsprovet <a href="#" class="grade">++</a></h2>
+										<h3>License to Wed</h3>
+										<p>
+										Film från <time datetime="2007"><a href="#">2007</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ken Kwapis</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1828.html">Robin Williams</a> – Reverend Frank</li><li>Mandy Moore – Sadie Jones</li><li>John Krasinski – Ben Murphy</li><li>Eric Christian Olsen – Carlisle</li><li>Christine Taylor – Lindsey Jones</li><li>Josh Flitter – Choir Boy</li><li>DeRay Davis – Joel</li><li>Peter Strauss – Mr. Jones</li><li>Grace Zabriskie – Grandma Jones</li><li>Roxanne Hart – Mrs. Jones</li><li>Mindy Kaling – Shelly</li><li>Angela Kinsey – Judith the Jewelry Clerk</li><li>Rachael Harris – Janine</li><li>Brian Baumgartner – Jim</li><li>Jess Rosenthal – Jewelry Clerk</li><li>Val Almendarez – Jewelry Store Customer</li><li>Nicole Randall Johnson – Louise</li><li>Tashana Haye – Church Kid Sarah</li><li>Sarah Kate Johnson – Church Kid Laurie</li><li>Travis T. Flory – Church Kid Manny</li><li>Dominic Swingler – Joel & Shelly's Kid</li><li>Devin Swingler – Joel & Shelly's Kid</li><li>Diego Swingler – Joel & Shelly's Kid</li><li>Cynthia Ettinger – Macy's Clerk</li><li>Gillian Skupa – Macy's Changing Room Lady</li><li>Poncho Hodges – Macy's Security Guard</li><li>Ruben Garfias – Coach</li><li>Kelsey Harper – Carlisle's Girlfriend</li><li>David Quinlan – Expectant Father</li><li>Irene Karas – Birthing Mom</li><li>Derek Green – Doctor</li><li>Christine Cannon – Delivery Doctor</li><li>Anelia Dyoulgerova – Belly Dancer</li><li>Nathan Barrett – Starbucks Customer</li><li>Darla Fay – Starbucks Customer</li><li>Sean Tyson – Starbucks Customer</li><li>Chiu-Lin Tam – Starbucks Customer</li><li>Guy Fauchon – Starbucks Customer</li><li>Grant Gershon – St. Augustine's Choir Director</li><li>Crispin Barrymore – St. Augustine's Choir</li><li>Tania Batson – St. Augustine's Choir</li><li>Joseph Bazyouros – St. Augustine's Choir</li><li>Edie Lehmann – St. Augustine's Choir</li><li>Paul Bent – St. Augustine's Choir</li><li>Cindy Bourquin – St. Augustine's Choir</li><li>Leanna Brand – St. Augustine's Choir</li><li>Andy Brown – St. Augustine's Choir</li><li>Karen Hogle Brown – St. Augustine's Choir</li><li>Vicky Preston Brown – St. Augustine's Choir</li><li>Alvin Chea – St. Augustine's Choir</li><li>Leberta Lorál – St. Augustine's Choir</li><li>Pablo Corá – St. Augustine's Choir</li><li>Claire Seely Fedoruk – St. Augustine's Choir</li><li>Amy Fogerson – St. Augustine's Choir</li><li>Rachelle Fox – St. Augustine's Choir</li><li>Michael Freed – St. Augustine's Choir</li><li>Michael Geiger – St. Augustine's Choir</li><li>Dylan Gentile – St. Augustine's Choir</li><li>Scott Graff – St. Augustine's Choir</li><li>Steven Harms – St. Augustine's Choir</li><li>Saundra Hall Hill – St. Augustine's Choir</li><li>Marie T. Hodgson – St. Augustine's Choir</li><li>Clydene Jackson – St. Augustine's Choir</li><li>Diana Zaslove Kahn – St. Augustine's Choir</li><li>Teri Eiko Koide – St. Augustine's Choir</li><li>Bob Lewis – St. Augustine's Choir</li><li>Sean McDermott – St. Augustine's Choir</li><li>Alice Kirwan Murray – St. Augustine's Choir</li><li>Bobbi Page – St. Augustine's Choir</li><li>Steve P. Pence – St. Augustine's Choir</li><li>Fletcher Sheridan – St. Augustine's Choir</li><li>Kevin St. Clair – St. Augustine's Choir</li><li>Cahen Taylor – St. Augustine's Choir</li><li>Carmen Twillie – St. Augustine's Choir</li><li>Winter Watson – St. Augustine's Choir</li><li>John West – St. Augustine's Choir</li><li>Gerald White – St. Augustine's Choir</li><li>Eyvonne Williams – St. Augustine's Choir</li><li>Rik Young – Randy (scenes deleted)</li><li><a href="/svenusling/p/1090.html">Bob Balaban</a> – Jewelry Store Clerk (uncredited)</li><li>Patrizia Barretto – Macy's Shopper (uncredited)</li><li>Paul Grace – Bar Patron (uncredited)</li><li>Kevon Kane – Choir Member (uncredited)</li><li>Arne Starr – Man in Church (uncredited)</li><li>Wanda Sykes – Doctor (uncredited)</li><li>Cynthia Youngblood – Mom in Labor (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>AFI Award - Bästa kvinnliga biroll 1983 (1586)</li><li>LAFCA Award - Bästa kvinnliga biroll 1983 (1586)</li><li>NBR Award - Bästa kvinnliga biroll 1983 (1586)</li><li>NYFCC Award - Bästa kvinnliga biroll 1983 (1586)</li><li>Oscar - Bästa kvinnliga biroll 1984 (1586)</li><li>CEC Award - Bästa utländska film 1984</li><li>KCFCC Award - Bästa kvinnliga biroll 1984 (1586)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cannes Film Festival, Golden Palm 1983 (1755)</li><li>AFI Award - Bästa film 1983</li><li>AFI Award - Bästa regi 1983 (1755)</li><li>AFI Award - Bästa skådespelare 1983 (1635)</li><li>AFI Award - Bästa manus 1983 (1755)</li><li>AFI Award - Jury Award 1983 (1586)</li><li>AFI Award - Jury Award 1983 (1755)</li><li>AFI Award - Bästa foto 1983</li><li>AFI Award - Bästa musik 1983 (Maurice Jarre)</li><li>AFI Award - Bästa kostym 1983</li><li>AFI Award - Bästa ljud 1983</li><li>AFI Award - Bästa klippning 1983</li><li>AFI Award - Bästa scenografi 1983</li><li>Golden Globe - Bästa kvinnliga biroll 1984 (1586)</li><li>WGA Award (Screen) - Best Drama Adapted from Another Medium 1984 (1755)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Ben Murphy's][/p?id=Ben%20Murphy] parents are played by [John Krasinski][/p?id=John%20Krasinski] (Ben)'s real life parents.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
