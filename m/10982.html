@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Big Stan | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Big Stan <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2007"><a href="#">2007</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1802.html">Rob Schneider</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1802.html">Rob Schneider</a> – Big Stan</li><li><a href="/svenusling/p/1213.html">David Carradine</a> – The Master</li><li>Jennifer Morrison – Mindy</li><li>Scott Wilson – Warden Gasque</li><li>Richard Kind – Mal</li><li>Sally Kirkland – Madame Foreman</li><li><a href="/svenusling/p/1595.html">M. Emmet Walsh</a> – Lew Popper</li><li><a href="/svenusling/p/1372.html">Henry Gibson</a> – Shorts</li><li>Jackson Rathbone – Robbie</li><li>Kevin Gage – Bullard</li><li>Bob Sapp – Big Raymond</li><li>Brandon T. Jackson – Deshawn</li><li>Dan Haggerty – Tubby</li><li><a href="/svenusling/p/1791.html">Richard Riehle</a> – Judge Perry</li><li>Marcia Wallace – Alma</li><li>Tsuyoshi Abe – Dang</li><li>Salvator Xuereb – Patterson</li><li>Randy Couture – Carnahan</li><li>Jim Cody Williams – Tyler</li><li>Don Frye – Nation Member</li><li>Diego Corrales – Julio</li><li>Brandon Molale – Piken</li><li>Simon Rhee – Master Cho</li><li>Buddy Lewis – Cleon</li><li>Peter Mark Vasquez – Juanito</li><li>Dan Inosanto – Prison Chef</li><li>Ahman Green – Diamond King</li><li>Federico Dordei – Faribe</li><li>Pilar Schneider – Board of Governors</li><li>Wes Takahashi – Bartender</li><li>Matt Farley – Bailiff</li><li>Richard Kwon – Seymore</li><li>Olivia Munn – Secretary</li><li>Barbara Dodd – Mrs. Darby</li><li>Megan Cavanagh – Parole Board</li><li>Roberto 'Lil Rob' Flores – Inmate</li><li>Joe Goossen – Gay Foosball Champion</li><li>Faith Womack – Mindy Jr.</li><li>Damian F. Sandolo – Police Officer</li><li>David Alan Graf – Councilman Weintraub</li><li>Bruno Alexander – Hendricks</li><li>Jon Tenting – Police Officer #2</li><li>Brett Wagner – Nazi Joe</li><li>Enrique Teves – Piano Player</li><li>Andrew Bernhard – Inmate</li><li>Tony Gonzalez – Choreographer / prison dancer</li><li>Chris Moss – Prison dancer</li><li>Benito M. Selim – Latino Gang Member</li><li>Alex Aguilera – Inmate (uncredited)</li><li>T.J. Amato – Waiter #1 (uncredited)</li><li>Chris Astoyan – Italian Inmate (uncredited)</li><li>Troy Beech – Scientologist Inmate (uncredited)</li><li>Erik Betts – Diamond King Gang Member (uncredited)</li><li>Mike Borg – Inmate (uncredited)</li><li>Carlos Camacho – Prison Inmate (uncredited)</li><li>Rick Camp – Prison Guard (uncredited)</li><li>Travis James Campbell – Nazi Inmate (uncredited)</li><li>Troy Christian – Mop Dancer / Prison Dancer (uncredited)</li><li>Steve Dakota – Prison Guard / Prison Cook (uncredited)</li><li>Joseph Fossum-Perez – Latino Gang Member (uncredited)</li><li>Gichi Gamba – Dancer (uncredited)</li><li>Geoffrey Gould – Juror (uncredited)</li><li>Dante Henderson – Prison Yard Dancer (uncredited)</li><li>Kevan Paul Hewett – Nazi Inmate (uncredited)</li><li>Lance J. Holt – Court Clerk (uncredited)</li><li>Robbie Lee – Caucasian Prison Inmate (uncredited)</li><li>Steve Lorenz – Prisoner (uncredited)</li><li>Robert Moreno – Guard (uncredited)</li><li>Kenny New – Prison Inmate (uncredited)</li><li>David Alan Poe – Scientologist Inmate (uncredited)</li><li>Tom Poole – Lawyer (uncredited)</li><li>Dominic Prampin – Latino Gang Member (uncredited)</li><li>Nick Principe – Tattoo Artist (uncredited)</li><li>Alexander Rannie – Biker in chaps (uncredited)</li><li>Maury Rogow –  (uncredited)</li><li>Adrian Schemm – Martial Arts Student (uncredited)</li><li>Marcus D. Spencer – Diamond King #2 (uncredited)</li><li>DeAnn Trimarchi – Dancer in Bar (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa manus baserad på annan förlaga 2016</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa film 2016</li><li>Oscar - Bästa regi 2016 (Adam McKay)</li><li>Oscar - Bästa manliga biroll 2016 (1163)</li><li>Oscar - Bästa klippning 2016</li><li>Golden Globe - Bästa film - Komedi eller Musikal 2016</li><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 2016 (1163)</li><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 2016 (Steve Carell)</li><li>Golden Globe - Bästa manus 2016</li><li>BAFTA Film Award - Bästa film 2016</li><li>BAFTA Awards, David Lean Award for Direction 2016 (Adam McKay)</li><li>BAFTA Film Award - Bästa manliga biroll 2016 (1163)</li><li>BAFTA Film Award - Bästa manus baserad på annan förlaga 2016</li><li>BAFTA Film Award - Bästa klippning 2016</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Film debut of [Olivia Munn][/p?id=Olivia%20Munn].</li><li>Final feature film of [Henry Gibson][/p?id=1372].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

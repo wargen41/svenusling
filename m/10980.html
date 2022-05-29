@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Big Short | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Big Short <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2015"><a href="#">2015</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Adam McKay</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1848.html">Ryan Gosling</a> – Jared Vennett</li><li>Rudy Eisenzopf – Lewis Ranieri</li><li>Casey Groves – Fund Manager</li><li>Charlie Talbert – Lewis Bond Trader #1</li><li>Harold Gervais – Lewis Bond Trader #2</li><li>Maria Frangos – Exotic Dancer</li><li><a href="/svenusling/p/1163.html">Christian Bale</a> – Michael Burry</li><li>Hunter Burke – Analyst</li><li>Bernard Hocke – Coach</li><li>Shauna Rappold – Michael Burry's Mom</li><li>Brandon Stacy – Michael Burry's Dad</li><li>Aiden Flowers – Young Michael Burry</li><li>Peter Epstein – Paul Baum</li><li>Anthony Marble – Therapy Businessman #1</li><li>Silas Cooper – Therapy Businessman #2</li><li>Steve Carell – Mark Baum</li><li>Leslie Castay – Therapist</li><li>Andrew Farrier – Burry's Analyst</li><li>Tracy Letts – Lawrence Fields</li><li>Ingrid Steed – Lawrence Fields' Assistant</li><li>Vanessa Cloke – Goldman Sachs Sales Rep (Lucy)</li><li>David Zalkind – Rabbi</li><li>Carrie Lazar – Mark Baum's Mom</li><li><a href="/svenusling/p/1608.html">Marisa Tomei</a> – Cynthia Baum</li><li>Mychael Bates – Man Stealing Cab</li><li>Rajeev Jacob – Goldman Sachs Quant (Deeb)</li><li>Jay Potter – Deutsche Sales Rep #1</li><li>Garrett Hines – Deutsche Sales Rep #2</li><li>Ryan Broussard – Trader at Night Club</li><li>Adepero Oduye – Kathy Tao</li><li>Rafe Spall – Danny Moses</li><li>Hamish Linklater – Porter Collins</li><li>Jeremy Strong – Vinnie Daniel</li><li>Jeffry Griffin – Jared's Assistant (Chris)</li><li>Stanley Wong – Ted Jiang</li><li>Anthony Bourdain – Anthony Bourdain</li><li>John Magaro – Charlie Geller</li><li>Finn Wittrock – Jamie Shipley</li><li>Joseph Brooks – Banker at Goldman Sachs</li><li>Colette Divine – B of A Lobby Security</li><li><a href="/svenusling/p/1096.html">Brad Pitt</a> – Ben Rickert</li><li>Oscar Gale – Tattooed Renter</li><li>Cayden Arthur Miscally – Tattooed Man's Son</li><li>Dave Davis – Burry's Assistant</li><li>Wayne Pére – Martin Blaine</li><li>Kate Blumberg – Real Estate Agent #1</li><li>Billy Slaughter – Real Estate Agent #2</li><li>Max Greenfield – Mortgage Broker #1</li><li>Billy Magnussen – Mortgage Broker #2</li><li>Heighlen Boyd – Florida Strip Club Dancer</li><li>Ilan Srulovicz – Noah</li><li><a href="/svenusling/p/1637.html">Melissa Leo</a> – Georgia Hale</li><li>Jay Jablonski – Rich Bear Rep (Matt)</li><li>Blaine Kern III – Second Bear Rep</li><li>Al Sapienza – Option One CEO</li><li>Karen Gillan – Evie</li><li>Marcus Lyle Brown – Merrill Lynch Rep</li><li>Tyler Kunkle – Doug from Goldman Sachs</li><li>Elliott Grey – Montage Lehman Rep</li><li>Jason Bayle – Montage Goldman Sachs Rep</li><li>Byron Mann – Mr. Chau</li><li>Richard Thaler – Richard Thaler</li><li>Sophie Lee – Woman in Glasses</li><li>Michael Aaron Santos – Businessman at Casino</li><li>David Kallaway – Guy in Game Jersey</li><li>Sharon Landry – Woman at Casino</li><li>James Yeargain – Fields' Lawyer</li><li>Lyle Brocato – Casey</li><li>Kelly Lind – Front Point Receptionist</li><li>Michael Brooks – Angry Guy on the Phone</li><li>Lyndsay Kimball – Diner Waitress</li><li>Robyn Wholey – Spin Class Instructor</li><li>David Wyman – Pub Goer #1</li><li>Peter Anderson – Pub Goer #2</li><li>Lara Grice – Deutsche Auditorium Host</li><li>Tony Bentley – Bruce Miller</li><li>Michael Kives – Banker in Deutsche Auditorium</li><li>Jack Millard – Lehman Executive</li><li>John Neisler – Seminar Leader</li><li>Michael Joseph Varino – 35 to 1 Guy</li><li>Joel Diggs – Cab Driver</li><li>Michael J. Stein – Banker 1979</li><li>Logan Crawford – News Reporter</li><li>Tim Wilson – Lehman Employee</li><li>Jae Suh Park – Michael Burry's Wife</li><li>Colin Lawless – Nicolas Burry</li><li><a href="/svenusling/p/1606.html">Margot Robbie</a> – Margot Robbie</li><li>Selena Gomez – Selena Gomez</li><li>Carl A. Chauvin – Trade Show Attendee / Investor</li><li>Scott Gulino – Swimmer</li><li>Delia Sheppard – Barclays Bank professional</li><li>Deborah Alcorn – Hotel Guest / Business Professional (uncredited)</li><li>Dennis Alcorn – Bonds Trader (uncredited)</li><li>Dalton Alfortish – Kisser (uncredited)</li><li>Andrea Vittoria Alvarado – Clothing Boutique Clerk (uncredited)</li><li>Sue-Lynn Ansari – Swimmer (uncredited)</li><li>James Howard Askin – Casino Patron (uncredited)</li><li>Charlene Barr – Wife (uncredited)</li><li>Nicole Barré – Woman at Party (uncredited)</li><li>Nazeema Bartek – Analyst / Silicon Valley Manager / International Traveller (uncredited)</li><li>Seth Barthelemy – Deutsche Sales Rep in VIP (uncredited)</li><li>Tony Beard – Silicon Valley Hedge Fund Manager (uncredited)</li><li>Sidney Beitz – Sound Guy (uncredited)</li><li>Jaclyn Bethany – Casino Patron (uncredited)</li><li>Emily Bossak – Banker (uncredited)</li><li>Rusty Bourg – Pilot / Analyst (uncredited)</li><li>Shannon Brokaw – Deutsche Bank Rep (uncredited)</li><li>Christopher Terrell Brown – Restaurant Diner (New Orleans) / Banker (uncredited)</li><li>Tom Bui – Analyst (uncredited)</li><li>Anthony Burkhalter – Convention Banker (uncredited)</li><li>Paul X. Campanella – Banker (uncredited)</li><li>Jeff Caperton – Wall Street Journal Reporter (uncredited)</li><li>David Michael Cefalu – Analysts (uncredited)</li><li>Ron Centanni – Realtor (uncredited)</li><li>Lindsay Clift – Deutsche PR Person (uncredited)</li><li>Richard R. Corapi – JP Morgan Employee (uncredited)</li><li>Timothy Cornelius – Yellow Hummer Driver (uncredited)</li><li>James Donald – Casino Patron (uncredited)</li><li>Micheal K. Douglas – Analyst (uncredited)</li><li>John Druzba – Merrill Lynch Trader (uncredited)</li><li>Tessla Elizabeth – Bikini Girl (uncredited)</li><li>Divine Prince Ty Emmecca – Casino Hig Roller Gambler (uncredited)</li><li>Mark Falvo – Journalist (uncredited)</li><li>Sara Finley – Caesar's Palace Pool Girl (uncredited)</li><li>Brandon Fontenot – Analyst (uncredited)</li><li>Shona Gastian – Goldman Sachs Executive (uncredited)</li><li>Tahseen Ghauri – Miami Tourist (uncredited)</li><li>Jamie Gliddon – Casino Patron (uncredited)</li><li>Courtney Leigh Goodwin – Pedestrian (uncredited)</li><li>Scott Gray – Hedge Fund Manager (uncredited)</li><li>Joshua Guidry – Analysts (uncredited)</li><li>Christopher Gulas – Businessman (uncredited)</li><li>Gene Kevin Hames Jr. – Business Man (uncredited)</li><li>Candice Harrison – Investor (uncredited)</li><li>Jon Hartley – Casino Patron (uncredited)</li><li>Dominique Hayes – Casino Patron / Pool Party goer (uncredited)</li><li>Kaylee Henderson – Analyst (uncredited)</li><li>Julia Holt – Club Dancer (uncredited)</li><li>Nick Hwang – Josh Medak - Banker (uncredited)</li><li>Jacquelyn Twodat Jackson – Blackjack player (uncredited)</li><li>Alicia Davis Johnson – Bank of America Executive (uncredited)</li><li>Patrick Kearns – Casino Security (uncredited)</li><li>Jenny Lacey – Journalist (uncredited)</li><li>Cynthia LeBlanc – Blackjack Player / Convention Delegate (uncredited)</li><li>Elton LeBlanc – Convention Delegate / Strip Club Drunk / Blackjack Player (uncredited)</li><li>Justin Lebrun – Goldman Sachs Executive (uncredited)</li><li>Juliet Reeves London – Front Point Receptionist (uncredited)</li><li>Judd Lormand – Lawyer (uncredited)</li><li>Mino Mackic – Casino Security (uncredited)</li><li>Tracy B. Mann – Banker (uncredited)</li><li>Candace McAdams – Ceasar's Palace Pool Girl (uncredited)</li><li>Mike R. Moreau – Business Executive (uncredited)</li><li>Landa Morland – Banking Professional (uncredited)</li><li>Lindsay Musil – Attractive Manhattan Professional (uncredited)</li><li>Fernando Nava – Background (uncredited)</li><li>Anna Nguyen – Miami Tourist (uncredited)</li><li>Jay Oliver – Bond Trader (uncredited)</li><li>Robert Pekel – Casino Patron (uncredited)</li><li>David Perks – Office worker (uncredited)</li><li>Holly Ann Perry – Cocktail Waitress (uncredited)</li><li>Hannah Powell-Yost – Nightclub Lady (uncredited)</li><li>Gus Rhodes – Bond Trader (uncredited)</li><li>Amaurys Rodriguez – Shirtless Guy (uncredited)</li><li>Michael Rollins – Analyst / Investment Banker (uncredited)</li><li>Mark Roman – WAMU banker at casino (uncredited)</li><li>Robin Sarraille – Bond Trader (uncredited)</li><li>William Schaff – Business Man (uncredited)</li><li>Jennifer Schindler – Assistant (uncredited)</li><li>Kristen Scott – Cocktail Waitress / Dancer (uncredited)</li><li>Paula Shreve – Lehman Brothers Banker (uncredited)</li><li>Paul Sigrist – 'Enya video' couple (uncredited)</li><li>Ruby Lou Smith – Sales Manager (uncredited)</li><li>Anne Speed – Office Worker (uncredited)</li><li>Staci Roberts Steele – Seminar Greeter (uncredited)</li><li>Sean Stevens – Bond Trader (uncredited)</li><li>John Teal Jr. – Bond Trader (uncredited)</li><li>Stefan Terrell – Dancer (uncredited)</li><li>Daryl Thibodaux – Analyst (uncredited)</li><li>Michelle Torres – Investor (uncredited)</li><li>Ronald Joe Vasquez – Investor (uncredited)</li><li>Bob Walker – Bond Trader (uncredited)</li><li>Darly Wayne – Crying Lehmann Bros employee (uncredited)</li><li>Anna Wendt – Banking Professional (uncredited)</li><li>Christina Michelle Williams – Banker / Airport Passenger (uncredited)</li><li>Jesse Yarborough – Mortgage Broker (uncredited)</li><li>James Zeiss – Fired Employee (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BMI Film Music Award 2001</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Teen Choice Award - Film - Wipeout Scene of the Summer 2000 (Martin Lawrence)</li><li>Blockbuster Entertainment Award - Favorite Actor - Comedy 2001 (Martin Lawrence)</li><li>Blockbuster Entertainment Award - Favorite Actress - Comedy 2001 (Nia Long)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actor - Comedy 2001 (1725)</li><li>Image Award - Bästa skådespelerska 2001 (Nia Long)</li><li>Blimp Award - Favorite Movie 2001</li><li>Blimp Award - Favorite Movie Actor 2001 (Martin Lawrence)</li><li>MTV Movie Award - Bästa komiska prestation 2001 (Martin Lawrence)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
