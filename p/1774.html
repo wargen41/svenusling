@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rene Auberjonois | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Rene Auberjonois</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1940-06-01">1940-06-01</time> (död <time datetime="2019-12-08">2019-12-08</time>)										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/11448.html">The Captains</a></li><li><a href="/svenusling/m/11969.html">Den Lilla Sjöjungfrun</a> (röst)</li><li><a href="/svenusling/m/19460.html">Star Trek VI: The Undiscovered Country</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10695.html">Batman Forever</a></li><li><a href="/svenusling/m/13646.html">Family Guy Presents: Stewie Griffin - The Untold Story</a> (röst)</li><li><a href="/svenusling/m/13980.html">Flygplan 2: Räddningstjänsten</a> (röst)</li><li><a href="/svenusling/m/14579.html">Hindenburg</a></li><li><a href="/svenusling/m/17386.html">Patrioten</a></li><li><a href="/svenusling/m/18664.html">Spelaren</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/11970.html">Den Lilla Sjöjungfrun II: Havets Hemlighet</a> (röst)</li><li><a href="/svenusling/m/13488.html">Eulogy</a></li><li><a href="/svenusling/m/13900.html">Fievel – Skatten På Manhattan</a> (röst)</li><li><a href="/svenusling/m/15089.html">Inspector Gadget</a></li><li><a href="/svenusling/m/16066.html">MASH</a></li><li><a href="/svenusling/m/20035.html">Ta Det Kallt, Scooby Doo!</a> (röst)</li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/15485.html">King Kong (1976)</a></li><li><a href="/svenusling/m/17483.html">Polisskolan 5 - Uppdrag Miami Beach</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/19276.html">Star Trek: Deep Space Nine: Duet</a></li><li><a href="/svenusling/m/19319.html">Star Trek: Deep Space Nine: Heart of Stone</a></li><li><a href="/svenusling/m/19350.html">Star Trek: Deep Space Nine: Hard Time</a></li><li><a href="/svenusling/m/19360.html">Star Trek: Deep Space Nine: The Ship</a></li><li><a href="/svenusling/m/19422.html">Star Trek: Deep Space Nine: It's Only a Paper Moon</a></li><li><a href="/svenusling/m/18928.html">Stargate SG-1: The Other Side</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/19263.html">Star Trek: Deep Space Nine: Captive Pursuit</a></li><li><a href="/svenusling/m/19269.html">Star Trek: Deep Space Nine: Vortex</a></li><li><a href="/svenusling/m/19272.html">Star Trek: Deep Space Nine: Progress</a></li><li><a href="/svenusling/m/19280.html">Star Trek: Deep Space Nine: The Circle</a></li><li><a href="/svenusling/m/19283.html">Star Trek: Deep Space Nine: Cardassians</a></li><li><a href="/svenusling/m/19286.html">Star Trek: Deep Space Nine: Necessary Evil</a></li><li><a href="/svenusling/m/19288.html">Star Trek: Deep Space Nine: Sanctuary</a></li><li><a href="/svenusling/m/19290.html">Star Trek: Deep Space Nine: The Alternate</a></li><li><a href="/svenusling/m/19292.html">Star Trek: Deep Space Nine: Whispers</a></li><li><a href="/svenusling/m/19294.html">Star Trek: Deep Space Nine: Shadowplay</a></li><li><a href="/svenusling/m/19298.html">Star Trek: Deep Space Nine: The Maquis: Part I</a></li><li><a href="/svenusling/m/19299.html">Star Trek: Deep Space Nine: The Maquis: Part II</a></li><li><a href="/svenusling/m/19300.html">Star Trek: Deep Space Nine: The Wire</a></li><li><a href="/svenusling/m/19301.html">Star Trek: Deep Space Nine: Crossover</a></li><li><a href="/svenusling/m/19303.html">Star Trek: Deep Space Nine: Tribunal</a></li><li><a href="/svenusling/m/19304.html">Star Trek: Deep Space Nine: The Jem'Hadar</a></li><li><a href="/svenusling/m/19306.html">Star Trek: Deep Space Nine: The Search: Part I</a></li><li><a href="/svenusling/m/19308.html">Star Trek: Deep Space Nine: The House of Quark</a></li><li><a href="/svenusling/m/19310.html">Star Trek: Deep Space Nine: Second Skin</a></li><li><a href="/svenusling/m/19314.html">Star Trek: Deep Space Nine: Defiant</a></li><li><a href="/svenusling/m/19316.html">Star Trek: Deep Space Nine: Past Tense: Part I</a></li><li><a href="/svenusling/m/19324.html">Star Trek: Deep Space Nine: Through the Looking Glass</a></li><li><a href="/svenusling/m/19325.html">Star Trek: Deep Space Nine: Improbable Cause</a></li><li><a href="/svenusling/m/19326.html">Star Trek: Deep Space Nine: The Die Is Cast</a></li><li><a href="/svenusling/m/19332.html">Star Trek: Deep Space Nine Säsong 4</a></li><li><a href="/svenusling/m/19335.html">Star Trek: Deep Space Nine: Hippocratic Oath</a> (även regi)</li><li><a href="/svenusling/m/19336.html">Star Trek: Deep Space Nine: Indiscretion</a></li><li><a href="/svenusling/m/19337.html">Star Trek: Deep Space Nine: Rejoined</a></li><li><a href="/svenusling/m/19342.html">Star Trek: Deep Space Nine: Homefront</a></li><li><a href="/svenusling/m/19343.html">Star Trek: Deep Space Nine: Paradise Lost</a></li><li><a href="/svenusling/m/19344.html">Star Trek: Deep Space Nine: Crossfire</a></li><li><a href="/svenusling/m/19347.html">Star Trek: Deep Space Nine: Bar Association</a></li><li><a href="/svenusling/m/19348.html">Star Trek: Deep Space Nine: Accession</a></li><li><a href="/svenusling/m/19349.html">Star Trek: Deep Space Nine: Rules of Engagement</a></li><li><a href="/svenusling/m/19353.html">Star Trek: Deep Space Nine: For the Cause</a></li><li><a href="/svenusling/m/19354.html">Star Trek: Deep Space Nine: To the Death</a></li><li><a href="/svenusling/m/19355.html">Star Trek: Deep Space Nine: The Quickening</a> (även regi)</li><li><a href="/svenusling/m/19357.html">Star Trek: Deep Space Nine: Broken Link</a></li><li><a href="/svenusling/m/19358.html">Star Trek: Deep Space Nine Säsong 5</a></li><li><a href="/svenusling/m/19359.html">Star Trek: Deep Space Nine: Apocalypse Rising</a></li><li><a href="/svenusling/m/19362.html">Star Trek: Deep Space Nine: ...Nor the Battle to the Strong</a></li><li><a href="/svenusling/m/19364.html">Star Trek: Deep Space Nine: Trials and Tribble-ations</a></li><li><a href="/svenusling/m/19366.html">Star Trek: Deep Space Nine: Things Past</a></li><li><a href="/svenusling/m/19367.html">Star Trek: Deep Space Nine: The Ascent</a></li><li><a href="/svenusling/m/19369.html">Star Trek: Deep Space Nine: The Darkness and the Light</a></li><li><a href="/svenusling/m/19370.html">Star Trek: Deep Space Nine: The Begotten</a></li><li><a href="/svenusling/m/19372.html">Star Trek: Deep Space Nine: In Purgatory's Shadow</a></li><li><a href="/svenusling/m/19374.html">Star Trek: Deep Space Nine: Doctor Bashir, I Presume</a></li><li><a href="/svenusling/m/19375.html">Star Trek: Deep Space Nine: A Simple Investigation</a></li><li><a href="/svenusling/m/19377.html">Star Trek: Deep Space Nine: Ties of Blood and Water</a></li><li><a href="/svenusling/m/19380.html">Star Trek: Deep Space Nine: Children of Time</a></li><li><a href="/svenusling/m/19381.html">Star Trek: Deep Space Nine: Blaze of Glory</a></li><li><a href="/svenusling/m/19384.html">Star Trek: Deep Space Nine: Call to Arms</a></li><li><a href="/svenusling/m/19385.html">Star Trek: Deep Space Nine Säsong 6</a></li><li><a href="/svenusling/m/19386.html">Star Trek: Deep Space Nine: A Time to Stand</a></li><li><a href="/svenusling/m/19387.html">Star Trek: Deep Space Nine: Rocks and Shoals</a></li><li><a href="/svenusling/m/19389.html">Star Trek: Deep Space Nine: Behind the Lines</a></li><li><a href="/svenusling/m/19390.html">Star Trek: Deep Space Nine: Favor the Bold</a></li><li><a href="/svenusling/m/19394.html">Star Trek: Deep Space Nine: Statistical Probabilities</a></li><li><a href="/svenusling/m/19395.html">Star Trek: Deep Space Nine: The Magnificent Ferengi</a></li><li><a href="/svenusling/m/19396.html">Star Trek: Deep Space Nine: Waltz</a> (även regi)</li><li><a href="/svenusling/m/19398.html">Star Trek: Deep Space Nine: Far Beyond the Stars</a></li><li><a href="/svenusling/m/19399.html">Star Trek: Deep Space Nine: One Little Ship</a></li><li><a href="/svenusling/m/19400.html">Star Trek: Deep Space Nine: Honor Among Thieves</a></li><li><a href="/svenusling/m/19403.html">Star Trek: Deep Space Nine: Inquisition</a></li><li><a href="/svenusling/m/19404.html">Star Trek: Deep Space Nine: In the Pale Moonlight</a></li><li><a href="/svenusling/m/19405.html">Star Trek: Deep Space Nine: His Way</a></li><li><a href="/svenusling/m/19409.html">Star Trek: Deep Space Nine: Time's Orphan</a></li><li><a href="/svenusling/m/19410.html">Star Trek: Deep Space Nine: The Sound of Her Voice</a></li><li><a href="/svenusling/m/19411.html">Star Trek: Deep Space Nine: Tears of the Prophets</a></li><li><a href="/svenusling/m/19412.html">Star Trek: Deep Space Nine Säsong 7</a></li><li><a href="/svenusling/m/19418.html">Star Trek: Deep Space Nine: Treachery, Faith and the Great River</a></li><li><a href="/svenusling/m/19420.html">Star Trek: Deep Space Nine: The Siege of AR-558</a></li><li><a href="/svenusling/m/19421.html">Star Trek: Deep Space Nine: Covenant</a></li><li><a href="/svenusling/m/19423.html">Star Trek: Deep Space Nine: Prodigal Daughter</a></li><li><a href="/svenusling/m/19426.html">Star Trek: Deep Space Nine: Chimera</a></li><li><a href="/svenusling/m/19427.html">Star Trek: Deep Space Nine: Badda-Bing, Badda-Bang</a></li><li><a href="/svenusling/m/19428.html">Star Trek: Deep Space Nine: Inter Arma Enim Silent Leges</a></li><li><a href="/svenusling/m/19431.html">Star Trek: Deep Space Nine: Strange Bedfellows</a> (även regi)</li><li><a href="/svenusling/m/19432.html">Star Trek: Deep Space Nine: The Changing Face of Evil</a></li><li><a href="/svenusling/m/19434.html">Star Trek: Deep Space Nine: Tacking Into the Wind</a></li><li><a href="/svenusling/m/19435.html">Star Trek: Deep Space Nine: Extreme Measures</a></li><li><a href="/svenusling/m/19436.html">Star Trek: Deep Space Nine: The Dogs of War</a></li><li><a href="/svenusling/m/19437.html">Star Trek: Deep Space Nine: What You Leave Behind</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/19258.html">Star Trek: Deep Space Nine Säsong 1</a></li><li><a href="/svenusling/m/19259.html">Star Trek: Deep Space Nine: Emissary</a></li><li><a href="/svenusling/m/19260.html">Star Trek: Deep Space Nine: Past Prologue</a></li><li><a href="/svenusling/m/19261.html">Star Trek: Deep Space Nine: A Man Alone</a></li><li><a href="/svenusling/m/19262.html">Star Trek: Deep Space Nine: Babel</a></li><li><a href="/svenusling/m/19265.html">Star Trek: Deep Space Nine: Dax</a></li><li><a href="/svenusling/m/19270.html">Star Trek: Deep Space Nine: Battle Lines</a></li><li><a href="/svenusling/m/19271.html">Star Trek: Deep Space Nine: The Storyteller</a></li><li><a href="/svenusling/m/19274.html">Star Trek: Deep Space Nine: The Forsaken</a></li><li><a href="/svenusling/m/19275.html">Star Trek: Deep Space Nine: Dramatis Personae</a></li><li><a href="/svenusling/m/19277.html">Star Trek: Deep Space Nine: In the Hands of the Prophets</a></li><li><a href="/svenusling/m/19278.html">Star Trek: Deep Space Nine Säsong 2</a></li><li><a href="/svenusling/m/19279.html">Star Trek: Deep Space Nine: The Homecoming</a></li><li><a href="/svenusling/m/19281.html">Star Trek: Deep Space Nine: The Siege</a></li><li><a href="/svenusling/m/19282.html">Star Trek: Deep Space Nine: Invasive Procedures</a></li><li><a href="/svenusling/m/19284.html">Star Trek: Deep Space Nine: Melora</a></li><li><a href="/svenusling/m/19285.html">Star Trek: Deep Space Nine: Rules of Acquisition</a></li><li><a href="/svenusling/m/19287.html">Star Trek: Deep Space Nine: Second Sight</a></li><li><a href="/svenusling/m/19289.html">Star Trek: Deep Space Nine: Rivals</a></li><li><a href="/svenusling/m/19291.html">Star Trek: Deep Space Nine: Armageddon Game</a></li><li><a href="/svenusling/m/19295.html">Star Trek: Deep Space Nine: Playing God</a></li><li><a href="/svenusling/m/19296.html">Star Trek: Deep Space Nine: Profit and Loss</a></li><li><a href="/svenusling/m/19297.html">Star Trek: Deep Space Nine: Blood Oath</a></li><li><a href="/svenusling/m/19302.html">Star Trek: Deep Space Nine: The Collaborator</a></li><li><a href="/svenusling/m/19305.html">Star Trek: Deep Space Nine Säsong 3</a></li><li><a href="/svenusling/m/19307.html">Star Trek: Deep Space Nine: The Search: Part II</a></li><li><a href="/svenusling/m/19309.html">Star Trek: Deep Space Nine: Equilibrium</a></li><li><a href="/svenusling/m/19311.html">Star Trek: Deep Space Nine: The Abandoned</a></li><li><a href="/svenusling/m/19312.html">Star Trek: Deep Space Nine: Civil Defense</a></li><li><a href="/svenusling/m/19313.html">Star Trek: Deep Space Nine: Meridian</a></li><li><a href="/svenusling/m/19315.html">Star Trek: Deep Space Nine: Fascination</a></li><li><a href="/svenusling/m/19317.html">Star Trek: Deep Space Nine: Past Tense: Part II</a></li><li><a href="/svenusling/m/19318.html">Star Trek: Deep Space Nine: Life Support</a></li><li><a href="/svenusling/m/19320.html">Star Trek: Deep Space Nine: Destiny</a></li><li><a href="/svenusling/m/19321.html">Star Trek: Deep Space Nine: Prophet Motive</a> (även regi)</li><li><a href="/svenusling/m/19322.html">Star Trek: Deep Space Nine: Visionary</a></li><li><a href="/svenusling/m/19323.html">Star Trek: Deep Space Nine: Distant Voices</a></li><li><a href="/svenusling/m/19328.html">Star Trek: Deep Space Nine: Family Business</a> (även regi)</li><li><a href="/svenusling/m/19329.html">Star Trek: Deep Space Nine: Shakaar</a></li><li><a href="/svenusling/m/19330.html">Star Trek: Deep Space Nine: Facets</a></li><li><a href="/svenusling/m/19331.html">Star Trek: Deep Space Nine: The Adversary</a></li><li><a href="/svenusling/m/19333.html">Star Trek: Deep Space Nine: The Way of the Warrior</a></li><li><a href="/svenusling/m/19334.html">Star Trek: Deep Space Nine: The Visitor</a></li><li><a href="/svenusling/m/19338.html">Star Trek: Deep Space Nine: Starship Down</a></li><li><a href="/svenusling/m/19339.html">Star Trek: Deep Space Nine: Little Green Men</a></li><li><a href="/svenusling/m/19340.html">Star Trek: Deep Space Nine: The Sword of Kahless</a></li><li><a href="/svenusling/m/19341.html">Star Trek: Deep Space Nine: Our Man Bashir</a></li><li><a href="/svenusling/m/19345.html">Star Trek: Deep Space Nine: Return to Grace</a></li><li><a href="/svenusling/m/19346.html">Star Trek: Deep Space Nine: Sons of Mogh</a></li><li><a href="/svenusling/m/19351.html">Star Trek: Deep Space Nine: Shattered Mirror</a></li><li><a href="/svenusling/m/19352.html">Star Trek: Deep Space Nine: The Muse</a></li><li><a href="/svenusling/m/19356.html">Star Trek: Deep Space Nine: Body Parts</a></li><li><a href="/svenusling/m/19361.html">Star Trek: Deep Space Nine: Looking for par'Mach in All the Wrong Places</a></li><li><a href="/svenusling/m/19363.html">Star Trek: Deep Space Nine: The Assignment</a></li><li><a href="/svenusling/m/19368.html">Star Trek: Deep Space Nine: Rapture</a></li><li><a href="/svenusling/m/19371.html">Star Trek: Deep Space Nine: For the Uniform</a></li><li><a href="/svenusling/m/19376.html">Star Trek: Deep Space Nine: Business as Usual</a></li><li><a href="/svenusling/m/19378.html">Star Trek: Deep Space Nine: Ferengi Love Songs</a> (även regi)</li><li><a href="/svenusling/m/19379.html">Star Trek: Deep Space Nine: Soldiers of the Empire</a></li><li><a href="/svenusling/m/19382.html">Star Trek: Deep Space Nine: Empok Nor</a></li><li><a href="/svenusling/m/19383.html">Star Trek: Deep Space Nine: In the Cards</a></li><li><a href="/svenusling/m/19388.html">Star Trek: Deep Space Nine: Sons and Daughters</a></li><li><a href="/svenusling/m/19391.html">Star Trek: Deep Space Nine: Sacrifice of Angels</a></li><li><a href="/svenusling/m/19392.html">Star Trek: Deep Space Nine: You Are Cordially Invited...</a></li><li><a href="/svenusling/m/19393.html">Star Trek: Deep Space Nine: Resurrection</a></li><li><a href="/svenusling/m/19397.html">Star Trek: Deep Space Nine:  Who Mourns for Morn?</a></li><li><a href="/svenusling/m/19402.html">Star Trek: Deep Space Nine: Wrongs Darker Than Death or Night</a></li><li><a href="/svenusling/m/19406.html">Star Trek: Deep Space Nine: The Reckoning</a></li><li><a href="/svenusling/m/19407.html">Star Trek: Deep Space Nine: Valiant</a></li><li><a href="/svenusling/m/19413.html">Star Trek: Deep Space Nine: Image in the Sand</a></li><li><a href="/svenusling/m/19414.html">Star Trek: Deep Space Nine: Shadows and Symbols</a></li><li><a href="/svenusling/m/19415.html">Star Trek: Deep Space Nine: Afterimage</a></li><li><a href="/svenusling/m/19416.html">Star Trek: Deep Space Nine: Take Me Out to the Holosuite</a></li><li><a href="/svenusling/m/19417.html">Star Trek: Deep Space Nine: Chrysalis</a></li><li><a href="/svenusling/m/19419.html">Star Trek: Deep Space Nine: Once More Unto the Breach</a></li><li><a href="/svenusling/m/19424.html">Star Trek: Deep Space Nine: The Emperor's New Cloak</a></li><li><a href="/svenusling/m/19425.html">Star Trek: Deep Space Nine: Field of Fire</a></li><li><a href="/svenusling/m/19429.html">Star Trek: Deep Space Nine: Penumbra</a></li><li><a href="/svenusling/m/19430.html">Star Trek: Deep Space Nine:  'Til Death Do Us Part</a></li><li><a href="/svenusling/m/19433.html">Star Trek: Deep Space Nine: When It Rains...</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16914.html">NCIS: Phoenix</a></li><li><a href="/svenusling/m/19264.html">Star Trek: Deep Space Nine: Q-Less</a></li><li><a href="/svenusling/m/19266.html">Star Trek: Deep Space Nine: The Passenger</a></li><li><a href="/svenusling/m/19267.html">Star Trek: Deep Space Nine: Move Along Home</a></li><li><a href="/svenusling/m/19268.html">Star Trek: Deep Space Nine: The Nagus</a></li><li><a href="/svenusling/m/19273.html">Star Trek: Deep Space Nine: If Wishes Were Horses</a></li><li><a href="/svenusling/m/19327.html">Star Trek: Deep Space Nine: Explorers</a></li><li><a href="/svenusling/m/19365.html">Star Trek: Deep Space Nine: Let He Who Is Without Sin...</a> (även regi)</li><li><a href="/svenusling/m/19408.html">Star Trek: Deep Space Nine: Profit and Lace</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
