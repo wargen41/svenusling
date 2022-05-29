@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aladdin (1992) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Aladdin (1992) <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1992"><a href="#">1992</a></time><br>										<ul class="genres"><li><a href="#genre2">Animerat</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre18">Musikal</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ron Clements</li><li>John Musker</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice">Scott Weinger – Aladdin (röst)</li><li class="voice"><a href="/svenusling/p/1828.html">Robin Williams</a> – Genie (röst)</li><li class="voice">Linda Larkin – Princess Jasmine (röst)</li><li class="voice">Jonathan Freeman – Jafar (röst)</li><li class="voice"><a href="/svenusling/p/1303.html">Frank Welker</a> – Abu (röst)</li><li class="voice">Gilbert Gottfried – Iago (röst)</li><li class="voice">Douglas Seale – Sultan (röst)</li><li class="voice">Charles Adler – Additional Voices (röst)</li><li class="voice">Jack Angel – Additional Voices (röst)</li><li class="voice">Corey Burton – Additional Voices (röst)</li><li class="voice">Philip L. Clarke – Additional Voices (röst)</li><li class="voice">Jim Cummings – Razoul / Apple Seller (röst)</li><li class="voice">Jennifer Darling – Additional Voices (röst)</li><li class="voice">Debi Derryberry – Additional Voices (röst)</li><li class="voice">Bruce Gooch – Additional Voices (röst)</li><li class="voice">Jerry Houser – Additional Voices (röst)</li><li class="voice">Vera Lockwood – Additional Voices (röst)</li><li class="voice">Sherry Lynn – Additional Voices (röst)</li><li class="voice">Mickie McGowan – Additional Voices (röst)</li><li class="voice">Patrick Pinney – Additional Voices (röst)</li><li class="voice">Phil Proctor – Cave of Wonders (röst)</li><li>Brad Kane – Aladdin (singing voice)</li><li>Lea Salonga – Princess Jasmine (singing voice)</li><li class="voice">Bruce Adler – Narrator (röst) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>LAFCA Award - Bästa animation 1992 (John Musker)</li><li>LAFCA Award - Bästa animation 1992 (Ron Clements)</li><li>Oscar - Bästa musik 1993</li><li>Oscar - Bästa originalsång (For the song "A Whole New World") 1993</li><li>Golden Globe - Bästa musik 1993</li><li>Golden Globe - Bästa originalsång (For the song "A Whole New World") 1993</li><li>Golden Globe, Special Award (For his vocal work.) 1993 (1828)</li><li>ASCAP Award - Top Box Office Films 1993</li><li>Saturn Award - Bästa Fantasyfilm 1993</li><li>Saturn Award - Bästa manliga biroll 1993 (1828)</li><li>Saturn Award - Best Performance by a Younger Actor 1993 (Scott Weinger)</li><li>Annie Awards, Annie - Bästa animerade film 1993</li><li>BMI Film Music Award 1993</li><li>MTV Movie Award - Bästa komiska prestation 1993 (1828)</li><li>Golden Reel Award - Best Sound Editing - Animated Feature 1993</li><li>SEFCA Award - Bästa film (3:e plats) 1993</li><li>Young Artist Awards, Special Award - Outstanding Family Entertainment of the Year 1993</li><li>BMI Film & TV AwardsBMI, Most Performed Song from a Film (For the song "A Whole New World".) 1994</li><li>Golden Screen, Golden Screen 1994</li><li>Golden Screen, Golden Screen with 1 Star 1994</li><li>Grammy - Best Instrumental Composition Written for a Motion Picture or for Television 1994</li><li>Grammy - Best Song Written Specifically for a Motion Picture or for Television (For the song "A Whole New World".) 1994</li><li>ASCAP Award - Most Performed Songs from Motion Pictures (For the song "A Whole New World".) 1995</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa originalsång (For the song "Friend Like Me") 1993</li><li>Oscar - Bästa ljud 1993</li><li>Oscar - Bästa ljudeffekter 1993</li><li>Golden Globe - Bästa film - Komedi eller Musikal 1993</li><li>Golden Globe - Bästa originalsång (For the song "Friend Like Me") 1993</li><li>Golden Globe - Bästa originalsång (For the song "Prince Ali") 1993</li><li>Saturn Award - Bästa musik 1993</li><li>Hugo Awards, Hugo - Best Dramatic Presentation 1993</li><li>MTV Movie Award - Bästa film 1993</li><li>MTV Movie Award - Bästa filmsång (For the song: "Whole New World".) 1993</li><li>BAFTA Film Award - Bästa musik 1994</li><li>BAFTA Film Award - Bästa specialeffekter 1994</li><li>Grammy - Best Song Written Specifically for a Motion Picture or for Television (For the song "Friend Like Me".) 1994</li><li>Saturn Award - Best DVD Classic Film Release 2005</li><li>Golden Satellite Award - Best Youth DVD (For the Special Platinum Edition (2004).) 2005</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Animator [Eric Goldberg][/p?id=Eric%20Goldberg] based the Genie on the drawings of caricaturist Al Hirschfeld.</li><li> The opening scene with the street merchant was completely unscripted. [Robin Williams][/p?id=1828] was brought into the sound stage and was asked to stand behind a table that had several objects on it and a bed sheet covering them all. The animators asked him to lift the sheet, and without looking take an object from the table and describe it in character. Much of the material in that recording session was not appropriate for a Disney film.</li><li> Some of the Genie's imitations were cut from the film, including [John Wayne][/p?id=1504], [George Bush][/p?id=George%20Bush] and Dr. Ruth Westheimer.</li><li> [Robin Williams][/p?id=1828] provided the voice for the Genie, at union scale rate (the lowest legal pay rate a studio can give an actor), on the provisos that his voice was not used for merchandising (i.e. toys and such) and that the Genie character not take up more than 25% of the space of a poster, ad, billboard, or trailer. When these wishes were not granted, he withdrew his support for Disney and the film. As a result, his name was not included in &quot;The Art of [Aladdin][/f?id=Aladdin]&quot; book (it makes constant references to &quot;the voice of the Genie&quot;), and he was not available for the direct-to-video sequel [The Return of Jafar][/f?id=15188] (1994) (V) or the &quot;[Aladdin][/f?id=Aladdin]&quot; (1994) TV show ([Dan Castellaneta][/p?id=1197] filled in as the voice of the Genie for these productions). In an attempt to get back on good terms with [Williams][/p?id=1828], Walt Disney Co. CEO Michael Eisner apologized to him with a peace offering of an original Pablo Picasso painting. Still angered and feeling betrayed by Disney, [Williams][/p?id=1828] would not accept the gift. It was not until Jeffrey Katzenberg was fired and a new producer hired did [Williams][/p?id=1828] return to Disney. Through this new producer, a public apology was given (by the producer). Promises were made to right wrongs, and [Williams][/p?id=1828] was so touched that he came back as the Genie for the second direct-to-video sequel, [Aladdin and the King of Thieves][/f?id=10112] (1995) (V). Disney was so thrilled that they threw out the previously completed recording sessions with [Castellaneta][/p?id=1197].</li><li> This film became the 14th (and the first animated movie) to gross more than $200,000,000.</li><li> The most successful film of 1992, earning over $217 million at the US box office and over $504 million worldwide.</li><li> This was the first major animated film which was advertised on the strength of having a major movie star providing one of its voices ([Robin Williams][/p?id=1828] in this case). This has since become the norm with animated features.</li><li> [John Candy][/p?id=1475], [Steve Martin][/p?id=1903] and [Eddie Murphy][/p?id=1261] were all considered at one point to provide the voice of the Genie.</li><li> [Robin Williams][/p?id=1828] recorded most of his scenes in between filming breaks on [Hook][/f?id=14623] (1991) and [Toys][/f?id=20711] (1992).</li><li> In early visual development, [Aladdin][/f?id=Aladdin] resembled [Michael J. Fox][/p?id=1652]. As the film developed, Jeffrey Katzenberg didn't think [Aladdin][/f?id=Aladdin] had enough appeal to women, so he asked that [Aladdin][/f?id=Aladdin] be beefed up a bit to resemble [Tom Cruise][/p?id=1949].</li><li> Jasmine's appearance was influenced by [Jennifer Connelly][/p?id=1447], as well as the sister of her animator, Mark Henn.</li><li> During the course of recording the voices, [Robin Williams][/p?id=1828] improvised so much they had almost 16 hours of material.</li><li> While filming this movie, [Robin Williams][/p?id=1828] frequently received calls from [Steven Spielberg][/p?id=1907] who at the time was working on [Schindler's List][/f?id=18009] (1993). He would put him on speaker phone so he could tell jokes to the cast and crew to cheer them up. Some of the material that he used was material that he was using for this film.</li><li> Scheduling conflicts with &quot;[Star Trek: The Next Generation][/f?id=19461]&quot; (1987) forced [Patrick Stewart][/p?id=1717] to turn down the role of Jafar. He has said in interviews that this is his biggest regret.</li><li> Because [Robin Williams][/p?id=1828] ad-libbed so many of his lines, the script was turned down for a Best Adapted Screenplay Academy Award nomination.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

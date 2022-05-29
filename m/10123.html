@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alexander | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Alexander <a href="#" class="grade">+</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2004"><a href="#">2004</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1705.html">Oliver Stone</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Colin Farrell – Alexander</li><li><a href="/svenusling/p/1043.html">Angelina Jolie</a> – Olympias</li><li><a href="/svenusling/p/1973.html">Val Kilmer</a> – Philip</li><li><a href="/svenusling/p/1053.html">Anthony Hopkins</a> – Old Ptolemy</li><li>Jared Leto – Hephaistion</li><li><a href="/svenusling/p/1841.html">Rosario Dawson</a> – Roxane</li><li>Jonathan Rhys Meyers – Cassander</li><li>Rory McCann – Crateros</li><li>Gary Stretch – Cleitus</li><li>Ian Beattie – Antigonus</li><li>Neil Jackson – Perdiccas</li><li>Raz Degan – Darius III</li><li><a href="/svenusling/p/1171.html">Christopher Plummer</a> – Aristotle</li><li>John Kavanagh – Parmenion</li><li>Annelise Hesme – Stateira</li><li>Connor Paolo – Young Alexander</li><li>Jessie Kamm – Child Alexander</li><li>Nick Dunning – Attalus</li><li>Elliot Cowan – Ptolemy</li><li>Joseph Morgan – Philotas</li><li>Denis Conway – Nearchus</li><li>Garrett Lombard – Leonnatus</li><li>Chris Aberdein – Polyperchon</li><li>Francisco Bosch – Bagoas</li><li>Toby Kebbell – Pausanius</li><li>Marie Meyer – Eurydice</li><li>Patrick Carroll – Young Hephaistion</li><li><a href="/svenusling/p/1103.html">Brian Blessed</a> – Wrestling Trainer</li><li>Peter Williamson – Young Nearchus</li><li>Morgan Christopher Ferris – Young Cassander</li><li>Robert Earley – Young Ptolemy</li><li>Aleczander Gordon – Young Perdiccas</li><li>Mick Lally – Horse Seller</li><li>Erol Sander – Persian Prince</li><li>Stéphane Ferrara – Bactrian Commander</li><li>Tadhg Murphy – Dying Soldier</li><li>Jean Le Duc – Fat Eunuch</li><li>Michael Dixon – Campfire Soldier</li><li><a href="/svenusling/p/1941.html">Tim Pigott-Smith</a> – Omen Reader</li><li>Tsouli Mohammed – Persian Chamberlain</li><li>David Bedella – Scribe</li><li>Laird Macintosh – Greek Officer</li><li>Fiona O'Shaughnessy – Nurse</li><li>Rab Affleck – Attalus' Henchman</li><li>Féodor Atkine – Roxane's Father</li><li>Harry Kent – Cup Bearer #1</li><li>Sam Green – Cup Bearer #2</li><li>Bin Bunluerit – Indian King</li><li>Jaran Ngamdee – Indian Prince</li><li>Brian McGrath – Doctor</li><li>Suzanne Bullock – Roxane dancer</li><li>Kate Elouise – Roxane dancer</li><li>Gillian Grueber – Roxane dancer</li><li>Michelle Lukes – Roxane dancer</li><li>Anjali Mehra – Roxane dancer</li><li>Anthony Jean Marie Kurt – Bagoas dancer</li><li>Marta Barahona – Bagoas dancer</li><li>Monica Zamora – Bagoas dancer</li><li>Benny Maslov – Bagoas dancer</li><li>Tania Matos – Bagoas dancer</li><li>Leighton Morrison – Bagoas dancer</li><li>Isaac Mullins – Bagoas dancer</li><li>Monica Perego – Bagoas dancer</li><li>Matthew Powell – Bagoas dancer</li><li>Benjamín Benítez – Amato (uncredited)</li><li>Anthony James Berowne – Greek courtier (uncredited)</li><li>Max Bollinger – Young Greek Official (uncredited)</li><li>Jason Croot – Peasant (uncredited)</li><li>Ian Georgiev – Boy (uncredited)</li><li>Charles Haigh – Aristander (uncredited)</li><li>Charlie Hollway – Boy (uncredited)</li><li>Rowley Irlam – Pausanius's Accomplice (uncredited)</li><li>Joey Jeetun – Indian Prince (uncredited)</li><li>David Leon – Hermolaous (uncredited)</li><li>Greg Orvis – Celtic Diplomat (uncredited)</li><li>Tigerlily Perry – Child at camp (uncredited)</li><li>Peter Rnic – Greek Nobleman (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Camerimage, Silver Frog 2004</li><li>World Soundtrack Awards, Public Choice Award 2005 (Vangelis)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Camerimage, Golden Frog 2004</li><li>GLAAD Media Award - Outstanding Film - Wide Release 2005</li><li>Harry Awards, Harry Award 2005</li><li>Razzie Award - Sämsta film 2005</li><li>Razzie Award - Sämsta regi 2005 (1705)</li><li>Razzie Award - Sämsta skådespelare 2005 (Colin Farrell)</li><li>Razzie Award - Sämsta manliga biroll 2005 (1973)</li><li>Razzie Award - Sämsta kvinnliga biroll 2005 (1043)</li><li>Razzie Award - Sämsta manus 2005 (1705)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Colin Farrell][/p?id=Colin%20Farrell] broke his ankle and arm during filming when he fell down a stairway.</li><li> [Val Kilmer][/p?id=1973] gained over 50 pounds and stopped working out for the plump role of Philip.</li><li> The biography of [Alexander][/f?id=10123] by Oxford University professor Robin Lane Fox was an original inspiration and source of information for director [Oliver Stone][/p?id=1705]. As an historical advisor, Professor Fox didn't get an on screen credit; his price for giving his advice was to be allowed to take a place at the head of what is one of the largest cavalry charges ever filmed. Professor Fox was used to riding around the English countryside, but gladly dressed up as a Macedonean cavalry officer to live his dream of charging for [Alexander][/f?id=10123].</li><li> [Brad Pitt][/p?id=1096] was considered for the role of Hephaestion, but turned down the role due to personal concerns with the character.</li><li> [Oliver Stone][/p?id=1705] previously tried to mount the project with [Tom Cruise][/p?id=1949] in the title role.</li><li> [Sean Connery][/p?id=1866] was originally considered for the role that was eventually offered to [Val Kilmer][/p?id=1973].</li><li> [Oliver Stone][/p?id=1705] and [Val Kilmer][/p?id=1973] originally discussed [Alexander][/f?id=10123] while filming The Doors (1991).</li><li> [Val Kilmer][/p?id=1973] had to undergo over an hour of daily makeup to look older and don the scar tissue that covers the eye that Philip lost in battle.</li><li> [Heath Ledger][/p?id=1366] was originally considered for the role of [Alexander][/f?id=10123] before [Colin Farrell][/p?id=Colin%20Farrell] was cast.</li><li> [Angelina Jolie][/p?id=1043] plays [Colin Farrell's][/p?id=Colin%20Farrell] mother even though she is less than a year older than he is.</li><li> [Oliver Stone's][/p?id=1705] first choice for the role of King Philip was [Liam Neeson][/p?id=1584], who turned it down.</li><li> Director [Oliver Stone's][/p?id=1705] first choice for the role of [Alexander][/f?id=10123] the Great was [Russell Crowe][/p?id=1846], who turned it down.</li><li> The Irish accents you hear from the Macedonian soldiers were not there to accommodate [Colin Farrell][/p?id=Colin%20Farrell] as some have asserted. As Macedonians were mostly from more remote hill tribes and were coarser and less civilized than the Greeks, the Celtic accents used in the movie serve to portray fictionally the difference between them and the more refined Greeks, who speak in a more upper class, English accent. Many critics and audience members failed to understand this device.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

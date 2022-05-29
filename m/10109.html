@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aladdin (2019) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Aladdin (2019) <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2019"><a href="#">2019</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre18">Musikal</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Guy Ritchie</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2002.html">Will Smith</a> – Genie / Mariner</li><li>Mena Massoud – Aladdin</li><li>Naomi Scott – Jasmine</li><li>Marwan Kenzari – Jafar</li><li>Navid Negahban – Sultan</li><li>Nasim Pedrad – Dalia</li><li>Billy Magnussen – Prince Anders</li><li>Jordan A. Nash – Omar</li><li>Taliyah Blair – Lian</li><li>Aubrey Lin – Omi</li><li>Amir Boutrous – Jamal</li><li>Numan Acar – Hakim</li><li>Omari Bernard – Guard #1</li><li>Nathaniel Ellul – Guard #2</li><li>Sebastien Torkia – Guard #3</li><li>Buckso Dhillon-Woolley – Matron</li><li>Ceara Batson – School Girl</li><li>Vinani Mwazanzale – School Girl</li><li>Demii Lee Walker – School Girl</li><li>Elena Zacharia – School Girl</li><li>Nazerene Williams – School Girl</li><li>Bessy Naidu – School Girl</li><li>Marisha Wallace – Busybody Woman</li><li>Maya Saroya – Beguiling Woman</li><li>Amer Chadha-Patel – Mounted Palace Guard</li><li>Omar Abidi – Chubby Aladdin</li><li>Stefan Kalipha – Imam</li><li>Firas Waleed Al-Taybeh – Thief</li><li>Nina Wadia – Zulla</li><li>Elif Knight – Mother</li><li>Saikat Ahamed – Jailer</li><li>Amed Hashimi – Prisoner #1</li><li>Stefan Capper – Prisoner #2</li><li>Jamal Sims – Handsome Prince</li><li class="voice"><a href="/svenusling/p/1014.html">Alan Tudyk</a> – Iago (röst)</li><li class="voice"><a href="/svenusling/p/1303.html">Frank Welker</a> – Cave of Wonders (röst)</li><li>Vinani Mwazanzale – School Girl</li><li>Fabio Abraham – Arabic Man (uncredited)</li><li>Amar Adatia – Bodyguard (uncredited)</li><li>Lee Admassie – Ali's Trumpeter (uncredited)</li><li>Nicky Andersen – Townsfolk (uncredited)</li><li>Rodrig Andrisan – Agrabah Citizen (uncredited)</li><li>Joey Ansah – Jafar's Guard (uncredited)</li><li>Karamvir Athwal – Townsfolk (uncredited)</li><li>Anj Avraam – Palace Guard (uncredited)</li><li>Amar Bains – Dancer (uncredited)</li><li>Charlotte Barnes – Female Cook Dancer (uncredited)</li><li>Koko Basigara – Peacock (uncredited)</li><li>Luke Bell – Townsfolk (uncredited)</li><li class="voice">Will Blagrove – Actor (röst) (uncredited)</li><li>Paulina Boneva – Market Lady (uncredited)</li><li>Tahir Burhan – Palace Courtier (uncredited)</li><li>Jan Cabral – Palace Guard (uncredited)</li><li>Sophie Carmen-Jones – Balcony Girl (uncredited)</li><li>Nikkita Chadha – Dancer (uncredited)</li><li>Song-Hung Chang – Ahmed (uncredited)</li><li>Cassie Clare – Peacock (uncredited)</li><li>Eric Coco – Townsfolk (uncredited)</li><li>Bern Collaço – Palace Guard (uncredited)</li><li>Spencer Collings – Camel Rider (uncredited)</li><li>Adam Collins – City Guard (uncredited)</li><li>Rene Costa – Villager (uncredited)</li><li>Mary Cruz – Palace Courtier (uncredited)</li><li>Maryam Soumare Dahan – Villager (uncredited)</li><li>Adrian Danila – Ali's Servant (uncredited)</li><li>Karan Singh Duggall – SR. Palace Servent (uncredited)</li><li>Andrew Dunkelberger – Palace Guard (uncredited)</li><li>James 'JD Knight' Dunn – Agrabah Tanner (uncredited)</li><li>Ramzy El Huraiby – Wrong Wisher (uncredited)</li><li>Mahmoud Elmesiry – Palace Guard (uncredited)</li><li>Agatha Ezzedine – Market Lady (uncredited)</li><li>Lachy Fisher – Palace Wedding Guest (uncredited)</li><li>Mandana Ghomshei – Villager (uncredited)</li><li>Shaj Goku – City Guard (uncredited)</li><li>Royston Gooden – Dancer (uncredited)</li><li>Yasmin Harrison – Peacock Dancer (uncredited)</li><li>Daniel Hayde – Townsman (uncredited)</li><li>Robby Haynes – Razoul Chief City Guard (uncredited)</li><li>Michael Herne – Mediterranean Townsfolk / Wedding Guest (uncredited)</li><li>Joseph Alex Pacquette Hinds – Ali's Dancing Servant #2 (uncredited)</li><li>Svend Emil Jacobsen – Sven - Guard of Prince Anders (uncredited)</li><li>Levente Jakab – Ali's Dancing Servant (uncredited)</li><li>Blythe Jandoo – Luna Dancer (uncredited)</li><li>Amrita Jazzmyn – Villager (uncredited)</li><li>Luke Johnson – Dancer (uncredited)</li><li>Andrew Jonas – Townfolk (uncredited)</li><li>Jackson Kai – North African TownFolk / Dancer (uncredited)</li><li>Jagoda Kamov – Palace Servant (uncredited)</li><li>Daham Kandanarrachchi – Henchman (uncredited)</li><li>Luke Kearney – Market Stall Owner (uncredited)</li><li>Nick Khan – Alis Servant (uncredited)</li><li>Leslie Kunz – Female Cook (uncredited)</li><li>Kamil Lemieszewski – Ali's Servant (uncredited)</li><li>Ibrahim Majid – Palace Servant (uncredited)</li><li>Ketan Majmudar – Palace Kitchen Worker (uncredited)</li><li>Hamza Malik – Palace Guard (uncredited)</li><li>Ramzi Marouani – Rasheed Reluctant City Guard (uncredited)</li><li>Kevin Matadeen – Carpet Seller (uncredited)</li><li>Shelley Mcdonald – City Guard (uncredited)</li><li>Serhat Metin – Ali's Servant (uncredited)</li><li>Ramzan Miah – Dancer (uncredited)</li><li>Yassine Mkhichen – Townsfolk (uncredited)</li><li>Feizal Mowlabocus – Nubian Fan Bearer (uncredited)</li><li>Ocean Navarro – Little Acrobat (uncredited)</li><li>Emily Ng – Palace Wedding Guest (uncredited)</li><li>Jay Nifaoui – Villager (uncredited)</li><li>David Orrells – Palace Servant (uncredited)</li><li>Hiten Patel – Haatim City Guard (uncredited)</li><li>Jag Patel – Sultan's Main Palace Courtier (uncredited)</li><li>Satish Danny Paul – Town Lamp Stall Owner (uncredited)</li><li>Neal Piron – Dancer (uncredited)</li><li>Mario Romano – Agrabah Citizen (uncredited)</li><li>Belal Sabir – Abbaas City Guard (uncredited)</li><li>Dave Simon – City Guard (uncredited)</li><li>Derek Smith – Oldman Villager (uncredited)</li><li>Chloe Stannage – Village Child (uncredited)</li><li>Lucas Antoine Starrets – Sub-Saharan Townsfolk (uncredited)</li><li>Ben Sura – Turkish Trader (uncredited)</li><li>Sanj Surati – Wrong Wisher (uncredited)</li><li>Albert Tang – Townsfolk (uncredited)</li><li>Fran Targ – Townsfolk (uncredited)</li><li>Danilo Vicente – Ali's Servant (uncredited)</li><li>Beth Willetts – Ensemble (uncredited)</li><li>Imran Yusuf – Omar (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

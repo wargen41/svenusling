@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Airport - Flygplatsen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Airport - Flygplatsen <a href="#" class="grade">++</a></h2>
+										<h3>Airport</h3>
+										<p>
+										Film från <time datetime="1970"><a href="#">1970</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>George Seaton</li><li>Henry Hathaway</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1120.html">Burt Lancaster</a> – Mel Bakersfeld</li><li><a href="/svenusling/p/1231.html">Dean Martin</a> – Capt. Vernon Demerest</li><li>Jean Seberg – Tanya Livingston</li><li>Jacqueline Bisset – Gwen Meighen</li><li><a href="/svenusling/p/1326.html">George Kennedy</a> – Joe Patroni</li><li>Helen Hayes – Ada Quonsett</li><li><a href="/svenusling/p/1974.html">Van Heflin</a> – D. O. Guerrero</li><li>Maureen Stapleton – Inez Guerrero</li><li>Barry Nelson – Capt. Anson Harris</li><li>Dana Wynter – Cindy Bakersfeld</li><li>Lloyd Nolan – Harry Standish</li><li>Barbara Hale – Sarah Bakersfeld Demerest</li><li>Gary Collins – Cy Jordan</li><li>John Findlater – Peter Coakley</li><li>Jessie Royce Landis – Mrs. Harriet DuBarry Mossman</li><li>Larry Gates – Commissioner Ackerman</li><li>Peter Turgeon – Marcus Rathbone</li><li>Whit Bissell – Mr. Davidson</li><li>Virginia Grey – Mrs. Schultz</li><li>Eileen Wesson – Judy Barton</li><li>Paul Picerni – Dr. Compagno</li><li>Robert Patten – Capt. Benson - Pilot</li><li>Clark Howat – Bert Weatherby</li><li>Lew Brown – Reynolds</li><li>Ilana Dowding – Roberta 'Robbie' Bakersfeld</li><li>Lisa Gerritsen – Libby Bakersfeld</li><li>James Nolan – Father Steven Lonigan</li><li>Patty Poulsen – Joan - Stewardess</li><li>Ena Hartman – Ruth - Stewardess</li><li>Malila Saint Duval – Maria - Stewardess</li><li>Sharon Harvey – Sally - Stewardess</li><li>Albert Reed – Lt. Ned Ordway</li><li>Jodean Lawrence – Marie Patroni</li><li>Nancy Ann Nelson – Bunnie</li><li>Dick Winslow – Mr. Schultz</li><li>Lou Wagner – Schuyler Schultz</li><li>Janis Hansen – Sister Katherine Grace</li><li>Mary Jackson – Sister Felice</li><li>Shelly Novack – Rollings</li><li>Chuck Daniel – Parks</li><li>Charles Brewer – Diller</li><li>Fletcher Allen – Dispatcher (uncredited)</li><li>Merry Anders – Mrs. Burt Ball - Passenger (uncredited)</li><li>Ricky Anderson – William Downey - Passenger (uncredited)</li><li>Ray Andrade – Pietro Carmona - Passenger (uncredited)</li><li>Maria Andre – Mrs. Portola (uncredited)</li><li>Nadine Arlyn – Jennifer Barry - Passenger (uncredited)</li><li>Ray Ballard – Gilbert Price - Passenger (uncredited)</li><li>Larry Barton – Rabbi Leo Bernstein - Passenger (uncredited)</li><li>Michael Bell – Airport Bus Driver (uncredited)</li><li>Savannah Bentley – Virginia Lopez - Passenger (uncredited)</li><li>Chuck Bowman – New York Dispatcher (uncredited)</li><li>William Boyett – Jack Ingram (uncredited)</li><li>Chuckie Bradley – Dee Gilroy - Passenger (uncredited)</li><li>James Bradley – Jack Stone - Passenger (uncredited)</li><li>Eve Brent – Mrs. David Corman - Passenger (uncredited)</li><li>Robert Brubaker – Dr. Nash (uncredited)</li><li>Dee Carroll – Florence (uncredited)</li><li>Dort Clark – Dr. Henry Bron - Passenger (uncredited)</li><li>Ellen Clark – Anne Gordon - Passenger (uncredited)</li><li>Tamar Cooper – Carol Blake - Passenger (uncredited)</li><li>Cathleen Cordell – Mrs. William Donovan - Passenger (uncredited)</li><li>Nick Cravat – Nick Valli - Passenger (uncredited)</li><li>Susan Curtis – Elizabeth Yorker - Passenger (uncredited)</li><li>Carol Daniels – Loretta Manning - Passenger (uncredited)</li><li>Hal K. Dawson – Ben Bradley - Passenger (uncredited)</li><li>Ed Deemer – Co-Pilot Crowley (uncredited)</li><li>Larry Delaney – Frank (uncredited)</li><li>John Delgado – Ingram's Assistant - Passenger (uncredited)</li><li>John N. Denend – Douglas (uncredited)</li><li>John Dennis – Cab Driver (uncredited)</li><li>Marlo Dwyer – Elegant Woman - Passenger (uncredited)</li><li>Kaye Elhardt – Kay Hart - Passenger (uncredited)</li><li>John Eloff – Jack Elliott - Passenger (uncredited)</li><li>Reginald Fenderson – Dr. Grant (uncredited)</li><li>John Francis – Maurice David - Passenger (uncredited)</li><li>Mark Gardner – Richard Kalin - Passenger (uncredited)</li><li>Don Gazzaniga – Carlo Di Tomaso - Passenger (uncredited)</li><li class="voice">Elliott Gould – Voice (röst) (uncredited)</li><li>Sandra Gould – Millie Miles - Passenger (uncredited)</li><li>Neil Grant – Roger Whitney - Passenger (uncredited)</li><li>Joe Gray – Antonio Piace - Passenger (uncredited)</li><li>Michael J. Grayson – David Corman - Passenger (uncredited)</li><li>Larry Greenfield – Controller #1 - Minneapolis (uncredited)</li><li>Warren Hammack – Irwin Jansen - Passenger (uncredited)</li><li>Marc Hannibal – Sgt. Edward Washington - Passenger (uncredited)</li><li>Harry Harvey – Dr. Avery Smith - Passenger (uncredited)</li><li>Thomas Browne Henry – Professor Charles Ruch - Passenger (uncredited)</li><li>Art Hern – Charlie Kaplan - Passenger (uncredited)</li><li>Mary Gail Hobbs – Mrs. Cary Jay - Passenger (uncredited)</li><li>Fred Holliday – Chester Jennings - Passenger (uncredited)</li><li>Wendy Howard – Mrs. Alan Bramson - Passenger (uncredited)</li><li>William Hudson – Mr. Donovan - Passenger (uncredited)</li><li>Jill Jackson – Mrs. Ben Bradley - Passenger (uncredited)</li><li>Frank Jamus – Inspector Frank Barrow (uncredited)</li><li>Andrew Johnson – Sterling (uncredited)</li><li>Bobby Johnson – Red Cap (uncredited)</li><li>Dale Johnson – James Mott - Passenger (uncredited)</li><li>Judy Jordan – Bea (uncredited)</li><li>Walter Woolf King – Cindy's Father (uncredited)</li><li>Robert Knapp – Jack Dunlap - Passenger (uncredited)</li><li>Ron Koslow – Mark Harris - Passenger (uncredited)</li><li>Christopher Lloyd – Patron in diner when Guerero says goodbye to wife / bus passenger on arrival at airport (uncredited)</li><li>Damian London – Praying Father (uncredited)</li><li>Celia Lovsky – Mrs. Williams - Passenger (uncredited)</li><li>Marco López – Harold Lopez - Passenger (uncredited)</li><li>Adrienne Marden – Mrs. Gertrude Cochran - Passenger (uncredited)</li><li>Richard Mathews – Controller #2 (uncredited)</li><li>David Mauro – Mario Vitale - Passenger (uncredited)</li><li>Allison McKay – Mrs. Irwin Jansen - Passenger (uncredited)</li><li>Eve McVeagh – Mrs. Henry Bron - Passenger (uncredited)</li><li>Fredricka Meyers – Zena Van Dann - Passenger (uncredited)</li><li>Belle Mitchell – Bertha Kaplan - Passenger (uncredited)</li><li>Dallas Mitchell – Danny (uncredited)</li><li>Michele Montau – Rosa Di Tomaso - Passenger (uncredited)</li><li>Barbara Morrison – Mrs. James Mott - Passenger (uncredited)</li><li>Don Nagel – Martin Rose - Passenger (uncredited)</li><li>John Nolan – Richard Ross - Passenger (uncredited)</li><li>William H. O'Brien – Waiter at Men's Club (uncredited)</li><li>Kathleen O'Malley – Mrs. Chuck Beale - Passenger (uncredited)</li><li>Tom Pace – David Norton - Passenger (uncredited)</li><li>Jim Parker – Controller #3 (uncredited)</li><li>Vic Perrin – Crabby Man (uncredited)</li><li>Murray Pollack – Wellman (uncredited)</li><li>Pat Priest – Mrs. Jerry Copeland - Passenger (uncredited)</li><li>Quinn K. Redeker – John Reindel (uncredited)</li><li>Leoda Richards – White-Haried Lady on Dais (uncredited)</li><li>George R. Robertson – Richard Stout - Passenger (uncredited)</li><li>Sondra Rodgers – Margaret Rogers - Passenger (uncredited)</li><li>Don Ross – John - Weatherman (uncredited)</li><li>Marion Ross – Joan Myers - Passenger (uncredited)</li><li>Robert C. Ross – Chuck Beale - Passenger (uncredited)</li><li>Michael Rougas – Navigator (uncredited)</li><li>Benny Rubin – Sam Lasky - Passenger Rubbing His Face (uncredited)</li><li>Dick Russell – Jerry Copeland - Passenger (uncredited)</li><li>Jackie Russell – Holly Barry - Passenger (uncredited)</li><li>Mark Russell – PFC Bud Miller - Passenger (uncredited)</li><li>Frank J. Scannell – Ted Fields - Passenger (uncredited)</li><li>Michael Sevareid – Fowler (uncredited)</li><li>Johnny Silver – Franco Spinetti - Passenger (uncredited)</li><li>Eric Sinclair – David Knight - Passenger (uncredited)</li><li>Michael Stearns – Donald Pyne - Obnoxious Passenger 21-D (uncredited)</li><li>Mike Steele – Banquet M.C. (uncredited)</li><li>Ron Stokes – Taxi Driver (uncredited)</li><li>Arlen Stuart – Sally Catalano - Passenger (uncredited)</li><li>Leslie Summers – Lynn Mason - Passenger (uncredited)</li><li>Joel Thingvall – Teen in Terminal (uncredited)</li><li>Towyna Thomas – Mrs. Smith - Passenger (uncredited)</li><li>Glenn Thompson – Controller #1 (uncredited)</li><li>Bee Tompkins – Kate Jameson - Passenger (uncredited)</li><li>Richard Van Vleet – Passenger in Military Uniform (uncredited)</li><li>Dawn Villere – Dawn Williams - Passenger (uncredited)</li><li>Bud Walls – Dr. Alan Bramson - Passenger (uncredited)</li><li>Rick Warick – Burt Ball - Passenger (uncredited)</li><li>Vince Williams – Cleveland Dispatcher (uncredited)</li><li>Frederick Worlock – Frederick Williams - Passenger (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa kvinnliga biroll 1971 (Helen Hayes)</li><li>Golden Globe - Bästa kvinnliga biroll 1971 (Maureen Stapleton)</li><li>Laurel Awards, Golden Laurel - Bästa kvinnliga biroll 1971 (Helen Hayes)</li><li>Laurel Awards, Golden Laurel - Bästa manliga biroll (3:e plats) 1971 (1326)</li><li>Laurel Awards, Golden Laurel - Bästa musik (3:e plats) 1971 (Alfred Newman)</li><li>Golden Reel Award - Best Sound Editing - Dialogue 1971</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa film 1971</li><li>Oscar - Bästa kvinnliga biroll 1971 (Maureen Stapleton)</li><li>Oscar - Bästa manus baserad på annan förlaga 1971 (George Seaton)</li><li>Oscar - Bästa foto 1971</li><li>Oscar - Bästa musik 1971 (Alfred Newman)</li><li>Oscar - Bästa ljud 1971</li><li>Oscar - Bästa kostym 1971</li><li>Oscar - Bästa klippning 1971</li><li>Oscar - Bästa scenografi 1971</li><li>Golden Globe - Bästa film - Drama 1971</li><li>Golden Globe - Bästa manliga biroll 1971 (1326)</li><li>Golden Globe - Bästa musik 1971 (Alfred Newman)</li><li>BAFTA Film Award - Bästa kvinnliga biroll 1971 (Maureen Stapleton)</li><li>American Cinema Editors, Eddie - Best Edited Feature Film 1971</li><li>Grammy - Best Original Score Written for a Motion Picture or Television Special 1971 (Alfred Newman)</li><li>Laurel Awards, Golden Laurel - Bästa film (5:e plats) 1971</li><li>WGA Award (Screen) - Bästa drama baserad på annan förlaga 1971 (George Seaton)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Expanded from a Canadian TV production Arthur Hailey wrote called Flight Into Danger, whose cast included Canadian actor and future [Star Trek][/f?id=19154] engineer [James Doohan][/p?id=James%20Doohan].</li><li>At the request of [Dean Martin][/p?id=1231], [Petula Clark][/p?id=Petula%20Clark] was originally offered the role of Gwen Meighen.</li><li>[Dean Martin][/p?id=1231] received 10% of the film's gross, which added an additional $7,000,000 to his salary.</li><li>[Burt Lancaster][/p?id=1120], who headlined the film above the title with [Dean Martin][/p?id=1231], made a great deal of money from the film, which was a huge hit. [Lancaster's][/p?id=1120] contract gave him a 10% profit participation once the movie hit $50 million, and the film grossed $45.3 million in North America alone. Despite the financial windfall, [Lancaster][/p?id=1120] said that the movie was &quot;the worst piece of junk ever made.&quot;</li><li>Final film of [Van Heflin][/p?id=1974].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

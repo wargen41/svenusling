@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Alamo | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Alamo <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2004"><a href="#">2004</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre15">Krig</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John Lee Hancock</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1239.html">Dennis Quaid</a> – Sam Houston</li><li><a href="/svenusling/p/1085.html">Billy Bob Thornton</a> – Davy Crockett</li><li>Jason Patric – James Bowie</li><li>Patrick Wilson – William Travis</li><li>Emilio Echevarría – Antonio Lopez de Santa Ana</li><li>Jordi Mollà – Juan Seguin</li><li>Leon Rippy – Sgt. William Ward</li><li>Tom Davidson – Colonel Green Jameson</li><li>Marc Blucas – James Bonham</li><li>Robert Prentiss – Albert Grimes</li><li>Kevin Page – Micajah Autry</li><li>Joe Stevens – Mial Scurlock</li><li>Stephen Bruton – Captain Almeron Dickinson</li><li>Laura Clifton – Susanna Dickinson</li><li>Ricardo Chavira – Private Gregorio Esparza</li><li>Steven Chester Prince – Lieutenant John Forsythe</li><li>Craig Erickson – Tom Waters</li><li>Nick Kokich – Daniel Cloud</li><li>Richard Nance – Grey #1</li><li>Jett Garner – Grey #2</li><li>Estephania LeBaron – Juana</li><li>Afemo Omilami – Sam</li><li>Edwin Hodge – Joe</li><li>Emily Deschanel – Rosanna Travis</li><li>Blue Deckert – Colorado Smith</li><li>Turk Pipkin – Issac Millsaps</li><li>Brandon Smith – Lieutenant Colonel J.C. Neill</li><li>Tommy G. Kendrick – T.J. Rusk</li><li>W. Earl Brown – David Burnet</li><li>Tom Everett – Mosley Baker</li><li>Rance Howard – Governor Smith</li><li>Stewart Finlay-McLennan – James Grant</li><li>Matt O'Leary – Boy in Store</li><li>John S. Davies – Store Owner</li><li>Kit Gwin – Mrs. Ayers</li><li>Castulo Guerra – General Castrillon</li><li>Francisco Philbert – General Cos</li><li>Mauricio Zatarain – Colonel Jose Batres</li><li>Flavio Hinojosa – Colonel Juan Almonte</li><li>Hugo Pérez – Charging Mexican Soldier</li><li>Jesus Mayorga – Battery Private</li><li>Hector Garcia – Battery Sergeant</li><li>Roland Uribe – Colonel Duque</li><li>Ruben G. Rojas – Francisco Esparza</li><li>Lanell Pena – Ana Esparza</li><li>Michael Crabtree – Deaf Smith</li><li>Anna Reyes – Tejano Child</li><li>Sonia Montoya – Stunning Tejana's Mother</li><li>Elena Hurst – Stunning Tejana</li><li>Lynn Mathis – James Hackett</li><li>Charles Sanders – Stage Manager</li><li>Rutherford Cravens – Mr. Smith</li><li>Dameon Clarke – Mr. Jones</li><li>Tim Mateer – Bill The Rider</li><li>Nathan Price – Charlie Travis</li><li>Don Javier Castillo – Don Jose Palaez</li><li>Lonnie Rodriguez – Mexican Scout</li><li>Julio Cedillo – General Cos' Messenger</li><li>Buck Taylor – Settler</li><li>Oscar D. Silva – Firing Squad First Lieutenant</li><li>Marc Menchaca – Fifer</li><li>Safia Gray – Ursula Veramendi</li><li>Eric Montoya – Enrique Esparza</li><li>Michael Clossin – Tennessean #1</li><li>Robert Bassetti – Bowie Man in Street</li><li>Nathan Walker – Goliad Man</li><li>Bert Beatson – The Messenger (uncredited)</li><li>Aidan Black – Jackson Rusk (uncredited)</li><li>Wendy Bonn – Lady in Blue Dress (uncredited)</li><li>Crystal Marie Dudley – Camp follower (uncredited)</li><li>Charles E. Gray – Alamo defender (uncredited)</li><li>Celina Hernandez – Tejano prostitute (uncredited)</li><li>Richard Jones – Drinking old-timer (uncredited)</li><li>Frank Matthews – Joseph M. Hawkins (uncredited)</li><li>Krystal Morton – Angelina Dickinson (uncredited)</li><li>Robert C. Pemelton – Texan soldier (uncredited)</li><li>Alyssa Petersen – Settler (uncredited)</li><li>Amanda Petersen – Settler (uncredited)</li><li>Ann Taylor – Theatre Patron (uncredited)</li><li>Frank Thompson – Texian Politician (uncredited)</li><li>Clint Tidwell – Texan Defender (uncredited)</li><li>Tony Wolford – Crocketts' group of men (uncredited)</li><li>Daniel Zubiate – Texian Sargeant (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Harry Awards, Harry Award 2005</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Ethan Hawke][/p?id=Ethan%20Hawke] was up for the role of William Barett Travis but eventually dropped out.</li><li> At 51 acres, the set was the largest and most expensive set built in North America to date.</li><li> It took seven months to shoot the movie. The final battle, which actually lasted less than 6 hours in the pre-dawn morning of 6 March 1836, took over a month to shoot.</li><li> Disney had originally planned to release the film at Christmas 2003 but revised the date, citing that director [John Lee Hancock][/p?id=John%20Lee%20Hancock] was still working on the film.</li><li> '[Ron Howard'][/p?id=Ron%20Howard] was originally set to direct, with '[Russell Crowe][/p?id=1846] (I)' set to star, but both left the film when '[Ron Howard'][/p?id=Ron%20Howard] and Disney had a major disagreement over the film's budget ([Howard][/p?id=Ron%20Howard] had sought $200 million). [John Lee Hancock][/p?id=John%20Lee%20Hancock] was then brought on board as director with [Howard][/p?id=Ron%20Howard] as the film's co-producer and the budget reduced to $95 million.</li><li> Production wrapped $82,000 dollars under budget.</li><li> [Billy Bob Thornton][/p?id=1085] learned to play the violin for some scenes that required it.</li><li> The death of David Crockett as depicted in this film is corroborated by the account of a Mexican soldier, Jose Enrique de la Pena. Though not translated into English until after the earlier Alamo film was made, his account makes the claim that Crockett was recognized by the Mexicans, and was executed after the battle rather than killed during it.</li><li> The role of Susanna Dickinson, the only adult Anglo survivor of the siege and the mother of the only child Anglo survivor, was much larger in the script than what it ended up being in the final version of the film. The role was one of the major roles in the script and the actress who portrayed Susanna, [Laura Clifton][/p?id=Laura%20Clifton], was the only female member of the permanent cast for the film. After Disney finished editing the theatrical release of the film, the character has only one line (screaming for her husband, Almaron Dickinson, during a cattle stampede) and a few appearances in other scenes (during Travis' speech and in the chapel during the siege) and is not even identified anywhere in the movie so that audiences would know who this significant figure in Texas history was. In fact, the role, far from being [Laura Clifton's][/p?id=Laura%20Clifton] big break, actually hurt her career because of how insignificant it ended up being in the theatrical release.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
