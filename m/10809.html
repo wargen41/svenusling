@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Berättelsen Om Narnia: Prins Caspian | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Berättelsen Om Narnia: Prins Caspian <a href="#" class="grade">+++</a></h2>
+										<h3>The Chronicles of Narnia: Prince Caspian</h3>
+										<p>
+										Film från <time datetime="2008"><a href="#">2008</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Andrew Adamson</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Ben Barnes – Prince Caspian</li><li>Georgie Henley – Lucy Pevensie</li><li>Skandar Keynes – Edmund Pevensie</li><li>William Moseley – Peter Pevensie</li><li>Anna Popplewell – Susan Pevensie</li><li>Sergio Castellitto – Miraz</li><li><a href="/svenusling/p/1739.html">Peter Dinklage</a> – Trumpkin</li><li><a href="/svenusling/p/1993.html">Warwick Davis</a> – Nikabrik</li><li>Vincent Grass – Doctor Cornelius</li><li>Pierfrancesco Favino – General Glozelle</li><li>Cornell John – Glenstorm</li><li>Damián Alcázar – Lord Sopespian</li><li>Alicia Borrachero – Prunaprismia</li><li>Simón Andreu – Lord Scythley</li><li>Predrag Bjelac – Lord Donnon</li><li>David Bowles – Lord Gregoire</li><li>Juan Diego Montoya Garcia – Lord Montoya</li><li>Douglas Gresham – Telmarine Crier</li><li>Ashley Jones – Geeky Boy</li><li>Klára Issová – Hag</li><li>Shane Rangi – Asterius / Wer-Wolf</li><li>Curtis Matthew – Faun</li><li>Mana Hira Davis – Telmarine Soldier in Boat</li><li>Winham Hammond – Telmarine Soldier in Boat</li><li>Hana Frejkova – Midwife #1</li><li>Kristina Madericova – Midwife #2</li><li>Lucie Solarova – Midwife #3</li><li>Karolina Matouskova – Midwife #4</li><li>Alina Phelan – Midwife #5</li><li>Joseph Moore – Boy #1</li><li>Isaac Bell – Boy #2</li><li>Lejla Abbasová – Glenstorm's Wife</li><li>Ephraim Goldin – Glenstorm Son #1</li><li>Yemi Akinyemi – Glenstorm Son #2</li><li>Carlos Silva Da Silva – Glenstorm Son #3</li><li>Gomez Sandoval – Lightning Bolt Centaur</li><li>Jan Pavel Filipensky – Wimbleweather</li><li>David Mottl – Tyrus</li><li>Michaela Dvorska – Tyrus</li><li>John Bach – British Homeguard #1</li><li>Jack Walley – British Homeguard #2</li><li>Marcus O'Donovan – Skeptical Telmarine</li><li>Adam Valdez – Telmarine Soldier Killed by Reepicheep</li><li class="voice"><a href="/svenusling/p/1584.html">Liam Neeson</a> – Aslan (röst)</li><li class="voice">Ken Stott – Trufflehunter (röst)</li><li class="voice">Harry Gregson-Williams – Pattertwig the Squirrel (röst)</li><li class="voice">Sim Evan-Jones – Peepiceek (röst)</li><li class="voice">David Walliams – Bulgy Bear (röst)</li><li class="voice">Josh Campbell – Asterius the Minotaur (röst)</li><li class="voice"><a href="/svenusling/p/1259.html">Eddie Izzard</a> – Reepicheep (röst)</li><li><a href="/svenusling/p/1934.html">Tilda Swinton</a> – The White Witch</li><li>Tim Glanfield – Soldier (uncredited)</li><li>Tim Hands – Wer-Wolf (uncredited)</li><li>Stewart Moore – Lord 12 (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>PFCS Award - Best Performance by a Youth in a Lead or Supporting Role - Female 2005 (Georgie Henley)</li><li>Satellite Award - Outstanding Motion Picture, Animated or Mixed Media 2005</li><li>Oscar - Bästa smink 2006</li><li>BAFTA Film Award - Bästa smink/hår 2006</li><li>Saturn Award - Bästa kostym 2006</li><li>Saturn Award - Bästa smink 2006</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Best Family Film (Live Action) 2006</li><li>Character and Morality in Entertainment Awards, Camie 2006</li><li>CDG Award - Excellence in Costume Design for Film - Fantasy 2006</li><li>MovieGuide Awards, Best Film for Families 2006</li><li>MovieGuide Awards, Epiphany Prize 2006</li><li>Young Artist Award - Best Family Feature Film - Drama 2006</li><li>Young Artist Award - Best Performance in a Feature Film - Young Actress Age Ten or Younger 2006 (Georgie Henley)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa ljudmixning 2006</li><li>Oscar - Bästa visuella effekter 2006</li><li>Golden Globe - Bästa musik 2006</li><li>Golden Globe - Bästa originalsång (For the song "Wunderkind".) 2006</li><li>BAFTA Film Award - Bästa specialeffekter 2006</li><li>BAFTA Film Award - Bästa kostym 2006</li><li>Saturn Award - Bästa Fantasyfilm 2006</li><li>Saturn Award - Bästa regi 2006 (Andrew Adamson)</li><li>Saturn Award - Bästa skådespelerska 2006 (1934)</li><li>Saturn Award - Bästa insats av en yngre skådespelare 2006 (William Moseley)</li><li>Saturn Award - Bästa manus 2006 (Andrew Adamson)</li><li>Saturn Award - Bästa specialeffekter 2006</li><li>Annie Awards, Annie - Best Character Animation 2006</li><li>Australian Film Institute, International Award - Excellence in Filmmaking ((Cinematography).) 2006</li><li>Australian Film Institute, International Award - Excellence in Filmmaking ((Production design).) 2006</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Best Young Actress 2006 (Georgie Henley)</li><li>CFCA Award - Most Promising Performer 2006</li><li>Empire Award - Bästa Sci-Fi/Fantasy 2006</li><li>Empire Award - Bästa nykomling 2006 (1423)</li><li>Empire Award - Bästa nykomling 2006 (Georgie Henley)</li><li>Hugo Awards, Hugo - Best Dramatic Presentation - Long Form 2006</li><li>Humanitas Prize - Feature Film Category 2006</li><li>ALFS Award - British Supporting Actor of the Year 2006 (1423)</li><li>ALFS Award - British Supporting Actress of the Year 2006 (1934)</li><li>MTV Movie Award - Bästa skurk 2006 (1934)</li><li>Golden Reel Award - Best Sound Editing in Feature Film - Dialogue and Automated Dialogue Replacement 2006</li><li>Golden Reel Award - Best Sound Editing in Feature Film - Sound Effects & Foley 2006</li><li>OFCS Award - Bästa genombrottsinsats 2006 (Georgie Henley)</li><li>Satellite Award - Best DVD Extras 2006</li><li>VES Award - Outstanding Animated Character in a Live Action Motion Picture (For "Aslan".) 2006</li><li>VES Award - Outstanding Visual Effects in a Visual Effects Driven Motion Picture 2006</li><li>World Soundtrack Award - Bästa originalsång (For the song "Can't Take It In".) 2006</li><li>Young Artist Award - Best Performance in a Feature Film (Comedy or Drama) - Leading Young Actor 2006 (William Moseley)</li><li>Saturn Award - Best DVD Special Edition Release (For the "Extended Edition".) 2007</li><li>Grammy - Best Score Soundtrack Album for Motion Picture, Television or Other Visual Media 2007</li><li>Grammy - Best Song Written for Motion Picture, Television or Other Visual Media (For the song "Can't Take It In".) 2007</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Over 100 actors auditioned for the voice of Reepicheep before [Eddie Izzard][/p?id=1259] was cast. He based his performance on [Errol Flynn][/p?id=Errol%20Flynn].</li><li>When he was cast, [Ben Barnes][/p?id=Ben%20Barnes] was set to tour as Dakin with the Royal National Theatre's production of &quot;The History Boys&quot;. [Barnes][/p?id=Ben%20Barnes] left England without telling the Theatre. They considered suing him for breach of contract but then decided against it. To get into character, [Barnes][/p?id=Ben%20Barnes] wore hair extensions and shaved twice a day. He patterned Caspian's &quot;Spanish&quot; accent on [Mandy Patinkin's][/p?id=Mandy%20Patinkin] Inigo Montoya in [The Princess Bride][/f?id=11042] (1987).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Berättelsen Om Narnia: Häxan Och Lejonet | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Berättelsen Om Narnia: Häxan Och Lejonet <a href="#" class="grade">+++</a></h2>
+										<h3>The Chronicles of Narnia: The Lion, the Witch and the Wardrobe</h3>
+										<p>
+										Film från <time datetime="2005"><a href="#">2005</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Andrew Adamson</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Georgie Henley – Lucy Pevensie</li><li>Skandar Keynes – Edmund Pevensie</li><li>William Moseley – Peter Pevensie</li><li>Anna Popplewell – Susan Pevensie</li><li><a href="/svenusling/p/1934.html">Tilda Swinton</a> – White Witch</li><li><a href="/svenusling/p/1423.html">James McAvoy</a> – Mr. Tumnus</li><li><a href="/svenusling/p/1459.html">Jim Broadbent</a> – Professor Kirke</li><li>Kiran Shah – Ginarrbrik</li><li>James Cosmo – Father Christmas</li><li>Judy McIntosh – Mrs. Pevensie</li><li>Elizabeth Hawthorne – Mrs. Macready</li><li>Patrick Kake – Oreius</li><li>Shane Rangi – General Otmin</li><li>Brandon Cook – Boy on Train</li><li>Cassie Cook – Girl on Train</li><li>Morris Lupton – Train Conductor</li><li>Shelly Edwards – Distraught Mother</li><li>Susan Haldane – Distraught Mother</li><li>Margaret Bremner – Distraught Mother</li><li>Jaxin Hall – Soldier</li><li>Terry Murdoch – German Pilot</li><li>Katrina Browne – Green Dryad</li><li>Lee Tuson – Rumblebuffin the Giant</li><li>Elizabeth Kirk – Hag</li><li>Felicity Hamill – Hag</li><li>Kate O'Rourke – Hag</li><li>Sonya Hitchcock – Hag</li><li>Lucy Tanner – Hag</li><li>Tiggy Mathias – Hag</li><li>Greg Cooper – Faun</li><li>Richard King – Faun</li><li>Russell Pickering – Faun</li><li>Ben Barrington – Centaur</li><li>Charles Williams – Centaur</li><li>Vanessa Cater – Centaur</li><li>Allison Sarofim – Centaur</li><li>Alina Phelan – Centaur Archer</li><li>Stephen Ure – Satyr</li><li>Sam La Hood – Satyr</li><li>Ajay Ratilal Navi – Red & Black Dwarf</li><li>Bhoja 'BK' Kannada – Red & Black Dwarf</li><li>Zakiuddin Mohd. Farooque – Red & Black Dwarf</li><li>M. Ramaswami – Red & Black Dwarf</li><li>Praphaphorn 'Fon' Chansantor – Red & Black Dwarf</li><li>Nikhom Nusungnern – Red & Black Dwarf</li><li>Doungdieo Savangvong – Red & Black Dwarf</li><li>Rachael Henley – Older Lucy</li><li>Mark Wells – Older Edmund</li><li>Noah Huntley – Older Peter</li><li>Sophie Winkleman – Older Susan</li><li class="voice"><a href="/svenusling/p/1584.html">Liam Neeson</a> – Aslan (röst)</li><li class="voice">Ray Winstone – Mr. Beaver (röst)</li><li class="voice">Dawn French – Mrs. Beaver (röst)</li><li class="voice"><a href="/svenusling/p/1845.html">Rupert Everett</a> – Mr. Fox (röst)</li><li class="voice">Cameron Rhodes – Gryphon (röst)</li><li class="voice">Philip Steuer – Philip the Horse (röst)</li><li class="voice">Jim May – Vardan (röst)</li><li class="voice">Sim Evan-Jones – Wolf (röst)</li><li class="voice">Douglas Gresham – Radio Announcer (röst)</li><li>Megan Franich – Dancing Nymph and Goblin (uncredited)</li><li>Sandro Kopp – Centaur (uncredited)</li><li class="voice"><a href="/svenusling/p/1657.html">Michael Madsen</a> – Maugrim (röst) (uncredited)</li><li>Andrew Osbourne – Singer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>National Board of Review, Special Citation 1977</li><li>Golden Screen, Golden Screen 1978</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa originalsång (For the song "Someone's Waiting For You".) 1978</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Tilda][/p?id=[Mr.%20T] Swinton][/p?id=Mr.%2520T%5D%20Swinton], first choice for the role of Jadis the White Witch, hadn't read the book prior to filming. She wore platform shoes under costume to make her taller, and used a brace on her shoulders between takes to give her a break from the weight of her wig and crown.</li><li>[Georgie Henley's][/p?id=Georgie%20Henley] reaction to [Mr. Tumnus][/p?id=Mr.%20T] at the lamppost is genuine. She had not seen her cast mate [James McAvoy][/p?id=1423] in his costume before the scene was filmed, so her screams and reaction were real. Georgie's first reaction to the snowy world of Narnia is also genuine - she was carried into the set blindfolded to make her first entrance, and her wide-eyed, delighted reactions to it all are entirely her own.</li><li>[Brian Cox][/p?id=1104] was originally set to voice Aslan.</li><li>Professor Kirke presents three choices to the other Pevensie children of what to think about Lucy's claim about Narnia: that she is lying, that she is mad, or that she is telling the truth. C.S. Lewis was a vocal advocate of Christianity, and in his book &quot;Mere Christianity&quot; presented three similar choices about Jesus' claim to be the Son of God: Liar, Lunatic, or Lord. [This][/p?id=Mr.%20T] is known as his &quot;[Trilemma][/p?id=Mr.%20T]&quot; argument, and is still often used by Christians today.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
