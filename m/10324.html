@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Analyze That | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Analyze That <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1356.html">Harold Ramis</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1808.html">Robert De Niro</a> – Paul Vitti</li><li><a href="/svenusling/p/1087.html">Billy Crystal</a> – Ben Sobel</li><li><a href="/svenusling/p/1588.html">Lisa Kudrow</a> – Laura Sobel</li><li>Joe Viterelli – Jelly</li><li>Cathy Moriarty – Patti LoPresti</li><li>Joey Diaz – Ducks</li><li>Jerome Le Page – Convict</li><li>Joseph Bono – Wiseguy</li><li>Brian Rogalski – Earl</li><li>Thomas Rosales Jr. – Coyote</li><li>Patrick Marcune – Prison Guard</li><li>John F. Gooding – Prison Guard</li><li>Henry Morales-Ballet – Prison Guard</li><li>Scott Dillin – Prison Guard</li><li>Ted Neustadt – Rabbi</li><li>Kyle Sabihy – Michael Sobel</li><li>Rebecca Schull – Ben's Mother</li><li>Joyce Brothers – Herself</li><li>James Biberi – Agent Miller</li><li>Callie Thorne – Agent Cerrone</li><li>Firdous Bamji – Dr. Kassam</li><li>John Finn – Richard Chapin</li><li>David Wolos-Fonteno – Davis</li><li>Donnamarie Recco – Sheila</li><li>Sylvia Kauders – Aunt Esther</li><li>Kendall Pettygrove – Brunch Guest #1</li><li>Bea Super – Brunch Guest #2</li><li>Pat Cooper – Masiello</li><li>Raymond Franza – Eddie DeVol</li><li>Steven Kampmann – Mr. Macinerny</li><li>Susie Gilder Hayes – Mrs. Macinerny</li><li>Tom Papa – Boyfriend</li><li>Sunny Chae – Fiancé</li><li>Sal Cecere – 20 Minute Man</li><li>Richard Brennan – Steakhouse Patron</li><li>Joe Torre – Himself</li><li>Michael Torre – Himself</li><li>Paul Herman – Joey Boots</li><li>Charles A. Gargano – Maitre D'</li><li>Dino van Simco – Dino</li><li>Seth Isler – Businessman</li><li>Reg Rogers – Raoul Berman</li><li>Anita Durst – Raoul's Girlfriend</li><li>Joe D'Onofrio – Rigazzi Gunman</li><li>Dave Salerno – Rigazzi Soldier</li><li>Frank Gio – Lou Rigazzi</li><li>Vinny Vella – Mello</li><li>Alfred Sauchelli Jr. – Mo-Mo</li><li>Frank Pietrangolare – Tuna</li><li>Frank Aquilino – Eddie 'Cokes'</li><li>Chris Tardio – Enormous Bobby</li><li>William DeMeo – Al Pacino</li><li>Joe Columbo – LoPresti Soldier</li><li>Angelo Natoli – LoPresti Soldier</li><li>Anthony Krosinski – LoPresti Soldier</li><li>Nick Massi Jr. – LoPresti Soldier</li><li>Frank Bonsangue – LoPresti Soldier</li><li>Ralph Cefarello – LoPresti Soldier</li><li>Joey Marzella – Vitti Crew</li><li>Phil Campanella – Vitti Crew</li><li>Louis Fattell – Vitti Crew</li><li>Michael Zotto – Vitti Crew</li><li>Tony Vitucci – Vitti Crew</li><li>Paul Cicero – Vitti Crew</li><li>Gene Di Silvio – Vitti Crew</li><li>Gaetano LoGiudice – Vitti Crew</li><li>Rino Vitucci – Vitti Crew</li><li>Joseph P. Reidy – First Assistant Director</li><li>Richard Maldone – Rigazzi Driver</li><li>Leif Riddell – Little Caesar Soundman</li><li>Suzanne Herrington – Drive-thru Bank Teller</li><li>Demetri Martin – Personal Assistant</li><li>Michael Jannetta – Lieutenant</li><li>Bob Cea – Captain</li><li class="voice">Annika Pergament – Newscaster (röst)</li><li>Bart Tangredi – Vitti's Father</li><li>Shashi Balooja – Prison Inmate (uncredited)</li><li>Diana Berry – Little Caesar Hairdresser (uncredited)</li><li>Mary Fortune – Little Caesar Assistant Director (uncredited)</li><li>Graig Guggenheim – Vitti Crew (uncredited)</li><li>Corey Hibbert – Singing Inmate (uncredited)</li><li class="voice">Joe James – Club Owner (röst) (uncredited)</li><li>Chris Kiszka – Inmate (uncredited)</li><li><a href="/svenusling/p/1054.html">Anthony LaPaglia</a> – Anthony Bella / Nicky Caesar (uncredited)</li><li>Gina Lynn – Stripper (uncredited)</li><li>Evan Mathew Weinstein – Vitti's Prop Boy (uncredited)</li><li>Moet Meira – Trish (uncredited)</li><li>Erik-Anders Nilsson – Restaurant Patron (uncredited)</li><li>Ron Reynaldi – Film Electrician (uncredited)</li><li>Lawrence J. Russo – Wiseguy (uncredited)</li><li>Laura San Luis – Stripper (uncredited)</li><li>Andy Schofield – Bar Patron (uncredited)</li><li>Michael Stever – SWAT Team Gunman (uncredited)</li><li>Nick Taylor – Priest (uncredited)</li><li>W.A. Walters – Sing Sing Inmate (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Joe Viterelli's][/p?id=Joe%20Viterelli] last movie.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

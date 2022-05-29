@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>American Made | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>American Made <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2017"><a href="#">2017</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre3">Biografi</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Doug Liman</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1949.html">Tom Cruise</a> – Barry Seal</li><li>Domhnall Gleeson – Monty Schafer</li><li>Sarah Wright – Lucy Seal</li><li>Jesse Plemons – Sheriff Downing</li><li>Caleb Landry Jones – JB</li><li>Lola Kirke – Judy Downing</li><li>Jayma Mays – Dana Sibota</li><li>Alejandro Edda – Jorge Ochoa</li><li>Benito Martinez – James Rangel</li><li>E. Roger Mitchell – Craig McCall</li><li>Jed Rees – Louis Finkle (Snowbird #1)</li><li>Mauricio Mejía – Pablo Escobar</li><li>Robert Farrior – Lt. Col. Oliver North</li><li>Morgan Hinkleman – Christina Seal</li><li>Alberto Ospino – Manuel Noriega</li><li>Felipe Bernedette – Translator</li><li>Daniel Lugo – Adolfo Calero</li><li>Jayson Warner Smith – Bill Cooper (Snowbird #2)</li><li>William Mark McCullough – Pete Duboix (Snowbird #3)</li><li>April Billingsley – Jenny (Stewardess)</li><li>Lauren Boyd – Secretary</li><li>Lauren Revard – Teller</li><li>Marcus Hester – Parka</li><li>Mike Pniewski – Willie (State Police)</li><li>Frank Licari – DEA Agent #1</li><li>Alex Collins – ATF #1</li><li>Scott Poythress – ATF #2</li><li>Connor Trinneer – George W. Bush / Texan</li><li>Alpha Trivette – Judge Linkletter</li><li>Kevin L. Johnson – Agent Horace Wainwright</li><li>DeVere Jehl – Plain Clothed Man</li><li>Emilio Sierra – Héctor (Colombian Driver)</li><li>Leon Lamar – Elderly Man</li><li>Tony Guerrero – Federico Vaughan</li><li>Maria Howell – NSC Woman</li><li>Darla Delgado – Customs Agent</li><li>Justice Leak – DEA Agent Winter</li><li>Robert Pralgo – Gary (Cubicle Mate)</li><li>Mickey Sumner – North's Aide Fawn Hall</li><li>Daniel Thomas May – CIA Man</li><li>Chloe Swan Sparwath – Leeann</li><li>Alex Quarles – Aaron</li><li>Trip McCarthy – Young Dean</li><li>Zachary Powell – Baby Dean</li><li>Daniel Diaz – Sandinista Soldier</li><li>Byron Wigfall – Contra #1</li><li>Carlos Lopez Jr. – CIA Station Chief</li><li>Jairo Ordoñez – Scar</li><li>Jeff Olsen – State Trooper</li><li>Stephen Conroy – Military Police / Advisor</li><li>Juan Esteban Ramírez Toro – Antonio (Bull Fighter)</li><li>Christopher Robert Escobar – Business Man</li><li>Emmy Allin – Flight Attendant Anna (uncredited)</li><li>Chris Angerdina – Airport Passenger (uncredited)</li><li>Nargis Aniston – Flight Attendant (uncredited)</li><li>John L. Armijo – Honduran Soldier (uncredited)</li><li>Jon Arthur – Federal Agent (uncredited)</li><li>Se Ba – Motel Girl (uncredited)</li><li>Gralen Bryant Banks – Radio Host #1 (uncredited)</li><li>Tony Beard – CIA Agent (uncredited)</li><li>Brett Beoubay – DEA Agent (uncredited)</li><li>Na Bil – Motel Boy (uncredited)</li><li>Bill Billions – Radar Op. #1 (uncredited)</li><li>Carter Birchwell – Young Dean (uncredited)</li><li>Jb Blaine – Flight School Boy (uncredited)</li><li>Bradley Bowen – US Customs Officer Cunningham (uncredited)</li><li>Dawlish Carmauta – Passanger (uncredited)</li><li>Cuyle Carvin – Phil (uncredited)</li><li>Carl A. Chauvin – Day Laborer (uncredited)</li><li>Michelle L. Clarke – Fundraising Patron (uncredited)</li><li>Alissa Collins – Flight Attendant (uncredited)</li><li>Sharon Conley – DEA Agent Grace (uncredited)</li><li>Gabriela Contaldo – Stewardess (uncredited)</li><li>William Curtis Coppersmith – NSC Agent (uncredited)</li><li>Steve Coulter – Buzz Sawyer (Snowbird #4) (uncredited)</li><li>Leslie Danielsen – Flight Attendant (uncredited)</li><li>Stephen Dean – CIA Agent (uncredited)</li><li>Javier Diaz – Truck Driver (uncredited)</li><li>Tyler Dietrich – Airport Passenger (uncredited)</li><li>Dino Dos Santos – Contra (uncredited)</li><li>John Duley – Baton Rouge Passenger (uncredited)</li><li>Terence Easterling – Undercover DEA Agent (uncredited)</li><li>Calen Curtis Edwards – Dea agent (uncredited)</li><li>Scott Everett – Drug Dealer (uncredited)</li><li>Mario Fernandez – Vagrant (uncredited)</li><li>Jason Fortuna – Pawn Store Customer (uncredited)</li><li>William Frasca – DEA Agent (uncredited)</li><li>Dudley Fuqua – Vagrant (uncredited)</li><li>Fred Galle – Senator National Security Committee (uncredited)</li><li>Chris Gann – Donor #2 (uncredited)</li><li>Juan Gaspard – Day Laborer (uncredited)</li><li>Derrick Gilbert – David Johnson (uncredited)</li><li>Jim Gleason – Donor #1 (uncredited)</li><li>Lara Grice – Female Reporter (uncredited)</li><li>Bryan Michael Hall – Waiter (uncredited)</li><li>Bob Hartnack – CIA Agent (uncredited)</li><li>Robert Hatch – Arkansas State Trooper (uncredited)</li><li>Billy James – Drug Dealer (uncredited)</li><li>Alicia Davis Johnson – Neighbor (uncredited)</li><li>Matthew Jolly – Count Room Employee (uncredited)</li><li>Andrew R. Kaplan – Auctioneer (uncredited)</li><li>Slim Khezri – Colombian Assassin (uncredited)</li><li>Steve Kish – DEA Agent (uncredited)</li><li>Inder Kumar – Middle Eastern Auction Bidder (uncredited)</li><li>Omar Lagudali – Vaughn's Military Bodygaurd (uncredited)</li><li>Courtney Lakin – Stewardess (uncredited)</li><li>Douglas LaPonzina – FBI Agent (uncredited)</li><li>Robert Larriviere – Radar Sup. (uncredited)</li><li>Hayley H. Long – George H. Bush's Secretary (uncredited)</li><li>Rhes Low – NSC Guy (uncredited)</li><li>John Archer Lundgren – Airline passenger (uncredited)</li><li>Walter Mall – DEA Pilot #1 (uncredited)</li><li>Dorry Marie – Passenger (uncredited)</li><li>Edward Marrero – Contra (uncredited)</li><li>Hans Marrero – Colombian Assassin #1 (uncredited)</li><li>Miguel Angel Marrero – Contra (uncredited)</li><li>Jonathan Robert Martin – DEA Agent (uncredited)</li><li>Eric McCrea – Winter Passenger (uncredited)</li><li>Rickye McGowan – Passenger (uncredited)</li><li>Michael Mercaldi – Sandinista (uncredited)</li><li>Matt Mercurio – FBI Analyst (uncredited)</li><li>Noel Mirabal – Vaughn's Body Guard (uncredited)</li><li>Richard Molina – State Trooper (uncredited)</li><li>Robert Lloyd Moore – DEA Agent (uncredited)</li><li>Duane Moseley – Day Laborer (uncredited)</li><li>Shawn Mousavi – Sheik (uncredited)</li><li>Rob Muller – NSC Agent (uncredited)</li><li>Jody Mullins – DEA Pilot #2 (uncredited)</li><li>Mandy Oakes – Airport Passenger (uncredited)</li><li>Jay Oliver – Chubbys Chicken Patron (uncredited)</li><li>Johnny Otto – Pilot (uncredited)</li><li>Cameron Padgett – CIA Agent (uncredited)</li><li>Kayla Perkins – Waitress (uncredited)</li><li>Anna Phillips – Stewardess (uncredited)</li><li>Marc Phipps – DEA Tech (uncredited)</li><li>George Pringle – State Trooper (uncredited)</li><li><a href="/svenusling/p/1840.html">Ronald Reagan</a> – Himself (uncredited|archive footage)</li><li>Carolina Roberts – Pablo Escobar's Wife (uncredited)</li><li>Luis Sanchez – El Paso Passenger (uncredited)</li><li>Shaker Sangam – Aeroplane bidder (uncredited)</li><li>Patti Schellhaas – Airplane passenger (uncredited)</li><li>David Silverman – Seedy Man (uncredited)</li><li>Beverley Simmons – James Rangel's Wife (uncredited)</li><li>Dan Southworth – Agent Winters (uncredited)</li><li>Brandon Stacy –  (uncredited)</li><li>Jonathan Tabler – CIA Chief (uncredited)</li><li>Corey Jason Thomas – Actor (Airport Scene Background) (uncredited)</li><li>Mateo Uribe – Sandinista (uncredited)</li><li>Ruben Vidal – Vaughn Body Guard #1 (uncredited)</li><li>Eli Wanounou – Middle Eastern Bidder (uncredited)</li><li>Andrew Ward – Military Truck Driver / soldier (uncredited)</li><li>Wes Weems – Arkansas State Trooper (uncredited)</li><li>Aaron Wiggins – FBI Agent (uncredited)</li><li>Callan Wilson – Young Barry (uncredited)</li><li>Frank Wilson – Reagan Admin Official (uncredited)</li><li>Jonathan Yaskoff – DEA Agent (uncredited)</li><li>David Zalkind – Radio Host (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

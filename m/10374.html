@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Apornas Planet: (R)evolution | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Apornas Planet: (R)evolution <a href="#" class="grade">+++</a></h2>
+										<h3>Rise of the Planet of the Apes</h3>
+										<p>
+										Film från <time datetime="2011"><a href="#">2011</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Rupert Wyatt</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1419.html">James Franco</a> – Will Rodman</li><li>Freida Pinto – Caroline Aranha</li><li><a href="/svenusling/p/1492.html">John Lithgow</a> – Charles Rodman</li><li><a href="/svenusling/p/1104.html">Brian Cox</a> – John Landon</li><li>Tom Felton – Dodge Landon</li><li>David Oyelowo – Steven Jacobs</li><li><a href="/svenusling/p/1967.html">Tyler Labine</a> – Robert Franklin</li><li>Jamie Harris – Rodney</li><li><a href="/svenusling/p/1217.html">David Hewlett</a> – Hunsiker</li><li>Ty Olsson – Chief John Hamil</li><li>Madison Bell – Alice Hunsiker</li><li>Makena Joy – Alice Hunsiker (Teen)</li><li>Kevin O'Grady – Animal Control Officer #1</li><li>Sean Tyson – Animal Control Officer #2</li><li>Jack Kuris – Boy in Muir Woods</li><li>Tammy Hui – Bridge Driver</li><li>Rufus Dorsey – CHP #2</li><li>Kyle Riefsnyder – CHP #1</li><li>Anthony McRae – CHP #3</li><li>Jeb Beach – Dad in Muir Woods</li><li>Jesse Reid – Donnie Thompson</li><li>BJ Harrison – Dottie</li><li>Leah Gibson – Party Girl #1</li><li>Tracy Spiridakos – Party Girl #2</li><li>Ivan Wanis-Ruiz – Handler @ Lab #1</li><li>Trevor Carroll – Handler @ Lab #2</li><li>Chelah Horsdal – Irena</li><li>Timothy Webber – Janitor - Stan Timko</li><li>James Pizzinato – Lab Tech. #1</li><li>Robin Nielsen – Lab Tech. #2</li><li>Monica Mustelier – Lab Tech. #3</li><li>Syn Narula – Lab Tech. #4</li><li>Mattie Hawkinson – Linda</li><li>Ryan Booth – South Side Commander</li><li>Gordon Douglas Myren – Local Guy</li><li>Elizabeth Weinstein – Mom in Muir Woods</li><li>Meredith Grantier – New Aide</li><li>Javier Caballero Cano – Newspaper Dad</li><li>Peter Bundic – Newspaper Boy #1</li><li>Dylan Nouri – Newspaper Boy #2</li><li>Oona Service – Playground Girl</li><li>Camille Atebe – Playground Mom</li><li>Derek Morrison – Security Guard #1</li><li>Dean Redman – Security Guard #2</li><li>Hector Johnson – Security Guard #3</li><li>David Richmond-Peck – Board Member #1</li><li>Adrian Hough – Board Member #2</li><li>Evans Johnson – Board Member #2</li><li>Joey Roche – Todd Hunisker</li><li>Sean Connor Roche – Teen Todd Hunisker</li><li>Qayam Devji – Todd's Buddy</li><li>Kis Yurij – Worker</li><li>Riel Hahn – Zoo Guide</li><li>Sonja Bennett – Mother on Sidewalk</li><li>Michael Kopsa – Jerk Driver</li><li>Steve Lawlor – SFPD #1</li><li>Chris Shields – SFPD #2</li><li>Sandy Robson – SFPD #4</li><li>Luc Roderique – SWAT</li><li><a href="/svenusling/p/1673.html">Mike Dopud</a> – Northside Officer</li><li>Mark Henriques – Driver</li><li>Stacey Schmidt – Jogger</li><li>Matteo Mazziotti – Child in Car</li><li>Willy Miles – Guy with Newspaper</li><li>Fred North – Camera Ship Pilot</li><li>Allen Martin – KPIX News Anchor</li><li>Juliette Goodrich – KPIX News Anchor</li><li><a href="/svenusling/p/1039.html">Andy Serkis</a> – Caesar</li><li>Karin Konoval – Maurice</li><li>Terry Notary – Rocket / Bright Eyes</li><li>Richard Ridings – Buck</li><li>Christopher Gordon – Koba</li><li>Devyn Dalton – Cornelia</li><li>Jay Caputo – Alpha</li><li>Richard Darwin – Baby Caesar (Puppeteer)</li><li>Hal Myshrall – Suit (uncredited)</li><li>Panou – SFPD #3 (uncredited)</li><li>Lauren Watson – Scared Girl in Stairway (uncredited)</li><li>Linda Watters – Primate Lab Technician (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Bogey Awards, Bogey Award in Silver 2001</li><li>PFCS Award - Bästa smink 2002</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Special Makeup Effects - Feature 2002</li><li>Las Vegas Film Critics Society Awards, Special Achievement Award 2002 (For the make-up design.)</li><li>BMI Film Music Award 2002</li><li>Razzie Award - Sämsta Remake eller Uppföljare 2002</li><li>Razzie Award - Sämsta manliga biroll 2002 (1151)</li><li>Razzie Award - Sämsta kvinnliga biroll 2002 (Estella Warren)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>BAFTA Film Award - Bästa kostym 2002</li><li>BAFTA Film Award - Bästa smink/hår 2002</li><li>Saturn Award - Bästa Science Fiction film 2002</li><li>Saturn Award - Bästa DVD Special Edition Release DVD</li><li>Saturn Award - Bästa manliga biroll 2002 (Tim Roth)</li><li>Saturn Award - Bästa kvinnliga biroll 2002 (1370)</li><li>Saturn Award - Bästa smink 2002</li><li>Saturn Award - Bästa kostym 2002</li><li>MTV Movie Award - Bästa skurk 2002 (Tim Roth)</li><li>MTV Movie Award - Bästa cameo 2002 (1151)</li><li>Empire Award - Bästa brittiska skådespelare 2002 (Tim Roth)</li><li>Empire Award - Bästa brittiska skådespelerska 2002 (1370)</li><li>PFCS Award - Bästa kostym 2002</li><li>Golden Satellite Award - Bästa kostym 2002</li><li>World Stunt Awards, Taurus Award - Best Fight 2002 (Finale fight scene. Two gorillas attack each and fight to the death. Scene includes a full-body, mid-air collision.)</li><li>World Stunt Awards, Taurus Award - Best Fire Stunt 2002 (Two stunt performers in full ape costume, harness on wires are set on fire by an explosion in the final fight scene of the film.)</li><li>World Stunt Awards, Taurus Award - Best Stunt Coordinator and/or 2nd Unit Director: Feature Film 2002</li><li>World Stunt Awards, Taurus Award - Best Stunt by a Stunt Woman 2002 (Flames scare the horse and the stuntwoman does a back-over dismount.)</li><li>Golden Reel Award - Best Sound Editing - Dialogue & ADR, Domestic Feature Film 2002</li><li>Golden Reel Award - Best Sound Editing - Effects & Foley, Domestic Feature Film 2002</li><li>Grammy - Best Score Soundtrack Album For A Motion Picture, Television Or Other Visual Media 2002</li><li>CDG Award - Bästa kostym 2002</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The name of [Tom Felton's][/p?id=Tom%20Felton] character Dodge Landon is a reference to the characters Dodge ([Jeff Burton][/p?id=Jeff%20Burton]) and Landon ([Robert Gunner][/p?id=Robert%20Gunner]), Colonel Taylor's ([Charlton Heston][/p?id=1151]) fellow astronauts in [Planet of the Apes][/f?id=10372].</li><li>The orangutan character befriended by Caeser in prison is named Maurice after actor [Maurice Evans][/p?id=Maurice%20Evans], who played the orangutan Doctor Zaius in the original [Planet of the Apes][/f?id=10372].</li><li>This is the first &quot;Planet of the Apes&quot; film in which neither [Charlton Heston][/p?id=1151] nor [Roddy McDowall][/p?id=Roddy%20McDowall], the stars of the original [Planet of the Apes][/f?id=10372], are involved in the actual film making. [Heston][/p?id=1151] died on April 5, 2008 at the age of 84 whereas [McDowall][/p?id=Roddy%20McDowall] died on October 3, 1998 at the age of 70.</li><li>[Jamie Harris][/p?id=Jamie%20Harris] plays Rodney, the sympathetic keeper in the ape sanctuary. This is a nod to legendary ape actor [Roddy McDowall][/p?id=Roddy%20McDowall].</li><li>[Charlton Heston][/p?id=1151] makes two appearances - he is featured on the TV screen in the role of Michelangelo from [The Agony and the Ecstasy][/f?id=21524] in the ape sanctuary bunk house, and in a similar scene, with [Tom Felton's][/p?id=Tom%20Felton] character watching [Heston][/p?id=1151] play the role of Moses in [The Ten Commandments][/f?id=11878].</li><li>In one scene, Caesar is shown handling a 3D puzzle of the Statue of Liberty, in reference to the the ending of the original [Planet of the Apes][/f?id=10372].</li><li>[Kathryn Bigelow][/p?id=1534], [Robert Rodriguez][/p?id=Robert%20Rodriguez], [Tomas Alfredson][/p?id=Tomas%20Alfredson], Allen Hughes and Albert Hughes, [Pierre Morel][/p?id=Pierre%20Morel], [James McTeigue][/p?id=James%20McTeigue], Dennis Iliadis and Scott Charles Stewart all were considered by the studio, or passed on the project before director [Rupert Wyatt][/p?id=Rupert%20Wyatt] signed on.</li><li>There is a reference regarding the first space mission to Mars in the film saying that the spacecraft/astronauts have disappeared. A subtle way of the filmmakers to indicate that they gone into a time warp and will end up on the future &quot;[Planet of the Apes][/f?id=10372]&quot;.</li><li>The lab worker who cares for the chimps is named Franklin, a nod to the director of the original [Planet of the Apes][/f?id=10372] film, [Franklin J. Schaffner][/p?id=Franklin%20J.%20Schaffner].</li><li>This movie is the first installment to feature another ape species besides chimpanzees, gorillas, and orangutans; Koba, the scarred lab ape, is a bonobo.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

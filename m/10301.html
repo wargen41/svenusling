@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>American History X | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>American History X <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1998"><a href="#">1998</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Tony Kaye</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1266.html">Edward Norton</a> – Derek Vinyard</li><li>Edward Furlong – Danny Vinyard</li><li>Beverly D'Angelo – Doris Vinyard</li><li>Avery Brooks – Dr. Bob Sweeney</li><li>Jennifer Lien – Davina Vinyard</li><li>Ethan Suplee – Seth Ryan</li><li>Stacy Keach – Cameron Alexander</li><li>Fairuza Balk – Stacey</li><li>Elliott Gould – Murray</li><li>Guy Torry – Lamont</li><li>William Russ – Dennis Vinyard</li><li>Joseph Cortese – Rasmussen</li><li>Jason Bose Smith – Little Henry</li><li>Antonio David Lyons – Lawrence</li><li>Alex Sol – Mitch McCormick</li><li>Keram Malicki-Sánchez – Chris</li><li>Giuseppe Andrews – Jason</li><li>Cleo Adell – Lizzy</li><li>Jonathan Fowler Jr. – Jerome</li><li>Christopher Masterson – Daryl Dawson</li><li>Nicholas R. Oleson – Huge Aryan</li><li>Jordan Marder – Curtis</li><li>Paul Le Mat – McMahon</li><li>Thomas L. Bellissimo – Cop #2</li><li>Cherish Lee – Kammi</li><li>Sam Vlahos – Dr. Aguilar</li><li>Tara Blanchard – Ally Vinyard</li><li>Anne Lambton – Cassandra</li><li>Steve Wolford – Reporter</li><li>Richard Noyce – Desk Sergeant</li><li>Danso Gordon – Buddy #1</li><li>Jim Norton – Randy</li><li>David Basulto – Guard</li><li>Alexis Rose Coen – Young Ally Vinyard</li><li>Kiante Elam – Lawrence's Partner</li><li>Paul Hopkins – Student</li><li>Keith Odett – Random Skinhead</li><li>Paul E. Short – Stocky Buddy</li><li>Nigel Miguel – Basketball Player</li><li>Robert 'Duckie' Carpenter – Skinhead (uncredited)</li><li>Sydney 'Big Dawg' Colston – Prison Gang Leader (uncredited)</li><li>John Embry – Parking Lot Skinhead (uncredited)</li><li>Maximillian Kesmodel – Young Danny Vinyard (uncredited)</li><li>Barbie Marie – Student (uncredited)</li><li>Allie Moss – Skinhead Girlfriend (uncredited)</li><li>Denney Pierce – Arresting Officer (uncredited)</li><li>Glendon Rich – Deputy Sheriff (uncredited)</li><li>Louis E. Rosas – Jail Inmate (uncredited)</li><li>Sam Sarpong – Jail Inmate (uncredited)</li><li>Mark Swanson – Skinhead in Store (uncredited)</li><li>Jeremy Sweet – Skinhead (uncredited)</li><li>Selwyn Ward – High School Student Leaving Bathroom (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Satellite Award - Bästa skådespelare - Drama 1999 (1266)</li><li>SEFCA Award - Bästa skådespelare 1999 (1266)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa skådespelare 1999 (1266)</li><li>Saturn Award - Bästa skådespelare 1999 (1266)</li><li>CFCA Award - Bästa skådespelare 1999 (1266)</li><li>Chlotrudis Award - Bästa skådespelare 1999 (1266)</li><li>Golden Reel Award - Best Sound Editing - Music (Foreign & Domestic) 1999</li><li>OFCS Award - Bästa skådespelare 1999 (1266)</li><li>PFS Award - Peace 1999</li><li>Golden Satellite Award - Bästa kvinnliga biroll - Drama 1999 (Beverly D'Angelo)</li><li>Golden Satellite Award - Bästa manus 1999</li><li>Young Artist Award - Best Performance in a Feature Film - Supporting Young Actor 1999 (Edward Furlong)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Edward Norton][/p?id=1266] was said to have re-edited the film to lengthen his screen time. Director [Tony Kaye][/p?id=Tony%20Kaye] then attempted to get his name removed but violated a Directors' Guild of America rule that states that directors that use pseudonyms (such as &quot;[Alan Smithee][/p?id=Alan%20Smithee]&quot;) must not talk about why they had their name removed - which [Tony Kaye][/p?id=Tony%20Kaye] had done in ads in Variety. [Kaye][/p?id=Tony%20Kaye] sued the DGA and New Line Cinema for $200 million stating that the DGA rule violated his first amendment rights.</li><li> [Edward Norton][/p?id=1266] gained 30 pounds of muscle for his role.</li><li> Director [Tony Kaye][/p?id=Tony%20Kaye] wanted his credit to read &quot;Humpty Dumpty&quot; according to Entertainment Weekly.</li><li> In the midst of the dispute about the time he was taking to edit the film, Director [Tony Kaye][/p?id=Tony%20Kaye] attended a meeting with Michael De Luca (then New Line's senior product president). [Kaye][/p?id=Tony%20Kaye] arranged for a Rabbi, a Catholic priest and a Buddhist monk to be present at the meeting to support his argument and &quot;make the meeting a more spiritual one&quot;.</li><li> [Marlon Brando][/p?id=1616] turned down [Stacy Keach's][/p?id=Stacy%20Keach] role.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>American Psycho | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>American Psycho <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2000"><a href="#">2000</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mary Harron</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1163.html">Christian Bale</a> – Patrick Bateman</li><li>Justin Theroux – Timothy Bryce</li><li>Josh Lucas – Craig McDermott</li><li>Bill Sage – David Van Patten</li><li><a href="/svenusling/p/1155.html">Chloë Sevigny</a> – Jean</li><li><a href="/svenusling/p/1772.html">Reese Witherspoon</a> – Evelyn Williams</li><li>Samantha Mathis – Courtney Rawlinson</li><li>Matt Ross – Luis Carruthers</li><li>Jared Leto – Paul Allen</li><li><a href="/svenusling/p/2003.html">Willem Dafoe</a> – Donald Kimball</li><li>Cara Seymour – Christie</li><li>Guinevere Turner – Elizabeth</li><li>Stephen Bogaert – Harold Carnes</li><li>Monika Meier – Daisy</li><li>Reg E. Cathey – Homeless Man</li><li>Blair Williams – Waiter #1</li><li>Marie Dame – Victoria</li><li>Kelley Harron – Bargirl</li><li>Patricia Gage – Mrs. Wolfe</li><li>Krista Sutton – Sabrina</li><li>Landy Cannon – Man at Pierce & Pierce</li><li>Park Bench – Stash</li><li>Catherine Black – Vanden</li><li>Margaret Ma – Dry Cleaner Woman</li><li>Peter Tufford Kennedy – Hamilton</li><li>Mark Pawson – Humphrey Rhineback</li><li>Jessica Lau – Facialist</li><li>Lilette Wiens – Maitre Dí</li><li>Glen Marc Silot – Waiter</li><li>Charlotte Hunter – Libby</li><li>Kiki Buttignol – Caron</li><li>Joyce R. Korbin – Woman at ATM</li><li>Reuben Thompson – Waiter #2</li><li>Bryan Renfro – Night Watchman</li><li>Ross Gibby – Man Outside Store</li><li>Christina McKay – Young Woman</li><li>Alan McCullough – Man in Stall</li><li>Anthony Lemke – Marcus Halberstram</li><li>Connie Chen – Gwendolyn Ichiban</li><li>Marilyn Burns – Sally Hardesty (uncredited|archive footage)</li><li>Brett Alexander Davidson – Bartender (uncredited)</li><li>Gina Diaz – Club Patron (uncredited)</li><li>Gunnar Hansen – Leatherface (uncredited|archive footage)</li><li>Peter Loung – Dancer (uncredited)</li><li>Joseph Oliveira – Restaurant Patron (uncredited)</li><li>Leanne Poirier Greenfield – Party Girl (uncredited)</li><li><a href="/svenusling/p/1840.html">Ronald Reagan</a> – Himself (uncredited|archive footage)</li><li>Somaya Reece – Bar Girl (uncredited)</li><li>Kate Steen – Pierce & Pierce Girl (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>ACCA - Bästa skådespelare 2000 (1163)</li><li>National Board of Review, Special Recognition - For excellence in filmmaking. 2000</li><li>Chlotrudis Award - Bästa skådespelare 2001 (1163)</li><li>Chlotrudis Award - Bästa manus baserad på annan förlaga 2001</li><li>IHG Award - Bästa film 2001</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>ACCA - Bästa manus baserad på annan förlaga 2000</li><li>Camerimage, Golden Frog 2000</li><li>Sierra Award - Bästa manus baserad på annan förlaga 2000</li><li>Sitges - Catalonian International Film Festival, Best Film 2000 (Mary Harron)</li><li>Empire Award - Bästa brittiska skådespelare 2001 (1163)</li><li>ALFS Award - Årets regissör 2001 (Mary Harron)</li><li>ALFS Award - Årets brittiska skådespelare 2001 (1163)</li><li>OFCS Award - Bästa skådespelare 2001 (1163)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Looking for a way to create the character of Patrick Bateman, [Christian Bale][/p?id=1163] stumbled onto a [Tom Cruise][/p?id=1949] appearance on The Late Show with [David Letterman][/p?id=David%20Letterman] (1993). According to American Psycho (2000) director Mary Harron, [Bale][/p?id=1163] saw in [Cruise][/p?id=1949] &quot;this very intense friendliness with nothing behind the eyes,&quot; and [Bale][/p?id=1163] subsequently based the character of Bateman on that. Interestingly, [Tom Cruise][/p?id=1949] is actually featured in the novel; he lives in the same apartment complex as Bateman, who meets him in a lift and gets the name of [Cocktail][/f?id=11578] (1988) wrong, calling it &quot;Bartender.&quot;</li><li>The single biggest cost on the film was purchasing the rights to the various songs used throughout.</li><li>Two scenes featured unexpected improvisation by [Christian Bale][/p?id=1163]. When Bateman is jumping rope, he starts to skip and cross his jump rope as a schoolgirl would. [Bale][/p?id=1163] surprised director Mary Harron even more by starting to dance as Bateman was preparing to kill Paul Allen ([Jared Leto][/p?id=Jared%20Leto]). That time, she says in interviews and the commentary, she collapsed with laughter.</li><li>To block the three-way sex scene with two prostitutes, Mary Harron and [Christian Bale][/p?id=1163] watched x-rated tapes. In her commentary, Harron says [Bale][/p?id=1163] made stick-figure drawings of the positions he thought would work best.</li><li>During the shooting of the film, [Christian Bale][/p?id=1163] spoke in an American accent off set at all times. At the wrap party, when he began to speak in his native British accent, many of the crew thought he was speaking that way as an accent for another film; they had thought he was American, throughout the entire shoot.</li><li>The film had various problems with designer labels during production. Cerruti agreed to allow [Christian Bale][/p?id=1163] to wear their clothes, but not when the character was killing anyone; Rolex agreed that anyone in the film could wear their watches except Bateman (hence the famous line from the book &quot;Don't touch the Rolex&quot; had to be changed to &quot;Don't touch the watch&quot;); Perry Ellis provided underwear at the last minute after Calvin Klein pulled out of the project; Comme des Garçons refused to allow one of their overnight bags to be used to carry a corpse, so Jean Paul Gaultier was used instead.</li><li>[Christian Bale][/p?id=1163] was warned by many that it would be career suicide for him to play the lead in a film like this. This only made him more eager to take the part.</li><li>[Ewan McGregor][/p?id=1292] was subsequently offered the role of Patrick Bateman, but declined after [Christian Bale][/p?id=1163] personally urged him to do so.</li><li>During production, [Christian Bale][/p?id=1163] followed the morning routine that his character Patrick Bateman describes toward the beginning of the film.</li><li>In the DVD commentary, Mary Harron says that during the first shower scene with Patrick Bateman, all of the women on set gathered around to watch [Christian Bale][/p?id=1163] wash himself.</li><li>The events that Bateman mentions in the phone message to his lawyer are events that transpired in the book by Bret Easton Ellis, but not in the film.</li><li>Bret Easton Ellis was sent several death threats after American Psycho was published.</li><li>The 'whoosh' sounds during the famous business card scene was created by slowing down the sound of a sword being drawn from its sheath.</li><li>[Guinevere Turner][/p?id=Guinevere%20Turner], who plays Patrick's friend &quot;Elizabeth&quot; (in the scene with Christie the call girl), also wrote the film's screenplay.</li><li>When Lions Gate picked up the rights for the film, Mary Harron was set to write and direct. Initially, she considered various actors for the role of Patrick Bateman, including [Billy Crudup][/p?id=Billy%20Crudup] (who was offered the part but turned it down), Ben [Chaplin][/f?id=11492], Robert Sean [Leonard][/f?id=15707], [Johnathon Schaech][/p?id=Johnathon%20Schaech], [Jonny ][/p?id=Jonny%20]Lee Miller[[, and ][/p?id=][/p?id=%2C%20and%20%5D%5B%2Fp%3Fid%3D]%2C%20and%20]Jared Leto[. Eventually, Harron offered the part to ][/p?id=.%20Eventually%2C%20Harron%20offered%20the%20part%20to%20]Christian Bale[, who accepted. The producers tried to talk Harron into casting ][/p?id=%2C%20who%20accepted.%20The%20producers%20tried%20to%20talk%20Harron%20into%20casting%20]Edward Norton[, but she refused, and was ultimately allowed to cast ][/p?id=%2C%20but%20she%20refused%2C%20and%20was%20ultimately%20allowed%20to%20cast%20]Christian Bale||Bale[, but only on the proviso that she cast at least two other big name actors in supporting roles. To this end, Harron hired ][/p?id=%2C%20but%20only%20on%20the%20proviso%20that%20she%20cast%20at%20least%20two%20other%20big%20name%20actors%20in%20supporting%20roles.%20To%20this%20end%2C%20Harron%20hired%20]Willem Dafoe[ to play Kimball and ][/p?id=%20to%20play%20Kimball%20and%20]Reese Witherspoon[ to play [Evelyn][/f?id=13506]. However, after they had agreed to appear, Lions Gate told Harron they were going to make an offer to [Leonardo][/f?id=Leonardo] DiCaprio to play Bateman. Harron told them if they did, she would leave the project, which is exactly what happened. ][/p?id=%20to%20play%20%3A%3AEvelyn%3A%3A.%20However%2C%20after%20they%20had%20agreed%20to%20appear%2C%20Lions%20Gate%20told%20Harron%20they%20were%20going%20to%20make%20an%20offer%20to%20%3A%3ALeonard]Oliver Stone[ was subsequently hired to replace Harron, working from a script by Matt Markwalder. ][/p?id=%20was%20subsequently%20hired%20to%20replace%20Harron%2C%20working%20from%20a%20script%20by%20Matt%20Markwalder.%20]Oliver Stone||Stone[ was set to cast ][/p?id=%20was%20set%20to%20cast%20]James Woods[ as Kimball, ][/p?id=%20as%20Kimball%2C%20]Cameron Diaz[ as [Evelyn][/f?id=13506], ][/p?id=%20as%20%3A%3AEvelyn%3A%3A%2C%20]Elizabeth Berkley[ as Courtney and ][/p?id=%20as%20Courtney%20and%20]Chloë Sevigny[ as Jean. ][/p?id=%20as%20Jean.%20]Oliver Stone||Stone[ also decided to keep ][/p?id=%20also%20decided%20to%20keep%20]Jared Leto||Leto[ on the project as Paul Allen. However, DiCaprio left the project to shoot Beach (2000) instead, and as the budget began to get out of control, ][/p?id=%20on%20the%20project%20as%20Paul%20Allen.%20However%2C%20DiCaprio%20left%20the%20project%20to%20shoot%20Beach%20(2000)%20instead%2C%20and%20as%20the%20budget%20began%20to%20get%20out%20of%20control%2C%20]Oliver Stone||Stone[ also left, prompting Lions Gate to rehire Harron, who returned to her original castings decisions, and decided to keep ][/p?id=%20also%20left%2C%20prompting%20Lions%20Gate%20to%20rehire%20Harron%2C%20who%20returned%20to%20her%20original%20castings%20decisions%2C%20and%20decided%20to%20keep%20]Chloë Sevigny||Sevigny** on the project.</li><li>After the novel was originally optioned in 1991, author Bret Easton Ellis himself was set to write the script for director [Stuart Gordon][/p?id=Stuart%20Gordon] with [Johnny Depp][/p?id=1505] starring as Patrick Bateman. [Gordon][/p?id=Stuart%20Gordon] wanted to do the film in black and white and stick as close to the book as possible, meaning a guaranteed X-rating. After the project fell through, [David Cronenberg][/p?id=David%20Cronenberg] replaced [Gordon][/p?id=Stuart%20Gordon], with [Brad Pitt][/p?id=1096] set to star. This project also failed to get off the ground.</li><li>To gain his buffed-up appearance in the film, [Christian Bale][/p?id=1163] would spend several hours a day in the gym and then three hours a day with an on-set trainer.</li><li>The [Huey Lewis][/p?id=Huey%20Lewis] &amp; The News song &quot;Hip to Be Square&quot;, which appears in the film, was initially on the soundtrack album, but it was removed shortly after release because of a lack of publishing rights. The album was recalled and reissued without the song, although some versions of the initial batch had already sold. Over the years, this incident has developed into the myth that [Huey Lewis][/p?id=Huey%20Lewis] himself refused to allow the song on the album due to the content of the movie.</li><li>This is the first film of where [Christian Bale][/p?id=1163] started his run on different physiques and body transformations. Others include [Reign of Fire][/f?id=12965] (2002), [The Machinist][/f?id=The%20Machinist] (2004), [Batman Begins][/f?id=10694] (2005), [Rescue Dawn][/f?id=Rescue%20Dawn] (2006), [The Dark Knight][/f?id=11809] (2008), [The Fighter][/f?id=13904] (2010), [The Dark Knight Rises][/f?id=11810] (2012) and [American Hustle][/f?id=American%20Hustle] (2013).</li><li>The movie appearing on Bateman's TV while he's working out at home is [The Texas Chain Saw Massacre][/f?id=16463] (1974).</li><li>The vast majority of the dialogue in the movie is taken word-for-word from the novel by Bret Easton Ellis.</li><li>[Christian Bale][/p?id=1163] used [Nicolas Cage's][/p?id=1696] performance in Vampire's Kiss (1988) as inspiration for Patrick Bateman, as the two characters are strikingly similar.</li><li>[Whitney Houston][/p?id=Whitney%20Houston] refused to allow any of her songs to be used in the film.</li><li>In each scene with Detective Donald Kimball ([Willem Dafoe][/p?id=2003]), Mary Harron asked [Dafoe][/p?id=2003] to portray his character three different ways: 1) Kimble knew Patrick Bateman killed Paul Allen, 2) Kimball didn't know Bateman killed Allen, and 3) Kimball wasn't sure if Bateman killed Allen. Harron would then edit the takes together, giving the audience an unsure vibe of what Detective Kimball thought of Bateman.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Annie Hall | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Annie Hall <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1977"><a href="#">1977</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2010.html">Woody Allen</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2010.html">Woody Allen</a> – Alvy Singer</li><li><a href="/svenusling/p/1242.html">Diane Keaton</a> – Annie Hall</li><li>Tony Roberts – Rob</li><li>Carol Kane – Allison</li><li>Paul Simon – Tony Lacey</li><li>Shelley Duvall – Pam</li><li>Janet Margolin – Robin</li><li>Colleen Dewhurst – Mom Hall</li><li><a href="/svenusling/p/1173.html">Christopher Walken</a> – Duane Hall</li><li>Donald Symington – Dad Hall</li><li>Helen Ludlam – Grammy Hall</li><li>Mordecai Lawner – Alvy's Dad</li><li>Joan Neuman – Alvy's Mom</li><li>Jonathan Munk – Alvy - Age 9</li><li>Ruth Volner – Alvy's Aunt</li><li>Martin Rosenblatt – Alvy's Uncle</li><li>Hy Anzell – Joey Nichols</li><li>Rashel Novikoff – Aunt Tessie</li><li>Russell Horton – Man in Theatre Line</li><li>Marshall McLuhan – Marshall McLuhan</li><li>Christine Jones – Dorrie</li><li>Mary Boylan – Miss Reed</li><li>Wendy Girard – Janet</li><li>John Doumanian – Coke Fiend</li><li>Bob Maroff – Man #1 Outside Theatre</li><li>Rick Petrucelli – Man #2 Outside Theatre</li><li>Lee Callahan – Ticket Seller at Theatre</li><li>Chris Gampel – Doctor</li><li>Dick Cavett – Dick Cavett</li><li>Mark Lenard – Navy Officer</li><li>Dan Ruskin – Comedian at Rally</li><li>John Glover – Actor Boy Friend</li><li>Bernie Styles – Comic's Agent</li><li>Johnny Haymer – Comic</li><li>Ved Bandhu – Maharishi</li><li>John Dennis Johnston – L.A. Policeman</li><li>Laurie Bird – Tony Lacey's Girlfriend</li><li>James MacKrell – Lacey Party Guest</li><li><a href="/svenusling/p/1443.html">Jeff Goldblum</a> – Lacey Party Guest</li><li>William Callaway – Lacey Party Guest</li><li>Roger Newman – Lacey Party Guest</li><li>Alan Landers – Lacey Party Guest</li><li>Jean Sarah Frost – Lacey Party Guest</li><li>Vince O'Brien – Hotel Doctor</li><li>Humphrey Davis – Alvy's Psychiatrist</li><li>Veronica Radburn – Annie's Psychiatrist</li><li>Robin Mary Paris – Actress in Rehearsal</li><li>Charles Levin – Actor in Rehearsal</li><li>Wayne Carson – Rehearsal Stage Manager</li><li>Michael Karm – Rehearsal Director</li><li>Petronia Johnson – Tony's Date at Nightclub</li><li>Shaun Casey – Tony's Date at Nightclub</li><li>Riccardo Bertoni – Waiter #1 at Nightclub</li><li>Michael Aronin – Waiter #2 at Nightclub</li><li>Lou Picetti – Street Stranger</li><li>Loretta Tupper – Street Stranger</li><li>James Burge – Street Stranger</li><li>Shelley Hack – Street Stranger</li><li>Albert Ottenheimer – Street Stranger</li><li>Paula Trueman – Street Stranger</li><li>Beverly D'Angelo – Actress in Rob's T.V. Show</li><li>Tracey Walter – Actor in Rob's T.V. Show</li><li>David Wier – Alvy's Classmate</li><li>Keith Dentice – Alvy's Classmate</li><li>Susan Mellinger – Alvy's Classmate</li><li>Hamit Perezic – Alvy's Classmate</li><li>James Balter – Alvy's Classmate</li><li>Eric Gould – Alvy's Classmate</li><li>Amy Levitan – Alvy's Classmate</li><li>Gary Allen – School Teacher</li><li>Frank Vohs – School Teacher</li><li>Sybil Bowan – School Teacher</li><li>Margaretta Warwick – School Teacher</li><li>Lucy Lee Flippin – Waitress at Health Food Restaurant</li><li>Gary Mule Deer – Man at Health Food Restaurant</li><li><a href="/svenusling/p/1882.html">Sigourney Weaver</a> – Alvy's Date Outside Theatre</li><li>Walter Bernstein – Annie's Date Outside Theatre</li><li>Truman Capote – Truman Capote / Truman Capote Look-Alike (uncredited)</li><li>Jan Citron – College Audience (uncredited)</li><li>Scott Crawford – Peter (uncredited)</li><li>Gregory Doucette – Usher (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Razzie Award - Sämsta kvinnliga biroll 1983 (Aileen Quinn)</li><li>Young Artist Award - Best Young Motion Picture Actress 1983 (Aileen Quinn)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa musik 1983</li><li>Oscar - Bästa scenografi 1983</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 1983 (Carol Burnett)</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 1983 (Aileen Quinn)</li><li>Golden Globe - New Star of the Year in a Motion Picture - Female 1983 (Aileen Quinn)</li><li>BAFTA Film Award - Bästa originalsång (For the song "Tomorrow".) 1983</li><li>Razzie Award - Sämsta film 1983</li><li>Razzie Award - Sämsta regi 1983 (1489)</li><li>Razzie Award - Sämsta manus 1983</li><li>Razzie Award - Sämsta nya stjärna 1983 (Aileen Quinn)</li><li>Young Artist Award - Best Family Feature - Animated, Musical or Fantasy 1983</li><li>Young Artist Award - Best Young Supporting Actress in a Motion Picture 1983 (Toni Ann Gisondi)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Diane Keaton's][/p?id=1242] real name is [Diane Hall][/p?id=Diane%20Hall] and her nickname is Annie.</li><li>The scene where Alvy and Annie are at their psychiatrists, which looks like a split screen scene, was actually shot simultaneously on one set with an adjoining wall.</li><li>Alvy's ([Woody Allen's][/p?id=2010]) sneezing into the cocaine was an unscripted accident. When previewed, the audience laughed so loud that director [Allen][/p?id=2010] decided to leave it in, and had to add footage to compensate for people missing the next few jokes from laughing too much.</li><li>The film's working title was &quot;Anhedonia&quot; - the inability to feel pleasure. United Artists fought against it (among other things, they were unable to come up with an ad campaign that explained the meaning of the word) and [Woody Allen][/p?id=2010] compromised on naming the film after the central character three weeks before the film's premiere. Other titles suggested were &quot;It Had to Be Jew&quot;, &quot;A Rollercoaster Named Desire&quot;, and &quot;Me and My Goy&quot;.</li><li>[Sigourney Weaver's][/p?id=1882] screen debut, in a speaking part as Alvy's date near the end of the movie.</li><li>According to [Tony Roberts][/p?id=Tony%20Roberts], in the scene where Rob picks Alvy up from jail, [Woody Allen][/p?id=2010] was unaware that [Roberts][/p?id=Tony%20Roberts] was going to pull the green visor down on his coat. [Allen][/p?id=2010] ad-libbed the line &quot;Are we driving through plutonium?&quot; They shot a second take during which [Allen][/p?id=2010] changed the line to &quot;Are we driving through a field of bees?&quot; The first take is the one in the film.</li><li>Annie's outfits, which caused a brief fashion rage, were [Diane Keaton's][/p?id=1242] own clothes.</li><li>At 93 minutes, it is the second shortest film to win the Best Picture Oscar. The shortest film to win the Best Picture Oscar is Marty (1955) at 91 minutes.</li><li>The jokes that [Woody Allen][/p?id=2010] tells in front of the audience at the University of Wisconsin and on The [Dick Cavett][/p?id=Dick%20Cavett] Show (1968) are from his stand-up comic days.</li><li>[Woody Allen][/p?id=2010] originally envisioned this movie as a murder mystery, with a subplot about a romance. During script revisions, [Allen][/p?id=2010] decided to drop the murder plot, which he and Marshall Brickman later revitalized in [Manhattan Murder Mystery][/f?id=Manhattan%20Murder%20Mystery] (1993).</li><li>The first rough cut ran 2 hours and 20 minutes. Among the scenes later eliminated were: segments showing Alvy's former classmates in the present day; Alvy as a teenager; a scene in a junk-food restaurant (featuring [Danny Aiello][/p?id=1206]); extensive additional scenes featuring [Carol Kane][/p?id=Carol%20Kane], [Janet Margolin][/p?id=Janet%20Margolin], [Colleen Dewhurst][/p?id=Colleen%20Dewhurst] and [Shelley Duvall][/p?id=Shelley%20Duvall]; and a fantasy segment at Madison Square Garden featuring the New York Knicks competing against a team of five great philosophers. [Christopher Walken's][/p?id=1173] driving scene was also cut, but was restored a week before the film was completed. New material for the ending was filmed on three occasions, but most was discarded. The final montage was a late addition.</li><li>[Marshall McLuhan][/p?id=Marshall%20McLuhan] was not [Allen's][/p?id=2010] first choice. [Federico Fellini][/p?id=Federico%20Fellini] and [Luis Buñuel][/p?id=Luis%20Bu%C3%B1uel] were asked first.</li><li>Though frequently regarded as one of [Woody Allen's][/p?id=2010] best films, [Allen][/p?id=2010] himself doesn't think very highly of it, only being able to see how much it doesn't live up to what he really wanted it to be.</li><li>One scene cut from the film is a fantasy sequence of Annie and Alvy visiting hell. This scene was rewritten 20 years later for [Allen's][/p?id=2010] [Deconstructing Harry][/f?id=14466] (1997).</li><li>An early appearance by [Jeff Goldblum][/p?id=1443] playing the party guest who &quot;forgot his mantra&quot;.</li><li>[Woody Allen][/p?id=2010] and [Diane Keaton][/p?id=1242] had trouble keeping a straight face when working together. An example of the uncontrollable laughter between the two was the lobster dinner scene. It was the first scene shot for the movie and neither Woody nor Diane had to do much acting for the scene, for their laughter was completely spontaneous.</li><li>[Woody Allen][/p?id=2010] originally filmed a scene in which a traffic advisory sign &quot;urges&quot; Alvy to go to Annie in California. Editor Ralph Rosenblum wrote that [Allen][/p?id=2010] was so disgusted by the scene's cuteness that he took the footage and threw it into the East River. The traffic-sign motif was later used in [Steve Martin's][/p?id=1903] [L.A. Story][/f?id=15604] (1991).</li><li>The movie theater line-up scene is done on a long take. The shot starts when the man behind Alvy starts speaking.</li><li>[Brooke Shields][/p?id=Brooke%20Shields] appeared in a deleted scene in which she played a schoolgirl crush of young Alvy's.</li><li>[Shelley Hack's][/p?id=Shelley%20Hack] film debut.</li><li>[Shelley Duvall][/p?id=Shelley%20Duvall] filmed her scenes in two days.</li><li>For a sequence set at Coney Island, [Woody Allen][/p?id=2010] once kept a crew of 200 extras hanging around for an entire morning and never found the inspiration to shoot that day.</li><li>On Late Night with [Conan O'Brien][/p?id=Conan%20O'Brien] (1993) (28 February 1995), [Harvey Fierstein][/p?id=Harvey%20Fierstein] revealed that both he and [Danny Aiello][/p?id=1206] had bit parts in this classic, but their scenes ended up on the cutting room floor.</li><li>[Kay Lenz][/p?id=Kay%20Lenz] was offered the title role, but her boyfriend David Cassidy convinced her to turn it down.</li><li>The movie that Alvy and Annie originally intend to see, when Annie gets delayed, is Face to Face by [Ingmar Bergman][/p?id=1391]. [Woody Allen][/p?id=2010] cites [Ingmar Bergman][/p?id=1391] as one of his main inspirations.</li><li>The budget was $3 million when production began and slowly swelled to $4 million.</li><li>[Diane Keaton][/p?id=1242] turned 31 and [Woody Allen][/p?id=2010] turned 41 during the making of the film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

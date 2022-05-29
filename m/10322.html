@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Analys Av Ett Mord | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Analys Av Ett Mord <a href="#" class="grade">++++</a></h2>
+										<h3>Anatomy of a Murder</h3>
+										<p>
+										Film från <time datetime="1959"><a href="#">1959</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1713.html">Otto Preminger</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1425.html">James Stewart</a> – Paul Biegler</li><li><a href="/svenusling/p/1573.html">Lee Remick</a> – Laura Manion</li><li><a href="/svenusling/p/1072.html">Ben Gazzara</a> – Lt. Frederick Manion</li><li>Arthur O'Connell – Parnell Emmett McCarthy</li><li>Eve Arden – Maida Rutledge</li><li>Kathryn Grant – Mary Pilant</li><li><a href="/svenusling/p/1323.html">George C. Scott</a> – Asst. State Atty. Gen. Claude Dancer</li><li>Orson Bean – Dr. Matthew Smith</li><li>Russ Brown – George Lemon</li><li>Murray Hamilton – Alphonse Paquette</li><li>Brooks West – Dist. Atty. Mitch Lodwick</li><li>Ken Lynch – Det. Sgt. James Durgo</li><li>John Qualen – Deputy Sheriff Sulo</li><li>Howard McNear – Dr. Dompierre</li><li>Alexander Campbell – Dr. W. Gregory Harcourt</li><li>Ned Wever – Dr. Raschid</li><li>Jimmy Conlin – Clarence Madigan</li><li>Royal Beal – Sheriff Battisfore</li><li>Joseph Kearns – Lloyd Burke</li><li>Don Ross – Duane 'Duke' Miller</li><li>Lloyd Le Vasseur – Court Clerk</li><li>James Waters – Army Sergeant 1st Class</li><li>Joseph N. Welch – Judge Weaver</li><li>Duke Ellington – Pie Eye (uncredited)</li><li>Irv Kupcinet – Distinguished Gentleman (uncredited)</li><li>Mrs. Joseph Welch – Juror (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Grammy - Best Soundtrack Album, Background Score from Motion Picture or Television 1959 (Duke Ellington)</li><li>NYFCC Award - Bästa skådespelare 1959 (1425)</li><li>NYFCC Award - Bästa manus 1959</li><li>Venice Film Festival Venice Film Festival, Volpi Cup - Bästa skådespelare 1959 (1425)</li><li>Laurel Awards, Golden Laurel - Top Drama 1960</li><li>Laurel Awards, Golden Laurel - Top Male Dramatic Performance 1960 (1425)</li><li>Laurel Awards, Golden Laurel - Top Male Supporting Performance 1960 (Arthur O'Connell)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Venice Film Festival, Golden Lion 1959 (1713)</li><li>Oscar - Bästa film 1960 (1713)</li><li>Oscar - Bästa skådespelare 1960 (1425)</li><li>Oscar - Bästa manliga biroll 1960 (Arthur O'Connell)</li><li>Oscar - Bästa manliga biroll 1960 (1323)</li><li>Oscar - Bästa manus baserad på annan förlaga 1960</li><li>Oscar - Bästa foto, svart-vit 1960</li><li>Oscar - Bästa klippning 1960</li><li>Golden Globe - Bästa film - Drama 1960</li><li>Golden Globe - Bästa regi 1960 (1713)</li><li>Golden Globe - Bästa skådespelerska - Drama 1960 (1573)</li><li>Golden Globe - Bästa manliga biroll 1960 (Joseph N. Welch)</li><li>BAFTA Film Award - Best Film from any Source 1960 (1713)</li><li>BAFTA Film Award - Bästa utländska skådespelare 1960 (1425)</li><li>BAFTA Film Award - Most Promising Newcomer to Film 1960 (Joseph N. Welch)</li><li>DGA Award - Bästa regi 1960 (1713)</li><li>Laurel Awards, Golden Laurel - Top Female Supporting Performance (5:e plats) 1960 (Eve Arden)</li><li>WGA Award (Screen) - Best Written American Drama 1960</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Duke Ellington][/p?id=Duke%20Ellington] did the music and has a cameo as &quot;Pie-Eye.&quot; </li><li>The part of the judge was offered to both [Spencer Tracy][/p?id=1888] and [Burl Ives][/p?id=Burl%20Ives], but instead went to [Joseph N. Welch][/p?id=Joseph%20N.%20Welch] who was a lawyer in real life who had represented the U.S. Army in the televised Army-McCarthy hearings in 1954. </li><li>The part played by [Lee Remick][/p?id=1573] was first offered to [Lana Turner][/p?id=Lana%20Turner], who agreed to take it on the condition that she would wear gowns designed exclusively by her personal couturier, [Jean Louis][/p?id=Jean%20Louis]. When director [Otto Preminger][/p?id=1713] objected that such gowns were not suitable for the role, [Turner][/p?id=Lana%20Turner] turned down the part. Columbia was ready to give in to [Turner's][/p?id=Lana%20Turner] demands but [Preminger][/p?id=1713] resisted and gave the role to [Remick][/p?id=1573], then almost a beginner. </li><li>The [Lee Remick][/p?id=1573] part was turned down by [Jayne Mansfield][/p?id=Jayne%20Mansfield]. </li><li>[Otto Preminger][/p?id=1713] originally wanted [Lee Remick][/p?id=1573] for the part of Laura because he had been impressed with her debut in A Face in the Crowd (1957) and knew that she could play a young sultry woman (even though [Remick][/p?id=1573] was 8 months pregnant when [Preminger][/p?id=1713] approached her for the role). A few weeks later he called to tell her that he had given the part to [Lana Turner][/p?id=Lana%20Turner] and instead offered her a smaller role of Mary Pilant, but [Remick][/p?id=1573] boldly refused. On an especially hectic day when [Remick][/p?id=1573] received a call saying that she had the part of Laura, she thought it was a joke and hung up. It took another phone call to convince her that she truly did have the lead female role.</li><li>The film was cut, scored and in previews only a month after filming had wrapped. </li><li>[James Stewart's][/p?id=1425] father was so offended by the film, which he deemed &quot;a dirty picture&quot;, that he took out an ad in his local newspaper telling people not to see it.</li><li>Upon its original release, the film was banned in [Chicago][/f?id=11526], Illinois. </li><li>When [James Stewart's][/p?id=1425] character goes to the hotel to visit [Kathryn Grant][/p?id=Kathryn%20Grant], the clerk at the desk is reading Leon Uris's &quot;[Exodus][/f?id=13522]&quot;. One year later, director [Preminger][/p?id=1713] would go on to direct its film version, [Exodus][/f?id=13522] (1960). </li><li>[Otto Preminger][/p?id=1713] disliked the use of flashbacks; hence there are none in the film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

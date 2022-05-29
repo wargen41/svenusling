@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>American Pop | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>American Pop <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1981"><a href="#">1981</a></time><br>										<ul class="genres"><li><a href="#genre2">Animerat</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ralph Bakshi</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Ron Thompson – Tony / Pete</li><li>Mews Small – Frankie</li><li>Jerry Holland – Louie</li><li>Lisa Jane Persky – Bella</li><li>Jeffrey Lippa – Zalmie</li><li>Roz Kelly – Eva Tanguay</li><li>Frank DeKova – Crisco</li><li>Rick Singer – Benny</li><li>Elsa Raven – Hannele</li><li>Ben Frommer – Palumbo</li><li>Amy Levitt – Nancy</li><li>Leonard Stone – Leo Stern</li><li>Eric Taslitz – Little Pete</li><li>Gene Borkan – Izzy</li><li>Richard Moll – Beat Poet</li><li>Beatrice Colen – Prostitute</li><li>Vincent Schiavelli – Theatre Owner</li><li>Hilary Beane – Showgirl #1</li><li>Lynda Wiesmeier – The Blonde</li><li class="voice">Phillip Simms – Dwayne (röst)</li><li>Marcello Krakoff – Little Zalmie</li><li>Ken Johnson – Halley</li><li>Barney Pell – Young Zalmie</li><li>Robert Strom – Club Manager</li><li>Gene Woodbury – August</li><li class="voice">Mark Levine – Space (röst)</li><li>Ty Grimes – Johnny</li><li>Peter Glindeman – Reed</li><li>Auburn Burrell – Jeffrey</li><li class="voice">Aleshia Brevard – Showgirl #2 (röst)</li><li><a href="/svenusling/p/1277.html">Elya Baskin</a> – Tuba Player</li><li>M.B. West – Prostitute</li><li>Joey Camen – Freddie</li><li class="voice">Umberto Autore Jr. – Little Benny (röst)</li><li>Tony Autore – Young Benny</li><li>Johnny Brogna – Tony's Brother</li><li>Dawn Agrella – Tony's Sister</li><li>Cari Anne Warder – Tony's Sister</li><li>Don Carlson – Stagehand</li><li>Vance Colvig Jr. – Hobo #1</li><li>Robert Beecher – Hobo #2</li><li>Tony Fasce – Crapshooter #1</li><li>Frank Ciaravino – Crapshooter #2</li><li>Gene Krischer – Hippie</li><li>D.A. Young – Curtis</li><li class="voice">Lee Ving – Punk Rocker (röst)</li><li>Spit Stix – Punk Rocker</li><li class="voice">Derf Scratch – Punk Rocker (röst)</li><li class="voice">Philo Cramer – Punk Rocker (röst)</li><li class="voice">Chester Hayes – Organ Grinder (röst)</li><li>Chuck Mitchell – Doorkeeper</li><li class="voice">Ralph Bakshi – Piano Player (röst)</li><li>Jack Angel – Soldiers (uncredited)</li><li>Bob Bergen – Soldiers (uncredited)</li><li>Philip L. Clarke – Soldiers (uncredited)</li><li>Paul Eiding – Soldiers (uncredited)</li><li>Bill Farmer – Soldiers (uncredited)</li><li>David Hollander –  (uncredited)</li><li>Carole Jeghers – Soldiers (uncredited)</li><li>Doug Lee – Announcers - various (uncredited)</li><li>Helen Morgan – Singer in Raided Nightclub (uncredited|archiveFootage)</li><li>Patrick Pinney – Soldiers (uncredited)</li><li>Phil Proctor – Soldiers (uncredited)</li><li>Craig Allen Rothwell – Punk Dancer (uncredited)</li><li>Fredd Wayne – Seven roles (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The incident in which Zalmie's mother dies is the 1911 Triangle Shirtwaist Factory fire, one of the worst industrial disasters in New York City's history. 146 garment workers, mostly immigrant women, died either in the fire, or by jumping from the windows of the 8th-10th floors because the doors were locked shut. The fire prompted legislative and union action to improve safety and working conditions in garment sweatshops. The words &quot;Triangle Shirtwaist&quot; can be briefly seen on the wall of the sweatshop during the first scene of the sequence.</li><li>Some of the gangland scenes are rotoscoped footage from [The Public Enemy][/f?id=Public%20Enemy%20%E2%80%93%20Samh%C3%A4llets%20Fiende%20Nr.%201] (1931).</li><li>According to [Ralph Bakshi][/p?id=Ralph%20Bakshi], he originally wanted to end the movie with Pete playing Lynyrd Skynyrd's &quot;Free Bird&quot;, but the producers chose Bob Seger's &quot;Night Moves&quot; instead. &quot;Free Bird&quot; plays over the end credits.</li><li>Although all of the characters are fictional, many were partially inspired by real people. The character of Frankie, for instance, was based on Grace Slick (of Jefferson Airplane) and Janis Joplin (of Big Brother and the Holding Company).</li><li>The two dancers in the &quot;Sing Sing Sing With a Swing&quot; montage are the rotoscoped Nicholas brothers in [Stormy Weather][/f?id=Stormy%20Weather] (1943).</li><li>Except for a few bits of live-action stock footage and the still drawings in the opening credits, the movie is entirely rotoscoped.</li><li>The title of the film is a homograph; a word that has two different meanings. The first meaning is a shortened term for &quot;[American Popular][/f?id=10308] Music&quot;. The second meaning is &quot;Pop&quot;. &quot;Pop&quot; is another term for &quot;Papa&quot;, &quot;Dad&quot;, or &quot;Father&quot;. The film is about four generations of American fathers.</li><li>Another actor was cast as Tony, when he did not pan out, [Bakshi][/p?id=Ralph%20Bakshi] asked [Ron Thompson][/p?id=Ron%20Thompson] to play Tony on top of playing Pete. [Thompson][/p?id=Ron%20Thompson] not only agreed, he also jokingly offered to play Tony's love interest Frankie as well.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

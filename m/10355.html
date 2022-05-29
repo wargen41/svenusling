@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Anna Karenina (2012) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Anna Karenina (2012) <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2012"><a href="#">2012</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Joe Wright</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Matthew Macfadyen – Oblonsky</li><li>Eric MacLennan – Matvey</li><li>Kelly Macdonald – Dolly</li><li>Theo Morrissey – Grisha Oblonsky</li><li>Cecily Morrissey – Lili Oblonsky</li><li>Freya Galpin – Masha Oblonsky</li><li>Octavia Morrissey – Tanya Oblonsky</li><li>Beatrice Morrissey – Vasya Oblonsky</li><li>Marine Battier – Mlle. Roland</li><li><a href="/svenusling/p/1537.html">Keira Knightley</a> – Anna Karenina</li><li>Guro Nagelhus Schia – Annushka</li><li>Aruhan Galieva – Aruhan</li><li><a href="/svenusling/p/1519.html">Jude Law</a> – Karenin</li><li>Carl Grose – Korney</li><li>Bryan Hands – Mikhail Slyudin</li><li>Oskar McNamara – Serhoza</li><li>Luke Newberry – Vasily Lukich</li><li>Olivia Williams – Countess Vronsky</li><li>Michael Shaeffer – Doorkeeper</li><li>Domhnall Gleeson – Levin</li><li>Steven Beard – Elderly Waiter</li><li><a href="/svenusling/p/1024.html">Alicia Vikander</a> – Kitty</li><li>Pip Torrens – Prince Shcherbatsky</li><li>Susanne Lothar – Princess Shcherbatsky</li><li>Alexandra Roach – Countess Nordston</li><li>Henry Lloyd-Hughes – Burisov</li><li>Aaron Taylor-Johnson – Vronsky</li><li>David Wilmot – Nikolai</li><li>Tannishtha Chatterjee – Masha</li><li>Joseph Macnab – Guards Officer</li><li>Nick Holder – Stationmaster</li><li>Claire Greenway – Austrian Princess</li><li>Mike Shepherd – Wheel Tapper</li><li>Arthur Nightingale – Oblonsky's Servant</li><li>Buffy Davis – Agafia</li><li>Gala Wesson – Kitchen Maid</li><li>Eros Vlahos – Boris</li><li>Kyle Soller – Korsunsky</li><li>Sam Cox – Kapitonich</li><li>Max Bennett – Petritsky</li><li>Holliday Grainger – Baroness</li><li>Ruth Wilson – Princess Betsy Tverskoy</li><li>Jude Monk McGowan – Tuskevitch</li><li>Antony Byrne – Colonel Demin</li><li>Emily Watson – Countess Lydia Ivanova</li><li>Michelle Dockery – Princess Myagkaya</li><li>Emerald Fennell – Princess Merkalova</li><li>Sarine Sofair – Anna's Friend</li><li>Thomas Howes – Yashvin</li><li>Raphaël Personnaz – Alexander Vronsky</li><li>Bill Skarsgård – Makhotin</li><li>Cara Delevingne – Princess Sorokina</li><li>Bodil Blain – Princess Sorokina Senior</li><li>Hera Hilmar – Varya</li><li>Kenneth Collard – Prince Tverskoy</li><li>Steve Evets – Theodore</li><li>Conor McCarry – Young Peasant</li><li>Giles King – Stremov</li><li>Martin Wimbush – Anna's Doctor</li><li>James Northcote – Princess Betsy's Footman</li><li>Duncan Wisbey – Shopkeeper</li><li>Jamie Beamish – Opera House Husband</li><li>Shirley Henderson – Opera House Wife</li><li>Simon Muller – Opera House Manager</li><li>Nikolai Lester – Piano Prodigy</li><li>Tillie-Bett Grant – Baby Anya</li><li>Navala 'Nico' Chaudhari – Ball Dancer & French Theatre Dancer</li><li>Amber Doyle – Ball Dancer & French Theatre Dancer</li><li>Damien Forurnier – Ball Dancer & French Theatre Dancer</li><li>Laura Neyskens – Ball Dancer & French Theatre Dancer</li><li>Daniel Proietto – Ball Dancer & French Theatre Dancer</li><li>Verjorn Sundby – Ball Dancer & French Theatre Dancer</li><li>Jennifer White – Ball Dancer & French Theatre Dancer</li><li>Paul Zivkovich – Ball Dancer & French Theatre Dancer</li><li>Michael Barnes – Ball Damcer</li><li>Anna Bjerre Larsen – Ball Dancer</li><li>James Cousins – Ball dancer</li><li>Eva Dewaele – Ball Dancer</li><li>Pia Driver – Ball Dancer</li><li>Stephanie Elstob – Ball Dancer</li><li>Thomas Herron – Ball Dancer</li><li>Jennifer Essex – Ball Dancer</li><li>Edward Lewis French – Ball Dancer</li><li>Courtney Garratt – Ball Dancer</li><li>Omar Gordon – Ball Dancer</li><li>Fania Grigoriou – Ball Dancer</li><li>Thomasin Gulgec – Ball Dancer</li><li>Louise-Michel Jackson – Ball Dancer</li><li>Bless Klepcharek – Ball Dancer</li><li>Jesse Kovarsky – Ball Dancer</li><li>Marie Marinez – Ball Dancer</li><li>Cameron McWilliam – Ball Dancer</li><li>Michela Meazza – Ball Dancer</li><li>Oliver Metzler – Ball Dancer</li><li>Andrew Monaghan – Ball Dancer</li><li>Ashley James Orwin – Ball Dancer</li><li>Shintaro Oue – Ball Dancer</li><li>Sonja Perreten – Ball Dancer</li><li>Claire Piquemal – Ball Dancer</li><li>Natascha Pire – Ball Dancer</li><li>Linda Remahl – Ball Dancer</li><li>Daria Reznikova – Ball Dancer</li><li>Vala Runarsdottir – Ball Dancer</li><li>Helder Seabra – Ball Dancer</li><li>Aaron Sillis – Ball Dancer</li><li>Rebecca Sutherland – Ball Dancer</li><li>Ulrika Kinn Svensson – Ball Dancer</li><li>Teerachai Thobumrung – Ball Dancer</li><li>Aubert Vanderlinden – Ball Dancer</li><li>Benjamin Warbis – Ball Dancer</li><li>Lisa Welman – Ball Dancer</li><li>Joanna Ruth Wenger – Ball Dancer</li><li>Tegen Whyte – Ball Dancer</li><li>Jorys Zwgarac – Ball Dancer</li><li>Telman Guzhevsky – Opera Singer</li><li>Allegra Giagu – Opera Singer</li><li>Philip Firsov – Singing Russian Soldier</li><li>Chris Foster – Singing Russian Soldier</li><li>Jaroslav Gavrilov – Singing Russian Soldier</li><li>Lukasz Hajduczenia – Singing Russian Soldier</li><li>Greg Bennett – Theatre Goer (uncredited)</li><li>Nicholas Blatt – Major Domo (uncredited)</li><li>John Bradley – Austrian Prince (uncredited)</li><li>Gergo Brummel – Office Clerk (uncredited)</li><li>James Fiddy – Countess Lydia's Guest (uncredited)</li><li>Jensen Freeman – Regimental Soldier (uncredited)</li><li>Paul Ham – Michael (uncredited)</li><li>Kostas Katsikis – Opera Fan (uncredited)</li><li>Denis Khoroshko – Ballroom Guest (uncredited)</li><li>Inga Leps – Gallery Guest (uncredited)</li><li>Victoria Ley – Opera Fan (uncredited)</li><li>Vicky McClure – Girl Harvesting (uncredited)</li><li>Brian Niblett – Politician (uncredited)</li><li>Martin Poole – Opera Guest (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Trailer - Best Teaser 2019</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

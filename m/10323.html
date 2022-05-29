@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Analysera Mera | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Analysera Mera <a href="#" class="grade">++++</a></h2>
+										<h3>Analyze This</h3>
+										<p>
+										Film från <time datetime="1999"><a href="#">1999</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1356.html">Harold Ramis</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1808.html">Robert De Niro</a> – Paul Vitti</li><li><a href="/svenusling/p/1087.html">Billy Crystal</a> – Dr. Ben Sobel</li><li><a href="/svenusling/p/1588.html">Lisa Kudrow</a> – Laura MacNamara Sobel</li><li>Chazz Palminteri – Primo Sidone</li><li>Kresimir Novakovic – '50s Gangster</li><li>Bart Tangredi – Young Vitti Sr.</li><li>Michael Straka – Young Dominic Manetta</li><li>Joseph Rigano – Dominic Manetta</li><li>Joe Viterelli – Jelly</li><li>Richard C. Castellano – Jimmy Boots</li><li>Molly Shannon – Caroline</li><li>Max Casella – Nicky Shivers</li><li>Frank Pietrangolare – Tuna</li><li>Kyle Sabihy – Michael Sobel</li><li>Bill Macy – Dr. Isaac Sobel</li><li>Rebecca Schull – Dorothy Sobel</li><li>Pat Cooper – Salvatore Masiello</li><li>Leo Rossi – Carlo Mangano</li><li>Aasif Mandvi – Dr. Shulman</li><li>Neil Pepe – Carl</li><li>Tony Darrow – Moony</li><li>Michael Haley – Producer</li><li>Ian Marioles – Soundman</li><li>Donnamarie Recco – Sheila</li><li>Vince Cecere – Tino</li><li>Jimmie Ray Weeks – FBI Agent Steadman</li><li>Bob Cea – FBI Agent Ricci</li><li>William Hill – FBI Agent Provano</li><li>Ira Wheeler – Scott MacNamara</li><li>Luce Ennis – Belinda MacNamara</li><li>Elizabeth Bracco – Marie Vitti</li><li>Gina Gallagher – Theresa Vitti</li><li>Francesca Mari – Anna Vitti</li><li>Vinny Vella Jr. – Anthony Vitti</li><li>Mickey Bruno – Miami Soldier</li><li>Dave Corey – Miami Hall Guard</li><li>Fred Workman – Justice of the Peace</li><li>Daniel W. Barringer – Dream Sequence Gunman</li><li>John Polce – Dream Sequence Gunman</li><li>Drew Eliot – Priest at Funeral</li><li>Grace DeSena – Tommy Angels' Widow</li><li>New York Joe Catalfumo – Exuberant Mourner</li><li>Michael Guarino Jr. – Stevie Beef</li><li>Michael Harkins – Paretti's Family</li><li>Paula Raflo – Paretti's Family</li><li>Ondine Harris – Paretti's Family</li><li>Matthew Vega – Paretti's Family</li><li>Clem Caserta – Handsome Jack</li><li>Tony Ray Rossi – Potatoes</li><li>Judith Kahan – Elaine Felton</li><li>Ted Neustadt – Rabbi</li><li>Pasquale Cajano – Joe Baldassare</li><li>Gene Ruffini – Frankie Zello</li><li>Alfred Sauchelli Jr. – Mo-Mo</li><li>Tony DiBenedetto – Johnny 'Bigs'</li><li>Frank Aquilino – Eddie 'Cokes'</li><li>Tony Bennett – Himself</li><li>Albert Anastasia – Himself (archive footage)</li><li>Joseph Bonanno – Himself (archive footage)</li><li>Frank Costello – Himself (archive footage)</li><li>Albert Gallo – Himself (archive footage)</li><li>Joe Gallo – Himself (archive footage)</li><li>Larry Gallo – Himself (archive footage)</li><li>Carlo Gambino – Himself (archive footage)</li><li>Vito Genovese – Himself (archive footage)</li><li>Kenny Alfonso – Car chase driver (uncredited)</li><li>Tracie Bruce – Bikini Girl (uncredited)</li><li>Phillip V. Caruso – Wedding Photographer (uncredited)</li><li>Anthony Caso – Johnny Angel (uncredited)</li><li>Neal A. Corl – Mafia Bodyguard (uncredited)</li><li>Trish Dempsey – Hotel Guest (uncredited)</li><li>Tony Devon – Bobby Angel (uncredited)</li><li>Russell Gibson – Mafio Capo (uncredited)</li><li>Anthony Russo – Mafia Bodyguard (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>ASCAP Award -- Top Box Office Films 2000</li><li>American Comedy Award - Roligaste film 2000</li><li>Blockbuster Entertainment Award - Favorite Supporting Actress - Comedy 2000 (1588)</li><li>Blockbuster Entertainment Award - Favorite Comedy Team 2000 (1808)</li><li>Blockbuster Entertainment Award - Favorite Comedy Team 2000 (1087)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Trailer - Bästa komedi 1999</li><li>Golden Globe - Bästa film - Komedi eller Musikal 2000</li><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 2000 (1808)</li><li>American Cinema Editors, Eddie - Best Edited Feature Film - Comedy or Musical 2000</li><li>American Comedy Award - Roligaste skådespelare i en film 2000 (1808)</li><li>American Comedy Award - Roligaste kvinnliga biroll i en film 2000 (1588)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Robert De Niro][/p?id=1808] suggested [Chazz Palminteri][/p?id=Chazz%20Palminteri] for the role of Primo Sidone, having worked together on [A Bronx Tale][/f?id=15008] (1993). </li><li>[Martin Scorsese][/p?id=1619] was first approached to direct the film but turned it down. </li><li>The character of Paul Vitti was loosely inspired by real life mobster John Gotti. </li><li>[Robert De Niro][/p?id=1808] picked out the shirt collars used by Vitti and his crew. </li><li>It was very important to [Robert De Niro][/p?id=1808] that the movie felt authentic. He and director [Harold Ramis][/p?id=1356] would drive around Little Italy in New York looking for real people to cast for the movie. </li><li>According to [Robert De Niro][/p?id=1808], he and [Billy Crystal][/p?id=1087] briefly toyed with the idea of co-directing the movie before deciding to offer it to [Harold Ramis][/p?id=1356], who accepted.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

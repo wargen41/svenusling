@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Appaloosa | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Appaloosa <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2008"><a href="#">2008</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1267.html">Ed Harris</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Robert Jauregui – Marshall Jack Bell</li><li><a href="/svenusling/p/1451.html">Jeremy Irons</a> – Randall Bragg</li><li>Timothy V. Murphy – Vince</li><li>Luce Rains – Dean</li><li>James Tarwater – Chalk</li><li>Boyd Kestner – Bronc</li><li>Gabriel Marantz – Joe Whittfield</li><li><a href="/svenusling/p/1267.html">Ed Harris</a> – Virgil Cole</li><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Everett Hitch</li><li>Benjamin Rosenshein – Town Boy</li><li>Cerris Morgan-Moyer – Tilda</li><li>James Gammon – Earl May</li><li><a href="/svenusling/p/1945.html">Timothy Spall</a> – Phil Olson</li><li>Tom Bower – Abner Raines</li><li>Erik J. Bockemeier – Fat Wallis</li><li>Freddie Hice – Bragg's Third Man</li><li>Neil Summers – Bragg's Fourth Man</li><li>Tim Carroll – Wagon Driver</li><li><a href="/svenusling/p/1776.html">Renée Zellweger</a> – Allison French</li><li>Bounthanh Xaynhachack – Chin</li><li>Ariadna Gil – Katie</li><li>Art Usher – Clerk</li><li>Clark Sanchez – Teamster</li><li>Cliff Gravel – Barber</li><li>Mike Watson – Night Rider</li><li>Rex Linn – Clyde Stringer</li><li>Corby Griesenbeck – Charlie Tewksbury</li><li><a href="/svenusling/p/1565.html">Lance Henriksen</a> – Ring Shelton</li><li>Adam Nelson – Mackie Shelton</li><li>Bob L. Harris – Judge Callison</li><li>Daniel Parker – Mueller</li><li>Ed Pennybacker – Conductor</li><li>Alvin William 'Dutch' Lunak – Sharps</li><li>Martin Connelly – Apache Elder</li><li>Danny Edmo – Young Brave</li><li>Argos MacCallum – Beauville Sheriff Russell</li><li>Cynthia Huerta – Mexican Woman</li><li>Charlene Adams – Citizen of Appaloosa</li><li>Ernest Andreas – Citizen of Appaloosa</li><li>Heather Antonio – Citizen of Appaloosa</li><li>David Bard – Citizen of Appaloosa</li><li>Ian Bell – Citizen of Appaloosa</li><li>Daniel Jon Bergman – Citizen of Appaloosa</li><li>Maria Bethke – Citizen of Appaloosa</li><li>Todd Bethke – Citizen of Appaloosa</li><li>Miles Blackman – Citizen of Appaloosa</li><li>Scott Brooks – Citizen of Appaloosa</li><li>Martin Callahan – Citizen of Appaloosa</li><li>Mabel Jin Chin – Citizen of Appaloosa</li><li>Stephen Chomko – Citizen of Appaloosa</li><li>Cynthia Clark – Citizen of Appaloosa</li><li>Leonaldan Condati – Citizen of Appaloosa</li><li>Robert Colby – Citizen of Appaloosa</li><li>Lowell Crawford – Citizen of Appaloosa</li><li>Jake Crellin – Citizen of Appaloosa</li><li>Charles Culberson – Citizen of Appaloosa</li><li>Timothy David – Citizen of Appaloosa</li><li>Rachel de la Torre – Citizen of Appaloosa</li><li>Robert Dow – Citizen of Appaloosa</li><li>Flynn-Bella Ericson – Citizen of Appaloosa</li><li>Chuck Ferran – Citizen of Appaloosa</li><li>Jackie Fleming – Citizen of Appaloosa</li><li>Dennis Foulkrod – Citizen of Appaloosa</li><li>Christopher Frechette – Citizen of Appaloosa</li><li>Jim Granger – Citizen of Appaloosa</li><li>Ruben Haddix – Citizen of Appaloosa</li><li>Bruce Harders – Citizen of Appaloosa</li><li>Nancy Ann Hibbs – Citizen of Appaloosa</li><li>Jerrall Hinds – Citizen of Appaloosa</li><li>Perry Jasper – Citizen of Appaloosa</li><li>Nick Johnson – Citizen of Appaloosa</li><li>Taryn Johnson – Citizen of Appaloosa</li><li>Dale Kappy – Citizen of Appaloosa</li><li>Glen Kappy – Citizen of Appaloosa</li><li>Jeff Kimerling – Citizen of Appaloosa</li><li>Kim Kimerling – Citizen of Appaloosa</li><li>Kevin Kinsner – Citizen of Appaloosa</li><li>Daniel Krieger – Citizen of Appaloosa</li><li>Xander Laird – Citizen of Appaloosa</li><li>Norm Lee – Citizen of Appaloosa</li><li>Kerry Lee – Citizen of Appaloosa</li><li>Michael A. Lente – Citizen of Appaloosa</li><li>Loretta Lewis – Citizen of Appaloosa</li><li>Isabel Leustig – Citizen of Appaloosa</li><li>Jennae Linnell – Citizen of Appaloosa</li><li>Skip Long – Citizen of Appaloosa</li><li>Denise Lynch – Citizen of Appaloosa</li><li>Lynn Macri – Citizen of Appaloosa</li><li>Tom McFarlane – Citizen of Appaloosa</li><li>Diana McGuerty – Citizen of Appaloosa</li><li>Henry McKeighen – Citizen of Appaloosa</li><li>Dani McNutt – Citizen of Appaloosa</li><li>Diana Minfa – Citizen of Appaloosa</li><li>Kim Montoya – Citizen of Appaloosa</li><li>Sylvie Mortenson – Citizen of Appaloosa</li><li>Ernest Moya – Citizen of Appaloosa</li><li>Kevin New – Citizen of Appaloosa</li><li>Sandy Nickal – Citizen of Appaloosa</li><li>Michael Max Norris – Citizen of Appaloosa</li><li>Frank Nun – Citizen of Appaloosa</li><li>Kyle Osborne – Citizen of Appaloosa</li><li>Trevor Osborne – Citizen of Appaloosa</li><li>Dara Osborne – Citizen of Appaloosa</li><li>Hunter Lee Pimparapana – Citizen of Appaloosa</li><li>Michael Neal Powell – Citizen of Appaloosa</li><li>Kristine Rael – Citizen of Appaloosa</li><li>Marvin Rath – Citizen of Appaloosa</li><li>L.C. Read – Citizen of Appaloosa</li><li>Steve Rick – Citizen of Appaloosa</li><li>Benjamin Rosensheim – Citizen of Appaloosa</li><li>Daphne D. Ross – Citizen of Appaloosa</li><li>Tom E. Rostkowski – Citizen of Appaloosa</li><li>Randall Sauls – Citizen of Appaloosa</li><li>Darrell Schmidt – Citizen of Appaloosa</li><li>Yvonne Schmidt – Citizen of Appaloosa</li><li>Claire Schwebke – Citizen of Appaloosa</li><li>Cicely Kuehl Shank – Citizen of Appaloosa</li><li>Carol Sieber – Citizen of Appaloosa</li><li>J. Nathan Simmons – Citizen of Appaloosa</li><li>Frankley Singzilay – Citizen of Appaloosa</li><li>Edward Sipler – Citizen of Appaloosa</li><li>Chloe Slator – Citizen of Appaloosa</li><li>Isabel Slator – Citizen of Appaloosa</li><li>Fionn Thelen – Citizen of Appaloosa</li><li>John Turner – Citizen of Appaloosa</li><li>Elizabeth Ann Tuttle – Citizen of Appaloosa</li><li>Arthur Usher – Citizen of Appaloosa</li><li>Bailey Walter – Citizen of Appaloosa</li><li>Kristin Walter – Citizen of Appaloosa</li><li>Madeline Walter – Citizen of Appaloosa</li><li>Alicia Williams – Citizen of Appaloosa</li><li>J.C. Augare – Apache</li><li>Kiela Bird – Apache</li><li>Anderson Chee – Apache</li><li>Bud Connley – Apache</li><li>Alexandra Edmo – Apache</li><li>Matthew E. Montoya – Apache</li><li>Wes Trudell – Apache</li><li>Michael Clark – Bragg's Man</li><li>Herman Endito – Bragg's Man</li><li>Jerry Fuentes – Bragg's Man</li><li>Jerry Handy – Bragg's Man</li><li>Larry Hinsley – Bragg's Man</li><li>Adam Honeyfield – Bragg's Man</li><li>David Lee Jensen – Bragg's Man</li><li>Tom Johnson – Bragg's Man</li><li>Tom Larsen – Bragg's Man</li><li>Les Schesser – Bragg's Man</li><li>Frank Spencer – Bragg's Man</li><li>Greg Stevenson – Bragg's Man</li><li>Girard Swan – Bragg's Man</li><li>Mark A. Hernandez – Mexican cowboy (uncredited)</li><li>Aidan Vitela – Goat Herder (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>A sequel was in talks before the film was even released. </li><li>[Ed Harris][/p?id=1267] originally intended his character to have hair. He selected a wig and screen tested it before eventually deciding to play the part bald.</li><li>[Ed Harris'][/p?id=1267] father plays the Judge. </li><li>[Diane Lane][/p?id=Diane%20Lane] was originally cast as Allison French but left the project during pre-production. </li><li>Because the only remaining 8 gauge shotguns on the market were either too antique or too valuable to use, the movie's armorer, Gibbons Ltd., had to specially contract for replicas. Gunsmith Steve Karnes purchased three replica Colt 1878 shotguns and modified the barrels so that all three sets would have bore sizes equal to that of a real 8 gauge shotgun. The first two shotguns were designed to fire full-load 12 gauge blank rounds (one gun could be used while the other was cleaned or repaired from a previous film shoot.) The third shotgun was designed to chamber 8 gauge inert rounds, and was used for reloading scenes. All three were then given identical, 'aged' finishes, to make them appear old and used.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

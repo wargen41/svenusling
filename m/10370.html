@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Apollo 13 | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Apollo 13 <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ron Howard</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1950.html">Tom Hanks</a> – Jim Lovell</li><li><a href="/svenusling/p/1083.html">Bill Paxton</a> – Fred Haise</li><li><a href="/svenusling/p/1543.html">Kevin Bacon</a> – Jack Swigert</li><li><a href="/svenusling/p/1316.html">Gary Sinise</a> – Ken Mattingly</li><li><a href="/svenusling/p/1267.html">Ed Harris</a> – Gene Kranz</li><li><a href="/svenusling/p/1533.html">Kathleen Quinlan</a> – Marilyn Lovell</li><li>Mary Kate Schellhardt – Barbara Lovell</li><li>Emily Ann Lloyd – Susan Lovell</li><li>Miko Hughes – Jeffrey Lovell</li><li>Max Elliott Slade – Jay Lovell</li><li>Jean Speegle Howard – Blanch Lovell</li><li>Tracy Reiner – Mary Haise</li><li>David Andrews – Pete Conrad</li><li>Michele Little – Jane Conrad</li><li>Chris Ellis – Deke Slayton</li><li>Joe Spano – NASA Director</li><li><a href="/svenusling/p/2013.html">Xander Berkeley</a> – Henry Hurt</li><li>Marc McClure – Glynn Lunney</li><li>Ben Marley – John Young</li><li>Clint Howard – Sy Liebergot - EECOM White</li><li>Loren Dean – John Aaron - EECOM Arthur</li><li>Tom Wood – EECOM Gold</li><li>Googy Gress – RETRO White</li><li>Patrick Mickler – RETRO Gold</li><li>Ray McKinnon – Jerry Bostick - FIDO White</li><li>Max Grodénchik – FIDO Gold</li><li>Christian Clemenson – Dr. Chuck</li><li>Brett Cullen – CAPCOM 1</li><li>Ned Vaughn – CAPCOM 2</li><li>Andy Milder – GUIDO White</li><li>Geoffrey Blake – GUIDO Gold</li><li>Wayne Duvall – LEM Controller White</li><li>Jim Meskimen – TELMU White</li><li>Joseph Culp – TELMU Gold</li><li>John Short – INCO White</li><li>Ben Bode – INCO Gold</li><li>Todd Louiso – FAO White</li><li>Gabriel Jarret – GNC White</li><li>Christopher John Fields – Booster White</li><li>Kenneth White – Grumman Rep</li><li>James Ritz – Ted</li><li>Andrew Lipschultz – Launch Director</li><li>Mark Wheeler – Neil Armstrong</li><li>Larry Williams – Buzz Aldrin</li><li>Endre Hules – Guenter Wendt</li><li>Karen Martin – Tracey</li><li>Maureen Hanley – Woman</li><li>Meadow Williams – Kim</li><li>Walter von Huene – Technician</li><li><a href="/svenusling/p/1108.html">Brian Markinson</a> – Pad Rat</li><li>Steve Rankin – Pad Rat</li><li>Austin O'Brien – Whiz Kid</li><li>Louisa Marie – Whiz Kid Mom</li><li>Thom Barry – Orderly</li><li>Arthur Senzy – SIM Tech</li><li>Carl Gabriel Yorke – SIM Tech</li><li>Ryan Holihan – SIM Tech</li><li>Rance Howard – Reverend</li><li>Jane Jenkins – Neighbor</li><li>Todd Hallowell – Noisy Civilian</li><li>Matthew Michael Goodall – Stephen Haise</li><li>Taylor Goodall – Fred Haise Jr.</li><li>Misty Dickinson – Margaret Haise</li><li>Roger Corman – Congressman</li><li>Lee Anne Matusek – Loud Reporter</li><li>Mark D. Newman – Loud Reporter</li><li>Mark McKeel – Suit Room Assistant</li><li>Patty Raya – Patty</li><li>Jack Conley – Science Reporter</li><li>Jeffrey Kluger – Science Reporter</li><li>Bruce Wright – Anchor</li><li>Ivan Allen – Anchor</li><li>Jon Bruno – Anchor</li><li>Reed Rudy – Roger Chaffee</li><li>Steve Bernie – Virgil Grissom</li><li>Steve Ruge – Edward White</li><li>Herb Jefferson Jr. – Reporter</li><li>John Dullaghan – Reporter</li><li>John Wheeler – Reporter</li><li>Paul Mantee – Reporter</li><li>Julie Rowen – Reporter</li><li>Thomas Crawford – Reporter</li><li>Frank Cavestani – Reporter</li><li>John M. Mathews – Reporter</li><li>Neil Armstrong – Himself (archive footage)</li><li>Jules Bergman – Himself - ABC News (archive footage)</li><li>Pope Paul VI – Himself (archive footage)</li><li>Jimmy Wynn – Himself (archive footage)</li><li>Walter Altman – Mission Controller (uncredited)</li><li>John Bishop – Protester (uncredited)</li><li>John Timothy Botka – Frank Borman (uncredited)</li><li>Jaime Campos – Scientist (uncredited)</li><li>Tory Christopher – NASA Technician (uncredited)</li><li>Michael S. Connolly – Reporter (uncredited)</li><li>Walter Cronkite – Himself (uncredited|archive footage)</li><li>Bryce Dallas Howard – Girl in Yellow Dress (uncredited)</li><li>Cheryl Howard – Onlooker at Launch Site (uncredited)</li><li>Kent Kasper – Congressman (uncredited)</li><li>Jim Lovell – Captain of USS Iwo Jima (uncredited)</li><li>Marilyn Lovell – Onlooker at Launch Site (uncredited)</li><li>Chris Moore – Cameraman (uncredited)</li><li>Ted West – Cannister Team Engineer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>DFWFCA Award - Bästa foto 2006</li><li>PFCS Award - Bästa foto 2006</li><li>COFCA Award - Bästa foto 2007</li><li>Imagen Award - Bästa manliga biroll 2007 (Gerardo Taracena)</li><li>Imagen Award - Bästa kvinnliga biroll 2007 (Dalia Hernández)</li><li>Golden Reel Award - Best Sound Editing for Music in a Feature Film 2007</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>CFCA Award - Bästa utländska film 2006</li><li>Oscar - Bästa smink 2007</li><li>Oscar - Bästa ljudmixning 2007</li><li>Oscar - Bästa ljudklippning 2007</li><li>Golden Globe - Bästa utländska film 2007</li><li>BAFTA Film Award - Bästa icke engelskspråkiga film 2007</li><li>Saturn Award - Best International Film 2007</li><li>Saturn Award - Bästa regi 2007 (1635)</li><li>ASC Award - Bästa foto 2007</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa utländska film 2007</li><li>Imagen Award - Bästa film 2007</li><li>ALFS Award - Foreign Language Film of the Year 2007</li><li>Golden Reel Award - Best Sound Editing in a Feature Film: Dialogue and Automated Dialogue Replacement 2007</li><li>OFCS Award - Bästa foto 2007</li><li>Satellite Award - Bästa utländska film 2006</li><li>CEC Award - Bästa utländska film 2008</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Footage of the Saturn V was computer generated specifically for this film; no Saturn V stock footage was used. </li><li>The cast and crew flew between 500 and 600 parabolic arcs in NASA's KC-135 airplane (nicknamed the &quot;Vomit Comet&quot;) to achieve real weightlessness. Each of the arcs got them 23 seconds of zero gravity. All of these flights were completed in 13 days. The actual KC135 used (NASA serial number N930NA) was decommissioned in 2000 after 27 years of service and is on display at Ellington Field.</li><li>Several items in the movie, including [Jim Lovell's][/p?id=Jim%20Lovell] jumpsuit and a coffee mug in mission control bear the mission patch for Apollo 8, the mission that took [Lovell][/p?id=Jim%20Lovell] to the moon for ten orbits a year and a half earlier.</li><li>At one point during the return flight there is a bang and nobody is very alarmed; it's just a &quot;burst helium disk.&quot; This was actually a significant event, though an expected consequence of the situation. The helium disk served a protective function in the LM descent engine and, after it burst, they might no longer be able to restart that engine. A final course correction, not shown in the movie, had to be done using thrusters instead.</li><li>The role of Fred Haise ([Bill Paxton][/p?id=1083]) was first offered to [John Cusack][/p?id=1480] but was turned down. </li><li>[John Travolta][/p?id=1501] turned down the part of [Jim Lovell][/p?id=Jim%20Lovell]. </li><li>[Brad Pitt][/p?id=1096] turned down an offer to star in this film and chose, instead, to star in Se7en (1995) </li><li>Several actors from the movie including: [Tom Hanks][/p?id=1950], [Bill Paxton][/p?id=1083], [Kevin Bacon][/p?id=1543], and [Gary Sinise][/p?id=1316] visited US Space and Rocket Center Space Camp program and worked on their simulators before production of the movie began to help them get a feel for what it would be like to work in zero gravity.</li><li>[Jim Lovell][/p?id=Jim%20Lovell] is actually left-handed, but [Tom Hanks][/p?id=1950] refused to write with his left hand for the movie. </li><li>[Tom Hanks][/p?id=1950] is too tall at 6'1&quot; to be an astronaut. The maximum height for an astronaut is 6'0&quot;. </li><li>In interviews, the real [Jim Lovell][/p?id=Jim%20Lovell] had said that he thought [Kevin Costner][/p?id=1544] looked a little bit like him, but [Costner][/p?id=1544] was never cast. When Brian Grazer and Imagine Entertainment got the rights to the script, [Ron Howard][/p?id=Ron%20Howard] signed on to direct and knowing that [Tom Hanks][/p?id=1950] was an Apollo/space buff, sent the script to him. They set a meeting and [Hanks][/p?id=1950] agreed to play [Jim Lovell][/p?id=Jim%20Lovell] during [Hanks'][/p?id=1950] and [Howard's][/p?id=Ron%20Howard] first meeting about the film. </li><li>[Ron Howard's][/p?id=Ron%20Howard] favorite film of his own. </li><li>The first film made with the co-operation of NASA.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

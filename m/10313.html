@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Amistad | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Amistad <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1997"><a href="#">1997</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre19">Mystik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1907.html">Steven Spielberg</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1682.html">Morgan Freeman</a> – Theodore Joadson</li><li>Nigel Hawthorne – Martin Van Buren</li><li><a href="/svenusling/p/1053.html">Anthony Hopkins</a> – John Quincy Adams</li><li><a href="/svenusling/p/1245.html">Djimon Hounsou</a> – Cinque</li><li><a href="/svenusling/p/1627.html">Matthew McConaughey</a> – Baldwin</li><li><a href="/svenusling/p/1223.html">David Paymer</a> – Secretary of State John Forsyth</li><li><a href="/svenusling/p/1735.html">Pete Postlethwaite</a> – Holabird</li><li><a href="/svenusling/p/1893.html">Stellan Skarsgård</a> – Tappan</li><li>Razaaq Adoti – Yamba</li><li>Abu Bakaar Fofanah – Fala</li><li><a href="/svenusling/p/1047.html">Anna Paquin</a> – Queen Isabella II</li><li>Tomas Milian – Calderon</li><li><a href="/svenusling/p/1154.html">Chiwetel Ejiofor</a> – Ens. Covey</li><li>Derrick N. Ashong – Buakei</li><li>Geno Silva – Ruiz</li><li>John Ortiz – Montes</li><li>Ralph Brown – Lt. Gedney</li><li>Darren E. Burrows – Lt. Meade</li><li>Allan Rich – Judge Juttson</li><li>Paul Guilfoyle – Attorney</li><li><a href="/svenusling/p/1742.html">Peter Firth</a> – Capt. Fitzgerald</li><li><a href="/svenusling/p/2013.html">Xander Berkeley</a> – Hammond</li><li>Jeremy Northam – Judge Coglin</li><li>Arliss Howard – John C. Calhoun</li><li>Willie Amakye – Folowa</li><li>Luc Assogba – Gbatui</li><li>Mariah Campbell – Masery</li><li>Habib Conteh – Bai</li><li>Stephen Conteh – Morlai</li><li>Monguehy Fanzy – Fabanna</li><li>Jimmy Fotso – Kwong</li><li>Adekunle Ilori – Kahei</li><li>Sheriff Kargbo – Almamy</li><li>Saye Lah – Kessebe</li><li>Sylvestre Massaquoi – Santigiie</li><li>Samson Odede – Kpona</li><li>Chike Okpala – Sorie</li><li>Willie Onafesso – Jina</li><li>Samuel Pieh – Suuleh</li><li>Lansana Sawi – Morlu</li><li>Abu Sidique – Tsukama</li><li>El Hadj Malik Sow – Golabu</li><li>Lamine Thiam – Mahmud</li><li>Austin Pendleton – Prof. Gibbs</li><li>Daniel von Bargen – Warden Pendleton</li><li>Rusty Schwimmer – Mrs. Pendleton</li><li>Pedro Armendáriz Jr. – Gen. Espatero</li><li>Frank T. Wells – Crier</li><li>Michael Massee – Prison Guard</li><li>Roy Cooper – Pickney</li><li>Jake Weber – Mr. Wright</li><li>Victor Rivers – Capt. Ferrar</li><li>Joseph Kosseh – Birmaja</li><li>Steve Passewe – Cinque's In-Law</li><li>Sherly Acosta Williams – Cinque's Wife</li><li>Matt Sarles – Young Aide</li><li>George Gerdes – Marshal</li><li>Gerald R. Molen – Magistrate</li><li>Kevin J. O'Connor – Missionary</li><li>Robert Walsh – Guardsman</li><li>Sean McGuirk – Courier</li><li>Tony Owen – Farmer</li><li>William Young – Businessman</li><li>Michael Riley – British Officer</li><li>León Singer – Don Pablo</li><li>Castulo Guerra – Spanish Priest</li><li>Harry Groener – Tecora Captain</li><li>Hawthorne James – Creole Cook</li><li>Ingrid Walters – Woman Overboard with Baby</li><li>Harry A. Blackmun – Associate Justice Joseph Story</li><li>Curtis Shields – Bassie</li><li>Carlos Spivey – Chike</li><li>Charles Udoma – Kessebe</li><li>Andrew L. Josiah – Tamba</li><li>Tony Onafesso – Baa</li><li>Peter Mansaray – Kapr</li><li>Clarence Mobley – Kenei</li><li>Brian Macon – Yauai</li><li>Edward Appiah – Followolo</li><li>Denver Dowridge – Kpau</li><li>Paul Mwakutuya – Sessi</li><li>Rory Burton – Vakina</li><li>Samuel Orekhio – Fawni</li><li>Omo Lara Tosin – Kula</li><li>Ransford Thomas – Alkali</li><li>Juliette Darko – Teme</li><li>Isaac Mayanja – Sanpha</li><li>Charlean Isata Bangalie – Margru</li><li>Roosevelt Flenoury – Njaooni</li><li>M.S. Kaleiwo – Kaleiwo</li><li>Tesfay Yohannes – Amistad African Extra</li><li>George Kamara – Amistad African Extra</li><li>Abdul-Fatai Balogun – Amistad African Extra</li><li>Yaya Sissoko – Amistad African Extra</li><li>Marlon Francis – Amistad African Extra</li><li>Amadou Traore – Amistad African Extra</li><li>Bundu Kamara – Amistad African Extra</li><li>James Moses – Amistad African Extra</li><li>Daniel Reid – Amistad African Extra</li><li>Seydou Coulibaly – Amistad African Extra</li><li>Lawal Tajudeen – Amistad African Extra</li><li>Lester Mombelly – Amistad African Extra</li><li>Ibrahim Sesay – Amistad African Extra</li><li>Jeremy Shelton – Amistad African Extra</li><li>Andrew Shoemo – Amistad African Extra</li><li>Prince Coke – Amistad African Extra</li><li>Ahmed Bangura – Amistad African Extra</li><li>Bernard Singleton – Amistad African Extra</li><li>Desere Mondon – Amistad African Extra</li><li>Baboucar Jobe – Amistad African Extra</li><li>Vincent Lynne-O'Brien – Plantation Owner (scenes deleted)</li><li>John D. Bair – Senator (uncredited)</li><li>Paul Berlier – Sargeant of the guard (uncredited)</li><li>Eric Bruno Borgman – First Jury Juror (uncredited)</li><li>KimStacy Carter – Tecora Slave (uncredited)</li><li>Alex Daunis – Clerk of Supreme Court (uncredited)</li><li>Nino Del Padre – Court Witness (uncredited)</li><li>Lawrence Gaughan – Spaniard (uncredited)</li><li>Tom Lynch – Slave Trader (uncredited)</li><li>Luis Muñoz – Spanish Slave Guard (uncredited)</li><li>Ungenita Prevost – Tecora Slave (uncredited)</li><li>Glendon Rich – Slave / Abolishionist (uncredited)</li><li>John H. Tobin – Supreme Court Reporter (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa manliga biroll 1998 (1053)</li><li>European Film Awards - Outstanding European Achievement in World Cinema 1998 (1893)</li><li>Image Award - Bästa skådespelare 1998 (1245)</li><li>Image Award - Bästa manliga biroll 1998 (1682)</li><li>PGA Awards, Vision Award - Theatrical Motion Pictures 1998 (1907)</li><li>Golden Satellite Award - Bästa foto 1998 (Janusz Kaminski)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa manliga biroll 1998 (1053)</li><li>Oscar - Bästa foto 1998 (Janusz Kaminski)</li><li>Oscar - Bästa musik 1998 (John Williams)</li><li>Oscar - Bästa kostym 1998</li><li>Golden Globe - Bästa film - Drama 1998</li><li>Golden Globe - Bästa regi 1998 (1907)</li><li>Golden Globe - Bästa skådespelare - Drama 1998 (1245)</li><li>Golden Globe - Bästa manliga biroll 1998 (1053)</li><li>ASC Award - Outstanding Achievement in Cinematography in Theatrical Releases 1998 (Janusz Kaminski)</li><li>Art Directors Guild, Excellence in Production Design Award - Design Award - Feature Film 1998</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film 1998</li><li>DGA Award - Bästa regi 1998 (1907)</li><li>Image Award - Bästa film 1998</li><li>OFCS Award - Bästa manliga biroll 1998 (1053)</li><li>PGA Awards - Motion Picture Producer of the Year Award 1998 (1907)</li><li>PFS Award - Exposé 1998</li><li>Golden Satellite Award - Bästa film 1998 (1907)</li><li>Golden Satellite Award - Bästa regi 1998 (1907)</li><li>Golden Satellite Award - Bästa skådespelare - Drama 1998 (1245)</li><li>Golden Satellite Award - Bästa manus 1998</li><li>Golden Satellite Award - Bästa musik 1998 (John Williams)</li><li>Golden Satellite Award - Bästa kostym 1998</li><li>Golden Satellite Award - Bästa klippning 1998</li><li>Golden Satellite Award - Outstanding Art Direction 1998</li><li>Screen Actors Guild Awards, Actor - Bästa manliga biroll 1998 (1053)</li><li>Grammy - Best Instrumental Composition Written for a Motion Picture or for Television 1998 (John Williams)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Denzel Washington][/p?id=1240] was approached for the role as Cinque, but he refused.</li><li>[Cuba Gooding Jr.][/p?id=1193] also turned down the role of Cinque.</li><li>[Djimon Hounsou][/p?id=1245] learned Mende for his role as Cinque.</li><li>Producer Debbie Allen wanted [Steven Spielberg][/p?id=1907] to direct, but it wasn't until Steven Zaillian ([Schindler's List][/f?id=18009] (1993)) submitted a rewrite that he agreed to direct.</li><li>In Spanish, the word &quot;[Amistad][/f?id=10313]&quot; means friendship.</li><li>[Sean Connery][/p?id=1866] was approached for the role of [John Quincy][/f?id=15306] Adams but passed.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

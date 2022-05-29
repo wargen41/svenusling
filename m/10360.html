@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ant-Man | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Ant-Man <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2015"><a href="#">2015</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Peyton Reed</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1729.html">Paul Rudd</a> – Scott Lang / Ant-Man</li><li><a href="/svenusling/p/1646.html">Michael Douglas</a> – Dr. Hank Pym</li><li>Evangeline Lilly – Hope van Dyne</li><li>Corey Stoll – Darren Cross / Yellowjacket</li><li><a href="/svenusling/p/1093.html">Bobby Cannavale</a> – Paxton</li><li>Anthony Mackie – Sam Wilson / Falcon</li><li>Judy Greer – Maggie Lang</li><li>Abby Ryder Fortson – Cassie Lang</li><li>Michael Peña – Luis</li><li>David Dastmalchian – Kurt</li><li>T.I. – Dave</li><li>Hayley Atwell – Peggy Carter</li><li>Wood Harris – Gale</li><li>John Slattery – Howard Stark</li><li>Martin Donovan – Mitchell Carson</li><li>Garrett Morris – Cab Driver</li><li>Gregg Turkington – Dale</li><li>Rod Hallett – Hydra Buyer</li><li>Joe Chrest – Frank</li><li>Joe Bucaro III – Buyer #1</li><li>Jean Louisa Kelly – Buyer #2</li><li>Dax Griffin – Young Pym</li><li>Hayley Lovitt – Janet Van Dyne / The Wasp</li><li>Norma Alvarez – Spanish Woman</li><li>Darcie Isabella Cottrell – Young Daughter</li><li>Teddy Williams – Raver #1</li><li>Carol Anne Watts – Raver #2</li><li>Chuck David Willis – Raver #3</li><li>Diana Chiritescu – Raver #4</li><li>Neko Parham – Pool BBQ Dad</li><li>Onira Tares – Pool BBQ Mom</li><li>Kylen Davis – Pool BBQ Kid #1</li><li>Zamani Wilder – Pool BBQ Kid #2</li><li>Jim R. Coleman – Pym Tech Gate Guard</li><li>Desmond Phillips – Pym Tech Security Guard #1</li><li>Aaron Saxton – PYM Tech Security Guard #2</li><li>Michael A. Cook – EMT</li><li>Ricki Lander – Gorgeous Blonde</li><li>Rus Blackwell – Superior Officer</li><li>Johnny Pemberton – Ice Cream Store Customer</li><li>Nicholas Barrera – Ernesto</li><li>Carlos Aviles – Carlos</li><li>Lyndsi LaRose – Emily</li><li>Robert Crayton – Peachy</li><li>Ajani Perkins – Cop on Speaker</li><li>Jessejames Locorriere – Alpha Guard</li><li>Zack Duhame – Beta Guard</li><li>Kevin Lacz – Vault Guard #1</li><li>Michael Trisler – Vault Guard #2</li><li>Daniel Stevens – Armed Guard #1</li><li>Alex Chansky – Armed Guard #2</li><li>Clay Donahue Fontenot – Armed Guard #3</li><li>Michael Jamorski – Armed Guard #4</li><li>Casey Pieretti – Armed Guard #5</li><li>Antal Kalik – Lab Guard #1</li><li>Adam Hart – Lab Guard #2</li><li>Reuben Langdon – Lab Guard #3</li><li>Todd Schneider – Lab Guard #4</li><li>Kevin Buttimer – Lab Tech</li><li>Anna Akana – Writer</li><li>Danny Vasquez – Ignacio</li><li>Stan Lee – Bartender</li><li class="voice">Tom Kenny – Hideous Rabbit (röst)</li><li>Rick Avery – Helicopter Pilot #1</li><li>Erik Betts – Helicopter Pilot #2</li><li>Jeff Matthew Glover – PYM Tech Armed Guard</li><li>Bruce Shalett – Police</li><li>Natalie Stephany Aguilar – Pedestrian (uncredited)</li><li>Shafayat Ahmed – Pym Tech Employee (uncredited)</li><li>Leilani Amour Arenzana – SF Tenderloin Resident (uncredited)</li><li>Joseph Aro – Gangster (uncredited)</li><li>Charles Barden – Pym Tech Employee / Valet / SWAT Team Member (uncredited)</li><li>Julio Mario Barriga – Security Guard (uncredited)</li><li>Chace Beck – PYM Tech Employee (uncredited)</li><li>Mike Benitez – Dog Owner (uncredited)</li><li>Ray Benitez – Shareholder / Buyer (uncredited)</li><li>Patrick Constantine Bertagnolli Jr. – Prison Guard (uncredited)</li><li>Sean Boncato – Nissan Truck Driver (uncredited)</li><li>Bradley Bowen – CIA Agent (uncredited)</li><li>Alex Bretow – Scott's Neighbor (uncredited)</li><li>DuRa Brown – Uniformed Guard (uncredited)</li><li>Craig Carmean – DUI Prisoner (uncredited)</li><li>Cabran E. Chamberlain – Tourist (uncredited)</li><li>Raul Colon – Prisoner (uncredited)</li><li>Darren Council – Extra (uncredited)</li><li>Joseph Craig – Raver (uncredited)</li><li>John Crosby – Detective (uncredited)</li><li>Vincent Cucuzza – Detective (uncredited)</li><li>Thomas Dalby – Fort Point Bicyclist (uncredited)</li><li>Brian Danker – Opening Scene SFPD Arresting Officer (uncredited)</li><li>Varian David – Laundry Man (uncredited)</li><li>Matthew Sleepy Davis – Driver (uncredited)</li><li>Mike Dobbins – Meter Man (uncredited)</li><li>Lori D. Dotson – Pym Tech Employee / Personal Assistant (uncredited)</li><li>Garrett H. Dumas – Uniform Police Officer (uncredited)</li><li>Patrick Engler – Pedestrian (uncredited)</li><li>Chris Evans – Steve Rogers / Captain America (uncredited)</li><li>Gregory Fears – Detective (uncredited)</li><li>Hayley Gagner – Pedestrian in Rain (uncredited)</li><li>Fred Galle – Limo Driver (uncredited)</li><li>Neal Genys – School Kid (uncredited)</li><li>Tahseen Ghauri – Pym Technologies Employee (uncredited)</li><li>Brian Gonzalez – PYM Tech Valet (uncredited)</li><li>Trey Greene – Armed Security Guard (uncredited)</li><li>Tim Halpin – Ten Doors Tenderloin (uncredited)</li><li>Roger A. Harrison – Shareholder (uncredited)</li><li>Rory Healy – Shareholder (uncredited)</li><li>Joel Hebner – Pymtech Elite Security Guard (uncredited)</li><li>Walter Hendrix III – Police Detective Brown (uncredited)</li><li>Pedro Nicanor Hoyos – Prisoner (uncredited)</li><li>Alphonso A'Qen-Aten Jackson – Prisoner (uncredited)</li><li>Kregg Janke – Irish Softball Player (uncredited)</li><li>Laidee P. Jas – Latina Gangster (uncredited)</li><li>Marie Joelyn – Scientist (uncredited)</li><li>Jonathan S. Kennedy – Prison Guard Villegas (uncredited)</li><li>Brian Kim – Pedestrian (uncredited)</li><li>Christina July Kim – Jogger (uncredited)</li><li>Debi Kimsey – Shareholder (uncredited)</li><li>Larry Kitagawa – Fisherman (uncredited)</li><li>Andrew Koponen – Police Officer (uncredited)</li><li>Eric Kshywonis – SFPD Officer (uncredited)</li><li>Kevin Lapham – Shopper (uncredited)</li><li>Scott Ledbetter – Officer Green (uncredited)</li><li>John Lobato – PYM Tech Employee (uncredited)</li><li>Fernando Martinez – Bunker Guard #1 (uncredited)</li><li>Sam Medina – Bunker Guard #2 (uncredited)</li><li>Cesar Mendoza – Gabriel (uncredited)</li><li>Jordi Mollà – Castillo (uncredited)</li><li>Mahal Montoya – Tourist (uncredited)</li><li>Marc Moon – Street Guy by Taco Truck (uncredited)</li><li>Kurt Morgan – Man in Car (uncredited)</li><li>Ed Moy – Delivery Man (uncredited)</li><li>Roger Neal – Suited Guard (uncredited)</li><li>Steve Warky Nunez – Homeless Man (uncredited)</li><li>Amor Owens – Shareholder (uncredited)</li><li>Chris Pak – Scientist (uncredited)</li><li>Richard Pis – Panamaian Soldier (uncredited)</li><li>Zoie Quigley – Young Mom (uncredited)</li><li>Adam Reeser – Jogger (uncredited)</li><li>Vanessa Ross – Jogger (uncredited)</li><li>Vidal Ruben – Panamanian Guard #2 (uncredited)</li><li>Shaker Sangam – Casino Player (uncredited)</li><li>Logan Schoenthal – Party Boy (uncredited)</li><li>Benito M. Selim – Street Vendor (uncredited)</li><li>Blake Sewell – Prisoner (uncredited)</li><li>Kourtney Shales – Lab Tech (uncredited)</li><li>Jason Speer – Pymtech Supervisor (uncredited)</li><li>Sebastian Stan – Bucky Barnes (uncredited)</li><li>Ashante P.T. Stokes – Prison Officer (uncredited)</li><li>Bari Suzuki – Howard Stark Assistant (uncredited)</li><li>Jeremy Ray Taylor – Bully (uncredited)</li><li>Maurice G. Thomas – PYM Security Guard (uncredited)</li><li>Kimberly Tran – Pym Tech Receptionist (uncredited)</li><li>Jordan Verroi – Security Guard (uncredited)</li><li>Etienne Vick – Jeep Driver (uncredited)</li><li>Diego Ward – Panamanian Guard (uncredited)</li><li>Wenzell Washington – Prisoner (uncredited)</li><li>Steven Wiig – Lollipop Man (uncredited)</li><li>Aislinn Williams – Cashier - Darby (uncredited)</li><li>Erick Wofford – Pym Tech Employee (uncredited)</li><li>Shawn Yee – Tourist (uncredited)</li><li>Andrew Yount – San Francisco Cyclist (uncredited)</li><li>Bobby Ysip – Taxi Driver (uncredited)</li><li>Michael Zovistoski – Uniform Police Officer (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
