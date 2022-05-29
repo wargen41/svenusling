@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Charlies Änglar | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Charlies Änglar <a href="#" class="grade">++</a></h2>
+										<h3>Charlie's Angels</h3>
+										<p>
+										Film från <time datetime="2000"><a href="#">2000</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>McG</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1125.html">Cameron Diaz</a> – Natalie Cook</li><li><a href="/svenusling/p/1252.html">Drew Barrymore</a> – Dylan Sanders</li><li>Lucy Liu – Alex Munday</li><li><a href="/svenusling/p/1081.html">Bill Murray</a> – John Bosley</li><li><a href="/svenusling/p/1853.html">Sam Rockwell</a> – Eric Knox</li><li>Kelly Lynch – Vivian Wood</li><li><a href="/svenusling/p/1938.html">Tim Curry</a> – Roger Corwin</li><li>Crispin Glover – Thin Man</li><li><a href="/svenusling/p/1625.html">Matt LeBlanc</a> – Jason Gibbons</li><li>LL Cool J – Mr. Jones</li><li>Tom Green – Chad</li><li><a href="/svenusling/p/1593.html">Luke Wilson</a> – Pete Komisky</li><li>Sean Whalen – Pasqual</li><li>Tim Dunaway – Flight Attendant</li><li>Alex Trebek – Himself</li><li>Raliegh Wilson – Reform Officer</li><li>Mark Ryan – Fencing Opponent</li><li>Bobby Ore – Driving Instructor</li><li>Guy Oseary – DJ</li><li>Joe Duer – UPS Delivery Guy</li><li>Matthew Frauman – Red Star Systems Techie</li><li>Reginald C. Hayes – Red Star Systems Techie</li><li><a href="/svenusling/p/1638.html">Melissa McCarthy</a> – Doris</li><li>Bob Stephenson – Red Star Systems Director</li><li>Ned Bellamy – Red Star Systems Director</li><li>Raymond Patterson – Director's Buddy</li><li>Björn Flor – Red Star Systems Security Guard</li><li>Gaven E. Lucas – Boy</li><li>Michael Barryte – Boy</li><li>Andrew Wilson – Corwin's Driver</li><li>Branden Williams – Assistant Director</li><li>Frank Marocco – Accordionist</li><li>Micchno Nismiuraha – Stuntman</li><li>Diesel Pfingsten – Partygoer</li><li>Jim Calloway – Bouncer</li><li><a href="/svenusling/p/1546.html">Kevin Grevioux</a> – Bouncer</li><li>Michael Papajohn – Bathroom Thug</li><li>Jim Palmer – Shooter</li><li>Shawn Woods – Shooter</li><li>Kenny Endoso – Getaway Driver</li><li>Tom Garner – Getaway Driver</li><li>Isaac C. Singleton Jr. – Kidnapper</li><li>Paul Eliopoulos – Knox Thug</li><li>Tim Gilbert – Knox Thug</li><li>Al Goto – Knox Thug</li><li>Steven Ito – Knox Thug</li><li>Felipe Savahge – Knox Thug</li><li>Mike Smith – Knox Thug</li><li>Jerry Trimble – Knox Thug</li><li class="voice">John Forsythe – Charles 'Charlie' Townsend (röst)</li><li>Jeff Andrus – Cafe Crew Member (uncredited)</li><li>Ivana Bozilovic – Female Rock Climber (uncredited)</li><li>Paige Brooks – Geisha (uncredited)</li><li>Jennifer Cole – Corwin's Assistant (uncredited)</li><li>Affion Crockett – Dancer (uncredited)</li><li>Sylvie Hoffer –  (uncredited)</li><li>Ray Huffman – RedStar employee looking at lucy lieu's butt (uncredited)</li><li>Elke Jeinsen –  (uncredited)</li><li>Ariane Von Kamp – Girl at Party (uncredited)</li><li>Karen McDougal – Roger Corwin's Girl at Party (uncredited)</li><li>Christopher Metas – Airline Passenger (uncredited)</li><li>Darren Michaels – Astronaut #2 (uncredited)</li><li>Paul Oliver – Soul Train Dancer (uncredited)</li><li>Heather Elizabeth Parkhurst – Model (uncredited)</li><li>Josh Seffinger – Featured Dancer (uncredited)</li><li>Kevin Alexander Stea – Featured Dancer (uncredited)</li><li>Suzie Steen – Leonie (uncredited)</li><li>Tony Stef'Ano – Party Guest (uncredited)</li><li>Nikki Tuazon – Dancer (uncredited)</li><li>Peter Navy Tuiasosopo – Pink's Bodyguard (uncredited)</li><li>Stefanie Voigt –  (uncredited)</li><li>Junichi Yanagita – Knox Thug (uncredited)</li><li>Brad Everett Young – Red Star Employee (uncredited)</li><li>Cheung-Yan Yuen – Chinese Man on Plane (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The script was re-written at least 30 times until one was deemed &quot;acceptable&quot; by the producers and director.</li><li>A total of 18 different writers worked on this film.</li><li>An argument between [Bill Murray][/p?id=1081] and [Lucy Liu][/p?id=Lucy%20Liu] shut down filming for a day.</li><li>The role of Alex was originally offered to [Angelina Jolie][/p?id=1043] who turned it down after admitting she was not a fan of the original series. It was then offered to [Jada Pinkett Smith][/p?id=Jada%20Pinkett%20Smith] who declined it to film [Bamboozled][/f?id=Bamboozled] (2000) instead. [Thandie Newton][/p?id=1929] was finally cast but had to leave owing to freak weather which caused the [Mission: Impossible II][/f?id=16331] (2000) schedule to overrun. The role was eventually taken by [Lucy Liu][/p?id=Lucy%20Liu].</li><li>[Milla Jovovich][/p?id=Milla%20Jovovich], [Alyssa Milano][/p?id=Alyssa%20Milano] and [Julia Roberts][/p?id=1522] were among the many actresses who were forerunners for the parts of Natalie, Dylan and Alex.</li><li>The original cast of &quot;Charlie's Angels&quot; (1976) - [Jaclyn Smith][/p?id=Jaclyn%20Smith], Kate Jackson and [Farrah Fawcett][/p?id=Farrah%20Fawcett] - were invited to make cameo appearances, but declined. Reportedly, [Fawcett][/p?id=Farrah%20Fawcett] said she'd only do it if she were allowed to be the voice of Charlie, and Jackson insisted on playing the villainous role that eventually went to [Kelly Lynch][/p?id=Kelly%20Lynch]. Ultimately, [John Forsythe][/p?id=John%20Forsythe] and [Smith][/p?id=Jaclyn%20Smith] did appear in the sequel, [Charlie's Angels: Full Throttle][/f?id=11519] (2003)). [Smith's][/p?id=Jaclyn%20Smith] role was uncredited, however.</li><li>[Jenny McCarthy][/p?id=Jenny%20McCarthy] auditioned for the role of Natalie.</li><li>[Frank Coraci][/p?id=Frank%20Coraci] was once attached to direct.</li><li>[Drew Barrymore][/p?id=1252] was a huge &quot;Harry Potter&quot; fan, even going so far as to read bits of the books to the cast and crew during production. At the beginning of the film, during the clips of previous jobs, she can be seen wearing a Harry Potter disguise, complete with robes, black hair and round black glasses.</li><li>Although the &quot;bad guys&quot; use guns in the film, the Angels do not. [Drew Barrymore][/p?id=1252], who was also one of the producers, insisted that the Angels be able to do all their fighting without firearms.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

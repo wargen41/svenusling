@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Christopher Robin & Nalle Puh | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Christopher Robin & Nalle Puh <a href="#" class="grade">+++</a></h2>
+										<h3>Christopher Robin</h3>
+										<p>
+										Film från <time datetime="2018"><a href="#">2018</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Marc Forster</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1292.html">Ewan McGregor</a> – Christopher Robin</li><li>Hayley Atwell – Evelyn Robin</li><li>Bronte Carmichael – Madeline Robin</li><li>Mark Gatiss – Giles Winslow</li><li>Oliver Ford Davies – Old Man Winslow</li><li>Ronke Adekoluejo – Katherine Dane</li><li>Adrian Scarborough – Hal Gallsworthy</li><li>Roger Ashton-Griffiths – Ralph Butterworth</li><li>Ken Nwosu – Paul Hastings</li><li>John Dagleish – Matthew Leadbetter</li><li>Amanda Lawrence – Joan MacMillan</li><li>Orton O'Brien – Young Christopher Robin</li><li>Katy Carmichael – Christopher's Mother</li><li>Tristan Sturrock – Christopher's Father</li><li>Jasmine-Simone Charles – Little Girl</li><li>Paul Chahidi – Cecil Hungerford</li><li>Matt Gavan – Snooty Businessman</li><li>Gareth Mason – Balloon Vendor</li><li>Summer Brooks – Balloon Holder</li><li>Amrou Al-Kadhi – Nemir Azizi (London Ticket Attendant)</li><li>Zain Falzon – Boy in Stroller</li><li>Rainy Milo – Boy's Mother</li><li>Michael Jenn – London Train Conductor</li><li>Souad Faress – Wealthy Woman</li><li>Alan Clark – Sussex Train Attendant</li><li>Chris Pratt (XIV) – Sussex Train Porter</li><li>Harriet Leitch – Tea Server</li><li>Vera Chok – Margaret King (Train Passenger 1)</li><li>Claire Redcliffe – Boarding School Teacher</li><li>Elsa Minell-Solak – Madeline 3 Years Old</li><li>Matt Berry – Policeman Bobby</li><li>Simon Farnaby – Taxi Driver</li><li>Matthew Earley – Truck Driver</li><li>Mackenzie Crook – Newspaper Seller</li><li>Vivien Bridson – Old Man Winslow's Secretary</li><li>Narinder Samra – Milkman</li><li>Oliver Payne – Milk Delivery Boy</li><li>David Hartley – Man on Bus</li><li>Clara McGregor – Girl in Aircraft Design Office</li><li>Raj Ghatak – Neel Chawla (Barrel Mover)</li><li class="voice">Jim Cummings – Winnie the Pooh / Tigger (röst)</li><li class="voice">Brad Garrett – Eeyore (röst)</li><li class="voice">Nick Mohammed – Piglet (röst)</li><li class="voice">Peter Capaldi – Rabbit (röst)</li><li class="voice">Sophie Okonedo – Kanga (röst)</li><li class="voice">Sara Sheen – Roo (röst)</li><li class="voice">Toby Jones – Owl (röst)</li><li>Shola Adewusi – Rosemary Hopwood (uncredited)</li><li>Lucy Appleton – Girlfriend / Passerby (uncredited)</li><li>Lee Asquith-Coe – School Porter (uncredited)</li><li>Roy Beck – Winslow Board Director (uncredited)</li><li>Gintare Beinoraviciute – Passerby (uncredited)</li><li>Chloe-Megan Child – Girlfriend / Passerby (uncredited)</li><li>Bern Collaço – Train Passenger / Man in Swimwear (uncredited)</li><li>Nick Davison – Station Porter (uncredited)</li><li>Abbey Denne – Girlfriend (uncredited)</li><li>Olga Docheva – Book store customer (uncredited)</li><li>Errol Francis – Railway Passenger (uncredited)</li><li>David Gambier – WWII Soldier (uncredited)</li><li>Caroline Garnell – Winslow Efficiency Room Worker (uncredited)</li><li>Matt Harvey – Head Boy (uncredited)</li><li>Connor Haywood – Lance Corporal (uncredited)</li><li>Jackson Kai – Cricketer (uncredited)</li><li>Marco Mastrocola – Train passenger (uncredited)</li><li>Jeremy Oliver – Commuter (uncredited)</li><li>Thomas Padden – Businessman (uncredited)</li><li>Kumud Pant – Train Passenger (uncredited)</li><li>Gino Picciano – Man on the Bus (uncredited)</li><li>Richard Price – Winslow Office Worker / Lothbury Passerby (uncredited)</li><li>Anthony Richard Rowe – Home Guard (uncredited)</li><li>Mark Sayer – Home Guard / Commuter (uncredited)</li><li>Richard M. Sherman – Singer (uncredited)</li><li>Peter Singh – Ravi Patel (uncredited)</li><li>Sharron Spice – Commuter (uncredited)</li><li>Karol Steele – Well-Wisher / Passer-By / Train and Bus Passenger (uncredited)</li><li>A.k. Steppa – Platform Shop Vendor (uncredited)</li><li>Chloé Swan – Winslow Junior Office Worker (uncredited)</li><li>Rupert Turnbull – Red-Haired Boy (uncredited)</li><li>Rutvig Vaid – Station Porter (uncredited)</li><li>Kai Williams – Young Market Boy (uncredited)</li><li>Evie Wray – Mother (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Berlin International Film Festival, Interfilm Award - Otto Dibelius Film Award - Forum of New Cinema 1978</li><li>German Film Awards, Film Award in Gold - Bästa skådespelerska 1978 (Tina Engel)</li><li>German Film Awards, Film Award in Silver - Bästa film 1978</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Chicago International Film Festival, Gold Hugo - Bästa film 1978 (Margarethe von Trotta)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

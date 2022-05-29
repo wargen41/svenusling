@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chitty Chitty Bang Bang | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Chitty Chitty Bang Bang <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1968"><a href="#">1968</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre18">Musikal</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ken Hughes</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Dick Van Dyke – Caractacus Potts</li><li>Sally Ann Howes – Truly Scrumptious</li><li>Lionel Jeffries – Grandpa Potts</li><li>Gert Fröbe – Baron Bomburst</li><li>Anna Quayle – Baroness Bomburst</li><li><a href="/svenusling/p/1077.html">Benny Hill</a> – Toymaker</li><li>James Robertson Justice – Lord Scrumptious</li><li>Robert Helpmann – Child Catcher</li><li>Heather Ripley – Jemima</li><li>Adrian Hall – Jeremy</li><li>Barbara Windsor – Blonde</li><li>Davy Kaye – Admiral</li><li>Alexander Doré – First Spy</li><li>Bernard Spear – Second Spy</li><li>Stanley Unwin – Chancellor</li><li>Peter Arne – Captain of Guard</li><li>Desmond Llewelyn – Coggins</li><li>Victor Maddern – Junkman</li><li>Arthur Mullard – Big Man</li><li>Ross Parker – Chef</li><li>Gerald Campion – Minister</li><li>Felix Felton – Minister</li><li>Monti DeLyle – Minister</li><li>Totti Truman Taylor – Duchess</li><li>Larry Taylor – Lieutenant</li><li>Max Bacon – Orchestra Leader</li><li>Max Wall – Inventor</li><li>John Heawood – Inventor</li><li>Michael Darbyshire – Inventor</li><li>Kenneth Waller – Inventor</li><li>Gerald Taylor – Inventor</li><li>Eddie Davis – Inventor</li><li>Michael Audreson – Peter (uncredited)</li><li>Theo Aygar – 4th Minister (uncredited)</li><li>John Baskcomb – Castle Chef (uncredited)</li><li>Roy Beck – Grand Prix Spectator (uncredited)</li><li>Eunice Black – Courtier (uncredited)</li><li>Phil Collins – Vulgarian Child (uncredited)</li><li>Sadie Corre – Field Worker (uncredited)</li><li>John Crocker – Under Chef (uncredited)</li><li>Gabrielle Daye – Lady-in-Waiting (uncredited)</li><li>Harry Fielder – Soldier at Castle (uncredited)</li><li><a href="/svenusling/p/1372.html">Henry Gibson</a> – Dancer (uncredited)</li><li>Gary Graham – Child in Castle (uncredited)</li><li>Carson Green – Urchin (uncredited)</li><li>Kay Hamilton – 3rd Duchess (uncredited)</li><li>Miranda Hampton – Scullery Maid (uncredited)</li><li>Robert Jenner – Field Worker (uncredited)</li><li>Nigel Kingsley – Child in Castle (uncredited)</li><li>Teddy Kiss Atom – Minor Role (uncredited)</li><li>Jim Machin – Child (uncredited)</li><li>Connel Miles – Dancer (uncredited)</li><li>Roy Murray – Fairground Barker (uncredited)</li><li>Grace Newcombe – 2nd Duchess (uncredited)</li><li>Dickie Owen – Major Domo (uncredited)</li><li>Dido Plumb – Townsman (uncredited)</li><li>Colin Rix – Chauffeur (uncredited)</li><li>Jessie Robins – Pastry Cook (uncredited)</li><li>Joseph Ross – Child in Castle (uncredited)</li><li>Peter Ross – Child in Castle (uncredited)</li><li>Janette Rowsell – Scullery Maid (uncredited)</li><li>John Ruddock – Minister of Finance (uncredited)</li><li>Hugh Spight – Background (uncredited)</li><li>Ian Spofforth – Minor Role (uncredited)</li><li>Reg Thomason – Castle Guest (uncredited)</li><li>Rosetta Tropea – Child at the Fair (uncredited)</li><li>Richard Wattis – Secretary at Sweet Factory (uncredited)</li><li>Jeannette Wild – Minor Role (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>LAFCA Award - Bästa skådespelerska 1984 (Kathleen Turner)</li><li>Adult Video News Awards, AVN Award - Best Softcore Release 1986</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska skådespelerska 1986 (Kathleen Turner)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>NSFC Award - Bästa skådespelerska 1985 (Kathleen Turner)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>In an interview during filming in October 1967 [Dick Van Dyke][/p?id=Dick%20Van%20Dyke] revealed he only accepted the role of Caracatus Potts on the condition that he would not have to attempt an English accent. This was after [Van Dyke's][/p?id=Dick%20Van%20Dyke] attempt at a Cockney accent in [Mary Poppins][/f?id=16056] (1964) had been widely mocked by critics.</li><li>[Lionel Jeffries][/p?id=Lionel%20Jeffries] played [Dick Van Dyke's][/p?id=Dick%20Van%20Dyke] father, despite the fact that [Dick Van Dyke][/p?id=Dick%20Van%20Dyke] is actually six months older than [Jeffries][/p?id=Lionel%20Jeffries].</li><li>In an interview with [Rosie O'Donnell][/p?id=Rosie%20O'Donnell], [Sally Ann Howes][/p?id=Sally%20Ann%20Howes] reported that despite the difficulty of the choreography of the song &quot;Doll on a Music Box&quot;, she was able to film it in one take.</li><li>The current owner of the Chitty car is director [Peter Jackson][/p?id=1744]. He could be seen near the WETA Workshop in New Zealand driving cast members of The Hobbit films around in the car while playing the main theme song through a sound system.</li><li>According to [Dick Van Dyke][/p?id=Dick%20Van%20Dyke], director [Ken Hughes][/p?id=Ken%20Hughes] hated children and [Van Dyke][/p?id=Dick%20Van%20Dyke] would often have to tell him to stop cursing in front of the child actors.</li><li>While not the huge financial failure it is often called, the film received generally negative reviews, and lost money at the box office.</li><li>The film has a different story than the original book, by James Bond creator Ian Fleming. The screen story was a creation of children's-book author Roald Dahl, who had recently written the screen story of [You Only Live Twice][/f?id=15995] (1967), the first Bond film to deviate severely from the original Fleming book. Fleming's &quot;Chitty&quot; story was about the Potts family and their flying motorcar rescuing a French candy maker and his family from ordinary gangsters led by Joe the Monster. The story of &quot;Vulgaria&quot; is entirely a Dahl creation, full of his distinctive stock characters and situations. Dahl also came up with the character name Truly Scrumptious, which is possibly a tribute to Fleming's stock of female characters with names like Honey Ryder, Pussy Galore, and Kissy Suzuki.</li><li>[Dick Van Dyke][/p?id=Dick%20Van%20Dyke] originally turned the part down but was repeatedly offered the part with more money added in each offer. When the offer reached seven figures plus a percentage of the profits, he accepted the role.</li><li>With a running time of about two hours and 20 minutes, it's one of the longest children's film in history, certainly for its time. It wouldn't be until the next millennium, with the Harry Potter films, that films for children of such length would be made again.</li><li>[James Robertson Justice][/p?id=James%20Robertson%20Justice] had a stroke shortly after filming ended and had to give up acting.</li><li>The role of Truly Scrumptious was originally offered to [Julie Andrews][/p?id=1525], but she declined. [Sally Ann Howes][/p?id=Sally%20Ann%20Howes] had replaced [Julie Andrews][/p?id=1525] in the Broadway company of &quot;[My Fair Lady][/f?id=16556]&quot; when [Andrews][/p?id=1525] went to London in the musical, so Howes was offered the role.</li><li>According to several people, including [Dick Van Dyke][/p?id=Dick%20Van%20Dyke], [Ken Hughes][/p?id=Ken%20Hughes] was a talented 'action' director, but he wasn't good at directing people, especially children. [Van Dyke][/p?id=Dick%20Van%20Dyke], [Sally Ann Howes][/p?id=Sally%20Ann%20Howes], and members of the crew had to entertain the children and guide them through their performances.</li><li>[Dick Van Dyke][/p?id=Dick%20Van%20Dyke], who was smoking up to 40 cigarettes a day, found the dance numbers very demanding.</li><li>[Phil Collins][/p?id=Phil%20Collins] claims he was one of the children storming the castle at the end of the film but was edited out because of a rather large and unsightly bandage on his head that was covering a cyst.</li><li>[Robert Helpmann][/p?id=Robert%20Helpmann] (the Child Catcher) took his top set of false teeth out to aid his gaunt pinched face. It also helped produce his creepy voice, as he 'hisses' whenever he speaks.</li><li>Heather Ripley recalled that she did not realize until much later that [Dick Van Dyke][/p?id=Dick%20Van%20Dyke] was an alcoholic when the film was made.</li><li>[Dick Van Dyke][/p?id=Dick%20Van%20Dyke] had appeared in two [Walt Disney][/p?id=1984] movies prior to this. In a press release he quipped, &quot;This will out-[Disney][/p?id=1984] [Disney][/p?id=1984].&quot;</li><li>This is the first non-[Disney][/p?id=1984] film to feature songs by [Richard M. Sherman][/p?id=Richard%20M.%20Sherman] and [Robert B. Sherman][/p?id=Robert%20B.%20Sherman].</li><li>This is the only non-James Bond film produced by [Albert R. Broccoli][/p?id=Albert%20R.%20Broccoli] after the Bond series began. The movie is based on a novel written by Ian Fleming, creator of James Bond.</li><li>Heather Ripley refused to talk about the film for many years because her parents divorced during filming.</li><li>[Benny Hill][/p?id=1077] was first brought onto the project to rewrite some scenes at the request of [Dick Van Dyke][/p?id=Dick%20Van%20Dyke].</li><li>Director [Ken Hughes][/p?id=Ken%20Hughes] reportedly hated the finished film.</li><li>During down times on the set, [Benny Hill][/p?id=1077] and [Dick Van Dyke][/p?id=Dick%20Van%20Dyke] would have lengthy conversations about their favorite actors, Charles [Chaplin][/f?id=11492], [Stan Laurel][/p?id=1890], and [Buster Keaton][/p?id=Buster%20Keaton]. [Van Dyke][/p?id=Dick%20Van%20Dyke] would later recall in an interview, &quot;We both thought that we were born in the wrong era.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

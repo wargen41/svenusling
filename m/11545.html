@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ciderhusreglerna | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Ciderhusreglerna <a href="#" class="grade">++++</a></h2>
+										<h3>The Cider House Rules</h3>
+										<p>
+										Film från <time datetime="1999"><a href="#">1999</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Lasse Hallström</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1947.html">Tobey Maguire</a> – Homer Wells</li><li><a href="/svenusling/p/1150.html">Charlize Theron</a> – Candy Kendall</li><li>Delroy Lindo – Arthur Rose</li><li><a href="/svenusling/p/1729.html">Paul Rudd</a> – Lt. Wally Worthington</li><li><a href="/svenusling/p/1643.html">Michael Caine</a> – Dr. Wilbur Larch</li><li>Jane Alexander – Nurse Edna</li><li>Kathy Baker – Nurse Angela</li><li>Erykah Badu – Rose Rose</li><li><a href="/svenusling/p/1552.html">Kieran Culkin</a> – Buster</li><li>Kate Nelligan – Olive Worthington</li><li>Heavy D – Peaches</li><li>K. Todd Freeman – Muddy</li><li>Paz de la Huerta – Mary Agnes</li><li>J.K. Simmons – Ray Kendall</li><li>Evan Parke – Jack</li><li>Jimmy Flynn – Vernon</li><li>Lonnie Farmer – Hero</li><li>Erik Per Sullivan – Fuzzy</li><li>Spencer Diamond – Curly</li><li>Sean Andrew – Copperfield</li><li>John Albano – Steerforth</li><li>Skye McCole Bartusiak – Hazel</li><li>Clare Daly – Clara</li><li>Colin Irving – Major Winslow</li><li>Annie Corley – Carla</li><li>Patrick Donnelly – Adopting Father</li><li>Edie Schechter – Adopting Mother</li><li>Kasey Berry – 12yr. Old Girl</li><li>Mary Bogue – Big Dot</li><li>Victoria Stankiewicz – Debra</li><li>Christine Stevens – Florence</li><li>Earle C. Batchelder – Dr. Holtz</li><li>Norma Fine – Mrs. Goodhall</li><li>John Irving – Stationmaster</li><li>Eric Bruno Borgman – Flirting Soldier on Train (uncredited)</li><li>Kevin Chapman – Adopting Dad (uncredited)</li><li>John H. Tobin – Man on Train (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Faro Island Film Festival, Audience Award - Bästa film 1994</li><li>Faro Island Film Festival,  Golden Train Award - Bästa regi 1994 (Kar-Wai Wong)</li><li>Golden Horse Award - Bästa skådespelare 1994 (Tony Chiu-Wai Leung)</li><li>Stockholm Film Festival, FIPRESCI Prize - Competition 1994 (Kar-Wai Wong)</li><li>Stockholm Film Festival, Best Actress 1994 (Faye Wong)</li><li>Hong Kong Film Award - Bästa film 1995</li><li>Hong Kong Film Award - Bästa regi 1995 (Kar-Wai Wong)</li><li>Hong Kong Film Award - Bästa skådespelare 1995 (Tony Chiu-Wai Leung)</li><li>Hong Kong Film Award - Bästa klippning 1995</li><li>Hong Kong Film Critics Society Awards, Film of Merit 1995</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Chicago International Film Festival, Gold Hugo - Bästa film 1994 (Kar-Wai Wong)</li><li>Faro Island Film Festival, Golden Train Award - Bästa film 1994 (Kar-Wai Wong)</li><li>Faro Island Film Festival, Audience Award - Bästa skådespelare 1994 (Tony Chiu-Wai Leung)</li><li>Faro Island Film Festival, Audience Award - Bästa skådespelare 1994 (Takeshi Kaneshiro)</li><li>Faro Island Film Festival, Audience Award - Bästa skådespelerska 1994 (Faye Wong)</li><li>Golden Horse Award - Bästa film 1994</li><li>Golden Horse Award - Bästa regi 1994 (Kar-Wai Wong)</li><li>Golden Horse Award - Bästa skådespelerska 1994 (Faye Wong)</li><li>Golden Horse Award - Bästa foto 1994</li><li>Golden Horse Award - Bästa musik 1994</li><li>Golden Horse Award - Bästa klippning 1994</li><li>Golden Horse Award - Bästa scenografi 1994</li><li>Locarno International Film Festival, Golden Leopard 1994 (Kar-Wai Wong)</li><li>Stockholm Film Festival, Bronze Horse 1994</li><li>Hong Kong Film Award - Bästa skådespelerska 1995</li><li>Hong Kong Film Award - Bästa kvinnliga biroll 1995</li><li>Hong Kong Film Award - Bästa manus 1995</li><li>Hong Kong Film Award - Bästa foto 1995</li><li>Hong Kong Film Award - Bästa musik 1995</li><li>Hong Kong Film Award - Bästa scenografi 1995</li><li>CFCA Award - Bästa utländska film 1997</li><li>Independent Spirit Award - Bästa utländska film 1997</li><li>NSFC Award - Bästa utländska film 1997</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>One of the attractions of adapting the film for author [John Irving][/p?id=John%20Irving] was that he wanted his son, [Colin Irving][/p?id=Colin%20Irving], to play Wally Worthington. However, as the development process took over a decade, eventually his son was too old for the part and was not known enough to be considered for it in any event. However, the role of Major Winslow did ultimately provide [Colin Irving][/p?id=Colin%20Irving] a part in the film.</li><li>[Michael Winterbottom][/p?id=Michael%20Winterbottom] was once set to direct but pulled out due to his impatience with the lengthy development process.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

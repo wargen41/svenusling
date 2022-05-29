@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Charlie Wilson's War | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Charlie Wilson's War <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2007"><a href="#">2007</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mike Nichols</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1950.html">Tom Hanks</a> – Charlie Wilson</li><li><a href="/svenusling/p/1029.html">Amy Adams</a> – Bonnie Bach</li><li><a href="/svenusling/p/1522.html">Julia Roberts</a> – Joanne Herring</li><li><a href="/svenusling/p/1759.html">Philip Seymour Hoffman</a> – Gust Avrakotos</li><li>Terry Bozeman – CIA Award Presenter</li><li><a href="/svenusling/p/1108.html">Brian Markinson</a> – Paul Brown</li><li>Jud Tylor – Crystal Lee</li><li>Hilary Angelo – Kelly</li><li>Cyia Batten – Stacey</li><li>Kirby Mitchell – Stoned Guy</li><li>Ed Regine – Limo Driver</li><li>Daniel Eric Gold – Donnelly</li><li><a href="/svenusling/p/1279.html">Emily Blunt</a> – Jane Liddle</li><li>Peter Gerety – Larry Liddle</li><li>Wynn Everett – Receptionist - Charlie's Angels</li><li>Mary Bonner Baker – Marla - Charlie's Angels</li><li>Rachel Nichols – Suzanne - Charlie's Angels</li><li>Shiri Appleby – Jailbait - Charlie's Angels</li><li>P.J. Byrne – Jim Van Wagenen</li><li>John Slattery – Cravely</li><li>Thomas Crawford – Maintenance Man</li><li>Joe Roland – McGaffin</li><li>Patrika Darbo – Auctioneer</li><li>Carly Reeves – Slave Girl</li><li>Salaheddine Ben Chegra – Pakistani Steward</li><li>Om Puri – President Zia</li><li>Faran Tahir – Brigadier Rashid</li><li>Rizwan Manji – Colonel Mahmood</li><li>Maurice Sherbanee – Refugee In Wheelchair</li><li>Salam Sangi – Refugee Building Wall</li><li>Navid Negahban – Refugee Camp Translator</li><li>Mozhan Marnò – Refugee Camp Translator #2</li><li>Habib Saba – Afghan Boy</li><li>Nadia Miller – Afghan Girl</li><li>Michelle Arthur – Refugee Camp Nurse</li><li>Sheila Vosough – Refugee Mother</li><li>Edward Hunt – Embassy Marine</li><li>Michael Haley – Embassy Official</li><li>Denis O'Hare – Harold Holt</li><li>Michael Spellman – Agent Patrick</li><li>Russell Edge – Agent Wells</li><li>Christopher Denham – Mike Vickers</li><li>Joseph Sikora – Chess Player</li><li>Gabriel Tigerman – Chess Player</li><li>Patrick Bentley – Chess Player</li><li>Marc Pelina – Chess Player</li><li>Ken Stott – Zvi</li><li>Tracy Phillips – Bellydancer</li><li>Aharon Ipalé – Egyptian Defense Minister</li><li><a href="/svenusling/p/1690.html">Ned Beatty</a> – Doc Long</li><li>Mary Bailey – Doc Long's Secretary</li><li>Trish Gallaher Glenn – Joanne's Assistant</li><li>Ron Fassler – Mario</li><li>Enayat Delawary – Doc Long's Translator</li><li>Nancy Linehan Charles – Mrs. Long</li><li>Daston Kalili – Mujahideen Translator</li><li>Pasha D. Lychnikoff – Russian Helicopter Pilot</li><li>Ilia Volok – Russian Helicopter Pilot</li><li>Alexander Lvovsky – Russian Helicopter Pilot</li><li>Sammy Sheik – Stinger Mujahideen</li><li>Moneer Yaqubi – Stinger Mujahideen</li><li>Gabriel Justice – Stinger Mujahideen</li><li>Siyal Mohammad – Stinger Presenter</li><li>Quill Roberts – Stinger Presenter</li><li>Jim Jansen – Congressional Committee</li><li>Harry S. Murphy – Congressional Committee</li><li>Spencer Garrett – Congressional Committee</li><li>Kevin Cooney – Congressional Committee</li><li>Zahra Abbas – Afgan Refugee (uncredited)</li><li>Don Abernathy – Man in Park Eating Hotdog (uncredited)</li><li>Walid Amini – Freedom Fighter (uncredited)</li><li>Susan Jasmin Armon – Afghan Girl (uncredited)</li><li>Anthony Azizi – Orderly (uncredited)</li><li>Tiffany L. Baker – Oil Tycoon's Wife (uncredited)</li><li>Nazanin Boniadi – Afghan Refugee Woman (uncredited)</li><li>Celestina – Dancer (uncredited)</li><li>Darren Dowler – Congressman (uncredited)</li><li>Johnny Drocco – Dapper Dan at Party (uncredited)</li><li>François Duhamel – French Photographer (uncredited)</li><li>David Edelstein – Hotel Manager (uncredited)</li><li>Paul Haasch – Fraternity Slave Driver (uncredited)</li><li>Jody Jaress – VIP Party Guest (uncredited)</li><li>Alexander Kanellakos – Texas Millionaire (uncredited)</li><li>Daniel Lench – Party Goer #1 (uncredited)</li><li>Tucker Maloney – CIA Operative (uncredited)</li><li>J. Patrick McCormack – Senator (uncredited)</li><li>Ambria Miscia – Vegas Showgirl (uncredited)</li><li>Kazu Nagahama – Japanese Tourist (uncredited)</li><li>Mara New – Extra (uncredited)</li><li>Tom Ohmer – Party Guest (uncredited)</li><li>Ali Olomi – Injured Mujahadeen Soldier (uncredited)</li><li>Ron Ostrow – Congressional Committee #5 (uncredited)</li><li>J. Woodward Palmer – Bartender (uncredited)</li><li>Mary Linda Phillips – Party Guest (uncredited)</li><li>Dan Rather – Himself (uncredited|archive footage)</li><li>John Robert – Congressional Committee (uncredited)</li><li>Ann Ryan – Party Guest (uncredited)</li><li>Carol Shook – Refugee (uncredited)</li><li>Gubbi Sigurdsson – Doc Long's Aide (uncredited)</li><li>Cynthia Silver – Charlie's Party Guest (uncredited)</li><li>Cassidy Smith – Afghan Girl (uncredited)</li><li>Nicole Smolen – Afghan Girl (uncredited)</li><li>Rachel Style – Blodgett - CIA Cafeteria Cashier (uncredited)</li><li>Jackie Swanson – Texas Socialite (uncredited)</li><li>Teresa Swift – Indian (uncredited)</li><li>Shaun Toub – Hassan (uncredited)</li><li>Kyle Vogt – Male Party Guest #4 (uncredited)</li><li>Tommy Wilson-O'Brien – Congressman (uncredited)</li><li>Kurt Yaeger – Afghani Refugee (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>A special effects assistant was seriously injured when a hand-held mock-up of a Stinger missile exploded as it was being prepared for use in a scene aboard a helicopter.</li><li>[Emily Blunt][/p?id=1279] filmed her part in two days.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

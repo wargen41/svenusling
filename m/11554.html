@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Citizen Kane | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Citizen Kane <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1941"><a href="#">1941</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1711.html">Orson Welles</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1512.html">Joseph Cotten</a> – Jedediah Leland</li><li><a href="/svenusling/p/1711.html">Orson Welles</a> – Charles Foster Kane</li><li>Dorothy Comingore – Susan Alexander Kane</li><li>Agnes Moorehead – Mary Kane</li><li>Ruth Warrick – Emily Monroe Norton Kane</li><li>Ray Collins – James W. Gettys</li><li>Erskine Sanford – Herbert Carter</li><li>Everett Sloane – Mr. Bernstein</li><li>William Alland – Jerry Thompson</li><li>Paul Stewart – Raymond</li><li>George Coulouris – Walter Parks Thatcher</li><li>Fortunio Bonanova – Signor Matiste</li><li>Gus Schilling – The Headwaiter</li><li>Philip Van Zandt – Mr. Rawlston</li><li>Georgia Backus – Bertha Anderson</li><li>Harry Shannon – Kane's Father</li><li>Sonny Bupp – Charles Foster Kane III</li><li>Buddy Swan – Kane, age eight</li><li>Don Ackerman – Man at Party in Everglades (uncredited)</li><li>Loretta Agar – Dancing Girl (uncredited)</li><li>Demetrius Alexis – Newsreel Extra (uncredited)</li><li>Peter Allen – Man in Senate Investigating Committee (uncredited)</li><li>William Alston – Man at Xanadu Great Hall (uncredited)</li><li>Baudelio Alva – Newsreel Extra (uncredited)</li><li>T. Lockwood Arbright – Newsreel Extra (uncredited)</li><li>Sam Ash – Man at Boat Dock (uncredited)</li><li>Michael Audley – Man in Projection Room (uncredited)</li><li>Walter Bacon – City Room Employee (uncredited)</li><li>Richard Baer – Hillman (uncredited)</li><li>Harry A. Bailey – Man Singing at Inquirer Party (uncredited)</li><li>Alva Baudena – Extra in Newsreel (uncredited)</li><li>Charles Bennett – Entertainer (uncredited)</li><li>Joan Blair – Georgia (uncredited)</li><li>Danny Borzage – Man Singing at Inquirer Party (uncredited)</li><li>Robert Brent – Man Singing at Inquirer Party (uncredited)</li><li>James Brought – Extra in Newsreel (uncredited)</li><li>Morgan Brown – Servant (uncredited)</li><li>Harry Burkhardt – Wedding Guest (uncredited)</li><li>William Calkins – Man Singing at Inquirer Party (uncredited)</li><li>Porter Chase – Man Singing at Inquirer Party (uncredited)</li><li>Gene Chervow – Extra in Newsreel (uncredited)</li><li>J.J. Clark – Man Singing at Inquirer Party (uncredited)</li><li>Dorothy Cleveland – Person in Front of 'Chronicle' Building (uncredited)</li><li>Edmund Cobb – Inquirer Reporter (uncredited)</li><li>Eddie Coke – Reporter (uncredited)</li><li>Tom Coleman – Man Singing at Inquirer Party (uncredited)</li><li>Nat 'King' Cole – Pianist in 'El Rancho' (uncredited)</li><li>Gene Coogan – Newsreel Extra (uncredited)</li><li>Gino Corrado – Gino (uncredited)</li><li>Herbert Corthell – City Editor (uncredited)</li><li>Charles Cross – Man at Opera (uncredited)</li><li>Thomas A. Curran – Teddy Roosevelt (uncredited)</li><li>Louise Currie – Reporter at Xanadu (uncredited)</li><li>Jack Curtis – Boss Printer (uncredited)</li><li>Ed Dahlen – Newspaperman at Trenton Town Hall (uncredited)</li><li>Ernie Daniels – Hireling, Chicago Inquirer (uncredited)</li><li>Coy Danz – Nurse on Hospital Roof (uncredited)</li><li>Margaret Davis – Dancer (uncredited)</li><li>Tim Davis – Copy Boy (uncredited)</li><li>Donna Dax – House Maid (uncredited)</li><li>Marie Day – Insert Bit (uncredited)</li><li>Gayle DeCamp – Man Singing at Inquirer Party (uncredited)</li><li>Frances Deets – Dancer (uncredited)</li><li>Carl Deloro – Man Singing at Inquirer Party (uncredited)</li><li>George DeNormand – Newspaperman at Trenton Town Hall (uncredited)</li><li>Petra R. de Silva – Newswoman (uncredited)</li><li>Eddie Dew – Man in Projection Room (uncredited)</li><li>John Dilson – Ward Heeler (uncredited)</li><li>Robert Dudley – Photographer (uncredited)</li><li>Lou Duello – Man at Opera (uncredited)</li><li>Suzanne Dulier – French Maid (uncredited)</li><li>Art Dupuis – Newsreel Extra (uncredited)</li><li>Pauline Easterday – Dancer (uncredited)</li><li>Al Eben – Solly (uncredited)</li><li>John Eckert – Driver of Car (uncredited)</li><li>Jack Egan – Man Singing at Inquirer Party (uncredited)</li><li>Carl Ekberg – Adolf Hitler (uncredited)</li><li>Dick Elmore – Newsreel Extra (uncredited)</li><li>Edith Evanson – Leland's Nurse (uncredited)</li><li>Carl Faulkner – Hermann Goring (uncredited)</li><li>Juanita Fields – Dancer (uncredited)</li><li>Jack Floyd – Hireling, Chicago Inquirer (uncredited)</li><li>Ray Flynn – City Room Employee (uncredited)</li><li>Monty Ford – Man Singing at Inquirer Party (uncredited)</li><li>Jean Forward – Opera Singer (uncredited)</li><li>Olin Francis – Expressman (uncredited)</li><li>Louise Franklin – Maid (uncredited)</li><li>Al Frazier – Gorilla Man (uncredited)</li><li>Guy Gada – Man Singing at Inquirer Party (uncredited)</li><li>Gloria Gale – Dancer (uncredited)</li><li>Captain Garcia – General (uncredited)</li><li>Jack Gargan – Man at Xanadu Great Hall (uncredited)</li><li>Bud Geary – Newspaperman at Trenton Town Hall (uncredited)</li><li>Rudolph Germaine – Newsreel Extra (uncredited)</li><li>Bob Gladman – Man Singing at Inquirer Party (uncredited)</li><li>Renee Godfrey – Nurse (uncredited)</li><li>Jerry Gordon – Dancer (uncredited)</li><li>Peter Gowland – Guest (uncredited)</li><li>Jimmy Grant – Man at Party in Everglades (uncredited)</li><li>Jesse Graves – Joseph (uncredited)</li><li>Ernest Grooney – Man on Hospital Roof (uncredited)</li><li>Jack Gwynne – Man on Hospital Roof (uncredited)</li><li>Bobby Haines – Man Singing at Inquirer Party (uncredited)</li><li>Frank Haney – City Room Employee (uncredited)</li><li>Harry Harris – Man Singing at Inquirer Party (uncredited)</li><li>Sam Harris – Newsreel Extra (uncredited)</li><li>Lew Harvey – Newspaper Man (uncredited)</li><li>Henry Hebert – Best Man at Wedding (uncredited)</li><li>Edward L. Hemmer – Bit Part (uncredited)</li><li>Cliff Herd – Newspaperman at Trenton Town Hall (uncredited)</li><li>Bryan 'Slim' Hightower – Fish Driver (uncredited)</li><li>Harlan Hoagland – Man Singing at Inquirer Party (uncredited)</li><li>John Huettner – Man at Xanadu Great Hall (uncredited)</li><li>Mitchell Ingraham – Politician (uncredited)</li><li>Jack Itay – Man at Madison Square Garden (uncredited)</li><li>Jack Jahries – Extra in Newsreel (uncredited)</li><li>Walter James – Ward Heeler (uncredited)</li><li>George W. Jimenez – Waiter at Inquirer Party (uncredited)</li><li>Clayton Jones – Man Singing at Inquirer Party (uncredited)</li><li>Edna Mae Jones – Dancer (uncredited)</li><li>Harry Jones – Newspaperman at Trenton Town Hall (uncredited)</li><li>Alexander Julian – Man Singing at Inquirer Party (uncredited)</li><li>Bill Kane – Man on Hospital Roof (uncredited)</li><li>Arthur Kay – Orchestra Leader (uncredited)</li><li>Ivy Keene – Driver of Car / Woman in Loggia Scene (uncredited)</li><li>E. Kerry – Person in Front of 'Chronicle' Building (uncredited)</li><li>Milton Kibbee – Reporter at Wedding (uncredited)</li><li>Laura Knight – Dancer (uncredited)</li><li>Alan Ladd – Reporter Smoking Pipe at End (uncredited)</li><li>Mike Lally – Newsreel Extra (uncredited)</li><li>Carmen Laroux – Maid in Corridor in Xanadu (uncredited)</li><li>Perc Launders – Man in Projection Room (uncredited)</li><li>Walter Lawrence – Newsreel Extra (uncredited)</li><li>Bob Lawson – City Room Employee (uncredited)</li><li>Bert LeBaron – Newspaperman at Trenton Town Hall (uncredited)</li><li>David Ledner – Extra in Newsreel (uncredited)</li><li>Adam Linke – Druggist (uncredited)</li><li>J.D. Lockhart – Man Singing at Inquirer Party (uncredited)</li><li>Mary Lorraine – Dancer (uncredited)</li><li>Ellen Lowe – Miss Townsend (uncredited)</li><li>Ludwig Lowry – Man Singing at Inquirer Party (uncredited)</li><li>Buck Mack – Man (uncredited)</li><li>Evelyn Mackert – Woman at Boat Dock (uncredited)</li><li>James T. Mack – Prompter (uncredited)</li><li>Teddy Mangean – Man on Roof (uncredited)</li><li>Herman J. Mankiewicz – Newspaperman (uncredited)</li><li>Jack Manolas – Man Singing at Inquirer Party (uncredited)</li><li>Joe Manz – Jennings (uncredited)</li><li>Loretta Marsh – Dancer (uncredited)</li><li>Mickey Martin – Newsboy (uncredited)</li><li>Clyde McAtee – Newspaperman at Trenton Town Hall (uncredited)</li><li>Major McBride – Shadowgraph Man (uncredited)</li><li>Frank McClure – Minor Role (uncredited)</li><li>Lee McCluskey – Newsreel Extra (uncredited)</li><li>John McCormack – Man Singing at Inquirer Party (uncredited)</li><li>Charles Meakin – Civic Leader (uncredited)</li><li>Hercules Mendez – Man Singing at Inquirer Party (uncredited)</li><li>Jim Merritt – Newspaperman at Trenton Town Hall (uncredited)</li><li>Buddy Messinger – Man at Boat Dock (uncredited)</li><li>E.G. Miller – Neville Chamberlain / Newspaperman at Trenton Town Hall (uncredited)</li><li>Irving Mitchell – Dr. Corey (uncredited)</li><li>Bert Moorhouse – Man at Xanadu Great Hall (uncredited)</li><li>Philip Morris – Politician (uncredited)</li><li>Jack Morton – Butler (uncredited)</li><li>Louis Natheaux – Reporter (uncredited)</li><li>Frances E. Neal – Ethel (uncredited)</li><li>Lillian Nicholson – Woman at Opera (uncredited)</li><li>Leda Nicova – Dancer (uncredited)</li><li>George Noisom – Copy Boy (uncredited)</li><li>Joseph North – Male Secretary (uncredited)</li><li>John Northpole – Newsreel Extra (uncredited)</li><li>Field Norton – Opera Spectator (uncredited)</li><li>William H. O'Brien – Male Secretary (uncredited)</li><li>Arthur O'Connell – Reporter (uncredited)</li><li>Frank O'Connor – Man at Madison Square Garden (uncredited)</li><li>Paddy O'Flynn – Man Singing at Inquirer Party (uncredited)</li><li>Lillian O'Malley – Person in Front of 'Chronicle' Building (uncredited)</li><li>Edward Peil Jr. – Civic Leader (uncredited)</li><li>Gerald Pierce – Copy Boy Delivering Message in Chicago Hotel Room (uncredited)</li><li>Thomas Pogue – Man (uncredited)</li><li>Russ Powell – Man at Madison Square Garden (uncredited)</li><li>J.R. Ralston – Man Singing at Inquirer Party (uncredited)</li><li>Jack Raymond – Stagehand (uncredited)</li><li>Terrance Ray – Man at Boat Dock / Man at Madison Square Garden (uncredited)</li><li>William Reed – Man Singing at Inquirer Party (uncredited)</li><li>Guy Repp – Reporter (uncredited)</li><li>Jolane Reynolds – Dancer (uncredited)</li><li>Sam Rice – Man Singing at Inquirer Party (uncredited)</li><li>Verne Richards – City Room Employee (uncredited)</li><li>Suzanne Ridgeway – Dancer (uncredited)</li><li>Cyril Ring – Newspaperman at Trenton Town Hall (uncredited)</li><li>Myrtle Rishell – Big Governess (uncredited)</li><li>Jack Robbins – Newsreel Extra (uncredited)</li><li>Don Roberts – Man Singing at Inquirer Party (uncredited)</li><li>George Rogers – Newspaperman at Trenton Town Hall (uncredited)</li><li>Victor Romito – Newsreel Extra (uncredited)</li><li>Benny Rubin – Smather (uncredited)</li><li>Shimen Ruskin – Hireling (uncredited)</li><li>Edward Ryan – Man in Inquirer City Room (uncredited)</li><li>Jack Ryan – Man at Madison Square Garden (uncredited)</li><li>Robert Samven – Newsreel Extra (uncredited)</li><li>Walter Sande – Reporter at Xanadu (uncredited)</li><li>Jack Santoro – Man at Xanadu Great Hall (uncredited)</li><li>Francis Sayles – Politician (uncredited)</li><li>Dick Scott – Opera Spectator (uncredited)</li><li>Ruth Seeley – Dancer (uncredited)</li><li>George Sherwood – Hireling (uncredited)</li><li>Brent Shugar – Newsreel Extra (uncredited)</li><li>Bruce Sidney – Newsman (uncredited)</li><li>Guy Smith – Newsreel Extra (uncredited)</li><li>Roy Smith – Man Singing at Inquirer Party (uncredited)</li><li>Vince Speaker – Newsreel Extra (uncredited)</li><li>George Sperry – City Room Employee (uncredited)</li><li>Sam Steele – Newspaperman at Trenton Town Hall (uncredited)</li><li>Ralph Stein – Hireling, Chicago Inquirer (uncredited)</li><li>Bert Stevens – Man at Madison Square Garden (uncredited)</li><li>Landers Stevens – Investigator (uncredited)</li><li>Dimas Sutteno – Newsreel Extra (uncredited)</li><li>Jack Taylor – Newsreel Extra (uncredited)</li><li>Norman Taylor – Man in Senate Investigating Committee (uncredited)</li><li>Bob Terry – Extra in Newsreel (uncredited)</li><li>Karl Thomas – Jetsam (uncredited)</li><li>Robert B. Tobin – Man Singing at Inquirer Party (uncredited)</li><li>Gregg Toland – Interviewer in 1935 Newsreel (uncredited)</li><li>Kathryn Trosper – Reporter at Xanadu (uncredited)</li><li>Fred Trowbridge – Man Singing at Inquirer Party (uncredited)</li><li>Glen Turnbull – Flotsam (uncredited)</li><li>Gohr Van Vleck – Stagehand (uncredited)</li><li>Harry J. Vejar – Portuguese Laborer (uncredited)</li><li>Tim Wallace – Newsreel Extra (uncredited)</li><li>Ken Weaver – Newspaperman at Trenton Town Hall (uncredited)</li><li>Charles West – Stage Manager (uncredited)</li><li>Larry Wheat – Man Singing at Inquirer Party (uncredited)</li><li>Patrick Whitney – Reporter (uncredited)</li><li>Jan Wiley – Reporter at Xanadu (uncredited)</li><li>Bill Wilkens – Man on Roof (uncredited)</li><li>Larry Williams – Man Singing at Inquirer Party (uncredited)</li><li>Tudor Williams – Chorus Master (uncredited)</li><li>Richard Wilson – Reporter (uncredited)</li><li>Vivian Wilson – Dancer (uncredited)</li><li>Roland Winters – Newspaperman at Trenton Town Hall (uncredited)</li><li>Vera Winters – Woman in Projection Room (uncredited)</li><li>Arthur Yeoman – Speaker (uncredited)</li><li>Louis Young – Newsreel Extra (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Screenwriter [Herman J. Mankiewicz][/p?id=Herman%20J.%20Mankiewicz] wrote the balance of the screenplay for this film from a hospital bed recovering from illness.</li><li>The scene where Kane destroys Susan's room after she's left him was done on the first take. Director/star [Orson Welles'][/p?id=1711] hands were bleeding, and he is quoted as saying, &quot;I really felt it.&quot;</li><li>The camera looks up at Charles Foster Kane and his best friend Jedediah Leland and down at weaker characters like Susan Alexander Kane. This was a technique that [Orson Welles][/p?id=1711] borrowed from [John Ford][/p?id=1483] who had used it two years previously on [Stagecoach][/f?id=12142] (1939). [Welles][/p?id=1711] privately watched [Stagecoach][/f?id=12142] (1939) about 40 times while making this film.</li><li>Despite all the publicity, the film was a box office flop and was quickly consigned to the RKO vaults. At 1941's Academy Awards the film was booed every time one of its nine nominations was announced. It was only re-released for the public in the mid-1950s.</li><li>Xanadu's design is based on William Randolph Hearst's elaborate home in San Simeon and Mont St Michel in France.</li><li>For the later scenes featuring an older Kane, [Orson Welles][/p?id=1711] sat in the make-up chair from 2:30 am to be ready for a 9:00 am start.</li><li>[Orson Welles][/p?id=1711] always claimed that this picture was not the biography of one specific individual, but a composite of characters from that era in America. Though universally recognized as based on the life of William Randolph Hearst, there were also elements in the story that applied to the life of Chicago utilities magnate Samuel Insull (1859-1938).</li><li>The film showcased a technique called &quot;universal focus.&quot; To get the image of Kane and the poster picture during the speech sequence, short lenses were used. At the same time, the key light (the main lights) were gradually increased to get both images sharp and clear.</li><li>The production number of this movie given by RKO is: 281.</li><li>The original nitrate negatives are gone; they were lost in a fire during the 1970s.</li><li>In the 1970s, film critic Pauline Kael wrote an essay called &quot;Raising Kane&quot;. In it, she credited co-screenwriter [Herman J. Mankiewicz][/p?id=Herman%20J.%20Mankiewicz] for writing the entire script for this film, while alleging that [Orson Welles][/p?id=1711] &quot;didn't write one line of the shooting script.&quot; However, this conclusion has very little factual basis, and was largely based on hearsay. The shooting script was actually based on two scripts (written separately by [Welles][/p?id=1711] and Mankiewicz) that [Welles][/p?id=1711] combined into one for the final version.</li><li>One line by Kane, &quot;Don't believe everything you hear on the radio,&quot; might be construed as a sly wink from [Orson Welles][/p?id=1711] to those who panicked upon hearing his radio broadcast of &quot;War of the Worlds.&quot;</li><li>William Randolph Hearst was so angered by the film that he accused [Orson Welles][/p?id=1711] of being a Communist in order to keep the film from being released.</li><li>The audience that watches Kane make his speech is, in fact, a still photo. To give the illusion of movement, hundreds of holes were pricked in with a pin, and lights moved about behind it.</li><li>Dispute still rages over ownership of the original idea for the script, with many claiming that it was the brainchild of co-writer [Herman J. Mankiewicz][/p?id=Herman%20J.%20Mankiewicz]. In his school days, [Orson Welles][/p?id=1711] wrote a play titled &quot;Marching Song.&quot; Though never produced, it was the exploration of a public figure through the testimonies of the people in his life. Mankiewicz certainly wrote the first draft of the screenplay, which took him about six weeks.</li><li>During filming [Orson Welles][/p?id=1711] received a warning that William Randolph Hearst had arranged for a naked woman to jump into his arms when he entered his hotel room, and there was also a photographer in the room to take a picture that would be used to discredit him. [Welles][/p?id=1711] spent the night elsewhere, and it is unknown if the warning was true.</li><li>Editor [Robert Wise][/p?id=Robert%20Wise] dragged the &quot;News on the March&quot; negatives over concrete, among other tortures, to give them an aged look.</li><li>[Orson Welles'][/p?id=1711] deal with RKO gave him unprecedented freedom for a first-time director. He was to write, produce, direct and act in two pictures for the company, with complete autonomy in the hiring of actors, technicians and final cut. Studio boss [George Schaefer][/p?id=George%20Schaefer] had to greenlight the project and could veto any request for extra finance over the modest $500,000 budget (which eventually would be exceeded by $200,000), but no one other than [Welles][/p?id=1711] was allowed to view the rushes.</li><li>After production wrapped, William Randolph Hearst forbade any advertisement of the film in any of his newspapers - or indeed any other RKO movies - and offered to buy the negative from studio head [George Schaefer][/p?id=George%20Schaefer] with a view to destroying it. Fortunately [Orson Welles][/p?id=1711] had already previewed the film to influential industry figures to rave reviews, so it was granted a limited theatrical release. Critics from non-Hearst newspapers fell over themselves praising the film. The film itself was not reviewed in any Hearst newspaper until the mid-1970s, when the film critic for the &quot;Los Angeles Herald-Examiner&quot; finally reviewed it.</li><li>When asked by friends how Kane's last words would be known when he died alone, [Orson Welles][/p?id=1711] reportedly stared for a long time before saying, &quot;Don't you ever tell anyone of this.&quot; See also the Goofs entry.</li><li>For this movie [Orson Welles][/p?id=1711], along with cinematographer [Gregg Toland][/p?id=Gregg%20Toland], pioneered &quot;deep focus&quot;, a technique that keeps every object in the foreground, center and background in simultaneous focus. This brought a sense of depth to the two-dimensional world of movies.</li><li>[Orson Welles][/p?id=1711] reportedly wore out a print of [The Power and the Glory][/f?id=Hans%20Andra%20Hustru] (1933) while studying its story construction, a technique its screenwriter Preston Sturges referred to as &quot;narratige.&quot;</li><li>On the night the movie opened in San Francisco, [Welles][/p?id=1711] found himself alone with William Randolph Hearst in an elevator at the city's Fairmont Hotel. Aware that his father and Hearst were friends, [Welles][/p?id=1711] extended an invitation to the magnate to attend the premiere of [Citizen Kane][/f?id=11554] (1941). Hearst disregarded the offer and as Hearst was about to exit the elevator at his floor, [Welles][/p?id=1711] remarked, &quot;Charles Foster Kane would have accepted.&quot;</li><li>[Orson Welles][/p?id=1711] was just 25 years old when he directed this, his first feature.</li><li>The favorite film of &quot;Peanuts&quot; cartoonist Charles M. Schulz. He incorporated many references to it in his strips over the years.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

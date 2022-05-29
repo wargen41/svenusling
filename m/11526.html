@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chicago | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Chicago <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre18">Musikal</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Rob Marshall</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Taye Diggs – Bandleader</li><li><a href="/svenusling/p/1776.html">Renée Zellweger</a> – Roxie Hart</li><li>Cliff Saunders – Stage Manager</li><li>Catherine Zeta-Jones – Velma Kelly</li><li><a href="/svenusling/p/1787.html">Richard Gere</a> – Billy Flynn</li><li>Queen Latifah – Matron Mama Morton</li><li><a href="/svenusling/p/1474.html">John C. Reilly</a> – Amos Hart</li><li>Dominic West – Fred Casely</li><li>Christine Baranski – Mary Sunshine</li><li>Jayne Eastwood – Mrs. Borusewicz</li><li>Bruce Beaton – Police Photographer</li><li>Roman Podhora – Sergeant Fogarty</li><li><a href="/svenusling/p/1189.html">Colm Feore</a> – Harrison</li><li>Rob Smith – Newspaper Photographer</li><li>Sean Wayne Doyle – Reporter</li><li>Steve Behal – Prison Clerk</li><li>Robbie Rox – Prison Guard</li><li>Chita Rivera – Nickie</li><li>Susan Misner – Liz</li><li>Denise Faye – Annie</li><li>Deidre Goodwin – June</li><li>Ekaterina Chtchelkanova – Hunyak</li><li>Mya – Mona</li><li>Joey Pizzi – Bernie / Male Ensemble</li><li>Scott Wise – Ezekial Young / Male Dancer</li><li>Ken Ard – Wilbur / Male Dancer</li><li>Marc Calamia – Hunyak's Husband / Male Dancer</li><li>Niki Wray – Veronica</li><li>Gregory Mitchell – Charlie / Male Dancer</li><li>Sebastian La Cause – Al Lipschitz / Male Dancer</li><li>Brendan Wall – Billy's Assistant</li><li>Cleve Asbury – 'Gun' Reporter #1 / Hospital Reporter / Male Dancer / Male Ensemble</li><li>Rick Negron – 'Gun' Reporter #2 / Male Dancer / Male Ensemble</li><li>Shaun Amyot – 'Gun' Reporter #3 / Male Dancer / Male Ensemble</li><li>Eve Crawford – Billy's Secretary</li><li class="voice">Bill Corsair – Newsreel Announcer (röst)</li><li>Bill Britt – Auctioneer</li><li>Gerry Fiorini – Sailor</li><li>Elizabeth Law – Perfume Lady</li><li>Lucy Liu – Kitty Baxter</li><li>Joseph Scoren – Harry</li><li>Monique Ganderton – Bare Woman #1</li><li>April Morgan – Bare Woman #2</li><li>Marty Moreau – Groin Reporter</li><li>Conrad Dunn – Doctor</li><li>Jonathan Whittaker – Bailiff</li><li>Rod Campbell – Jury Foreman</li><li>Brett Caruso – Harrison's Assistant</li><li>Sean McCann – Judge</li><li>Jeff Clarke – Court Clerk</li><li>Patrick Salvagna – Newsboy</li><li>Kathryn Zenna – Woman Shooter</li><li>Jeff Pustil – Club Owner</li><li>Roxane Barlow – Female Dancer / Female Ensemble</li><li>Jocelyn Dowling – Female Dancer / Female Ensemble</li><li>Melanie A. Gage – Female Dancer / Female Ensemble</li><li>Michelle Johnston – Female Dancer</li><li>Charley King – Female Dancer / Female Ensemble</li><li>Mary Ann Lamb – Female Dancer / Female Ensemble</li><li>Vicky Lambert – Female Dancer / Female Ensemble</li><li>Tara Nicole Hughes – Female Dancer / Female Ensemble</li><li>Cynthia Onrubia – Female Dancer / Female Ensemble</li><li>Karine Plantadit-Bageot – Female Dancer</li><li>Jennifer Savelli – Female Dancer</li><li>Natalie Willes – Female Dancer</li><li>Karen Andrew – Female Dancer</li><li>Kelsey Chace – Female Dancer</li><li>Catherine Chiarelli – Female Dancer</li><li>Theresa Coombe – Female Dancer</li><li>Lisa Ferguson – Female Dancer</li><li>Melissa Flerangile – Female Dancer</li><li>Michelle Galati – Female Dancer</li><li>Sheri Godfrey – Female Dancer</li><li>Brittany Gray – Female Dancer</li><li>Karen Holness – Female Dancer</li><li>Amber-Kelly Mackereth – Female Dancer</li><li>Jody-Lynn McFadden – Female Dancer</li><li>Faye Rauw – Female Dancer</li><li>Rhonda Roberts – Female Dancer</li><li>Leigh Torlage – Female Dancer</li><li>Robyn Wong – Female Dancer</li><li>Ted Banfalvi – Male Dancer</li><li>Harrison Beal – Male Dancer / Male Ensemble</li><li>Paul Becker – Male Dancer</li><li>Jean-Luc Côté – Male Dancer</li><li>Scott Fowler – Male Dancer / Male Ensemble</li><li>Edgar Godineaux – Male Dancer / Male Ensemble</li><li>Bill Hartung – Male Dancer / Male Ensemble</li><li>Darren Lee – Male Dancer / Male Ensemble</li><li>Troy Liddell – Male Dancer</li><li>Blake McGrath – Male Dancer</li><li>Robert Montano – Male Dancer / Male Ensemble</li><li>Sean Palmer – Male Dancer / Male Ensemble</li><li>Desmond Richardson – Male Dancer / Male Ensemble</li><li>Martin Samuel – Male Dancer</li><li>Jason Sermonia – Male Dancer</li><li>Jeff Siebert – Male Dancer / Male Ensemble</li><li>Sergio Trujillo – Male Dancer</li><li>Stacy Clark Baisley – Acrobat</li><li>Megan Fehlberg – Acrobat</li><li>Rachel Jacobs – Acrobat</li><li>Rebecca Leonard – Acrobat</li><li>Erin Michie – Acrobat</li><li>Danielle Rueda-Watts – Acrobat</li><li>Dana Calitri – Female Ensemble</li><li>Kate Coffman-Lloyd – Female Ensemble</li><li>Laura Dean – Female Ensemble</li><li>Margaret Dorn – Female Ensemble</li><li>Capathia Jenkins – Female Ensemble</li><li>Audrey Martells – Female Ensemble</li><li>Sara Ramirez – Female Ensemble</li><li>Nicki Richards – Female Ensemble</li><li>Dennis Collins – Male Ensemble</li><li>Darius de Haas – Male Ensemble</li><li>Willie Falk – Male Ensemble</li><li>Curtis King – Male Ensemble</li><li>Timothy Shew – Male Ensemble</li><li>Fronzi Thornton – Male Ensemble</li><li>Eric Troyer – Male Ensemble</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[John Travolta][/p?id=1501], [Kevin Spacey][/p?id=1550], [John Cusack][/p?id=1480], [Steve Martin][/p?id=1903] and [Hugh Jackman][/p?id=1379] were all considered for the role of Billy Flynn.</li><li>[Angelina Jolie][/p?id=1043] auditioned for the role of Velma Kelly.</li><li>[Renée Zellweger][/p?id=1776] had no singing or dancing training prior to this film.</li><li>The role of Billy Flynn was offered several times to [John Travolta][/p?id=1501] before eventually going to [Richard Gere][/p?id=1787]. This is the fourth film that [Travolta][/p?id=1501] has turned down and [Gere][/p?id=1787] accepted; the other three are: [American Gigolo][/f?id=American%20Gigolo] (1980), [Days of Heaven][/f?id=Himmelska%20Dagar] (1978), and [An Officer and a Gentleman][/f?id=En%20Officer%20Och%20En%20Gentleman] (1982). [Travolta][/p?id=1501] has said that he deeply regrets declining the part.</li><li>[Richard Gere][/p?id=1787] took tap dance lessons for three months. His tap dance scene was shot in half a day.</li><li>[Rob Marshall][/p?id=Rob%20Marshall] had previously been hired by the producers to direct the TV version (Annie (1999) (TV)) of the play &quot;Annie&quot;; he had not wanted to direct that earlier film, preferring only to do choreography, but was persuaded to do both. That film's success resulted in his getting the job to direct this film.</li><li>[Charlize Theron][/p?id=1150] had initially secured the role of Roxie Hart while [Nicholas Hytner][/p?id=Nicholas%20Hytner] was attached as director. When [Hytner][/p?id=Nicholas%20Hytner] withdrew and [Rob Marshall][/p?id=Rob%20Marshall] took over, [Theron][/p?id=1150] had to audition again and lost the lead to [Renée Zellweger][/p?id=1776].</li><li>A long battle took place between the agents of [Renée Zellweger][/p?id=1776] and [Catherine Zeta-Jones][/p?id=Catherine%20Zeta-Jones] over billing on the movie poster. In the end, &quot;diagonal billing&quot; was settled upon - as depending on which way you read it (top to bottom or left to right), both appear to get top billing.</li><li>[Kathy Bates][/p?id=1535] was director [Rob Marshall's][/p?id=Rob%20Mars] first choice to play Matron Mama Morton, but she was scheduled to film [About Schmidt][/f?id=10060]. Coincidentally, [Queen Latifah][/p?id=Queen%20Latifah] (who played the role) was nominated for an Oscar for her performance, as was [Bates][/p?id=1535] in the same category for the aforementioned film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

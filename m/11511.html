@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Charlie Chan På Operan | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Charlie Chan På Operan <a href="#" class="grade">+++</a></h2>
+										<h3>Charlie Chan at the Opera</h3>
+										<p>
+										Film från <time datetime="1936"><a href="#">1936</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre18">Musikal</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>H. Bruce Humberstone</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1990.html">Warner Oland</a> – Charlie Chan</li><li><a href="/svenusling/p/1095.html">Boris Karloff</a> – Gravelle</li><li>Keye Luke – Lee Chan</li><li>Charlotte Henry – Mlle. Kitty</li><li>Thomas Beck – Phil Childers</li><li>Margaret Irving – Mme. Lilli Rochelle</li><li>Gregory Gaye – Enrico Barelli</li><li>Nedda Harrigan – Mme. Anita Barelli</li><li>Frank Conroy – Mr. Whitely</li><li>Guy Usher – Inspector Regan</li><li>William Demarest – Sergeant Kelly</li><li>Maurice Cass – Mr. Arnold</li><li>Tom McGuire – Morris</li><li>William Bailey – Detective (uncredited)</li><li>Charles Bancroft – Soldier in Opera (uncredited)</li><li>John Bleifer – Murdered Orderly (uncredited)</li><li>Stanley Blystone – Backstage Cop (shoots Gravelle) (uncredited)</li><li>Myrta Bonillas – Villager in Opera (uncredited)</li><li>Raymond Brown – Guard (uncredited)</li><li>Carita Crawford – Dancer in Opera (uncredited)</li><li>Patrick Cunning – Villager in Opera (uncredited)</li><li>Zari Elmassian – Mme. Rochelle (singing voice) (uncredited)</li><li>Frank Fanning – Cop (uncredited)</li><li>Jim Farley – Detective (uncredited)</li><li>Adolph Faylauer – Opera Spectator (uncredited)</li><li>Larry Fisher – Cop (uncredited)</li><li>Benson Fong – Opera Supernumerary (uncredited)</li><li>J.C. Fowler – Opera Spectator (uncredited)</li><li>Otto Fries – Innkeeper (uncredited)</li><li>Bud Geary – Cop (uncredited)</li><li>Milton Gowman – Villager in Opera (uncredited)</li><li>Herschel Graham – Villager in Opera (uncredited)</li><li>Harrison Greene – Detective (uncredited)</li><li>Julia Griffith – Opera Spectator (uncredited)</li><li>Cliff Herd – Stagehand (uncredited)</li><li>Charles Anthony Hughes – Ambulance Doctor (uncredited)</li><li>Selmer Jackson – Hudson - Wire-Photo Technician (uncredited)</li><li>Gladden James – Regan's Secretary (uncredited)</li><li>Jane Keckley – 2nd Wardrobe Woman (uncredited)</li><li>Fred Kelsey – Dugan, Policeman (uncredited)</li><li>Marc Lawrence – Undetermined Minor Role (uncredited|unconfirmed)</li><li><a href="/svenusling/p/1526.html">Karl Malden</a> – Hospital Attendant (uncredited)</li><li>Leonard Mellon – Villager in Opera (uncredited)</li><li>Tony Merlo – Villager in Opera (uncredited)</li><li>Dodo Newton – Barmaid in Opera (uncredited)</li><li>Eddie Parker – Cop (uncredited)</li><li>Richard Powell – Cop (uncredited)</li><li>Enrique de Rosas – Florist (uncredited)</li><li>Tony Roux – Villager in Opera (uncredited)</li><li>Dick Rush – Detective (uncredited)</li><li>Alexander Schoenberg – Prompter (uncredited)</li><li>Eddie Shubert – Guard (uncredited)</li><li>Lee Shumway – Sanatarium Guard (uncredited)</li><li>Mary Louise Smith – Villager in Opera (uncredited)</li><li>Harry Strang – Cop (uncredited)</li><li>Eddie Tamblyn – Call Boy (uncredited)</li><li>Marjorie Timm – Villager in Opera (uncredited)</li><li>Harland Tucker – Private Detective (uncredited)</li><li>Hilda Vaughn – Agnes - Wardrobe Woman (uncredited)</li><li>Emmett Vogan – Smitty - Wire-Photo Technician (uncredited)</li><li>Billy Wayne – Electrician (uncredited)</li><li class="voice">Tudor Williams – Gravelle's Singing Voice (röst) (uncredited)</li><li>Joan Woodbury – Dancer in Opera (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Stage manager [Maurice Cass][/p?id=Maurice%20Cass] vows that the opera will go on &quot;even if Frankenstein walks in!&quot; Audiences were well aware that this in-joke referred to star [Boris Karloff][/p?id=1095], who was in the theater at the time.</li><li>The unique billing listed [Warner Oland][/p?id=1990] vs. [Boris Karloff][/p?id=1095] above the title. [Karloff][/p?id=1095] had turned down the title role in ::Dr Yogami Från London||Werewolf of London, which would have pitted him against his current co-star. The part was ultimately played by [Henry Hull][/p?id=Henry%20Hull].</li><li>[Boris Karloff][/p?id=1095], did not do his own singing in this film. His voice was dubbed by a singer named [Tudor Williams][/p?id=Tudor%20Williams].</li><li>Though only excerpts are used, Oscar Levant wrote an entire short opera for this film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
