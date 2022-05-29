@@ -1,0 +1,227 @@
+<br />
+<b>Warning</b>:  array_key_exists() expects parameter 2 to be array, null given in <b>/Library/WebServer/Documents/lib/functions.php</b> on line <b>150</b><br />
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Topher Grace | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Topher Grace</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1978-07-12">1978-07-12</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/11031.html">BlacKkKlansman</a></li><li><a href="/svenusling/m/15102.html">Interstellar</a></li><li><a href="/svenusling/m/17229.html">Ocean's Eleven</a></li><li><a href="/svenusling/m/17507.html">Predators</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/16365.html">Mona Lisas Leende</a></li><li><a href="/svenusling/m/18670.html">Spider-Man 3</a></li><li><a href="/svenusling/m/20787.html">Truth</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/17231.html">Ocean's Twelve</a></li><li><a href="/svenusling/m/21889.html">War Machine</a></li><li><a href="/svenusling/m/21944.html">Win A Date With Tad Hamilton!</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/20204.html">That '70s Show: It's a Wonderful Life</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/20124.html">That '70s Show Säsong 1</a></li><li><a href="/svenusling/m/20125.html">That '70s Show: That '70s Pilot</a></li><li><a href="/svenusling/m/20126.html">That '70s Show: Eric's Birthday</a></li><li><a href="/svenusling/m/20127.html">That '70s Show: Streaking</a></li><li><a href="/svenusling/m/20128.html">That '70s Show: Battle of the Sexists</a></li><li><a href="/svenusling/m/20129.html">That '70s Show: The Keg</a></li><li><a href="/svenusling/m/20130.html">That '70s Show: Eric's Burger Job</a></li><li><a href="/svenusling/m/20131.html">That '70s Show: That Disco Episode</a></li><li><a href="/svenusling/m/20132.html">That '70s Show: Drive in</a></li><li><a href="/svenusling/m/20133.html">That '70s Show: Thanksgiving</a></li><li><a href="/svenusling/m/20134.html">That '70s Show: Sunday, Bloody Sunday</a></li><li><a href="/svenusling/m/20135.html">That '70s Show: Eric's Buddy</a></li><li><a href="/svenusling/m/20136.html">That '70s Show: The Best Christmas Ever</a></li><li><a href="/svenusling/m/20137.html">That '70s Show: Ski Trip</a></li><li><a href="/svenusling/m/20138.html">That '70s Show: Stolen Car</a></li><li><a href="/svenusling/m/20139.html">That '70s Show: That Wrestling Show</a></li><li><a href="/svenusling/m/20140.html">That '70s Show: First Date</a></li><li><a href="/svenusling/m/20141.html">That '70s Show: The Pill</a></li><li><a href="/svenusling/m/20142.html">That '70s Show: The Career Day</a></li><li><a href="/svenusling/m/20143.html">That '70s Show: Prom Night</a></li><li><a href="/svenusling/m/20144.html">That '70s Show: A New Hope</a></li><li><a href="/svenusling/m/20145.html">That '70s Show: Water Tower</a></li><li><a href="/svenusling/m/20146.html">That '70s Show: Punk Chick</a></li><li><a href="/svenusling/m/20147.html">That '70s Show: Grandma's Dead</a></li><li><a href="/svenusling/m/20148.html">That '70s Show: Hyde Moves In</a></li><li><a href="/svenusling/m/20149.html">That '70s Show: The Good Son</a></li><li><a href="/svenusling/m/20150.html">That '70s Show Säsong 2</a></li><li><a href="/svenusling/m/20151.html">That '70s Show: Garage Sale</a></li><li><a href="/svenusling/m/20152.html">That '70s Show: Red's Last Day</a></li><li><a href="/svenusling/m/20153.html">That '70s Show: The Velvet Rope</a></li><li><a href="/svenusling/m/20154.html">That '70s Show: Laurie and the Professor</a></li><li><a href="/svenusling/m/20155.html">That '70s Show: Halloween</a></li><li><a href="/svenusling/m/20156.html">That '70s Show: Vanstock</a></li><li><a href="/svenusling/m/20157.html">That '70s Show: I Love Cake</a></li><li><a href="/svenusling/m/20158.html">That '70s Show: Sleepover</a></li><li><a href="/svenusling/m/20159.html">That '70s Show: Eric Gets Suspended</a></li><li><a href="/svenusling/m/20160.html">That '70s Show: Red's Birthday</a></li><li><a href="/svenusling/m/20161.html">That '70s Show: Laurie Moves Out</a></li><li><a href="/svenusling/m/20162.html">That '70s Show: Eric's Stash</a></li><li><a href="/svenusling/m/20163.html">That '70s Show: Hunting</a></li><li><a href="/svenusling/m/20164.html">That '70s Show: Red's New Job</a></li><li><a href="/svenusling/m/20165.html">That '70s Show: Burning Down the House</a></li><li><a href="/svenusling/m/20166.html">That '70s Show: The First Time</a></li><li><a href="/svenusling/m/20167.html">That '70s Show: After Glow</a></li><li><a href="/svenusling/m/20168.html">That '70s Show: Kitty and Eric's Night Out</a></li><li><a href="/svenusling/m/20169.html">That '70s Show: Parents Find Out</a></li><li><a href="/svenusling/m/20170.html">That '70s Show: Kiss of Death</a></li><li><a href="/svenusling/m/20171.html">That '70s Show: Kelso's Serenade</a></li><li><a href="/svenusling/m/20172.html">That '70s Show: Jackie Moves On</a></li><li><a href="/svenusling/m/20173.html">That '70s Show: Holy Crap</a></li><li><a href="/svenusling/m/20174.html">That '70s Show: Red Fired Up</a></li><li><a href="/svenusling/m/20175.html">That '70s Show: Cat Fight Club</a></li><li><a href="/svenusling/m/20176.html">That '70s Show: Moon Over Point Place</a></li><li><a href="/svenusling/m/20177.html">That '70s Show Säsong 3</a></li><li><a href="/svenusling/m/20178.html">That '70s Show: Reefer Madness</a></li><li><a href="/svenusling/m/20179.html">That '70s Show: Red Sees Red</a></li><li><a href="/svenusling/m/20180.html">That '70s Show: Hyde's Father</a></li><li><a href="/svenusling/m/20181.html">That '70s Show: Too Old to Trick or Treat, Too Young to Die</a></li><li><a href="/svenusling/m/20182.html">That '70s Show: Roller Disco</a></li><li><a href="/svenusling/m/20183.html">That '70s Show: Eric's Panties</a></li><li><a href="/svenusling/m/20184.html">That '70s Show: Baby Fever</a></li><li><a href="/svenusling/m/20185.html">That '70s Show: Jackie Bags Hyde</a></li><li><a href="/svenusling/m/20186.html">That '70s Show: Hyde's Christmas Rager</a></li><li><a href="/svenusling/m/20187.html">That '70s Show: Ice Shack</a></li><li><a href="/svenusling/m/20188.html">That '70s Show: Who Wants It More?</a></li><li><a href="/svenusling/m/20189.html">That '70s Show: Fez Gets the Girl</a></li><li><a href="/svenusling/m/20190.html">That '70s Show: Dine & Dash</a></li><li><a href="/svenusling/m/20191.html">That '70s Show: Radio Daze</a></li><li><a href="/svenusling/m/20192.html">That '70s Show: Donna's Panties</a></li><li><a href="/svenusling/m/20193.html">That '70s Show: Romantic Weekend</a></li><li><a href="/svenusling/m/20194.html">That '70s Show: Kitty's Birthday (That's Today?!)</a></li><li><a href="/svenusling/m/20195.html">That '70s Show: The Trials of M. Kelso</a></li><li><a href="/svenusling/m/20196.html">That '70s Show: Eric's Naughty No-no</a></li><li><a href="/svenusling/m/20197.html">That '70s Show: Holy Craps</a></li><li><a href="/svenusling/m/20198.html">That '70s Show: Fez Dates Donna</a></li><li><a href="/svenusling/m/20199.html">That '70s Show: Eric's Drunken Tattoo</a></li><li><a href="/svenusling/m/20200.html">That '70s Show: Canadian Road Trip</a></li><li><a href="/svenusling/m/20201.html">That '70s Show: Backstage Pass</a></li><li><a href="/svenusling/m/20202.html">That '70s Show: The Promise Ring</a></li><li><a href="/svenusling/m/20205.html">That '70s Show: Eric's Depression</a></li><li><a href="/svenusling/m/20206.html">That '70s Show: Pinciotti vs. Forman</a></li><li><a href="/svenusling/m/20207.html">That '70s Show: Hyde Gets the Girl</a></li><li><a href="/svenusling/m/20208.html">That '70s Show: Bye Bye Basement</a></li><li><a href="/svenusling/m/20209.html">That '70s Show: The Relapse</a></li><li><a href="/svenusling/m/20210.html">That '70s Show: Uncomfortable Ball Stuff</a></li><li><a href="/svenusling/m/20211.html">That '70s Show: Donna's Story</a></li><li><a href="/svenusling/m/20212.html">That '70s Show: The Forgotten Son</a></li><li><a href="/svenusling/m/20213.html">That '70s Show: Red and Stacey</a></li><li><a href="/svenusling/m/20214.html">That '70s Show: The Third Wheel</a></li><li><a href="/svenusling/m/20215.html">That '70s Show: An Eric Forman Christmas</a></li><li><a href="/svenusling/m/20216.html">That '70s Show: Jackie Says Cheese</a></li><li><a href="/svenusling/m/20217.html">That '70s Show: Eric's Hot Cousin</a></li><li><a href="/svenusling/m/20218.html">That '70s Show: Tornado Prom</a></li><li><a href="/svenusling/m/20219.html">That '70s Show: Donna Dates a Kelso</a></li><li><a href="/svenusling/m/20220.html">That '70s Show: Kelso's Career</a></li><li><a href="/svenusling/m/20221.html">That '70s Show: Leo Loves Kitty</a></li><li><a href="/svenusling/m/20222.html">That '70s Show: Jackie's Cheese Squeeze</a></li><li><a href="/svenusling/m/20223.html">That '70s Show: Class Picture</a></li><li><a href="/svenusling/m/20224.html">That '70s Show: Prank Day</a></li><li><a href="/svenusling/m/20225.html">That '70s Show: Eric's Corvette Caper</a></li><li><a href="/svenusling/m/20226.html">That '70s Show: Hyde's Birthday</a></li><li><a href="/svenusling/m/20227.html">That '70s Show: That '70s Musical</a></li><li><a href="/svenusling/m/20228.html">That '70s Show: Eric's False Alarm</a></li><li><a href="/svenusling/m/20229.html">That '70s Show: Everybody Loves Casey</a></li><li><a href="/svenusling/m/20230.html">That '70s Show: Love Wisconsin Style</a></li><li><a href="/svenusling/m/20232.html">That '70s Show: Going to California</a></li><li><a href="/svenusling/m/20233.html">That '70s Show: I Can't Quit You Babe</a></li><li><a href="/svenusling/m/20234.html">That '70s Show: What Is and What Should Never Be</a></li><li><a href="/svenusling/m/20235.html">That '70s Show: Heartbreaker</a></li><li><a href="/svenusling/m/20236.html">That '70s Show: Ramble On</a></li><li><a href="/svenusling/m/20237.html">That '70s Show: Over the Hills and Far Away</a></li><li><a href="/svenusling/m/20238.html">That '70s Show: Hot Dog</a></li><li><a href="/svenusling/m/20239.html">That '70s Show: Thank You</a></li><li><a href="/svenusling/m/20240.html">That '70s Show: Black Dog</a></li><li><a href="/svenusling/m/20241.html">That '70s Show: The Crunge</a></li><li><a href="/svenusling/m/20242.html">That '70s Show: The Girl I Love</a></li><li><a href="/svenusling/m/20243.html">That '70s Show: Misty Mountain Hop</a></li><li><a href="/svenusling/m/20244.html">That '70s Show: Your Time Is Gonna Come</a></li><li><a href="/svenusling/m/20245.html">That '70s Show: Babe I'm Gonna Leave You</a></li><li><a href="/svenusling/m/20246.html">That '70s Show: When the Levee Breaks</a></li><li><a href="/svenusling/m/20247.html">That '70s Show: Whole Lotta Love</a></li><li><a href="/svenusling/m/20248.html">That '70s Show: The Battle of Evermore</a></li><li><a href="/svenusling/m/20249.html">That '70s Show: Hey Hey What Can I Do</a></li><li><a href="/svenusling/m/20250.html">That '70s Show: Bring It on Home</a></li><li><a href="/svenusling/m/20251.html">That '70s Show: No Quarter</a></li><li><a href="/svenusling/m/20252.html">That '70s Show: Trampled Under Foot</a></li><li><a href="/svenusling/m/20253.html">That '70s Show: You Shook Me</a></li><li><a href="/svenusling/m/20254.html">That '70s Show: Nobody's Fault But Mine</a></li><li><a href="/svenusling/m/20255.html">That '70s Show: Immigrant Song</a></li><li><a href="/svenusling/m/20256.html">That '70s Show: Celebration Day</a></li><li><a href="/svenusling/m/20258.html">That '70s Show: The Kids Are Alright</a></li><li><a href="/svenusling/m/20259.html">That '70s Show: Join Together</a></li><li><a href="/svenusling/m/20260.html">That '70s Show: Magic Bus</a></li><li><a href="/svenusling/m/20261.html">That '70s Show: The Acid Queen</a></li><li><a href="/svenusling/m/20262.html">That '70s Show: I'm Free</a></li><li><a href="/svenusling/m/20263.html">That '70s Show: We're Not Gonna Take It</a></li><li><a href="/svenusling/m/20264.html">That '70s Show: Christmas</a></li><li><a href="/svenusling/m/20266.html">That '70s Show: Young Man Blues</a></li><li><a href="/svenusling/m/20271.html">That '70s Show: Baby Don't You Do It</a></li><li><a href="/svenusling/m/20272.html">That '70s Show: Who Are You</a></li><li><a href="/svenusling/m/20273.html">That '70s Show: Man with Money</a></li><li><a href="/svenusling/m/20274.html">That '70s Show: Happy Jack</a></li><li><a href="/svenusling/m/20275.html">That '70s Show: Do You Think It's Alright?</a></li><li><a href="/svenusling/m/20277.html">That '70s Show: Squeeze Box</a></li><li><a href="/svenusling/m/20278.html">That '70s Show: 5:15</a></li><li><a href="/svenusling/m/20279.html">That '70s Show: Sparks</a></li><li><a href="/svenusling/m/20280.html">That '70s Show: My Wife</a></li><li><a href="/svenusling/m/20290.html">That '70s Show: Mother's Little Helper</a></li><li><a href="/svenusling/m/20292.html">That '70s Show: You Can't Always Get What You Want</a></li><li><a href="/svenusling/m/20293.html">That '70s Show: Surprise, Surpris</a></li><li><a href="/svenusling/m/20294.html">That '70s Show: Winter</a></li><li><a href="/svenusling/m/20295.html">That '70s Show: Don't Lie to Me</a></li><li><a href="/svenusling/m/20296.html">That '70s Show: Can't You Hear Me Knocking</a></li><li><a href="/svenusling/m/20297.html">That '70s Show: Street Fighting Man</a></li><li><a href="/svenusling/m/20300.html">That '70s Show: Down the Road Apiece</a></li><li><a href="/svenusling/m/20301.html">That '70s Show: Oh, Baby We Got a Good Thing Goin'</a></li><li><a href="/svenusling/m/20302.html">That '70s Show: Who's Been Sleeping Here?</a></li><li><a href="/svenusling/m/20303.html">That '70s Show: Gimme Shelter</a></li><li><a href="/svenusling/m/20304.html">That '70s Show: 2120 So. Michigan Ave</a></li><li><a href="/svenusling/m/20305.html">That '70s Show: 2000 Light Years from Home</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/20265.html">That '70s Show: I'm a Boy</a></li><li><a href="/svenusling/m/20267.html">That '70s Show: A Legal Matter</a></li><li><a href="/svenusling/m/20268.html">That '70s Show: I Can See for Miles</a></li><li><a href="/svenusling/m/20269.html">That '70s Show: Sally Simpson</a></li><li><a href="/svenusling/m/20270.html">That '70s Show: Won't Get Fooled Again</a></li><li><a href="/svenusling/m/20276.html">That '70s Show: Substitute</a></li><li><a href="/svenusling/m/20281.html">That '70s Show: Going Mobile</a></li><li><a href="/svenusling/m/20282.html">That '70s Show: The Seeker</a></li><li><a href="/svenusling/m/20283.html">That '70s Show Säsong 7</a></li><li><a href="/svenusling/m/20284.html">That '70s Show: Time Is on My Side</a></li><li><a href="/svenusling/m/20285.html">That '70s Show: Let's Spend the Night Together</a></li><li><a href="/svenusling/m/20286.html">That '70s Show: (I Can't Get No) Satisfaction</a></li><li><a href="/svenusling/m/20287.html">That '70s Show: Beast of Burden</a></li><li><a href="/svenusling/m/20288.html">That '70s Show: It's Only Rock and Roll</a></li><li><a href="/svenusling/m/20289.html">That '70s Show: Rip This Joint</a></li><li><a href="/svenusling/m/20291.html">That '70s Show: Angie</a></li><li><a href="/svenusling/m/20298.html">That '70s Show: It's All Over Now</a></li><li><a href="/svenusling/m/20299.html">That '70s Show: On with the Show</a></li><li><a href="/svenusling/m/20306.html">That '70s Show: Take It or Leave It</a></li><li><a href="/svenusling/m/20307.html">That '70s Show: Short and Curlies</a></li><li><a href="/svenusling/m/20308.html">That '70s Show: Till the Next Goodbye</a></li><li><a href="/svenusling/m/20331.html">That '70s Show: That '70s Finale</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
