@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Battleship | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Battleship <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2012"><a href="#">2012</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Peter Berg</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Taylor Kitsch – Lieutenant Alex Hopper</li><li>Alexander Skarsgård – Commander Stone Hopper</li><li>Rihanna – Petty Officer Cora 'Weps' Raikes</li><li>Brooklyn Decker – Sam</li><li>Tadanobu Asano – Captain Yugi Nagata</li><li>Hamish Linklater – Cal Zapata</li><li><a href="/svenusling/p/1584.html">Liam Neeson</a> – Admiral Shane</li><li>Peter MacNicol – Secretary of Defense</li><li>John Tui – Chief Petty Officer Walter 'The Beast' Lynch</li><li>Jesse Plemons – Boatswain Mate Seaman Jimmy 'Ordy' Ord</li><li>Gregory D. Gadson – Lieutenant Colonel Mick Canales</li><li>Jerry Ferrara – Sampson JOOD Strodell</li><li>Adam Godley – Dr. Nogrady</li><li>Rico McClinton – Captain Browley</li><li>Joji Yoshida – Chief Engineer Hiroki</li><li>Louis Lombardi – Bartender</li><li>Norman Vincent McLafferty – Old Salt</li><li>Stephen Bishop – JPJ OOD</li><li>Dante Jimenez – JPJ XO Mullenaro</li><li>Daven Arce – JPJ Helmsman</li><li>Ralph Richardson – JPJ Starboard Gunner</li><li>Biunca Love – JPJ BMOW</li><li>Michael Sherman – JPJ JOOD</li><li>Austin Naulty – JPJ Fireman</li><li>Patricia Brown – JPJ Fireman</li><li>Gregory Harvey – JPJ Fireman</li><li>James Rawlings – JPJ Scat</li><li>Andrew Serpas – JPJ Armorer</li><li>Damien Seanard Parker – JPJ Helibay Sailor</li><li>Carson Aune – CIC Gunner</li><li>Doug Penty – CIC Watch Supervisor</li><li>Josh Pence – Combat Systems Coordinator</li><li>Jason Henderson – Radar System Controller</li><li>Brint Terrell – Chart Table Plotter</li><li>Brad Faucheux – Chart Table Log Keeper</li><li>Dustin J. Reno – Electronic Warfare Supervisor</li><li>John Schmotzer – CIC Watch Officer</li><li>Peter Berg – JPJ 2nd Gunner</li><li>Jonathon Groves – JPJ Port Gunner</li><li>Lloyd Pitts – JPJ Port Gunner</li><li>Ryan Tinio – JPJ Radar Op</li><li>Allie Sillah – JPJ Lead Helmsman</li><li>John Santiago – JPJ Switchboard Operator</li><li>Kiley Margeson – Gun Console Operator</li><li>Jeffrey Johns – Surface Warfare Coordinator</li><li>Esther Solomon – JPJ CIWS Operator</li><li>Kevin Garlington – JPJ Air Warfare Coordinator</li><li>Anthony Czumalowski – JPJ Sailor</li><li>James Hadde – JPJ Sailor</li><li>Pat Lancaster – JPJ Sailor</li><li>Jordan Kirkwood – JPJ Sailor</li><li>Jane Dubiel – JPJ Sailor</li><li>John A Weaver – JPJ Sailor</li><li>Mark J. Lindquist – JPJ Sailor</li><li>Phil Neilson – JPJ Sailor</li><li>Dane Justman – Sampson OOD</li><li>Dustin Watchman – Sampson Helmsman</li><li>Drew Rausch – Sampson XO</li><li>Ryland Reamy – Sampson CIC TAO</li><li>Donald Willcutt – Sampson Starboard Lookout</li><li>Eli Miranda – Sampson Boatswain</li><li>Josh Demuth – Sampson Port Lookout</li><li>Thomas Grieser – Sampson Watch Officer</li><li>Chris Darling – Samson OS DA</li><li>Tyrone Gregg – Sampson Gunner</li><li>Brian Hirono – Myoko OOD</li><li>Yutaka Takeuchi – Myoko XO</li><li>Nobuharu Harada – Myoko JOOD</li><li>Masaomi Uchida – Myoko Helmsman</li><li>Kyle Ken Shimabukuro – Myoko Radar Operator</li><li>Masashi Takekawa – Myoko Starboard Lookout</li><li>Hyoe Joe Takahashi – Myoko BMOW</li><li>Rick Hoffman – Chairman, Joint Chiefs of Staff</li><li>Stephen Baldini – State Department Official</li><li>Bill Stinchcomb – Marine Commandant</li><li>Bruce Mandell – Army Chief of Staff</li><li>Gary Grubbs – Air Force Chief of Staff</li><li>David Jensen – NASA Director</li><li>Mike Meldman – Commander Meldman</li><li>Hunter Meldman – Ensign</li><li>George Arine – Japanese Vice Admiral</li><li>Bill McMullen – JPL Supervisor</li><li>Joe Chrest – JPL Controller</li><li>Benjamin Lloyd – Officer Blake</li><li>Billy Slaughter – BIP Technician</li><li>Griff Furst – BIP HQ Controller #2</li><li>Terri Battee – BIP Journalist</li><li>Angelo Denova – BIP Journalist</li><li>Colby Parker Jr. – BIP Scientist</li><li>Geoff Clayton – BIP Scientist</li><li>David Kors – BIP Scientist</li><li>Christopher McGahan – Cal's Jr. Tech</li><li>Kerry Cahill – Cal's Female Colleague</li><li>Liz Wicker – Female Newscaster</li><li>Michelle Arthur – British Newscaster</li><li>Natalia Castellanos – Spanish Newscaster</li><li>Dan Cooke – Hawaiian Newscaster</li><li>Leni Ito – Japanese Newscaster</li><li>Jay Jackson – American Newscaster</li><li>Jackie Johnson – Herself</li><li>Frank J. Doyle – Soccer Ref</li><li>Robin Atkin Downes – Soccer Announcer</li><li>Zach Selwyn – Soccer Announcer</li><li>Leonard Rogers – Japanese Goalie</li><li>Citizen Cope – Singer at Bar</li><li>Evan Bernard – Fat Guy at Bar</li><li>Cora Yamagata – Convenience Store Owner</li><li>Frank Cassavetes – Grizzled Gunner</li><li>Thomas McCurdy – Admiral Shane's Aide</li><li>Robert Hotalen – Marine Aide</li><li>Rami Malek – Watch Officer</li><li>Ray Mabus – Reagan CO</li><li>Marissa Nordheim – Reagan Radar Operator</li><li>Ronald Chavez – Commander Rivera</li><li>Legrand Strickland – Wounded Warrior</li><li>Michael Vernon – CAREN Technician</li><li>Jason Wilken – Director of Rehabilitation</li><li>James Ward – Old Salt</li><li>Philip Trifilo – Old Salt</li><li>Wiliam Powers – Old Salt</li><li>Don Dailey – Old Salt</li><li>Bill Carr – Old Salt</li><li>Dennis M. Keating – Old Salt</li><li>Garrett Lynch – Old Salt</li><li>Wallace Mackensen – Old Salt</li><li>William Long – Old Salt</li><li>Edward Drew – Old Salt TAO</li><li>John E. Culkin – Old Salt RO</li><li>Hiram L. Fong – Old Salt Navigator</li><li>Larry Wegger – Old Salt WO</li><li>Dallas Kane Hewitt – POFC Dallas</li><li>Adam Sibley – SCAT Team</li><li>James Rish – SCAT Team</li><li>George O'Hanlon Jr. – Tourist Guide</li><li>Wesley Phelps – Tourist Kid</li><li>Marcus Lyle Brown – Regent Land Commander</li><li>Kyle Russell Clements – Regent Sea Commander</li><li>Kevin P. Kearns – Jimmy</li><li>John Bell – Angus</li><li>Conor McCarry – Ronnie</li><li>Dylan Gillooly – Thom</li><li>Adrian Bellani – Ensign Chavez</li><li>Teresa Alvarez – Reporter (uncredited)</li><li>Luing Andrews – Admiral Jack (uncredited)</li><li>Reila Aphrodite – Sam (uncredited)</li><li>Joshua Aucoin – Marine (uncredited)</li><li>Fileena Bahris – Soccer Fan (uncredited)</li><li>Joanne Bahris – Woman at Soccer Game (uncredited)</li><li>Tim Blanchard – Regent (uncredited)</li><li>Raj K. Bose – Singaporean Captain (uncredited)</li><li>Beau Brasseaux – Navy SEAL (uncredited)</li><li>Curtis Bush – Naval Officer (uncredited)</li><li>Tom Cain – Three Star Admiral (uncredited)</li><li>Edward J. Clare – Scientist (uncredited)</li><li>Davo Coria – Little League Father (uncredited)</li><li>Kamakani De Dely – Chief Petty Officer (uncredited)</li><li>Annie Doiron – Bar Patron (uncredited)</li><li>Paul Edney – U.S. Navy Captain (uncredited)</li><li>Joanna Ellenbeck – Petty Officer 3rd Class Blackburn (uncredited)</li><li>Kerry Ellington – Navy Wife (uncredited)</li><li>Kasey Emas – Bar Patron (uncredited)</li><li>Gregory Allen Gabroy – Ensign Huyn (uncredited)</li><li>Jaq Galliano – Alien Regent / Thug (uncredited)</li><li>Mickey Graue – Baseball Kid (uncredited)</li><li>Paul Gunawan – Myoko Sailor (uncredited)</li><li>Dakota Hill – Gunner's Mate Wagner (uncredited)</li><li>Sean Douglas Hoban – U.S. Navy Sailor (uncredited)</li><li>Kaitlin Hoychick – J.P.L. Scientist (uncredited)</li><li>James Koons – Navy Medic (uncredited)</li><li>Anthony A. Kung – Japanese Soccer Player (uncredited)</li><li>Greg Liem – Myoko Watchman (uncredited)</li><li>Rebecca Maltby – Private Stanley (uncredited)</li><li>Wes Martinez – International Anchor (uncredited)</li><li>Ed Moy – Japanese Sailor (uncredited)</li><li>Jane Runnalls – Naval Officer (uncredited)</li><li>Johnny Santiago – Ship Board Operator Rivera (uncredited)</li><li>Rhonda Schaubert – Hawaiian Bar Server (uncredited)</li><li>Barbara L. Southern – Admiral's Wife (uncredited)</li><li>Kelly R. Thomas – Alien Ground Commander (uncredited)</li><li>Joseph Wilson – Chief Petty Officer Hayes (uncredited)</li><li>Michael Wozniak – Journalist (uncredited)</li><li>Elvin Yoshida – Myoko Officer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Razzie Award - Sämsta film 2001</li><li>Razzie Award - Sämsta regissör 2001</li><li>Razzie Award - Sämsta skådespelare 2001 (1501)</li><li>Razzie Award - Sämsta manliga biroll 2001 (Barry Pepper)</li><li>Razzie Award - Sämsta kvinnliga biroll 2001 (Kelly Preston)</li><li>Razzie Award - Sämsta manus 2001</li><li>Razzie Award - Sämsta film-duo 2001 (1501)</li><li>DFWFCA Award - Sämsta film 2001</li><li>Razzie Award - Worst 'Drama' of Our First 25 Years 2005</li><li>Razzie Award - Årtiondets sämsta film (Nominated for 10 Razzies, "winner" of 8 (Including Worst Drama of Our First 25 Yrs).) 2010</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Razzie Award - Sämsta manliga biroll 2001 (1297)</li><li>Razzie Award - Årtiondets sämsta skådespelare (Nominated for 6 "achievements", "winner" of 3 Razzies.) 2010 (1501)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Jeremy Renner][/p?id=1452] was cast as Alex Hopper, but dropped out in order to co-star in The Master, which he also later dropped out of.</li><li>The movie is based on the Milton Bradley game &quot;[Battleship][/f?id=10703]&quot; that has been manufactured since 1931. The original paper and pencil version of the game predates World War I.</li><li>Some of the artillery used in the film is shaped like the pegs used in the game.</li><li>[Teresa Palmer][/p?id=1924] and [Rosie Huntington-Whiteley][/p?id=Rosie%20Huntington-Whiteley] auditioned for the role of Sam.</li><li>Singer Rihanna's acting debut.</li><li>The battleship Missouri was the key plot of the movie Under Siege, where it was about to be decommissioned. In [Battleship][/f?id=10703], this boat is set as a museum.</li><li>Retired Army LT. Col Mick Canales is played by real life active duty Army Colonel Gregory Gadson. In March 2012 Gadson became Garrison Commander of Fort Belvoir just south of Washington D.C. in Northern Virginia. Col. Gadson is the first bilateral amputee to serve as a Garrison Commander to any post in the United States Army.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Belägringen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Belägringen <a href="#" class="grade">+++</a></h2>
+										<h3>The Siege</h3>
+										<p>
+										Film från <time datetime="1998"><a href="#">1998</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Edward Zwick</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1240.html">Denzel Washington</a> – Anthony 'Hub' Hubbard</li><li><a href="/svenusling/p/1050.html">Annette Bening</a> – Elise Kraft / Sharon Bridger</li><li><a href="/svenusling/p/1117.html">Bruce Willis</a> – Major General William Devereaux</li><li><a href="/svenusling/p/1960.html">Tony Shalhoub</a> – Agent Frank Haddad</li><li>Sami Bouajila – Samir Nazhde</li><li>Ahmed Ben Larby – Sheik Achmed Bin Talal</li><li>Mosleh Mohamed – Muezzin</li><li>Lianna Pai – Tina Osu</li><li>Mark Valley – FBI Agent Mike Johanssen</li><li>Jack Gwaltney – Fred Darius</li><li>David Proval – Danny Sussman</li><li>Lance Reddick – FBI Agent Floyd Rose</li><li>Jeremy Knaster – INS Official</li><li>William Hill – INS Uniform</li><li>Aasif Mandvi – Khalil Saleh</li><li>Frank DiElsi – Officer Williams</li><li>Wood Harris – Officer Henderson</li><li>Ellen Bethea – FBI Agent Anita</li><li>David Costabile – Fingerprint Expert</li><li>Glenn Kessler – Fiber Expert</li><li>Jeffrey Waid – Video Agent</li><li>Tom McDermott – Phone Bank Agent</li><li>Sherry Ham-Bernard – Hubbard's Secretary</li><li>Joseph Hodge – Landlord</li><li>Joey Naber – Rashad</li><li>Said Faraj – Sleeper terrorist</li><li>Ali Afshar – Ali Wiziri, #87 Bus Bomber</li><li>Jacqueline Antaramian – Najiba Haddad</li><li>Helmi Kassim – Frank Haddad Jr.</li><li>Ghoulam R. Rasoully – Frank Haddad Jr.'s Teacher</li><li>Joseph Badalucco Jr. – EMT</li><li>Diana Naftal – Injured Woman</li><li>Ben Shenkman – INS Agent Howard Kaplan</li><li>Barton Tinapp – Mayoral Candidate</li><li>Neal Jones – NYPD Representative</li><li>Donna Hanover – District Attorney</li><li>Peter Schindler – Johnson, FAA</li><li>Hany Kamal – Arab Spokesman</li><li>Chip Zien – Chief of Staff</li><li>Dakin Matthews – Senator Wright</li><li>John Rothman – Congressman Marshall</li><li>John Henry Cox – Speaker of the House</li><li>E. Katherine Kerr – Attorney General</li><li>Jimmie Ray Weeks – Army General</li><li>Will Lyman – FBI Director</li><li>Ray Godshall – CIA Director</li><li>Victor Slezak – Colonel Hardwick, Army Intelligence</li><li>Chris Messina – Corporal</li><li>Gilbert Rosales – Mechanic</li><li>Amro Salama – Tariq Husseini, Auto Shop Owner</li><li>Jim Shankman – ACLU Lawyer</li><li>Matt Servitto – Journalist #1</li><li>Jourdan Fremin – Journalist #2</li><li>Anjua Warfield-Maximo – March Organizer</li><li>Susie Essman – Protest Speaker</li><li>Rory J. Aylward – Lieutenant</li><li>Jeff Beatty – Undercover FBI Agent</li><li>Graham J. Larson – FBI Agent</li><li>Arianna Huffington – Capitol Week Pundit</li><li>Robert Scheer – Capitol Week Pundit</li><li>Matt Miller – Capitol Week Pundit</li><li>John F. Beard – Newscaster</li><li>Stan Brooks – Newscaster</li><li>Alex Chadwick – Newscaster</li><li>Epi Colon – Newscaster</li><li>Judy de Angelis – Newscaster</li><li>Luis Jiminez – Newscaster</li><li>Sean Hannity – Newscaster</li><li>Ronald Kuby – Newscaster</li><li>Daniel Schorr – Newscaster</li><li>Curtis Sliwa – Newscaster</li><li>Susan Stamberg – Newscaster</li><li>Mary Alice Williams – Newscaster</li><li>Mike Akrawi – Terrorist (uncredited)</li><li>Anthony Batarse – Terrorist (uncredited)</li><li>Scott Charles – Fireman (uncredited)</li><li>Bill Clinton – Himself (uncredited|archive footage)</li><li>Sean Patrick Doherty – FBI Agent (uncredited)</li><li>Mark A. Langston – Terrorist (uncredited)</li><li>Andrew Lasky – FBI agent (uncredited)</li><li class="voice">Dave Mallow – Newscaster (röst) (uncredited)</li><li>Tim Maloney – FBI Agent (uncredited)</li><li>Lisa Masters – Reporter #2 (uncredited)</li><li>Trish McGettrick – FBI Agent (uncredited)</li><li>Ali Merhi – Ali Akhmed (uncredited)</li><li>George F. Miller – Soldier / Humvee driver (uncredited)</li><li>Luis Moro – Hubbard FBI Decoy (uncredited)</li><li>Garry Pastore – Officer Perry (uncredited)</li><li>Robin Anne Phipps – Crying Girl on Monitor (uncredited)</li><li>Andy Redmond – Officer McFall (uncredited)</li><li>Rocco – Fireman / Reporter (uncredited)</li><li>Patrick Russo – Special Agent FBI (uncredited)</li><li>Tony Snow – Newscaster (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>According to an interview that screenwriter Lawrence Wright gave to CBS in 2007, the film was a box office failure upon its theatrical release, &quot;but it was the most-rented movie in America after 9/11.&quot; Wright also claimed that the initial release bombed because &quot;Muslim and Arab protesters picketed the theaters. They were furious at being stereotyped as terrorists.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

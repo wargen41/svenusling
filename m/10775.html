@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Becket | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Becket <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1964"><a href="#">1964</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Peter Glenville</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1782.html">Richard Burton</a> – Becket / Thomas Becket</li><li><a href="/svenusling/p/1748.html">Peter O'Toole</a> – His King / King Henry II</li><li><a href="/svenusling/p/1484.html">John Gielgud</a> – King Louis of France / King Louis VII of France</li><li>Gino Cervi – the Cardinal / Cardinal Zambelli</li><li>Paolo Stoppa – the Pope / Pope Alexander III</li><li>Donald Wolfit – Bishop Folliot</li><li>David Weston – Brother John</li><li>Martita Hunt – Empress Matilda</li><li>Pamela Brown – Queen Eleanor [of Aquitaine]</li><li>Percy Herbert – Baron</li><li>Siân Phillips – Gwendolen</li><li>Inigo Jackson – Robert de Beaumont</li><li>Felix Aylmer – Archbishop of Canterbury</li><li>Niall MacGinnis – Baron</li><li>Christopher Rhodes – Baron</li><li>John Phillips – Bishop of Winchester</li><li>Frank Pettingell – Bishop of York</li><li>Véronique Vendell – French prostitute</li><li>Jennifer Hilary – Peasant's Daughter</li><li>David Davenport – </li><li>Hamilton Dyce – Bishop of Chichester</li><li>Peter Jeffrey – Baron</li><li>Michael Miller – Baron</li><li>Peter Prowse – Baron</li><li>Jack Taylor – </li><li>Michael Anthony – Courtier (uncredited)</li><li>Geoffrey Bayldon – Brother Philip (uncredited)</li><li>Roy Beck – Young French boy (uncredited)</li><li>Dave Clark – Soldier (uncredited)</li><li>Ivor Dean – Monk (uncredited)</li><li>Guy Deghy – Minor Role (uncredited)</li><li>Paul Farrell – Farmer (uncredited)</li><li>Laurie Heath – Boy (uncredited)</li><li>Rose Howlett – Farmer's Wife (uncredited)</li><li>Magda Konopka – Girl on Balcony (uncredited)</li><li>Gerald Lawson – English Peasant (uncredited)</li><li>Wilfrid Lawson – Old Soldier (uncredited)</li><li>Paul Layton – Boy (uncredited)</li><li>Tutte Lemkow – French Courtier (uncredited)</li><li>Linda Marlowe – Farmer's Daughter (uncredited)</li><li>John Moulder-Brown – Boy (uncredited)</li><li>Patrick Newell – William of Corbeil (uncredited)</li><li>Riggs O'Hara – Prince Henry (uncredited)</li><li>Frederick Piper – Monk (uncredited)</li><li>Steve Plytas – Cardinal (uncredited)</li><li class="voice">Robert Rietty – Alexander III (röst) (uncredited)</li><li>Alex Scott – Priest (uncredited)</li><li>Terence Soall – Minor Role (uncredited)</li><li>Victor Spinetti – French Tailor (uncredited)</li><li>Graham Stark – Pope's Secretary (uncredited)</li><li>Royston Tickner – Royal Servant (uncredited)</li><li>Fred Wood – Congregation Member (at Bishops Service) (uncredited)</li><li>Edward Woodward – Clement (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Richard Burton][/p?id=1782] initially turned the film down because he felt the idea of him playing a saint would cause the press to have a field day. He also said he would be more suited to playing Henry II.</li><li>Although the film depicts [Becket][/p?id=Thomas%20Beck] as a Saxon, he was actually a Norman like King Henry II. [Becket][/p?id=Thomas%20Beck] is obviously a French-sounding Norman name, not a Germanic-sounding Saxon name.</li><li>The closeness between King Henry and [Becket][/p?id=Thomas%20Beck] is depicted as being a purely platonic one. Homosexuality was still illegal in the UK when the film was made in 1963, and any suggestion of that would have fallen foul of the censor. However it is still implied that Henry is in love with [Becket][/p?id=Thomas%20Beck].</li><li>[Peter O'Toole's][/p?id=1748] crown was made of cardboard.</li><li>As a practical joke, [Peter O'Toole][/p?id=1748] had [Richard Burton's][/p?id=1782] then wife [Elizabeth Taylor][/p?id=1275] take the place of a nude actress lying under a blanket in order to surprise her husband. [Burton][/p?id=1782] was not amused.</li><li>The plot device of Lord Gilbert having murdered a priest is added to the film. In the play, [Becket][/p?id=Thomas%20Beck] comes into conflict with the King for different, and more historically accurate, reasons.</li><li>[Richard Burton][/p?id=1782] claimed to have been offered either of the main roles. However, according to the producers this was not true, since [Peter O'Toole][/p?id=1748] had already been cast as Henry II and [Becket][/p?id=Thomas%20Beck] had to be the older man. [Burton][/p?id=1782] was seven years older than [O'Toole][/p?id=1748].</li><li>[John Gielgud][/p?id=1484] received an Oscar nomination for appearing in just two scenes.</li><li>[Richard Burton][/p?id=1782] and [Peter O'Toole][/p?id=1748] were both considerably younger than their characters were at the time of the events depicted in this film.</li><li>The play - and indeed the film - are riddled with factual inaccuracies. Jean Anouilh had based his original play on an 1890 history that presumed [Becket][/p?id=Thomas%20Beck] was a Saxon. Anouilh only learned the truth after he'd completed the play. He decided to leave it as is, because he said it made for a better story with [Becket][/p?id=Thomas%20Beck] as a Saxon.</li><li>[Peter O'Toole][/p?id=1748] played the same character, Henry II, four years later in 1968's [The Lion in Winter][/f?id=20027] (1968). He received Oscar nominations for both films.</li><li>Both [Peter O'Toole][/p?id=1748] and [Richard Burton][/p?id=1782] were on their best behavior during filming as they were in company of [Donald Wolfit][/p?id=Donald%20Wolfit] and [John Gielgud][/p?id=1484], respectively [O'Toole][/p?id=1748] and [Burton's][/p?id=1782] acting mentors.</li><li>[Alec Guinness][/p?id=1018] turned down the role of King Louis, because he &quot;didn't believe in [[Becket][/p?id=Thomas%20Beck]] as a film&quot;.</li><li>King Henry actually was very close with his son Henry, choosing to have him raised in his close friend [Becket's][/p?id=Thomas%20Beck] home - a common practice for royalty in that era. The prince's resentment over his father's possible causation of [Becket's][/p?id=Thomas%20Beck] death (intentional or not) was a major reason he became distanced from his father in later years, although the prince eventually died six years before his father.</li><li>While it won a screenplay award, this film still holds jointly a record for the most Oscar category losses - 11. The other joint holders with 11 category losses are [The Turning Point][/f?id=V%C3%A4ndpunkten] and [The Color Purple][/f?id=Purpurf%C3%A4rgen].</li><li>Filmed almost entirely in the studio.</li><li>When the film premiered, director [Peter Glenville][/p?id=Peter%20Glenville] was aghast to discover that producer Hal B. Wallis had inserted an intermission break about halfway through the film.</li><li>As soon as production had wrapped, [Roger Corman][/p?id=Roger%20Corman] arranged with the producers to leave some of the sets standing; he then moved in and filmed &quot;Tomb of Ligeia,&quot; thus giving the thriller a far grander look than it might have had on a typical AIP budget.</li><li>This is one of only seven films to receive more than one Academy Award nomination for Best Actor. In this instance, [Peter O'Toole][/p?id=1748] and [Richard Burton][/p?id=1782] were so nominated. The other six films were [Mutiny on the Bounty][/f?id=Myteri] (1935) for which [Clark Gable][/p?id=1178], [Charles Laughton][/p?id=1147] and [Franchot Tone][/p?id=Franchot%20Tone] were all nominated, [From Here to Eternity][/f?id=14970] (1953) for which [Montgomery Clift][/p?id=1681] and [Burt Lancaster][/p?id=1120] were nominated, [Judgment at Nuremberg][/f?id=Dom%20I%20N%C3%BCrnberg] (1961) for which [Maximilian Schell][/p?id=Maximilian%20Schell] and [Spencer Tracy][/p?id=1888] were nominated, [Sleuth][/f?id='Sleuth'%20-%20Sp%C3%A5rhunden] (1972) for which [Laurence Olivier][/p?id=1568] and [Michael Caine][/p?id=1643] were nominated, [The Dresser][/f?id=P%C3%A5kl%C3%A4daren] (1983) for which [Tom Courtenay][/p?id=Tom%20Courtenay] and [Albert Finney][/p?id=1015] and [Amadeus][/f?id=10277] (1984) for which [F. Murray Abraham][/p?id=1293] and [Tom Hulce][/p?id=1951] were nominated. Of the actors in question, only [Schell][/p?id=Maximilian%20Schell] and Abraham won the Academy Award for Best Actor for the relevant performances.</li><li> When the play was due to open on the West End in London, [Peter O'Toole][/p?id=1748] was cast as Henry II. He had to break his contract however as he had just landed the lead in [Lawrence of Arabia][/f?id=15670] (1962).</li><li>The assassination of [Thomas Becket][/p?id=Thomas%20Beck] was far more vicious and brutal than the film was able to depict. According to Edward Grim, a man who was himself wounded in the attack stated: The wicked knight leapt suddenly upon him, cutting off the top of the crown which the unction of sacred chrism had dedicated to God. Next he received a second blow on the head, but still he stood firm and immovable. At the third blow he fell on his knees and elbows, offering himself a living sacrifice, and saying in a low voice, 'For the name of Jesus and the protection of the Church, I am ready to embrace death.' But the third knight inflicted a terrible wound as he lay prostrate. By this stroke, the crown of his head was separated from the head in such a way that the blood white with the brain, and the brain no less red from the blood, dyed the floor of the cathedral. The same clerk who had entered with the knights placed his foot on the neck of the holy priest and precious martyr, and, horrible to relate, scattered the brains and blood about the pavements, crying to the others, 'Let us away, knights; this fellow will arise no more.</li><li>[Christopher Plummer][/p?id=1171] expressed in an interview that he expected to land on the role of the King, but it was given to his friend [Peter O'Toole][/p?id=1748].</li><li>Originally produced on Broadway in 1959 with [Laurence Olivier][/p?id=1568] as [Becket][/p?id=Thomas%20Beck] and [Anthony Quinn][/p?id=1057] as King Henry. When [Quinn][/p?id=1057] left the play to make films, [Olivier][/p?id=1568] took over the role of Henry and [Arthur][/f?id=10470] Kennedy was brought in to play [Becket][/p?id=Thomas%20Beck].</li><li>Composer Laurence Rosenthal got a hard time from producer Hal B. Wallis who insisted on a more upbeat score. Rosenthal held his ground - and was rewarded with an Oscar nomination.</li><li>This film met with the approbation of Jean Anouilh who - up till that point - hadn't been very impressed with adaptations of his work.</li><li>Hal B. Wallis was not at all happy with [Peter Glenville's][/p?id=Peter%20Glenville] choice of composer for the film as he'd never heard of Laurence Rosenthal. However, [Glenville][/p?id=Peter%20Glenville] was adamant, having worked with Rosenthal on the stage version of the play.</li><li>There were complaints that the play did not translate well to film, as it was overly talkative and there were no action scenes at all.</li><li>Final film of Frank Pettingell.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

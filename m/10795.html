@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Benjamin Buttons Otroliga Liv | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Benjamin Buttons Otroliga Liv <a href="#" class="grade">++++</a></h2>
+										<h3>The Curious Case of Benjamin Button</h3>
+										<p>
+										Film från <time datetime="2008"><a href="#">2008</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1215.html">David Fincher</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1137.html">Cate Blanchett</a> – Daisy</li><li>Julia Ormond – Caroline</li><li>Faune A. Chambers – Dorothy Baker</li><li>Elias Koteas – Monsieur Gateau</li><li>Donna DuPlantier – Blanche Devereux</li><li>Jacob Tolano – Martin Gateau</li><li>Earl Maddox – Man at Train Station</li><li>Ed Metzger – Teddy Roosevelt</li><li>Jason Flemyng – Thomas Button</li><li>Danny Vinson – Priest Giving Last Rites</li><li>David Jensen – Doctor at Benjamin's Birth</li><li>Joeanna Sayler – Caroline Button</li><li><a href="/svenusling/p/1918.html">Taraji P. Henson</a> – Queenie</li><li>Mahershalalhashbaz Ali – Tizzy</li><li>Fiona Hale – Mrs. Hollister</li><li>Patrick Thomas O'Brien – Dr. Rose</li><li>Danny Nelson – General Winston</li><li>Marion Zinser – Mrs. Horton</li><li>Peter Donald Badalamenti II – Benjamin 1928-31</li><li>Paula Gray – Sybil Wagner</li><li>Lance E. Nichols – Preacher</li><li>Rampai Mohadi – Ngunda Oti</li><li>Troi Bechet – Filamena Gilea</li><li>Phyllis Somerville – Grandma Fuller</li><li>Elle Fanning – Daisy - Age 7</li><li>Ted Manson – Mr. Daws</li><li>Clay Cullen – Young Mr. Daws</li><li>Edith Ivey – Mrs. Maple</li><li>Robert Towers – Benjamin 1932-34</li><li>Jared Harris – Captain Mike</li><li>Sonya Leslie-Shepherd – Daisy's Nurse</li><li>Yasmine Abriel – Prostitute with Benjamin</li><li>Madisen Beaty – Daisy - Age 10</li><li>Tom Everett – Benjamin 1935-37</li><li>Don Creech – Prentiss Mayes</li><li>Joshua DesRoches – Rick Brody</li><li>Christopher Maxwell – Vic Brody</li><li>Richmond Arquette – John Grimm</li><li>Josh Stewart – Pleasant Curtis</li><li><a href="/svenusling/p/1096.html">Brad Pitt</a> – Benjamin Button</li><li>Ilia Volok – Russian Interpreter</li><li><a href="/svenusling/p/1934.html">Tilda Swinton</a> – Elizabeth Abbott</li><li>David Ross Paterson – Walter Abbott</li><li>Taren Cunningham – Young Elizabeth Abbott</li><li>Myrton Running Wolf – Dennis Smith</li><li>Stephen Taylor – Sailor</li><li>Devyn A. Tyler – Queenie's Daughter - Age 14</li><li>Adrian Armas – David</li><li>Wilbur Fitzgerald – TV Reporter</li><li>Ashley Nolan – Woman Doctor</li><li>Louis Herthum – Man at Caroline's Party</li><li>Katta Hules – Caroline - Age 12</li><li>Rus Blackwell – Robert Williams</li><li>Joel Bissonnette – David Hernandez</li><li>Deneen Tyler – Queenie's Daughter - Age 40</li><li>Spencer Daniels – Benjamin Button - Age 12</li><li>Chandler Canterbury – Benjamin Button - Age 8</li><li>Charles Henry Wyson – Benjamin Button - Age 6</li><li>Jessica Cropper – Featured Dancer #1</li><li>Katherine Crockett – Featured Dancer #2</li><li>Leslie Augustine – Ballet Dancer (uncredited)</li><li>Aliane Baquerot – Ballet Dancer (uncredited)</li><li>Dewayne Bateman – Family member (uncredited)</li><li>Brett Beoubay – 1918 Police Officer (uncredited)</li><li>Megan Brown – Woman Kissing Benjamin (uncredited)</li><li>Melissa Cabrera – Ballet Dancer (uncredited)</li><li>Clay Chamberlin – The Grumpy Sailor (uncredited)</li><li>Bianca Chiminello – Ballerina who ties up shoe lace (uncredited)</li><li>Lauri Christi – Walk of Shame Girl (uncredited)</li><li>Emma Degerstedt – Ballet Dancer (uncredited)</li><li>Joe Fontana – Shrimper (uncredited)</li><li>Garrett Forbes – Ballet Dancer (uncredited)</li><li>Debby Gaudet – Restaurant Patron (uncredited)</li><li>Simone-Elise Girard – Parisian woman (uncredited)</li><li>Geraldine Glenn – Family member (uncredited)</li><li>Victoria Goulet – Russian Barmaid (uncredited)</li><li>Malerie Grady – Ballet dancer (uncredited)</li><li>Derrick Guidry – Man in Church (uncredited)</li><li>Bob Harter – Man who buys Button house (uncredited)</li><li>Aaron Jennings Hartnell – American Ballet Theatre Judge (uncredited)</li><li>Tim Harvey – Soda Jerk (uncredited)</li><li>Emily Howe – French Nurse (uncredited)</li><li>Rhonda Huete – Button Factory Worker (uncredited)</li><li>Grant James – Joking Old Man (uncredited)</li><li>Christopher Karl Johnson – Medical Officer on Librty Ship (uncredited)</li><li>Shiloh Jolie-Pitt – Caroline as Baby (uncredited)</li><li>Jeffrey Scott Jones – Submarine Gunner (uncredited)</li><li>Nadyia Jones – Loft Dancer (uncredited)</li><li>Jonathan Lane – Usher at Theater (uncredited)</li><li>Cynthia LeBlanc – Waitress (uncredited)</li><li>Elton LeBlanc – Ambulance Driver (uncredited)</li><li>Naima Imani Lett – Madame at whorehouse (uncredited)</li><li>Audrey Lynn – 1920's Woman Strolling by Window (uncredited)</li><li>Angelina McCoy – Ballet Dancer (uncredited)</li><li>Jay Oliver – Nolan House Resident (uncredited)</li><li>Michael Owens – Ballet master (uncredited)</li><li>Nick Reasons – Party Goer (uncredited)</li><li>Ross Rouillier – 1918 U.S. Lieutenant (uncredited)</li><li>Robert W. Savina – Man in rowboat (uncredited)</li><li>Craig Sawyer – Chelsea crewman (uncredited)</li><li>Chaz Smith – Dock worker (uncredited)</li><li>Terry Lee Smith – Rower (uncredited)</li><li>Lauren Swinney – Mrs. Carter - Queeny's dead"" (uncredited)</li><li>Jennifer Toffel – Head Nurse (uncredited)</li><li>Gelsey Weiss – Dancer (uncredited)</li><li>Autumn Withers – Dancer (uncredited)</li><li>Brianna Womick – Ballet Dancer (uncredited)</li><li>Michael Wozniak – World War I Officer (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Fantasporto, International Fantasy Film Award - Bästa film 2003 (David Twohy)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Once attached to [Tom Cruise][/p?id=1949] as the lead, [Steven Spielberg][/p?id=1907] as director in the 1990s.</li><li>In 1998, [Ron Howard][/p?id=Ron%20Howard] was set to direct, with [John Travolta][/p?id=1501] in the lead.</li><li>There really was a pygmy man housed in a monkey house. Ota Benga was trapped from the Congo in 1904, and kept on display in a monkey house in the Bronx Zoo. His teeth were chiseled, and he used to shoot arrows at onlookers. In 1916, they released him, realizing they had been &quot;inhumane,&quot; but did little to help him adapt to this new world: he shot himself not long after his release.</li><li>Director Tarsem Singh was enlisted to shoot the brief handheld montage of Benjamin backpacking through India and Cambodia, after [David Fincher][/p?id=1215] learned that Tarsem and [Brad Pitt][/p?id=1096] were both already planning to be in Southeast Asia at the same time.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

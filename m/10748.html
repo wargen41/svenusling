@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Baywatch | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Baywatch <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2017"><a href="#">2017</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Seth Gordon</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1255.html">Dwayne Johnson</a> – Mitch Buchannon</li><li>Zac Efron – Matt Brody</li><li>Priyanka Chopra – Victoria Leeds</li><li>Alexandra Daddario – Summer Quinn</li><li>Kelly Rohrbach – CJ Parker</li><li>Ilfenesh Hadera – Stephanie Holden</li><li>Jon Bass – Ronnie Greenbaum</li><li>Yahya Abdul-Mateen II – Sgt. Ellerbee</li><li>Hannibal Buress – Dave the Tech</li><li>Rob Huebel – Captain Thorpe</li><li>Amin Joseph – Frankie</li><li>Jack Kesy – Leon</li><li>Oscar Nuñez – Councilman Rodriguez</li><li><a href="/svenusling/p/1216.html">David Hasselhoff</a> – The Mentor</li><li>Pamela Anderson – Casey Jean Parker</li><li>Clem Cheung – Murray Chen</li><li>Belinda – Carmen</li><li>Charlotte McKinney – Julia</li><li>Izabel Goulart – Amber</li><li>Arian Foster – Arian Foster</li><li>Vernon Davis – Vernon Davis</li><li>Eros Exarhou – Frosty</li><li>Maxie G. Rosales – Pier Teenage Girl</li><li>Karin Silvestri – Pier Mom</li><li>Vincenzo Hinckley – Pete</li><li>Brandon Larracuente – Skateboarder</li><li>Kelvin Witherspoon – SkateBoarder</li><li>Welder Santos – Huntley Club Member</li><li>David Weiss – Cell Phone Customer</li><li>Damien LeRoy – Kite Surfer</li><li>Pedro Anaya Pérez – Huntley Waiter</li><li>L.J. Ruth – Pier Boy</li><li>Brenda Lowe – Surfer</li><li>Jackson Geach – Billy</li><li>Brandon Lee – Scull Rower</li><li>James A. Sutton – Huntley Security Guard</li><li>Juliette Mathis – High Chair Baby Girl</li><li>Samantha Harris – Interviewer</li><li>Seth Gordon – Helicopter Pilot</li><li>other cast: – </li><li>Joseph Akharoh Jr. – Lifeguard (uncredited)</li><li>Jeffery Arseneau – Beach Goer / Havana Party Guest (uncredited)</li><li>Hanna Balicki – Party Guest (uncredited)</li><li>Tamila Bilalova – Baywatch baby (uncredited)</li><li>Gary Boughner – Police Officer (uncredited)</li><li>Glenn D. Bridges – Police Dept. Records Clerk (uncredited)</li><li>Deaven Brooks – Perpetrator (uncredited)</li><li>Anthony Bryant – Beach goer (uncredited)</li><li>Victoria Budkey – Beach Goer (uncredited)</li><li>Eduardo Burgos – Beach Goer / Havana Party Guest (uncredited)</li><li>Wayne burley – Police officer (uncredited)</li><li>Alexis Burns – Lifeguard Applicant (uncredited)</li><li>Toshi Calderón – Beach Goer (uncredited)</li><li>Marquice Cannady – Teen in the Park / Angelo's Worker (uncredited)</li><li>Santos Caraballo – Beach Goer (uncredited)</li><li>Gina Beatriz Castro – Lifeguard Applicant / Yoga Girl (uncredited)</li><li>John Cenatiempo – Sergeant (uncredited)</li><li>Jamel Chambers – Beach Goer (uncredited)</li><li>Lacey Coan – Vendor (uncredited)</li><li>Clemeen Connolly – Lifeguard Applicant / Bikini Girl (uncredited)</li><li>Marisol Correa – Beach Parent (uncredited)</li><li>Ellen Marguerite Cullivan – Havana Nights Party Guest (uncredited)</li><li>Jimmie Cummings – Yacht Security (uncredited)</li><li>Shay Davila – Bikini Girl (uncredited)</li><li>Bria Danielle Davis – Beach Goer (uncredited)</li><li>Christopher De Stefano – Beach Goer (uncredited)</li><li>Arthur Dean – Beach Goer (uncredited)</li><li>Marc Demeter – Barrel Guy / Coast Guard (uncredited)</li><li>Angela Di Pasquo – Havana Party Guest (uncredited)</li><li>Rich Lane Disco – Beachgoer (uncredited)</li><li>Anna Elizabeth – Server (uncredited)</li><li>Cary Epstein – Lifeguard Cadet (uncredited)</li><li>Keith Ewell – Allegre's Husband (uncredited)</li><li>Ely Feldman – Ice Cream Vendor / Fisherman (uncredited)</li><li>Jared Fleming – Lifeguard Applicant (uncredited)</li><li>Robert J. Fox – Party Guest (uncredited)</li><li>Victoria Fraunberger – Beach Babe (uncredited)</li><li>Ana Flavia Gavlak – Lifeguard (uncredited)</li><li>Tahseen Ghauri – Emerald Bay Office Employee (uncredited)</li><li>Adam e Ginsberg – VIP Party Member (uncredited)</li><li>Whitney Goin – Doctor (uncredited)</li><li>Apollo GT – Beach Goer (uncredited)</li><li>Yassie Hawkes – Beach girl (uncredited)</li><li>MacKenzie Hebbelman – Mackenzie Hebbelman (uncredited)</li><li>Steve Heinz – Havana Party Guest (uncredited)</li><li>Chris Hill Sr. – Police Officer (uncredited)</li><li>Lee Hodge – Lifeguard (uncredited)</li><li>Leo Hojnowski – Cell Phone Kid (uncredited)</li><li>Cody Howard – Beach Goer / Havana Party Guest (uncredited)</li><li>Matthew Jolly – Yacht Waiter (uncredited)</li><li>Stephanie Olah Kelly – Beach Goer (uncredited)</li><li>Angelique Kenney – Surfer beach babe (uncredited)</li><li>Kasity Koehn – Beach Bikini Girl (uncredited)</li><li>Matthew Kosto – Shark Bite Boy (uncredited)</li><li>Inder Kumar – The Huntley Club Employee (uncredited)</li><li>Dakota James Alden Lane – Beach Goer (uncredited)</li><li>Gage Lawson – Beachgoer (uncredited)</li><li>David W. LeBlanc – Huntley Club VIP Guest (uncredited)</li><li>Latashe Leontis – Havana Night Party / Beach (uncredited)</li><li>Danny Lima – Havana Party VIP (uncredited)</li><li>Marco Loiacono – Lifeguard Jack (uncredited)</li><li>John Archer Lundgren – Hobo Party-Crasher (uncredited)</li><li>Kera Lynn – VIP Party Member (uncredited)</li><li>Charisse Lyon – Beach Goer (uncredited)</li><li>Liam Marcy – Lifeguard Applicant (uncredited)</li><li>Daniel Mart – Beach Goer (uncredited)</li><li>Eric McCrea – Angelo's Worker (uncredited)</li><li>Casey McCullum – Beach Goer (uncredited)</li><li>Matthew J Millard – Beachgoer (uncredited)</li><li>Mason Mills – Beach Goer (uncredited)</li><li>Noel Mirabal – Emergency Medical Technician (uncredited)</li><li>Tyrone Neal – Beach goer (uncredited)</li><li>Olivia O'Hara – Waitress (uncredited)</li><li>Anthony Vance Pierce – Detective (uncredited)</li><li>Mason Pike – Beach Goer (uncredited)</li><li>Bruce Pobanz – Beach Goer / Vendor (uncredited)</li><li>Earl Poitier – The Kitchen Worker (uncredited)</li><li>Damon Preston – Lifeguard #1 (uncredited)</li><li>Jennifer Pskowski – Beach Goer (uncredited)</li><li>Tracy Roese – Girl on Park Bench (uncredited)</li><li>Dara Rose – Yoga Teacher (uncredited)</li><li>Jostein Sagnes – Beach tourist (uncredited)</li><li>Cody Scott – Crewman (uncredited)</li><li>Cayman Scrimizzi – Skateboarder / Surfer (uncredited)</li><li>Leonel Severino – Fisherman (uncredited)</li><li>Darren Sheehan – Havana Party Guest (uncredited)</li><li>Mark Smith – Cop (uncredited)</li><li>Dawn Soleri – Beach Babe (uncredited)</li><li>Haviland Stillwell – Allegre (uncredited)</li><li>Derek Stokes – Beach Goer / Tourist (uncredited)</li><li>Jeremy Sykes – Beachgoer / Businessman (uncredited)</li><li>Ashton Tatum – Beach Goer (uncredited)</li><li>Frank Tedesco – Beachgoer (uncredited)</li><li>Rene Toledo – Havana Party VIP (uncredited)</li><li>Treviance – Beach Goer (uncredited)</li><li>Zachary Vazquez – Lifeguard (uncredited)</li><li>Barbara Vincent – Yachter (uncredited)</li><li>Maegan Vogel – Bikini Model (uncredited)</li><li>Gowon Walker – Bouncer (uncredited)</li><li>Carl Watts – Helicopter Pilot (uncredited)</li><li>Greg Wave – Lifeguard Applicant (uncredited)</li><li>Claire Weinstein – Beach Goer (uncredited)</li><li>Acorye' White – Kitchen Staff (uncredited)</li><li>Logan Wildey – Beach Goer / Surfer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Giffoni Film Festival, Silver Gryphon - First Feature Competition 2008</li><li>Heartland Film Festival, Crystal Heart Award 2008 (Aristomenis Tsirbas)</li><li>Ottawa International Animation Festival, Grand Prize - Bästa film 2008</li><li>Ottawa International Animation Festival, Grand Prize - Bästa animerade film 2008 (Aristomenis Tsirbas)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Annecy International Animated Film Festival, Cristal - Bästa film 2009 (Aristomenis Tsirbas)</li><li>IGN Award - Bästa animerade film 2009</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

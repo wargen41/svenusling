@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bedtime Stories | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bedtime Stories <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2008"><a href="#">2008</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Adam Shankman</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1003.html">Adam Sandler</a> – Skeeter Bronson</li><li>Keri Russell – Jill</li><li><a href="/svenusling/p/1348.html">Guy Pearce</a> – Kendall</li><li>Russell Brand – Mickey</li><li><a href="/svenusling/p/1788.html">Richard Griffiths</a> – Barry Nottingham</li><li><a href="/svenusling/p/1924.html">Teresa Palmer</a> – Violet Nottingham</li><li>Lucy Lawless – Aspen</li><li><a href="/svenusling/p/1192.html">Courteney Cox</a> – Wendy</li><li>Jonathan Morgan Heit – Patrick</li><li>Laura Ann Kesling – Bobbi</li><li><a href="/svenusling/p/1508.html">Jonathan Pryce</a> – Marty Bronson</li><li>Nick Swardson – Engineer</li><li>Kathryn Joosten – Mrs. Dixon</li><li>Allen Covert – Ferrari Guy</li><li>Carmen Electra – Hot Girl</li><li>Tim Herlihy – Young Barry Nottingham</li><li>Thomas Hoffman – Young Skeeter</li><li>Abigail Droeger – Young Wendy</li><li>Melany Mitchell – Young Mrs. Dixon</li><li>Andrew Collins – Young Mr. Dixon</li><li>Aisha Tyler – Donna Hynde</li><li>Julia Lea Wolov – Hokey Pokey Woman #1</li><li>Dana Goodman – Hokey Pokey Woman #2</li><li>Sarah Buxton – Hokey Pokey Woman #3</li><li>Catherine Kwong – Hokey Pokey Woman #4</li><li>Lindsey Alley – Hokey Pokey Woman #5</li><li>Blake Clark – Biker #1</li><li>Bill Romanowski – Biker #2</li><li>Paul Dooley – Hot Dog Vendor</li><li>Johntae Lipscomb – Birthday Party Kid #1</li><li>James Burdette Cowell – Birthday Party Kid #2</li><li>Mikey Post – Angry Dwarf</li><li>Sebastian Saraceno – Gremlin Driver</li><li>Seth Howard – Cubby the Home Depot Guy</li><li>Jackie Sandler – Lady Jacqueline</li><li>Sadie Sandler – Sweetest Medieval Girl of All Time</li><li>Valerie Gervickas – Teacher</li><li>Debbie Lee Carrington – Booing Goblin</li><li>Billy Tyler – Big Hairy Guy on Beach</li><li>Lorna Scott – Secretary</li><li>Annalise Basso – Tricia Sparks</li><li>Shu Lan Tuan – Luau Waitress</li><li>Jonathan Loughran – Party Guest #1</li><li>Robert Harvey – Party Guest #2</li><li>Mike Andrella – Truck Driver</li><li>J.D. Donaruma – Nottingham Pool Waiter</li><li>Jon Schueler – Nobleman</li><li>Denverly Grant – Lady at Fountain</li><li>Gina Cantrell – 'West Side Story' Showgirl #2</li><li>Alex Tyler – Showgirl</li><li>JT Alexander – Pedestrian (uncredited)</li><li>Veronica Bennett – Greek Goddess (uncredited)</li><li>Pete Brown – Claudius Falisimus (uncredited)</li><li>Amanda Burrill – Jogger (uncredited)</li><li>Betsy Hammer – Tambourine Player Medieval Band (uncredited)</li><li>Taylor Hardick – Student (uncredited)</li><li>Nick Hermz – Paparazzi (uncredited)</li><li>Rodrick Hersh – Rabbi (uncredited)</li><li>Austin Honaker – A Spaceball (uncredited)</li><li>Mark Hunter – Daft Alien (uncredited)</li><li>Danni Katz – Party Girl (uncredited)</li><li>Alina Kaufman – Party Guest (uncredited)</li><li>Waymond Lee – Coliseum / Space Station Vendor (uncredited)</li><li><a href="/svenusling/p/1802.html">Rob Schneider</a> – Chief Running Mouth / Pickpocket (uncredited)</li><li>Nicole Sciacca – Damn Yankees Girl (uncredited)</li><li>Arne Starr – Nottingham Employee / Senator / Cowboy / Spaceman (uncredited)</li><li>Kevin Vyce – Businessman #1 (uncredited)</li><li>Brian Waller – Record Producer (uncredited)</li><li>Shawna Wesley – Greek Goddess (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>British Society of Cinematographers, Best Cinematography Award 1964</li><li>NBR Award - Bästa film 1964</li><li>NBR Award - Topp tio filmer 1964</li><li>NYFCC Award - Bästa manus (3:e plats) 1964</li><li>Oscar - Bästa manus baserad på annan förlaga 1965</li><li>Golden Globe - Bästa film - Drama 1965</li><li>Golden Globe - Bästa skådespelare - Drama 1965 (1748)</li><li>BAFTA Film Award - Bästa brittiska foto (färg) 1965</li><li>BAFTA Film Award - Bästa brittiska kostym (färg) 1965</li><li>BAFTA Film Award - Bästa brittiska scenografi (färg) 1965</li><li>CEC Award - Bästa utländska film 1965</li><li>Fotogramas de Plata - Bästa utländska skådespelare 1965 (1782)</li><li>Laurel Awards, Golden Laurel - Bästa skådespelare 1965 (1782)</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska skådespelare 1965 (1748)</li><li>WGA Award (Screen) - Best Written American Drama 1965</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa film 1965</li><li>Oscar - Bästa regi 1965 (Peter Glenville)</li><li>Oscar - Bästa skådespelare 1965 (1782)</li><li>Oscar - Bästa skådespelare 1965 (1748)</li><li>Oscar - Bästa manliga biroll 1965 (1484)</li><li>Oscar - Bästa foto, färg 1965</li><li>Oscar - Bästa originalmusik 1965</li><li>Oscar - Bästa ljud 1965</li><li>Oscar - Bästa kostym, färg 1965</li><li>Oscar - Bästa klippning 1965</li><li>Oscar - Bästa scenografi, färg 1965</li><li>Golden Globe - Bästa regi 1965 (Peter Glenville)</li><li>Golden Globe - Bästa skådespelare - Drama 1965 (1782)</li><li>Golden Globe - Bästa originalmusik 1965</li><li>BAFTA Film Award - Bästa film 1965</li><li>BAFTA Film Award - Bästa brittiska film 1965</li><li>BAFTA Film Award - Bästa brittiska skådespelare 1965 (1748)</li><li>BAFTA Film Award - Bästa brittiska manus 1965</li><li>American Cinema Editors, Eddie - Best Edited Feature Film 1965</li><li>DGA Award - Bästa regi 1965 (Peter Glenville)</li><li>Laurel Awards, Golden Laurel - Drama (4:e plats)</li><li>Laurel Awards, Golden Laurel - Bästa skådespelare, Drama (4:e plats) 1965 (1748)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Features a cameo by Buzz Lightyear, from [Toy Story][/f?id=20712] (1995) in the audience during the space story.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Beavis And Butthead Do America | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Beavis And Butthead Do America <a href="#" class="grade">+++</a></h2>
+										<h3>Beavis and Butt-Head Do America</h3>
+										<p>
+										Film från <time datetime="1996"><a href="#">1996</a></time><br>										<ul class="genres"><li><a href="#genre2">Animerat</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mike Judge</li><li>Yvette Kaplan</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice">Mike Judge – Beavis / Butt-Head / Tom Anderson / Mr. Van Driessen / Principal McVicker (röst)</li><li class="voice"><a href="/svenusling/p/1117.html">Bruce Willis</a> – Muddy Grimes (röst)</li><li class="voice"><a href="/svenusling/p/1235.html">Demi Moore</a> – Dallas Grimes (röst)</li><li class="voice">Cloris Leachman – Old Woman on Plane and Bus (röst)</li><li class="voice"><a href="/svenusling/p/1823.html">Robert Stack</a> – ATF Agent Flemming (röst)</li><li class="voice">Jacqueline Barba – FBI Agent Hurly (röst)</li><li class="voice">Pamela Blair – Flight Attendant / White House Tour Guide (röst)</li><li class="voice"><a href="/svenusling/p/1283.html">Eric Bogosian</a> – Ranger at Old Faithful / White House Press Secretary / Lieutenant at Strategic Air Command (röst)</li><li class="voice">Kristofor Brown – Man on Plane / Man in Confession Booth #2 / Old Guy / Jim (röst)</li><li class="voice">Tony Darling – Motley Crue Roadie #2 / Tourist Man (röst)</li><li class="voice">John Doman – Airplane Captain / White House Representative (röst)</li><li class="voice">Francis Dumaurier – French Dignitary (röst)</li><li class="voice">Jim Flaherty – Petrified Forest Recording (röst)</li><li class="voice"><a href="/svenusling/p/1940.html">Tim Guinee</a> – Hoover Dam Guide / ATF Agent (röst)</li><li class="voice">David Letterman – Motley Crue Roadie #1 (röst)</li><li class="voice">Toby Huss – TV Thief #2 / Concierge / Bellboy / Male TV Reporter (röst)</li><li class="voice">Sam Johnson – Limo Driver / TV Thief #1 / Man in Confession Booth #1 / Petrified Forest Ranger (röst)</li><li class="voice">Richard Linklater – Tour Bus Driver (röst)</li><li class="voice">Rosemary McNamara – Flight Attendant #2 (röst)</li><li class="voice">Harsh Nayyar – Indian Dignitary (röst)</li><li class="voice">Karen Phillips – Announcer in Capitol (röst)</li><li class="voice">Dale Reeves – President Clinton (röst)</li><li class="voice">Michael Ruschak – Hoover Dam Technician / General at Strategic Air Command (röst)</li><li class="voice">Gail Thomas – Flight Attendant #3 / Female TV Reporter (röst)</li><li class="voice"><a href="/svenusling/p/1344.html">Greg Kinnear</a> – ATF Agent Bork (röst) (uncredited)</li><li class="voice">David Spade –  (röst) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Abu Dhabi Film Festival, New Horizons Competition - Special Jury Award ("We recognise the skills on display here in all the elements of cinematic language.") 2012 (Benh Zeitlin)</li><li>AAFCA Award - Topp tio filmer 2012</li><li>AAFCA Award - Genombrottsinsats 2012 (Quvenzhané Wallis)</li><li>Austin Film Critics Award - Bästa första film 2012 (Benh Zeitlin)</li><li>Austin Film Critics Association, Breakthrough Artist Award 2012 (Quvenzhané Wallis)</li><li>ACCA - Bästa musik 2012</li><li>BFCC Award - Topp tio filmer 2012</li><li>Bombay International Film Festival, Mumbai Young Critics Award 2012 (Benh Zeitlin)</li><li>Bombay International Film Festival, Silver Gateway - Bästa skådespelare 2012 (Dwight Henry)</li><li>Bombay International Film Festival, Silver Gateway - Jury Grand Prize 2012 (Benh Zeitlin)</li><li>BOFCA Award - Årets tio bästa filmer 2012</li><li>British Film Institute Awards, Sutherland Trophy (One film stood out as most clearly deserving of the top prize recognising innovation and originality: Benh Zeitlin's daringly vast, richly detailed Beasts of the Southern Wild.) 2012</li><li>Cannes Film Festival, FIPRESCI Prize - Un Certain Regard 2012 (Benh Zeitlin)</li><li>Cannes Film Festival, Golden Camera 2012 (Benh Zeitlin)</li><li>Cannes Film Festival, Prix Regards Jeune 2012 (Benh Zeitlin)</li><li>Cannes Film Festival, Prize of the Ecumenical Jury - Special Mention 2012 (Benh Zeitlin)</li><li>Capri, Hollywood,  Capri Actress Award 2012 (Quvenzhané Wallis)</li><li>Capri, Hollywood, Capri Surprise Film of the Year Award 2012</li><li>CFCA Award - Mest lovande filmskapare 2012 (Benh Zeitlin)</li><li>CFCA Award - Mest lovande skådespelare 2012 (Quvenzhané Wallis)</li><li>Dallas-Fort Worth Film Critics Association Awards, Russell Smith Award 2012 (Benh Zeitlin)</li><li>Deauville Film Festival, Grand Special Prize 2012 (Benh Zeitlin)</li><li>Deauville Film Festival, Revelations Prize 2012 (Benh Zeitlin)</li><li>Durban International Film Festival, Best Direction 2012 (Benh Zeitlin)</li><li>Expresion en Corto International Film Festival, Special Jury Award - Bästa debutfilm 2012 (Benh Zeitlin)</li><li>Florida Film Critics Circle Awards, Pauline Kael Breakout Award 2012 (Quvenzhané Wallis)</li><li>Ghent International Film Festival, Youth Jury Award - Bästa film 2012 (Benh Zeitlin)</li><li>Gotham Independent Film Award - Genombrottsregissör 2012 (Benh Zeitlin)</li><li>New Hollywood Award 2012 (Quvenzhané Wallis)</li><li>Humanitas Prize - Sundance Film Category 2012</li><li>Indiana Film Journalists Association, Winner Original Vision Award 2012</li><li>ICP Award - Bästa första film 2012 (Benh Zeitlin)</li><li>IOFCP Award - Topp tio filmer 2012</li><li>FICC Award - Bästa film 2012 (Benh Zeitlin)</li><li>Little Rock Film Festival, Golden Rock Narrative Award - Bästa film 2012 (Benh Zeitlin)</li><li>London Film Festival, Sutherland Award - Första film 2012 (Benh Zeitlin)</li><li>LAFCA Award - Bästa manliga biroll 2012 (Dwight Henry)</li><li>LAFCA Award - Bästa musik 2012</li><li>Los Angeles Film Critics Association Awards, New Generation Award 2012 (Benh Zeitlin)</li><li>Los Angeles Film Festival, Audience Award - Bästa narrativ film 2012 (Benh Zeitlin)</li><li>Nantucket Film Festival, Screenwriting Award - Nya röster 2012</li><li>Nantucket Film Festival, Screenwriting Award - Nya röster i manus 2012</li><li>NBR Award - Topp film 2012</li><li>NBR Award - Bästa regidebut 2012 (Benh Zeitlin)</li><li>NYFCO Award - Topp filmer 2012</li><li>NYFCO Award - Bästa regidebut 2012 (Benh Zeitlin)</li><li>NYFCO Award - Bästa genombrottsinsats 2012 (Quvenzhané Wallis)</li><li>OFCC Award - Bästa debutfilm 2012 (Benh Zeitlin)</li><li>Palm Springs International Film Festival, Directors to Watch 2012 (Benh Zeitlin)</li><li>PFCS Award - Bästa genombrottsinsats bakom kameran 2012 (Benh Zeitlin)</li><li>PFCS Award - Bästa genombrottsinsats framför kameran 2012 (Quvenzhané Wallis)</li><li>PFCS Award - Bästa insats av en yngre skådespelare i en huvudroll eller biroll 2012 (Quvenzhané Wallis)</li><li>Reykjavik International Film Festival, Golden Puffin - Bästa film 2012 (Benh Zeitlin)</li><li>Satellite Awards, Special Achievement Award - Enastående ny talang 2012 (Quvenzhané Wallis)</li><li>Seattle International Film Festival, Golden Space Needle Award - Bästa regi 2012 (Benh Zeitlin)</li><li>Southeastern Film Critics Association Awards, Wyatt Award 2012</li><li>Stockholm Film Festival, Aluminum Horse - Bästa regi (Motivation of the jury: "For achieving a sense of naturalism in a fantastic universe and grabbing a hold of his audience and never letting them go. For his belief in humanity in a cinematic landscape that so often can not pull itself out of the mire of misanthropy. Like our hero Hushpuppy, Benh can not help but hear and embrace the beating heart that keeps all of us going.") 2012 (Benh Zeitlin)</li><li>Sundance Film Festival, Grand Jury Prize - Dramatic 2012 (Benh Zeitlin)</li><li>Sundance Film Festival, Cinematography Award - Dramatic 2012</li><li>TFCA Award - Bästa debutfilm 2012 (Benh Zeitlin)</li><li>UFCA Award - Bästa manliga biroll 2012 (Dwight Henry)</li><li>VVFP Award - Bästa debutfilm 2012</li><li>Washington DC Area Film Critics Association Awards, Joe Barber Award - Bästa insats av en ung skådespelare 2012 (Quvenzhané Wallis)</li><li>WFCC Award - Bästa unga skådespelare 2012 (Quvenzhané Wallis)</li><li>AFI Award - Årets film (BEASTS OF THE SOUTHERN WILD roars with the strength of a people who wish to live and die in a world a wonder with adversity. At the center of this poetic storm stands Hushpuppy, a tiny heroine who towers among the toughest of the year. Hers is a triumphant tale of the mind and of the power of fantasy and folklore to carry us forward. In Hushpuppy, director Benh Zeitlin and co-writer Lucy Alibar capture the spirit of an unsung America with a commanding reminder from a small but strong voice - that all of us are "a little piece of a big, big universe, and that makes it right.") 2013</li><li>Alliance of Women Film Journalists, EDA Award - Bästa filmmusik 2013</li><li>Alliance of Women Film Journalists, EDA Female Focus Award - Bästa genombrottsinsats 2013 (Quvenzhané Wallis)</li><li>Alliance of Women Film Journalists, EDA Female Focus Award - Bästa kvinnliga manusförfattare 2013</li><li>Black Reel - Bästa film 2013</li><li>Black Reel - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Black Reel - Bästa genombrottsinsats 2013 (Quvenzhané Wallis)</li><li>Black Reel - Bästa msuik 2013</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa unga skådespelare/skådespelerska 2013 (Quvenzhané Wallis)</li><li>Chlotrudis Award - Bästa scenografi 2013</li><li>CinEuphoria - Bästa manliga biroll - Internationell 2013</li><li>Independent Spirit Award - Bästa foto 2013</li><li>GAFCA Award - Bästa musik 2013</li><li>GAFCA Award - Bästa scenografi 2013</li><li>Georgia Film Critics Association, Breakthrough Award 2013 (Benh Zeitlin)</li><li>Gold Derby Award - Genombrottsinsats 2013 (Quvenzhané Wallis)</li><li>Golden Trailer 2013</li><li>Grand Prix de l'UCC 2013</li><li>Image Award - Bästa Independent film 2013</li><li>Image Award - Bästa regi 2013 (Benh Zeitlin)</li><li>INOCA - Bästa musik 2013</li><li>OFTA Film Award - Bästa filmdebut 2013 (Benh Zeitlin)</li><li>OFTA Film Award - Bästa genombrottsinsats - Kvinna 2013 (Quvenzhané Wallis)</li><li>Santa Barbara International Film Festival, Virtuoso Award 2013 (Quvenzhané Wallis)</li><li>Science Fiction and Fantasy Writers of America, Bradbury Award 2013</li><li>World Soundtrack Award - Discovery of the Year 2013</li><li>Young Artist Award - Bästa insats av en yngre skådespelare - Ung kvinnlig huvudroll 2013 (Quvenzhané Wallis)</li><li>Bodil Awards, Bodil - Bästa amerikanska film 2014 (Benh Zeitlin)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Black Pearl Award - New Horizons Competition 2012 (Benh Zeitlin)</li><li>Austin Film Critics Award - Bästa film 2012</li><li>ACCA - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>ACCA - Bästa manus baserad på annan förlaga 2012</li><li>ACCA - Bästa foto 2012</li><li>Bombay International Film Festival, Golden Gateway 2012 (Benh Zeitlin)</li><li>BSFC Award - Bästa nya filmskapare 2012 (Benh Zeitlin)</li><li>British Independent Film Award - Bästa internationella independent film 2012</li><li>Camerimage, Best Directorial Debut 2012 (Benh Zeitlin)</li><li>Camerimage, Golden Frog 2012</li><li>Cannes Film Festival, Un Certain Regard Award 2012 (Benh Zeitlin)</li><li>CFCA Award - Bästa film 2012</li><li>CFCA Award - Bästa regi 2012 (Benh Zeitlin)</li><li>CFCA Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>CFCA Award - Bästa manliga biroll 2012 (Dwight Henry)</li><li>CFCA Award - Mest lovande aktör 2012 (Dwight Henry)</li><li>CFCA Award - Bästa manus baserad på annan förlaga 2012</li><li>CFCA Award - Bästa musik 2012</li><li>DFWFCA Award - Bästa film 2012</li><li>DFWFCA Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>DFCS Award - Bästa genombrottskonstnär 2012 (Benh Zeitlin)</li><li>Golden Schmoes - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>Golden Schmoes - Bästa genombrottsinsats 2012 (Quvenzhané Wallis)</li><li>Gotham Awards, Audience Award 2012</li><li>Gotham Independent Film Award - Genombrottsskådespelerska 2012 (Quvenzhané Wallis)</li><li>HFCS Award - Bästa film 2012</li><li>HFCS Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>HFCS Award - Bästa musik 2012</li><li>IGN Award - Bästa Fantasyfilm 2012</li><li>IFJA Award - Bästa film 2012</li><li>ICP Award - Bästa film (7:e plats) 2012</li><li>ICP Award - Bästa skådespelerska (8:e plats) 2012 (Quvenzhané Wallis)</li><li>ICP Award - Bästa musik (2:a plats) 2012</li><li>IOFCP Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>IOFCP Award - Bästa manus baserad på annan förlaga 2012</li><li>Sierra Award - Bästa film (9:e plats) 2012</li><li>NYFCC Award - Bästa första film 2012 (Benh Zeitlin)</li><li>OFCC Award - Bästa film (6:e plats) 2012</li><li>PFCS Award - Bästa film 2012</li><li>PFCS Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>PFCS Award - Bästa genombrott på kamera 2012 (Dwight Henry)</li><li>SDFCS Award - Bästa foto 2012</li><li>SDFCS Award - Bästa musik 2012</li><li>Satellite Award - Bästa film 2012</li><li>Satellite Award - Bästa foto 2012</li><li>Satellite Award - Bästa musik 2012</li><li>SEFCA Award - Bästa film (6:e plats) 2012</li><li>SLFCA Award - Bästa regi 2012 (Benh Zeitlin)</li><li>SLFCA Award - Bästa skådespelerska 2012</li><li>SLFCA Award - Bästa manus baserad på annan förlaga 2012</li><li>SLFCA Award - Bästa foto 2012</li><li>SLFCA Award - Bästa musik 2012</li><li>SLFCA Award - Special Merit (for best scene, cinematic technique or other memorable aspect or moment) (For the hurricane (and Wink shooting at it).) 2012</li><li>Stockholm Film Festival, Bronze Horse - Bästa film 2012 (Benh Zeitlin)</li><li>Sydney Film Festival, Sydney Film Prize 2012 (Benh Zeitlin)</li><li>UFCA Award - Bästa skådespelerska 2012 (Quvenzhané Wallis)</li><li>VVFP Award - Bästa skådespelerska (5:e plats) 2012 (Quvenzhané Wallis)</li><li>VVFP Award - Bästa manliga biroll (10:e plats) 2012 (Dwight Henry)</li><li>WAFCA Award - Bästa musik 2012</li><li>Zurich Film Festival, Golden Eye - Bästa internationella film 2012 (Benh Zeitlin)</li><li>Oscar - Bästa film 2013</li><li>Oscar - Bästa regi 2013 (Benh Zeitlin)</li><li>Oscar - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Oscar - Bästa manus baserad på annan förlaga 2013</li><li>BAFTA Film Award - Bästa manus baserad på annan förlaga 2013</li><li>Saturn Award - Bästa insats av en yngre skådespelare 2013 (Quvenzhané Wallis)</li><li>AFCA Award - Bästa internationella film 2013</li><li>BET Award - Bästa film 2013</li><li>Black Reel - Bästa manliga biroll 2013 (Dwight Henry)</li><li>Black Reel - Bästa genombrottsinsats 2013 (Dwight Henry)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film 2013</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>COFCA Award - Bästa genombrottsinsats (For composing, directing and screenwriting.) 2012 (Benh Zeitlin)</li><li>COFCA Award - Bästa genombrottsinsats (For acting.) 2012 (Quvenzhané Wallis)</li><li>COFCA Award - Bästa skådespelare 2012 (Quvenzhané Wallis)</li><li>Chlotrudis Award - Bästa film 2013</li><li>Chlotrudis Award - Bästa regi 2013 (Benh Zeitlin)</li><li>Chlotrudis Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Chlotrudis Award - Bästa manliga biroll 2013 (Dwight Henry)</li><li>Chlotrudis Award - Bästa manus baserad på annan förlaga 2013</li><li>Chlotrudis Award - Bästa foto 2013</li><li>CinEuphoria - Bästa manus - Internationell 2013</li><li>CinEuphoria - Bästa originalmusik - Internationell 2013</li><li>CDG Award - Excellence in Contemporary Film 2013</li><li>DFCS Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Empire Award - Bästa nykomling - Kvinna 2013 (Quvenzhané Wallis)</li><li>Evening Standard British Film Award -  Best Technical Achievement (Cinematography) 2013</li><li>Independent Spirit Award - Bästa film 2013</li><li>Independent Spirit Award - Bästa regi 2013 (Benh Zeitlin)</li><li>Independent Spirit Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Gay and Lesbian Entertainment Critics Association, Dorian Award - Årets film 2013</li><li>GAFCA Award - Bästa film 2013</li><li>GAFCA Award - Bästa regi 2013 (Benh Zeitlin)</li><li>GAFCA Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>GAFCA Award - Bästa manus baserad på annan förlaga 2013</li><li>Georgia Film Critics Association, Breakthrough Award  2013 (Quvenzhané Wallis)</li><li>Gold Derby Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>Gold Derby Award - Bästa genombrottsinsats 2013 (Dwight Henry)</li><li>Gold Derby Award - Bästa manus baserad på annan förlaga 2013</li><li>Gold Derby Award - Bästa musik 2013</li><li>Golden Trailer - Best Independent Trailer 2013</li><li>Golden Trailer - Best Independent TV Spot 2013</li><li>Image Award - Bästa film 2013</li><li>Image Award - Bästa skådespelerska 2013</li><li>Image Award - Bästa manliga biroll 2013 (Dwight Henry)</li><li>ICS Award - Bästa manliga biroll 2013 (Dwight Henry)</li><li>ICS Award - Bästa musik 2013</li><li>INOCA - Bästa film 2013</li><li>INOCA - Bästa skådespelare 2013</li><li>INOCA - Bästa manliga biroll 2013 (Dwight Henry)</li><li>INOCA - Bästa manus baserad på annan förlaga 2013</li><li>IOMA - Bästa manus baserad på annan förlaga 2013</li><li>ALFS Award - Årets film 2013</li><li>ALFS Award - Technical Achievement of the Year 2013</li><li>Golden Reel Award - Best Sound Editing - Dialogue and ADR in a Feature Film 2013</li><li>MTV Movie Award - Genombrottsinsats 2013 (Quvenzhané Wallis)</li><li>NCFCA Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>NCFCA Award - Bästa manus baserad på annan förlaga 2013</li><li>OFTA Film Award - Bästa skådespelerska 2013 (Quvenzhané Wallis)</li><li>OFTA Film Award - Bästa ungdomsinsats 2013 (Quvenzhané Wallis)</li><li>OFTA Film Award - Bästa genombrottsinsats - Man 2013 (Dwight Henry)</li><li>OFCS Award - Bästa skådespelerska 2013</li><li>OFCS Award - Bästa manliga biroll 2013 (Dwight Henry)</li><li>OFCS Award - Bästa manus baserad på annan förlaga 2013</li><li>PGA Award - Outstanding Producer of Theatrical Motion Pictures 2013</li><li>USC Scripter Award 2013</li><li>World Soundtrack Award - Best Original Song Written Directly for a Film (For the song "The Bathtub".) 2013</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Paramount executives considered making this a live-action movie.</li><li>In the desert scene, where Beavis and Butthead hallucinate, voices are heard in the background. When the soundtrack is played backwards, Beavis and Butthead are heard speaking clearly, including phrases such as &quot;Everybody go to college, study hard, study hard.&quot;</li><li>Owing to the success of the film, a sequel was planned to be released in 1999, but plans were eventually scrapped.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

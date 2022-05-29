@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Beasts Of The Southern Wild | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Beasts Of The Southern Wild <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2012"><a href="#">2012</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Benh Zeitlin</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Quvenzhané Wallis – Hushpuppy</li><li>Dwight Henry – Wink</li><li>Levy Easterly – Jean Battiste</li><li>Lowell Landes – Walrus</li><li>Pamela Harper – Little Jo</li><li>Gina Montana – Miss Bathsheba</li><li>Amber Henry – LZA</li><li>Jonshel Alexander – Joy Strong</li><li>Nicholas Clark – Boy with Bell</li><li>Joseph Brown – Winston</li><li>Henry D. Coleman – Peter T</li><li>Kaliana Brower – T-Lou</li><li>Philip Lawrence – Dr. Maloney</li><li>Hannah Holby – Open Arms Babysitter</li><li>Jimmy Lee Moore – Sgt. Major</li><li>Jovan Hathaway – The Cook</li><li>Kendra Harris – Baby Hushpuppy</li><li>Windle Bourg – Herself</li><li>Marilyn Barbarin – Cabaret Singer (uncredited)</li><li>Roxanna Francis – Barge Girl (uncredited)</li><li>Jay Oliver – Hospital Patient (uncredited)</li><li>Paisley Layne Zerangue – Rosasharn (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Bogey Awards, Bogey Award in Platin 1997</li><li>Golden Screen, Golden Screen 1997</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Dwight Henry][/p?id=Dwight%20Henry] owned and operated the bakery across the street from the space where the crew was working and casting. [Benh Zeitlin][/p?id=Benh%20Zeitlin] posted a casting flyer with tearaway numbers in Dwight's bakery. After several weeks, he invited Dwight over for a read. Two days later, Dwight moved his shop to a larger space, and when the crew went looking for him for a call back, no one knew where he went. When they located Dwight 2 months later, he turned them down because he was investing all his time in the new bakery. Finally, every single person involved with the film at that point showed up at his bakery at the same time and told him he had to do the movie. Dwight agreed, as long as they rehearsed with him during his midnight baker's hours.</li><li>On the film's very first day of shooting in the fictional &quot;Bathtub&quot; location outside of New Orleans, the BP oil rig explosion and the start of the massive spill occurred. For most of the shoot in nearby waters, [Benh Zeitlin][/p?id=Benh%20Zeitlin] and his crew had to maneuver in and around the clean-up operations.</li><li>Wink reaches down in the river to show Hushpuppy how to catch a fish with his bare hand. A member of the production crew almost died swimming under water while shooting the scene.</li><li>[Benh Zeitlin][/p?id=Benh%20Zeitlin] gives considerable credit to Qulyndreia [Wallis][/p?id=Quvenzhan%C3%A9%20Wallis], mother of the movie's nine-year-old star [Quvenzhané Wallis][/p?id=Quvenzhan%C3%A9%20Wallis] who was always on the set and helped [Zeitlin][/p?id=Benh%20Zeitlin] explain concepts and draw emotions from her daughter to maximize the quality of her Oscar-nominated performance.</li><li>[Quvenzhané Wallis][/p?id=Quvenzhan%C3%A9%20Wallis] and her mom admit that they fibbed about Quvenzhané's age, claiming she was at least six years old, as required to audition, when she was only five. According to director [Benh Zeitlin][/p?id=Benh%20Zeitlin], Nazie, as she is called, beat out almost 4,000 other area kids considered for the lead role.</li><li>More than half of the cast hails from Louisiana bayou country, including the film's star [Quvenzhané Wallis][/p?id=Quvenzhan%C3%A9%20Wallis], and five others in speaking roles.</li><li>With the announcement of the 2012 Academy Award (Oscar) nominations on January 10, 2013, [Quvenzhané Wallis][/p?id=Quvenzhan%C3%A9%20Wallis] became the youngest person ever nominated for a Best Actress Oscar (at age 9). She broke the record of the previous youngest-ever Best Actress nominee, [Keisha Castle-Hughes][/p?id=Keisha%20Castle-Hughes], who was nominated for [Whale Rider][/f?id=21916] at age 13. The same day that [Wallis][/p?id=Quvenzhan%C3%A9%20Wallis] became the youngest-ever Best Actress nominee, [Emmanuelle Riva][/p?id=Emmanuelle%20Riva] (age 85) became the oldest-ever Best Actress nominee for her role in [Amour][/f?id=Amour] (2012). Oscar host [Seth MacFarlane][/p?id=Seth%20MacFarlane] made the joke at the ceremony &quot;To the nominees, congratulations, you were nominated for an Oscar. Something a 9 year old could do.&quot;</li><li>The movie was financed, with a reported budget of $1.3 million, by New York-based nonprofit Cinereach and was the first feature-length project of Court 13 Pictures.</li><li>The production did not hire a cinematographer until less than a month before production. Director [Benh Zeitlin][/p?id=Benh%20Zeitlin] had originally intended to act as cinematographer himself but later decided to employ one. Ben Richardson was hired as as the cinematographer for the miniature portions and had lobbied to shoot the entire film, but despite his friendship with [Zeitlin][/p?id=Benh%20Zeitlin] the producers were hesitant to hire Richardson because he had never shot a feature. After veteran cinematographers were screened and an appropriate one could not be found Richardson shot a test reel on his own and presented it to the producers, and was subsequently hired.</li><li>Director [Benh Zeitlin][/p?id=Benh%20Zeitlin] revealed in a June 22, 2012, interview with HitFix that he never looked at dailies until after the shoot was finished.</li><li>The movie was sold to Fox Searchlight Pictures for about $2 million.</li><li>It is the only Best Picture Oscar nominee that year that did not win any Academy Awards.</li><li>[Benh Zeitlin's][/p?id=Benh%20Zeitlin] directorial film debut.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
