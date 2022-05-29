@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jason Alexander | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Jason Alexander</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1959-11-29">1959-11-29</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/17707.html">Ringaren I Notre Dame (1996)</a> (röst)</li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10383.html">The Aristocrats</a></li><li><a href="/svenusling/m/11655.html">Coneheads</a></li><li><a href="/svenusling/m/13256.html">Dunston Checkar In</a></li><li><a href="/svenusling/m/15188.html">Jafars Återkomst</a> (röst)</li><li><a href="/svenusling/m/16188.html">Min Stora Kärlek</a></li><li><a href="/svenusling/m/16461.html">Moskitkusten</a></li><li><a href="/svenusling/m/17514.html">Pretty Woman</a></li><li><a href="/svenusling/m/17749.html">Rocky Och Bullwinkle På Äventyr</a></li><li><a href="/svenusling/m/21301.html">Vicken Loser</a> (även regi)</li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/11338.html">Brännmärkt</a></li><li><a href="/svenusling/m/18585.html">Snacka Om Rackartyg</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/13221.html">Duckman: Psyche</a> (röst)</li><li><a href="/svenusling/m/13224.html">Duckman: A Civil War</a> (röst)</li><li><a href="/svenusling/m/18102.html">Seinfeld: The Library</a></li><li><a href="/svenusling/m/18104.html">Seinfeld: The Parking Garage</a></li><li><a href="/svenusling/m/18109.html">Seinfeld: The Red Dot</a></li><li><a href="/svenusling/m/18113.html">Seinfeld: The Boyfriend: Part 1</a></li><li><a href="/svenusling/m/18114.html">Seinfeld: The Boyfriend: Part 2</a></li><li><a href="/svenusling/m/18115.html">Seinfeld: The Fix Up</a></li><li><a href="/svenusling/m/18116.html">Seinfeld: The Limo</a></li><li><a href="/svenusling/m/18119.html">Seinfeld: The Parking Space</a></li><li><a href="/svenusling/m/18128.html">Seinfeld: The Bubble Boy</a></li><li><a href="/svenusling/m/18131.html">Seinfeld: The Virgin</a></li><li><a href="/svenusling/m/18132.html">Seinfeld: The Contest</a></li><li><a href="/svenusling/m/18137.html">Seinfeld: The Outing</a></li><li><a href="/svenusling/m/18142.html">Seinfeld: The Junior Mint</a></li><li><a href="/svenusling/m/18145.html">Seinfeld Säsong 5</a></li><li><a href="/svenusling/m/18147.html">Seinfeld: The Glasses</a></li><li><a href="/svenusling/m/18148.html">Seinfeld: The Puffy Shirt</a></li><li><a href="/svenusling/m/18149.html">Seinfeld: The Sniffing Accountant</a></li><li><a href="/svenusling/m/18150.html">Seinfeld: The Bris</a></li><li><a href="/svenusling/m/18151.html">Seinfeld: The Lip Reader</a></li><li><a href="/svenusling/m/18152.html">Seinfeld: The Non-Fat Yogurt</a></li><li><a href="/svenusling/m/18155.html">Seinfeld: The Cigar Store Indian</a></li><li><a href="/svenusling/m/18157.html">Seinfeld: The Stall</a></li><li><a href="/svenusling/m/18158.html">Seinfeld: The Marine Biologist</a></li><li><a href="/svenusling/m/18160.html">Seinfeld: The Pie</a></li><li><a href="/svenusling/m/18161.html">Seinfeld: The Stand-In</a></li><li><a href="/svenusling/m/18163.html">Seinfeld: The Fire</a></li><li><a href="/svenusling/m/18164.html">Seinfeld: The Raincoats</a></li><li><a href="/svenusling/m/18165.html">Seinfeld: The Hamptons</a></li><li><a href="/svenusling/m/18166.html">Seinfeld: The Opposite</a></li><li><a href="/svenusling/m/18167.html">Seinfeld Säsong 6</a></li><li><a href="/svenusling/m/18168.html">Seinfeld: The Chaperone</a></li><li><a href="/svenusling/m/18169.html">Seinfeld: The Big Salad</a></li><li><a href="/svenusling/m/18170.html">Seinfeld: The Pledge Drive</a></li><li><a href="/svenusling/m/18172.html">Seinfeld: The Couch</a></li><li><a href="/svenusling/m/18173.html">Seinfeld: The Gymnast</a></li><li><a href="/svenusling/m/18174.html">Seinfeld: The Mom and Pop Store</a></li><li><a href="/svenusling/m/18175.html">Seinfeld: The Soup</a></li><li><a href="/svenusling/m/18176.html">Seinfeld: The Secretary</a></li><li><a href="/svenusling/m/18177.html">Seinfeld: The Switch</a></li><li><a href="/svenusling/m/18178.html">Seinfeld: The Race</a></li><li><a href="/svenusling/m/18179.html">Seinfeld: The Label Maker</a></li><li><a href="/svenusling/m/18180.html">Seinfeld: The Scofflaw</a></li><li><a href="/svenusling/m/18182.html">Seinfeld: The Beard</a></li><li><a href="/svenusling/m/18183.html">Seinfeld: The Kiss Hello</a></li><li><a href="/svenusling/m/18184.html">Seinfeld: The Doorman</a></li><li><a href="/svenusling/m/18185.html">Seinfeld: The Jimmy</a></li><li><a href="/svenusling/m/18186.html">Seinfeld: The Doodle</a></li><li><a href="/svenusling/m/18187.html">Seinfeld: The Fusilli Jerry</a></li><li><a href="/svenusling/m/18189.html">Seinfeld: The Face Painter</a></li><li><a href="/svenusling/m/18193.html">Seinfeld: The Postponement</a></li><li><a href="/svenusling/m/18194.html">Seinfeld: The Maestro</a></li><li><a href="/svenusling/m/18198.html">Seinfeld: The Secret Code</a></li><li><a href="/svenusling/m/18224.html">Seinfeld: The Little Jerry</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/13217.html">Duckman Säsong 1</a></li><li><a href="/svenusling/m/13218.html">Duckman: I, Duckman</a> (röst)</li><li><a href="/svenusling/m/13219.html">Duckman: T.V. or Not to Be</a> (röst)</li><li><a href="/svenusling/m/13220.html">Duckman: Gripes of Wrath</a> (röst)</li><li><a href="/svenusling/m/13222.html">Duckman: Gland of Opportunity</a> (röst)</li><li><a href="/svenusling/m/13223.html">Duckman: Ride the High School</a> (röst)</li><li><a href="/svenusling/m/13225.html">Duckman: Not So Easy Riders</a> (röst)</li><li><a href="/svenusling/m/13226.html">Duckman: It's the Thing of the Principal</a> (röst)</li><li><a href="/svenusling/m/13227.html">Duckman: Cellar Beware</a> (röst)</li><li><a href="/svenusling/m/13228.html">Duckman: American Dicks</a> (röst)</li><li><a href="/svenusling/m/13229.html">Duckman: About Face</a> (röst)</li><li><a href="/svenusling/m/13230.html">Duckman: Joking the Chicken</a> (röst)</li><li><a href="/svenusling/m/18079.html">Seinfeld Säsong 1</a></li><li><a href="/svenusling/m/18081.html">Seinfeld: Male Unbonding</a></li><li><a href="/svenusling/m/18082.html">Seinfeld: The Stakeout</a></li><li><a href="/svenusling/m/18083.html">Seinfeld: The Robbery</a></li><li><a href="/svenusling/m/18084.html">Seinfeld Säsong 2</a></li><li><a href="/svenusling/m/18085.html">Seinfeld: The Ex-Girlfriend</a></li><li><a href="/svenusling/m/18086.html">Seinfeld: The Pony Remark</a></li><li><a href="/svenusling/m/18087.html">Seinfeld: The Busboy</a></li><li><a href="/svenusling/m/18088.html">Seinfeld: The Baby Shower</a></li><li><a href="/svenusling/m/18089.html">Seinfeld: The Jacket</a></li><li><a href="/svenusling/m/18090.html">Seinfeld: The Chinese Restaurant</a></li><li><a href="/svenusling/m/18091.html">Seinfeld: The Phone Message</a></li><li><a href="/svenusling/m/18092.html">Seinfeld: The Apartment</a></li><li><a href="/svenusling/m/18093.html">Seinfeld: The Stranded</a></li><li><a href="/svenusling/m/18094.html">Seinfeld: The Statue</a></li><li><a href="/svenusling/m/18095.html">Seinfeld: The Heart Attack</a></li><li><a href="/svenusling/m/18096.html">Seinfeld: The Revenge</a></li><li><a href="/svenusling/m/18097.html">Seinfeld: The Deal</a></li><li><a href="/svenusling/m/18098.html">Seinfeld Säsong 3</a></li><li><a href="/svenusling/m/18099.html">Seinfeld: The Note</a></li><li><a href="/svenusling/m/18100.html">Seinfeld: The Truth</a></li><li><a href="/svenusling/m/18101.html">Seinfeld: The Dog</a></li><li><a href="/svenusling/m/18105.html">Seinfeld: The Cafe</a></li><li><a href="/svenusling/m/18106.html">Seinfeld: The Tape</a></li><li><a href="/svenusling/m/18107.html">Seinfeld: The Nose Job</a></li><li><a href="/svenusling/m/18108.html">Seinfeld: The Alternate Side</a></li><li><a href="/svenusling/m/18110.html">Seinfeld: The Suicide</a></li><li><a href="/svenusling/m/18111.html">Seinfeld: The Subway</a></li><li><a href="/svenusling/m/18112.html">Seinfeld: The Pez Dispenser</a></li><li><a href="/svenusling/m/18117.html">Seinfeld: The Good Samaritan</a> (även regi)</li><li><a href="/svenusling/m/18118.html">Seinfeld: The Letter</a></li><li><a href="/svenusling/m/18120.html">Seinfeld: The Keys</a></li><li><a href="/svenusling/m/18121.html">Seinfeld Säsong 4</a></li><li><a href="/svenusling/m/18123.html">Seinfeld: The Trip: Part 2</a></li><li><a href="/svenusling/m/18124.html">Seinfeld: The Pitch</a></li><li><a href="/svenusling/m/18125.html">Seinfeld: The Ticket</a></li><li><a href="/svenusling/m/18126.html">Seinfeld: The Wallet</a></li><li><a href="/svenusling/m/18127.html">Seinfeld: The Watch</a></li><li><a href="/svenusling/m/18129.html">Seinfeld: The Cheever Letters</a></li><li><a href="/svenusling/m/18130.html">Seinfeld: The Opera</a></li><li><a href="/svenusling/m/18133.html">Seinfeld: The Airport</a></li><li><a href="/svenusling/m/18134.html">Seinfeld: The Pick</a></li><li><a href="/svenusling/m/18135.html">Seinfeld: The Visa</a></li><li><a href="/svenusling/m/18136.html">Seinfeld: The Movie</a></li><li><a href="/svenusling/m/18138.html">Seinfeld: The Shoes</a></li><li><a href="/svenusling/m/18139.html">Seinfeld: The Old Man</a></li><li><a href="/svenusling/m/18140.html">Seinfeld: The Implant</a></li><li><a href="/svenusling/m/18141.html">Seinfeld: The Handicap Spot</a></li><li><a href="/svenusling/m/18143.html">Seinfeld: The Smelly Car</a></li><li><a href="/svenusling/m/18144.html">Seinfeld: The Pilot</a></li><li><a href="/svenusling/m/18146.html">Seinfeld: The Mango</a></li><li><a href="/svenusling/m/18153.html">Seinfeld: The Barber</a></li><li><a href="/svenusling/m/18154.html">Seinfeld: The Masseuse</a></li><li><a href="/svenusling/m/18156.html">Seinfeld: The Conversion</a></li><li><a href="/svenusling/m/18159.html">Seinfeld: The Dinner Party</a></li><li><a href="/svenusling/m/18162.html">Seinfeld: The Wife</a></li><li><a href="/svenusling/m/18171.html">Seinfeld: The Chinese Woman</a></li><li><a href="/svenusling/m/18188.html">Seinfeld: The Diplomat's Club</a></li><li><a href="/svenusling/m/18190.html">Seinfeld: The Understudy</a></li><li><a href="/svenusling/m/18191.html">Seinfeld Säsong 7</a></li><li><a href="/svenusling/m/18192.html">Seinfeld: The Engagement</a></li><li><a href="/svenusling/m/18195.html">Seinfeld: The Wink</a></li><li><a href="/svenusling/m/18196.html">Seinfeld: The Hot Tub</a></li><li><a href="/svenusling/m/18197.html">Seinfeld: The Soup Nazi</a></li><li><a href="/svenusling/m/18199.html">Seinfeld: The Pool Guy</a></li><li><a href="/svenusling/m/18200.html">Seinfeld: The Sponge</a></li><li><a href="/svenusling/m/18201.html">Seinfeld: The Gum</a></li><li><a href="/svenusling/m/18202.html">Seinfeld: The Rye</a></li><li><a href="/svenusling/m/18203.html">Seinfeld: The Caddy</a></li><li><a href="/svenusling/m/18204.html">Seinfeld: The Seven</a></li><li><a href="/svenusling/m/18205.html">Seinfeld: The Cadillac</a></li><li><a href="/svenusling/m/18206.html">Seinfeld: The Shower Head</a></li><li><a href="/svenusling/m/18207.html">Seinfeld: The Doll</a></li><li><a href="/svenusling/m/18208.html">Seinfeld: The Friars Club</a></li><li><a href="/svenusling/m/18209.html">Seinfeld: The Wig Master</a></li><li><a href="/svenusling/m/18210.html">Seinfeld: The Calzone</a></li><li><a href="/svenusling/m/18211.html">Seinfeld: The Bottle Deposit</a></li><li><a href="/svenusling/m/18212.html">Seinfeld: The Wait Out</a></li><li><a href="/svenusling/m/18213.html">Seinfeld Säsong 8</a></li><li><a href="/svenusling/m/18214.html">Seinfeld: The Foundation</a></li><li><a href="/svenusling/m/18215.html">Seinfeld: The Soul Mate</a></li><li><a href="/svenusling/m/18216.html">Seinfeld: The Bizarro Jerry</a></li><li><a href="/svenusling/m/18217.html">Seinfeld: The Little Kicks</a></li><li><a href="/svenusling/m/18218.html">Seinfeld: The Package</a></li><li><a href="/svenusling/m/18219.html">Seinfeld: The Fatigues</a></li><li><a href="/svenusling/m/18220.html">Seinfeld: The Checks</a></li><li><a href="/svenusling/m/18221.html">Seinfeld: The Chicken Roaster</a></li><li><a href="/svenusling/m/18222.html">Seinfeld: The Abstinence</a></li><li><a href="/svenusling/m/18223.html">Seinfeld: The Andrea Doria</a></li><li><a href="/svenusling/m/18225.html">Seinfeld: The Money</a></li><li><a href="/svenusling/m/18226.html">Seinfeld: The Comeback</a></li><li><a href="/svenusling/m/18227.html">Seinfeld: The Van Buren Boys</a></li><li><a href="/svenusling/m/18228.html">Seinfeld: The Susie</a></li><li><a href="/svenusling/m/18229.html">Seinfeld: The Pothole</a></li><li><a href="/svenusling/m/18230.html">Seinfeld: The English Patient</a></li><li><a href="/svenusling/m/18231.html">Seinfeld: The Nap</a></li><li><a href="/svenusling/m/18232.html">Seinfeld: The Yada Yada</a></li><li><a href="/svenusling/m/18233.html">Seinfeld: The Millennium</a></li><li><a href="/svenusling/m/18234.html">Seinfeld: The Muffin Tops</a></li><li><a href="/svenusling/m/18235.html">Seinfeld: The Summer of George</a></li><li><a href="/svenusling/m/18236.html">Seinfeld Säsong 9</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/18080.html">Seinfeld: The Seinfeld Chronicles</a></li><li><a href="/svenusling/m/18122.html">Seinfeld: The Trip: Part 1</a></li><li><a href="/svenusling/m/18181.html">Seinfeld: Highlights of a Hundred</a></li><li><a href="/svenusling/m/19767.html">Star Trek: Voyager: Think Tank</a></li><li><a href="/svenusling/m/21023.html">2 1/2 Män: The Straw in My Donut Hole</a></li><li><a href="/svenusling/m/21703.html">Vänner: The One Where Rosita Dies</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

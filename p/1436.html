@@ -1,0 +1,227 @@
+<br />
+<b>Warning</b>:  array_key_exists() expects parameter 2 to be array, null given in <b>/Library/WebServer/Documents/lib/functions.php</b> on line <b>150</b><br />
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jason Lee | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Jason Lee</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1970-04-25">1970-04-25</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/12792.html">Dogma</a></li><li><a href="/svenusling/m/13426.html">Enemy Of The State</a></li><li><a href="/svenusling/m/15180.html">Jack-Jack Attack</a> (röst)</li><li><a href="/svenusling/m/19947.html">Superhjältarna</a> (röst)</li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10275.html">Alvin Och Gänget</a></li><li><a href="/svenusling/m/10984.html">Big Trouble</a></li><li><a href="/svenusling/m/11524.html">Chasing Amy</a></li><li><a href="/svenusling/m/15261.html">Jersey Girl</a></li><li><a href="/svenusling/m/15499.html">Kissing A Fool</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/10043.html">A Guy Thing</a></li><li><a href="/svenusling/m/11666.html">Cop Out</a></li><li><a href="/svenusling/m/13203.html">Drömfångare</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/16562.html">My Name Is Earl Säsong 1</a></li><li><a href="/svenusling/m/16565.html">My Name Is Earl: Randy's Touchdown</a></li><li><a href="/svenusling/m/16566.html">My Name Is Earl: Faked My Own Death</a></li><li><a href="/svenusling/m/16568.html">My Name Is Earl: Broke Joy's Fancy Figurine</a></li><li><a href="/svenusling/m/16569.html">My Name Is Earl: Stole Beer From A Golfer</a></li><li><a href="/svenusling/m/16571.html">My Name Is Earl: Cost Dad The Election</a></li><li><a href="/svenusling/m/16573.html">My Name Is Earl: Barn Burner</a></li><li><a href="/svenusling/m/16574.html">My Name Is Earl: O Karma, Where Art Thou?</a></li><li><a href="/svenusling/m/16576.html">My Name Is Earl: Monkeys In Space</a></li><li><a href="/svenusling/m/16577.html">My Name Is Earl: Something To Live For</a></li><li><a href="/svenusling/m/16578.html">My Name Is Earl: The Professor</a></li><li><a href="/svenusling/m/16580.html">My Name Is Earl: Dad's Car</a></li><li><a href="/svenusling/m/16583.html">My Name Is Earl: The Bounty Hunter</a></li><li><a href="/svenusling/m/16584.html">My Name Is Earl: Stole A Badge</a></li><li><a href="/svenusling/m/16586.html">My Name Is Earl: Number One</a></li><li><a href="/svenusling/m/16595.html">My Name Is Earl: Robbed A Stoner Blind</a></li><li><a href="/svenusling/m/16596.html">My Name Is Earl: Born A Gamblin Man</a></li><li><a href="/svenusling/m/16601.html">My Name Is Earl: Kept A Guy Locked In A Truck</a></li><li><a href="/svenusling/m/16607.html">My Name Is Earl: Two Balls, Two Strikes</a></li><li><a href="/svenusling/m/16608.html">My Name Is Earl: G.E.D.</a></li><li><a href="/svenusling/m/16609.html">My Name Is Earl: Get A Real Job</a></li><li><a href="/svenusling/m/16610.html">My Name Is Earl: The Trial</a></li><li><a href="/svenusling/m/16613.html">My Name Is Earl: My Name Is Inmate #28301-016: Part 2</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/16563.html">My Name Is Earl: Pilot</a></li><li><a href="/svenusling/m/16564.html">My Name Is Earl: Quit Smoking</a></li><li><a href="/svenusling/m/16567.html">My Name Is Earl: Teacher Earl</a></li><li><a href="/svenusling/m/16570.html">My Name Is Earl: Joy's Wedding</a></li><li><a href="/svenusling/m/16572.html">My Name Is Earl: White Lie Christmas</a></li><li><a href="/svenusling/m/16575.html">My Name Is Earl: Stole P's HD Cart</a></li><li><a href="/svenusling/m/16579.html">My Name Is Earl: Didn't Pay Taxes</a></li><li><a href="/svenusling/m/16582.html">My Name Is Earl: Boogeyman</a></li><li><a href="/svenusling/m/16585.html">My Name Is Earl: BB</a></li><li><a href="/svenusling/m/16589.html">My Name Is Earl: Jump For Joy</a></li><li><a href="/svenusling/m/16590.html">My Name Is Earl: Sticks & Stones</a></li><li><a href="/svenusling/m/16591.html">My Name Is Earl: Larceny Of A Kitty Cat</a></li><li><a href="/svenusling/m/16592.html">My Name Is Earl: Van Hickey</a></li><li><a href="/svenusling/m/16593.html">My Name Is Earl: Made A Lady Think I Was God</a></li><li><a href="/svenusling/m/16597.html">My Name Is Earl: South Of The Border: Part Uno</a></li><li><a href="/svenusling/m/16598.html">My Name Is Earl: South Of The Border: Part Dos</a></li><li><a href="/svenusling/m/16600.html">My Name Is Earl: Buried Treasure</a></li><li><a href="/svenusling/m/16602.html">My Name Is Earl: Foreign Exchange Student</a></li><li><a href="/svenusling/m/16603.html">My Name Is Earl: Blow</a></li><li><a href="/svenusling/m/16604.html">My Name Is Earl: The Birthday Party</a></li><li><a href="/svenusling/m/16605.html">My Name Is Earl: Guess Who's Coming Out Of Joy</a></li><li><a href="/svenusling/m/16612.html">My Name Is Earl: My Name Is Inmate #28301-016: Part 1</a></li><li><a href="/svenusling/m/16614.html">My Name Is Earl: The Gangs Of Camden County</a></li><li><a href="/svenusling/m/16615.html">My Name Is Earl: The Frank Factor</a></li><li><a href="/svenusling/m/16619.html">My Name Is Earl: Randy in Charge: Of Our Days And Our Nights</a></li><li><a href="/svenusling/m/16620.html">My Name Is Earl: Midnight Bun</a></li><li><a href="/svenusling/m/16621.html">My Name Is Earl: Burn Victim</a></li><li><a href="/svenusling/m/16622.html">My Name Is Earl: Early Release</a></li><li><a href="/svenusling/m/16623.html">My Name Is Earl: Bad Earl</a></li><li><a href="/svenusling/m/16625.html">My Name Is Earl: I Won't Die with A Little Help From My Friends: Part 2</a></li><li><a href="/svenusling/m/16626.html">My Name Is Earl: Stole A Motorcycle</a></li><li><a href="/svenusling/m/16627.html">My Name Is Earl: No Heads And A Duffle Bag </a></li><li><a href="/svenusling/m/16628.html">My Name Is Earl: Killerball</a></li><li><a href="/svenusling/m/16629.html">My Name Is Earl: Love Octagon</a></li><li><a href="/svenusling/m/16630.html">My Name Is Earl: Girl Earl</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/16581.html">My Name Is Earl: Y2K</a></li><li><a href="/svenusling/m/16588.html">My Name Is Earl: Very Bad Things</a></li><li><a href="/svenusling/m/16594.html">My Name Is Earl: Mailbox</a></li><li><a href="/svenusling/m/16599.html">My Name Is Earl: Our 'Cops' Is On!</a></li><li><a href="/svenusling/m/16606.html">My Name Is Earl: Harassed A Reporter</a></li><li><a href="/svenusling/m/16616.html">My Name Is Earl: Creative Writing</a></li><li><a href="/svenusling/m/16617.html">My Name Is Earl: Our Other Cops Is On!: Part 1</a></li><li><a href="/svenusling/m/16624.html">My Name Is Earl: I Won't Die with A Little Help From My Friends: Part 1</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16618.html">My Name Is Earl: Our Other Cops Is On!: Part 2</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
