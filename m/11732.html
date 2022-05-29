@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cubic | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Cubic <a href="#" class="grade">+++</a></h2>
+										<h3>Equilibrium</h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Kurt Wimmer</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Dominic Purcell – Seamus</li><li><a href="/svenusling/p/1163.html">Christian Bale</a> – John Preston</li><li><a href="/svenusling/p/1865.html">Sean Bean</a> – Partridge</li><li>Christian Kahrmann – Officer in Charge</li><li>John Keogh – Chemist</li><li>Sean Pertwee – Father</li><li>William Fichtner – Jurgen</li><li>Angus Macfadyen – Dupont</li><li>David Barrash – Evidentiary Storage Officer</li><li>Dirk Martens – Gate Guard</li><li>Taye Diggs – Brandt</li><li>Matthew Harbour – Robbie Preston</li><li>Maria Pia Calzone – Preston's Wife</li><li>Emily Siewert – Lisa Preston</li><li>Emily Watson – Mary O'Brien</li><li>Mike Smith – Enforcer Commander</li><li>Florian Fitz – Gate Guard</li><li>Danny Lee Clark – Lead Sweeper</li><li>Francesco Cabras – Rebel Leader</li><li>Kurt Wimmer – Rebel Victim</li><li>Anatole Taubman – Crematory Technician</li><li>Brian Conley – Reading Room Proprietor</li><li>Alexa Summer – Viviana Preston</li><li>Brian W. Cook – Dupont's Secretary</li><li>Mehmet Kurtulus – Search Coordinator</li><li>David Hemmings – Proctor</li><li>Klaus Schindler – Interrogator</li><li>Oliver Brandl – Polygraph Technician</li><li>Armin Marewski – Security Guard (uncredited)</li><li>Wolfgang Stegemann – Cleric (uncredited)</li><li>Sy Turner – Tetragrammaton Clerick (uncredited)</li><li>Dennenesch Zoudé –  (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Bergen International Film Festival, Audience Award 2000 (1040)</li><li>BSFC Award - Bästa utländskspråkiga film 2000</li><li>BSFC Award - Bästa foto 2000</li><li>Ghent International Film Festival, Georges Delerue Prize 2000</li><li>Golden Horse Award - Bästa film 2000 (1040)</li><li>Golden Horse Award - Bästa specialeffekter 2000</li><li>Golden Horse Award - Bästa ljudeffekter 2000</li><li>Golden Horse Award - Bästa klippning 2000</li><li>Golden Horse Award - Best Action Direction 2000</li><li>LAFCA Award - Bästa film 2000</li><li>LAFCA Award - Bästa foto 2000</li><li>LAFCA Award - Bästa musik 2000</li><li>LAFCA Award - Bästa scenografi 2000</li><li>NBR Award - Bästa utländspråkiga film 2000</li><li>NYFCC Award - Bästa foto 2000</li><li>TFCA Award - Bästa film 2000</li><li>TFCA Award - Bästa kvinnliga biroll 2000 (2017)</li><li>Toronto International Film Festival, People's Choice Award 2000 (1040)</li><li>Oscar - Bästa utländska film 2001</li><li>Oscar - Bästa musik 2001</li><li>Oscar - Bästa foto 2001</li><li>Oscar - Bästa scenografi 2001</li><li>Golden Globe - Bästa regi 2001 (1040)</li><li>Golden Globe - Bästa utländskaspråkiga film 2001</li><li>BAFTA Film Award, David Lean Award for Direction 2001 (1040)</li><li>BAFTA Film Award, Anthony Asquith Award for Film Music 2001</li><li>BAFTA Film Award - Bästa icke engelskspråkiga film 2001</li><li>BAFTA Film Award - Bästa kostym 2001</li><li>Saturn Award - Bästa Action/Äventyr/Thriller Film</li><li>Australian Film Institute, Best Foreign Film Award 2001 (1040)</li><li>Beijing Student Film Festival, Jury Award - Bästa specialeffekter 2001</li><li>Bodil Awards, Bodil - Bästa ickeamerikanska film 2001 (1040)</li><li>Bogey Awards, Bogey Award in Gold 2001</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa utländska film 2001</li><li>CFCA Award - Bästa utländskspråkiga film 2001 (1040)</li><li>CFCA Award - Bästa foto 2001</li><li>CFCA Award - Bästa musik 2001</li><li>Chlotrudis Award - Bästa regi 2001 (1040)</li><li>DFWFCA Award - Bästa utländska film 2001</li><li>DFWFCA Award - Bästa foto 2001</li><li>DGA Award - Bästa regi 2001 (1040)</li><li>FCCA Award - Bästa utländska film 2001</li><li>FFCC Award - Bästa utländska film 2001</li><li>FFCC Award - Bästa foto 2001</li><li>Golden Bauhinia - Bästa film 2001</li><li>Golden Bauhinia - Bästa regi 2001 (1040)</li><li>Golden Bauhinia - Bästa kvinnliga biroll 2001 (2017)</li><li>Golden Trailer - Best Art and Commerce (For the trailer.) 2001</li><li>Golden Trailer -  Best Romance (For the trailer.) 2001</li><li>Hong Kong Film Award - Bästa film 2001</li><li>Hong Kong Film Award - Bästa regi 2001 (1040)</li><li>Hong Kong Film Award - Bästa kvinnliga biroll 2001 (Pei-pei Cheng)</li><li>Hong Kong Film Award - Bästa foto 2001</li><li>Hong Kong Film Award - Bästa actionkoreografi 2001</li><li>Hong Kong Film Award - Bästa ljud 2001</li><li>Hong Kong Film Award - Bästa musik 2001</li><li>Hong Kong Film Award - Bästa originalsång (For the song ('Moonlight Lover').) 2001</li><li>Hong Kong Film Critics Society Awards, Special Achievement Award 2001</li><li>Hong Kong Film Critics Society Awards, Film of Merit 2001</li><li>Hugo Awards, Hugo - Best Dramatic Presentation 2001</li><li>Independent Spirit Award - Bästa film 2001</li><li>Independent Spirit Award - Bästa regi 2001 (1040)</li><li>Independent Spirit Award - Bästa kvinnliga biroll 2001 (2017)</li><li>KCFCC Award - Bästa utländskspråkiga film 2001</li><li>ALFS Award - Foreign Language Film of the Year 2001</li><li>MTV Movie Award - Bästa Fight (Versus entire bar.) 2001 (2017)</li><li>Golden Reel Award - Best Sound Editing - Dialogue & ADR, Domestic Feature Film 2001</li><li>OFCS Award - Bästa utländska film 2001</li><li>OFCS Award - Bästa foto 2001</li><li>PFCS Award - Bästa utländska film 2001</li><li>Robert Festival, Robert - Bästa ickeamerikanska film 2001 (1040)</li><li>Golden Satellite Award - Bästa utländskspråkiga film 2001</li><li>SEFCA Award - Bästa utländska film 2001</li><li>Young Artist Award - Best Young Actress in an International Film 2001 (2017)</li><li>ASCAP Award - Top Box Office Films 2002</li><li>Grammy - Best Score Soundtrack Album For A Motion Picture, Television Or Other Visual Media 2002</li><li>Nebula Award - Bästa manus 2002</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Camerimage, Golden Frog 2000</li><li>European Film Awards, Screen International Award 2000 (1040)</li><li>Ghent International Film Festival, Grand Prix 2000 (1040)</li><li>Golden Horse Award - Bästa film 2000 (1040)</li><li>Golden Horse Award - Bästa regi 2000 (1040)</li><li>Golden Horse Award - Bästa skådespelerska 2000 (Michelle Yeoh)</li><li>Golden Horse Award - Bästa skådespelerska 2000 (2017)</li><li>Golden Horse Award - Bästa manus 2000</li><li>Golden Horse Award - Bästa foto 2000</li><li>Golden Horse Award - Bästa musik 2000</li><li>Golden Horse Award - Bästa scenografi 2000</li><li>Golden Rooster Awards, Golden Rooster - Best Co-production Film 2000</li><li>Oscar - Bästa film 2001</li><li>Oscar - Bästa regi 2001 (1040)</li><li>Oscar - Bästa manus 2001</li><li>Oscar - Bästa kostym 2001</li><li>Oscar - Bästa klippning 2001</li><li>Oscar - Bästa originalsång 2001</li><li>Golden Globe - Bästa musik 2001</li><li>BAFTA Film Award - Bästa film 2001</li><li>BAFTA Film Award - Bästa skådespelerska 2001 (Michelle Yeoh)</li><li>BAFTA Film Award - Bästa kvinnliga biroll 2001 (2017)</li><li>BAFTA Film Award - Bästa manus 2001</li><li>BAFTA Film Award - Bästa foto 2001</li><li>BAFTA Film Award - Bästa specialeffekter 2001</li><li>BAFTA Film Award - Bästa klippning 2001</li><li>BAFTA Film Award - Bästa smink/hår 2001</li><li>BAFTA Film Award - Bästa ljud 2001</li><li>BAFTA Film Award - Bästa scenografi 2001</li><li>Saturn Award - Bästa regi 2001 (1040)</li><li>Saturn Award - Bästa skådespelare 2001 (Yun-Fat Chow)</li><li>Saturn Award - Bästa skådespelerska 2001 (Michelle Yeoh)</li><li>Saturn Award - Bästa kvinnliga biroll 2001 (2017)</li><li>Saturn Award - Bästa manus 2001</li><li>Saturn Award - Bästa musik 2001</li><li>Saturn Award - Bästa kostym 2001</li><li>Amanda Awards, Amanda - Bästa utländska film 2001 (1040)</li><li>American Cinema Editors, Eddie - Best Edited Feature Film - Dramatic 2001</li><li>ASC Award - Outstanding Achievement in Cinematography in Theatrical Releases 2001</li><li>Art Directors Guild, Excellence in Production Design Award - Feature Film - Period or Fantasy Films 2001</li><li>Blockbuster Entertainment Award - Favorite Action Team (Internet Only) 2001</li><li>British Society of Cinematographers, Best Cinematography Award 2001</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film 2001</li><li>CFCA Award - Bästa film 2001</li><li>CFCA Award - Bästa regi 2001 (1040)</li><li>CFCA Award - Bästa kvinnliga biroll 2001 (2017)</li><li>Chlotrudis Award - Bästa film 2001</li><li>Chlotrudis Award - Bästa skådespelerska 2001 (Michelle Yeoh)</li><li>Chlotrudis Award - Bästa manliga biroll 2001 (Chen Chang)</li><li>Chlotrudis Award - Bästa foto 2001</li><li>Empire Award - Bästa film 2001</li><li>Empire Award - Bästa regi 2001 (1040)</li><li>Golden Trailer - Best Action 2001</li><li>Golden Trailer - Best Drama 2001</li><li>Golden Trailer - Best Foreign 2001</li><li>Golden Trailer - Best Foreign 2001</li><li>Golden Trailer - Best of Show 2001</li><li>Golden Trailer Awards, Best Title Sequence 2001</li><li>Hong Kong Film Award - Bästa skådespelare 2001 (Yun-Fat Chow)</li><li>Hong Kong Film Award - Bästa skådespelerska 2001 (Michelle Yeoh)</li><li>Hong Kong Film Award - Bästa skådespelerska 2001 (2017)</li><li>Hong Kong Film Award - Bästa manliga biroll 2001 (Chen Chang)</li><li>Hong Kong Film Award - Bästa manus 2001</li><li>Hong Kong Film Award - Bästa klippning 2001</li><li>Hong Kong Film Award - Bästa kostym/smink 2001</li><li>Hong Kong Film Award - Bästa scenografi 2001</li><li>ALFS Award - Film of the Year 2001</li><li>ALFS Award - Director of the Year 2001 (1040)</li><li>MTV Movie Award - Bästa film 2001</li><li>MTV Movie Award - Bästa kvinnliga genombrottsinsats 2001 (2017)</li><li>Golden Reel Award - Best Sound Editing - Music (Foreign & Domestic) 2001</li><li>Golden Reel Award - Best Sound Editing - Sound Effects & Foley, Domestic Feature Film 2001</li><li>OFCS Award - Bästa film 2001</li><li>OFCS Award - Bästa regi 2001 (1040)</li><li>OFCS Award - Bästa kvinnliga biroll 2001 (2017)</li><li>OFCS Award - Bästa musik 2001</li><li>OFCS Award - Bästa klippning 2001</li><li>PGA Awards, Motion Picture Producer of the Year Award 2001</li><li>PFCS Award - Bästa klippning 2001</li><li>Golden Satellite Award - Bästa regi 2001 (1040)</li><li>Golden Satellite Award - Bästa foto 2001</li><li>Golden Satellite Award - Bästa ljud 2001</li><li>Golden Satellite Award - Bästa kostym 2001</li><li>Golden Satellite Award - Bästa klippning 2001</li><li>Golden Satellite Award - Bästa scenografi 2001</li><li>Teen Choice Award - Film - Choice Breakout Performance 2001 (2017)</li><li>World Soundtrack Award - Discovery of the Year 2001</li><li>Taurus Award - Best Stunt Coordinator and/or 2nd Unit Director: Feature Film 2001</li><li>WGA Award (Screen) - Best Screenplay Based on Material Previously Produced or Published 2001</li><li>Cinema Brazil Grand Prize - Bästa utländska film 2002</li><li>Grammy - Best Song Written for a Motion Picture, Television or Other Visual Media (For the song "A Love Before Time".) 2002</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Writer and director [Kurt Wimmer][/p?id=Kurt%20Wimmer] invented the martial arts style of gunfighting for this movie in his backyard.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
