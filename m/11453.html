@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Carpool | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Carpool <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1996"><a href="#">1996</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Arthur Hiller</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Tom Arnold – Franklin Laszlo</li><li><a href="/svenusling/p/1223.html">David Paymer</a> – Daniel Miller</li><li>Rhea Perlman – Martha the Meter Maid</li><li><a href="/svenusling/p/1831.html">Rod Steiger</a> – Mr. Hammerman</li><li>Kim Coates – Det. Lt. Erdman</li><li>Rachael Leigh Cook – Kayla</li><li>Mikey Kovar – Andrew Miller</li><li>Micah Gardener – Bucky Miller</li><li>Jordan Warkol – Travis aka Frog Boy</li><li>Colleen Rennison – Chelsea, Kayla's Sister</li><li>Ian Tracey – Neil</li><li>John Tench – Jerry</li><li>Stellina Rusich – Mrs. Daniel Miller</li><li>David Kaye – Scott Lewis, Ch. 3 News</li><li>Obba Babatundé – Jeffery, Miller's Boss at Bauer & Cole</li><li>Alan Van Sprang – Kirk, Bauer & Cole Salesman</li><li>Seamus – Mr. Kopek</li><li>Betty Linde – Edith</li><li>Shawn Macdonald – Todd</li><li>Brian Arnold – Newsanchor</li><li>Wren Roberts – Jeep Owner</li><li>Dolores Drake – Bonnie of Bonnie's Beauty Box</li><li>Victor Favrin – Carlos</li><li>Patti Allan – Wax Lips</li><li>Michael Tiernan – Roadblock Cop</li><li>Michael Dobson – Worker #1</li><li>Myron Pechet – Worker #2</li><li>Nathaniel DeVeaux – Northfield Mall Cop</li><li>Justin Wilkie – Keith Laszlo, Franklin's Son</li><li>Dave 'Squatch' Ward – Erno</li><li>Tatiana Chekhova – Alexandra</li><li>Hiro Hauata – Jake the Fire Eater</li><li>Alexis Ioannidis – Lydia the Human Globe</li><li>Jeremy Radick – The Dog Faced Boy</li><li>Mary McDonald – Bearded Woman</li><li>Rick Poltaruk – Strong Man</li><li>Larry Musser – Travis' Dad</li><li>Victor Magnussen – Victor, Hammerman's Assistant</li><li>Jewel Staite – Soap Opera Actress</li><li>Jack C. Thomas – Tow Truck Driver</li><li>William Bauer – Bank Security Guard</li><li>Julie Champnella – Hairstylist</li><li>Kay Arnold – Hair Dryer Woman</li><li>Jonathan Walker – SWAT Team Member</li><li>Judy Kovar – Kayla's Mom</li><li class="voice">Edie McClurg – Franklin's Mom (röst)</li><li class="voice">Kathleen Freeman – Franklin's Mom (röst)</li><li class="voice">Miriam Flynn – Franklin's Mom (röst)</li><li>Steve Billnitzer – Writer #1 (uncredited)</li><li>Jonathan Dreyer – Carnival Attendee (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BSFC Award - Bästa ensemble 2011</li><li>Venice Film Festival, Little Golden Lion 2011 (1838)</li><li>CEC Award - Bästa manus baserad på annan förlaga 2012</li><li>César Awards, César - Bästa manus baserad på annan förlaga 2012</li><li>Polish Film Awards, Eagle - Bästa regi 2013 (1838)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>SDFCS Award - Bästa skådespelarensemble 2011</li><li>Satellite Award - Bästa manliga biroll 2011 (1165)</li><li>Satellite Award - Bästa kvinnliga biroll 2011 (1530)</li><li>Venice Film Festival, Golden Lion 2011 (1838)</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 2012 (1467)</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 2012 (1530)</li><li>David di Donatello Awards, David - Bästa europeiska film 2012 (1838)</li><li>European Film Award - Bästa skådespelerska 2012 (1530)</li><li>European Film Award - Bästa manus 2012</li><li>Goya Awards, Goya - Bästa europeiska film 2012 (1838)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa europeiska regissör 2012 (1838)</li><li>Rembrandt Award - Bästa internationella skådespelerska 2012 (1530)</li><li>World Soundtrack Award - Soundtrack Composer of the Year 2012</li><li>Golden Trailer - Best Independent TV Spot 2012</li><li>Polish Film Awards, Eagle - Bästa manus 2013</li><li>Polish Film Awards, Eagle - Bästa musik 2013</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Theatrically released with Superior Duck (1996) as the preceding cartoon.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

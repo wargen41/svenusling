@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Charlie Chan I Honolulu | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Charlie Chan I Honolulu <a href="#" class="grade">+</a></h2>
+										<h3>Charlie Chan in Honolulu</h3>
+										<p>
+										Film från <time datetime="1938"><a href="#">1938</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>H. Bruce Humberstone</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Sidney Toler – Charlie Chan</li><li>Phyllis Brooks – Judy Hayes</li><li>Victor Sen Yung – James Chan</li><li>Eddie Collins – Al Hogan</li><li>John 'Dusty' King – Randolph</li><li>Claire Dodd – Mrs. Carol Wayne</li><li>George Zucco – Dr. Cardigan</li><li>Robert Barrat – Captain Johnson</li><li>Marc Lawrence – Johnny McCoy</li><li>Richard Lane – Joe Arnold</li><li>Layne Tom Jr. – Tommy Chan</li><li>Philip Ahn – Wing Foo</li><li>Paul Harvey – Inspector Rawlins</li><li>Richard Alexander – Cigar Chompimg Crewman (uncredited)</li><li>David Dong – Chan Son (uncredited)</li><li>James Flavin – Homicide Division Desk Sergeant (uncredited)</li><li>Allan Hoo – Chan Son (uncredited)</li><li>Eugene Hoo – Chan Son (uncredited)</li><li>Frances Hoo – Chan Daughter (uncredited)</li><li>Hippie Hoo – Chan Son (uncredited)</li><li>J. Anthony Hughes – Doctor (uncredited)</li><li>Grace Key – Mrs. Chan (uncredited)</li><li>Al Kikume – Hawaiian Police Officer Molokai (uncredited)</li><li>Faye Lee – Chan Daughter (uncredited)</li><li>Margie Lee – Chan Daughter (uncredited)</li><li>Grace Lem – Mama Chan (uncredited)</li><li>Arthur Loft – Mr. Peabody (uncredited)</li><li>Shirley Louie – Telephone Operator (uncredited)</li><li>James Pierce – Police Officer (uncredited)</li><li>Helen Quan – Chan Daughter (uncredited)</li><li>Constantine Romanoff – Seaman (uncredited)</li><li>Eunice Soo-Hoo – Infant Chan Daughter (uncredited)</li><li>James P. Spencer – Hawaiian Peddler (uncredited)</li><li>Florence Ung – Ling Chan (uncredited)</li><li>Blue Washington – Extra as Seaman (uncredited)</li><li>Barbara Jean Wong – Chan Daughter (uncredited)</li><li>Iris Wong – Tao Chan (uncredited)</li><li>Sinclair Yip – Chan Son (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BAFTA Film Award - Bästa skådespelare 1993 (1809)</li><li>CFCA Award - Mest lovande skådespelerska 1993 (1608)</li><li>ALFS Award - Actor of the Year 1993 (1809)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>British Society of Cinematographers, Best Cinematography Award 1992 (Sven Nykvist)</li><li>Oscar - Bästa skådespelare 1993 (1809)</li><li>Oscar - Bästa musik 1993 (John Barry)</li><li>Oscar - Bästa scenografi 1993</li><li>Golden Globe - Bästa skådespelare - Drama 1993 (1809)</li><li>Golden Globe - Bästa kvinnliga biroll 1993 (1331)</li><li>Golden Globe - Bästa musik 1993 (John Barry)</li><li>BAFTA Film Award - Bästa kostym 1993</li><li>BAFTA Film Award - Bästa smink 1993</li><li>BAFTA Film Award - Bästa scenografi 1993</li><li>Casting Society of America, Artios - Best Casting for Feature Film, Comedy 1993</li><li>Fantasporto, International Fantasy Film Award - Bästa film (Festival title: Charlie.) 1993 (1780)</li><li>Moscow International Film Festival, Golden St. George 1993 (1780)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Hollywood, California, Monday, October 17, 1938: [Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck] has selected [Sidney Toler][/p?id=Sidney%20Toler] to play the role of Charlie Chan, succeeding the late [Warner Oland][/p?id=1990]. His first picture will be &quot;Charlie Chan in Honolulu&quot; which will start production October 24, with [John Stone][/p?id=John%20Stone] as the associate producer. [Toler][/p?id=Sidney%20Toler] was discovered by Sol M. Wurtzel when he looked at rushes of Up the River, current 20th Century-Fox picture in which [Toler][/p?id=Sidney%20Toler] is a featured player.</li><li>Among other actors considered and tested for the new Charlie Chan were [Cy Kendall][/p?id=Cy%20Kendall], [Walter Connolly][/p?id=Walter%20Connolly], [J. Edward Bromberg][/p?id=J.%20Edward%20Bromberg], [Noah Beery Jr.][/p?id=Noah%20Beery%20Jr.], [Michael Visaroff][/p?id=Michael%20Visaroff], and [Leo Carillo][/p?id=Leo%20Carillo]. [Kendall][/p?id=Cy%20Kendall] and Connelly had played Chan on radio.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

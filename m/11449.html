@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Carlito's Way | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Carlito's Way <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1993"><a href="#">1993</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1105.html">Brian De Palma</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1008.html">Al Pacino</a> – Carlito 'Charlie' Brigante</li><li><a href="/svenusling/p/1868.html">Sean Penn</a> – David Kleinfeld</li><li>Penelope Ann Miller – Gail</li><li><a href="/svenusling/p/1491.html">John Leguizamo</a> – Benny Blanco</li><li>Ingrid Rogers – Steffie</li><li>Luis Guzmán – Pachanga</li><li>James Rebhorn – Dist. Atty. Norwalk</li><li>Joseph Siravo – Vincent 'Vinnie' Taglialucci</li><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Lalin</li><li>Richard Foronjy – Pete Amadesso</li><li>Jorge Porcel – Saso (Ron)</li><li>Frank Minucci – Tony Taglialucci</li><li>Adrian Pasdar – Frankie Taglialucci</li><li>John Ortiz – Guajiro</li><li>Ángel Salazar – Walberto</li><li>Al Israel – Rolando</li><li>Rick Aviles – Quisqueya</li><li>Jaime Sánchez – Rudy</li><li>Edmonte Salvato – Joe Battaglia (Big Guy)</li><li>Paul Mazursky – Judge Feinstein</li><li>Tera Tabrizi – Club Date</li><li>Víctor Sierra – Kid</li><li>Caesar Cordova – Barber</li><li>Jon Seda – Dominican</li><li>Ruben Rivera – Dominican</li><li>Sherie Mambru – Girlfriend</li><li>Brenda Hernandez – Girlfriend</li><li>Elliot Santiago – Knifeman</li><li>Frank Ferrara – Manzanero</li><li>John Hoyt – Club Bouncer</li><li>Chuck Zito – Club Bouncer</li><li>Steven Puente – Club Bouncer</li><li>Tony Cucci – Club Bouncer</li><li>Alfred Sauchelli Jr. – Bodyguard</li><li>Anthony Calanese – Bodyguard</li><li>Sam Weber – Bodyguard</li><li>Sonny Zito – Bodyguard</li><li>Walter T. Meade – Jackson Corrections Officer</li><li>Michael Hadge – Diamond Room Man</li><li>Richard Council – Diamond Room Man</li><li>Lindsay Lombardi – Diamond Room Dancer</li><li>James Bulleit – Louie</li><li>Crystal Haney – Estate Party Woman</li><li>Gregory Misciagno – Italian at Copa</li><li>Mel Gorham – Pachanga's Date</li><li>Rocco Sisto – Panama Hatman</li><li>John Finn – Duncan</li><li>Brian Tarantina – Speller</li><li>Jaime Tirelli – Valentin</li><li>Owen Hollander – Cab Driver</li><li>John Michael Bolger – Cop</li><li>Ralph Destino Jr. – Cop</li><li>Vincent Jerosa – Cop</li><li>Luke Toma – Cop</li><li>Frank Pietrangolare – Cop</li><li>Mike Girard Sheehan – Cop</li><li>Dean Rader-Duval – Med Tech</li><li>Gene Canfield – Train Conductor</li><li>Sharmagne Leland-St. John – Woman at Grand Central</li><li>Rene Rivera – Bartender</li><li>Orlando Urdaneta – Bartender</li><li>Troy A. Hawes – Solicitor at Go-Go Club</li><li>Kim Rideout – Gail's Friend at Dance Studio</li><li>Drita Barak – Club Patron</li><li>Christopher Bregman – Club Patron</li><li>Natalia Ray – Club Patron</li><li>Joe Conzo – Club Patron</li><li>Gaetano Lisi – Club Patron</li><li>Debra Niewald – Club Patron</li><li>Christina Murphy – Waitress</li><li>Julieta Ortega – Waitress</li><li>Mary Hammett – Waitress</li><li>Debbie Benitez – Dancer</li><li>Roberta Mathes – Dancer</li><li>Freddy Rios – Dancer</li><li>Mike Ramos – Dancer</li><li>Yelba Osorio – Blanco's Girlfriend</li><li>Nelson Vasquez – Blanco Associate</li><li>Jason Daryn – Party Waiter</li><li>Dan Brennan – Party Guest</li><li>Michael P. Moran – Party Guest</li><li>Vincent Pastore – Copa Wiseguy</li><li>Garry Pastore – Copa Wiseguy</li><li>Cynthia Lamontagne – Woman at Elevator</li><li>Bo Dietl – Casino Man</li><li>Kato – Casino Man</li><li>James V. Miller – Black Jack Dealer</li><li>Marc Anthony – Latin Band at Disco</li><li>Cindy Birch – Afro Waitress (uncredited)</li><li>David Boston – Convention Delegate (uncredited)</li><li>Robert DaGasta – Hippie (uncredited)</li><li>Pete Macnamara – Brazilian Band Member (uncredited)</li><li>Charles Malota – Party Attendee By Pool (uncredited)</li><li>Daniel Margotta – Monchin (uncredited)</li><li>Daisy Martinez – Party Extra (uncredited)</li><li>Mike Mitchell Jr. – Kid On Train (uncredited)</li><li>Coati Mundi – Street Musician (uncredited)</li><li>Cice Rivera – Waitress (uncredited)</li><li>Ron Rivera – Latino (uncredited)</li><li>Saundra Santiago – Club Patron Dancing with Carlito (uncredited)</li><li>Frank Sepe –  (uncredited)</li><li>Alberto Suarez – Thug On Train (uncredited)</li><li>Enrique Veloz – Club Patron (uncredited)</li><li>Bill Weeden – Party Animal (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The name of Carlito's ([Al Pacino's][/p?id=1008]) nightclub is &quot;El Paraíso&quot;, the same name as the food stand that [Pacino's][/p?id=1008] character operated in [Scarface][/f?id=18000] (1983).</li><li>The exterior of the hospital where Carlito visits his bedridden attorney is the same one where Vito Corleone is taken in The [Godfather][/f?id=14369] (1972), also starring [Al Pacino][/p?id=1008].</li><li>[Sean Penn][/p?id=1868] took the role of [David Kleinfeld][/p?id=David%20Klein] just for the money so he could use it to fund his second film [The Crossing Guard][/f?id=14964] (1995).</li><li>[Carlito's Way][/f?id=11449] is adapted from the novel &quot;After Hours&quot; by 'Edwin Torres'. However, it took the title from Torres' first novel about the rise of crime boss Carlos Brigante so that it would not be confused with [Martin Scorsese's][/p?id=1619] New York club-based comedy-drama, [After Hours][/f?id=13403] (1985).</li><li>Directors John McKenzie and [Abel Ferrara][/p?id=Abel%20Ferrara] were considered before [De Palma][/p?id=1105] was hired. [De Palma][/p?id=1105] was originally reluctant to accept the job because he did not want to make another film about a Latino gangster as he did in [Scarface][/f?id=18000] (1983). But the script convinced him otherwise.</li><li>According to [John Leguizamo][/p?id=1491] in his autobiography, he and [Penelope Ann Miller][/p?id=Penelope%20Ann%20Miller] did not get along during filming. He claims he got revenge on her by having the wardrobe department take in her clothes an inch at a time causing [Miller][/p?id=Penelope%20Ann%20Miller] to go on a crash diet.</li><li>In 1989, film producer Elliott Kastner filed a lawsuit against [Pacino][/p?id=1008] for allegedly backing out of a deal to star in a film as Carlito with [Marlon Brando][/p?id=1616] as [Kleinfeld][/p?id=David%20Klein]. The suit was eventually dropped.</li><li>[Brian De Palma's][/p?id=1105] first choice for the role of Gail was Irish actress [Alison Doody][/p?id=Alison%20Doody] from [Indiana Jones and the Last Crusade][/f?id=15062] (1989). She rejected the offer because of a topless dance sequence she would have to perform in the movie.</li><li>[Pacino][/p?id=1008] first met Judge 'Edwin Torres' in 1973 while he was preparing for [Serpico][/f?id=18244] (1973). At the time, Torres was in the midst of writing the novels on which the film is based and discussed them with [Pacino][/p?id=1008]. Twenty years later, Torres took [Pacino][/p?id=1008] to East Harlem to help him prepare of the role of Carlito.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

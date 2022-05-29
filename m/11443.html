@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Captain America: The First Avenger | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Captain America: The First Avenger <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2011"><a href="#">2011</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Joe Johnston</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Chris Evans – Captain America / Steve Rogers</li><li>Hayley Atwell – Peggy Carter</li><li>Sebastian Stan – James Buchanan 'Bucky' Barnes</li><li><a href="/svenusling/p/1957.html">Tommy Lee Jones</a> – Colonel Chester Phillips</li><li><a href="/svenusling/p/1381.html">Hugo Weaving</a> – Johann Schmidt / Red Skull</li><li>Dominic Cooper – Howard Stark</li><li>Richard Armitage – Heinz Kruger</li><li><a href="/svenusling/p/1892.html">Stanley Tucci</a> – Dr. Abraham Erskine</li><li><a href="/svenusling/p/1856.html">Samuel L. Jackson</a> – Nick Fury</li><li>Toby Jones – Dr. Arnim Zola</li><li>Neal McDonough – Timothy 'Dum Dum' Dugan</li><li>Derek Luke – Gabe Jones</li><li>Kenneth Choi – Jim Morita</li><li>JJ Feild – James Montgomery Falsworth</li><li>Bruno Ricci – Jacques Dernier</li><li>Lex Shrapnel – Gilmore Hodge</li><li>Michael Brandon – Senator Brandt</li><li>Martin Sherman – Brandt's Aide</li><li>Natalie Dormer – Pvt. Lorraine</li><li>Oscar Pearce – Search Team Leader</li><li>William Hope – SHIELD Lieutenant</li><li>Nicholas Pinnock – SHIELD Tech</li><li>Marek Oravec – Jan</li><li>David Bradley – Tower Keeper</li><li>Leander Deeny – Barman</li><li>Sam Hoare – Nervous Recruit</li><li>Simon Kunz – 4F Doctor</li><li>Kieran O'Connor – Loud Jerk</li><li>Jenna-Louise Coleman – Connie</li><li>Sophie Colquhoun – Bonnie</li><li>Doug Cockle – Young Doctor</li><li>Ben Batt – Enlistment Office MP</li><li>Mollie Fitzgerald – Stark Girl</li><li>Damon Driver – Sergeant Duffy</li><li>David McKail – Johann Schmidt's Artist</li><li>Amanda Walker – Antique Store Owner</li><li>Richard Freeman – SSR Doctor</li><li>Katherine Press – Project Rebirth Nurse</li><li>Sergio Corvino – Kruger's Aide</li><li>Marcello Walton – Undercover Bum</li><li>Vincent Montuel – Undercover Bum</li><li>Fabrizio Santino – Kruger's Driver</li><li>Maxwell Newman – Boy at Dock</li><li>Anatole Taubman – Roeder</li><li>Jan Pohl – Hutter</li><li>Erich Redman – Schneider</li><li>Rosanna Hoult – The Star Spangled Singer</li><li>Naomi Slights – The Star Spangled Singer</li><li>Kirsty Mather – The Star Spangled Singer</li><li>Megan Sanderson – Kid in USO Audience</li><li>Darren Simpson – Kid in USO Audience</li><li>Fernanda Toker – Newsstand Mom</li><li>Laura Haddock – Autograph Seeker</li><li>James Payton – 'Adolph Hitler'</li><li>Ronan Raftery – Army Heckler</li><li>Nick Hendrix – Army Heckler</li><li>Luke Allen-Gale – Army Heckler</li><li>Jack Gordon – Army Heckler</li><li>Ben Uttley – HYDRA Guard / HYDRA Pilot</li><li>Kevin Millington – Stark's Engineer</li><li>Patrick Monckeberg – Manager Velt</li><li>Peter Stark – HYDRA Lieutenant</li><li>Amanda Righetti – SHIELD Agent</li><li>Jennifer Abbotts – USO Dancer</li><li>Michelle Antrobus – USO Dancer</li><li>Lucy Dean – USO Dancer</li><li>Erin Dusek – USO Dancer</li><li>Nicole Evans – USO Dancer</li><li>Lizzi Franklin – USO Dancer</li><li>Emma Harris – USO Dancer</li><li>Rachael Isherwood – USO Dancer</li><li>Danielle Kelly – USO Dancer</li><li>Nicole May – USO Dancer</li><li>Stevie-Jean McGuire – USO Dancer</li><li>Anna McNicholas – USO Dancer</li><li>Rosie Pethullis – USO Dancer</li><li>Jessica Powell – USO Dancer</li><li>Rachel Quartley – USO Dancer</li><li>Sarah Riches – USO Dancer</li><li>Holly Rostron – USO DAncer</li><li>Caroline Royce – USO Dancer</li><li>Stephanie Jayne Thompson – USO Dancer</li><li>Lucie Waugh – USO Dancer</li><li>Billy Lozowski – USO Drummer</li><li>Gregory Paulett – USO Drummer</li><li>Adam Birch – USO Drummer</li><li>Adam Kent – USO Drummer</li><li>Wiliam Morris – USO Drummer</li><li>David Sdall – USO Drummer</li><li>Paul Simmons – USO Drummer</li><li>Marc Wheeler – USO Drummer</li><li>Chris Diggle – USO Drummer</li><li>Michael Humphrey – USO Drummer</li><li>Chris Jorie – Reporter</li><li>Michael Aston – Businessman (uncredited)</li><li>Mark Badham – SSgt US Marine (uncredited)</li><li>Mark Callum – Newspaper Stole Holder (uncredited)</li><li>James Chahine – Army Heckler (uncredited)</li><li>Graham Curry – US Marine 4th Battalion (uncredited)</li><li>Paul Davies – Hydra Soldier (uncredited)</li><li>Stephen Davies – Bookshop Owner (uncredited)</li><li>Scott Ford – German Soldier (uncredited)</li><li>Spencer Garrett – Newsreel Announcer (uncredited)</li><li>Joe Garvey – Hyrdra Guard (uncredited)</li><li>Jacob Johnston – Hydra Soldier (uncredited)</li><li>Matt Kohler – Hydra Soldier (uncredited)</li><li>Stan Lee – General (uncredited)</li><li>Addison LeMay – SHIELD Agent X (uncredited)</li><li>Teresa Mahoney – US Civilian (uncredited)</li><li>Alan Mandel – Prisoner of War (uncredited)</li><li>Josh Margulies – Brooklyn Pedestrian (uncredited)</li><li>Brian Niblett – Theatre Spectator (uncredited)</li><li>Nathan Nolan – Shield Lieutenant (uncredited)</li><li>Martin Poole – Theatre Spectator (uncredited)</li><li>Colin Reilly – U.S Infantry Soldier (uncredited)</li><li>Geoff Searle – US Marine (uncredited)</li><li>Drew Sherman – Hydra Soldier (uncredited)</li><li>Colin Stinton – New York Taxi Driver (uncredited)</li><li class="voice">Michael Swan – Dodgers Announcer (röst) (uncredited)</li><li>Sy Turner – Hydra Soldier (uncredited)</li><li>Matt Tyzack – Scientist (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Cartagena Film Festival, Golden India Catalina - Bästa regi 2007 (Agustín Díaz Yanes)</li><li>Goya Awards, Goya - Bästa kostym 2007</li><li>Goya Awards, Goya - Bästa scenografi 2007</li><li>Goya Awards, Goya - Best Production Supervision 2007</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cartagena Film Festival, Golden India Catalina - Bästa film 2007 (Agustín Díaz Yanes)</li><li>CEC Award - Bästa manliga biroll 2007 (Eduard Fernández)</li><li>CEC Award - Bästa manus 2007</li><li>CEC Award - Bästa foto 2007</li><li>European Film Awards, Audience Award - Bästa film 2007 (Agustín Díaz Yanes)</li><li>European Film Award - Prix d'Excellence (For the costumes.) 2007</li><li>Goya Awards, Goya - Bästa film 2007</li><li>Goya Awards, Goya - Bästa regi 2007 (Agustín Díaz Yanes)</li><li>Goya Awards, Goya - Bästa skådespelare 2007 (1977)</li><li>Goya Awards, Goya - Bästa manliga biroll 2007 (Juan Echanove)</li><li>Goya Awards, Goya - Bästa kvinnliga biroll 2007 (Ariadna Gil)</li><li>Goya Awards, Goya - Bästa manus 2007 (Agustín Díaz Yanes)</li><li>Goya Awards, Goya - Bästa foto 2007</li><li>Goya Awards, Goya - Bästa ljud 2007</li><li>Goya Awards, Goya - Bästa musik 2007</li><li>Goya Awards, Goya - Bästa klippning 2007</li><li>Goya Awards, Goya - Bästa specialeffekter 2007</li><li>Goya Awards, Goya - Bästa smink/hår 2007</li><li>Spanish Actors Union, Award of the Spanish Actors Union - Bästa manliga biroll 2007 (Javier Cámara)</li><li>Spanish Music Awards, Music Award - Bästa musik 2007</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Jon Favreau][/p?id=1507] was originally chosen by Marvel Studios to direct this film (which he intended to make as a buddy comedy), but he chose to direct [Iron Man][/f?id=15119]. [Nick Cassavetes][/p?id=Nick%20Cassavetes], was also considered to direct this film, and had been set as a director for [Iron Man][/f?id=15119] in December 2004.</li><li>Despite being &quot;The First Avenger&quot;, it is the last solo Avenger film to be released before the team-up film, [The Avengers][/f?id=10515].</li><li>[Joe Johnston][/p?id=Joe%20Johnston] was chosen as the film's director because of his previous work on the period films The [Rocketeer][/f?id=17741] (like [Captain America][/f?id=11441], also an adventure movie) and October Sky.</li><li>[Louis Leterrier][/p?id=Louis%20Leterrier] viewed some of the concept art for the film, and was impressed enough to offer his services, but Marvel Studios turned him down. However, his film [The Incredible Hulk][/f?id=15058] features a small appearance by [Captain America][/f?id=11441]: a deleted scene set in the Arctic features his body hidden in a slab of ice.</li><li>[Sam Worthington][/p?id=1854] and [Will Smith][/p?id=2002] were in early talks for the role of [Captain America][/f?id=11441]. Later on [Garrett Hedlund][/p?id=Garrett%20Hedlund], [Channing Tatum][/p?id=1142], [Scott Porter][/p?id=Scott%20Porter], [Mike Vogel][/p?id=Mike%20Vogel], [Sebastian Stan][/p?id=Sebastian%20Stan], [Chris Evans][/p?id=Chris%20Evans], [Wilson Bethel][/p?id=Wilson%20Bethel], [John Krasinski][/p?id=John%20Krasinski], [Michael Cassidy][/p?id=Michael%20Cassidy], [Chace Crawford][/p?id=Chace%20Crawford] and Jensen Ackles were on the final shortlist for the role. [Kellan Lutz][/p?id=1538], [Ryan Phillippe][/p?id=Ryan%20Phillippe] and [Alexander][/f?id=10123] Skarsgård carried out auditions, but ultimately the role went to [Chris Evans][/p?id=Chris%20Evans].</li><li>[Alice Eve][/p?id=Alice%20Eve], [Gemma Arterton][/p?id=Gemma%20Arterton] and [Keira Knightley][/p?id=1537] were considered for the role of Peggy Carter. [Emily Blunt][/p?id=1279] turned down the role.</li><li>This is the fifth live-action adaptation of the superhero. The first was the serial Captain America; the second was the TV movie Captain America and its sequel Captain America II: Death Too Soon; and the fourth was the theatrical film [Captain America][/f?id=11441].</li><li>[Chris Evans][/p?id=Chris%20Evans] was attracted to the role of [Captain America][/f?id=11441] by its character: &quot;Even if it wasn't a comic book. I think the story of Steve Rogers is great. He's a great guy. Even if it was just a script about anybody, I would probably want to do it. It wasn't necessarily about the comic itself. He's a great character to play; he just happens to be a comic book character.&quot;</li><li>[Chris Evans][/p?id=Chris%20Evans] sixth comic book movie after the two [Fantastic Four][/f?id=13724] movies, Push, The Losers, and Scott Pilgrim vs. the World. He also voiced Casey Jones in TMNT, also based on a comic book.</li><li>The final Paramount Pictures film produced with Marvel Studios. Disney bought the rights to [The Avengers][/f?id=10515] and [Iron Man][/f?id=15119] 3.</li><li>[Chris Evans][/p?id=Chris%20Evans] declined the role three times before accepting the part. After that, he had a meeting with the director and the producers who convinced him to take the role.</li><li>[Stanley Tucci][/p?id=1892] took the role of Dr. Erskine because the role enabled him to use a German accent, which he always wanted to do.</li><li>The film was originally meant to be a standalone film, but after [Joss Whedon][/p?id=Joss%20Whedon] was hired to direct [The Avengers][/f?id=10515] he was given a copy of the film's script and made a few rewrites to tie it in to the Marvel Cinematic Universe: &quot;I just got to make some character connections. The structure of the thing was really tight and I loved it, but there were a couple of opportunities to find his voice a little bit - and some of the other characters - and make the connections so that you understood exactly why he wanted to be who he wanted to be. And progressing through the script to flesh it out a little bit.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

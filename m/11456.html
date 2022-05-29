@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Casino | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Casino <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1619.html">Martin Scorsese</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1808.html">Robert De Niro</a> – Sam 'Ace' Rothstein</li><li><a href="/svenusling/p/1874.html">Sharon Stone</a> – Ginger McKenna</li><li><a href="/svenusling/p/1470.html">Joe Pesci</a> – Nicky Santoro</li><li><a href="/svenusling/p/1426.html">James Woods</a> – Lester Diamond</li><li>Frank Vincent – Frank Marino</li><li>Pasquale Cajano – Remo Gaggi</li><li>Kevin Pollak – Phillip Green</li><li>Don Rickles – Billy Sherbert</li><li>Vinny Vella – Artie Piscano</li><li>Alan King – Andy Stone</li><li>L.Q. Jones – Pat Webb</li><li>Dick Smothers – Senator</li><li>Joseph Rigano – Vincent Borelli</li><li>John Bloom – Don Ward</li><li>Melissa Prophet – Jennifer Santoro</li><li>Bill Allison – John Nance</li><li>Gene Ruffini – Vinny Forlano</li><li>Dominick Grieco – Americo Capelli</li><li>Erika von Tagen – Amy Rothstein (Older)</li><li>Frankie Avalon – Himself</li><li>Steve Allen – Himself</li><li>Jayne Meadows – Herself</li><li>Jerry Vale – Himself</li><li>Catherine Scorsese – Piscano's Mother</li><li>Oscar Goodman – Himself</li><li>Philip Suriano – Dominick Santoro</li><li>Richard Amalfitano – Casino Executive</li><li>Richard F. Strafella – Casino Executive</li><li>Casper Molee – Counter</li><li>David Leavitt – Counter</li><li>Peter Conti – Arthur Capp</li><li>Cathy Scorsese – Piscano's Daughter</li><li>Steve Vignari – Beeper</li><li>Rick Crachy – Chastised Dealer</li><li>Larry E. Nadler – Lucky Larry</li><li>Paul Herman – Gambler in Phone Booth</li><li>Salvatore Petrillo – Old Man Capo</li><li>Joey DePinto – Stabbed Gambler</li><li>Heidi Keller – Blonde at Bar</li><li>Millicent Sheridan – Senator's Hooker</li><li>Nobu Matsuhisa – Ichikawa</li><li>Toru Nagai – Ichikawa's Associate</li><li>Charlene Hunter – Ticket Agent</li><li>Dom Angelo – Craps Dealer</li><li>Joe Molinaro – Shift Manager</li><li>Ali Pirouzkar – High Roller</li><li>Frankie J. Allison – Craps Dealer</li><li>Jeff Scott Anderson – Parking Valet</li><li>Jennifer M. Abbott – Cashier</li><li>Frank Washko Jr. – Parking Valet</li><li>Christian A. Azzinaro – Nicky Santoro Jr. (7 Yrs)</li><li>Robert C. Tetzlaff – Custom's Agent</li><li>Anthony Russell – Bookie</li><li>Carol Wilson – Classroom Nun</li><li>Joe Lacoco – Detective Bob Johnson</li><li>John Manca – Wiseguy Eddy</li><li>Ronald Maccone – Wiseguy Jerry</li><li>Buck Stephens – Credit Clerk</li><li>Joseph P. Reidy – Winner</li><li>Joe La Due – Signaller</li><li>Fred Smith – Security Guard</li><li>Sonny D'Angelo – Security Guard</li><li>Greg Anderson – Security Guard</li><li>Stuart Nisbet – LA Banker</li><li>Tommy DeVito – Crooked Poker Dealer</li><li>Frank Adonis – Rocky</li><li>Joseph Bono – Moosh</li><li>Craig Vincent – Cowboy</li><li>Daniel P. Conte – Doctor Dan</li><li>Paul Dottore – Slim</li><li>Richard T. Smith – Security Guard / Cowboy</li><li>David Rose – David</li><li>Jonathan Kraft – Jonathan</li><li>Michael McKensie Pratt – Showgirls Stage Manager</li><li>Patti James – Country Club Woman</li><li>Ruth Gillis – Country Club Woman</li><li>Carol Cardwell – Country Club Woman</li><li>Dean Casper – Elderly Man</li><li>Nan Brennan – Wife</li><li>Karyn Amalfitano – Wife</li><li>C.C. Carr – Wife</li><li>David Varriale – Flirting Executive</li><li>Darla House – Amy Rothstein (Baby)</li><li>Carol Krolick – Slapping Woman</li><li>Frank Regich – Slapped Man</li><li>Herb Schwartz – Maitre d'</li><li>Max Raven – Bernie Blue</li><li>Clem Caserta – Sal Fusco</li><li>Jed Mills – Jack Hardy</li><li>Janet Denti – Receptionist</li><li>Cameron Milzer – Secretary</li><li>Leain Vashon – Bellman</li><li>Jim Morgan Williams – Pit Boss</li><li>Brian Le Baron – Valet Parker</li><li>Mortiki Yerushalmi – Jewelry Store Owner</li><li>Mufid M. Khoury – Jeweler Fences</li><li>Khosrow Abrishami – Jeweler Fences</li><li><a href="/svenusling/p/1791.html">Richard Riehle</a> – Charlie Clark</li><li>Mike Maines – Cop in Restaurant</li><li>Bobby Hitt – Cop in Restaurant</li><li>Shellee Renee – Showgirl in Parking Lot</li><li>Alfred Nittoli – Chastised Gambler</li><li>Carl Ciarfalio – Tony Dogs</li><li>Jack Orend – Baker</li><li>Linda Perri – Ace's Secretary</li><li>Ffolliott Le Coque – Anna Scott</li><li>J. Charles Thompson – Judge</li><li>Michael Paskevich – Reporter at Airport</li><li>Mike Weatherford – Reporter at Airport</li><li>Eric Randall – Reporter at Airport</li><li>Gwen Castaldi – Business Week Reporter</li><li>Brian Reddy – Board Investigators</li><li>Roy Conrad – Board Investigators</li><li>Mike Bradley – TV Newsman</li><li>Dave Courvoisier – TV Newsman</li><li>George Comando – Piscano's Brother-in-Law</li><li>Andy Jarrell – Commissioner Bales</li><li>Robert B. Sidell – Control Board Member</li><li>Tyde Kierney – Control Board Member</li><li>Paige Novodor – Female Newscaster</li><li>Claudia Haro – Trudy</li><li>Sasha Semenoff – Orchestra Leader</li><li>Gil Dova – Juggler</li><li>George W. Allf – FBI Agent</li><li>Madeline Parquette – Woman Black Jack Dealer</li><li>Nick Mazzola – Male Blackjack Dealer</li><li>Jed L. Hansen – Pit Boss</li><li>Gino Bertin – Maitre d'</li><li>Mitch Kolpan – Detective</li><li>Csaba Maczala – Detective</li><li>Peter Sugden – Lip Reader</li><li>Rudy Guerrero – Maitre d' at Disco</li><li>Randy Sutton – Cop at Ace's House</li><li>Jeff Corbin – Cop at Ace's House</li><li>Sly Smith – FBI Agent</li><li>Joe Anastasi – FBI Agent</li><li>F. Marcus Casper – FBI Agent</li><li>Jeffrey Azzinaro – Nicky Santoro Jr. (10 Yrs)</li><li>Richard Wagner – FBI Agent</li><li>Carrie Cipollini – Piscano's Wife</li><li>Loren Stevens – Agent--Piscano Raid</li><li>Gary C. Rainey – Agent--Piscano Raid</li><li>David Arcerio – FBI Agent</li><li>Haven Earle Haley – Judge</li><li>Sam Wilson – Ambulance Driver</li><li>Michael Toney – Fat Sally</li><li>Jeff Burbank – NGC Board Member (uncredited)</li><li>Phillip V. Caruso – Ace's Photographer (uncredited)</li><li>Alfonso Gomez-Rejon – Shotgun Shooter (uncredited)</li><li>Andrea Nittoli – Cocktail Waitress (uncredited)</li><li>Bobbie Paulson –  (uncredited)</li><li>Bob Pepper – Gambler (uncredited)</li><li>Steve Schirripa – Man in Bar (uncredited)</li><li>Charles Scorsese –  (uncredited)</li><li>Constance Tillotson – Bridesmaid (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Razzie Award - Sämsta skådespelare 1997 (Tom Arnold)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The word &quot;Fuck&quot; is said 422 times, including in the narration - 2.4 times per minute on average. The film also holds the Guinness world record for the most swearing in a film.</li><li>[Sharon Stone][/p?id=1874] spent many long workdays in agony while filming scenes for this film. She has back trouble due to an old injury, and the gold &amp; white beaded gown she wears during a casino scene weighed 45 pounds.</li><li>[Jamie Lee Curtis][/p?id=1428], Madonna, [Nicole Kidman][/p?id=1697], and [Michelle Pfeiffer][/p?id=1668] were considered for the role of Ginger. [Traci Lords][/p?id=Traci%20Lords] was seriously considered after an excellent audition. [Sean Young][/p?id=1869] turned down the role due to pregnancy. [Melanie Griffith][/p?id=1636] was almost cast, but [Sharon Stone][/p?id=1874] convinced director [Martin Scorsese][/p?id=1619] to give her the role.</li><li>According to [Alan King][/p?id=Alan%20King], 'Frank &quot;Lefty' Rosenthal', upon whom the [Robert De Niro][/p?id=1808] character was based, wanted [Richard Widmark][/p?id=1793] to play the lead in the film. However, [Widmark][/p?id=1793] was 80 years old by that time, and, therefore, not a practical choice.</li><li>To avoid the continuity problems that accompany a chain-smoking movie character, [Robert De Niro][/p?id=1808] always held his cigarettes the same distance from the lit end so that their lengths never appear to change.</li><li>When [James Woods][/p?id=1426] heard that [Martin Scorsese][/p?id=1619] was interested in working with him, [Woods][/p?id=1426] called [Scorsese's][/p?id=1619] office and left the following message: &quot;Any time, any place, any part, any fee.&quot;</li><li>To date (summer 2009) this is the last theatrical movie to be censored by Swedish authorities. The scene cut is the infamous &quot;head in the vise&quot; scene.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

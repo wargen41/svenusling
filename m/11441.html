@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Captain America | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Captain America <a href="#" class="grade">-</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1990"><a href="#">1990</a></time><br>																				</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1016.html">Albert Pyun</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Matt Salinger – Capt. America / Steve Rogers</li><li>Ronny Cox – President Tom Kimball</li><li>Scott Paulin – The Red Skull / Tadzio de Santis</li><li><a href="/svenusling/p/1690.html">Ned Beatty</a> – Sam Kolawetz</li><li><a href="/svenusling/p/1211.html">Darren McGavin</a> – Gen. Fleming</li><li>Michael Nouri – Lt. Col. Louis</li><li>Kim Gillingham – Bernice Stewart / Sharon</li><li>Melinda Dillon – Mrs. Rogers</li><li>Bill Mumy – Young Gen. Fleming</li><li>Francesca Neri – Valentina de Santis</li><li>Carla Cassola – Dr. Maria Vaselli</li><li>Massimilio Massimi – Tadzio de Santis</li><li>Wayde Preston – Jack</li><li>Norbert Weisser – Alaskan surveyor</li><li>Garette Ratliff Henson – Young Tom Kimball</li><li>Bernarda Oman – Tadzo's mother</li><li>Galliano Pahor – Gen. Pestalozzi</li><li>Milan Kristofic – Nazi general</li><li>Mario Kovac – Repairman as a boy</li><li>Catherine Farrell – Roz</li><li>Mia Begovic – Young Italian woman</li><li>Matko Raguz – Italian woman's husband</li><li>Donald Standen – Red Skull's bodyguard</li><li>Dragana Zigic – Perfect young Italian</li><li>Robert Egon – Perfect young Italian</li><li>Igor Serdar – Perfect young Italian</li><li>Gary Epper – Mr. Erlich</li><li>Sonja Gregus – Resistance fighter</li><li>Rene Medvesek – Resistance fighter</li><li>Demeter Bitenc – Industrialist</li><li>Relja Basic – Industrialist</li><li>Velemir Chytil – Industrialist</li><li>Drago Klobucar – Industrialist</li><li>Gordan Piculjan – Industrialist</li><li>Frank Papia – Paramedic</li><li>Thomas Beatty – Young Sam Kolawetz</li><li>Jon Beatty – War veteran</li><li>Jann Carl – Newscaster</li><li>Gerda Shepherd – Jack's nurse</li><li>Beth Ann Bowen – Girl at beach</li><li>Christopher Whitney – Boy at beach</li><li>Mustafa Nadarevic – Tadzio's father</li><li>Edita Lipovsek – Tadzio's aunt</li><li>Ljubica Dujmovic – Tadzio's grandmother</li><li>Aldo Galleazzi – German scientist</li><li>Petar Tomac – Italian vendor</li><li>Bruno Grdadolnik – Italian vendor</li><li>Giulio Marini – Nazi general #2</li><li>Fay Finver – Lab technician</li><li>Frank Finver – Lab technician</li><li>Peter Mulrean – Lab technician</li><li>Sarah Wasson – Little girl</li><li>Scott Del Amo – Tom Kimball's father</li><li>Robert Reitmeier – Bandstand musician</li><li>John S. Reynolds – Bandstand musician</li><li>Lee Westenhofer – Bandstand musician</li><li>Mike Johnson – Bandstand musician</li><li>Ann Bell – Tom Kimball's mother</li><li>Raffaele Buranelli – Perfect young Italian</li><li>Tonko Lonza – Tadzio's mentor</li><li>Sven Medvesek – Pietro</li><li>Antun Nalis – Old repairman</li><li>Zoran Pokupec – Implant doctor</li><li>Trek Potter – Boy Scout</li><li>Jason Brooks – Spa man #1 (uncredited)</li><li>Slavko Sestak – German scientist (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The original mask used had holes that allowed [Matt Salinger's][/p?id=Matt%20Salinger] ears to be seen, but as this caused uncomfortable chafing, plastic ears were used.</li><li>The film did not get a US theatrical release but was released internationally.</li><li>They considered getting two different actors for the role of [Captain America][/f?id=11441]. One for the role of the weak pre-superhero Steve Rogers and another for the superhero [Captain America][/f?id=11441], but decided to get an actor that could play both roles instead.</li><li>Before this movie was introduced, Marvel Comics head honcho [Stan Lee][/p?id=Stan%20Lee] insisted that it was good. He wrote, &quot;Director [Albert Pyun][/p?id=1016] did it so well and so excitingly that everyone in the audience [at the screening] kept clamoring for more,&quot; to account for the film being scheduled for a re-shoot.</li><li>Before [Salinger][/p?id=Matt%20Salinger] was given the part, both [Dolph Lundgren][/p?id=1246] and [Arnold Schwarzenegger][/p?id=1062] were up for the part of [Captain America][/f?id=11441]. However, Arnold's accent lost him the part and [Lundgren][/p?id=1246] was busy filming The [Punisher (1989)][/f?id=17552].</li><li>[Val Kilmer][/p?id=1973] was also considered for the title role, but declined in favor of [The Doors][/f?id=The%20Doors] (1991).</li><li>In an online interview with the Planet Origo website, director [Albert Pyun][/p?id=1016] mentioned his experience with the &quot;[Captain America][/f?id=11441]&quot; movie. He said that the film was shelved for two years because &quot;it wasn't the movie the studio wanted plus the producing studio was undergoing financial issues.&quot; He also said the most challenging part about shooting the film was that they lacked proper funding. [Pyun][/p?id=1016] recalled, &quot;It's pretty difficult to make a film when there were times we actually had no money in the bank.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Captain Alatriste | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Captain Alatriste <a href="#" class="grade">+++</a></h2>
+										<h3>Alatriste</h3>
+										<p>
+										Film från <time datetime="2006"><a href="#">2006</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre3">Biografi</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Agustín Díaz Yanes</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Diego Alatriste</li><li>Elena Anaya – Angélica de Alquézar</li><li>Unax Ugalde – Íñigo Balboa</li><li>Eduard Fernández – Sebastián Copons</li><li>Eduardo Noriega – Conde de Guadalmedina</li><li>Ariadna Gil – María de Castro</li><li>Juan Echanove – Francisco de Quevedo</li><li>Javier Cámara – Conde Duque de Olivares</li><li>Antonio Dechent – Curro Garrote</li><li>Blanca Portillo – Fray Emilio Bocanegra</li><li>Francesc Garrido – Martín Saldaña</li><li>Pilar López de Ayala – Mujer de Malatesta</li><li>Jesús Castejón – Luis de Alquézar</li><li>Cristina Marcos – Joyera</li><li>Luis Zahera – Pereira</li><li>Pilar Bardem – Monja</li><li>Nadia de Santiago – Angélica 14 años</li><li>Nacho Pérez – Íñigo 14 años</li><li>Enrico Lo Verso – Gualterio Malatesta</li><li>Miguel Alcíbar – Escribano</li><li>Eliana Álvarez – Dorotea</li><li>Carlos Bardem – Alguacil</li><li>Nicolás Belmonte – Hombre garito</li><li>Mon Ceballos – Joven</li><li>Alberto Cerrada – Jefe Mosqueteros</li><li>Simon Cohen – Felipe IV</li><li>Tomás del Estal – Teniente</li><li>José Antonio Gallego – Alguacil</li><li>María Jesús Hoyos – Madre Pereira</li><li>Charlie Lázaro – Hombre moribundo</li><li>Mariano Llorente – Carnicero</li><li>Cipriano Lodosa – Criado Guadalmedina</li><li>José Luis Manrique – Hombre</li><li>Enrique Martínez – Bravo</li><li>Ignacio Mateos – Fabio</li><li>Javier Mejía – Príncipe de Gales</li><li>Christophe Miraval – Capitán Francés</li><li>Diego Moreno – Jaraffa</li><li>Roberto Mori – Teodoro</li><li>Alex O'Dogherty – Lope Balboa</li><li>Pablo Olewski – Pisaverde</li><li>Francesc Orella – Capitán Bragado</li><li>Alber Ponte – Alguacil</li><li>Ana Ramos – Anarda</li><li>David Reymonde – Ganzúa</li><li>Julio César Rodríguez – Bravo 1</li><li>Juan Ruiz – Olmedilla</li><li>Jesús Ruyman – Sargento mayor</li><li>José María Sacristán – Octavio</li><li>Artur Sala – Dominico calvo</li><li>José Luis Santos – Don Rafael</li><li>Paco Tous – Maestre Fontaine</li><li>Manuel Vidal – Pisaverde taberna</li><li>Quim Vila – Buckinham (sic)</li><li>Mikel Aramburu – Spanish officer at Rocroi (uncredited)</li><li>Eduardo Aránega – Black hat - Spanish musketeer / French officer (uncredited)</li><li>Jon Bermúdez – Spanish officer (uncredited)</li><li>Ángel Luis Cazor – French cavalry officer (goatee) (Rocroi) (uncredited)</li><li>Antonio José Cuenca – Un bravo (uncredited)</li><li>Alberto Huici –  (uncredited)</li><li class="voice">Yvonnick Muller – Dutch soldier (röst) (uncredited)</li><li>William Rory O'Brien – The Duke of Bristol (uncredited)</li><li>Joaquín Ortega – Soldier, Especialista (uncredited)</li><li>Antonio Pardo – Spanish officer (uncredited)</li><li>Antonio Resines – Spanish officer at Rocroi (uncredited)</li><li>Chema Ruiz –  (uncredited)</li><li>Francisco Vela – Black hat (Spanish musketeer) / French officer (Rocroi) (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>World Soundtrack Award - Film Composer of the Year 2014 (Alexandre Desplat)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Gael García Bernal][/p?id=Gael%20Garc%C3%ADa%20Bernal] was the first choice for the role played by [Unax Ugalde][/p?id=Unax%20Ugalde].</li><li>[Leonor Watling][/p?id=Leonor%20Watling] was offered a role but turned it down.</li><li>Several years before the film was almost made with [Antonio Banderas][/p?id=1059] set to direct and star with a script by Enrique Urbizu.</li><li>At a cost of 24 million Euros, this is the most expensive Spanish film ever made. Director [Agustín Díaz Yanes][/p?id=Agust%C3%ADn%20D%C3%ADaz%20Yanes] called that amount enough for 'a European super-production and an American rubbish-production'.</li><li>The role of Inquisitor Emilio Bocanegra is played by a woman, veteran actress [Blanca Portillo][/p?id=Blanca%20Portillo]. This caused controversy, not so much because it might look disrespectful towards the Church, but because many fans could not see the point in doing something like this. [Díaz Yanes][/p?id=Agust%C3%ADn%20D%C3%ADaz%20Yanes] said that he had had the idea of using a female actress from the beginning, because he saw 'that Great Inquisitor role' as something too cartoonish and black-and-white and wanted to introduce a fresh, less recognizable element to it, and still make viewers suitably uneasy about so powerful and fearful a character. He cited the Oscar-winning supporting role of [Linda Hunt][/p?id=1586] in [The Year of Living Dangerously][/f?id=11339] (1982), where she played a man, as an example of what he wanted to achieve. Incidentally, [Blanca Portillo][/p?id=Blanca%20Portillo] wears her hair very short in her next film, Volver (2006/I), as a result of having had it cut for this role.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

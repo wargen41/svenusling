@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Calcium Kid | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Calcium Kid <a href="#" class="grade">++</a></h2>
+										<h3>The Calcium Kid</h3>
+										<p>
+										Film från <time datetime="2004"><a href="#">2004</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre24">Sport</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Alex De Rakoff</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Mark Heap – Sebastian Gore-Brown</li><li>Michael Lerner – Artie Cohen</li><li>Ronni Ancona – Pat Connelly</li><li>Michael Peña – Jose Mendez</li><li>Julian Zapata – Jose's Entourage</li><li>Alejandro Ramirez – Jose's Entourage</li><li>Milton Hernandez – Jose's Entourage</li><li>Alberto Ramon – Jose's Entourage</li><li>Hector Trujillo – Jose's Entourage</li><li>John Correa – Jose's Entourage</li><li>Janier Morales Drado – Jose's Entourage</li><li>Wilson Cretaro da Luz Jr. – Jose's Entourage</li><li>Tamer Hassan – Pete Wright</li><li>Omid Djalili – Herbie Bush</li><li>John Joyce – Jon Wright</li><li>Cathy Dunning – Jeanne Wright</li><li>Ivanhoe Noronha – Pete's Trainer</li><li><a href="/svenusling/p/1710.html">Orlando Bloom</a> – Jimmy Connelly</li><li>Arthur Nightingale – Leonard</li><li>Gary Lammin – Pat's Punter</li><li>Bill Thomas – Mr. Bennet</li><li>Tamzin Griffin – Saucy Housewife</li><li>Rabbie Kadhim – Milk Thief</li><li>Anna Wing – Vera</li><li>David Kelly – Paddy O'Flannagan</li><li>Rafe Spall – Stan Parlour</li><li>Billie Piper – Angel</li><li>Josephine Teale – Dolly Bird</li><li>Maddy Ford – Dolly Bird</li><li>Jamie Lewis – Dolly Bird</li><li>Rupert Procter – Pressman</li><li>John Ashton (II) – Pressman</li><li>Matthew Watkin – Pressman</li><li>Christopher Obi – Pressman</li><li>Jonathan Ryland – Pressman</li><li>Nick Conroy – Blade</li><li>Gia Johnson – Latino Beauty</li><li>Bill Maloney – Barry the Barman</li><li>Drew Rhys-Williams – Angry Bloke</li><li>Lauretta Gavin – Young Lady</li><li>Sharon Gavin – Young Lady</li><li>Lyndsey Marshal – Mags Livingston</li><li>Stephen Critchlow – Mr. Holiday</li><li>Stevie Nye – Young Rascal</li><li>Hakeem Araba – Young Rascal</li><li>James Hall – Young Rascal</li><li>Eric Mason – Greengrocer</li><li>Renu Setna – Ravi</li><li>Ram John Holder – Jamaican Barber</li><li>Hama Marange – Jamaican Barber's Grandson</li><li>Donovan Simmonds – Football Kid</li><li>Alex Alexandrou – Football Kid</li><li>Kane Mason – Football Kid</li><li>Carlos Etienne – Football Kid</li><li>Nashon Esbrand – Football Kid</li><li>Jason Mullings – Football Kid</li><li>Ben Martin Byrne – Football Kid</li><li>Mark Pattison – The Altar Boy</li><li>Marcus Aserie – The Altar Boy</li><li>Luke Boyden – The Altar Boy</li><li>Andy Hill – The Altar Boy</li><li>Nicholas Moss – Skinhead</li><li>Lacey Bond – Stan's Mum</li><li>Luther Dyer – Disillusioned Young Fan</li><li>Peter Serafinowicz – Dave King</li><li>Frank Harper – Clive Connelly</li><li>Frank Bruno – Himself</li><li>Chris Eubank – Himself</li><li>Nathan Nolan – American Director</li><li>Bill Rodgers – Cameraman Dave</li><li>Doug Cockle – News Reporter (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

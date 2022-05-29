@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Captain America: Civil War | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Captain America: Civil War <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2016"><a href="#">2016</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Anthony Russo</li><li>Joe Russo</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Chris Evans – Steve Rogers / Captain America</li><li><a href="/svenusling/p/1809.html">Robert Downey Jr.</a> – Tony Stark / Iron Man</li><li><a href="/svenusling/p/1862.html">Scarlett Johansson</a> – Natasha Romanoff / Black Widow</li><li>Sebastian Stan – Bucky Barnes / Winter Soldier</li><li>Anthony Mackie – Sam Wilson / Falcon</li><li>Don Cheadle – Lieutenant James Rhodes / War Machine</li><li><a href="/svenusling/p/1452.html">Jeremy Renner</a> – Clint Barton / Hawkeye</li><li><a href="/svenusling/p/1141.html">Chadwick Boseman</a> – T'Challa / Black Panther</li><li><a href="/svenusling/p/1721.html">Paul Bettany</a> – Vision</li><li>Elizabeth Olsen – Wanda Maximoff / Scarlet Witch</li><li><a href="/svenusling/p/1729.html">Paul Rudd</a> – Scott Lang / Ant-Man</li><li>Emily VanCamp – Sharon Carter</li><li>Tom Holland – Peter Parker / Spider-Man</li><li>Daniel Brühl – Zemo</li><li>Frank Grillo – Brock Rumlow / Crossbones</li><li><a href="/svenusling/p/2006.html">William Hurt</a> – Secretary of State Thaddeus Ross</li><li>Martin Freeman – Everett K. Ross</li><li><a href="/svenusling/p/1608.html">Marisa Tomei</a> – May Parker</li><li>John Kani – King T'Chaka</li><li>John Slattery – Howard Stark</li><li><a href="/svenusling/p/1020.html">Alfre Woodard</a> – Miriam</li><li>Michael A. Cook – MRI Tech</li><li>Laughton Parchment – Vicar</li><li>Gene Farber – Karpov</li><li>Florence Kasumba – Security Chief</li><li>Cornell John – Attaché</li><li>Sven Hönig – Man at Kiosk</li><li>Josh Peck – GSG9 Task Force Gunner</li><li>Brent McGee – GSG9 Task Force Pilot</li><li>Be Satrazemis – German Innkeeper</li><li>Blair Jasin – Raft Guard</li><li>Oliver Bigalke – Barge Man #1</li><li>Rafael Banasik – Barge Man #2</li><li>David De Vries – Custodian</li><li>John Curran – Funeral Director</li><li>Katie Amess – Woman in Lobby #1</li><li>Austin Sanders – Woman in Lobby #2</li><li>Brett Gentile – Delivery Truck Driver</li><li>Matthew Anderson – Choir</li><li>Andrew Botchwey – Choir</li><li>Chase Bradfield – Choir</li><li>Ernest Charles – Choir</li><li>Hendricks Coates – Choir</li><li>Ethan Conde – Choir</li><li>Shen Dynes – Choir</li><li>Nathaniel Ellis – Choir</li><li>Jariah Ferguson – Choir</li><li>Evan French – Choir</li><li>Justin Freeman – Choir</li><li>Ralphael Grand'Pierre – Choir</li><li>Julian Grimes – Choir</li><li>Aaron Hayes – Choir</li><li>Austin Hooper – Choir</li><li>A. Jones – Choir</li><li>Myles Josesph – Choir</li><li>Stephen Lewis – Choir</li><li>Jacob Ludwick – Choir</li><li>Dmahrei McRae – Choir</li><li>Ashwin Mudaliar – Choir</li><li>Eli Ollinger – Choir</li><li>Parker Pape – Choir</li><li>Daniel Parada – Choir</li><li>Jonah Ruffin – Choir</li><li>Darryl Sampson – Choir</li><li>Cameron Sardone – Choir</li><li>Stanley Sellers – Choir</li><li>Miles Selles – Choir</li><li>Jacob Sung – Choir</li><li>Caden Wilkinson – Choir</li><li>Kim Scar – Chinese Newscaster</li><li>Jessica Walther-Gabory – German Newscaster #1</li><li>Beniamino Brogi – German Newscaster #2</li><li>Silvina Buchbauer – News Reporter</li><li>Henry Amadi – Busboy (Lagos)</li><li>Ugochukwu Ani – Waiter (Lagos)</li><li>Michael Anthony Rogers – Secretary Ross's Aide</li><li>Damion Poitier – Hero Merc #1</li><li>Umar Khan – Hero Merc #2</li><li>David Brown – Hero Merc #3</li><li>Guy Fernandez – Hero Merc #4</li><li>Jim Rash – M.I.T. Liaison</li><li>Sophia Russo – Teenage Girl</li><li>Gozie Agbo – Dr. Broussard</li><li>Stan Lee – FedEx Driver</li><li class="voice">Kerry Condon – Friday (röst)</li><li>Amelia Morck – UN Staffer Gibson</li><li>Julianna Guill – Stark's Assistant</li><li>Surely Alvelo – Nurse</li><li>Brian Schaeffer – Cultural Attaché</li><li>other cast: – </li><li>Leslie Bibb – Christine Everhart (rumored)</li><li>Hope Davis – Maria Stark</li><li>Chris Jai Alex – IFID (uncredited)</li><li>Lindsay Small Barrios – Task Force Agent (uncredited)</li><li>Jessica Bell – Funeral Mourner (uncredited)</li><li>Carsten Berger – U.N. Delegate (uncredited)</li><li>Jae Bireley – MIT Student (uncredited)</li><li>Bricine Brown – Nigerian Peddler (uncredited)</li><li>Jonathan Buckhouse – MIT Grad Student (uncredited)</li><li>Tyler Carden – MIT Grad Student (uncredited)</li><li>Gregory Lee Cason – Councilman (uncredited)</li><li>Teo Ciltia – United Nation Delegate (uncredited)</li><li>Chuck Clark – Delegate (uncredited)</li><li>Jameson Jamey Copeland – Pub Patron (uncredited)</li><li>Marisol Correa – U.N. Official Press (uncredited)</li><li>Missy Crowder-Compton – Diplomat (uncredited)</li><li>Jackie Dallas – Funeral Mourner (uncredited)</li><li>Nicole Davis – Nigerian Cafe Guest / Pedestrian (uncredited)</li><li>Justin East – Nigerian Tourist (uncredited)</li><li>Dirk Ellis – GSG-9 Soldier (uncredited)</li><li>Mark Falvo – Reporter (uncredited)</li><li>Candiss Nicole Gandy – MIT Grad Student (uncredited)</li><li>Brent Moorer Gaskins – UN Delegate / College Alumni (uncredited)</li><li>Martavious Gayles – MIT Grad Student (uncredited)</li><li>Devan Gerlach – MIT Graduate Student (uncredited)</li><li>Tahseen Ghauri – Upscale Funeral Goer (uncredited)</li><li>Brian Gonzalez – UN Political Aide (uncredited)</li><li>Alonso Grandío – Graduate Student (uncredited)</li><li>Austin Handle – British Military (uncredited)</li><li>Beverly Hanley – UN Delegate (uncredited)</li><li>Cody Mark Hanna – Graduate Student (uncredited)</li><li>De'Adrian Harmon – Affluent International Traveler (uncredited)</li><li>Anthony B. Harris – A Royal Guard (uncredited)</li><li>Rory Healy – UN Delegate (uncredited)</li><li>Kimberly Hester Huffstetler – MIT Graduate Student (uncredited)</li><li>Lainey Kloes – Agent (uncredited)</li><li>Steve Knoll – GSG-9 Soldier (uncredited)</li><li>Sanya Kongdara – Upscale Man (uncredited)</li><li>Inder Kumar – Jakarta Bidder / Businessman (uncredited)</li><li>Dominic M. Lee – Nigerian Pedestrian (uncredited)</li><li>Adrian Lockett – Mercenary (uncredited)</li><li>Stephanie Long – Reporter (uncredited)</li><li>Phil Mallon – Tactical Force (uncredited)</li><li>Aaron Manning – Upscale Funeral Goer (uncredited)</li><li>Dorry Marie – Nigerian Cafe Guest / Pedestrian (uncredited)</li><li>Alberto Tito Matos Jr. – Upscale Man (uncredited)</li><li>Taylor McPherson – German Tech Agent (uncredited)</li><li>Michael Mercaldi – Agent (uncredited)</li><li>Heidi Moneymaker – Super Soldier 3 (uncredited)</li><li>Duane Moseley – Tech (uncredited)</li><li>Rob Muller – Reporter (uncredited)</li><li>Stacee Myers – MIT Graduate Student (uncredited)</li><li>Lon Nease – Funeral Mourner (uncredited)</li><li>William Ngo – Bidder #2 (uncredited)</li><li>Dennis Oestreich – GSG9 policeman (uncredited)</li><li>Rajeev Pahuja – MIT Professor (uncredited)</li><li>Anna Phillips – Ivy League Student (uncredited)</li><li>Carl A. Pitts – Auction Bidder (uncredited)</li><li>Lare Roberts – Funeral Dignitary (uncredited)</li><li>Anthony J Sacco – Upscale Funeral Goer (uncredited)</li><li>Ray Sahetapy – Auctioneer (uncredited)</li><li>Patti Schellhaas – MIT Parent (uncredited)</li><li>Mike Sibley – Brigadier General UK Army (uncredited)</li><li>Jay Silla – MIT Student (uncredited)</li><li>Manesh k Singh – U.N. Delegate representing India (uncredited)</li><li>Jamie Soricelli – MIT Grad Student (uncredited)</li><li>Jason Speer – Swiss Ambassador (uncredited)</li><li>Chris Theisinger – Vienna Fireman (uncredited)</li><li>Sarai Tinck – MIT Graduate Student (uncredited)</li><li>Emma Ve – Bidder (uncredited)</li><li>Christof Veillon – Bidder #3 (uncredited)</li><li>Erick Wofford – German Tech Agent (uncredited)</li><li>Jane Wu – UN Staffer Wu (uncredited)</li><li>Kim Yannayon – MIT Graduate Student (uncredited)</li><li>Alexander Yassin – U.N. Delegate representing Indonesia (uncredited)</li><li>Alex Zelenka – Upscale Man (uncredited)</li><li>Peter Luis Zimmerman – MIT Student (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Carrousel International du Film, Audience Camério 2004 (Reza Bagher)</li><li>Carrousel International du Film, Camério - Bästa skådespelare 2004 (1837)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Carrousel International du Film, Camério - Bästa film 2004 (Reza Bagher)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Catch Me If You Can | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Catch Me If You Can <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1907.html">Steven Spielberg</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1582.html">Leonardo DiCaprio</a> – Frank Abagnale Jr.</li><li><a href="/svenusling/p/1950.html">Tom Hanks</a> – Carl Hanratty</li><li><a href="/svenusling/p/1173.html">Christopher Walken</a> – Frank Abagnale</li><li><a href="/svenusling/p/1620.html">Martin Sheen</a> – Roger Strong</li><li>Nathalie Baye – Paula Abagnale</li><li><a href="/svenusling/p/1029.html">Amy Adams</a> – Brenda Strong</li><li><a href="/svenusling/p/1411.html">James Brolin</a> – Jack Barnes</li><li>Brian Howe – Earl Amdursky</li><li>Frank John Hughes – Tom Fox</li><li>Steve Eastin – Paul Morgan</li><li>Chris Ellis – Special Agent Witkins</li><li>John Finn – Assistant Director Marsh</li><li>Jennifer Garner – Cheryl Ann</li><li>Nancy Lenehan – Carol Strong</li><li>Ellen Pompeo – Marci</li><li>Elizabeth Banks – Lucy</li><li>Guy Thauvette – Warden Garren</li><li>Candice Azzara – Darcy</li><li>Matthew Kimbrough – Loan Officer</li><li>Joshua Boyd – Football Player</li><li>Kaitlin Doubleday – Joanna</li><li>Kelly McNair – Girl #1</li><li>Jonathan Dankner – Student #1</li><li>Maggie Mellin – Teacher</li><li>Thomas Kopache – Principal Evans</li><li>Margaret Travolta – Ms. Davenport</li><li>Jimmie F. Skaggs – Bartender</li><li>Alex Hyde-White – Mr. Kesner</li><li>Lilyan Chauvin – Mrs. Lavalier</li><li>Eugene Fleming – Ticket Clerk</li><li>Robert Ruth – Hotel Manager</li><li>Jennifer Manley – Ashley</li><li><a href="/svenusling/p/1424.html">James Morrison</a> – Pilot</li><li>Robert Symonds – Mr. Rosen</li><li>Jennifer Kan – Female Bank Teller</li><li>Robert Curtis Brown – Front Desk Clerk</li><li>Kelly Hutchinson – Young Female Teller</li><li>Steve Witting – Manager</li><li>Wendy Worthington – Receptionist</li><li>Jane Bodle – TWA Ticket Agent</li><li>J. Patrick McCormack – Auctioneer</li><li>Brian Goodman – Motel Owner</li><li>Ray Proscia – Salesman</li><li>Sarah Lancaster – Riverbend Woman</li><li>Jill Matson – Riverbend Woman</li><li>Mike Baldridge – Terry</li><li>Joel Ewing – Party Guy</li><li>Ritchie Montgomery – Young Doctor</li><li>Jim Antonio – Victor Griffith</li><li>Angela Sorensen – Party Girl</li><li>Jonathan Brent – Dr. Ashland</li><li>Benita Krista Nall – Emergency Nurse</li><li>Shane Edelman – Doctor Harris</li><li>Andrew Meeks – Young Patient</li><li>Morgan Rusler – FBI Agent</li><li>Jane Edith Wilson – Bar Examiner</li><li>Dave Hager – Judge</li><li>Kyle Davis – Kid</li><li>Patrick Thomas O'Brien – Mr. Hendricks</li><li>Jaime Ray Newman – Monica</li><li>Deborah Kellner – Debra Jo</li><li>Mercedes Cornett – Heather</li><li>Amy Acker – Miggy</li><li>Robert Peters – FBI Agent</li><li>James DuMont – FBI Agent</li><li>Thomas Crawford – FBI Agent</li><li>Sarah Rush – Secretary</li><li>Malachi Throne – Abe Penner</li><li>Alfred Dennis – Ira Penner</li><li>Max Kerstein – Penner Brother</li><li>Donna Kimball – TWA Stewardess</li><li>Jan Munroe – Captain Oliver</li><li>Stephen Dunham – Pilot</li><li>Brandon Keener – Pilot</li><li>Jasmine Jessica Anthony – Little Girl</li><li>Anthony Powers – NY Savings Bank Manager</li><li>Lauren Cohn – Female Teller</li><li>Jeremy Howard – Teen Waiter</li><li>Jack Knight – Man #3</li><li>Jamie Anderson – Ilene</li><li>Kam Heskin – Candy</li><li>Ana Maria Quintana – Hotel Maid</li><li>Gerald R. Molen – FBI Agent</li><li>Celine du Tertre – Little Girl on Street</li><li>Stan Bly – Blind Man</li><li>Jamie Moss – Young Man</li><li>Jessica Collins – Peggy</li><li>Frank Abagnale Jr. – French Policeman</li><li>Roger Léger – Prison Guard</li><li>Jean-François Blanchard – French Police Captain</li><li>Mathieu Gaudreault – French Police</li><li>Guy-Daniel Tremblay – French Police</li><li>Alexander Bisping – French Police</li><li>Patrice Dussault – French Police</li><li>Paul Todd – Maitre D'</li><li>Jake Wagner – Kid</li><li>Ashley Cohen – Party Twin</li><li>Kelly Cohen – Party Twin</li><li>Ellis Hall – Piano Player / Singer</li><li>Steven Meizler – Piano Player</li><li>Fred Datig – Co-Pilot</li><li>Joe Garagiola – Himself</li><li>Kitty Carlisle – Herself</li><li>Dominic Bond – Choir</li><li>Jean-François Brousseau – Choir</li><li>Francis Campeau – Choir</li><li>Raphaël Cardin – Choir</li><li>Marc-Antoine Côté – Choir</li><li>Antoine Drolet-Dumoulin – Choir</li><li>Léon Dussault-Gagné – Choir</li><li>Simon Houle-Gauthier – Choir</li><li>Vincent Généreux – Choir</li><li>Sébastien Jean – Choir</li><li>Pascal Larouche – Choir</li><li>William Lauzon – Choir</li><li>Florent Legault – Choir</li><li>Jason McNally – Choir</li><li>Julien Normandeau – Choir</li><li>David Parent-Laliberté – Choir</li><li>Alexandre Pépin – Choir</li><li>Nicolas Radeschi – Choir</li><li>Jonathan René – Choir</li><li>Samuel St. Amour – Choir</li><li>Sean Welch – Co-Pilot</li><li>Nicole Andrews – Hot Blonde (uncredited)</li><li>David Austin – Party Guy (uncredited)</li><li>Jessica Bassman – Nurse Bassman (uncredited)</li><li>Joe Beaudin – Bank Manager (uncredited)</li><li>Barry Blueian – FBI Agent (uncredited)</li><li>Phil Bowers – Head Waiter (uncredited)</li><li>G. Larry Butler – Bar Patron (uncredited)</li><li>Gary Castro Churchwell – Medical Intern (uncredited)</li><li class="voice">Jillian Clare – Little Girl (röst) (uncredited)</li><li>Carrie 'CeCe' Cline – Missy (uncredited)</li><li>Joshua Collins – Student (uncredited)</li><li>Mark Correy – Funny Doctor (uncredited)</li><li>Cameron Deaver – Waiter (uncredited)</li><li>Johnny Drocco – Airplane Passenger (uncredited)</li><li>Pierre Ebert – Extra (uncredited)</li><li>Wade Eck – Classic Car Driver (uncredited)</li><li>Fabrizio Fante – Businessman (uncredited)</li><li>Brian Reed Garvin – Bar Patron #1 (uncredited)</li><li>Tiffany Glass – Miss Mason (uncredited)</li><li>Jason Grutter – Pool Party Guy (uncredited)</li><li>Jesse Heiman –  (uncredited)</li><li>Elina Jaiden – Student (uncredited)</li><li>Casey Kern – Bank Teller (uncredited)</li><li>Cyrus King – FBI Agent #3 (uncredited)</li><li>Joshua Michael Kwiat – Dr. Connelly (uncredited)</li><li>Charlotte Kyle – Party Guest (uncredited)</li><li>Pablo Lewin – FBI Agent (uncredited)</li><li>Michael Lightsey – Student (uncredited)</li><li>Cari Lucas – Student Stewardess (uncredited)</li><li>Beverly Lynne – Pool Guest (uncredited)</li><li>Karrie MacLaine – Pan Am Stewardess (uncredited)</li><li>Pete Macnamara – FBI Agent (uncredited)</li><li>Shannon Marlyse – Nurse Brown (uncredited)</li><li>Charles McClelland – TWA Commuter (uncredited)</li><li>Ric McCloud – Airline Passenger (uncredited)</li><li>Christopher Metas – Waiter (uncredited)</li><li>Altara Michelle – Snarky French Student (uncredited)</li><li>Summer Moore – Swimmer (uncredited)</li><li>Alden Olmsted – Undercover FBI Agent - Airport (uncredited)</li><li>Veronique Ory – Girl (uncredited)</li><li>Nick Pellegrino – Used Car Lot Owner (uncredited)</li><li>Marylee Picciano – Bikini Girl (uncredited)</li><li>Jeffrey Pritz – Co-Pilot (uncredited)</li><li>Tara Rice – Party Guest (uncredited)</li><li>Cali T. Rossen – Airline Passenger (uncredited)</li><li>Lidia Sabljic – Pan Am Stewardess (uncredited)</li><li>Corinne Saffell – Stewardess (uncredited)</li><li>Andy Signore – Pedestrian (uncredited)</li><li>Kim Sky – Mother of Little Girl (uncredited)</li><li>Max Spielberg – Kid in Plane (uncredited)</li><li>Jeffrey Squire – Johnny (uncredited)</li><li>Jacki Tenerelli – Flight Attendant (uncredited)</li><li>Rando Thomas – Airline Pilot (uncredited)</li><li>Clyde Tull – Hotel Guest (uncredited)</li><li>Larry Vigus – FBI Agent (uncredited)</li><li>Camille Wainwright – Mary (uncredited)</li><li>Jamie Wax – Bellhop (uncredited)</li><li>Evis Xheneti – Beautiful girl (uncredited)</li><li>Hilary Rose Zalman – Pan Am Girl (uncredited)</li><li>Nick Zano – James (uncredited)</li><li>Shane Zeranski – Leonardo DiCaprio photo double (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Berlin International Film Festival, Silver Berlin Bear - Bästa skådespelare 1965 (1572)</li><li>Berlin International Film Festival, Special Mention (To the authors of the screenplay.) 1965</li><li>Berlin International Film Festival, Youth Film Award - Honorable Mention - Best Feature Film Suitable for Young People 1965 (Elliot Silverstein)</li><li>Oscar - Bästa skådespelare 1966 (1572)</li><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 1966 (1572)</li><li>BAFTA Film Award - Bästa utländska skådespelare 1966 (1572)</li><li>Laurel Awards, Golden Laurel - Komedi 1966</li><li>Laurel Awards, Golden Laurel - Bästa komiska insats, Man 1966 (1572)</li><li>Laurel Awards, Golden Laurel - Bästa komiska insats, Kvinna 1966 (1430)</li><li>Laurel Awards, Golden Laurel - Sång (For the song "The Ballad of Cat Ballou".) (2:a plats) 1966</li><li>NBR Award - Bästa skådespelare 1966 (1572)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Berlin International Film Festival, Golden Berlin Bear 1965 (Elliot Silverstein)</li><li>Oscar - Bästa manus baserad på annan förlaga 1966</li><li>Oscar - Bästa musikbearbetning 1966</li><li>Oscar - Bästa originalsång (For the song "The Ballad of Cat Ballou") 1966</li><li>Oscar - Bästa klippning 1966</li><li>Golden Globe - Bästa film - Komedi eller Musikal 1966</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 1966 (1430)</li><li>Golden Globe - Bästa originalsång (For the song "Ballad of Cat Ballou".) 1966</li><li>Golden Globe - Mest lovande nykomling - Man (HFPA records do not specify a film.) 1966 (Tom Nardini)</li><li>BAFTA Film Award - Mest lovande nykomling i en huvudroll 1966 (Tom Nardini)</li><li>DGA Award - Bästa regi 1966 (Elliot Silverstein)</li><li>WGA Award (Screen) - Best Written American Comedy 1966</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Gore Verbinski][/p?id=Gore%20Verbinski] pushed production back a few months because [Leonardo DiCaprio][/p?id=1582] had to re-shoot scenes for [Gangs Of New York][/f?id=14214] (2002), The delay led to [James Gandolfini's][/p?id=1420] withdrawal, because he had to go back to work on &quot;The Sopranos&quot; (1999). He was replaced by [Tom Hanks][/p?id=1950]. [David Fincher][/p?id=1215], [Cameron Crowe][/p?id=Cameron%20Crowe] and [Lasse Hallström][/p?id=Lasse%20Hallstr%C3%B6m] were asked to direct before [Steven Spielberg][/p?id=1907], who only wanted to produce the movie, took over.</li><li>When it appeared that [Gore Verbinski][/p?id=Gore%20Verbinski] would direct, [Chloë Sevigny][/p?id=1155] and [Ed Harris][/p?id=1267] were both considered for roles.</li><li>Until he saw the results of [Leonardo DiCaprio's][/p?id=1582] work, the real [Frank Abagnale Jr.][/p?id=Frank%20Abagnale%20Jr.] didn't think [DiCaprio][/p?id=1582] was &quot;suave&quot; enough to play him.</li><li>[Jennifer Garner][/p?id=Jennifer%20Garner] shot her scenes in one day.</li><li>The concluding part of [Steven Spielberg's][/p?id=1907] unofficial &quot;running man&quot; trilogy, which started with [Artificial Intelligence: AI][/f?id=10099] (2001) and continued with [Minority Report][/f?id=16200] (2002).</li><li>The first cut of the film was about 80% authentic, as quoted at the epilogue of Abagnale's book. Some scenes were corrected, added and change as per request of the real [Frank Abagnale Jr.][/p?id=Frank%20Abagnale%20Jr.] to ensure total authenticity.</li><li>[Steven Spielberg's][/p?id=1907] original choice for the role of Frank Abigale Jr. was [Johnny Depp][/p?id=1505].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

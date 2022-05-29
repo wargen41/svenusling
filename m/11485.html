@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chaos | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Chaos <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2005"><a href="#">2005</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Tony Giglio</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1438.html">Jason Statham</a> – Det. Quentin Conners</li><li>Ryan Phillippe – Det. Shane Dekker</li><li><a href="/svenusling/p/1998.html">Wesley Snipes</a> – Lorenz</li><li>Henry Czerny – Capt. Martin Jenkins</li><li>Justine Waddell – Det. Teddy Galloway</li><li>Nicholas Lea – Det. Vincent Durano</li><li>Jessica Steen – Karen Cross</li><li>Rob LaBelle – Bank Manager</li><li>John Cassini – Det. Bernie Callo</li><li>Damon Johnson – Brendan Dax</li><li>Paul Perri – Harry Hume</li><li>Keegan Connor Tracy – Marnie Rollins</li><li>Natassia Malthe – Gina Lopez</li><li>Ty Olsson – Damon Richards</li><li>Terry Chen – Chris Lei</li><li><a href="/svenusling/p/1673.html">Mike Dopud</a> – Lamar Galt</li><li>Michasha Armstrong – Xander Harrington</li><li>Kim Howey – Lisa Reane</li><li>Gaston Howard – John Curtis</li><li>Garvin Cross – SWAT Commander</li><li>Kimani Ray Smith – Bank Teller</li><li>Kirsten Williamson – Officer at Bank</li><li>Michael Adamthwaite – Sniper #1</li><li>Nigel Vonas – Sniper #2</li><li>Bill Mondy – FBI Agent Doyle</li><li>Rhys Lloyd – Karen Cross's Cameraman</li><li>Susan Astley – Cop Diner Waitress</li><li>Darcy Laurie – Biker</li><li>Rob Court – Paramedic</li><li>Kristina Agosti – Mrs. Callo</li><li>Emy Aneke – Officer at Callo House</li><li>Iris Paluly – Forensics Technician</li><li>James Ashcroft – Emergency Medical Technician</li><li>Fulvio Cecere – Det. Thomas Branch</li><li>Mike Mitchell – Det. Jerome Knight</li><li>Pascale Hutton – Pretty Waitress</li><li>Nicolette Bujdos – Airport Ticket Agent</li><li>Tiara Sorenson – Stewardess on Private Plane</li><li>Angelique Naude – Conner's Girl</li><li>Anna Chitro – Ewa (uncredited)</li><li>Maciej Damiecki –  (uncredited)</li><li>Aaron Douglas – Police Officer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Satellite Award - Bästa skådespelerska - Drama 2008 (1043)</li><li>Saturn Award - Bästa skådespelerska 2009 (1043)</li><li>VES Award - Outstanding Matte Paintings in a Feature Motion Picture (For 1928 downtown L.A..) 2009</li><li>VES Award - Outstanding Supporting Visual Effects in a Motion Picture 2009</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cannes Film Festival, Golden Palm 2008 (1184)</li><li>CFCA Award - Bästa skådespelerska 2008 (1043)</li><li>Satellite Award - Bästa foto 2008</li><li>Oscar - Bästa skådespelerska 2009 (1043)</li><li>Oscar - Bästa foto 2009</li><li>Oscar - Bästa scenografi 2009</li><li>Golden Globe - Bästa skådespelerska - Drama 2009 (1043)</li><li>Golden Globe - Bästa musik 2009 (1184)</li><li>BAFTA Film Award - Bästa regi 2009 (1184)</li><li>BAFTA Film Award - Bästa skådespelerska 2009 (1043)</li><li>BAFTA Film Award - Bästa manus 2009 (J. Michael Straczynski)</li><li>BAFTA Film Award - Bästa foto 2009</li><li>BAFTA Film Award - Bästa kostym 2009</li><li>BAFTA Film Award - Bästa ljud 2009</li><li>BAFTA Film Award - Bästa klippning 2009</li><li>BAFTA Film Award - Bästa scenografi 2009</li><li>Saturn Award - Best Action/Adventure/Thriller Film 2009</li><li>Saturn Award - Bästa regi 2009 (1184)</li><li>Saturn Award - Bästa skådespelerska 2009 (1043)</li><li>Saturn Award - Bästa manus 2009 (J. Michael Straczynski)</li><li>Saturn Award - Bästa musik 2009 (1184)</li><li>Saturn Award - Bästa kostym 2009</li><li>Art Directors Guild, Excellence in Production Design Award - Period Films 2009</li><li>Broadcast Film Critics Association Awards - Critics Choice Award - Bästa film 2009</li><li>Broadcast Film Critics Association Awards - Critics Choice Award - Bästa skådespelerska 2009 (1043)</li><li>Broadcast Film Critics Association Awards - Critics Choice Award - Bästa musik 2009 (1184)</li><li>Casting Society of America, Artios - Outstanding Achievement in Casting - Big Budget Feature - Drama 2009</li><li>CDG Award - Excellence in Costume Design for Film - Period 2009</li><li>Empire Award - Bästa thriller 2009</li><li>Empire Award - Bästa skådespelerska 2009 (1043)</li><li>Irish Film and Television Awards, Audience Award - Best International Actress 2009 (1043)</li><li>ALFS Award - Director of the Year 2009 (1184)</li><li>ALFS Award - Actress of the Year 2009 (1043)</li><li>Screen Actors Guild Awards, Actor - Bästa skådespelerska 2009 (1043)</li><li>Teen Choice Award - Choice Movie Actress: Drama 2009 (1043)</li><li>Award of the Japanese Academy - Bästa utländska film 2010</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

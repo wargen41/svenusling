@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Canadian Bacon | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Canadian Bacon <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Michael Moore</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1475.html">John Candy</a> – Sheriff Bud Boomer</li><li><a href="/svenusling/p/1009.html">Alan Alda</a> – President of the United States</li><li>Rhea Perlman – Honey</li><li>Kevin Pollak – Stu Smiley</li><li><a href="/svenusling/p/1799.html">Rip Torn</a> – General Dick Panzer</li><li>Kevin J. O'Connor – Roy Boy</li><li>Bill Nunn – Kabral</li><li>G.D. Spradlin – R. J. Hacker</li><li>Steven Wright – Niagara Mountie</li><li><a href="/svenusling/p/1458.html">Jim Belushi</a> – Charles Jackal</li><li>Brad Sullivan – Gus</li><li>Stanley Anderson – Edwin S. Simon</li><li>Richard Council – Russian President</li><li><a href="/svenusling/p/1983.html">Wallace Shawn</a> – Canadian Prime Minister</li><li>Michael Copeman – Panzer's Aide</li><li>Bruce Hunter – President's Aide</li><li>Beth Amos – Ruthie</li><li>Jack Mather – Pops</li><li>Kenner Ames – Mountie Sergeant</li><li>Roger Dunn – Mountie Major</li><li>Natalie Rose – Toronto Kid</li><li>Michael Woods – State Trooper #1</li><li>Matt Cooke – State Trooper #2</li><li>Barbara Schroeder – Newswoman</li><li>Tara Meyer – Candy Striper #1</li><li>Fab Filippo – Candy Striper #2</li><li>Carlton Watson – Clarence Thomason</li><li>Stan Coles – Secretary of State</li><li>Adrian Hough – Russian Aide</li><li>Bryan Armstrong – Auctioneer</li><li>Kelsey Binder Moore – Ice Cream Girl #1</li><li>Leah Binder Moore – Ice Cream Girl #2</li><li>Wally Bolland – Special Ops Soldier</li><li>Markus Parilo – Omega Force Leader</li><li>Jim Czarnecki – Snake</li><li>Tony Proffer – Dell</li><li>Ben Hamper – Redneck Guy #1</li><li>Michael Moore – Redneck Guy #2</li><li>Linda Genovesi – Polite Canadian Woman</li><li class="voice">Sheila Gray – Hacker Hellstorm (röst)</li><li>Dana Brooks – Paulette Kalin</li><li><a href="/svenusling/p/1196.html">Dan Aykroyd</a> – OPP Officer (uncredited)</li><li>Gordon Michael Woolvett – Male Candy Striper (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The final note in the credits, &quot;To Johnny LaRue - thanks to you, we got our crane shot&quot;, is a reference to one of [John Candy's][/p?id=1475] recurring characters on &quot;SCTV Channel&quot; (1983) .</li><li>[Michael Moore][/p?id=Michael%20Moore] wrote the screenplay during the first Gulf War, in reaction to what he felt was the US government's manipulation of the media in supporting Operation Desert Storm.</li><li>A deleted scene featured [James Belushi][/p?id=James%20Belushi] and Mary Charlotte Wilcox as Canadian border guards wearing beaver hats. They improvised the entire scene. Afterward, [Belushi][/p?id=James%20Belushi], a relative newcomer to the comedy scene, told comedy veteran Wilcox (whom he didn't recognize) &quot;You're kind of funny&quot; and that she should try to get into comedy.</li><li>[Michael Moore][/p?id=Michael%20Moore] was turned down by 47 different film companies before [Madonna's][/p?id=Madonna] Maverick Productions picked up the option.</li><li>In one scene, the characters played by [John Candy][/p?id=1475], [Bill Nunn][/p?id=Bill%20Nunn] and [Kevin J. O'Connor][/p?id=Kevin%20J.%20O'Connor] sit around a campfire and discuss films in which black characters are killed before their white co-stars. O'Connor mentions [Forrest Gump][/f?id=14003] (1994), which was released six months after principal photography on &quot;Bacon&quot; was completed, and four months after [Candy's][/p?id=1475] death. The line was looped in after the scene was shot.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

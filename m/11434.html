@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cannibal Holocaust | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Cannibal Holocaust <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1980"><a href="#">1980</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre22">Skräck</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ruggero Deodato</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Robert Kerman – Professor Harold Monroe</li><li>Francesca Ciardi – Faye Daniels</li><li>Perry Pirkanen – Jack Anders</li><li>Luca Barbareschi – Mark Tomaso</li><li>Salvatore Basile – Chaco Losojos</li><li>Ricardo Fuentes – Undetermined Role</li><li>Carl Gabriel Yorke – Alan Yates</li><li>Paolo Paoloni – 1st Executive</li><li>Lionello Pio Di Savoia – 2nd Executive</li><li>Luigina Rocchi – Undetermined Role</li><li>Lucia Costantini – Adulteress (uncredited)</li><li>Ruggero Deodato – Man sitting in NYU Campus (uncredited)</li><li>Guillermo – Felipe Ocanya (uncredited)</li><li>Enrico Papa – Pantheon Interviewer (uncredited)</li><li>David Sage – Alan's Father (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Ten days after its premiere in Milan, the film was seized by the Italian courts, and director [Ruggero Deodato][/p?id=Ruggero%20Deodato] was arrested and charged with obscenity. He was later charged with murdering several actors on camera and faced life in prison. The cast had signed contracts requiring them to disappear for a year after shooting, to maintain the illusion that they'd died. [Deodato][/p?id=Ruggero%20Deodato] contacted [Luca Barbareschi][/p?id=Luca%20Barbareschi] and told him to contact the three other actors who played the missing film team. When the actors appeared in court, alive and well, the murder charges were dropped.</li><li>The iconic poster image for the film shows a cannibal girl impaled on a stick. In court, [Ruggero Deodato][/p?id=Ruggero%20Deodato] explained that the girl sat on a bicycle seat attached to the pole's base while holding a small pointed piece of balsa wood in her mouth. Fake blood was added afterwards. He commented that the girl was unusually calm, and remained very still during filming.</li><li>After seeing the film, director [Sergio Leone][/p?id=Sergio%20Leone] wrote a letter to [Ruggero Deodato][/p?id=Ruggero%20Deodato], which stated, &quot;Dear Ruggero, what a movie! The second part is a masterpiece of cinematographic realism, but everything seems so real that I think you will get in trouble with all the world.&quot;</li><li>The father of the actor who played Miguel was murdered during filming. Production was delayed so the actor could go home for the funeral. When Prof. Monroe, Chaco, and Miguel are sitting outside the Yanomamo village, immediately after discovering the bone shrine, the actor is crying over his father's death.</li><li>[Perry Pirkanen][/p?id=Perry%20Pirkanen] cried after filming the turtle scene.</li><li>[Robert Kerman][/p?id=Robert%20Kerman] was a porn actor trying to establish himself in mainstream films. After this movie, &quot;legitimate&quot; roles dried up, and he went back to porn.</li><li>When [Carl Gabriel Yorke][/p?id=Carl%20Gabriel%20Yorke] arrived in the Amazon for shooting, he wasn't given a script or any idea of what the movie was about. As soon as he arrived, director [Ruggero Deodato][/p?id=Ruggero%20Deodato] shouted, &quot;That's my star! Get him into makeup!&quot; His first scene, shot almost immediately, was the amputation of a character's leg. In a later interview, Yorke said that in the jungle, he didn't know whether the film was a Hollywood production or a snuff film.</li><li>Immediately after a pig was shot and killed, [Carl Gabriel Yorke][/p?id=Carl%20Gabriel%20Yorke] botched a long monologue that [Ruggero Deodato][/p?id=Ruggero%20Deodato] wanted to include in the movie. After rehearsing the line several times and doing fine, Yorke says he screwed up during filming because he heard the pig squeal and die. Retakes weren't possible because only one pig was &quot;allotted&quot; to be killed.</li><li>[Ruggero Deodato][/p?id=Ruggero%20Deodato] has said he now regrets everything he did, especially the animal deaths. He said once that he wishes he'd never made the movie.</li><li>[Ruggero Deodato][/p?id=Ruggero%20Deodato] intended for the natives to eat fake brains from a fake monkey head. The natives talked him out of it because monkey brains were a delicacy to them.</li><li>In a 2005 interview, [Carl Gabriel Yorke][/p?id=Carl%20Gabriel%20Yorke] said that while rehearsing the sex scene with [Francesca Ciardi][/p?id=Francesca%20Ciardi], she suggested that they go out in the middle of the jungle and &quot;actually do it&quot;. Yorke declined, saying he had a girlfriend back in New York. In 2009, [Ciardi][/p?id=Francesca%20Ciardi] stated that the sex scenes were not simulated and that she and Yorke were lovers off-screen during filming.</li><li>When the professor bathes naked in a river, the women in the scene were hired from a local brothel.</li><li>The production team could not find any local women to play the adulteress. Head of Wardrobe [Lucia Costantini][/p?id=Lucia%20Costantini] ended up with the part. She was completely covered in mud to look like a native.</li><li>&quot;The Last Road To Hell&quot; sequence includes authentic execution footage from Nigeria and South East Asia.</li><li>The animal deaths in the movie were real. The list of dead animals includes a coatimundi, a yellow-spotted river turtle, a snake, a tarantula, a young pig, and 2 squirrel monkeys. The monkey-killing scene was shot twice, so two monkeys were killed for that scene. The dead animals were given to the tribes for food.</li><li>To create &quot;The Last Road To Hell&quot; sequence, [Ruggero Deodato][/p?id=Ruggero%20Deodato] watched hours of execution footage. He later claimed that some of the footage he watched showed up in the &quot;Faces Of Death&quot; videos and that he'd rejected it because it seemed fake.</li><li>Second of [Ruggero Deodato's][/p?id=Ruggero%20Deodato] &quot;Cannibal Trilogy&quot;.</li><li>[Ruggero Deodato][/p?id=Ruggero%20Deodato] wanted a scene in which the natives fed an enemy tribesman to piranhas, but he didn't have a working underwater camera. Only still shots of the scene exist.</li><li>[Robert Kerman][/p?id=Robert%20Kerman], [Francesca Ciardi][/p?id=Francesca%20Ciardi], [Perry Pirkanen][/p?id=Perry%20Pirkanen] and [Carl Gabriel Yorke][/p?id=Carl%20Gabriel%20Yorke] were opposed to the real animal death scenes. In the script, was Yorke's character who killed the pig, but due to his refusal, [Luca Barbareschi][/p?id=Luca%20Barbareschi] did it without any problem (even during the scene kicked wildly the animal before shooting him). Yorke said that it was very difficult to continue with the scene while he heard pig's agonizing screams, and he was unable to say his lines correctly. He also said that if he would know that animals would be killed during the filming, he wouldn't have accepted to make the movie. Although [Pirkanen][/p?id=Perry%20Pirkanen] was in a way an active part during the turtle scene, according to [Ruggero Deodato][/p?id=Ruggero%20Deodato], he cried after that scene and after the death of every animal. [Ciardi][/p?id=Francesca%20Ciardi] also spoke negatively about those scenes, especially the monkey and turtle scene, and described the last one as the worst experience of her life. After the monkey scene, some people of the cast and crew said that if another animal was killed for a scene, they'll drop out the filming, but nobody could keep that promise.</li><li>On some occasions, [Ruggero Deodato][/p?id=Ruggero%20Deodato] has said that there wasn't a full script when they shoot the movie, and he used to invent the scenes to shot the day before. However, [Carl Gabriel Yorke][/p?id=Carl%20Gabriel%20Yorke] has said that he was hired in the movie some days after the start of filming, and when he arrived he was the only one who hasn't the script, and he needed to ask the other people for the script to can learn his lines. Actually, there was a script, and the movie is very loyal to it, even in some irrelevant details.</li><li>Filmmakers [Oliver Stone][/p?id=1705] and [Eli Roth][/p?id=Eli%20Roth] are fans of this movie. The village that burns down in Platoon bears a striking resemblance of the village in this movie. [Eli Roth's][/p?id=Eli%20Roth] Green Inferno is heavily inspired by cannibal holocaust.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
