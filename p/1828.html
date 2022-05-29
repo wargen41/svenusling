@@ -1,0 +1,227 @@
+<br />
+<b>Warning</b>:  array_key_exists() expects parameter 2 to be array, null given in <b>/Library/WebServer/Documents/lib/functions.php</b> on line <b>150</b><br />
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Robin Williams | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Robin Williams</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1951-07-21">1951-07-21</time> (död <time datetime="2014-08-11">2014-08-11</time>)										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10053.html">A Prairie Home Companion</a></li><li><a href="/svenusling/m/10108.html">Aladdin (1992)</a> (röst)</li><li><a href="/svenusling/m/13291.html">Död På Nytt</a></li><li><a href="/svenusling/m/13946.html">The Fisher King</a></li><li><a href="/svenusling/m/14424.html">Hamlet (1996)</a></li><li><a href="/svenusling/m/14440.html">Happy Feet</a> (röst)</li><li><a href="/svenusling/m/14466.html">Harry Bit För Bit</a></li><li><a href="/svenusling/m/14623.html">Hook</a></li><li><a href="/svenusling/m/17278.html">One Hour Photo</a></li><li><a href="/svenusling/m/17381.html">Patch Adams</a></li><li><a href="/svenusling/m/21191.html">Uppvaknanden</a></li><li><a href="/svenusling/m/21948.html">Will Hunting</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10099.html">A:I</a> (röst)</li><li><a href="/svenusling/m/10112.html">Aladdin Och Rövarnas Konung</a> (röst)</li><li><a href="/svenusling/m/10383.html">The Aristocrats</a></li><li><a href="/svenusling/m/10682.html">Baron Münschausens Äventyr</a></li><li><a href="/svenusling/m/11005.html">The Birdcage - Lånta Fjädrar</a></li><li><a href="/svenusling/m/11387.html">The Butler</a></li><li><a href="/svenusling/m/11421.html">Cadillac Man</a></li><li><a href="/svenusling/m/13269.html">Döda Poeters Sällskap</a></li><li><a href="/svenusling/m/13401.html">En Mänsklig Historia</a></li><li><a href="/svenusling/m/13413.html">En Ryss I New York</a></li><li><a href="/svenusling/m/14217.html">Garp Och Hans Värld</a></li><li><a href="/svenusling/m/14308.html">Good Morning, Vietnam</a></li><li><a href="/svenusling/m/15329.html">Jumanji</a></li><li><a href="/svenusling/m/15997.html">Man Of The Year</a></li><li><a href="/svenusling/m/16685.html">Natt På Museet</a></li><li><a href="/svenusling/m/17739.html">Robotar</a> (röst)</li><li><a href="/svenusling/m/20791.html">Träna För Livet</a></li><li><a href="/svenusling/m/21534.html">Välkommen Mrs. Doubtfire</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/11342.html">Bröllopsprovet</a></li><li><a href="/svenusling/m/11522.html">Charterresan</a></li><li><a href="/svenusling/m/11572.html">The Clown</a></li><li><a href="/svenusling/m/13910.html">The Final Cut</a></li><li><a href="/svenusling/m/13973.html">Flubber</a></li><li><a href="/svenusling/m/17106.html">Nio Månader</a></li><li><a href="/svenusling/m/20811.html">200-års Mannen</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/15396.html">Karl-Alfred</a></li><li><a href="/svenusling/m/18333.html">Shrink - Fallet Doktor Carter</a></li><li><a href="/svenusling/m/20711.html">Toys</a></li><li><a href="/svenusling/m/21088.html">Två Pappor För Mycket</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/16444.html">Mork & Mindy: Mork the Gullible</a></li><li><a href="/svenusling/m/21183.html">Uppdrag Mord: Bop Gun</a></li><li><a href="/svenusling/m/21612.html">Vänner: The One with the Ultimate Fighting Champion</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/16437.html">Mork & Mindy: Pilot</a></li><li><a href="/svenusling/m/16438.html">Mork & Mindy: Mork Moves In</a></li><li><a href="/svenusling/m/16439.html">Mork & Mindy: Mork Runs Away</a></li><li><a href="/svenusling/m/16440.html">Mork & Mindy: Mork in Love</a></li><li><a href="/svenusling/m/16441.html">Mork & Mindy: Mork's Seduction</a></li><li><a href="/svenusling/m/16442.html">Mork & Mindy: Mork Goes Public</a></li><li><a href="/svenusling/m/16443.html">Mork & Mindy: To Tell the Truth</a></li><li><a href="/svenusling/m/16445.html">Mork & Mindy: A Mommy for Morky</a></li><li><a href="/svenusling/m/16446.html">Mork & Mindy: Mork's Greatest Hits</a></li><li><a href="/svenusling/m/16447.html">Mork & Mindy: Old Fears</a></li><li><a href="/svenusling/m/16448.html">Mork & Mindy: Mork's First Christmas</a></li><li><a href="/svenusling/m/16449.html">Mork & Mindy: Mork and the Immigrant</a></li><li><a href="/svenusling/m/16450.html">Mork & Mindy: Mork the Tolerant</a></li><li><a href="/svenusling/m/16451.html">Mork & Mindy: Young Love</a></li><li><a href="/svenusling/m/16452.html">Mork & Mindy: Skyflakes Keep Falling on My Head</a></li><li><a href="/svenusling/m/16453.html">Mork & Mindy: Mork Goes Erk</a></li><li><a href="/svenusling/m/16454.html">Mork & Mindy: Yes Sir, That's My Baby</a></li><li><a href="/svenusling/m/16455.html">Mork & Mindy: Mork's Mixed Emotions</a></li><li><a href="/svenusling/m/16456.html">Mork & Mindy: Mork's Night Out</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16457.html">Mork & Mindy: In Mork We Trust</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
