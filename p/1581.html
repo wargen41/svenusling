@@ -1,0 +1,227 @@
+<br />
+<b>Warning</b>:  array_key_exists() expects parameter 2 to be array, null given in <b>/Library/WebServer/Documents/lib/functions.php</b> on line <b>150</b><br />
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Nimoy | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Leonard Nimoy</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1931-03-26">1931-03-26</time> (död <time datetime="2015-02-27">2015-02-27</time>)										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/14465.html">The Harryhausen Chronicles</a></li><li><a href="/svenusling/m/18475.html">Sju Dagar I Maj</a></li><li><a href="/svenusling/m/19827.html">Star Trek (2009)</a></li><li><a href="/svenusling/m/19456.html">Star Trek II: The Wrath Of Khan</a></li><li><a href="/svenusling/m/19829.html">Star Trek Into Darkness</a></li><li><a href="/svenusling/m/19458.html">Star Trek IV: The Voyage Home</a> (även regi)</li><li><a href="/svenusling/m/19460.html">Star Trek VI: The Undiscovered Country</a></li><li><a href="/svenusling/m/20725.html">Transformers 3</a> (röst)</li><li><a href="/svenusling/m/21795.html">Världsrymden Anfaller (1978)</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/11470.html">Catlow</a></li><li><a href="/svenusling/m/14098.html">Funny About Love</a> (regi)</li><li><a href="/svenusling/m/19457.html">Star Trek III: The Search For Spock</a> (även regi)</li><li><a href="/svenusling/m/20336.html">Them!</a></li><li><a href="/svenusling/m/20747.html">Tre Män Och En Baby</a> (regi)</li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/10488.html">Atlantis: En Försvunnen Värld</a> (röst)</li><li><a href="/svenusling/m/15626.html">Land Of The Lost</a> (röst)</li><li><a href="/svenusling/m/19459.html">Star Trek V: The Final Frontier</a></li><li><a href="/svenusling/m/20722.html">Transformers: The Movie</a> (röst)</li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/19455.html">Star Trek: The Motion Picture</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/19183.html">Star Trek: The City on the Edge of Forever</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10940.html">The Big Bang Theory: The Transporter Malfunction</a> (röst)</li><li><a href="/svenusling/m/16300.html">Mission: Impossible (TV-serie): Submarine</a></li><li><a href="/svenusling/m/16301.html">Mission: Impossible (TV-serie): Mastermind</a></li><li><a href="/svenusling/m/16302.html">Mission: Impossible (TV-serie): Robot</a></li><li><a href="/svenusling/m/16306.html">Mission: Impossible (TV-serie): The Amnesiac</a></li><li><a href="/svenusling/m/16307.html">Mission: Impossible (TV-serie): The Falcon: Part 1</a></li><li><a href="/svenusling/m/16308.html">Mission: Impossible (TV-serie): The Falcon: Part 2</a></li><li><a href="/svenusling/m/16309.html">Mission: Impossible (TV-serie): The Falcon: Part 3</a></li><li><a href="/svenusling/m/16319.html">Mission: Impossible (TV-serie): The Killer</a></li><li><a href="/svenusling/m/16320.html">Mission: Impossible (TV-serie): Flip Side</a></li><li><a href="/svenusling/m/16321.html">Mission: Impossible (TV-serie): The Innocent</a></li><li><a href="/svenusling/m/16323.html">Mission: Impossible (TV-serie): Flight</a></li><li><a href="/svenusling/m/16327.html">Mission: Impossible (TV-serie): The Amateur</a></li><li><a href="/svenusling/m/16329.html">Mission: Impossible (TV-serie): The Rebel</a></li><li><a href="/svenusling/m/18422.html">Simpsons: Marge vs. the Monorail</a> (röst)</li><li><a href="/svenusling/m/19253.html">Star Trek (Animerade serien): The Eye of the Beholder</a> (röst)</li><li><a href="/svenusling/m/19165.html">Star Trek: The Corbomite Maneuver</a></li><li><a href="/svenusling/m/19166.html">Star Trek: The Menagerie: Part I</a></li><li><a href="/svenusling/m/19169.html">Star Trek: Balance of Terror</a></li><li><a href="/svenusling/m/19172.html">Star Trek: The Squire of Gothos</a></li><li><a href="/svenusling/m/19173.html">Star Trek: Arena</a></li><li><a href="/svenusling/m/19174.html">Star Trek: Tomorrow Is Yesterday</a></li><li><a href="/svenusling/m/19185.html">Star Trek Säsong 2</a></li><li><a href="/svenusling/m/19186.html">Star Trek: Amok Time</a></li><li><a href="/svenusling/m/19189.html">Star Trek: Mirror, Mirror</a></li><li><a href="/svenusling/m/19190.html">Star Trek: The Apple</a></li><li><a href="/svenusling/m/19191.html">Star Trek: The Doomsday Machine</a></li><li><a href="/svenusling/m/19193.html">Star Trek: I, Mudd</a></li><li><a href="/svenusling/m/19194.html">Star Trek: Metamorphosis</a></li><li><a href="/svenusling/m/19195.html">Star Trek: Journey to Babel</a></li><li><a href="/svenusling/m/19197.html">Star Trek: The Deadly Years</a></li><li><a href="/svenusling/m/19198.html">Star Trek: Obsession</a></li><li><a href="/svenusling/m/19200.html">Star Trek: The Trouble with Tribbles</a></li><li><a href="/svenusling/m/19201.html">Star Trek: The Gamesters of Triskelion</a></li><li><a href="/svenusling/m/19202.html">Star Trek: A Piece of the Action</a></li><li><a href="/svenusling/m/19203.html">Star Trek: The Immunity Syndrome</a></li><li><a href="/svenusling/m/19206.html">Star Trek: Patterns of Force</a></li><li><a href="/svenusling/m/19210.html">Star Trek: Bread and Circuses</a></li><li><a href="/svenusling/m/19211.html">Star Trek: Assignment: Earth</a></li><li><a href="/svenusling/m/19176.html">Star Trek: The Return of the Archons</a></li><li><a href="/svenusling/m/19177.html">Star Trek: Space Seed</a></li><li><a href="/svenusling/m/19178.html">Star Trek: A Taste of Armageddon</a></li><li><a href="/svenusling/m/19179.html">Star Trek: This Side of Paradise</a></li><li><a href="/svenusling/m/19180.html">Star Trek: The Devil in the Dark</a></li><li><a href="/svenusling/m/19181.html">Star Trek: Errand of Mercy</a></li><li><a href="/svenusling/m/19184.html">Star Trek: Operation - Annihilate!</a></li><li><a href="/svenusling/m/19218.html">Star Trek: Spectre of the Gun</a></li><li><a href="/svenusling/m/19221.html">Star Trek: The Tholian Web</a></li><li><a href="/svenusling/m/19364.html">Star Trek: Deep Space Nine: Trials and Tribble-ations</a></li><li><a href="/svenusling/m/19572.html">Star Trek: The Next Generation: Unification I</a></li><li><a href="/svenusling/m/19573.html">Star Trek: The Next Generation: Unification II</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/11605.html">Columbo: A Stitch in Crime</a></li><li><a href="/svenusling/m/14103.html">Futurama: Space Pilot 3000</a> (röst)</li><li><a href="/svenusling/m/16295.html">Mission: Impossible (TV-serie): The Numbers Game</a></li><li><a href="/svenusling/m/16296.html">Mission: Impossible (TV-serie): The Controllers: Part 1</a></li><li><a href="/svenusling/m/16297.html">Mission: Impossible (TV-serie): The Controllers: Part 2</a></li><li><a href="/svenusling/m/16298.html">Mission: Impossible (TV-serie): Fool's Gold</a></li><li><a href="/svenusling/m/16299.html">Mission: Impossible (TV-serie): Commandante</a></li><li><a href="/svenusling/m/16303.html">Mission: Impossible (TV-serie): The Double Circle</a></li><li><a href="/svenusling/m/16304.html">Mission: Impossible (TV-serie): The Brothers</a></li><li><a href="/svenusling/m/16310.html">Mission: Impossible (TV-serie): Chico</a></li><li><a href="/svenusling/m/16311.html">Mission: Impossible (TV-serie): Gitano</a></li><li><a href="/svenusling/m/16312.html">Mission: Impossible (TV-serie): Phantoms</a></li><li><a href="/svenusling/m/16313.html">Mission: Impossible (TV-serie): Terror</a></li><li><a href="/svenusling/m/16314.html">Mission: Impossible (TV-serie): Lover's Knot</a></li><li><a href="/svenusling/m/16315.html">Mission: Impossible (TV-serie): Orpheus</a></li><li><a href="/svenusling/m/16316.html">Mission: Impossible (TV-serie): The Crane</a></li><li><a href="/svenusling/m/16317.html">Mission: Impossible (TV-serie): Death Squad</a></li><li><a href="/svenusling/m/16324.html">Mission: Impossible (TV-serie): My Friend, My Enemy</a></li><li><a href="/svenusling/m/16325.html">Mission: Impossible (TV-serie): Butterfly</a></li><li><a href="/svenusling/m/16326.html">Mission: Impossible (TV-serie): Decoy</a></li><li><a href="/svenusling/m/16328.html">Mission: Impossible (TV-serie): Hunted</a></li><li><a href="/svenusling/m/19155.html">Star Trek Säsong 1</a></li><li><a href="/svenusling/m/19239.html">Star Trek (Animerade serien): Beyond the Farthest Star</a> (röst)</li><li><a href="/svenusling/m/19241.html">Star Trek (Animerade serien): One of Our Planets Is Missing</a> (röst)</li><li><a href="/svenusling/m/19242.html">Star Trek (Animerade serien): The Lorelei Signal</a> (röst)</li><li><a href="/svenusling/m/19244.html">Star Trek (Animerade serien): The Survivor</a> (röst)</li><li><a href="/svenusling/m/19245.html">Star Trek (Animerade serien): The Infinite Vulcan</a> (röst)</li><li><a href="/svenusling/m/19247.html">Star Trek (Animerade serien): Once Upon a Planet</a> (röst)</li><li><a href="/svenusling/m/19251.html">Star Trek (Animerade serien): The Ambergris Element</a> (röst)</li><li><a href="/svenusling/m/19252.html">Star Trek (Animerade serien): The Slaver Weapon</a> (röst)</li><li><a href="/svenusling/m/19256.html">Star Trek (Animerade serien): The Pirates of Orion</a> (röst)</li><li><a href="/svenusling/m/19156.html">Star Trek: The Man Trap</a></li><li><a href="/svenusling/m/19157.html">Star Trek: Charlie X</a></li><li><a href="/svenusling/m/19158.html">Star Trek: Where No Man Has Gone Before</a></li><li><a href="/svenusling/m/19160.html">Star Trek: The Enemy Within</a></li><li><a href="/svenusling/m/19161.html">Star Trek: Mudd's Women</a></li><li><a href="/svenusling/m/19162.html">Star Trek:  What Are Little Girls Made Of?</a></li><li><a href="/svenusling/m/19163.html">Star Trek: Miri</a></li><li><a href="/svenusling/m/19164.html">Star Trek: Dagger of the Mind</a></li><li><a href="/svenusling/m/19167.html">Star Trek: The Menagerie: Part II</a></li><li><a href="/svenusling/m/19168.html">Star Trek: The Conscience of the King</a></li><li><a href="/svenusling/m/19170.html">Star Trek: Shore Leave</a></li><li><a href="/svenusling/m/19171.html">Star Trek: The Galileo Seven</a></li><li><a href="/svenusling/m/19187.html">Star Trek: Who Mourns for Adonais?</a></li><li><a href="/svenusling/m/19188.html">Star Trek: The Changeling</a></li><li><a href="/svenusling/m/19192.html">Star Trek: Catspaw</a></li><li><a href="/svenusling/m/19196.html">Star Trek: Friday's Child</a></li><li><a href="/svenusling/m/19204.html">Star Trek: A Private Little War</a></li><li><a href="/svenusling/m/19205.html">Star Trek: Return to Tomorrow</a></li><li><a href="/svenusling/m/19207.html">Star Trek: By Any Other Name</a></li><li><a href="/svenusling/m/19208.html">Star Trek: The Omega Glory</a></li><li><a href="/svenusling/m/19209.html">Star Trek: The Ultimate Computer</a></li><li><a href="/svenusling/m/19175.html">Star Trek: Court Martial</a></li><li><a href="/svenusling/m/19212.html">Star Trek Säsong 3</a></li><li><a href="/svenusling/m/19214.html">Star Trek: The Enterprise Incident</a></li><li><a href="/svenusling/m/19215.html">Star Trek: The Paradise Syndrome</a></li><li><a href="/svenusling/m/19216.html">Star Trek: And the Children Shall Lead</a></li><li><a href="/svenusling/m/19217.html">Star Trek: Is There in Truth No Beauty?</a></li><li><a href="/svenusling/m/19219.html">Star Trek: Day of the Dove</a></li><li><a href="/svenusling/m/19220.html">Star Trek: For the World Is Hollow and I Have Touched the Sky</a></li><li><a href="/svenusling/m/19222.html">Star Trek: Plato's Stepchildren</a></li><li><a href="/svenusling/m/19223.html">Star Trek: Wink of an Eye</a></li><li><a href="/svenusling/m/19224.html">Star Trek: The Empath</a></li><li><a href="/svenusling/m/19225.html">Star Trek: Elaan of Troyius</a></li><li><a href="/svenusling/m/19226.html">Star Trek: Whom Gods Destroy</a></li><li><a href="/svenusling/m/19227.html">Star Trek: Let That Be Your Last Battlefield</a></li><li><a href="/svenusling/m/19228.html">Star Trek: The Mark of Gideon</a></li><li><a href="/svenusling/m/19231.html">Star Trek: Requiem for Methuselah</a></li><li><a href="/svenusling/m/19232.html">Star Trek: The Way to Eden</a></li><li><a href="/svenusling/m/19233.html">Star Trek: The Cloud Minders</a></li><li><a href="/svenusling/m/19234.html">Star Trek: The Savage Curtain</a></li><li><a href="/svenusling/m/19235.html">Star Trek: All Our Yesterdays</a></li><li><a href="/svenusling/m/19236.html">Star Trek: Turnabout Intruder</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16294.html">Mission: Impossible (TV-serie): The Code</a></li><li><a href="/svenusling/m/16305.html">Mission: Impossible (TV-serie): Time Bomb</a></li><li><a href="/svenusling/m/16322.html">Mission: Impossible (TV-serie): Homecoming</a></li><li><a href="/svenusling/m/19240.html">Star Trek (Animerade serien): Yesteryear</a> (röst)</li><li><a href="/svenusling/m/19243.html">Star Trek (Animerade serien): More Tribbles, More Troubles</a> (röst)</li><li><a href="/svenusling/m/19246.html">Star Trek (Animerade serien): The Magicks of Megas-Tu</a> (röst)</li><li><a href="/svenusling/m/19248.html">Star Trek (Animerade serien): Mudd's Passion</a> (röst)</li><li><a href="/svenusling/m/19249.html">Star Trek (Animerade serien): The Terratin Incident</a> (röst)</li><li><a href="/svenusling/m/19250.html">Star Trek (Animerade serien): The Time Trap</a> (röst)</li><li><a href="/svenusling/m/19159.html">Star Trek: The Naked Time</a></li><li><a href="/svenusling/m/19199.html">Star Trek: Wolf in the Fold</a></li><li><a href="/svenusling/m/19182.html">Star Trek: The Alternative Factor</a></li><li><a href="/svenusling/m/19213.html">Star Trek: Spock's Brain</a></li><li><a href="/svenusling/m/19229.html">Star Trek: That Which Survives</a></li><li><a href="/svenusling/m/19230.html">Star Trek: The Lights of Zetar</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/19254.html">Star Trek (Animerade serien): The Jihad</a> (röst)</li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
