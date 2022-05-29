@@ -1,0 +1,227 @@
+<br />
+<b>Warning</b>:  array_key_exists() expects parameter 2 to be array, null given in <b>/Library/WebServer/Documents/lib/functions.php</b> on line <b>150</b><br />
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brent Spiner | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Brent Spiner</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1949-02-02">1949-02-02</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/15059.html">Independence Day</a></li><li><a href="/svenusling/m/19646.html">Star Trek: First Contact</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/13891.html">Fenomen</a></li><li><a href="/svenusling/m/15060.html">Independence Day: Återkomsten</a></li><li><a href="/svenusling/m/18640.html">South Park: Bigger, Longer & Uncut</a> (röst)</li><li><a href="/svenusling/m/19645.html">Star Trek: Generations</a></li><li><a href="/svenusling/m/19647.html">Star Trek: Insurrection</a></li><li><a href="/svenusling/m/19648.html">Star Trek: Nemesis</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/17310.html">Out To Sea</a></li><li><a href="/svenusling/m/19946.html">Superhero Movie</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/16072.html">Maskernas Mästare</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/17867.html">Rätt I Natten: Wheels of Justice: Part 1</a></li><li><a href="/svenusling/m/17868.html">Rätt I Natten: Wheels of Justice: Part 2</a></li><li><a href="/svenusling/m/19527.html">Star Trek: The Next Generation: The Offspring</a></li><li><a href="/svenusling/m/19537.html">Star Trek: The Next Generation: The Best of Both Worlds: Part 1</a></li><li><a href="/svenusling/m/19564.html">Star Trek: The Next Generation: Redemption</a></li><li><a href="/svenusling/m/19588.html">Star Trek: The Next Generation: I Borg</a></li><li><a href="/svenusling/m/19603.html">Star Trek: The Next Generation: Chain of Command: Part 2</a></li><li><a href="/svenusling/m/19611.html">Star Trek: The Next Generation: Lessons</a></li><li><a href="/svenusling/m/19634.html">Star Trek: The Next Generation: Lower Decks</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10925.html">The Big Bang Theory: The Russian Rocket Reaction</a></li><li><a href="/svenusling/m/13690.html">Family Guy: Not All Dogs Go to Heaven</a> (röst)</li><li><a href="/svenusling/m/17879.html">Rätt I Natten: Hurricane: Part 1</a></li><li><a href="/svenusling/m/17880.html">Rätt I Natten: Hurricane: Part 2</a></li><li><a href="/svenusling/m/17902.html">Rätt I Natten: Her Honor: Part 1</a></li><li><a href="/svenusling/m/17903.html">Rätt I Natten: Her Honor: Part 2</a></li><li><a href="/svenusling/m/17905.html">Rätt I Natten: Her Honor: Part 3</a></li><li><a href="/svenusling/m/19488.html">Star Trek: The Next Generation Säsong 2</a></li><li><a href="/svenusling/m/19497.html">Star Trek: The Next Generation: The Measure of a Man</a></li><li><a href="/svenusling/m/19499.html">Star Trek: The Next Generation: Contagion</a></li><li><a href="/svenusling/m/19504.html">Star Trek: The Next Generation: Q Who</a></li><li><a href="/svenusling/m/19511.html">Star Trek: The Next Generation Säsong 3</a></li><li><a href="/svenusling/m/19513.html">Star Trek: The Next Generation: The Ensigns of Command</a></li><li><a href="/svenusling/m/19514.html">Star Trek: The Next Generation: The Survivors</a></li><li><a href="/svenusling/m/19518.html">Star Trek: The Next Generation: The Enemy</a></li><li><a href="/svenusling/m/19521.html">Star Trek: The Next Generation: The Defector</a></li><li><a href="/svenusling/m/19522.html">Star Trek: The Next Generation: The Hunted</a></li><li><a href="/svenusling/m/19523.html">Star Trek: The Next Generation: The High Ground</a></li><li><a href="/svenusling/m/19524.html">Star Trek: The Next Generation: Déjà Q</a></li><li><a href="/svenusling/m/19526.html">Star Trek: The Next Generation: Yesterday's Enterprise</a></li><li><a href="/svenusling/m/19528.html">Star Trek: The Next Generation: Sins of the Father</a></li><li><a href="/svenusling/m/19529.html">Star Trek: The Next Generation: Allegiance</a></li><li><a href="/svenusling/m/19531.html">Star Trek: The Next Generation: Tin Man</a></li><li><a href="/svenusling/m/19532.html">Star Trek: The Next Generation: Hollow Pursuits</a></li><li><a href="/svenusling/m/19536.html">Star Trek: The Next Generation: Transfigurations</a></li><li><a href="/svenusling/m/19538.html">Star Trek: The Next Generation Säsong 4</a></li><li><a href="/svenusling/m/19539.html">Star Trek: The Next Generation: The Best of Both Worlds: Part 2</a></li><li><a href="/svenusling/m/19542.html">Star Trek: The Next Generation: Suddenly Human</a></li><li><a href="/svenusling/m/19543.html">Star Trek: The Next Generation: Remember Me</a></li><li><a href="/svenusling/m/19546.html">Star Trek: The Next Generation: Future Imperfect</a></li><li><a href="/svenusling/m/19549.html">Star Trek: The Next Generation: Data's Day</a></li><li><a href="/svenusling/m/19550.html">Star Trek: The Next Generation: The Wounded</a></li><li><a href="/svenusling/m/19552.html">Star Trek: The Next Generation: Clues</a></li><li><a href="/svenusling/m/19553.html">Star Trek: The Next Generation: First Contact</a></li><li><a href="/svenusling/m/19554.html">Star Trek: The Next Generation: Galaxy's Child</a></li><li><a href="/svenusling/m/19557.html">Star Trek: The Next Generation: The Nth Degree</a></li><li><a href="/svenusling/m/19558.html">Star Trek: The Next Generation: Qpid</a></li><li><a href="/svenusling/m/19559.html">Star Trek: The Next Generation: The Drumhead</a></li><li><a href="/svenusling/m/19560.html">Star Trek: The Next Generation: Half a Life</a></li><li><a href="/svenusling/m/19562.html">Star Trek: The Next Generation: The Mind's Eye</a></li><li><a href="/svenusling/m/19563.html">Star Trek: The Next Generation: In Theory</a></li><li><a href="/svenusling/m/19566.html">Star Trek: The Next Generation: Redemption II</a></li><li><a href="/svenusling/m/19567.html">Star Trek: The Next Generation: Darmok</a></li><li><a href="/svenusling/m/19568.html">Star Trek: The Next Generation: Ensign Ro</a></li><li><a href="/svenusling/m/19569.html">Star Trek: The Next Generation: Silicon Avatar</a></li><li><a href="/svenusling/m/19570.html">Star Trek: The Next Generation: Disaster</a></li><li><a href="/svenusling/m/19572.html">Star Trek: The Next Generation: Unification I</a></li><li><a href="/svenusling/m/19573.html">Star Trek: The Next Generation: Unification II</a></li><li><a href="/svenusling/m/19574.html">Star Trek: The Next Generation: A Matter of Time</a></li><li><a href="/svenusling/m/19576.html">Star Trek: The Next Generation: Hero Worship</a></li><li><a href="/svenusling/m/19578.html">Star Trek: The Next Generation: The Masterpiece Society</a></li><li><a href="/svenusling/m/19579.html">Star Trek: The Next Generation: Conundrum</a></li><li><a href="/svenusling/m/19580.html">Star Trek: The Next Generation: Power Play</a></li><li><a href="/svenusling/m/19581.html">Star Trek: The Next Generation: Ethics</a></li><li><a href="/svenusling/m/19582.html">Star Trek: The Next Generation: The Outcast</a></li><li><a href="/svenusling/m/19583.html">Star Trek: The Next Generation: Cause and Effect</a></li><li><a href="/svenusling/m/19584.html">Star Trek: The Next Generation: The First Duty</a></li><li><a href="/svenusling/m/19589.html">Star Trek: The Next Generation: The Next Phase</a></li><li><a href="/svenusling/m/19590.html">Star Trek: The Next Generation: The Inner Light</a></li><li><a href="/svenusling/m/19591.html">Star Trek: The Next Generation: Time's Arrow: Part 1</a></li><li><a href="/svenusling/m/19594.html">Star Trek: The Next Generation: Realm of Fear</a></li><li><a href="/svenusling/m/19596.html">Star Trek: The Next Generation: Relics</a></li><li><a href="/svenusling/m/19598.html">Star Trek: The Next Generation: True Q</a></li><li><a href="/svenusling/m/19600.html">Star Trek: The Next Generation: A Fistful of Datas</a></li><li><a href="/svenusling/m/19601.html">Star Trek: The Next Generation: The Quality of Life</a></li><li><a href="/svenusling/m/19602.html">Star Trek: The Next Generation: Chain of Command: Part 1</a></li><li><a href="/svenusling/m/19604.html">Star Trek: The Next Generation: Ship in a Bottle</a></li><li><a href="/svenusling/m/19606.html">Star Trek: The Next Generation: Face of the Enemy</a></li><li><a href="/svenusling/m/19607.html">Star Trek: The Next Generation: Tapestry</a></li><li><a href="/svenusling/m/19612.html">Star Trek: The Next Generation: The Chase</a></li><li><a href="/svenusling/m/19613.html">Star Trek: The Next Generation: Frame of Mind</a></li><li><a href="/svenusling/m/19616.html">Star Trek: The Next Generation: Second Chances</a></li><li><a href="/svenusling/m/19617.html">Star Trek: The Next Generation: Timescape</a></li><li><a href="/svenusling/m/19618.html">Star Trek: The Next Generation: Descent: Part 1</a></li><li><a href="/svenusling/m/19623.html">Star Trek: The Next Generation: Gambit: Part 1</a></li><li><a href="/svenusling/m/19627.html">Star Trek: The Next Generation: Attached</a></li><li><a href="/svenusling/m/19629.html">Star Trek: The Next Generation: Inheritance</a></li><li><a href="/svenusling/m/19630.html">Star Trek: The Next Generation: Parallels</a></li><li><a href="/svenusling/m/19631.html">Star Trek: The Next Generation: The Pegasus</a></li><li><a href="/svenusling/m/19635.html">Star Trek: The Next Generation: Thine Own Self</a></li><li><a href="/svenusling/m/19638.html">Star Trek: The Next Generation: Genesis</a></li><li><a href="/svenusling/m/19639.html">Star Trek: The Next Generation: Journey's End</a></li><li><a href="/svenusling/m/19643.html">Star Trek: The Next Generation: Preemptive Strike</a></li><li><a href="/svenusling/m/19644.html">Star Trek: The Next Generation: All Good Things...</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/19462.html">Star Trek: The Next Generation Säsong 1</a></li><li><a href="/svenusling/m/19463.html">Star Trek: The Next Generation: Encounter at Farpoint</a></li><li><a href="/svenusling/m/19466.html">Star Trek: The Next Generation: The Last Outpost</a></li><li><a href="/svenusling/m/19467.html">Star Trek: The Next Generation: Where No One Has Gone Before</a></li><li><a href="/svenusling/m/19468.html">Star Trek: The Next Generation: Lonely Among Us</a></li><li><a href="/svenusling/m/19469.html">Star Trek: The Next Generation: Justice</a></li><li><a href="/svenusling/m/19470.html">Star Trek: The Next Generation: The Battle</a></li><li><a href="/svenusling/m/19471.html">Star Trek: The Next Generation: Hide and Q</a></li><li><a href="/svenusling/m/19472.html">Star Trek: The Next Generation: Haven</a></li><li><a href="/svenusling/m/19473.html">Star Trek: The Next Generation: The Big Goodbye</a></li><li><a href="/svenusling/m/19474.html">Star Trek: The Next Generation: Datalore</a></li><li><a href="/svenusling/m/19475.html">Star Trek: The Next Generation: Angel One</a></li><li><a href="/svenusling/m/19476.html">Star Trek: The Next Generation: 11001001</a></li><li><a href="/svenusling/m/19477.html">Star Trek: The Next Generation: Too Short a Season</a></li><li><a href="/svenusling/m/19478.html">Star Trek: The Next Generation: When the Bough Breaks</a></li><li><a href="/svenusling/m/19479.html">Star Trek: The Next Generation: Home Soil</a></li><li><a href="/svenusling/m/19480.html">Star Trek: The Next Generation: Coming of Age</a></li><li><a href="/svenusling/m/19481.html">Star Trek: The Next Generation: Heart of Glory</a></li><li><a href="/svenusling/m/19489.html">Star Trek: The Next Generation: The Child</a></li><li><a href="/svenusling/m/19490.html">Star Trek: The Next Generation: Where Silence Has Lease</a></li><li><a href="/svenusling/m/19491.html">Star Trek: The Next Generation: Elementary, Dear Data</a></li><li><a href="/svenusling/m/19492.html">Star Trek: The Next Generation: The Outrageous Okona</a></li><li><a href="/svenusling/m/19493.html">Star Trek: The Next Generation: Loud as a Whisper</a></li><li><a href="/svenusling/m/19494.html">Star Trek: The Next Generation: The Schizoid Man</a></li><li><a href="/svenusling/m/19495.html">Star Trek: The Next Generation: Unnatural Selection</a></li><li><a href="/svenusling/m/19496.html">Star Trek: The Next Generation: A Matter of Honor</a></li><li><a href="/svenusling/m/19498.html">Star Trek: The Next Generation: The Dauphin</a></li><li><a href="/svenusling/m/19500.html">Star Trek: The Next Generation: The Royale</a></li><li><a href="/svenusling/m/19501.html">Star Trek: The Next Generation: Time Squared</a></li><li><a href="/svenusling/m/19502.html">Star Trek: The Next Generation: The Icarus Factor</a></li><li><a href="/svenusling/m/19503.html">Star Trek: The Next Generation: Pen Pals</a></li><li><a href="/svenusling/m/19505.html">Star Trek: The Next Generation: Samaritan Snare</a></li><li><a href="/svenusling/m/19506.html">Star Trek: The Next Generation: Up the Long Ladder</a></li><li><a href="/svenusling/m/19507.html">Star Trek: The Next Generation: Manhunt</a></li><li><a href="/svenusling/m/19508.html">Star Trek: The Next Generation: The Emissary</a></li><li><a href="/svenusling/m/19509.html">Star Trek: The Next Generation: Peak Performance</a></li><li><a href="/svenusling/m/19482.html">Star Trek: The Next Generation: The Arsenal of Freedom</a></li><li><a href="/svenusling/m/19483.html">Star Trek: The Next Generation: Symbiosis</a></li><li><a href="/svenusling/m/19484.html">Star Trek: The Next Generation: Skin of Evil</a></li><li><a href="/svenusling/m/19485.html">Star Trek: The Next Generation: We'll Always Have Paris</a></li><li><a href="/svenusling/m/19486.html">Star Trek: The Next Generation: Conspiracy</a></li><li><a href="/svenusling/m/19487.html">Star Trek: The Next Generation: The Neutral Zone</a></li><li><a href="/svenusling/m/19512.html">Star Trek: The Next Generation: Evolution</a></li><li><a href="/svenusling/m/19515.html">Star Trek: The Next Generation: Who Watches the Watchers</a></li><li><a href="/svenusling/m/19516.html">Star Trek: The Next Generation: The Bonding</a></li><li><a href="/svenusling/m/19517.html">Star Trek: The Next Generation: Booby Trap</a></li><li><a href="/svenusling/m/19519.html">Star Trek: The Next Generation: The Price</a></li><li><a href="/svenusling/m/19520.html">Star Trek: The Next Generation: The Vengeance Factor</a></li><li><a href="/svenusling/m/19525.html">Star Trek: The Next Generation: A Matter of Perspective</a></li><li><a href="/svenusling/m/19530.html">Star Trek: The Next Generation: Captain's Holiday</a></li><li><a href="/svenusling/m/19533.html">Star Trek: The Next Generation: The Most Toys</a></li><li><a href="/svenusling/m/19534.html">Star Trek: The Next Generation: Sarek</a></li><li><a href="/svenusling/m/19535.html">Star Trek: The Next Generation: Ménage à Troi</a></li><li><a href="/svenusling/m/19541.html">Star Trek: The Next Generation: Brothers</a></li><li><a href="/svenusling/m/19544.html">Star Trek: The Next Generation: Legacy</a></li><li><a href="/svenusling/m/19545.html">Star Trek: The Next Generation: Reunion</a></li><li><a href="/svenusling/m/19547.html">Star Trek: The Next Generation: Final Mission</a></li><li><a href="/svenusling/m/19548.html">Star Trek: The Next Generation: The Loss</a></li><li><a href="/svenusling/m/19551.html">Star Trek: The Next Generation: Devil's Due</a></li><li><a href="/svenusling/m/19555.html">Star Trek: The Next Generation: Night Terrors</a></li><li><a href="/svenusling/m/19556.html">Star Trek: The Next Generation: Identity Crisis</a></li><li><a href="/svenusling/m/19561.html">Star Trek: The Next Generation: The Host</a></li><li><a href="/svenusling/m/19571.html">Star Trek: The Next Generation: The Game</a></li><li><a href="/svenusling/m/19575.html">Star Trek: The Next Generation: New Ground</a></li><li><a href="/svenusling/m/19577.html">Star Trek: The Next Generation: Violations</a></li><li><a href="/svenusling/m/19585.html">Star Trek: The Next Generation: Cost of Living</a></li><li><a href="/svenusling/m/19586.html">Star Trek: The Next Generation: The Perfect Mate</a></li><li><a href="/svenusling/m/19587.html">Star Trek: The Next Generation: Imaginary Friend</a></li><li><a href="/svenusling/m/19593.html">Star Trek: The Next Generation: Time's Arrow: Part 2</a></li><li><a href="/svenusling/m/19595.html">Star Trek: The Next Generation: Man of the People</a></li><li><a href="/svenusling/m/19597.html">Star Trek: The Next Generation: Schisms</a></li><li><a href="/svenusling/m/19599.html">Star Trek: The Next Generation: Rascals</a></li><li><a href="/svenusling/m/19605.html">Star Trek: The Next Generation: Aquiel</a></li><li><a href="/svenusling/m/19608.html">Star Trek: The Next Generation: Birthright: Part 1</a></li><li><a href="/svenusling/m/19609.html">Star Trek: The Next Generation: Birthright: Part 2</a></li><li><a href="/svenusling/m/19610.html">Star Trek: The Next Generation: Starship Mine</a></li><li><a href="/svenusling/m/19614.html">Star Trek: The Next Generation: Suspicions</a></li><li><a href="/svenusling/m/19615.html">Star Trek: The Next Generation: Rightful Heir</a></li><li><a href="/svenusling/m/19620.html">Star Trek: The Next Generation: Descent: Part 2</a></li><li><a href="/svenusling/m/19621.html">Star Trek: The Next Generation: Liaisons</a></li><li><a href="/svenusling/m/19622.html">Star Trek: The Next Generation: Interface</a></li><li><a href="/svenusling/m/19624.html">Star Trek: The Next Generation: Gambit: Part 2</a></li><li><a href="/svenusling/m/19625.html">Star Trek: The Next Generation: Phantasms</a></li><li><a href="/svenusling/m/19626.html">Star Trek: The Next Generation: Dark Page</a></li><li><a href="/svenusling/m/19632.html">Star Trek: The Next Generation: Homeward</a></li><li><a href="/svenusling/m/19637.html">Star Trek: The Next Generation: Eye of the Beholder</a></li><li><a href="/svenusling/m/19640.html">Star Trek: The Next Generation: Firstborn</a></li><li><a href="/svenusling/m/19641.html">Star Trek: The Next Generation: Bloodlines</a></li><li><a href="/svenusling/m/21779.html">Vänner: The One with Princess Consuela</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/19464.html">Star Trek: The Next Generation: The Naked Now</a></li><li><a href="/svenusling/m/19510.html">Star Trek: The Next Generation: Shades of Gray</a></li><li><a href="/svenusling/m/19628.html">Star Trek: The Next Generation: Force of Nature</a></li><li><a href="/svenusling/m/19633.html">Star Trek: The Next Generation: Sub Rosa</a></li><li><a href="/svenusling/m/19636.html">Star Trek: The Next Generation: Masks</a></li><li><a href="/svenusling/m/19642.html">Star Trek: The Next Generation: Emergence</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/19465.html">Star Trek: The Next Generation: Code of Honor</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
