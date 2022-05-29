@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Avengers: Age Of Ultron | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Avengers: Age Of Ultron <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2015"><a href="#">2015</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Joss Whedon</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1809.html">Robert Downey Jr.</a> – Tony Stark / Iron Man</li><li>Chris Hemsworth – Thor</li><li><a href="/svenusling/p/1611.html">Mark Ruffalo</a> – Bruce Banner / Hulk</li><li>Chris Evans – Steve Rogers / Captain America</li><li><a href="/svenusling/p/1862.html">Scarlett Johansson</a> – Natasha Romanoff / Black Widow</li><li><a href="/svenusling/p/1452.html">Jeremy Renner</a> – Clint Barton / Hawkeye</li><li class="voice">James Spader – Ultron (röst)</li><li><a href="/svenusling/p/1856.html">Samuel L. Jackson</a> – Nick Fury</li><li>Don Cheadle – James Rhodes / War Machine</li><li>Aaron Taylor-Johnson – Pietro Maximoff / Quicksilver</li><li>Elizabeth Olsen – Wanda Maximoff / Scarlet Witch</li><li><a href="/svenusling/p/1721.html">Paul Bettany</a> – Jarvis / Vision</li><li>Cobie Smulders – Maria Hill</li><li>Anthony Mackie – Sam Wilson / The Falcon</li><li>Hayley Atwell – Peggy Carter</li><li>Idris Elba – Heimdall</li><li><a href="/svenusling/p/1893.html">Stellan Skarsgård</a> – Erik Selvig</li><li>Claudia Kim – Dr. Helen Cho</li><li><a href="/svenusling/p/1932.html">Thomas Kretschmann</a> – Strucker</li><li><a href="/svenusling/p/1039.html">Andy Serkis</a> – Ulysses Klaue</li><li>Julie Delpy – Madame B</li><li>Stan Lee – Stan Lee</li><li>Henry Goodman – Dr, List</li><li>Chris Luca – Fortress Soldier</li><li>Brian Schaeffer – Strucker Mercenary</li><li>Dominique Provost-Chalkley – Zrinka</li><li>Isaac Andrews – Costel</li><li>Gareth Kieran Jones – Sokovian Acid Student</li><li>Chan Woo Lim – Dr. Cho's Assistant #1</li><li>Minhee Yeo – Dr. Cho's Assistant #2</li><li>Bentley Kalu – Klaue's Mercenary</li><li>Julian Bleach – Ballet Instructor</li><li>Chris Beasley – Johannesburg Cop #1</li><li>Vuyo Dabula – Johannesburg Cop #2</li><li>Nondumiso Tembe – Johannesburg Driver</li><li>Kabelo Thai – Johannesburg Onlooker #1</li><li>Lele Ledwaba – Johannesburg Onlooker #2</li><li>Mandla Gaduka – Johannesburg Onlooker #3</li><li>Harriet Manamela – Johannesburg Onlooker #4</li><li>Beulah Hashe – Johannesburg Onlooker #5</li><li>Musca Kumalo – Johannesburg Onlooker #6</li><li>Mathapelo September – Johannesburg Onlooker #7</li><li>Antony Acheampong – Johannesburg Elevator Passenger #1</li><li>Chioma Anyanwu – Johannesburg Elevator Passenger #2</li><li>Ingvild Deila – World Hub Tech</li><li>Sunny Yeo – Korean Train Passenger #1</li><li>Namju Go – Korean Train Passenger #2</li><li>Mina Kwon – Korean Train Passenger #3</li><li>Earl Kim – Korean Train Passenger #4</li><li>Arthur Lee – Korean Train Passenger #5</li><li>Verity Hewlitt – Sokovian Family Member #1</li><li>Michael Matovski – Sokovian Family Member #2</li><li>Alma Noce – Sokovian Family Member #3</li><li>Riccardo Richetta – Sokovian Family Member #4</li><li>Constanza Ruff – Sokovian Woman</li><li>Monty Mclaren-Clark – Tub Family Child</li><li>Julia Krynke – Sokovian Driver</li><li>Tony Christian – Sokovian SUV Driver</li><li>Ian Kay – Sokovian SUV Passenger</li><li>Barry Aird – Sokovian Police Captain</li><li>Kerry Condon – F.R.I.D.A.Y.</li><li>Joseph M. Abbott – Party Guest (uncredited)</li><li>Pavlina Andreevska – Sokovian (uncredited)</li><li>Freddie Andrews – Party Guest (uncredited)</li><li>David Olawale Ayinde – Somalian Ship Worker (uncredited)</li><li>Francesca Bennett – Sokovian driver (uncredited)</li><li>Laura Bernardeschi – Sokovian citizen (uncredited)</li><li>Dilyana Bouklieva – Sokovian Citizen (uncredited)</li><li>Dante Briggins – Party Guest (uncredited)</li><li>Josh Brolin – Thanos (uncredited)</li><li>Micah Ainsley Brown – Extra (uncredited)</li><li>Rowdy Brown – Cop (uncredited)</li><li>Linda Cardellini – Laura (uncredited)</li><li>Michael Chapman – Lab Tech Scientist (uncredited)</li><li>Tino Chinyoka – Somalian Ship Commander (uncredited)</li><li>Lukas DiSparrow – Sok (uncredited)</li><li>Thom Dobbin – Party Guest (uncredited)</li><li>Alexandra Doyle – Reporter (uncredited)</li><li>R.P. Edwards – College Student (uncredited)</li><li>Ibrahim Fagge – Somalian Ship Commander (uncredited)</li><li>Aurora Fearnley – Marine (uncredited)</li><li>Hannah Flynn – Dancer (uncredited)</li><li>Robert J. Fraser – Youth (uncredited)</li><li>Alexander Gillison – Masked Asgardian (uncredited)</li><li>Sophie Gooding – Club Dancer (uncredited)</li><li>Guna Gultniece – Student (uncredited)</li><li>Mark Haldor – Asgardian (uncredited)</li><li>Salem Hanna – Party guest (uncredited)</li><li>Jason Her – TV News Anchor (uncredited)</li><li>Leigh Holland – Masked Asgardian (uncredited)</li><li>Kornelia Horvath – Sokovian (uncredited)</li><li>Mariola Jaworska – Sokovian (uncredited)</li><li>Attila G. Kerekes – Sokovian Citizen (uncredited)</li><li>Denis Khoroshko – Sokovian driver Pavlov (uncredited)</li><li>Hrvoje Klecz – Party Guest (uncredited)</li><li>Irina Klimovich – Sokovian Students (uncredited)</li><li>Jamie Lengyel – Evil Hydra Scientist (uncredited)</li><li>Chelsea Li – Student (uncredited)</li><li>Edina Loskay – Sokovian (uncredited)</li><li>Eric Morcos – The Agent (uncredited)</li><li>Joti Nagra – Student (uncredited)</li><li>Nick W. Nicholson – Dr. Taryl Jenkins (uncredited)</li><li>Judit Novotnik – Sokovian (uncredited)</li><li>Emeson Nwolie – Businessman (uncredited)</li><li>Sigmund Oakeshott – USO Military Policeman (uncredited)</li><li>Jimmy Pethrus – Snow Soldier (uncredited)</li><li>Zakk Pierce – Sokovian Boy (uncredited)</li><li>Guy Potter – British Officer (uncredited)</li><li>Tim Powell – DEA Director (uncredited)</li><li>Diezel Ramos – Masked Asgardian (uncredited)</li><li>Anthony J Sacco – Party Guest (uncredited)</li><li>Faye Sewell – Oslo Hub Scientist (uncredited)</li><li>Megyn Shott – Car Driver (uncredited)</li><li>Charlotte Snowball – Sokovian (uncredited)</li><li>Bari Suzuki – Shield Agent (uncredited)</li><li>Georgie-May Tearle – Student (uncredited)</li><li>Chris Townsend – Party Guest (uncredited)</li><li>Bartosz Wandrykow – Sokovian Policeman (uncredited)</li><li>Daniel Westwood – Asgardian God (uncredited)</li><li>Ben Wombwell – Party Guest (uncredited)</li><li>Leila Wong – Korean Scientist (uncredited)</li><li>Tatiana Zarubova – Sokovian (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa specialeffekter 2013</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

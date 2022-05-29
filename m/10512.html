@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Austin Powers In Goldmember | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Austin Powers In Goldmember <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2002"><a href="#">2002</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Jay Roach</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1674.html">Mike Myers</a> – Austin Powers / Dr. Evil / Goldmember / Fat Bastard</li><li>Beyoncé Knowles – Foxxy Cleopatra</li><li><a href="/svenusling/p/1871.html">Seth Green</a> – Scott Evil</li><li><a href="/svenusling/p/1667.html">Michael York</a> – Basil Exposition</li><li><a href="/svenusling/p/1827.html">Robert Wagner</a> – Number Two</li><li>Mindy Sterling – Frau Farbissina</li><li>Verne Troyer – Mini Me</li><li><a href="/svenusling/p/1643.html">Michael Caine</a> – Nigel Powers</li><li>Fred Savage – Number Three</li><li>Diane Mizota – Fook Mi</li><li>Carrie Ann Inaba – Fook Yu</li><li>Nobu Matsuhisa – Mr. Roboto</li><li>Aaron Himelstein – Young Austin</li><li>Josh Zuckerman – Young Evil</li><li>Eddie Adams – Young Basil</li><li>Evan Farmer – Young Number Two</li><li>Neil Mullarkey – Physician</li><li>Eric Winzenried – Henchman Sailor</li><li>Tommy 'Tiny' Lister – Prisoner #2</li><li>Nichole Hiltz – French Teacher</li><li><a href="/svenusling/p/1462.html">Jim Piddock</a> – Headmaster</li><li>Esther Scott – Judge</li><li>Leyna Nguyen – Anchor Woman</li><li>Jeannette Charles – Queen</li><li>Brian Tee – Japanese Pedestrian</li><li>Masi Oka – Japanese Pedestrian</li><li>Kevin Cooney – General Clark</li><li>Clint Howard – Johnson</li><li>Michael McDonald – Royal Guard</li><li>Donna D'Errico – Female Vendor</li><li>Fred Stoller – Male Shopper</li><li>Brad Grunberg – Shirtless Fan 'A'</li><li>Greg Grunberg – Shirtless Fan 'T'</li><li>Ren Urano – Sumo Referee</li><li>Big Nate Kanae – Sumo Wrestler</li><li>Kinga Philipps – Austin's Mom</li><li>Scott Aukerman – Young Nigel</li><li>John Donovan – Toothless Gardener</li><li>Masa Kanome – Fountain Security Guard</li><li>Hideo Kimura – Japanese Surveillance Guard</li><li>Hiroshi Otaguro – Japanese Surveillance Guard</li><li>Kevin Alexander Stea – 'Austinpussy' AD / Dancer</li><li>Linda Kim – Geisha Secretary</li><li>Anna Marie Goddard – Henchwoman</li><li>Nina Kaczorowski – Henchwoman</li><li>Tammy Vanderpool – Henchwoman</li><li>Nikki Schieler Ziering – Henchwoman</li><li>Sybil Azur – Foxxy's Backup Dancer</li><li>Nicole Humphries – Foxxy's Backup Dancer</li><li>Susanna Hoffs – Gillian Shagwell - Ming Tea, Austin's Band</li><li>Stuart D. Johnson – Manny Stixsman - Ming Tea, Austin's Band</li><li>Matthew Sweet – Sid Belvedere - Ming Tea, Austin's Band</li><li>Christopher Ward – Trevor Aigberth - Ming Tea, Austin's Band</li><li>Patrice Fisher – Dancer</li><li>Timothy Anderson – Dancer</li><li>Faune A. Chambers – Dancer</li><li>Kelly Cooper – Dancer</li><li>R.J. Durell – Dancer</li><li>Shaun Earl – Dancer</li><li>Michelle Elkin – Dancer</li><li>Jennifer Hamilton – Dancer</li><li>Hunter Hamilton – Dancer</li><li>Michael Higgins – Dancer</li><li>Mark Meismer – Dancer</li><li>Mandy Moore – Dancer</li><li>Ayesha Orange – Dancer</li><li>Nathan Prevost – Dancer</li><li>Liz Ramos – Dancer</li><li>Shealan Spencer – Dancer</li><li>Becca Sweitzer – Dancer</li><li>Salvatore Vassallo – Dancer</li><li>Robert Vinson – Dancer</li><li>Amie Barsky – Skater</li><li>Lina Chmiel – Skater</li><li>Sharon Ferguson – Skater</li><li>Trey Knight – Skater</li><li>Angela Meryl – Skater</li><li>Brian Richardson – Skater</li><li>Kimberlee Suerth – Skater</li><li>Lakisha Swift – Skater</li><li><a href="/svenusling/p/1949.html">Tom Cruise</a> – Tom Cruise / Famous Austin ('Austinpussy)"</li><li><a href="/svenusling/p/1349.html">Gwyneth Paltrow</a> – Gwyneth Paltrow / Dixie Normous ('Austinpussy)"</li><li><a href="/svenusling/p/1550.html">Kevin Spacey</a> – Kevin Spacey / Famous Dr. Evil ('Austinpussy)"</li><li><a href="/svenusling/p/1207.html">Danny DeVito</a> – Danny DeVito / Famous Mini Me ('Austinpussy)"</li><li><a href="/svenusling/p/1907.html">Steven Spielberg</a> – Steven Spielberg / Famous Director ('Austinpussy)"</li><li>Quincy Jones – Himself</li><li>Britney Spears – Herself - 'Boys' Music Video Performer</li><li><a href="/svenusling/p/1689.html">Nathan Lane</a> – Mysterious Disco Man</li><li>Katie Couric – Prison Guard</li><li>Ozzy Osbourne – Himself</li><li>Sharon Osbourne – Herself</li><li>Kelly Osbourne – Herself</li><li>Jack Osbourne – Himself</li><li><a href="/svenusling/p/1501.html">John Travolta</a> – John Travolta / Famous Goldmember ('Austinpussy)"</li><li>Burt Bacharach – Himself</li><li><a href="/svenusling/p/1830.html">Rob Lowe</a> – Middle Number Two</li><li>Michael Chaturantabut – Gunman at pool (uncredited)</li><li>Gabriel Corbin – Dancer in Prison Scene (uncredited)</li><li>Ben Hisoler – Party Guest (uncredited)</li><li>Eiji Inoue – Taxi driver (uncredited)</li><li>Kristen Johnston – Dancer at Austin's Pad (uncredited)</li><li>Martin Klebba – Dancer (uncredited)</li><li>Kinsey McLean – Classmate (uncredited)</li><li>Marylee Picciano – Studio 69 girl (uncredited)</li><li>Gene Anthony Ray – Dancer (uncredited)</li><li>Tara Rice – Austin's Girlfriend (uncredited)</li><li>Nicole Sciacca – Dancer (uncredited)</li><li>Chris Sung – Japanese Teen (uncredited)</li><li>Michael Sun Lee – Japanese Business Man (uncredited)</li><li>Peter Navy Tuiasosopo – Sumo Wrestler (uncredited)</li><li>Andreanna Veith – Dancer (uncredited)</li><li>Dan Warner – Lair Guard (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Trailer - Best Comedy (For the trailer #1.) 1999</li><li>ASCAP Award - Most Performed Songs from Motion Pictures (For the song "Beautiful Stranger".) 2000</li><li>American Comedy Award - Roligaste skådespelare i en film 2000 (1674)</li><li>BMI Film Music Award 2000</li><li>Blockbuster Entertainment Award - Favorite Actress - Comedy 2000 (Heather Graham)</li><li>Blockbuster Entertainment Award - Favorite Villain 2000 (1674)</li><li>Blockbuster Entertainment Award - Favorite Soundtrack (Internet Only) 2000</li><li>Canadian Comedy Award - Bästa skådespelare 2000 (1674)</li><li>Canadian Comedy Award - Bästa manus 2000 (1674)</li><li>Grammy - Best Song Written for a Motion Picture, Television or Other Visual Media (For the song "Beautiful Stranger".) 2000</li><li>Sierra Award - Best Home Video Packaging 2000</li><li>Sierra Award - Bästa sång (For the song "Beautiful Stranger".) 2000</li><li>MTV Movie Award - Bästa skurk 2000 (1674)</li><li>MTV Movie Award - Bästa filmduo 2000 (1674)</li><li>MTV Movie Award - Bästa filmduo 2000 (Verne Troyer)</li><li>Teen Choice Award - Film - Choice Comedy 2000</li><li>Teen Choice Award - Film - Choice Sleazebag (... as Fat Bastard.) 2000 (1674)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Trailer - Best Comedy (For the trailer #2.) 1999</li><li>Golden Trailer - Best of Show 1999</li><li>Teen Choice Award - Film - Movie of the Summer 1999</li><li>Oscar - Bästa smink 2000</li><li>Golden Globe - Bästa originalsång (For the song "Beautiful Stranger".) 2000</li><li>Saturn Award - Bästa Fantasyfilm 2000</li><li>Saturn Award - Bästa skådespelerska 2000 (Heather Graham)</li><li>Blockbuster Entertainment Award - Favorite Actor - Comedy 2000 (1674)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actor - Comedy 2000 (Verne Troyer)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actress - Comedy 2000 (Mindy Sterling)</li><li>Brit Awards, Brit - Best Soundtrack 2000</li><li>CDG Award - Excellence in Costume Design for Film - Period/Fantasy 2000</li><li>Grammy - Best Soundtrack Album 2000</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Period Hair Styling - Feature 2000</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Period Makeup - Feature 2000</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Special Effects Makeup - Feature (For Mike Myers as Austin Powers and Dr. Evil, and Vernon Troyer as Mini Me) 2000</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Special Effects Makeup - Feature (For Mike Myers as Fat Bastard.) 2000</li><li>Blimp Award - Favorite Movie 2000</li><li>Blimp Award - Favorite Movie Actor 2000 (1674)</li><li>Blimp Award - Favorite Movie Couple 2000 (1674)</li><li>Blimp Award - Favorite Movie Couple 2000 (Heather Graham)</li><li>Blimp Award - Favorite Song from a Movie (For the song "Beautiful Stranger".) 2000</li><li>Sierra Award - Best Costume Design 2000</li><li>MTV Movie Award - Bästa film 2000</li><li>MTV Movie Award - Bästa komiska prestation 2000 (1674)</li><li>MTV Movie Award - Bästa Fight 2000 (1674)</li><li>MTV Movie Award - Bästa Fight 2000 (Verne Troyer)</li><li>MTV Movie Award - Best Musical Performance (For the song "Just the Two of Us".) 2000 (1674)</li><li>MTV Movie Award - Best Musical Performance (For the song "Just the Two of Us".) 2000 (Verne Troyer)</li><li>Teen Choice Award - Film - Choice Chemistry 2000 (1674)</li><li>Teen Choice Award - Film - Choice Chemistry 2000 (Mindy Sterling)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Mike Myers's][/p?id=1674] entrance as Goldmember, owner of Club 69, parodies his earlier role as the owner of Studio 54 in the movie [54][/f?id=54] (1998).</li><li>Director [Jay Roach's][/p?id=Jay%20Roach] first cut of the film ran 3 hours long.</li><li>[Sean Connery][/p?id=1866] was considered to play Nigel Powers.</li><li>The number 42 appears at least two times in this film: - in the prison scene, Mini Me and Dr. Evil wear jerseys with the number on it - in the submarine scene, it appears on the accident sign. At the time, director [Jay Roach][/p?id=Jay%20Roach] was set to direct the movie of [Douglas Adams][/p?id=Douglas%20Adams] [The Hitchhiker's Guide to the Galaxy][/f?id=15743] (2005), which features significance to the number 42.</li><li>[Steven Spielberg][/p?id=1907] is wearing a cap with the Precrime logo, which comes from his own film [Minority Report][/f?id=16200] (2002).</li><li>[Mike Myers][/p?id=1674] has said that his glasses in all three films are meant to look like those worn by [Michael Caine][/p?id=1643] in [The Ipcress File][/f?id=13549] (1965), so [Caine][/p?id=1643] took the original glasses (model &quot;Teviot 74&quot; by UK Optical) to the set and wore them as Nigel. </li><li>[Michael York][/p?id=1667] and [Michael Caine][/p?id=1643], both veteran English actors with over 100 films each to his credit, had never worked on a film together before this one.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

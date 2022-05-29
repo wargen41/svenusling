@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Attackstyrka Z | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Attackstyrka Z <a href="#" class="grade">++</a></h2>
+										<h3>Attack Force Z</h3>
+										<p>
+										Film från <time datetime="1981"><a href="#">1981</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Tim Burstall</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>John Phillip Law – Lieutenant J.A. (Jan) Veitch</li><li><a href="/svenusling/p/1635.html">Mel Gibson</a> – Captain P.G. (Paul) Kelly</li><li><a href="/svenusling/p/1852.html">Sam Neill</a> – Sergeant D.J. (Danny) Costello</li><li>Chris Haywood – Able Seaman A.D. 'Sparrer' Bird</li><li>John Waters (III) – Sub Lt. Ted 'Kingo' King</li><li>Chun Ku – Rice farmer</li><li>Sylvia Chang – Chien Hua</li><li>O Ti – Shaw Hu</li><li>Chun Hsiung Ko – Lin Chan-Lang</li><li>Lung Shuan – Watanabe</li><li>Yuen Yi – Imanaka</li><li>Wei Su – Wong Chong</li><li>Hsa Li-Wen – Lee Chang</li><li>Val Champion – Ed Ayres</li><li>Yu Wang – Oshiko Imoguchi</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Austin Film Critics Award - B�sta f�rsta film 2011 (Joe Cornish)</li><li>Austin Film Critics Award - B�sta musik 2011</li><li>BFCC Award - Topp tio filmer (6:e plats) 2011</li><li>Black Film Critics Circle Awards, Special Mention - (Attack is a genre film that defies a number of conventions, not only by having a primarily black cast but portraying each character with a dignity seldom seen on screen and even more rarely in a Science-Fiction film.) 2011</li><li>Fantasia Film Festival, Best European/North - South American Film - Audience Award 2011 (Joe Cornish)</li><li>Golden Schmoes - B�sta skr�ck 2011</li><li>Golden Schmoes - B�sta replik (2:a plats) 2011</li><li>ICP Award - B�sta f�rsta film (3:a plats) 2011 (Joe Cornish)</li><li>IFCS Award - B�sta Skr�ck eller Sci-Fi film 2011</li><li>Los Angeles Film Festival, Audience Award - Best Narrative Feature 2011 (Joe Cornish)</li><li>NYFCO Award - B�sta regidebut 2011 (Joe Cornish)</li><li>Sitges - Catalonian International Film Festival, Audience Award - B�sta film 2011 (Joe Cornish)</li><li>Sitges - Catalonian International Film Festival, Best Original Soundtrack - B�sta musik 2011</li><li>Sitges - Catalonian International Film Festival, Special Prize of the Jury - B�sta film 2011 (Joe Cornish)</li><li>SXSW Film Festival, Audience Award - Midnight Feature 2011 (Joe Cornish)</li><li>Torino Film Festival, Bassan Arts & Crafts Award - B�sta scenografi 2011</li><li>TFCA Award - B�sta debutfilm 2011 (Joe Cornish)</li><li>VVFP Award - B�sta debutfilm (2:a plats) 2011 (Joe Cornish)</li><li>B-Movie Film Festival, Golden Cob Award - B�sta B-filmsregiss�r 2012 (Joe Cornish)</li><li>B-Movie Film Festival, Golden Cob Award - B�sta sk�despelare 2012 (John Boyega)</li><li>Black Reel - B�sta utl�ndska film 2012</li><li>Black Reel - B�sta sk�despelare 2012 (John Boyega)</li><li>Fangoria Chainsaw Awards, Chainsaw Award - Best Makeup/Creature FX 2012</li><li>Fangoria Chainsaw Awards, Chainsaw Award - B�sta musik (2:a plats) 2012</li><li>Fangoria Chainsaw Awards, Chainsaw Award - B�sta manus (3:e plats) 2012</li><li>Fangoria Chainsaw Awards, Chainsaw Award - Best Limited-Release/Direct-to-Video Film 2012</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Austin Film Critics Award - B�sta film 2011</li><li>British Independent Film Awards, Douglas Hickox Award 2011 (Joe Cornish)</li><li>British Independent Film Award - Mest lovande nykomling 2011 (John Boyega)</li><li>Fright Meter Award - B�sta Skr�ckfilm 2011</li><li>Fright Meter Award - B�sta regi 2011 (Joe Cornish)</li><li>Fright Meter Award - B�sta manus 2011 (Joe Cornish)</li><li>Golden Schmoes - �rets b�sta Sci-Fifilm 2011</li><li>Golden Schmoes - �rets st�rsta �verraskning 2011</li><li>IGN Award - B�sta Sci-Fifilm 2011</li><li>IGN Award - B�sta komedi 2011</li><li>Puchon International Fantastic Film Festival, Best of Puchon 2011 (Joe Cornish)</li><li>Rondo Hatton Classic Horror Awards, Rondo Statuette - B�sta film 2011 (Joe Cornish)</li><li>Torino Film Festival, Prize of the City of Torino - B�sta film 2011 (Joe Cornish)</li><li>Writers' Guild of Great Britain Award - B�sta manus 2011 (Joe Cornish)</li><li>BAFTA Film Award - Outstanding Debut by a British Writer, Director or Producer 2012 (Joe Cornish)</li><li>Saturn Award - B�sta internationella film 2012</li><li>Black Reel - B�sta film 2012</li><li>Black Reel - B�sta sk�despelarensemble 2012</li><li>Black Reel - B�sta genombrottsinsats 2012 (John Boyega)</li><li>Black Reel - B�sta musik 2012</li><li>COFCA Award - Best Overlooked Film 2012 (Joe Cornish)</li><li>Empire Award - B�sta brittiska film 2012</li><li>Empire Award - B�sta sk�rck 2012</li><li>Empire Award - B�sta komedi 2012</li><li>Empire Award - B�sta manliga nykomling 2012 (John Boyega)</li><li>Evening Standard British Film Award - Mest lovande nykomling 2012 (John Boyega)</li><li>Fangoria Chainsaw Awards, Chainsaw Award - B�sta kvinnliga biroll 2012 (Jodie Whittaker)</li><li>Image Award - B�sta utl�ndska film 2012</li><li>ALFS Award - Breakthrough British Filmmaker 2012 (Joe Cornish)</li><li>ALFS Award - Young British Performer of the Year 2012 (John Boyega)</li><li>Science Fiction and Fantasy Writers of America, Bradbury Award 2012 (Joe Cornish)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The movie's original director was [Phillip Noyce][/p?id=Phillip%20Noyce]. He was allegedly fired due to creative differences with the film's producers, John McCallum and [Lee Robinson][/p?id=Lee%20Robinson], who replaced him with [Tim Burstall][/p?id=Tim%20Burstall]. According to the book &quot;The Avocado Plantation&quot; by David Stratton, [Noyce][/p?id=Phillip%20Noyce] &quot;...was unhappy with the producers' choice for the lead actor, a second-rate Hollywood star called [John Phillip Law][/p?id=John%20Phillip%20Law]... Before production began, [Noyce][/p?id=Phillip%20Noyce] quarrelled with [Robinson][/p?id=Lee%20Robinson] and McCallum about his attitude to the material. He was fired, and [Burstall][/p?id=Tim%20Burstall] was brought into to replace him.&quot;</li><li>The cast including [Sam Neill][/p?id=1852], [Mel Gibson][/p?id=1635], [John Waters][/p?id=1503] and [Chris Haywood][/p?id=Chris%20Haywood] were hired by the film's original director [Phillip Noyce][/p?id=Phillip%20Noyce] and were not hired by the movie's replacement director, [Tim Burstall][/p?id=Tim%20Burstall], who came on board afterwards. </li><li>Replacement director [Tim Burstall][/p?id=Tim%20Burstall] re-wrote and re-worked original director [Phillip Noyce's][/p?id=Phillip%20Noyce] screenplay. </li><li>After this film was made, the movie's producers, John McCallum and [Lee Robinson][/p?id=Lee%20Robinson], went onto to make another Australian World War II war film called [The Highest Honor][/f?id=En%20officers%20%C3%A4ra] (1982) (aka Heroes of the Krait aka Southern Cross) which also was commercially unsuccessful. </li><li>According to the book &quot;The Avocado Plantation&quot; by David Stratton, the movie's original director, [Phillip Noyce][/p?id=Phillip%20Noyce] &quot;... had wanted to make more than just a war film: he also wanted to explore aspects of colonialism.&quot; </li><li>The shooting of the movie during production was plagued by constant rain. </li><li>The movie found more popularity upon video cassette release in Australia than when released theatrically. The movie's eventual success is attributed to its casting of four prominent Australian actors, [Chris Haywood][/p?id=Chris%20Haywood], [John Waters][/p?id=1503] and two actors who were rising stars at the time, [Sam Neill][/p?id=1852] and [Mel Gibson][/p?id=1635]. [Sam Neill][/p?id=1852] had appeared as the lead in the American film, [The Final Conflict][/f?id=De%20sju%20knivarna%3A%20Omen%20III] (1981) whilst [Mel Gibson][/p?id=1635] was fast becoming a big Hollywood star. Ironically, the casting of [John Phillip Law][/p?id=John%20Phillip%20Law], an American actor, is not believed to have contributed much to the movie's success on video in Australia. </li><li>This is actually the third war film or TV production that [Mel Gibson][/p?id=1635] appeared in. [Gibson][/p?id=1635] had featured in the World War II Australian home front television soap &quot;The Sullivans&quot; (1976) and the World War I film [Gallipoli][/f?id=Gallipoli] (1981) prior to starring in this movie. He would later appear in such modern war or war-related movies as [Air America][/f?id=10100] (1990); [We Were Soldiers][/f?id=21905] (2002) and [The Year of Living Dangerously][/f?id=11339] (1982).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

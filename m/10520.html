@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Avgrunden | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Avgrunden <a href="#" class="grade">++++</a></h2>
+										<h3>The Abyss</h3>
+										<p>
+										Film från <time datetime="1989"><a href="#">1989</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1414.html">James Cameron</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1267.html">Ed Harris</a> – Virgil 'Bud' Brigman</li><li>Mary Elizabeth Mastrantonio – Lindsey Brigman</li><li><a href="/svenusling/p/1642.html">Michael Biehn</a> – Lt. Hiram Coffey</li><li>Leo Burmester – Catfish De Vries</li><li>Todd Graff – Alan 'Hippy' Carnes</li><li>John Bedford Lloyd – Jammer Willis</li><li>J.C. Quinn – Arliss 'Sonny' Dawson</li><li>Kimberly Scott – Lisa 'One Night' Standing</li><li>Captain Kidd Brewer Jr. – Lew Finler</li><li>George Robert Klek – Wilhite</li><li>Christopher Murphy – Schoenick</li><li>Adam Nelson – Ens. Monk</li><li>Dick Warlock – Dwight Perry</li><li>Jimmie Ray Weeks – Leland McBride</li><li>J. Kenneth Campbell – DeMarco</li><li>Ken Jenkins – Gerard Kirkhill</li><li><a href="/svenusling/p/1158.html">Chris Elliott</a> – Bendix</li><li>Peter Ratray – USS Montana Captain</li><li>Michael Beach – Barnes</li><li>Brad Sullivan – USS Montana Executive Officer</li><li>Frank Lloyd – USS Montana Navigator</li><li>Phillip Darlington – USS Montana Crewman</li><li>Joseph C. Nemec III – USS Montana Crewman</li><li>Joe Farago – Anchorman</li><li>William Wisher Jr. – Bill Tyler</li><li>Marcus K. Mukai – Anchorman #2</li><li>Wendy Gordon – Anchorwoman</li><li>Paula Cross – Young Woman</li><li>Thomas F. Duffy – Construction Worker</li><li>Chris Anastasio – Truck Driver</li><li>Emily Yancy – Woman Reporter</li><li>Michael Chapman – Dr. Berg</li><li>Tom Isbell – Wave Reporter</li><li>Mike Cameron – Sailor with the Fire Extinguisher (uncredited)</li><li>Daren Dochterman – News Reporter (uncredited)</li><li>Mikhail Gorbachev – Himself (uncredited|archive footage)</li><li>Randy Robertson – Russian Sailer On Dock (uncredited)</li><li>Robert Searle – Tommy Ray Dietz (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Director [James Cameron][/p?id=1414] contacted Orson Scott Card before filming began with the possibility of producing a book based on the film. Card initially told his agent that he doesn't do &quot;novelizations&quot;, but when she told him that the director was [James Cameron][/p?id=1414], he agreed to consider it. The script arrived, and Card signed on after receiving assurances from [Cameron][/p?id=1414] that he would be free to develop his &quot;novel&quot; the way he wanted to. After a meeting with [Cameron][/p?id=1414], Card immediately wrote the first three chapters, which dealt with events concerning Bud and Lindsay Brigman that occurred before the events in the film. [Cameron][/p?id=1414] gave these chapters to [Ed Harris][/p?id=1267] and [Mary Elizabeth Mastrantonio][/p?id=Mary%20Elizabeth%20Mastrantonio], who used it to develop their characters.</li><li>Cast members had to become certified divers before filming began.</li><li>The crew frequently spent enough time underwater to force them to undergo decompression before surfacing. [James Cameron][/p?id=1414] would often watch dailies through a glass window, while decompressing and hanging upside down to relieve the stress on his shoulders from the weight of the helmet.</li><li>Fluid breathing is a reality. Five rats were used for five different takes, all of whom survived and were given shots by a vet. The rat that actually appeared in the film died of natural causes a few weeks before the film opened. According to [James Cameron][/p?id=1414], the scene with the rat had to be edited out of the UK movie version because &quot;the Royal Veterinarian felt that it was painful for the rat&quot;. [James Cameron][/p?id=1414] repeatedly assures that the rats used for this take didn't suffer any harm.</li><li>[James Cameron's][/p?id=1414] brother, [Mike Cameron][/p?id=Mike%20Cameron], plays a dead crewman inside the sunken submarine. To accomplish this he had to hold his breath under 15 feet of water while also allowing a crab to crawl out of his mouth.</li><li>During the rigorous and problematic shoot, the cast and crew began calling the film by various derogatory names such as &quot;Son Of Abyss&quot;, &quot;The Abuse&quot; and &quot;Life's Abyss And Then You Dive&quot;. [Mary Elizabeth Mastrantonio][/p?id=Mary%20Elizabeth%20Mastrantonio] reportedly suffered a physical and emotional breakdown because she was pushed so hard on the set, and [Ed Harris][/p?id=1267] had to pull over his car at one time while driving home, because he burst into spontaneous crying.</li><li>The studio pushed hard for an Academy Award nomination for [Michael Biehn][/p?id=1642] as best supporting actor.</li><li>The role of Commodore DeMarco was originally meant for [Lance Henriksen][/p?id=1565], but he couldn't appear due to a scheduling conflict.</li><li>The first feature film to have used an early version of Adobe Photoshop.</li><li>Filmed on a 70 million dollar budget.</li><li>Aside from [Michael Biehn][/p?id=1642], there are none of the usual regulars who work with [James Cameron][/p?id=1414] in The Abyss (1989). E.g. [Lance Henriksen][/p?id=1565], [Bill Paxton][/p?id=1083], [Jenette Goldstein][/p?id=Jenette%20Goldstein], etc.</li><li>During underwater filming, [James Cameron][/p?id=1414] almost drowned. At the bottom of the submerged set, [Cameron][/p?id=1414] ran out of air, Shedding his 40 pound helmet, he attempted to swim to the surface and was met by a safety diver, who grabbed [Cameron][/p?id=1414] and gave him a faulty regulator (water shot into [Cameron's][/p?id=1414] lungs). [Cameron][/p?id=1414] struggled and had to punch the diver to get free. Once safely out of the water, [Cameron][/p?id=1414] fired the diver and the Assistant Director (who had not warned [Cameron][/p?id=1414] he was running out of air), then had his helmet retrieved from the bottom of the set and continued working.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

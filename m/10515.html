@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Avengers | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Avengers <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2012"><a href="#">2012</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Joss Whedon</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1809.html">Robert Downey Jr.</a> – Tony Stark / Iron Man</li><li>Chris Evans – Steve Rogers / Captain America</li><li><a href="/svenusling/p/1611.html">Mark Ruffalo</a> – Bruce Banner / The Hulk</li><li>Chris Hemsworth – Thor</li><li><a href="/svenusling/p/1862.html">Scarlett Johansson</a> – Natasha Romanoff / Black Widow</li><li><a href="/svenusling/p/1452.html">Jeremy Renner</a> – Clint Barton / Hawkeye</li><li>Tom Hiddleston – Loki</li><li><a href="/svenusling/p/1179.html">Clark Gregg</a> – Agent Phil Coulson</li><li>Cobie Smulders – Agent Maria Hill</li><li><a href="/svenusling/p/1893.html">Stellan Skarsgård</a> – Selvig</li><li><a href="/svenusling/p/1856.html">Samuel L. Jackson</a> – Nick Fury</li><li><a href="/svenusling/p/1349.html">Gwyneth Paltrow</a> – Pepper Potts</li><li class="voice"><a href="/svenusling/p/1721.html">Paul Bettany</a> – Jarvis (röst)</li><li>Alexis Denisof – The Other</li><li>Tina Benko – NASA Scientist</li><li>Jerzy Skolimowski – Georgi Luchkov</li><li>Kirill Nikiforov – Weaselly Thug</li><li>Jeff Wolfe – Tall Thug</li><li>M'laah Kaur Singh – Young Girl</li><li>Rashmi Rustagi – Calcutta Woman</li><li>Powers Boothe – World Security Council</li><li><a href="/svenusling/p/1450.html">Jenny Agutter</a> – World Security Council</li><li>Arthur Darbinyan – World Security Council</li><li>Donald Li – World Security Council</li><li>Warren Kole – Carrier BridgeTechs</li><li>Alicia Sixtos – Carrier BridgeTechs</li><li>Jesse Garcia – Carrier BridgeTechs</li><li>Maximilliano Hernandez – Agent Jasper Sitwell</li><li>Dieter Riesle – Gala Scientist</li><li>Kenneth Tigar – German Old Man</li><li>Walter Perez – Young Shield Pilot</li><li><a href="/svenusling/p/1361.html">Harry Dean Stanton</a> – Security Guard</li><li>Josh Cowdery – Maintenance Guy</li><li>Ashley Johnson – Waitress</li><li>Katsumi Komatsu – Japanese Family</li><li>Yumiko Komatsu – Japanese Family</li><li>Momoko Komatsu – Japanese Family</li><li>Robert Clohessy – Police Sergeant</li><li>Enver Gjokaj – Young Cop</li><li>Fernanda Toker – Office Woman</li><li>Andrea Vecchio – News Reporter</li><li>Robin Swoboda – News Reporter</li><li>Brent McGee – Faceless Pilot</li><li>Jamie McShane – Celebration Montage Interviewee</li><li>Michael Zhang – Celebration Montage Interviewee</li><li>William Christopher Stephens – Celebration Montage Interviewee</li><li>Kelley Robins – Celebration Montage Interviewee</li><li>Romy Rosemont – Shawna Lynde</li><li>James Eckhouse – Senator Boynton</li><li>Stan Lee – Himself</li><li>Thomas Roberts – Himself</li><li>Pat Kiernan – Himself</li><li>Damion Poitier – Man #1</li><li class="voice">Lou Ferrigno – The Hulk (röst) (uncredited)</li><li>Kimberly J. Mahoney – Limo Driver (uncredited)</li><li>Joti Nagra – Waitress (uncredited)</li><li>Nate Paige – New York Pedestrian (uncredited)</li><li>Douglas Slygh – Museum Gala patron (uncredited)</li><li>Robert P. Thitoff – Gala Patron (uncredited)</li><li>Shane Thompson – Pedestrian (uncredited)</li><li>Chris Vaina – Running Pedestrian (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>FFCC Award - Bästa foto 2009</li><li>Sierra Award - Bästa scenografi 2009</li><li>PFCS Award - Bästa foto 2009</li><li>PFCS Award - Bästa specialeffekter 2009</li><li>PFCS Award - Bästa klippning 2009 (1414)</li><li>PFCS Award - Bästa scenografi 2009</li><li>Oscar - Bästa foto 2010</li><li>Oscar - Bästa specialeffekter 2010</li><li>Oscar - Bästa scenografi 2010</li><li>Golden Globe - Bästa film - Drama 2010</li><li>Golden Globe - Bästa regi 2010 (1414)</li><li>BAFTA Film Award - Bästa specialeffekter 2010</li><li>BAFTA Film Award - Bästa scenografi 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa Actionfilm 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa foto 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa ljud 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa specialeffekter 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa klippning 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa scenografi 2010</li><li>Empire Award - Bästa film 2010</li><li>Empire Award - Bästa regi 2010 (1414)</li><li>Empire Award - Bästa skådespelerska 2010 (2018)</li><li>Golden Reel Award - Best Sound Editing - Music in a Feature Film 2010</li><li>Golden Reel Award - Best Sound Editing - Sound Effects and Foley in a Feature Film 2010</li><li>VES Award - Best Single Visual Effect of the Year (For Quarich's escape.) 2010</li><li>VES Award - Outstanding Animated Character in a Live Action Feature Motion Picture For Neytiri.) 2010</li><li>VES Award - Outstanding Created Environment in a Feature Motion Picture (For the jungle/biolume.) 2010</li><li>VES Award - Outstanding Matte Paintings in a Feature Motion Picture (For Pandora.) 2010</li><li>VES Award - Outstanding Models and Miniatures in a Feature Motion Picture (For Samson/home tree/floating mountains/ampsuit.) 2010</li><li>VES Award - Outstanding Visual Effects in a Visual Effects Driven Feature Motion Picture 2010</li><li>Art Directors Guild, Excellence in Production Design Award - Fantasy Films 2010</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>CFCA Award - Bästa foto 2009</li><li>CFCA Award - Bästa musik 2009 (James Horner)</li><li>Oscar - Bästa film 2010 (1414)</li><li>Oscar - Bästa regi 2010 (1414)</li><li>Oscar - Bästa musik 2010 (James Horner)</li><li>Oscar - Bästa ljud 2010</li><li>Oscar - Bästa ljudklippning 2010</li><li>Oscar - Bästa klippning 2010 (1414)</li><li>Golden Globe - Bästa musik 2010 (James Horner)</li><li>Golden Globe - Bästa originalsång (For the song "I Will See You".) 2010 (James Horner)</li><li>BAFTA Film Award - Bästa film 2010 (1414)</li><li>BAFTA Film Award - Bästa regi 2010 (1414)</li><li>BAFTA Film Award - Bästa foto 2010</li><li>BAFTA Film Award - Bästa musik 2010 (James Horner)</li><li>BAFTA Film Award - Bästa ljud 2010</li><li>BAFTA Film Award - Bästa klippning 2010 (1414)</li><li>Saturn Award - Bästa Fantasyfilm 2010</li><li>Saturn Award - Bästa regi 2010 (1414)</li><li>Saturn Award - Bästa skådespelare 2010 (1854)</li><li>Saturn Award - Bästa skådespelerska 2010 (2018)</li><li>Saturn Award - Bästa manliga biroll 2010 (1897)</li><li>Saturn Award - Bästa kvinnliga biroll 2010 (1882)</li><li>Saturn Award - Bästa manus 2010 (1414)</li><li>Saturn Award - Bästa musik 2010 (James Horner)</li><li>Saturn Award - Bästa specialeffekter 2010</li><li>Saturn Award - Bästa scenografi 2010</li><li>American Cinema Editors, Eddie - Best Edited Feature Film (Dramatic) 2010</li><li>ASC Award - Bästa foto 2010</li><li>Black Reel - Bästa kvinnliga biroll 2010 (2018)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film 2010</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa regi 2010 (1414)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa smink 2010</li><li>C.A.S. Award - Outstanding Achievement in Sound Mixing for Motion Pictures 2010</li><li>CDG Award - Excellence in Costume Design for Film - Fantasy 2010</li><li>César Awards, César - Bästa utländska film 2010 (1414)</li><li>DGA Award - Bästa regi 2010 (1414)</li><li>Empire Award - Bästa Sci-Fi/Fantasy 2010</li><li>Empire Award - Bästa skådespelare 2010 (1854)</li><li>Image Award - Bästa kvinnliga biroll 2010 (2018)</li><li>IFTA Award - Best International Film 2010</li><li>ALFS Award - Film of the Year 2010</li><li>ALFS Award - Director of the Year 2010 (1414)</li><li>Golden Reel Award - Best Sound Editing - Dialogue and ADR in a Feature Film 2010</li><li>OFCS Award - Bästa regi 2010 (1414)</li><li>OFCS Award - Bästa foto 2010</li><li>OFCS Award - Bästa klippning 2010</li><li>PGA Awards, Motion Picture Producer of the Year Award - Theatrical Motion Pictures 2010 (1414)</li><li>VES Award - Best Single Visual Effect of the Year (For Neytiri drinking.) 2010</li><li>VES Award - Outstanding Compositing in a Feature Motion Picture (For the end battle.) 2010</li><li>VES Award - Outstanding Compositing in a Feature Motion Picture 2010</li><li>VES Award - Outstanding Created Environment in a Feature Motion Picture (For the Willow Glade.) 2010</li><li>VES Award - Outstanding Created Environment in a Feature Motion Picture (For the floating mountains.) 2010</li><li>WGA Award (Screen) - Bästa originalmanus 2010 (1414)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Edward Norton][/p?id=1266] was originally set to reprise his role from [The Incredible Hulk][/f?id=15058] but negotiations between him and Marvel Studios broke down. [Norton][/p?id=1266] was replaced with [Mark Ruffalo][/p?id=1611].</li><li>The first Marvel film to be distributed by Walt Disney Pictures.</li><li>Before [Mark Ruffalo][/p?id=1611] was cast as The Hulk, [Joaquin Phoenix][/p?id=1466] was rumored for the part.</li><li>[Morena Baccarin][/p?id=Morena%20Baccarin], [Jessica Lucas][/p?id=Jessica%20Lucas], [Mary Elizabeth Winstead][/p?id=1623] and [Cobie Smulders][/p?id=Cobie%20Smulders] screen tested for the role of Agent Maria Hill. [Smulders][/p?id=Cobie%20Smulders] was eventually cast.</li><li>According to [Joss Whedon][/p?id=Joss%20Whedon], the film is strongly influenced by the early 1960s Avengers comics, which he was a fan of while growing up: &quot;In those comics these people shouldn't be in the same room let alone on the same team - and that is the definition of family.&quot;</li><li>[Tom Hiddleston][/p?id=Tom%20Hiddleston] spoke of his role as Loki in an interview by saying, &quot;I can tell you that it's all of them against me. I am the super villain. So it's [Iron Man][/f?id=15119], the Incredible Hulk, [Captain America][/f?id=11441], Thor, Hawkeye, Black Widow and [Nick Fury][/f?id=17077] forming a team because I've got so bad ass.&quot;</li><li>Has an unusually high number of Academy Award nominees in the cast and crew for a comic book movie - or most movies for that matter: [Robert Downey Jr.][/p?id=1809]; [Gwyneth Paltrow][/p?id=1349]; [Samuel L. Jackson][/p?id=1856]; [Jeremy Renner][/p?id=1452]; [Mark Ruffalo][/p?id=1611]; and Cinematographer Seamus McGarvey; possibly many others. Topping the five in [Iron Man 2][/f?id=15120]: [Downey Jr.][/p?id=1809]; Jackson; [Gwyneth Paltrow][/p?id=1349]; [Mickey Rourke][/p?id=1671]; and [Don Cheadle][/p?id=Don%20Cheadle].</li><li>Legal rights issues prevented a number of &quot;Avengers&quot; characters from their inclusion in this film. Most notably, these include Quicksilver and The Scarlet Witch, the twin children of X-Men) villain Magneto, and frequent adversaries Doctor Doom (nemesis of the [Fantastic Four][/f?id=13724]) and Norman Osbourne/Green Goblin (the primary antagonist of [Spider-Man][/f?id=18668]). Though all characters are owned by Marvel/Disney, the &quot;X-Men&quot; and &quot;[Fantastic Four][/f?id=13724]&quot; characters had all been licensed to Fox Studios, and those of &quot;[Spider-Man][/f?id=18668]&quot; to Sony before work began on an &quot;Avengers&quot; film. Marvel has said that in the future they hope to regain the rights to all licensed properties, that the aforementioned characters might have a role in subsequent &quot;Avengers&quot; films.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
