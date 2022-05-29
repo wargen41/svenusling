@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Demolition Man | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Demolition Man <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1993"><a href="#">1993</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Marco Brambilla</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1915.html">Sylvester Stallone</a> – John Spartan</li><li><a href="/svenusling/p/1998.html">Wesley Snipes</a> – Simon Phoenix</li><li><a href="/svenusling/p/1857.html">Sandra Bullock</a> – Lenina Huxley</li><li>Nigel Hawthorne – Dr. Raymond Cocteau</li><li>Benjamin Bratt – Alfredo Garcia</li><li>Bob Gunton – Chief George Earle</li><li>Glenn Shadix – Associate Bob</li><li>Denis Leary – Edgar Friendly</li><li>Grand L. Bush – Zachary Lamb - Young</li><li>Pat Skipper – Helicopter Pilot</li><li>Steve Kahan – Captain Healy</li><li>Paul Bollen – T.F.R. Officer</li><li>Mark Colson – Warden William Smithers - Young</li><li>Andre Gregory – Warden William Smithers - Aged</li><li>John Enos III – Prisoner</li><li><a href="/svenusling/p/1965.html">Troy Evans</a> – Tough Cop</li><li>Don McGovern – Hopper - Prison Guard</li><li>Bill Cobbs – Zachary Lamb - Aged</li><li>Patricia Rive – Police Officer</li><li>Anneliza Scott – Police Officer</li><li>Dean Minerd – Police Officer</li><li>Kristopher Logan – Troubled Guy</li><li>Paul Perri – Squad Leader</li><li>Susan Lentini – T.V. Reporter</li><li>Casey Wallace – Little Girl</li><li>Trent Walker – Boggle Guard</li><li>Chris Durand – Museum Guard</li><li>Brett A. Jones – Museum Guard</li><li>Dan Cortese – Taco Bell Entertainer</li><li>Lara Harris – Taco Bell Patron</li><li>Sam Nehira – Taco Bell Patron</li><li>Claude Oatts – Taco Bell Patron</li><li>Alex Chapman – Taco Bell Scrap</li><li>Brandy Ledford – Fiber Op Girl</li><li>Rosemarie Lagunas – Hamburger Stand Scrap</li><li>Ken Baldwin – Wasteland Scrap</li><li><a href="/svenusling/p/1397.html">Jack Black</a> – Wasteland Scrap</li><li>Michael Buice – Wasteland Scrap</li><li>Carlton Wilborn – Wasteland Scrap</li><li>Charles Glass – CryoCon</li><li>Ben Jurand – CryoCon</li><li>Billy D. Lucas – CryoCon</li><li>Rhino Michaels – CryoCon</li><li>Toshirô Obata – CryoCon</li><li>Jesse Ventura – CryoCon</li><li class="voice">Vanna Bonta – Computer (röst)</li><li>Alex Ardenti – Wasteland Scrap (uncredited)</li><li>Mark Atteberry – Museum Patron (uncredited)</li><li class="voice">Adrienne Barbeau – Main Frame Computer (röst) (uncredited)</li><li>Tracee Cocco – Cop in Headquarters (uncredited)</li><li class="voice">Jennifer Darling – Computer (röst) (uncredited)</li><li>Ric Drasin – Supporting (uncredited)</li><li>Mogens Eckert – Computer Head on Rotating Screen (uncredited)</li><li>Robert Grasmere – Vidhead (uncredited)</li><li>Bryan Hanna – Wasteland Scrap (uncredited)</li><li>Paul Dion Monte – Cryo Prisoner (uncredited)</li><li>Lora Lyn Peterson –  (uncredited)</li><li>Francis Praksti –  (uncredited)</li><li>Christopher Sararo – San Angelan (uncredited)</li><li><a href="/svenusling/p/1802.html">Rob Schneider</a> – Erwin (uncredited)</li><li>Stewart Skelton – Stunned Museum Guard (uncredited)</li><li>Kevin Ula Christie – Rogue Cop (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Sandra Bullock][/p?id=1857] replaced [Lori Petty][/p?id=Lori%20Petty] after a few days filming.</li><li>[Sylvester Stallone][/p?id=1915] wanted the Simon Phoenix character to be played by [Jackie Chan][/p?id=1405]. [Chan][/p?id=1405] refused, since Asian audiences don't like the idea of actors who have always played heroes suddenly playing evil characters.</li><li>For some non-American releases, references to Taco Bell were changed to Pizza Hut. This includes dubbing, plus changing the logos during post-production. Taco Bell remains in the closing credits. In the Swedish release the subtitles still use Taco Bell while the sound and picture has been altered as above. The original version released in Australia (on VHS) contained Taco Bell, yet the newer version on DVD was changed both in logo and dubbing to Pizza Hut. (If you look closely at the scene where the restaurant patrons are looking through the glass windows to the fight scene outside, you can still see Taco Bell etched into the glass, even in the modified version.)</li><li>The &quot;ray gun&quot; used by [Wesley Snipes][/p?id=1998] in the Museum Armory sequence is based on the Heckler and Koch G11, a prototype weapon for the German army that would have been the most advanced rifle in the world, firing caseless ammunition (bullets, not death rays).</li><li>[Wesley Snipes's][/p?id=1998] kicks and punches sometimes look lurchy and awkward. [Snipes][/p?id=1998] is a black belt in real life, and his kicks and punches were so fast that they blurred on camera. Hence the producers asked him to slow them down.</li><li>The two original choices for the roles were [Steven Seagal][/p?id=1906] and [Jean-Claude Van Damme][/p?id=1440]. [Van Damme][/p?id=1440] was offered the role of the bad guy, but didn't want that role. He agreed to star in it if both the lead roles could be switched, the producers tried to get [Seagal][/p?id=1906] to play the bad guy, he declined.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

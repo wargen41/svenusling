@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Sista Föreställningen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Sista Föreställningen <a href="#" class="grade">++++</a></h2>
+										<h3>The Last Picture Show</h3>
+										<p>
+										Film från <time datetime="1971"><a href="#">1971</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Peter Bogdanovich</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1943.html">Timothy Bottoms</a> – Sonny Crawford</li><li><a href="/svenusling/p/1441.html">Jeff Bridges</a> – Duane Jackson</li><li>Cybill Shepherd – Jacy Farrow</li><li><a href="/svenusling/p/1073.html">Ben Johnson</a> – Sam the Lion</li><li>Cloris Leachman – Ruth Popper</li><li>Ellen Burstyn – Lois Farrow</li><li>Eileen Brennan – Genevieve</li><li>Clu Gulager – Abilene</li><li>Sam Bottoms – Billy</li><li>Sharon Ullrick – Charlene Duggs</li><li><a href="/svenusling/p/1769.html">Randy Quaid</a> – Lester Marlow</li><li>Joe Heathcock – The Sheriff</li><li>Bill Thurman – Coach Popper</li><li>Barc Doyle – Joe Bob Blanton</li><li>Jessie Lee Fulton – Miss Mosey</li><li>Gary Brockette – Bobby Sheen</li><li>Helena Humann – Jimmie Sue</li><li>Loyd Catlett – Leroy</li><li>Robert Glenn – Gene Farrow</li><li>John Hillerman – Teacher</li><li>Janice E. O'Malley – Mrs. Clarg</li><li>Floyd Mahaney – Oklahoma Patrolman</li><li>Kimberly Hyde – Annie-Annie Martin</li><li>Noble Willingham – Chester</li><li>Marjorie Jay – Winnie Snips</li><li>Joye Hash – Mrs. Jackson</li><li>Pamela Keller – Jackie Lee French</li><li>Gordon Hurst – Monroe</li><li>Mike Hosford – Johnny</li><li>Faye Jordan – Nurse</li><li>Charles Seybert – Andy Fanner</li><li>Grover Lewis – Mr. Crawford</li><li>Rebecca Ulrick – Marlene</li><li>Merrill Shepherd – Agnes</li><li>Buddy Wood – Bud</li><li>Kenny Wood – Ken</li><li>Leon Brown – Cowboy in Cafe</li><li>Bobby McGriff – Truck Driver</li><li>Jack Mueller – Oil Pumper</li><li>Robert Arnold – Brother Blanton</li><li>Frank Marshall – Tommy Logan</li><li>Tom Martin – Larry</li><li>Otis Elmore – 1st Mechanic</li><li>Charles Salmon – Roughneck Driver</li><li>George Gaulden – Cowboy</li><li>Will Morris Hannis – Gas Station Man</li><li>The Leon Miller Band – Themselves</li><li>Antonia Bogdanovich – Singer (uncredited)</li><li class="voice">Peter Bogdanovich – DJ (röst) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Screen, Golden Screen 1991</li><li>ASCAP Award - Top Box Office Films 1992</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>MTV Movie Award - Bästa kyss 1992</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>According to [Cybill Shepherd's][/p?id=Cybill%20Shepherd] autobiography, both [John Ritter][/p?id=John%20Ritter] and [Christopher Mitchum][/p?id=Christopher%20Mitchum] were considered for the role of Sonny.</li><li>All the film's music (except for the closing credits and the live band at the Christmas party) is played in the background on radios, jukeboxes or, at the swim party, on a portable record player.</li><li>All but one of the shots are at eye-level.</li><li>The &quot;last picture&quot; shown in the movie theater was [Red River][/f?id=17642]. In the original novel it was an [Audie Murphy][/p?id=1063] B-Western, but [Peter Bogdanovich][/p?id=Peter%20Bogdanovich] wanted something more dramatic.</li><li>[Ellen Burstyn][/p?id=Ellen%20Burstyn] was originally considered for the role of Genevieve, but after meeting with Bogdonavich and reading for all three of the older women characters, he asked her to play Ruth Popper. [Burstyn][/p?id=Ellen%20Burstyn], however, preferred the role of Lois, and Bogdonavich told her to go home, think about whatever part she wanted to play, and call him the next day. She called him the next morning, telling him she still wanted to play Lois, and he agreed.</li><li>[Cybill Shepherd][/p?id=Cybill%20Shepherd] was cast with the option of backing out of her nude scenes if she so desired. She only agreed to do them after asking the opinions of three female costars - [Cloris Leachman][/p?id=Cloris%20Leachman], [Ellen Burstyn][/p?id=Ellen%20Burstyn] and [Eileen Brennan][/p?id=Eileen%20Brennan] - who all thought she should do them.</li><li>[Tex Ritter][/p?id=Tex%20Ritter] auditioned for the role of Sam the Lion as his son John was considered for the role of Sonny.</li><li>[Ben Johnson][/p?id=1073] was persuaded to accept the role of Sam the Lion by his friend [John Ford][/p?id=1483]. The taciturn [Johnson][/p?id=1073] had turned the part down three times because, according to [Peter Bogdanovich][/p?id=Peter%20Bogdanovich], the part had &quot;too many words.&quot;</li><li>[Cloris Leachman's][/p?id=Cloris%20Leachman] last scene in the movie was printed on the first take without any previous rehearsals. She wanted to rehearse the scene but director [Peter Bogdanovich][/p?id=Peter%20Bogdanovich] thought it would ruin the scene if it was rehearsed. Ultimately his sense of direction paid off, as [Leachman][/p?id=Cloris%20Leachman] won the Academy Award for her performance.</li><li>[Morgan Fairchild][/p?id=Morgan%20Fairchild] and [Sissy Spacek][/p?id=1885] were both considered for the role of Jacy Farrow.</li><li>Upon selecting the town of Archer City, Texas, as a filming location, production designer Polly Platt and director [Peter Bogdanovich][/p?id=Peter%20Bogdanovich] decided that the town should have a bleak, colorless look about it. After considering several options, such as painting all the buildings gray, Platt and [Bogdanovich][/p?id=Peter%20Bogdanovich] consulted close friend [Orson Welles][/p?id=1711] about the viability of shooting the film in black and white. [Welles][/p?id=1711] simply said, &quot;Of COURSE you'll shoot it in black and white!&quot;</li><li>[Cybill Shepherd's][/p?id=Cybill%20Shepherd] film debut.</li><li>Film debut of [Randy Quaid][/p?id=1769] and [Sam Bottoms][/p?id=Sam%20Bottoms].</li><li>This film began a trend where already popular recordings by the original artists are used to score a film. Featured here are songs by Frankie Laine, Hank Williams, [Jo Stafford][/p?id=Jo%20Stafford] and others..</li><li>[Peter Bogdanovich][/p?id=Peter%20Bogdanovich] had originally offered the role of &quot;Sam the Lion&quot; to [James Stewart][/p?id=1425], who liked the part but had already committed to a TV series and couldn't get out of it. The role was then offered to [Ben Johnson][/p?id=1073], who took it eventually won an Academy Award for it.</li><li>[Peter Bogdanovich][/p?id=Peter%20Bogdanovich] claims the crew disliked him because he always ate with the actors on location.</li><li>According to [Cloris Leachman][/p?id=Cloris%20Leachman] the cause of her dysfunctional marriage was that her husband was gay. She claims a scene between her coach husband and the team's quarterback would have revealed that implicitly, but because of budgetary reasons was never shot.</li><li>[Peter Bogdanovich][/p?id=Peter%20Bogdanovich] claims that seeing [Cybill Shepherd][/p?id=Cybill%20Shepherd] on a magazine cover inspired his casting her.</li><li>[Peter Bogdanovich][/p?id=Peter%20Bogdanovich] left the location because of the death of his father and after he returned to the set, the first scene he shot was the funeral of Sam the Lion.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

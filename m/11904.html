@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Death Wish III | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Death Wish III <a href="#" class="grade">+</a></h2>
+										<h3>Death Wish 3</h3>
+										<p>
+										Film från <time datetime="1985"><a href="#">1985</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1666.html">Michael Winner</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1144.html">Charles Bronson</a> – Paul Kersey</li><li>Deborah Raffin – Kathryn Davis</li><li><a href="/svenusling/p/1268.html">Ed Lauter</a> – Richard Shriker</li><li><a href="/svenusling/p/1617.html">Martin Balsam</a> – Bennett</li><li>Gavan O'Herlihy – Fraker</li><li>Kirk Taylor – Giggler</li><li>Alex Winter – Hermosa</li><li>Tony Spiridakis – Angel</li><li>Ricco Ross – The Cuban</li><li>Tony Britts – Tulio</li><li>David Crean – Hector</li><li>Nelson Fernandez – Chaco</li><li>Alan Cooke – Punk at Car</li><li>Bob Lee Dysinger – Punk at Car</li><li>Topo Grajeda – Garcia</li><li>Barbie Wilde – Female Punk</li><li>Ron Hayes – Lieutenant</li><li>Jerry Phillips – Street Punk</li><li>Joe Gonzalez – Rodriguez</li><li>Francis Drake – Charley</li><li>Leo Kharibian – Eli Kaprov</li><li>Hana Maria Pravda – Mrs Kaprov</li><li>John Gabriel – Emil</li><li>Mildred Shay – Mrs Emil</li><li>Kenny Marino – Used Car Seller</li><li>Birdie M. Hale – Mugging Victim</li><li>Marina Sirtis – Maria</li><li>Hayward Morse – Intern</li><li>Ronald Fernee – Intern</li><li>Sandy Grizzle – Rape Victim</li><li>Dinah May – Nurse</li><li>Steffanie Pitt – Nurse</li><li>Billy J. Mitchell – Fraker's Lawyer</li><li>Lee Patterson – TV Newscaster</li><li>Olivia Ward – Protesting Lady</li><li>Manning Redwood – Lieutenant Sterns</li><li>Joe Cirillo – Policeman</li><li>Ralph Monaco – Policeman</li><li>William Roberts – Policeman</li><li>Mac McDonald – Policeman</li><li>Sam Douglas – Policeman</li><li>Ron Travis – Policeman</li><li>Mark Stewart – Policeman</li><li>Peter Banks – Policeman</li><li>Tom Hunsinger – Policeman</li><li>Nic D'Avirro – Policeman</li><li>Sandra Dee Richardson – Cuban Street Punk</li><li>George Lane Cooper – Bald Man (uncredited)</li><li>David Daniel – Gang Member (uncredited)</li><li>Tim Dry – Gang Member (uncredited)</li><li>Robert Goodman – Prisoner (uncredited)</li><li>Frank Jakeman – Prison Rapist (uncredited)</li><li>Daniel Jordano – Punk at Newscopter (uncredited)</li><li>Derek Lyons – Detective (uncredited)</li><li>Vic Noto – Biker (uncredited)</li><li>Frank Patton III – Cop (uncredited)</li><li>Jimmy Roger – Arresting Officer (uncredited)</li><li>Peter Ross-Murray – Gang member (uncredited)</li><li>Tip Tipping – Creep (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>According to the book '[Bronson's][/p?id=1144] Loose' by Paul Talbot, the original working title &quot;[Death Wish III][/f?id=11904]&quot; was changed to &quot;Death Wish 3&quot; because The Cannon Group, Inc. conducted a survey and found that nearly half of the U.S. population could not read Roman numerals.</li><li>[Charles Bronson][/p?id=1144] uses a Wildey .475 Magnum hand cannon in this movie. It was his personal handgun in real life, and he suggested it as a means to make the film unique. In a 2005 interview in 'American Handgunner' magazine with Wildey Moore, the gun's creator and a technical consultant to the production, Moore said that sales for the weapon increase each time this film is aired on cable television. Moore said: &quot;To this day there is a spike in Wildey Magnum sales every time 'Death Wish 3' appears on cable TV.&quot;</li><li>[Charles Bronson][/p?id=1144] rarely granted interviews, or commented on his own films. However, he plainly stated his unhappiness with this film at least a few times, and was especially angered when he discovered that the director filmed extremely gory shots with extras (as nameless thugs) when he was off-set.</li><li>Oddly enough, two ideas from the original novel Death Wish actually made it into this sequel; the vigilante rents a car to use as bait for street thugs, and a giggling Puerto Rican male appears. According to the book '[Bronson's][/p?id=1144] Loose' by Paul Talbot, a movie novelization of [Death Wish 3][/f?id=11904] (1985) was announced, but was never published when it was pointed out that 'Brian Garfield' retains the literary rights to the series, and he refused to allow a movie novelization.</li><li>As principal photography was mostly filmed in London, the movie featured extras and background artists playing a variety of characters including police officers and gang members. Their audible dialogue, however, was in various English accents. This movie was set in New York City, and required American accents. As such, during post-production, director [Michael Winner][/p?id=1666] enlisted the assistance of the military personnel of the U.S. Air Force stationed in England to dub over the various English accents.</li><li>This was the first 'Death Wish' movie to be made after the Bernard Goetz vigilante shootings in New York. After this, [Charles Bronson][/p?id=1144] publicly stated that he recommended that people not imitate his character [Paul Kersey][/p?id=Paul%20Kersey] from the 'Death Wish' movies.</li><li>[Alex Winter][/p?id=Alex%20Winter] recalled filming a scene where [Charles Bronson][/p?id=1144] hits him with a lead pipe took longer than anticipated because [Bronson][/p?id=1144] didn't show up to do so. After a while, [Michael Winner][/p?id=1666] said, &quot;Charlie, we all want to go home, would you please hit this man so we can go home?&quot; [Bronson][/p?id=1144] replied, &quot;I can't hit this kid, he looks like a fucking choirboy. I'll lose my audience&quot;.</li><li>[Alex Winter's][/p?id=Alex%20Winter] character was originally going to be part of the rape scene, but [Winter][/p?id=Alex%20Winter] didn't want to be part of that, so he met an extra who was clamouring for a bigger part in the film and let him take his role.</li><li>The concept of [Paul Kersey][/p?id=Paul%20Kersey] facing a street gang which terrorizes elderly citizens was developed by screenwriter Don Jakoby. He specialized in science fiction films, having developed scripts for other upcoming Cannon films such as [Lifeforce][/f?id=Rymdens%20Vampyrer] (1985) and [Invaders from Mars][/f?id=15110] (1986). His screenplay reportedly turned [Kersey][/p?id=Paul%20Kersey] into an urban version of John Rambo, displeasing [Charles Bronson][/p?id=1144] in the process. The producers then tasked Gail Morgan Hickman to write other potential versions of the script. Hickman came up with three different script samples and submitted them for approval. He learned weeks later that they were all rejected in favor of keeping Jakoby's version. He considered the whole process a waste of time.</li><li>[Charles Bronson][/p?id=1144] was sixty-four-years-old when he appeared in this movie.</li><li>[Charles Bronson][/p?id=1144] was paid 1.5 million dollars out of the 10 million dollar budget.</li><li>According to [Marina Sirtis][/p?id=Marina%20Sirtis], her rape scene was shot in a very cold garage and [Michael Winner][/p?id=1666] wouldn't let her sit up. The director of photography put a coat over her and [Winner][/p?id=1666] yelled at him to remove it, as he was trying to light the scene.</li><li>Stuntman [Rocky Taylor][/p?id=Rocky%20Taylor] was very badly injured when a stunt went wrong.</li><li>[Charles Bronson][/p?id=1144] said the film was &quot;nearly the same as the first two Death Wishes that came before except this time he's not alone... It is a very violent picture but it all falls within the category of the story.&quot; [Bronson][/p?id=1144] did add however that &quot;there are men on motorbikes, an element that's threatening - throwing bottles and that sort of thing - and I machine gun them. That to me is excessive violence and is unnecessary.&quot;</li><li>[Alex Winter][/p?id=Alex%20Winter] did not like working with [Michael Winner][/p?id=1666]. In the documentary Electric Boogaloo: The Wild, Untold Story of Cannon Films (2014), [Winter][/p?id=Alex%20Winter] described [Winner][/p?id=1666] as &quot;a pathologically brutal, strange, sadistic, insecure, egotistical character&quot;.</li><li>This was [Alex Winter's][/p?id=Alex%20Winter] first film role. He plays Hermosa, a punk.</li><li>According to [Alex Winter][/p?id=Alex%20Winter], [Charles Bronson][/p?id=1144] had a jaguar that would drive him from his dressing room to the set, which was about three feet away. He noted that it was &quot;more like watching a man golf than act&quot;.</li><li>According to [Alex Winter][/p?id=Alex%20Winter], [Michael Winner][/p?id=1666] walked around onset smoking a big cigar and an assistant walked behind him with a cigar box. If the assistant went over a certain line, he was fired. [Winner][/p?id=1666] had a new assistant every day.</li><li>According to [Alex Winter][/p?id=Alex%20Winter], he and the other actors playing the gangmembers would do their own stunts and improvise their own lines. [Winter][/p?id=Alex%20Winter] volunteered to do the stunt where he falls off a moving car. After numerous takes, [Michael Winner][/p?id=1666] said, &quot;I thought you wanted to do your own stunts?&quot;</li><li>In a 2019 interview with &quot;The Stage&quot;, actor [Marina Sirtis][/p?id=Marina%20Sirtis] spoke of her participating in making this film when asked about the #MeToo movement. She said: &quot;I know you're not supposed to speak ill of the dead, but I hope (director) [Michael Winner][/p?id=1666] will rot in hell for all eternity. I was pressured into doing a graphic rape scene, with nudity I did not feel comfortable with, and I said nothing. You didn't say anything because you were told you would never work again, and I wasn't going to let some idiot who didn't know how to behave destroy the dream I'd had since I was three years old.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

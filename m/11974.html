@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Längsta Dagen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Längsta Dagen <a href="#" class="grade">++++</a></h2>
+										<h3>The Longest Day</h3>
+										<p>
+										Film från <time datetime="1962"><a href="#">1962</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ken Annakin</li><li>Andrew Marton</li><li>Bernhard Wicki</li><li>Darryl F. Zanuck</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Eddie Albert – Col. Thompson</li><li>Paul Anka – U.S. Army Ranger</li><li>Arletty – Madame Barrault</li><li>Jean-Louis Barrault – Father Louis Roulland</li><li>Richard Beymer – Schultz</li><li>Hans Christian Blech – Maj. Werner Pluskat</li><li>Bourvil – Mayor of Colleville</li><li><a href="/svenusling/p/1782.html">Richard Burton</a> – Flight Officer David Campbell</li><li>Wolfgang Büttner – Maj. Gen. Dr. Hans Speidel</li><li>Red Buttons – Pvt. John Steele</li><li>Pauline Carton – Maid</li><li><a href="/svenusling/p/1866.html">Sean Connery</a> – Pvt. Flanagan</li><li>Ray Danton – Capt. Frank</li><li>Irina Demick – Janine Boitard</li><li>Fred Dur – U.S. Army Ranger major</li><li>Fabian – U.S. Army Ranger</li><li>Mel Ferrer – Maj. Gen. Robert Haines</li><li><a href="/svenusling/p/1371.html">Henry Fonda</a> – Brig. Gen. Theodore Roosevelt Jr.</li><li>Steve Forrest – Capt. Harding</li><li>Gert Fröbe – Sgt. Kaffekanne</li><li><a href="/svenusling/p/1578.html">Leo Genn</a> – Brig. Gen. Edwin P. Parker Jr.</li><li>John Gregson – British Padre</li><li>Paul Hartmann – Field Marshal Gerd von Rundstedt</li><li>Peter Helm – Young GI</li><li>Werner Hinz – Field Marshal Erwin Rommel</li><li>Donald Houston – RAF pilot at flight base</li><li>Jeffrey Hunter – Sgt. (later Lt.) John H. Fuller</li><li>Karl John – Gen. Wolfgang Hager</li><li>Curd Jürgens – Maj. Gen. Gunther Blumentritt</li><li>Alexander Knox – Maj. Gen. Walter Bedell Smith</li><li>Peter Lawford – Lord Lovat</li><li>Fernand Ledoux – Louis</li><li>Christian Marquand – Cmdr. Philippe Kieffer (commando leader)</li><li>Dewey Martin – Pvt. Wilder (scenes deleted)</li><li>Roddy McDowall – Pvt. Morris</li><li>Michael Medwin – Pvt. Watney</li><li>Sal Mineo – Pvt. Martini</li><li><a href="/svenusling/p/1815.html">Robert Mitchum</a> – Brig. Gen. Norman Cota</li><li>Kenneth More – Capt. Colin Maud</li><li>Richard Münch – Gen. Erich Marcks</li><li><a href="/svenusling/p/1262.html">Edmond O'Brien</a> – Gen. Raymond D. Barton</li><li>Leslie Phillips – Royal Air Force officer</li><li>Wolfgang Preiss – Maj. Gen. Max Pemsel</li><li>Ron Randell – Joe Williams</li><li>Madeleine Renaud – Mother Superior</li><li>Georges Rivière – Sgt. Guy de Montlaur</li><li>Norman Rossington – Pvt. Clough</li><li>Robert Ryan – Brig. Gen. James M. Gavin</li><li>Tommy Sands – U.S. Army Ranger</li><li><a href="/svenusling/p/1329.html">George Segal</a> – U.S. Army Ranger</li><li>Jean Servais – RAdm. Janjard</li><li><a href="/svenusling/p/1831.html">Rod Steiger</a> – Destroyer commander</li><li>Richard Todd – Maj. John Howard</li><li>Tom Tryon – Lt. Wilson</li><li>Peter van Eyck – Lt. Col. Ocker</li><li><a href="/svenusling/p/1827.html">Robert Wagner</a> – U.S. Army Ranger</li><li>Richard Wattis – British Paratrooper</li><li><a href="/svenusling/p/1909.html">Stuart Whitman</a> – Lt. Sheen</li><li>Georges Wilson – Alexandre Renaud</li><li><a href="/svenusling/p/1504.html">John Wayne</a> – Lt. Col. Benjamin Vandervoort</li><li>Daniel Gélin – Undetermined Role (scenes deleted|French Version)</li><li>Françoise Rosay – Undetermined Role (scenes deleted|French Version)</li><li>Patrick Barr – Group Capt. J.N. Stagg (uncredited)</li><li>Michael Beint – Bit part (uncredited)</li><li>Lyndon Brook – Lt. Walsh (uncredited)</li><li>Lucien Camiret – Bit part (uncredited)</li><li>Jean Champion – Bit part (uncredited)</li><li>Bryan Coleman – Ronald Callen (uncredited)</li><li>John Crawford – Col. Caffey (uncredited)</li><li>Mark Damon – Pvt. Harris (uncredited)</li><li>Jo D'Avra – French Navy captain (uncredited)</li><li>Richard Dawson – British soldier (uncredited)</li><li>Eugene Deckers – German soldier (uncredited)</li><li>Pipe Major Leslie de Laspee – Bill Millin - piper on beach (uncredited)</li><li>Colin Drake – Zanuck (uncredited)</li><li>Michel Duchaussoy – Extra (uncredited)</li><li>Frank Finlay – Pvt. Coke (uncredited)</li><li>Harry Fowler – British Paratrooper (uncredited)</li><li>Bernard Fox – British soldier (uncredited)</li><li>Robert Freitag – Meyer's aide (uncredited)</li><li>Bernard Fresson – Bit part (uncredited)</li><li>Lutz Gabor – Bit part (uncredited)</li><li>Harold Goodwin – British Infantryman (uncredited)</li><li>Henry Grace – Gen. Dwight D. Eisenhower (uncredited)</li><li>Clément Harari – Bit part (uncredited)</li><li>Ruth Hausmeister – Frau Rommel (uncredited)</li><li>Jack Hedley – RAF briefing officer (uncredited)</li><li>Michael Hinz – Manfred Rommel (uncredited)</li><li>Til Kiwe – Capt. Helmuth Lang (uncredited)</li><li>Mickey Knox –  (uncredited)</li><li>Simon Lack – Air Chief Marshal Sir Trafford Leigh-Mallory (uncredited)</li><li>Rudy Lenoir – Bit part (uncredited)</li><li>Joseph Lowe – Ranger at Ponte du Hoc (uncredited)</li><li>Wolfgang Lukschy – Col. Gen. Alfred Jodl (uncredited)</li><li>Victor Maddern – Pvt. Hutchinson (uncredited)</li><li>Howard Marion-Crawford – Doctor (uncredited)</li><li>Neil McCallum – Bit part (uncredited)</li><li>Edward Meeks –  (uncredited)</li><li>John Meillon – RAdm. Alan G. Kirk (uncredited)</li><li>Kurt Meisel – Capt. Ernst During (uncredited)</li><li>Tony Mordente – Cook (uncredited)</li><li>Louis Mounier – Sir Arthur William Tedder (uncredited)</li><li>Bill Nagy – Bit part (uncredited)</li><li>Kurt Pecher – German commander (uncredited)</li><li>Rainer Penkert – Lt. Fritz Theen (uncredited)</li><li>Siân Phillips – WREN (uncredited)</li><li>Maurice Poli – Jean (uncredited)</li><li>Hartmut Reck – Sgt. Bernhard Bergsdorf (uncredited)</li><li>Trevor Reid – Gen. Sir Bernard L. Montgomery (uncredited)</li><li>Heinz Reincke – Col. Josef 'Pips' Priller (uncredited)</li><li>John Robinson – Adm. Sir Bertram Ramsay (uncredited)</li><li>Paul Edwin Roth – Col. Schiller (uncredited)</li><li>Marcel Rouzé – Bit part (uncredited)</li><li>Dietmar Schönherr – Luftwaffe major (uncredited)</li><li>Ernst Schröder – Gen.Hans von Salmuth (uncredited)</li><li>Hans Söhnker – Deutscher Offizier (uncredited)</li><li>Heinz Spitzner – Lt. Col. Helmuth Meyer (uncredited)</li><li>Bob Steele – Paratrooper (uncredited)</li><li>Lee Strasberg – Sergeant Forster (uncredited)</li><li>Nicholas Stuart – Lt. Gen. Omar N. Bradley (uncredited)</li><li>Alice Tissot – Housekeeper (uncredited)</li><li>Serge Tolstoy – German officer (uncredited)</li><li>Lionel Vitrant – The first landed paratrooper, in a garden (uncredited)</li><li>Vicco von Bülow – German officer (uncredited)</li><li>Dominique Zardi – Bit part (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck] was quoted in an interview as saying that he didn't think much of actors forming their own production companies, citing The [Alamo (1960)][/f?id=Alamo%20(1960)], produced by [John Wayne][/p?id=1504], as a failure of such ventures. Wayne found out about this interview before being approached by Zanuck, and refused to appear in the film unless he was paid $250,000 for his role (when the other famous actors were being paid $25,000). Wayne got his requested salary.</li><li>[Sean Connery][/p?id=1866], who made his debut as James Bond also in 1962, acted in the movie along with [Gert Fröbe][/p?id=Gert%20Fr%C3%B6be] and [Curd Jürgens][/p?id=Curd%20J%C3%BCrgens] - two future Bond villains.</li><li>Former U.S. President Dwight D. Eisenhower was considered for the role of himself in the film, and he indicated his willingness. However, it was decided that makeup artists couldn't make him appear young enough to play his WWII self.</li><li>When cost overruns on [Cleopatra][/f?id=11561] (1963) threatened to force 20th Century Fox to shut down production of this film, [Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck] flew to New York to save his project. After an impassioned speech to Fox's board, Zanuck regained control of the company he founded, ultimately finishing this picture and getting the production of [Cleopatra][/f?id=11561] (1963) under control.</li><li>The cameo part of the British Padre was first offered to [Dirk Bogarde][/p?id=Dirk%20Bogarde].</li><li>With a $10,000,000 budget, this was the most expensive black &amp; white film ever made until [Schindler's List][/f?id=18009] (1993).</li><li>As would be done again later in the WWII epic, [Patton][/f?id=17390] (1970), the Twentieth-Century Fox logo is never shown onscreen in this film.</li><li>During the filming of the landings at Omaha Beach, the American soldiers appearing as extras didn't want to jump off the landing craft into the water because they thought it would be too cold. [Robert Mitchum][/p?id=1815], who played General Norm Cota, finally got disgusted with them and jumped in first, at which point the soldiers had no choice but to follow his example.</li><li>In Italy for the filming of [Cleopatra][/f?id=11561] (1963), [Roddy McDowall][/p?id=Roddy%20McDowall] became so frustrated with the numerous delays during its production, he begged [Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck] for a part in this picture just so he could do some work. He ended up with a small role as an American soldier.</li><li>A number of sources credit [Christopher Lee][/p?id=1169] and [Geoffrey Bayldon][/p?id=Geoffrey%20Bayldon] as being in this project but Lee denies working on the film and Bayldon is nowhere to be seen in the final print.</li><li>In his memoirs [Christopher Lee][/p?id=1169] recalls being rejected for a role in the movie because he didn't look like a military man (he served in the RAF during WW2).</li><li>[Alec Guinness][/p?id=1018] was sought for a cameo.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Där Mary | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Där Mary <a href="#" class="grade">++++</a></h2>
+										<h3>There's Something About Mary</h3>
+										<p>
+										Film från <time datetime="1998"><a href="#">1998</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Bobby Farrelly</li><li>Peter Farrelly</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1125.html">Cameron Diaz</a> – Mary</li><li>Matt Dillon – Healy</li><li><a href="/svenusling/p/1075.html">Ben Stiller</a> – Ted</li><li>Lee Evans – Tucker</li><li><a href="/svenusling/p/1158.html">Chris Elliott</a> – Dom</li><li>Lin Shaye – Magda</li><li>Jeffrey Tambor – Sully</li><li>Markie Post – Mary's Mom</li><li>Keith David – Mary's Dad</li><li>W. Earl Brown – Warren</li><li>Sarah Silverman – Brenda</li><li>Khandi Alexander – Joanie</li><li>Marnie Alexenburg – Lisa</li><li>Danny Murphy – Boss' Brother</li><li>Richard Tyson – Detective Krevoy</li><li>Rob Moran – Detective Stabler</li><li>Jackie Flynn – South Carolina Police</li><li>Hillary Matthews – Dom's Wife</li><li>Willie Garson – Dr. Zit Face / High School Pal</li><li>David Shackelford – Coconut Guy</li><li>Dave Goryl – Petey</li><li>Lori Brener – Friend #3</li><li>Jeffrey P. Lerner – Car Hood Kid #1</li><li>Cory Pendergast – Car Hood Kid #2</li><li>Brett Favre – Himself</li><li>Warren Tashjian – Freddie</li><li>Kelly Roarke – Girl</li><li>Herbie Flynn – Homeless Man</li><li>Caryl West – Medical Assistant #1</li><li>Ken Rogerson – Pants at Ankles Guy</li><li>Brad Blank – Paramedic</li><li>Steve Sweeney – Police Officer</li><li>Cindy Oliver – Renise</li><li>Will Coogan – Smokey</li><li>Steve Tyler – TV News Reporter</li><li>Maureen Griffin – Wine Waitress</li><li>Docky – Hot Dog Stud</li><li>Mariann Farrelly – Driving Range Sweetie</li><li>Jonathan Richman – Jonathan</li><li>Tommy Larkins – Drummer</li><li>Lenny Clarke – Fireman</li><li>Daniel Greene – Pizza House Man (scenes deleted)</li><li>Michael Budge – Joey Bishop Look-alike</li><li>James Gifford – Jimmy</li><li>Sean Gildea – Prison Warden</li><li>Zen Gesner – Bartender</li><li>Tracy Anne George – Dancer</li><li>Jesse Farrelly – Dom's Kid</li><li>Anna Farrelly – Dom's Kid</li><li>Zack Lee – Mary's Little Friend</li><li>Valerie Bruce – Nimrod's Cafe Patron</li><li>Kelly O'Brien – Office Assistant</li><li>Mike Charpentier – Hot Club Patron</li><li>Peter Grundy – Hot Club Patron</li><li>Michael 'The Cannon' Gannon – Hot Club Patron</li><li>Peter Conway – Hot Club Patron</li><li>Ann Conway – Hot Club Patron</li><li>Susan O'Day – Hot Club Patron</li><li>Heather Rosbeck – Hot Club Patron</li><li>Jack Shields – Hot Club Barkeep</li><li>Fallon Shields – Hot Club Barkeep</li><li>Bob Grundy – Hot Club Barkeep</li><li>Nancy Farrelly – Boardroom Babe</li><li>Bill Beauchene – Insurance Spitballer</li><li>Kathy Beauchene – Insurance Spitballer</li><li>Manny Barrows – Insurance Spitballer</li><li>Michael Murphy – Office Worker</li><li>Sheila Mone – Office Worker</li><li>Barbara O'Connor – Ashtray Babe</li><li>Tim Sheehan – Camera Hog</li><li>Richie Balsbaugh – Cigar Smoker</li><li>Jim Blake – Architect Partier</li><li>Tim Robbie – Architect Partier</li><li>Providence Wissel – Architect Partier</li><li>Ruth Michelle Meyer – Architect Partier</li><li>Billy Meyer – Architect Partier</li><li>Brian McGlaughlin – Architect Partier</li><li>Brian Mone – Architect Partier</li><li>John Stroehman – Architect Partier</li><li>Pete Anicelli – Architect Partier</li><li>Duana Knight – Architect Babe</li><li>Kelley Schneider – Architect Babe</li><li>Meda Thomas – Architect Babe</li><li>Steve – Rest Stop Couple</li><li>Kenny – Rest Stop Couple</li><li>Pat – Rest Stop Couple</li><li>Mike – Rest Stop Couple</li><li>Billy Dee – Rest Stop Couple</li><li>Sam – Rest Stop Couple</li><li>Ernie – Rest Stop Couple</li><li>Tom – Rest Stop Couple</li><li>Chris – Rest Stop Couple</li><li>Rosie – Rest Stop Couple</li><li>Jeanie Flynn – Cuban Dancer</li><li>Kevin Civale – Cuban Dancer</li><li>Tom Leasca – Cuban Dancer</li><li>Mercy Lopez – Cuban Dancer</li><li>Michael Cheney – Cell Block Bitch</li><li>Scott Rosenberg – Jailbird</li><li>George Bedard – Jailbird</li><li>Terry Mullany – Jailbird</li><li>Rick Coleman – Jailbird</li><li>Michael Burke – Jailbird</li><li>Kris Meyer – Jailbird</li><li>Emilio Diaz – Jailbird</li><li>Billy Smith – Jailbird</li><li>Ed Nelson – Jailbird</li><li>Brian Stube – Jailbird</li><li>Don Daley – Jailbird</li><li>Clem Franek – Strip Club Pervert</li><li>Julia Hissom – Strip Club Pervert</li><li>James 'Sporty' Ahern – Strip Club Pervert</li><li>Robin Gau – Strip Club Pervert</li><li>Paul Pelletier – Cordosa Gawker</li><li>Monique Pelletier – Cordosa Gawker</li><li>Jon Mone – Comic Book Kid</li><li>Nicholas Greenbury – Fish Hook Kid</li><li>Andrew Greenbury – Fish Hook Kid</li><li>Phil Rosenberg – Cell Block Masseuse</li><li>John-Eliot Jordan – Buttercup Singer</li><li>John Adamonis – Buttercup Singer</li><li>Kyle Adamonis – Buttercup Singer</li><li>Neil Pomfret – Buttercup Singer</li><li>Ruth Pomfret – Buttercup Singer</li><li>Josh Miller – Buttercup Singer</li><li>Deborah Smith Ford – Doctor (uncredited)</li><li>Debbie Howard – Tourist (uncredited)</li><li>Richard Jenkins – Psychiatrist (uncredited)</li><li>Don Julio – Jailbird (uncredited)</li><li>Rick Michaels – Restaurant Waiter (uncredited)</li><li>Cord Newman – Extra (uncredited)</li><li>Al Quinn – Domino Player (uncredited)</li><li>Harland Williams – Hitchhiker (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Australian Film Institute, International Award - Bästa skådespelare 2008 (Eric Bana)</li><li>Teen Choice Award - Choice Movie Actress: Drama 2008 (1862)</li><li>IFTA Award - Bästa scenografi 2009</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Football star Steve Young was originally supposed to play the part of Mary's secret love. However, as a practicing Mormon, he declined, due to the nature of the movie.</li><li>The dialogue between Mary and Ted about how there aren't enough meats on cones was originally written for an episode of &quot;[Seinfeld][/f?id=18078]&quot; (1990) that never aired. The Farrelly Brothers liked it and bought it for use in the movie.</li><li>Dropping Ted on the stretcher wasn't scripted. When it happened, they cut to make sure [Ben Stiller][/p?id=1075] was okay and then thought it was so funny they left it in.</li><li>The studio was initially reluctant to allow [Ben Stiller][/p?id=1075] - the Farrelly Brothers' first choice - to star, so the brothers decided upon a then unknown [Owen Wilson][/p?id=1714] instead. When the studio was even more reluctant to let [Wilson][/p?id=1714] star, they agreed to allow the Farrellys to cast [Stiller][/p?id=1075].</li><li>[Bill Murray][/p?id=1081], [Cuba Gooding Jr.][/p?id=1193] and [Vince Vaughn][/p?id=Vince%20Vaughn] were all considered for the role of [Pat Healy][/p?id=Pat%20Healy].</li><li>After the financial losses suffered from [Kingpin][/f?id=15497] (1996), the Farrely brothers thought their next film would probably be they're last. So they decided to go all out and deliver the most hysterically black comedy they could dream up. When There's Something About Mary (1998) became a box-office smash hit, the Farrely's careers were safe to continue.</li><li>[Lee Evans'][/p?id=Lee%20Evans] British accent in the movie was supposed to be fake, but he is British in real life. Therefore his supposedly real American accent is fake.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

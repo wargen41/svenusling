@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Stora Flykten | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Stora Flykten <a href="#" class="grade">+++</a></h2>
+										<h3>The Great Escape</h3>
+										<p>
+										Film från <time datetime="1963"><a href="#">1963</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John Sturges</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1904.html">Steve McQueen</a> – Capt. Hilts The Cooler King""</li><li>James Garner – Flight Lt. Hendley The Scrounger""</li><li><a href="/svenusling/p/1780.html">Richard Attenborough</a> – Squadron Leader Roger Bartlett Big X""</li><li>James Donald – Group Capt. Ramsey The SBO""</li><li><a href="/svenusling/p/1144.html">Charles Bronson</a> – Flight Lt. Danny Velinski The Tunnel King""</li><li><a href="/svenusling/p/1250.html">Donald Pleasence</a> – Flight Lt. Colin Blythe The Forger""</li><li><a href="/svenusling/p/1415.html">James Coburn</a> – Flying Officer Louis Sedgwick The Manufacturer""</li><li>Hannes Messemer – Kommandant von Luger</li><li>David McCallum – Lt. Cmdr. Eric Ashley-Pitt Dispersal""</li><li>Gordon Jackson – Flight Lt. Sandy MacDonald Intelligence""</li><li>John Leyton – Flight Lt. William Dickes The Tunneler""</li><li>Angus Lennie – Flying Officer Archibald Ives The Mole""</li><li>Nigel Stock – Flight Lt. Denys Cavendish The Surveyor""</li><li>Robert Graf – Werner 'The Ferret'</li><li>Jud Taylor – Goff</li><li>Hans Reiser – Herr Kuhn</li><li>Harry Riebauer – Stratwitch</li><li>William Russell – Sorren</li><li>Robert Freitag – Capt. Posen</li><li>Ulrich Beiger – Preissen</li><li>George Mikell – Lt. Dietrich</li><li>Lawrence Montaigne – Haynes ('Diversions')</li><li>Robert Desmond – Griffith 'Tailor'</li><li>Til Kiwe – Frick</li><li>Heinz Weiss – Kramer</li><li>Tom Adams – Dai Nimmo ('Diversions')</li><li>Karl-Otto Alberty – S.S. Officer Steinach</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Paul Brickhill, who wrote the book from which the film is based, was piloting a Spitfire aircraft that was shot down over Tunisia in March 1943. He was taken to Stalag Luft III in Germany, where he assisted in the escape preparations.</li><li>The film was shot entirely on location in Europe, with a complete camp resembling Stalag Luft III built near Munich, Germany. Exteriors for the escape sequences were shot in the Rhine Country and areas near the North Sea, and [Steve McQueen's][/p?id=1904] motorcycle scenes were filmed in Fussen (on the Austrian border) and the Alps. All interiors were filmed at the Bavaria Studio in Munich.</li><li>When the Bavaria Studio's backlot proved to be too small, the production team obtained permission from the German government to shoot in a national forest adjoining the studio. After the end of principal photography, the company restored (by reseeding) some 2,000 small pine trees that had been damaged in the course of shooting.</li><li>During the climatic motorcycle chase, [John Sturges][/p?id=John%20Sturges] allowed [Steve McQueen][/p?id=1904] to ride (in disguise) as one of the pursuing German soldiers, so that in the final sequence, through the magic of editing, he's actually chasing himself.</li><li>Several cast members were actual P.O.W.s during World War II. [Donald Pleasence][/p?id=1250] was held in a German camp, [Hannes Messemer][/p?id=Hannes%20Messemer] in a Russian camp and [Til Kiwe][/p?id=Til%20Kiwe] and [Hans Reiser][/p?id=Hans%20Reiser] were prisoners of the Americans.</li><li>[Charles Bronson][/p?id=1144], who portrays the chief tunneler, brought his own expertise and experiences to the set: he had been a coal miner before turning to acting and gave director [John Sturges][/p?id=John%20Sturges] advice on how to move the earth. As a result of his work in the coal mines, [Bronson][/p?id=1144] suffered from claustrophobia just as his character had.</li><li>Hilts ([Steve McQueen][/p?id=1904]) strings a wire across the road to obtain a motorcycle. [McQueen][/p?id=1904] himself played the German motorcyclist who hits the wire.</li><li>The motorcycle scenes were not based on real life but were added at [Steve McQueen's][/p?id=1904] suggestion.</li><li>Wally Floody, the real-life &quot;Tunnel King&quot; (he was transferred to another camp just before the escape), served as a consultant to the filmmakers, almost full-time, for more than a year.</li><li>The nationality of a few of the prisoners in the story was changed, emphasizing American, and de-emphasizing Commonwealth and other Allied.</li><li>[Steve McQueen][/p?id=1904] accepted the role of Hilts on the condition that he got to show off his motorcycle skills.</li><li>[Steve McQueen][/p?id=1904] held up production because he demanded that the script be rewritten to give his character more to do.</li><li>Though seemingly hauled away for allowing the escape to take place, the Commandant was actually arrested for being involved in a brisk black-market operation, a fact unearthed during the Gestapo investigation of the escape.</li><li>[Donald Pleasence][/p?id=1250] had actually been a Royal Air Force pilot in World War II, who was shot down, became a prisoner of war and was tortured by the Germans. When he kindly offered advice to the film's director [John Sturges][/p?id=John%20Sturges], he was politely asked to keep his &quot;opinions&quot; to himself. Later, when another star from the film informed [John Sturges][/p?id=John%20Sturges] that [Pleasence][/p?id=1250] had actually been a RAF Officer in a World War II German POW Stalag camp, [Sturges][/p?id=John%20Sturges] requested his technical advice and input on historical accuracy from that point forward.</li><li>During production, [Charles Bronson][/p?id=1144] met and fell in love with [David McCallum's][/p?id=David%20McCallum] wife, [Jill Ireland][/p?id=Jill%20Ireland], and he jokingly told [McCallum][/p?id=David%20McCallum] he was going to steal her away from him. In 1967, [Ireland][/p?id=Jill%20Ireland] and [McCallum][/p?id=David%20McCallum] divorced, and she married [Bronson][/p?id=1144].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

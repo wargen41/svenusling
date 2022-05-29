@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Gröna Milen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Gröna Milen <a href="#" class="grade">++++</a></h2>
+										<h3>The Green Mile</h3>
+										<p>
+										Film från <time datetime="1999"><a href="#">1999</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre19">Mystik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Frank Darabont</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1950.html">Tom Hanks</a> – Paul Edgecomb</li><li><a href="/svenusling/p/1645.html">Michael Clarke Duncan</a> – John Coffey</li><li><a href="/svenusling/p/1220.html">David Morse</a> – Brutus 'Brutal' Howell</li><li><a href="/svenusling/p/1094.html">Bonnie Hunt</a> – Jan Edgecomb</li><li><a href="/svenusling/p/1416.html">James Cromwell</a> – Warden Hal Moores</li><li><a href="/svenusling/p/1654.html">Michael Jeter</a> – Eduard Delacroix</li><li>Graham Greene – Arlen Bitterbuck</li><li>Doug Hutchison – Percy Wetmore</li><li><a href="/svenusling/p/1853.html">Sam Rockwell</a> – 'Wild Bill' Wharton</li><li>Barry Pepper – Dean Stanton</li><li>Jeffrey DeMunn – Harry Terwilliger</li><li><a href="/svenusling/p/1716.html">Patricia Clarkson</a> – Melinda Moores</li><li><a href="/svenusling/p/1361.html">Harry Dean Stanton</a> – Toot-Toot</li><li>Dabbs Greer – Old Paul Edgecomb</li><li>Eve Brent – Elaine Connelly</li><li><a href="/svenusling/p/2007.html">William Sadler</a> – Klaus Detterick</li><li>Mack Miles – Orderly Hector</li><li>Rai Tasco – Man in Nursing Home</li><li>Edrie Warner – Lady in Nursing Home</li><li>Paula Malcomson – Marjorie Detterick</li><li>Christopher Joel Ives – Howie Detterick</li><li>Evanne Drucker – Kathe Detterick</li><li>Bailey Drucker – Cora Detterick</li><li>Brian Libby – Sheriff McGee</li><li>Brent Briscoe – Bill Dodge</li><li>Bill McKinney – Jack Van Hay</li><li><a href="/svenusling/p/1316.html">Gary Sinise</a> – Burt Hammersmith</li><li>Rachel Singer – Cynthia Hammersmith</li><li>Scotty Leavenworth – Hammersmith's Son</li><li>Katelyn Leavenworth – Hammersmith's Daughter</li><li>Bill Gratton – Earl the Plumber</li><li>Dee Croxton – Woman at Del's Execution</li><li>Rebecca Klingler – Wife at Del's Execution</li><li>Gary Imhoff – Husband at Del's Execution</li><li>Van Epperson – Police Officer</li><li>David E. Browning – Reverend at Funeral</li><li>Tommy Barnes – Tower Guard (uncredited)</li><li>Bill Craddock – Inmate (uncredited)</li><li>Christopher Greenwood – Prison Guard (uncredited)</li><li>Phil Hawn – Police Photographer (uncredited)</li><li>Ted Hollis – Coffee Execution Witness (uncredited)</li><li>Dono Langley – Posse Member (uncredited)</li><li>Robert Malone – Tower Guard (uncredited)</li><li>Gower Mills – Inmate (uncredited)</li><li>Garth Shaw – Inmate (uncredited)</li><li>Tim Smith – Member of the Posse (uncredited)</li><li>Toy Spears – Banker Posse Member (uncredited)</li><li>Dora Tate – Mourner (uncredited)</li><li>Samual Tate – Mourner (uncredited)</li><li>Todd Thompson – Prison Guard (uncredited)</li><li>James Marshall Wolchok – Prison Guard (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BMI Film Music Award 2001</li><li>BMI Film & TV Awards, Most Performed Song from a Film (For the song "Doesn't Really Matter".) 2001 (Janet Jackson)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Bästa smink 2001</li><li>Black Reel - Bästa sång (For the song "Doesn't Really Matter".) 2001 (Janet Jackson)</li><li>Blockbuster Entertainment Award - Favorite Actor - Comedy 2001 (1261)</li><li>Blockbuster Entertainment Award - Favorite Actress - Comedy 2001 (Janet Jackson)</li><li>Blockbuster Entertainment Award - Favorite Song from a Movie (Internet Only) (For the song "Doesn't Really Matter".) 2001 (Janet Jackson)</li><li>Blockbuster Entertainment Award - Favorite Soundtrack (Internet Only) 2001</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Special Makeup Effects - Feature 2001</li><li>Blimp Award - Favorite Movie 2001</li><li>Blimp Award - Favorite Movie Actor 2001 (1261)</li><li>Blimp Award - Favorite Movie Actress 2001 (Janet Jackson)</li><li>MTV Movie Award - Bästa komiska insats 2001 (1261)</li><li>Golden Satellite Award - Bästa skådespelare - Komedi eller Musikal 2001 (1261)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The name for the character John Coffey was lifted from a college professor, Rev. John Coffee. [Stephen King][/p?id=Stephen%20King] had met him once and really liked his name and used it in &quot;The Green Mile&quot;. Reverend Coffee taught history classes at Emerson College in Boston Massachusetts. He retired in May 2005.</li><li>Originally set in 1932, the timeframe was bumped to 1935 so the movie Top Hat could be featured.</li><li>[Harry Dean Stanton][/p?id=1361] appears in the film. There is a character named Harry, and another named [Dean Stanton][/p?id=1361]. This is merely a happy coincidence since the characters' names existed in the book long before [Harry Dean Stanton][/p?id=1361] was cast in the movie.</li><li>In actuality, [Michael Clarke Duncan][/p?id=1645] is of a similar height as his co-star [David Morse][/p?id=1220] and is a couple inches shorter than James [Cromwell][/f?id=11724]. Among other things, creative camera angles were used to create the illusion that Duncan as John Coffey towered over the prison staff, even Brutal Howell and Warden Moores.</li><li>[Michael Jeter][/p?id=1654] (who plays Eduard Delacroix) was also in [Mousehunt][/f?id=16538], another film which co-starred a gifted mouse.</li><li>At the beginning of the movie, when the old Paul Edgecomb is walking to get some breakfast after waking from that bad dream, he is walking on a tiled floor that is very green, as if it's his Green Mile.</li><li>The prison guards wear uniforms to give the movie a better feel, even though uniforms weren't in use at the time in which the movie is set.</li><li>The music played over the loudspeakers in the retirement home as Old Paul Edgecomb first walks out of his room is the same as the music the nurses played at medication time in [One Flew Over the Cuckoo's Nest][/f?id=G%C3%B6kboet]. The music used is Mantovani's Charmaine.</li><li>Originally, [Tom Hanks][/p?id=1950] was going to play the Old Paul Edgecomb but the makeup tests didn't make him look credible enough to be an elderly man. [Dabbs Greer][/p?id=Dabbs%20Greer] was cast instead as the older Paul Edgecomb.</li><li>By the time Paul introduced Elaine to Mr. Jingles, the mouse would have to be at least 64 years old - over nine times the age of the oldest ever known real mouse.</li><li>While many of [Stephen King's][/p?id=Stephen%20King] novels are set in the author's native Maine, The Green Mile takes place in Louisiana. However, the surname of the main character - Edgecomb - is the name of a town on Maine's mid-coast.</li><li>[Doug Hutchison][/p?id=Doug%20Hutchison] (Percy) was given, according to the director, the squeakiest shoes he'd ever heard. He thought this was the greatest bit of fate, and a &quot;perfectly wonderful, annoying character trait&quot; that he kept it in the movie, and you can hear sometimes how loud his shoes are.</li><li>When the producers were having trouble finding the right actor to fill the role of John Coffey, [Bruce Willis][/p?id=1117] suggested [Michael Clarke Duncan][/p?id=1645] with whom he had co-starred in [Armageddon][/f?id=10463].</li><li>[John Travolta][/p?id=1501] was offered the role of Paul Edgecomb but turned it down.</li><li>[Dabbs Greer's][/p?id=Dabbs%20Greer] last film.</li><li>When Paul and Brutal take John Coffey outside at night John looks at the stars and says &quot;Look Boss, it's Cassie, the lady in the rocking chair.&quot; This is a reference to the constellation Cassiopeia. In Greek mythology Queen Cassiopeia is often depicted as sitting in a chair or rocking chair.</li><li>More than 30 works of [Stephen King][/p?id=Stephen%20King] have been adapted for movies, but this is the only one to have broken the $100 million mark at the North American box office (as of November 2007).</li><li>Early in the film Paul yells at Percy to &quot;Get the fuck off my block&quot;, but it was later re-dubbed to &quot;Get the hell off my block&quot;.</li><li>Many actors in this film have previously or subsequently appeared in other [Stephen King][/p?id=Stephen%20King] adaptations. [David Morse][/p?id=1220] appeared in [The Langoliers][/f?id=15635] and [Hearts in Atlantis][/f?id=Hj%C3%A4rtan%20I%20Atlantis]. James [Cromwell][/f?id=11724] appeared in 'Salem's Lot, which was previously made with his wife, [Julie Cobb][/p?id=Julie%20Cobb]. [Patricia Clarkson][/p?id=1716] appeared in [Carrie][/f?id=11454]. [Jeffrey DeMunn][/p?id=Jeffrey%20DeMunn] and [William Sadler][/p?id=2007] appeared together in [The Shawshank Redemption][/f?id=17203] as well as [The Mist][/f?id=The%20Mist], also both directed by [Frank Darabont][/p?id=Frank%20Darabont]. [Harry Dean Stanton][/p?id=1361] appeared in [Christine][/f?id=Christine], and [Gary Sinise][/p?id=1316] appeared in [The Stand][/f?id=17413].</li><li>According to one of one of the featurettes on the DVD, [Stephen King][/p?id=Stephen%20King] called this the film single most faithful adaptation of his work.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

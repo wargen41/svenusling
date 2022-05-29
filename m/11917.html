@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Déjà Vu | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Déjà Vu <a href="#" class="grade">+++</a></h2>
+										<h3>Deja Vu</h3>
+										<p>
+										Film från <time datetime="2006"><a href="#">2006</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Tony Scott</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1240.html">Denzel Washington</a> – Agent Doug Carlin - ATF</li><li>Paula Patton – Claire Kuchever</li><li><a href="/svenusling/p/1973.html">Val Kilmer</a> – Agent Paul Pryzwarra - FBI</li><li>James Caviezel – Carroll Oerstadt</li><li>Adam Goldberg – Dr. Alexander Denny</li><li><a href="/svenusling/p/1271.html">Elden Henson</a> – Gunnars</li><li>Erika Alexander – Shanti</li><li><a href="/svenusling/p/1115.html">Bruce Greenwood</a> – Agent Jack McCready - FBI</li><li>Rich Hutchman – Agent Stalhuth</li><li>Matt Craven – Agent Larry Minuti - ATF</li><li>Donna W. Scott – Beth</li><li>Elle Fanning – Abbey</li><li>Brian Howe – Medical Examiner</li><li>Enrique Castillo – Claire's Father</li><li>Mark Phinney – Agent Kevin Donnelly - ATF</li><li>Shondrella Avery – Kathy - Secretary</li><li>John McConnell – Sheriff Bob Reed</li><li>Dane Rhodes – Ferry Captain</li><li>Clay Steakley – Ferry Worker</li><li>Lorry Houston – Cop at Disaster</li><li>Polly Craig – Elderly Woman at Disaster</li><li>Ted Manson – Crying Man at Disaster</li><li>Yvonne Landry – Shellshocked Woman</li><li>Brian F. Durkin – National Guard Officer</li><li>Kenneth Lee – Priest</li><li>Ron Flagge – Mayor</li><li>Scott Alan Smith – Trauma Doctor</li><li>Nadia Shazana – Trauma Nurse</li><li>Lew Temple – Paramedic</li><li>Charles Hirsch – Paramedic</li><li>Justin Colvin – Sailor</li><li>Brandi Coleman – Sailor</li><li>J. Todd Smith – Sailor</li><li>Jonathan Majoue – Sailor</li><li>Jerrod Paige – Sailor</li><li>John Will Clay – Sailor</li><li>Bart Hansard – Ed Elkins</li><li>Scott Klace – Police Lieutenant #1</li><li>David Pease – Port Authority</li><li>Andy Umberger – NTSB Investigator</li><li>Patt Noday – News Reporter</li><li>Ritchie Montgomery – Agent #1</li><li>Jack Daniel Stanley – Criminalist</li><li>Maureen Brennan – Harbor Cop</li><li>Randy Austin – Harbor Cop</li><li>J.W. Williams – Harbor Cop</li><li>Rio Hackford – Beth's Boyfriend</li><li>Gary Grubbs – Police Lieutenant #2</li><li>Frank Duffy – Agent #3</li><li>Bill Ladd – Coast Guardsman</li><li>Lara Grice – Reporter</li><li>Lowell Perry – Reporter</li><li>Michael Arata – Reporter</li><li>Sylvia Jefferies – Reporter</li><li>Carol Sutton – Eyewitness / Survivor</li><li>Julia Lashae – Eyewitness / Survivor</li><li>Chris Rose – Coroner at Disaster</li><li>Douglas M. Griffin – Dock Worker</li><li>Margaret Lawhon – Channel 8 Reporter</li><li>Roy McCrerey – National Guardsman at Disaster</li><li>Freddy Mitchell – SAR Diver</li><li>David Jensen – Ferry Official</li><li>Jerry Rudden – Fire Chief Rudden</li><li>John Johnson – Fire Chief</li><li>Ronald Mason – EMT Paramedic</li><li>Shawn Michael Patrick – ATF Agent</li><li>James Huang – ATF Agent</li><li>Jennifer Weston – M.D. / Technical Advisor</li><li>Angela Daun – Ambulance Bay Nurse</li><li>Gregg Kawecki – Hospital Security Guard</li><li>Ann Turkel – Technician</li><li>Christopher Scholl – Newspaper Reporter</li><li>Charmaine Neville – Singer at Funeral</li><li>Bruce Barnes – Zydeco Singer at Funeral</li><li class="voice">Nolan North – Ex-Fiance (röst)</li><li>Julia Adams – Ferry Survivor (uncredited)</li><li>Dale Beasley – ATF Agent (uncredited)</li><li>Blake Nelson Boyd – Salvage Worker (uncredited)</li><li>Edward Cummings – Bum at Mission (uncredited)</li><li>James J. Duhon – Sailor (uncredited)</li><li>Joe Fontana – Ferry Passenger (uncredited)</li><li>Debby Gaudet – FBI Analyst (uncredited)</li><li>Mark Holmes – Forklift Driver (uncredited)</li><li>Rhonda Huete – Chrissie - Schoolteacher (uncredited)</li><li>Cliford Johnson – Bus Boy (uncredited)</li><li>Lorin Moore – Family Father (uncredited)</li><li>Wayne Douglas Morgan – Agent Hendricks (uncredited)</li><li>Jay Oliver – Ferry Passenger (uncredited)</li><li>Nick Reasons – ATF Swat Team Officer (uncredited)</li><li>Johnny Cley Rivers – Patron at Palace Cafe (uncredited)</li><li>Daniel Vincent – Navy C.S.I. (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Near the end of the car chase, Doug originally said &quot;Jesus&quot; after first seeing Oerstadt's face. This caused the audience at the first preview screening to erupt into laughter, as [James Caviezel][/p?id=James%20Caviezel], who played Oerstadt, is famous for playing Jesus in [The Passion Of The Christ][/f?id=17380] (2004). This unintentional reference had gone overlooked by director [Tony Scott][/p?id=Tony%20Scott]; he had the line removed from the film before its release.</li><li>The first [Tony Scott][/p?id=Tony%20Scott] film to be rated PG-13 since [Days Of Thunder][/f?id=11846] (1990).</li><li>[James Caviezel][/p?id=James%20Caviezel] decided at the last minute to do the stunt where he is hit by a car himself. If injured he could have been paralyzed.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

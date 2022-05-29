@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Blodiga Snaran | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Blodiga Snaran <a href="#" class="grade">++++</a></h2>
+										<h3>Witchfinder General</h3>
+										<p>
+										Film från <time datetime="1968"><a href="#">1968</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre22">Skräck</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Michael Reeves</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1978.html">Vincent Price</a> – Matthew Hopkins</li><li>Ian Ogilvy – Richard Marshall</li><li>Rupert Davies – John Lowes</li><li>Hilary Heath – Sara</li><li>Robert Russell – John Stearne</li><li>Nicky Henson – Swallow</li><li>Tony Selby – Salter</li><li>Bernard Kay – Fisherman</li><li>Godfrey James – Webb</li><li>Michael Beint – Captain Gordon</li><li>John Trenaman – Harcourt</li><li>Bill Maxwell – Gifford</li><li>Paul Ferris – Paul</li><li>Maggie Kimberly – Elizabeth</li><li>Peter Haigh – Lavenham Magistrate</li><li>Hira Talfrey – Hanged Woman</li><li>Ann Tirard – Old Woman</li><li>Peter Thomas – Farrier</li><li>Edward Palmer – Shepherd</li><li>David Webb – Jailer</li><li>Lee Peters – Sergeant</li><li>David Lyell – Footsoldier</li><li>Alf Joint – Sentry</li><li>Martin Terry – Hoxne Innkeeper</li><li>Jack Lynn – Brandeston Innkeeper</li><li>Beaufoy Milton – Priest</li><li>Dennis Thorne – Villager</li><li>Michael Segal – Villager</li><li>Toby Lenon – Old Man</li><li>Margaret Nolan – Girl at Inn</li><li>Sally Douglas – Girl at Inn</li><li>Donna Reading – Girl at Inn</li><li>Patrick Wymark – Cromwell</li><li>Wilfrid Brambell – Master Loach</li><li>Gillian Aldam – Young Woman in Cell</li><li>Philip Waddilove – Soldier</li><li>Derek Ware – Boy at Hoxne Inn</li><li>John Kidd – Magistrate</li><li>Susi Field – Girl at Inn</li><li>Tasma Bereton – Girl at Inn (uncredited)</li><li>Sally Geeson – Maid (uncredited)</li><li>David Reynolds-Lacey – Unconscious Drunk in Tavern (uncredited)</li><li>Sandy Seagar – Girl at Inn (uncredited)</li><li>Ronald Soar – Villager (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>European Film Award - Bästa scenografi 1991</li><li>Sitges - Catalonian International Film Festival, Best Director 1991</li><li>Sitges - Catalonian International Film Festival, Best Actor 1991 (Dominique Pinon)</li><li>Sitges - Catalonian International Film Festival, Prize of the Catalan Screenwriter's Critic and Writer's Association 1991</li><li>Sitges - Catalonian International Film Festival, Best Original Soundtrack 1991</li><li>Tokyo International Film Festival, Gold Award 1991</li><li>César Awards, César - Bästa manus 1992</li><li>César Awards, César - Bästa debut 1992</li><li>César Awards, César - Bästa klippning 1992</li><li>César Awards, César - Bästa scenografi 1992</li><li>Fantasporto, Audience Jury Award 1992</li><li>Guild of German Art House Cinemas, Guild Film Award - Silver - Utländsk film 1993</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>European Film Award - Best Young Film 1991</li><li>Sitges - Catalonian International Film Festival, Best Film 1991</li><li>César Awards, César - Bästa manliga biroll 1992 (Jean-Claude Dreyfus)</li><li>César Awards, César - Mest lovande skådespelerska 1992 (Marie-Laure Dougnac)</li><li>César Awards, César - Bästa foto 1992</li><li>César Awards, César - Bästa musik 1992</li><li>César Awards, César - Bästa ljud 1992</li><li>César Awards, César - Bästa kostym 1992</li><li>Fantasporto, International Fantasy Film Award - Bästa film 1992</li><li>BAFTA Film Award - Bästa ickeengelskspråkiga film 1993</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Vincent Price][/p?id=1978] regarded his performance here as the finest of his horror movie career.</li><li>The real Matthew Hopkins was only in his mid 20s in 1645 and died before he was 30. [Vincent Price's][/p?id=1978] character is middle-aged, like the actor himself. Hopkins and Stearne executed more than 300 people, mainly women, during their two or three years of '&quot;witch hunting&quot;. Considering that 500 people in total were executed for witchcraft in England between the late 15th and late 18th centuries, it means that Hopkins was responsible for two-thirds of these executions during a period of three years.</li><li>Director [Michael Reeves][/p?id=Michael%20Reeves] wanted [Donald Pleasence][/p?id=1250] to play Matthew Hopkins, but American-International Pictures, the American distributor and co-financier of the film, insisted that [Vincent Price][/p?id=1978] play the title character, and [Reeves][/p?id=Michael%20Reeves] grudgingly accepted.</li><li>Even the truncated version was met with considerable controversy by UK film critics. Dilys Powell in &quot;The Sunday Times&quot; complained, &quot; . . . 17th-century hanging, burning, raping, screaming and [Vincent Price][/p?id=1978] as England's prize torture-overseer. Peculiarly nauseating&quot;. &quot;The Guardian&quot; felt the film was filled with &quot;gratuitous sadism&quot;. Margaret Hinxman of &quot;The Sunday Telegraph&quot; dismissed it as a &quot;sadistic extravaganza&quot;. Nonetheless, several critics felt the film was worth accolades. John Russell Taylor in the &quot;London Times Saturday Review&quot; said the film &quot; . . . is quite happily and deliberately a horror film: that is to say, it has no particular pretensions to being anything else . . . There is much in it which would win [Michael Reeves][/p?id=Michael%20Reeves] an important reputation if he were dealing with some more pretentious, but fundamentally no more serious subject . . . Mr. [Reeves][/p?id=Michael%20Reeves] is no longer merely promising. He already has real achievements behind him: not merely good horror films, but good films, period&quot;. Films and Filming noted that the film &quot;has no explicit 'message', but it does say something about the springs of despair and it says it forcefully. It is a very frightening film . . . Matthew Hopkins is the best of [Price's][/p?id=1978] recent performances. [The film] is emphatically not a horror film; it is, however, a very horrifying one . . . &quot;. Monthly Film Bulletin observed, &quot;Not since [Peeping Tom][/f?id=Peeping%20Tom%20-%20En%20Smygtittare] (1960) has a film aroused such an outcry about nastiness and gratuitous violence as this one . . . the tone of the film is oddly muted, with torture and death in plenty, but viewed matter-of-factly and without stress . . . Throughout the whole film there is a vivid sense of a time out of joint, which comes as much from the stray groups of soldiers who skirmish against unseen attackers in the woods or hang wearily about by the wayside waiting for battle to commence, as from the bloody crimes committed in the name of religion by Matthew Hopkins&quot;.</li><li>Released as The Conqueror Worm in the US by American International Pictures, the film was given the title of a poem by Edgar Allan Poe, and an added voice of [Vincent Price][/p?id=1978] reciting that poem, even though the film has nothing to do with any of Poe's writings.</li><li>As [Michael Reeves][/p?id=Michael%20Reeves] hadn't wanted [Vincent Price][/p?id=1978] for the main role of Matthew Hopkins, there was reportedly tension between the two of them while working together.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

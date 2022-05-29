@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Siste Gentlemannen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Siste Gentlemannen <a href="#" class="grade">++++</a></h2>
+										<h3>The Old Man & the Gun</h3>
+										<p>
+										Film från <time datetime="2018"><a href="#">2018</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>David Lowery</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1821.html">Robert Redford</a> – Forrest Tucker</li><li><a href="/svenusling/p/1135.html">Casey Affleck</a> – John Hunt</li><li><a href="/svenusling/p/1885.html">Sissy Spacek</a> – Jewel</li><li><a href="/svenusling/p/1208.html">Danny Glover</a> – Teddy</li><li>Tom Waits – Waller</li><li>Tika Sumpter – Maureen</li><li>Ari Elizabeth Johnson – Abilene</li><li>Teagan Johnson – Tyler</li><li>Gene Jones – Mr. Owens</li><li>John David Washington – Lt. Kelly</li><li>Barlow Jacobs – Offerman</li><li>Augustine Frizzell – Sandra</li><li>Jennifer Joplin – Martha</li><li>Lisa DeRoberts – Helen the Teller</li><li>Carter Bratton – Local News Anchor</li><li>Mike Dennis – National News Anchor</li><li>Tomas Deckaj – Mechanic</li><li>Isiah Whitlock Jr. – Detective Gene Dentler</li><li>Patrick Newall – Doctor</li><li>Daniel Britt – Sheriff</li><li>Leah Roberts – Dora the Waitress</li><li>Elisabeth Moss – Dorothy</li><li>Alphaeus Green Jr. – Owner</li><li>Keith Carradine – Captain Calder</li><li>Kevin McClatchy – Agent Morton</li><li>Todd Covert – Agent Rick</li><li>Kenneisha Thompson – Kelly Lornin</li><li>Robert Longstreet – Stephen Beckley, Jr., Esq.</li><li>John Wayne Hunt – Trustee Jim</li><li>Clara Harris – Detective Wilson</li><li>Jordan Trovillion – Angela the Teller</li><li>Derek Snow – Security Guard Clayton</li><li>Barry Mulholland – Husband</li><li>Annie Fitzpatrick – Wife</li><li>J. Todd Anderson – Officer Walsh</li><li>Torrie Wiggins – Ms. Phillips</li><li>Annell Brodeur – Arguing Woman</li><li>Toby Halbrooks – Arguing Man</li><li>Christine Dye – Marla the Waitress</li><li>Tom Lepera – Hungry Guard</li><li>Warren Bryson – Agent Summers</li><li>Kelly Mengelkoch – Maddie</li><li>Asher Parran – Robbie</li><li>Kyndra Jefferies – Kyra the Waitress</li><li>Kay Geiger – Bank Manager</li><li>Nathan Neorr – Agent Krombopulos</li><li>Dennis J. Barket – Prison Worker</li><li>Cody Gilbert – Forrest, Age 8</li><li>Jack Michael Doke – Forrest, Age 12</li><li>Alexander M. Partridge – Sandy's Boy</li><li>Larry Jack Dotson – Manager #1</li><li>Pam Dougherty – Manager #2</li><li>Atheena Frizzell – Dora Lee</li><li>Marissa Woolf – Raquel</li><li>Todd Terry – FBI Agent</li><li>Sydney Benter – Reporter</li><li>Krzysztof Abbas – Cell Mate (uncredited)</li><li>Joseph L. Allen – Prisoner (uncredited)</li><li>Felicia Andes – Bank Patron (uncredited)</li><li>Mark Angel – Driver / Pedestrian (uncredited)</li><li>Aqeel Ash-Shakoor – Prison Guard (uncredited)</li><li>Michael Lee Bailey – Prisoner (uncredited)</li><li>Denise Barone – Older Lady at Mall (uncredited)</li><li>Judy McQueen Bauer – Bank Patron (uncredited)</li><li>Anita Farmer Bergman – Theater Patron (uncredited)</li><li>Rick Blodgett – Inmate (uncredited)</li><li>Victoria Borbridge – St. Louis Bank Patron (uncredited)</li><li>John E. Brownlee – Police Officer (uncredited)</li><li>Michael W. Bunch – Dallas Police Officer (uncredited)</li><li>Alejandro Castillo – St. Louis Bank Patron (uncredited)</li><li>Austin Caudill – Driver (uncredited)</li><li>William Cross – Bank Employee (uncredited)</li><li>Laura Dejean – St. Louis Bank Patron (uncredited)</li><li>Bobby Easley – Diner (uncredited)</li><li>Shawn P. Farrell – Bank Employee (uncredited)</li><li>Alessandro Ferraris – Police Officer (uncredited)</li><li>Reese Foster – Prisoner (uncredited)</li><li>John French – Dallas Bank Patron (uncredited)</li><li>Tristan Alijah Garcia – Boy Painter (uncredited)</li><li>Sammy Geroulis – Mall Patron (uncredited)</li><li>Jason Gerrard – Prisoner (uncredited)</li><li>Jason Marcus Griffith – FBI agent (uncredited)</li><li>Chris Hahn – Prison Guard (uncredited)</li><li>John W. Harden – Bank Employee (uncredited)</li><li>Al Harland – Banker M Reuter (uncredited)</li><li>Jennifer Henson – Bank Patron (uncredited)</li><li>Ray Nicholas Hosack – FBI Agent (uncredited)</li><li>Noah Jonson – St. Louis Bank Patron (uncredited)</li><li>Zach Kaltenbach – Bank Patron (uncredited)</li><li>Angie Kessel – Bank Patron (uncredited)</li><li>Susan Kile – Outside Bank Patron (uncredited)</li><li>Kenneth King – Prisoner (uncredited)</li><li>Traci Kochendorfer – Pedestrian (uncredited)</li><li>Bryan Kruse – Theater Patron (uncredited)</li><li>Paul Kulis – Prisoner (uncredited)</li><li>Daniel Lamont – Inmate gang member (uncredited)</li><li>Daniel J. Le Saint – Police Officer (uncredited)</li><li>James Luoma – Armored Car Guard (uncredited)</li><li>Anita S Martin – Diner Patron (uncredited)</li><li>Bryan Massey – Bank Guard #1 (uncredited)</li><li>Joe Merritt – Chicken Shack Customer (uncredited)</li><li>Brianna Moreau – Bank Patron (uncredited)</li><li>Misty O'Bradovich – Bank Employee (uncredited)</li><li>Barbara O'Connor – Bank Patron (uncredited)</li><li>Tammy Payne – Street Parton / Bank Parton (uncredited)</li><li>Richard Phillis – Prisoner (uncredited)</li><li>David Pittinger – Banker P. Ford (uncredited)</li><li>Derek Polen – Bank Employee (uncredited)</li><li>Charles Poole – Officer Bush (uncredited)</li><li>Michelle Poole – Bank Employee (uncredited)</li><li>Aaron Pullins IV – Detective (uncredited)</li><li>Alec Reeves – Prisoner (uncredited)</li><li>Lare Roberts – Pedestrian (uncredited)</li><li>Steven Schraub – St. Louis Bank Manager (uncredited)</li><li>James Siderits – Bank Patron (uncredited)</li><li>Carly Tamborski – Bank Patron (uncredited)</li><li>Hickory Taylor – Chef, Blue Bird Cafe (uncredited)</li><li>Robert P. Thitoff – Prison Guard (uncredited)</li><li>Skyler Chase Thomas – Child Painting (uncredited)</li><li>Stephanie Trabel – Bank Patron (uncredited)</li><li>Tom Vallis – Prison Inmate (uncredited)</li><li>Anthony W. Vickers – Prison Guard (uncredited)</li><li>Steven Terry Walker – Mall Patron (uncredited)</li><li>Allen Warchol – Sheriff #2 (uncredited)</li><li>Jan Duncan Weir – Bank Patron (uncredited)</li><li>Dominick Wilkins – Prison Inmate (uncredited)</li><li>Amber Shana Williams – Bank Patron (uncredited)</li><li>Michael G Wirick – Criminal (uncredited)</li><li>John Ziska – Prisoner (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>NBR Award - Topp tio filmer 1968</li><li>NBR Award - Bästa manliga biroll 1968 (Paul Ford)</li><li>KCFCC Award - Bästa manliga biroll 1968 (1018)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa kvinnliga biroll 1968 (Lillian Gish)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Siste Actionhjälten | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Siste Actionhjälten <a href="#" class="grade">+++</a></h2>
+										<h3>Last Action Hero</h3>
+										<p>
+										Film från <time datetime="1993"><a href="#">1993</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John McTiernan</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1062.html">Arnold Schwarzenegger</a> – Jack Slater</li><li><a href="/svenusling/p/1293.html">F. Murray Abraham</a> – John Practice</li><li>Art Carney – Frank</li><li>Charles Dance – Benedict</li><li>Frank McRae – Dekker</li><li>Tom Noonan – Ripper</li><li><a href="/svenusling/p/1820.html">Robert Prosky</a> – Nick</li><li><a href="/svenusling/p/1057.html">Anthony Quinn</a> – Vivaldi</li><li><a href="/svenusling/p/1640.html">Mercedes Ruehl</a> – Mom</li><li>Austin O'Brien – Danny</li><li><a href="/svenusling/p/1387.html">Ian McKellen</a> – Death</li><li>Professor Toru Tanaka – Tough Asian Man</li><li><a href="/svenusling/p/1465.html">Joan Plowright</a> – Teacher</li><li>Keith Barish – Keith Barish</li><li><a href="/svenusling/p/1458.html">Jim Belushi</a> – James Belushi</li><li><a href="/svenusling/p/1152.html">Chevy Chase</a> – Chevy Chase</li><li>Chris Connelly – Chris Connelly</li><li>Karen Duffy – Karen Duffy</li><li>Larry Ferguson – Larry Ferguson</li><li>Leeza Gibbons – Leeza Gibbons</li><li>M.C. Hammer – M.C. Hammer</li><li>Little Richard – Little Richard</li><li><a href="/svenusling/p/1818.html">Robert Patrick</a> – T-1000</li><li>Maria Shriver – Maria Shriver</li><li><a href="/svenusling/p/1874.html">Sharon Stone</a> – Catherine Trammell</li><li>Melvin Van Peebles – Melvin Van Peebles</li><li>Damon Wayans – Damon Wayans</li><li>Jason Kelly – Lieutenant Governor</li><li>Noah Emmerich – Rookie</li><li>Tina Turner – The Mayor</li><li>Billy D. Lucas – SWAT Cop</li><li>Ryan Todd – Andrew Slater</li><li>Apollo Dukakis – Polonius</li><li>Patrick Flanagan – Punk</li><li>Donald C. Llorens – Monoghan</li><li>Michael Chieffo – Monroe</li><li>Mike Muscat – Cop in L.A. Station</li><li>John Finnegan – Watch Commander</li><li>Bobbie Brown – Video Babe</li><li>Angie Everhart – Video Babe</li><li>Bridgette Wilson-Sampras – Whitney / Meredith</li><li>Jeffrey Braer – Skeezy</li><li>Anthony Peck – Cop at Ex-Wife's House</li><li>Paul Gonzales – Cop #2 in LA Station</li><li>Anna Navarro – Cop in Station</li><li>Dex Elliott Sanders – Mitchell</li><li>Nick Dimitri – Doctor (Funeral)</li><li>Sven-Ole Thorsen – Gunman</li><li><a href="/svenusling/p/1794.html">Rick Ducommun</a> – Ripper's Agent</li><li>Wendle Josepher – Candy Girl</li><li>Michael V. Gazzo – Torelli</li><li>Lee Reherman – Krause</li><li>R.C. Bates – Rabbi</li><li><a href="/svenusling/p/1188.html">Colleen Camp</a> – Ratcliff</li><li>Donna Borghoff – Hooker</li><li>John McTiernan Sr. – Cigar Stand Man</li><li>Tiffany Puhy – Autograph Seeker</li><li><a href="/svenusling/p/1440.html">Jean-Claude Van Damme</a> – Jean-Claude Van Damme</li><li>Kim Anderson – Kim Anderson (uncredited)</li><li>Lena Banks – Movie House Patron (uncredited)</li><li>Gregory J. Barnett – Startled Truck Driver (uncredited)</li><li>Lindsey Nicole Brooks – Girl at funeral (uncredited)</li><li>Neriah Davis – Neriah Davis (uncredited)</li><li class="voice"><a href="/svenusling/p/1207.html">Danny DeVito</a> – Whiskers (röst) (uncredited)</li><li>Bryan Hanna – 'Valet' Manager (uncredited)</li><li>Matt Johnston – Vivaldi Gunmen (uncredited)</li><li>Peter Kent – Maitre D' (uncredited)</li><li>Henry Kingi – Vivaldi Thug Wheelman (uncredited)</li><li>Dagmar Koller – Woman in Police Headquarters (uncredited)</li><li class="voice">Don LaFontaine – Movie Trailer Announcer (röst) (uncredited)</li><li>Al Leong – Vivaldi Gunmen (uncredited)</li><li>Lou Lollio – Mafioso (uncredited)</li><li>Marshall Dancing Elk Lucas – Police Officer (uncredited)</li><li>John Maczko – Pimp (uncredited)</li><li>Jason Menz – Sailor (uncredited)</li><li>Johnny Meyer – New York Pedestrian (uncredited)</li><li>Frank Patton III – Cop Touched by Death (uncredited)</li><li>Nick Pernice – Policeman (uncredited)</li><li>Gladys Portugues – Self (uncredited)</li><li>Paul Vincent Rapisarda – Sidewalk pedestrian (uncredited)</li><li>Janice Rivera – Model (uncredited)</li><li>Thomas Rosales Jr. – Vivaldi Henchman (uncredited)</li><li>Christopher Sararo – Sailor (uncredited)</li><li>Theodore Carl Soderberg – SWAT (uncredited)</li><li>Michael Straka – Autograph Seeker (uncredited)</li><li>Basil Sydney – Claudius (uncredited|archiveFootage)</li><li>Symba – Model (uncredited)</li><li>Brenda Tempel – Extra (uncredited)</li><li>Kevin Ula Christie – L.A. Station Sergeant (uncredited)</li><li>Michael Wehrhahn – Bell Boy (uncredited)</li><li>Persia White – Persia White (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Filming continued until the week before this movie debuted in theatres.</li><li>[Arnold Schwarzenegger][/p?id=1062] thought the script was one of the best he'd ever read. He especially liked all of the elements of comedy, action, drama, and satire in it.</li><li>[Arnold Schwarzenegger][/p?id=1062] wanted this movie to be PG-13, so it would appeal to a broader audience. Being executive producer (for the first time) he approved script, director, cast, studio financing, distribution, marketing, budget, PR firm, planning a foreign release, et cetera. [Schwarzenegger][/p?id=1062] enjoyed the added responsibility, because he could be involved in every facet of production.</li><li>[Charles Dance][/p?id=Charles%20Dance] said in interviews that, after being told that he had won a part turned down by [Alan Rickman][/p?id=1012] because of the salary, he wore a t-shirt on set which read; &quot;I'm cheaper than [Alan Rickman][/p?id=1012]!'</li><li>[Sharon Stone's][/p?id=1874] casting in a brief cameo as her [Basic Instinct][/f?id=10688] (1992) character was somewhat surprising because she and [Arnold Schwarzenegger][/p?id=1062] had clashed on the set of [Total Recall (1990)][/f?id=20707]. She was reluctant to do the cameo but did it as a favour to [Schwarzenegger][/p?id=1062], who reminded her that [Total Recall (1990)][/f?id=20707] had helped her career.</li><li>Just after Frank's house explodes, the black cop says, &quot;Two days to retirement&quot; as a nod to Roger Murtaugh ([Danny Glover][/p?id=1208]) from the Lethal Weapon film franchise. At that point, a soundtrack excerpt from the Lethal Weapon theme plays in the background.</li><li>[Arnold Schwarzenegger][/p?id=1062] considered this movie his first real failure after an unbroken string of successes. He also considered it the beginning of the end of his movie career.</li><li>[John McTiernan][/p?id=John%20McTiernan] said this movie began as a wonderful Cinderella story, with a nine-year-old boy and a pretty good script. But the movie didn't end as it began, referring to the movie's troubled production, and the fact that it opened in theatres a week after [Jurassic Park][/f?id=15341] (1993). After its failure, [McTiernan][/p?id=John%20McTiernan] retreated to his house in Wyoming and took a break from his career.</li><li>The movie ran so far behind schedule that they had just one test screening, which ran for two hours and twenty minutes with a lot of inaudible dialogue, boring the audience. The studio refused to delay the opening, so as not to send the message the movie was in trouble, a decision [Arnold Schwarzenegger][/p?id=1062] agreed with.</li><li>The first time [Arnold Schwarzenegger][/p?id=1062] took a producing credit on a movie.</li><li>Sir [Ian McKellen][/p?id=1387] played Death, a character out of [Ingmar Bergman's][/p?id=1391] [The Seventh Seal][/f?id=12058] (1957). In that movie, Death was played by [Bengt Ekerot][/p?id=Bengt%20Ekerot].</li><li>[Tori Spelling][/p?id=Tori%20Spelling] had a cameo as herself but it was eventually left on the cutting room floor.</li><li>[Robert Zemeckis][/p?id=Robert%20Zemeckis] was in contention to direct at one point.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
