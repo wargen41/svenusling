@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Body Double | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Body Double <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1984"><a href="#">1984</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1105.html">Brian De Palma</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Craig Wasson – Jake</li><li><a href="/svenusling/p/1636.html">Melanie Griffith</a> – Holly</li><li>Gregg Henry – Sam</li><li>Deborah Shelton – Gloria</li><li>Guy Boyd – Jim McLean</li><li>Dennis Franz – Rubin</li><li>David Haskell – Drama Teacher</li><li>Rebecca Stanley – Kimberly</li><li>Al Israel – Corso</li><li>Douglas Warhit – Video Salesman</li><li>B.J. Jones – Douglas</li><li>Russ Marin – Frank</li><li>Lane Davies – Billy</li><li>Barbara Crampton – Carol</li><li>Larry Flash Jenkins – Assistant Director</li><li>Monte Landis – Sid Goldberg</li><li>Linda Shaw – Linda Shaw</li><li>Mindi Miller – Tina</li><li>Denise Loveday – Actress / Vampire Movie</li><li>Gela Nash – Corso's Secretary</li><li>Ray Hassett – Police Officer</li><li>Rick Gunderson – Police Officer</li><li>Jerry Brutsche – Police Officer</li><li>Michael Kearns – Male Porno Star</li><li>Rob Paulsen – Cameraman</li><li>Jeremy Lawrence – Theatre Director</li><li>Rod Loomis – TV Director</li><li>Gary F. Griffith – Auditioning Actor</li><li>Michael White – Security Guard (Gloria's House)</li><li>Emmett Brown – Studio Guard</li><li>H. David Fletcher – Security Guard (Bellini's)</li><li>Marcia del Mar – Production Assistant</li><li>Phil Redrow – Naked Man</li><li>Slavitza Jovan – Saleslady</li><li>Jack Mayhall – Jake's Replacement</li><li>Lindsay Freeman – Girl in Bathroom #1</li><li>Cara Lott – Girl in Bathroom #2</li><li>Brinke Stevens – Girl in Bathroom #3</li><li>Melanie Scott – Girl in Bathroom #4</li><li>Patty Lotz – Girl #1 (Holly Does Hollywood)</li><li>Barbara Peckinpaugh – Girl #2 (Holly Does Hollywood)</li><li>David Ursin – Man #1 (Holly Does Hollywood)</li><li>Casey Sander – Man #2 (Holly Does Hollywood)</li><li>Wes Edwards – Man #3 (Holly Does Hollywood)</li><li>Chuck Waters – Jogger</li><li>Paul A. Calabria – Man with Dog</li><li>Steven Bauer – Assistant Director (Holly Does Hollywood) (uncredited)</li><li>Janette Caldwell –  (uncredited)</li><li>Darcy DeMoss – Barefoot Dancer in Nightclub (uncredited)</li><li>Annette Haven – Gloria Swanson / Norma Desmond (uncredited)</li><li>Holly Johnson – Singing Nightclub Doorman (uncredited)</li><li>Paul Rutherford – Paul Rutherford (uncredited)</li><li>Frank Slaten – Horror Film Crewmember (uncredited)</li><li>Doug Vought – Valet Parker (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Ghent International Film Festival, Georges Delerue Prize 1992</li><li>Tokyo International Film Festival, Bronze Award 1992 (1942)</li><li>PFS Award - Democracy 1993</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 1993 (1942)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Dennis Franz][/p?id=Dennis%20Franz] based his portrayal of Rubin the Director on [Brian De Palma][/p?id=1105].</li><li>[Brian De Palma][/p?id=1105] originally planned for this to be the first Hollywood film to boast unsimulated sex scenes. The studio thought differently.</li><li>[Brian De Palma][/p?id=1105] got the idea to direct Body Double after working with a body double for [Angie Dickinson's][/p?id=1044] shower scene in Dressed to Kill.</li><li>[Deborah Shelton's][/p?id=Deborah%20Shelton] voice was dubbed by actress [Helen Shaver][/p?id=Helen%20Shaver].</li><li>Bret Easton Ellis's novel [American Psycho][/f?id=10309] (adapted into [American Psycho][/f?id=10309] (2000)) references this film many times. It is one of Patrick Bateman's favourite movies, and he's rented it over thirty-seven times.</li><li>[Tatum O'Neal][/p?id=Tatum%20O'Neal], [Jamie Lee Curtis][/p?id=1428] and [Carrie Fisher][/p?id=1131] all auditioned for the role of Holly but turned it down. [Brooke Shields][/p?id=Brooke%20Shields] was offered the role but turned it down in order to study French Literature at Princeton. Linda [Hamilton][/f?id=14417] turned down the role in order to prepare for her role in The [Terminator][/f?id=20093] (1984).</li><li>Actress [Melanie Griffith][/p?id=1636] has said that her role in this movie greatly contributed to her landing the lead female roles in both [Something Wild][/f?id=I%20Vildaste%20Laget] (1986) and [Working Girl][/f?id=21965] (1988).</li><li>[Brian De Palma][/p?id=1105] was not happy with the way that the chase on the beach was filmed.</li><li>Porn star Annette Haven was originally cast for the role of &quot;Holly&quot;, but Columbia Pictures decided to turn her down when their executives saw what kind of movies she had been making. Haven later stated that she was happy because of that because she hadn't liked the script and hadn't liked to be in a film with gory violence.</li><li>Adult film actress Holly Body took her stage name from [Melanie Griffith's][/p?id=1636] character in this movie.</li><li>Debut cinema movie of actress [Barbara Crampton][/p?id=Barbara%20Crampton].</li><li>Rumours developed and lasted for years that director [Brian De Palma][/p?id=1105] had many actresses up to his house to perform the erotic masturbation sequence from this picture.</li><li>Breakthrough film role of actress [Melanie Griffith][/p?id=1636] who got nominated for a Golden Globe Award for this film for Best Performance by an Actress in a Supporting Role in a Motion Picture.</li><li>[Kurt Russell][/p?id=1562] was considered for the role of Scully.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blåsningen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Blåsningen <a href="#" class="grade">++++</a></h2>
+										<h3>The Sting</h3>
+										<p>
+										Film från <time datetime="1973"><a href="#">1973</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>George Roy Hill</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1727.html">Paul Newman</a> – Henry Gondorff</li><li><a href="/svenusling/p/1821.html">Robert Redford</a> – Johnny Hooker</li><li><a href="/svenusling/p/1822.html">Robert Shaw</a> – Doyle Lonnegan</li><li><a href="/svenusling/p/1146.html">Charles Durning</a> – Lt. Wm. Snyder</li><li>Ray Walston – J.J. Singleton</li><li>Eileen Brennan – Billie</li><li>Harold Gould – Kid Twist</li><li>John Heffernan – Eddie Niles</li><li><a href="/svenusling/p/1201.html">Dana Elcar</a> – F.B.I. Agent Polk</li><li>Jack Kehoe – Erie Kid</li><li>Dimitra Arliss – Loretta</li><li>Robert Earl Jones – Luther Coleman</li><li>James Sloyan – Mottola</li><li>Charles Dierkop – Floyd the Bodyguard</li><li>Lee Paul – Bodyguard</li><li>Sally Kirkland – Crystal</li><li>Avon Long – Benny Garfield</li><li>Arch Johnson – Combs</li><li>Ed Bakey – Granger</li><li>Brad Sullivan – Cole</li><li>John Quade – Riley</li><li>Larry D. Mann – Train Conductor</li><li>Leonard Barr – Burlesque House Comedian</li><li>Paulene Myers – Alva Coleman</li><li>Joe Tornatore – Black Gloved Gunman</li><li>Jack Collins – Duke Boudreau</li><li>Tom Spratley – Curly Jackson</li><li>Kenneth O'Brien – Greer</li><li>Ken Sansom – Western Union Executive</li><li>Ta-Tanisha – Louise Coleman</li><li>William 'Billy' Benedict – Roulette Dealer</li><li>Patricia Bratcher – Manicurist (uncredited)</li><li>Susan French – Landlady (uncredited)</li><li>Bruce Kimball – Lacey the Bouncer (uncredited)</li><li>Chuck Morrell – FBI Agent Chuck (uncredited)</li><li>Guy Way – Gambling Den Boss (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Reel Award - Best Sound Editing - Sound Effects 1981</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Robert Shaw][/p?id=1822] injured his ankle and incorporated the resulting limp into his performance.</li><li>[David S. Ward][/p?id=David%20S.%20Ward] got the idea for this movie when he was working on the script for [Steelyard Blues][/f?id=Operation%20Helkn%C3%A4pp] (1973), which includes a pickpocketing scene. Researching this, Ward found himself reading about con artists. Ward had shown the other screenplay to [Tony Bill][/p?id=Tony%20Bill], so he now gave him an outline of this story. [Bill][/p?id=Tony%20Bill] liked it immediately and brought in Julia Phillips[ and ][/p?id=%20and%20]Michael Phillips[; the three then produced both films. Ward wrote the script with ][/p?id=%3B%20the%20three%20then%20produced%20both%20films.%20Ward%20wrote%20the%20script%20with%20]Robert Redford[ in mind as Hooker, but ][/p?id=%20in%20mind%20as%20Hooker%2C%20but%20]Robert Redford||Redford[ initially turned the part down. Even after changing his mind, he didn't expect the movie to be a hit. ][/p?id=%20initially%20turned%20the%20part%20down.%20Even%20after%20changing%20his%20mind%2C%20he%20didn't%20expect%20the%20movie%20to%20be%20a%20hit.%20]Robert Shaw[ got the part of Lonnegan only after ][/p?id=%20got%20the%20part%20of%20Lonnegan%20only%20after%20]Richard Boone[ and another actor had declined it. ][/p?id=%20and%20another%20actor%20had%20declined%20it.%20]George Roy Hill[ saw the screenplay by accident and asked for the director's job. He routinely showed his projects to ][/p?id=%20saw%20the%20screenplay%20by%20accident%20and%20asked%20for%20the%20director's%20job.%20He%20routinely%20showed%20his%20projects%20to%20]Paul Newman[, and ][/p?id=%2C%20and%20]Paul Newman||Newman** was pleased to join this one. Hill wanted to film the picture on location, but Henry Bumstead was adamant that it would be much too hard to get the period appearance right; for example, things like lane markings on the streets. In the end, the only location shooting was a few days' worth in [Chicago][/f?id=11526] and Los Angeles; most of the exteriors were filmed on Universal's back lot.</li><li>According to costume designer Edith Head's biography, [Robert Redford][/p?id=1821] and [Paul Newman][/p?id=1727], both of whom have blue eyes, wanted their shirts to be blue in order to emphasize their eyes. As a compromise, Head outfitted each man in blue in alternating scenes. Unfortunately, although it is an attractive story, it's a complete myth. A simple viewing of the film reveals the truth. [Newman][/p?id=1727] is never outfitted in blue in the whole film. He is first seen in a white vest in the brothel scenes. On the train he alternates between a brown striped shirt and a white one, which may or may not be a continuity error. From then until the end of the film, he is seen exclusively in a dinner jacket and white shirt. [Redford][/p?id=1821] wears a blue shirt on a couple of occasions, but even this doesn't really fit with this oddly persistent legend.</li><li>[Robert Redford's][/p?id=1821] character (Johnny Hooker) is supposedly named after blues legend [John Lee Hooker][/p?id=John%20Lee%20Hooker].</li><li>[Jack Nicholson][/p?id=1402] turned down the role of Johnny Hooker before [Robert Redford][/p?id=1821] changed his mind and decided to play it.</li><li>The movie was filmed on the backlot of Universal studios and the diner in which Hooker meets Lonnegan is the same diner interior used in [Back to the Future][/f?id=20376] (1985) in which Marty McFly first meets his father and calls Doc Brown.</li><li>First Universal Studios film to win the Best Picture Oscar since [All Quiet on the Western Front][/f?id=17571] (1930).</li><li>[Robert Redford][/p?id=1821] didn't see the movie until June 2004.</li><li>[Richard Boone][/p?id=Richard%20Boone] was the first choice for the role of Lonnegan. [Oliver Reed][/p?id=1704] was offered the role but refused to test for it (he would later play Lonnegan in the sequel). [Stephen Boyd][/p?id=Stephen%20Boyd] was also considered.</li><li>Edith Head won her 8th and final Best Costume Design Academy Award for this film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

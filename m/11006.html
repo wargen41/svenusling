@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Birdman | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Birdman <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2014"><a href="#">2014</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Alejandro González Iñárritu</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1655.html">Michael Keaton</a> – Riggan</li><li><a href="/svenusling/p/1281.html">Emma Stone</a> – Sam</li><li>Kenny Chin – Korean Grocer</li><li>Jamahl Garrison-Lowe – Daniel (Stagehand)</li><li>Zach Galifianakis – Jake</li><li><a href="/svenusling/p/1685.html">Naomi Watts</a> – Lesley</li><li>Jeremy Shamos – Ralph</li><li>Andrea Riseborough – Laura</li><li>Katherine O'Sullivan – Costume Assistant</li><li>Damian Young – Gabriel</li><li>Keenan Shimizu – Han</li><li>Akira Ito – Translator</li><li>Natalie Gold – Clara</li><li>Merritt Wever – Annie</li><li><a href="/svenusling/p/1266.html">Edward Norton</a> – Mike</li><li>Michael Siberry – Larry</li><li>Clark Middleton – Sydney</li><li><a href="/svenusling/p/1031.html">Amy Ryan</a> – Sylvia</li><li>William Youmans – Bartender (Tommy)</li><li>Lindsay Duncan – Tabitha</li><li>Paula Pell – Lady in Bar</li><li>David Fierro – Man in Bar</li><li>Hudson Flynn – Kid in Bar (Billy)</li><li>Warren Kelly – Dresser</li><li>Joel Marsh Garland – Stagehand</li><li>Brent Bateman – Broadway Tourist</li><li>Donna Lynne Champlin – Broadway Lady</li><li>Valentino Musumeci – Broadway Kid</li><li>Taylor Schwencke – Broadway Kid</li><li>Craig muMs Grant – Broadway Man on Street</li><li>Kyle Knauf – Annoying Times Square Guy</li><li>Dave Neal – Annoying Times Square Guy</li><li>Kelly Southerland – Annoying Times Square Guy</li><li>Roberta Colindrez – Broadway Woman on Street</li><li>Catherine Peppers – Cashier</li><li>Frank Ridley – Mr. Roth</li><li>Janis Corsair – Female Usher</li><li>Rakesh Shah – Liquor Store Owner</li><li>Bill Camp – Crazy Man</li><li>Malachi Weir – Guy in Window</li><li>Jackie Hoffman – Lady on Balcony (Mary)</li><li>Stephen Adly Guirgis – Good Neighbor</li><li>Glenn Wein – Young Male Usher</li><li>Ebrahim Jaffer – Cab Driver</li><li>Nicolas Rain Noe – Intermission Man</li><li>Susan Blackwell – Intermission Woman</li><li>Anna Hardwick – Blonde Reporter</li><li>Dusan Dukic – Newscaster</li><li>Helena-Alexis Seymour – Newscaster</li><li>Ian Finlay – Newscaster</li><li>Alexandra Aristy – Assistant Stage Manager (uncredited)</li><li>Robbin Banx – Upscale Theatre Goer (uncredited)</li><li>Stefanie Bari – Sophie (uncredited)</li><li>Thomas J. Bellezza – Tourist (uncredited)</li><li>Paula Blum – Shocked Nurse (uncredited)</li><li>Dave Bobb – Upscale Theater Patron (uncredited)</li><li>Bryan Burton – Alternate Kid in Bar (uncredited)</li><li>Teena Byrd – Tourist at a Broadway Show (uncredited)</li><li>Brian Cheeks – Tourist (uncredited)</li><li>Richard R. Corapi – Upscale Theatre Patron / Driver (uncredited)</li><li>Alan Davis – Tourist with Bagel (uncredited)</li><li>Johanna Day – Annoying Tourist (uncredited)</li><li>Madeline Farbstein – Lady in the Theatre (uncredited)</li><li>James Farley – Man on the Stoop (uncredited)</li><li>Z. Frankie – Broadway Audience Member (uncredited)</li><li>Les Gardonyi – Audience (uncredited)</li><li>Julie Gudz – Reporter #3 (uncredited)</li><li>David H. Holmes – Stagehand (uncredited)</li><li>Bomber Hurley-Smith – Stage Manager (uncredited)</li><li>David Itchkawitz – Shocked Audience Member (uncredited)</li><li>Joseph Anthony Jerez – Tourist (uncredited)</li><li>Benjamin Kanes – Young Birdman (uncredited)</li><li>Kenneth Kopolovicz – Aficionado (uncredited)</li><li>Anna Kuchma – Reporter (uncredited)</li><li>Kamron Leal – Broadway Tourist (uncredited)</li><li>Tracy Michael Lynch – NYC Tourist (uncredited)</li><li>Rachael Ma – Tree (uncredited)</li><li>Keith Mackler – Theatre Patron (uncredited)</li><li>Vanessa Malanga – Native New Yorker Theatre Patron (uncredited)</li><li>Alex Malaos – Theater Audience Member (uncredited)</li><li>Raymond Mamrak – Annoying Tourist (uncredited)</li><li>Michelle E. Mancini – Special Ability (uncredited)</li><li>Chris McFarland – Stagehand (uncredited)</li><li>Chuck McMahon – Tought Guy / Stagehand (uncredited)</li><li>Teresa Meza – Stage Manager (uncredited)</li><li>Robert Myers – Upscale Theater Patron (uncredited)</li><li>Leslie C. Nemet – Paparazzi (uncredited)</li><li>Amy Novondo – Tourist (uncredited)</li><li>Thelma O'Leary – Broadway Play Attendee / Tourist (uncredited)</li><li>Philip Odango – Audience Member (uncredited)</li><li>Carolyn Ormond – Theater Critic (uncredited)</li><li>And Palladino – Audience Member (uncredited)</li><li>Stephen Payne – Crazy Man (uncredited)</li><li>Katrina E. Perkins – Tourist (uncredited)</li><li>Rich Petrillo – Times Square Onlooker (uncredited)</li><li>Josephine Pizzino – Usher / Audience Member / Crazed Fan / Stalker (uncredited)</li><li>Jon Douglas Rainey – Journalist (uncredited)</li><li>Dwayne Rivera – Audience Member (front row) (uncredited)</li><li>Charles Rosa – Broadway Theatergoer (uncredited)</li><li>Shade Rupe – Opening Night Audience Member (uncredited)</li><li>Stuart Schnitzer – NYPD New York Police Department / Theatre Audience (uncredited)</li><li>Nancy Ellen Shore – Upscale Theater Patron (uncredited)</li><li>Janet Stanwood – NYC Upscale Pedestrian (uncredited)</li><li>John Stepanian – Upscale Theater Patron (uncredited)</li><li>Paul Thornton – Times Square Pedestrian (uncredited)</li><li>Stella Toppan – Theatre Goer (uncredited)</li><li>Millie Torchetti – Theater Patron (uncredited)</li><li>Stefano Villabona – Tourist Theater Audience Member (uncredited)</li><li>Marian Volk – Aficionado (uncredited)</li><li>Dorothy Weems – Enraptured Theatre Goer (uncredited)</li><li>Kelli Wilcoxen – Theater Goer (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

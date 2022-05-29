@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Birdy | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Birdy <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1984"><a href="#">1984</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Alan Parker</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Matthew Modine – Birdy</li><li><a href="/svenusling/p/1696.html">Nicolas Cage</a> – Al Columbato</li><li>John Harkins – Doctor Weiss</li><li>Sandy Baron – Mr. Columbato</li><li>Karen Young – Hannah Rourke</li><li><a href="/svenusling/p/1118.html">Bruno Kirby</a> – Renaldi</li><li>Nancy Fish – Mrs. Prevost</li><li>George Buck – Birdy's Father</li><li>Dolores Sage – Birdy's Mother</li><li>Pat Ryan – Joe Sagessa</li><li>James Santini – Mario Columbato</li><li>Maud Winchester – Doris Robinson</li><li>Marshall Bell – Ronsky</li><li>Elizabeth Whitcraft – Rosanne</li><li>Sandra Beall – Shirley</li><li>Victoria Nekko – Claire</li><li>Crystal Field – Mrs. Columbato</li><li>John Brumfield – Mr. Kohler</li><li>Joe Lerer – Military Doctor</li><li>Alice Truscott – Mother on Train</li><li>Ed Taylor – Zimmy The Human Fish</li><li>Irving Selbst – Fairground Announcer</li><li>Steve Lippe – Junkyard Proprietor</li><li>William Clark – Policeman on Beach</li><li>James Pruett – Emergency Doctor</li><li>Priscilla Alden – Waiting Room Lady</li><li>Howard Kinsley – Mr. Tate</li><li>Robert Diamond – Maloney</li><li>Bud Seese – Drunk in Jail</li><li>Ray Pili – High School Band</li><li>Lawrence J. McKenna – High School Band</li><li>David Kuhn – High School Band</li><li>Kevin P. Kuhn – High School Band</li><li>Ronald Distefano – High School Band</li><li>Larry Hochman – High School Band</li><li>Guy Jones – Hospital Orderly</li><li>Erskine Morgan – Hospital Orderly</li><li>Ramona Bajema – Girl on Train</li><li>Maurice Frizzeli Jr. – Nuts and Bolts Patient</li><li>Donald Sims – Nuts and Bolts Patient</li><li>Richard Mason – Injured Soldier</li><li>Charles A. Tamburro – Helicopter Pilot</li><li>Richard Holley – Helicopter Pilot</li><li>Harry Hauss – Helicopter Pilot</li><li>Mark Simpson – Helicopter Soldier</li><li>Clark Taylor – Helicopter Soldier</li><li>Michael Shaner – Veteran</li><li>Tim Davis – Veteran</li><li>Bird No. 9 – Perta</li><li>Alfonso – Self</li><li>Hobbie – Cat</li><li>Sneaky – Dog</li><li>Willey – Dog</li><li>Ace – Dog</li><li>Prince – Dog</li><li>Tiger – Dog</li><li>Bo – Dog</li><li>Budah – Dog</li><li>Chiggar – Dog</li><li>Tyko – Dog</li><li>Kelly – Dog</li><li>Red – Dog</li><li>Fantasy – Dog</li><li>Scooter – Dog</li><li>Jonathan – Seagull</li><li>Monty – Snake</li><li>Horatio – Jungle Bird</li><li>No's. 1 to 84 – Pigeons</li><li>David B. Benton Jr. – Boy playing basketball on the street (uncredited)</li><li>Dennis Erectus – Veteran (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa film 2015</li><li>Oscar - Bästa regi 2015 (Alejandro González Iñárritu)</li><li>Oscar - Bästa originalmanus 2015</li><li>Oscar - Bästa foto 2015</li><li>Golden Globe - Bästa skådespelare - Komedi eller Musikal 2015 (1655)</li><li>Golden Globe - Bästa manus 2015</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa skådespelare 2015 (1655)</li><li>Oscar - Bästa manliga biroll 2015 (1266)</li><li>Oscar - Bästa kvinnliga biroll 2015 (1281)</li><li>Oscar - Bästa ljudmixning 2015</li><li>Oscar - Bästa ljudklippning 2015</li><li>Golden Globe - Bästa film - Komedi eller Musikal 2015</li><li>Golden Globe - Bästa regi 2015 (Alejandro González Iñárritu)</li><li>Golden Globe - Bästa manliga biroll 2015 (1266)</li><li>Golden Globe - Bästa kvinnliga biroll 2015 (1281)</li><li>Golden Globe - Bästa musik 2015 (Antonio Sanchez)</li><li>BAFTA Film Award - Bästa film 2015</li><li>BAFTA Awards, David Lean Award for Direction 2015 (Alejandro González Iñárritu)</li><li>BAFTA Film Award - Bästa skådespelare 2015 (1655)</li><li>BAFTA Film Award - Bästa manliga biroll 2015 (1266)</li><li>BAFTA Film Award - Bästa kvinnliga biroll 2015 (1281)</li><li>BAFTA Film Award - Bästa originalmanus 2015</li><li>BAFTA Film Award - Bästa foto 2015</li><li>BAFTA Film Award - Bästa musik 2015</li><li>BAFTA Film Award - Bästa ljud 2015</li><li>BAFTA Film Award - Bästa klippning 2015</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Nicolas Cage][/p?id=1696] had two teeth removed (without anesthetic) for this role.</li><li>Then-unknown [Danny Glover][/p?id=1208] was scheduled to make a speech as a bit player, but because he kept botching his lines his scenes had to be cut from the movie.</li><li>First use of the skycam in a feature film. It was a camera held by wires supported by four cranes and controlled by computer, and was used in Birdy's dream sequence of actually being able to fly.</li><li>[Matthew Modine][/p?id=Matthew%20Modine] auditioned for the role of Al but [Alan Parker][/p?id=Alan%20Parker] cast him as Birdy instead.</li><li>Birds who acted in the film had their own bird billing section in the movie's closing credits.</li><li>Film debut of [Marshall Bell][/p?id=Marshall%20Bell].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

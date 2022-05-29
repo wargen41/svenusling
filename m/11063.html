@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blue City - Staden Bortom Lagen | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Blue City - Staden Bortom Lagen <a href="#" class="grade">+</a></h2>
+										<h3>Blue City</h3>
+										<p>
+										Film från <time datetime="1986"><a href="#">1986</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Michelle Manning</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1518.html">Judd Nelson</a> – Billy Turner</li><li>Ally Sheedy – Annie Rayford</li><li>David Caruso – Joey Rayford</li><li><a href="/svenusling/p/1732.html">Paul Winfield</a> – Chief Luther Reynolds</li><li>Scott Wilson – Perry Kerch</li><li>Anita Morris – Malvina Kerch-Turner</li><li>Luis Contreras – Lieutenant Ortiz</li><li>Julie Carmen – Debbie Torres</li><li>Allan Graf – Graf</li><li>Hank Stone – Hank</li><li>Tommy 'Tiny' Lister – Tiny</li><li>Rex Ryon – Rex</li><li>Felix Nelson – Caretaker</li><li>Willard E. Pugh – Leroy</li><li>Sam Whipple – Jailer</li><li>David L. Crowley – Bartender</li><li>Paddi Edwards – Kate</li><li>John H. Evans – Young Cop</li><li>Rick Hurst – Redneck</li><li>Lincoln Simonds – Johnny Parks</li><li>Ken Lloyd – Young Bartender</li><li>Vaughn Tyree Jelks – Boy at Cafe</li><li>Roxanne Tunis – Cashier</li><li>Roberto Contreras – Hot Dog Vendor</li><li>Carla Olson – The Textones</li><li>Tom Junior Morgan – The Textones</li><li>Phil Seymour – The Textones</li><li>Joe Read – The Textones</li><li>George Callins – The Textones</li><li>Anne Lockhart – Club Patron (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Jenny Wright][/p?id=Jenny%20Wright] originally was cast in the lead female role of Annie Rayford. [Ally Sheedy][/p?id=Ally%20Sheedy] replaced [Wright][/p?id=Jenny%20Wright] after re-writes.</li><li>The movie's two top billed leads, [Judd Nelson][/p?id=1518] and [Ally Sheedy][/p?id=Ally%20Sheedy], were at the time the movie was made and released, part of a then young group of American actors and actresses who were known as &quot;The Brat Pack&quot;, a term which referenced the earlier group of American actors who had been known as &quot;The Rat Pack&quot;.</li><li>The movie's marketing connected with the then current hit series [Miami Vice][/f?id=16155] (1984). This was manifest in the film's main tagline which read: &quot;It's below Miami and above the law.&quot; The fictional &quot;Blue City&quot; of the film's title was, like [Miami Vice][/f?id=16155] (1984), set in Florida.</li><li>Director [Michelle Manning][/p?id=Michelle%20Manning] once said of this film in late 1986 to the Los Angeles Times: &quot;I was out there pretty much on my own. In retrospect, I do think the critics were more tough on me than they had to be. I'm not a war criminal. I don't think many directors' first films are perfect. Maybe the timing wasn't right. There was a lot of 'brat-pack' backlash&quot;.</li><li>The only theatrical feature film directed by [Michelle Manning][/p?id=Michelle%20Manning], who works in the film industry as a producer.</li><li>Director [Walter Hill][/p?id=1986] co-wrote the screenplay and was a producer on the picture but [Hill][/p?id=1986] did not direct this movie.</li><li>Paramount Pictures Executive Dawn Steel once said of this movie to the Los Angeles Times in late 1986: &quot;I suspect Michelle ([Manning][/p?id=Michelle%20Manning]) took her shot at directing too early. I think the experience for Michelle was unbelievably difficult. She may not necessarily have had the experience she needed. She didn't have the production support we thought we'd be able to supply her with. She was out there pretty much by herself. That's really tough your first time out. I think Michelle will turn out to have enormous amounts of talent. She kills herself. I never saw anyone work harder, ever. She's very smart. I think she'll be one of the few who gets a second chance. I don't think a first-time male director would have had much more luck than Michelle, given all those things. It had nothing to do with her being a woman.&quot;</li><li>The movie represents an early screen role of [David Caruso][/p?id=David%20Caruso].</li><li>Director [Michelle Manning][/p?id=Michelle%20Manning] personally cast the leads because she knew them well from having worked with them as a co-Producer on The [Breakfast Club][/f?id=11301] (1985).</li><li>[Ally Sheedy][/p?id=Ally%20Sheedy] later said she &quot;didn't particularly like&quot; this movie, but had been &quot;close friends&quot; with [Michelle Manning][/p?id=Michelle%20Manning]. [Sheedy][/p?id=Ally%20Sheedy] said that [Manning][/p?id=Michelle%20Manning] &quot;was so excited about the chance to direct that my feeling was it would be really great to work with someone I really liked and help contribute to their first big project. I was very naive, I guess, because I kept hoping it would turn out okay, that somehow all the stuff that was missing would miraculously appear when they edited it all together. I guess that's not the way it works, so I was disappointed.&quot;</li><li>First theatrical feature film starring [Judd Nelson][/p?id=1518] since [St. Elmo's Fire][/f?id=St.%20Elmo's%20Fire] (1985) as he had taken a year's hiatus to do theatre acting.</li><li>The film starred two members of the Brat Pack - [Ally Sheedy][/p?id=Ally%20Sheedy] and [Judd Nelson][/p?id=1518]. [Michelle Manning][/p?id=Michelle%20Manning] said of them: &quot;These actors function on three levels. As professionals, they're totally devoted, totally relentless, totally driven. In the public social scene, like at the Hard Rock Café, they have to deal with people coming up to them, asking for autographs, pulling on their clothes. And in the privacy of their homes, they're completely relaxed, and they're just kids. But they all want so much to grow as actors. They all so much want their careers to grow. And it scares them all, the idea that tomorrow this could all end. I mean, it could all just be over. They want so much to be doing the same thing when they're forty, and who's to say? Will the trend then be to make movies with forty-year-olds?&quot;</li><li>[Judd Nelson][/p?id=1518] once said of his character Billy Turner in this film: &quot;[Cowboys][/f?id=11684] and indians, cops and robbers. That's the way Billy Turner sees it. It's good guys and bad guys. He's the misunderstood hero now. What, is he out of his mind? He doesn't even know what's going on. Billy Turner is supposedly on a quest to find out who killed his father, but as soon as he gets a gun in his hand, it's like: 'Hey, I've got a gun in my hand!' It's a little like real-life, sometimes you don't know what you're supposed to be doing, even when you're doing it.&quot; [Nelson][/p?id=1518] also once said: &quot;It's the first part ever that I didn't have to audition for. Instead of having to make the rounds and go to casting calls and auditioning with hundreds of other guys, suddenly my agent has more offers coming in than I can possibly handle. I'm in a position where I can actually turn a job down. It's a strange experience.&quot;</li><li>The movie has been likened to the films of [Sam Peckinpah][/p?id=Sam%20Peckinpah]. [Judd Nelson][/p?id=1518] once said of this movie: &quot;I think it's very exciting that a woman would direct a film of the (Sam) [Peckinpah][/p?id=Sam%20Peckinpah] mode rather the sweet, postman-falls-in-love-with-the-divorcee mode. I think it could have been filmed in black and white with a blue tint. I think that would have been the coolest.&quot; Also, [Michelle Manning][/p?id=Michelle%20Manning] once said: &quot;I don't think I'll become Samantha [Peckinpah][/p?id=Sam%20Peckinpah], but I don't think as a woman that I should have to make a movie with girls in locker rooms putting on make-up. &quot;You're under a microscope. You suddenly become a media event for no good reason.&quot;</li><li>&quot;Blue City&quot; is a fictional place. In the movie's source novel, it is alluded to that &quot;Blue City&quot; is situated in the midwest of the U.S., not too far from [Chicago][/f?id=11526], Illinois. In this movie adaptation though, &quot;Blue City&quot; is set in Florida, south of Miami.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

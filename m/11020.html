@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Black Knight | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Black Knight <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2001"><a href="#">2001</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Gil Junger</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Martin Lawrence – Jamal Walker / Skywalker</li><li>Marsha Thomason – Victoria the Chambermaid / Nicole</li><li><a href="/svenusling/p/1955.html">Tom Wilkinson</a> – Sir Knolte of Marlborough</li><li>Vincent Regan – Percival, Leo's Chief Henchman</li><li>Daryl Mitchell – Steve</li><li>Michael Countryman – Phillip, Leo's Chamberlain</li><li>Kevin Conway – King Leo</li><li>Jeannette Weegar – Princess Regina, Leo's Daughter</li><li>Erik Jensen – Derek</li><li>Dikran Tulaine – Dennis</li><li>Helen Carey – The Queen</li><li>Michael Burgess – Ernie</li><li>Isabell O'Connor – Mrs. Bostick, 'Medieval World' Owner</li><li>Kevin Stillwell – Knight #1</li><li>Mikey Post – Young Man</li><li>Tim Parati – Puppeteer</li><li>Mark Joy – Guard #1</li><li>Joe Inscoe – Guard #2</li><li>Angel Desai – Vindy</li><li>Elizabeth Roberts – Ling</li><li>Graham F. Smith – Giles of Normandie, Royal Messenger</li><li>Mark Jeffrey Miller – Turnip Thief</li><li>Zach Hanner – Guard #3</li><li>Richard Fullerton – Will</li><li>Jayce Tromsness – Thug</li><li>Greg Cooper – Executed Rebel Leader</li><li>Mark Pitt – Crowd Member</li><li>Miki Shelton – Woman</li><li>Tammy Arnold – Peasant</li><li>Jason Chimonides – Soldier</li><li>Bob Leddy Jr. – Rebel #1</li><li>William Boyer – Captain of the Guard</li><li>Denise S. Bass – Rebel #3</li><li>Eric Paisley – Rebel #4</li><li>Melissa Bolden – Dancer</li><li>Harry D. Campbell – Dancer</li><li>John Cronin – Dancer</li><li>Marty Dew – Dancer</li><li>Thunderbird Dinwiddie – Dancer</li><li>Bonnie Dixon – Dancer</li><li>Mark Evans – Dancer</li><li>Kelly Foxworth – Dancer</li><li>Linda K. Huffman – Dancer</li><li>Krystal Jefferson – Dancer</li><li>Chris Madray – Dancer</li><li>Babs McCullen – Dancer</li><li>Jaime Moffett – Dancer</li><li>Dustin Phillips – Dancer</li><li>Dena Rizzo – Dancer</li><li>Monica Semon – Dancer</li><li>Lara Anne Smith – Dancer</li><li>Veronica Sterling – Dancer</li><li>D'Juan Watts – Dancer</li><li>Daniella Alonso – June (uncredited)</li><li>J.C. Anderson – King's Swordsman (uncredited)</li><li>Charles E. Bailey – Friar Chuck (uncredited)</li><li>Cameron Beach – Established Berzerker Rebel / Swordsman (uncredited)</li><li>Rob Bouton – King's Guard (uncredited)</li><li>Lonnie Burchfield – Rebel Knight / King's Cavalryman (uncredited)</li><li>Robert Cannon – Rebel Archer / Knight (uncredited)</li><li>Jeff Chase – The Giant (uncredited)</li><li>Kelly Cole Childers – Noblewoman (uncredited)</li><li>Jim Collins – Earl of Mon-Quis, Knight #2 (uncredited)</li><li>Joseph Congema – King's Swordsman (uncredited)</li><li>Leslie Dilley – Man #2 (uncredited)</li><li>Kevin Dunlap – King's Soldier (uncredited)</li><li>Sam Edens – Rebel Knight (uncredited)</li><li>Stephenie Galvan – Noblewoman (uncredited)</li><li>Richard Haje – King's Soldier (uncredited)</li><li>Stefan Hayek – Chamber Cittern (uncredited)</li><li>Matthew Helms – Little Rebel (uncredited)</li><li>Casey Kelvington – Knight #5 (uncredited)</li><li>Kevin P. King – Sir John (uncredited)</li><li>Kevin Lapsley – Arbalist (uncredited)</li><li>John Lewis – Little John (uncredited)</li><li>KJ Lodge – Knight #4 (uncredited)</li><li>Joseph Long – Villager / Rebel (uncredited)</li><li>Kyle Jason Louque – Basketball Player (uncredited)</li><li>David Lowe – Rebel Archer / Swordsman (uncredited)</li><li>Vincent Lumia –  (uncredited)</li><li>Chad Mason – Drunk Knight (uncredited)</li><li>Jeremy McLain – King's Soldier (uncredited)</li><li>Janet Melody – Duchess (uncredited)</li><li>Kevin Alan Moore – Knave of Chronic (uncredited)</li><li>Ken Moran – King's Soldier (uncredited)</li><li>Danny Nunn – King's Soldier (uncredited)</li><li>Reid Perry – Clockmaster (uncredited)</li><li>Matthew Richardson – Apprentice to Sir Osric Fiveballs (uncredited)</li><li>David Rivitz – Sir Osric Fiveballs (uncredited)</li><li>David Schifter – Archer (uncredited)</li><li>Kent Shelton – Knight / Swordsman (uncredited)</li><li>Jonathan Soronen – Young Soldier (uncredited)</li><li>Stephanie Sullivan – Lovely Maiden (uncredited)</li><li>Ryan Sweeney – Rebel Knight / Archer (uncredited)</li><li>Rock Taulbee – King's Swordsman (uncredited)</li><li>Abbey Wade – Maiden (uncredited)</li><li>E. Parker Webb – Rebel Knight (uncredited)</li><li>Richard E. White – Noble Apprentice (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa ljud 2002</li><li>Oscar - Bästa klippning 2002</li><li>American Cinema Editors, Eddie - Best Edited Feature Film - Dramatic 2002</li><li>Harry Award 2002</li><li>Golden Reel Award - Best Sound Editing - Effects & Foley, Domestic Feature Film 2002</li><li>ASCAP Award - Top Box Office Films 2003 (Hans Zimmer)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa regi 2002 (1797)</li><li>Oscar - Bästa foto 2002</li><li>BAFTA Film Award - Bästa foto 2002</li><li>BAFTA Film Award - Bästa ljud 2002</li><li>BAFTA Film Award - Bästa klippning 2002</li><li>AFI Film Award - AFI Movie of the Year 2002 (1797)</li><li>AFI Film Award - AFI Director of the Year 2002 (1797)</li><li>AFI Film Award - AFI Cinematographer of the Year 2002</li><li>AFI Film Award - AFI Editor of the Year 2002</li><li>AFI Film Award - AFI Production Designer of the Year 2002</li><li>Saturn Award - Best Action/Adventure/Thriller Film 2002</li><li>Art Directors Guild, Excellence in Production Design Award - Feature Film - Contemporary Films 2002</li><li>Camerimage, Golden Frog 2002</li><li>C.A.S. Award - Outstanding Sound Mixing for Motion Pictures 2002</li><li>DGA Award - Bästa regi 2002 (1797)</li><li>Golden Trailer - Best Drama 2002</li><li>MTV Movie Award - Bästa film 2002</li><li>MTV Movie Award - Bästa actionsekvens (First helicopter crash.) 2002</li><li>Golden Reel Award - Best Sound Editing - Dialogue & ADR, Domestic Feature Film 2002</li><li>PFCS Award - Bästa skådespelarensemble 2002</li><li>PFCS Award - Bästa foto 2002</li><li>PFCS Award - Bästa klippning 2002</li><li>Teen Choice Award - Film - Choice Movie, Drama/Action Adventure 2002</li><li>Teen Choice Award - Film - Choice Actor, Drama/Action Adventure 2002 (Josh Hartnett)</li><li>World Soundtrack Award - Best Original Soundtrack of the Year - Orchestral 2002</li><li>World Soundtrack Award - Soundtrack Composer of the Year 2002</li><li>WGA Award (Screen) - Best Screenplay Based on Material Previously Produced or Published 2002</li><li>DVDX Award - Best Overall DVD, New Movie (Including All Extra Features) ((Deluxe Edition).) 2003</li><li>Saturn Award - Best DVD Special Edition Release 2004</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The scene where Princess Regina trips over her bed sheets was not scripted, [Jeannette Weegar][/p?id=Jeannette%20Weegar] really did trip and fall, but the director liked it so it was kept and put in the final cut.</li><li>Members of the Society for Creative Anachronism helped in the historical recreation of this movie by providing consulting work and playing as extras.</li><li>[Chris Tucker][/p?id=Chris%20Tucker] was originally cast as Jamal Walker.</li><li>[Martin Lawrence][/p?id=Martin%20Lawrence] was paid $20 million for his work on the film.</li><li>Based very loosely on the book &quot;A Connecticut Yankee in King Arthur's Court&quot; by Mark Twain.</li><li>The film was rushed by Fox after the attacks on 9/11 to be released much sooner than it was intended. The film was slated for a Winter/Spring 2002 release and had just started the post-production process when Director [Gil Junger][/p?id=Gil%20Junger] and was called by the studio to speed up the editing on the film for a November 2001 release date to capitalize on family friendly entertainment, comedies, dramas and thrillers which some studios were filling with after having to reschedule films that were deemed too sensitive for that period of time.</li><li>[F. ][/p?id=F.%20]Gary Gray**** was originally attached to direct.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

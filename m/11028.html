@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Black Swan | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Black Swan <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2010"><a href="#">2010</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Darren Aronofsky</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1687.html">Natalie Portman</a> – Nina Sayers</li><li><a href="/svenusling/p/1676.html">Mila Kunis</a> – Lily</li><li>Vincent Cassel – Thomas Leroy</li><li>Barbara Hershey – Erica Sayers</li><li>Winona Ryder – Beth Macintyre</li><li>Benjamin Millepied – David</li><li>Ksenia Solo – Veronica</li><li>Kristina Anapau – Galina</li><li>Janet Montgomery – Madeline</li><li>Sebastian Stan – Andrew</li><li>Toby Hemingway – Tom</li><li>Sergio Torrado – Sergio</li><li>Mark Margolis – Mr. Fithian</li><li>Tina Sloan – Mrs. Fithian</li><li>Abraham Aronofsky – Mr. Stein</li><li>Charlotte Aronofsky – Mrs. Stein</li><li>Marcia Jean Kurtz – Georgina</li><li>Shaun O'Hagan – Sebastian</li><li>Christopher Gartin – Scott</li><li>Deborah Offner – Susie</li><li>Stanley B. Herman – Uncle Hank</li><li>Michelle Rodriguez Nouel – Physical Therapist</li><li>Kurt Froman – David's Understudy</li><li>Marty Krzywonos – Conductor</li><li>Leslie Lyles – Nurse</li><li>John Epperson – Jaded Piano Player</li><li>Arkadiy Figlin – Piano Player</li><li>Tim Fain – Violin Player</li><li>Sarah Lane – Lady in the Lane</li><li>Liam Flaherty – Man in Stall</li><li>Patrick Heusinger – Rich Gent</li><li>Marina Stavitskaya – Ballet Mistress</li><li>Olga Kostritzky – Ballet Mistress</li><li>Christine Redpath – Ballet Mistress</li><li>Alexandra Damiani – Ballet Mistress</li><li>Rebecca Azenberg – Corps De Ballet</li><li>Laura Bowman – Corps De Ballet</li><li>Holly L. Fusco – Corps De Ballet</li><li>Abigail Mentzer – Corps De Ballet</li><li>Barette Vance – Corps De Ballet</li><li>Lillian di Piazza – Corps De Ballet</li><li>Megan Dickinson – Corps De Ballet</li><li>Jessy Hendrickson – Corps De Ballet</li><li>Geneviève Lebean – Corps De Ballet</li><li>Rachel Jambois – Corps De Ballet</li><li>Ryoko Sadoshima – Corps De Ballet</li><li>Kaia A. Tack – Corps De Ballet</li><li>Lauren Fadeley – Corps De Ballet</li><li>Sarah Hay – Corps De Ballet</li><li>Adrianna de Svastich – Corps De Ballet</li><li>Jamie Wolf – Corps De Ballet</li><li>Carrie Lee Riggins – Corps De Ballet</li><li>Gina Artese – Corps De Ballet</li><li>Rhona Fox – Socialite (uncredited)</li><li>Daralina Komar – Ballet Dancer (uncredited)</li><li>Tim Lacatena – Ballet Dancer (uncredited)</li><li>Carmella Stolyar – Assistant Stage Manager (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Vincent Cassel][/p?id=Vincent%20Cassel] has compared his character to George Balanchine, who co-founded New York City Ballet. The actor said Balanchine was &quot;a control freak, a true artist using sexuality to direct his dancers&quot;.</li><li>[Meryl Streep][/p?id=1641] was considered to play Erica, Nina's mother.</li><li>[Blake Lively][/p?id=Blake%20Lively] auditioned for the role of Lily.</li><li>Both [Rachel Weisz][/p?id=1766] and [Jennifer Connelly][/p?id=1447] were rumored to star in the lead roles when the film was first discussed.</li><li>The production considered setting the film in France and filming in Budapest but the idea was dropped for creative and budgetary reasons.</li><li>The film began as a screenplay called &quot;The Understudy&quot; and took place in the world of New York theater. [Darren Aronofsky][/p?id=Darren%20Aronofsky] liked the script, but suggested it be changed to ballet.</li><li>The script took around ten years to make it to the screen.</li><li>[Mila Kunis][/p?id=1676] was brought into the project after co-star [Natalie Portman][/p?id=1687] suggested her to director [Darren Aronofsky][/p?id=Darren%20Aronofsky]. [Kunis][/p?id=1676] had a video chat with [Aronofsky][/p?id=Darren%20Aronofsky] via Skype and got the role without officially auditioning.</li><li>[Natalie Portman][/p?id=1687] lost 20 pounds to look more like a ballerina.</li><li>The budget on this film was so tight that when star [Natalie Portman][/p?id=1687] had a rib dislocated during a lift and she called the producer for help. She was told that the budget was so low they had no medic. She stated that if they needed to cut items from the budget they could take away her trailer, instead of the medic. The next day her trailer was gone.</li><li>[Winona Ryder][/p?id=Winona%20Ryder] spent 10 days filming her role.</li><li>After practicing with a ballet instructor for three months, five hours a day, seven days a week, [Mila Kunis][/p?id=1676] learned how to dance en pointe. She had casually practiced ballet as a child.</li><li>[Winona Ryder][/p?id=Winona%20Ryder] who plays the former leading ballerina, only went to one ballet lesson as a kid. She never returned as she thought her teacher was really mean.</li><li>The soundtrack, composed by Clint Mansell is a variation on Tchaikovsky's &quot;Swan Lake&quot; ballet, but played backwards and in a distorted manner.</li><li>According to an radio interview on &quot;Fresh Air with Terry Gross,&quot; [Natalie Portman][/p?id=1687] recommended her friend [Mila Kunis][/p?id=1676] for the role of Lily after learning that [Kunis][/p?id=1676] had previously had some experience as a dancer.</li><li>[Natalie Portman][/p?id=1687] revealed that director [Darren Aronofsky][/p?id=Darren%20Aronofsky] would subtly try to pit her and [Mila Kunis][/p?id=1676] against each other during filming in an attempt to increase the on-screen tension between their characters. This included keeping the two actresses separated during filming and sending each of them intimidating text messages about each others performance that day.</li><li>[Natalie Portman][/p?id=1687] sustained a twisted rib during the filming of a dance sequence, and a full recovery took six weeks. During the filming of subsequent dance sequences, she was lifted from her arm pits rather than her sides to avoid repeating the injury.</li><li>Nina's cell phone ring tone is the Theme of the [Black Swan][/f?id=11028].</li><li>[Darren Aronofsky][/p?id=Darren%20Aronofsky] told journalist Kim Masters in a radio interview (KCRW's &quot;The Business&quot; broadcast February 14, 2011) that [Natalie Portman][/p?id=1687] not only trained for a year as a dancer to prepare for the role, but that she paid for the training out of her own pocket for about seven months until the film found investors. [Aronofsky][/p?id=Darren%20Aronofsky] attributed the fact the film's ever actually getting made to [Portman's][/p?id=1687] dedication and enthusiasm.</li><li>[Darren Aronofsky][/p?id=Darren%20Aronofsky] had originally hoped for a budget of about $28-30 million. The budget eventually raised for the film was about $13 million.</li><li>[Natalie Portman][/p?id=1687] stated after the experience she had working with director [Darren Aronofsky][/p?id=Darren%20Aronofsky] that she would work with him again at any point in the future.</li><li>Both [Mila Kunis][/p?id=1676] and [Natalie Portman][/p?id=1687] have praised choreographer [Benjamin Millepied][/p?id=Benjamin%20Millepied] for altering the choreography enough to allow them to do most of their own dancing and to help them appear like professionals.</li><li>[Natalie Portman][/p?id=1687] said in an interview with Charlie Rose that one of the most difficult challenges, aside from training and dancing, was her voice in the film. She stated director [Mike Nichols][/p?id=Mike%20Nichols] has given her consistent criticism on how childish her voice sounds and encouraged her to work with vocal coaches to make it sound deeper and more adult. The role of Nina required [Portman][/p?id=1687] to regress backwards to make her voice more child-like. She felt it was taking her back to a point she worked hard to leave behind.</li><li>The scenes between Nina and Erica were the last scenes filmed.</li><li>[Parker Posey][/p?id=Parker%20Posey] was strongly considered to play Beth Macintyre, but [Darren Aronofsky][/p?id=Darren%20Aronofsky] eventually decided to cast [Winona Ryder][/p?id=Winona%20Ryder] for the role.</li><li>[Portman's][/p?id=1687] body and dance double, [Sarah Lane][/p?id=Sarah%20Lane], came public shortly before the DVD/Blu-Ray release in March 2011 claiming that the film's producers asked her not to conduct interviews until after the awards season so [Natalie Portman][/p?id=1687] would receive most of the dancing credibility. A promotional video released about the special effects used in the film was also altered so it didn't include aspects of how [Lane's][/p?id=Sarah%20Lane] face was digitally replaced with [Portman's][/p?id=1687] during complicated dance moves [Lane][/p?id=Sarah%20Lane] was brought in to perform. Choreographer [Benjamin Millepied][/p?id=Benjamin%20Millepied] counteracted [Lane's][/p?id=Sarah%20Lane] comments by stating, &quot;It was so believable, it was fantastic, that beautiful movement quality. There are articles now talking about her dance double [[Sarah Lane][/p?id=Sarah%20Lane]] that are making it sound like she did a lot of the work, but really she just did the footwork, the fouettés, and one diagonal phrase in the studio. Honestly, 85% of that movie is Natalie&quot;. Director [Darren Aronofsky][/p?id=Darren%20Aronofsky] also debunked [Lane's][/p?id=Sarah%20Lane] claims saying, &quot;Here is the reality. I had my editor count shots. There are 139 dance shots in the film. 111 are [Natalie Portman][/p?id=1687] untouched. 28 are her dance double [Sarah Lane][/p?id=Sarah%20Lane]. If you do the math that's 80% [Natalie Portman][/p?id=1687].&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

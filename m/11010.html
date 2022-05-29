@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bitter Seger | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bitter Seger <a href="#" class="grade">+++</a></h2>
+										<h3>Bitter Victory</h3>
+										<p>
+										Film från <time datetime="1957"><a href="#">1957</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Nicholas Ray</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1782.html">Richard Burton</a> – Captain Leith</li><li>Curd Jürgens – Major Brand</li><li>Ruth Roman – Jane Brand</li><li>Raymond Pellegrin – Mekrane</li><li>Anthony Bushell – General Paterson</li><li>Alfred Burke – Lt. Colonel Callander</li><li>Sean Kelly – Lieutenant Barton</li><li>Ramón de Larrocha – Lieutenant Sanders</li><li><a href="/svenusling/p/1169.html">Christopher Lee</a> – Sergeant Barney</li><li>Ronan O'Casey – Sergeant Dunnigan</li><li>Fred Matter – Oberst Lutze</li><li>Raoul Delfosse – Lieutenant Kassel</li><li>Andrew Crawford – Private Roberts</li><li>Nigel Green – Private Wilkins</li><li>Harry Landis – Private Browning</li><li>Christian Melsen – Private Abbot</li><li>Sumner Williams – Private Anderson</li><li>Joé Davray – Private Spicer</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>NBR Award - Topp tio filmer 1984</li><li>Cannes Film Festival, Grand Prize of the Jury 1985 (Alan Parker)</li><li>Warsaw International Film Festival, Audience Award 1987 (Alan Parker)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Cannes Film Festival, Palme d'Or 1985 (Alan Parker)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Originally, [Richard Burton][/p?id=1782] was cast as Brand, while [Montgomery Clift][/p?id=1681] and [Paul Newman][/p?id=1727] were considered to play Leith.</li><li>Upon seeing this at the Venice Film Festival, [Jean-Luc Godard][/p?id=Jean-Luc%20Godard] said his iconic statement &quot;Le cinema, c'est [Nicholas Ray][/p?id=Nicholas%20Ray] (The cinema is [Nicholas Ray][/p?id=Nicholas%20Ray]).&quot;</li><li>In his private diaries, [Richard Burton][/p?id=1782] records that he and [Nigel Green][/p?id=Nigel%20Green] got into a fistfight during filming. He implies that the reasons were boredom, alcohol and irritation at being &quot;stuck together&quot; on-set for so long, rather than serious animosity.</li><li>The making of this film was especially difficult. Screenwriter Gavin Lambert was, in later years, inclined to blame this chiefly on the abrasive and dictatorial personality of producer Paul Graetz, whom he and director [Nicholas Ray][/p?id=Nicholas%20Ray] both disliked intensely. The original plan was to cast [Richard Burton][/p?id=1782] as Brand and [Montgomery Clift][/p?id=1681] as Leith, but, when [Clift][/p?id=1681] dropped out of the film, [Burton][/p?id=1782] was promoted to the heroic role and Graetz insisted on Curt Jurgens being cast as the cowardly Brand, as he was a popular European star who was just starting to make American films, and it was assumed that this casting would be good for box-office. The fact that a German actor would be unlikely to be convincing as a British officer was ignored by Graetz. [Ray][/p?id=Nicholas%20Ray] and Lambert made the character South African to explain Jurgens' accent. The screenplay was constantly changed throughout filming, causing the actors much distress and bafflement, and [Ray][/p?id=Nicholas%20Ray] found the whole experience a disheartening one, although the film came to be recognized as one of his best. It was a box-office failure which was heavily cut to a running time of 82 minutes in the US.</li><li>Championed by [Jean-Luc Godard][/p?id=Jean-Luc%20Godard] as the best movie of 1957.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

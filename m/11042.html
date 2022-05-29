@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bleka Dödens Minut | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bleka Dödens Minut <a href="#" class="grade">+++++</a></h2>
+										<h3>The Princess Bride</h3>
+										<p>
+										Film från <time datetime="1987"><a href="#">1987</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1801.html">Rob Reiner</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1133.html">Cary Elwes</a> – Westley</li><li>Mandy Patinkin – Inigo Montoya</li><li><a href="/svenusling/p/1162.html">Chris Sarandon</a> – Prince Humperdinck</li><li><a href="/svenusling/p/1166.html">Christopher Guest</a> – Count Tyrone Rugen</li><li><a href="/svenusling/p/1983.html">Wallace Shawn</a> – Vizzini</li><li>André the Giant – Fezzik</li><li>Fred Savage – The Grandson</li><li><a href="/svenusling/p/1829.html">Robin Wright</a> – Buttercup / The Princess Bride</li><li><a href="/svenusling/p/1740.html">Peter Falk</a> – The Grandfather / Narrator</li><li><a href="/svenusling/p/1737.html">Peter Cook</a> – The Impressive Clergyman</li><li>Mel Smith – The Albino</li><li>Carol Kane – Valerie</li><li><a href="/svenusling/p/1087.html">Billy Crystal</a> – Miracle Max</li><li>Anne Dyson – The Queen</li><li>Margery Mason – The Ancient Booer</li><li>Malcolm Storry – Yellin</li><li>Willoughby Gray – The King</li><li>Betsy Brantley – The Mother</li><li>Paul Badger – The Assistant Brute</li><li>Errol Bennett – The Balladeer's Percussionist (uncredited)</li><li class="voice">Willy DeVille – The Balladeer (röst) (uncredited)</li><li>Mickey Feat – The Balladeer's Bassist (uncredited)</li><li>Guy Fletcher – The Balladeer's Keyboardist (uncredited)</li><li>Mark Knopfler – The Balladeer's Guitarist (uncredited)</li><li>Jamie Lane – The Balladeer's Drummer (uncredited)</li><li>Sallie McLaughlin –  (uncredited)</li><li>Derek Pykett – Villager (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Mark Knopfler agreed to write the music for this movie on the condition that [Rob Reiner][/p?id=1801] put the hat that he wore in This Is Spinal Tap (1984) in the movie. The hat appears in The Grandson's bedroom.</li><li>Director [Rob Reiner][/p?id=1801] left the set during [Billy Crystal's][/p?id=1087] scenes because he would laugh so hard that he would feel nauseated.</li><li>While rehearsing for the film, André the Giant's thick accent prevented many of his lines from being understood. To remedy this, actor [Mandy Patinkin][/p?id=Mandy%20Patinkin] slapped André in the face to get him to concentrate harder.</li><li>When Count Rugen hits Westley over the head, [Cary Elwes][/p?id=1133] told [Christopher Guest][/p?id=1166] to go ahead and hit him for real. Guest hit him hard enough to shut down production for a day while Elwes went to the hospital.</li><li>According to author William Goldman, when he was first trying to get the movie made in the 1970s, a then-unknown [Arnold Schwarzenegger][/p?id=1062] wanted to play Fezzik, and he was strongly being considered because Goldman could never get his first choice, André the Giant, to read for the role. By the time the movie was made about 12 years later, Arnold was such a big star they could not afford him, Andre was cast after all and the two big men had gone on to become friends.</li><li>[Mel Smith][/p?id=Mel%20Smith] (The Albino) has confessed to never having watched his performance in this film due to the painful experience involved in filming the role. His character required him to wear coloured contact lenses and, unknown to Smith and the costume department at the time, he was actually allergic to the lens solution used. This meant that Smith was in constant pain and discomfort throughout filming; hence, he is reluctant to relive the memory.</li><li>The giant rodents were created with diminutive actors inside rat suits. On the day Westley was supposed to battle the giant rat, the &quot;rat actor&quot; was pulled over for speeding and subsequently arrested, and actually had to be bailed out of jail by the filmmakers so the scene could be filmed.</li><li>[Mandy Patinkin][/p?id=Mandy%20Patinkin] claims that the only injury he sustained during the entire filming of this movie was a bruised rib due to stifling his laughter in his scenes with [Billy Crystal][/p?id=1087].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

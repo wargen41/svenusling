@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blade Runner | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Blade Runner <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1982"><a href="#">1982</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1797.html">Ridley Scott</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1358.html">Harrison Ford</a> – Rick Deckard</li><li><a href="/svenusling/p/1847.html">Rutger Hauer</a> – Roy Batty</li><li><a href="/svenusling/p/1869.html">Sean Young</a> – Rachael</li><li>Edward James Olmos – Gaff</li><li><a href="/svenusling/p/1595.html">M. Emmet Walsh</a> – Bryant</li><li>Daryl Hannah – Pris</li><li>William Sanderson – J.F. Sebastian</li><li><a href="/svenusling/p/1109.html">Brion James</a> – Leon Kowalski</li><li>Joe Turkel – Dr. Eldon Tyrell</li><li>Joanna Cassidy – Zhora</li><li><a href="/svenusling/p/1421.html">James Hong</a> – Hannibal Chew</li><li>Morgan Paull – Holden</li><li>Kevin Thompson – Bear</li><li>John Edward Allen – Kaiser</li><li>Hy Pyke – Taffey Lewis</li><li>Kimiko Hiroshige – Cambodian Lady</li><li>Bob Okazaki – Howie Lee</li><li>Carolyn DeMirjian – Saleslady</li><li>Ben Astar – Abdul Ben Hassan (uncredited)</li><li>Judith Burnett – Ming-Fa (uncredited)</li><li>Leo Gorcey Jr. – Louie - Bartender (uncredited)</li><li>Sharon Hesky – Bar Patron (uncredited)</li><li>Kelly Hine – Showgirl (uncredited)</li><li>Tom Hutchinson – Bartender (uncredited)</li><li>Charles Knapp – Bartender (uncredited)</li><li>Rose Mascari – Bar Patron (uncredited)</li><li>Jiro Okazaki – Policeman (uncredited)</li><li>Steve Pope – Policeman (uncredited)</li><li>Robert Reiter – Policeman (uncredited)</li><li>Alexis Rhee – Geisha #1 (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Dustin Hoffman][/p?id=1254] was the original choice to play Deckard, although he wondered why he was asked to play a &quot;macho character&quot;. According to [Ridley Scott][/p?id=1797], [Hoffman][/p?id=1254] was interested, but wanted to make it a whole different kind of character. According to Paul Sammon, apart from [Hoffman][/p?id=1254], other actors considered for the role included [Tommy Lee Jones][/p?id=1957], [Gene Hackman][/p?id=1317], [Sean Connery][/p?id=1866], [Jack Nicholson][/p?id=1402], [Paul Newman][/p?id=1727], [Clint Eastwood][/p?id=1184], [Arnold Schwarzenegger][/p?id=1062], [Al Pacino][/p?id=1008], [Burt Reynolds][/p?id=1121], [William Devane][/p?id=William%20Devane], [Raul Julia][/p?id=Raul%20Julia], [Scott][/p?id=[Ridley%20Scott] Glenn][/p?id=Ridley%2520Scott%5D%20Glenn], [Frederic Forrest][/p?id=Frederic%20Forrest], [Robert Duvall][/p?id=1810], [Judd Hirsch][/p?id=Judd%20Hirsch], Cliff Gorman, [Peter Falk][/p?id=1740] and [Nick Nolte][/p?id=1693].</li><li>[Deborah Harry][/p?id=Deborah%20Harry] was reputedly the original choice to play Pris.</li><li>Towards the end of principal photography an incident occurred which has become known as the T-shirt war. The majority of the crew didn't enjoy working on the film, and didn't like working for [Ridley Scott][/p?id=1797], who they considered to be cold and distant. In an article in the British press, [Scott][/p?id=1797] commented that he preferred working with English crews because when he asked for something they would say, &quot;Yes gov'nor&quot; and go get it, but things weren't that simple with American crews. Makeup supervisor Marvin G. Westmore saw the article and was disgusted. In retaliation, he had t-shirts printed with &quot;Yes gov'nor my ass!&quot; on the front, and either &quot;Will Rogers never met [Ridley Scott][/p?id=1797]&quot; or &quot;You soar with eagles when you fly with turkeys&quot; on the back. In retaliation, [Scott][/p?id=1797] and several of his closer collaborators had t-shirts made with &quot;Xenophobia sucks&quot; on them.</li><li>Although Philip K. Dick saw only the opening 20 minutes of footage prior to his death on March 2, 1982, he was extremely impressed, and has been quoted by Paul Sammon as saying, &quot;It was my own interior world. They caught it perfectly.&quot; However neither [Ridley Scott][/p?id=1797] nor screenwriter [David Webb][/p?id=David%20Webb] Peoples actually read Dick's novel.</li><li>In the sequence where Deckard and Gaff approach police headquarters in a spinner, a model of the Millennium Falcon ([Harrison Ford's][/p?id=1358] spaceship in [Star Wars][/f?id=19851] (1977)), disguised as a building, can be seen in the lower left corner of the frame. The model was a personal project of one of the film's model builders, and was used as a building at the last minute.</li><li>A model of the [Dark Star][/f?id=11813] spaceship from the film [Dark Star][/f?id=11813] (1974) is also used as a building. It can be seen behind the Asian billboard when Gaff's spinner is approaching the Police building.</li><li>At first, [Ridley Scott's][/p?id=1797] original cut, without the voice-over, among other things, was thought to be non-existent. It was in 1989 that Michael Arick, a sound preservationist and director of assent management at Warner Bros., stumbled upon a 70mm print of the film while looking for footage from Gypsy (1962). Several months later, the Cineplex Odeon Fairfax theater was having a classic-film festival featuring 70mm prints. The print discovered by Arick was set to be screened in May. However, no one had actually watched the print and everyone thought it was the International Cut, leading to a great deal of surprise when people discovered it was another version entirely. More screenings of this version resulted in sell outs, and Warner proposed releasing it as a Director's Cut. [Ridley Scott][/p?id=1797] however said it was not a Director's Cut, and said that a number of changes would need to be made for him to approve it. Ultimately, [Scott][/p?id=1797] and Arick were not given enough time to complete the project to [Scott's][/p?id=1797] satisfaction, and the resulting Director's Cut was still not [Scott's][/p?id=1797] preferred version of the film. In 2007, [Scott][/p?id=1797] was finally able to release what he considered to be the definitive cut of the film.</li><li>It has been always been rumored that [Harrison Ford][/p?id=1358] intentionally performed the voice-over poorly, in the hope it would not be used, but in a 2002 interview with Playboy magazine, [Ford][/p?id=1358] clarified this mistaken assumption; &quot;I delivered it to the best of my ability, given that I had no input. I never thought they'd use it. But I didn't try and sandbag it. It was simply bad narration.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
