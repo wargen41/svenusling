@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Batman V Superman: Dawn Of Justice | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Batman V Superman: Dawn Of Justice <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2016"><a href="#">2016</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Zack Snyder</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1070.html">Ben Affleck</a> – Bruce Wayne / Batman</li><li>Henry Cavill – Clark Kent / Superman</li><li><a href="/svenusling/p/1029.html">Amy Adams</a> – Lois</li><li><a href="/svenusling/p/1453.html">Jesse Eisenberg</a> – Lex Luthor</li><li>Diane Lane – Martha Kent</li><li><a href="/svenusling/p/1567.html">Laurence Fishburne</a> – Perry White</li><li><a href="/svenusling/p/1451.html">Jeremy Irons</a> – Alfred</li><li><a href="/svenusling/p/1375.html">Holly Hunter</a> – Senator Finch</li><li>Gal Gadot – Diana Prince / Wonder Woman</li><li>Scoot McNairy – Wallace Keefe</li><li>Callan Mulvey – Anatoli Knyazev</li><li>Tao Okamoto – Mercy Graves</li><li>Brandon Spink – Young Bruce Wayne</li><li>Lauren Cohan – Martha Wayne</li><li>Alan D. Purwin – Wayne Industries Pilot #1</li><li>Mark Edward Taylor – Jack O'Dwyer</li><li>Hugh Maguire – Jack O' Dwyer</li><li>Michael Shannon – Zod</li><li>Hanna Dworkin – Metropolis Citizen #1</li><li>Tiffany L. Addison – Metropolis Citizen #2</li><li>Owais Ahmed – Metropolis Citizen #3</li><li>Anish Jethmalani – Metropolis Citizen #4</li><li>Tiffany Bedwell – Metropolis Citizen #5</li><li>Natalee Arteaga – Metropolis Citizen #6</li><li>Keith D. Gallagher – Metropolis Citizen #7</li><li>Jeff Dumas – Metropolis Citizen #8</li><li>Miriam Lee – Metropolis Citizen #9</li><li>Alicia Regan – Metropolis Citizen #10</li><li>Ripley Sobo – Sage</li><li>Matahi Drollet – Island Diver #1</li><li>Mormon Maitui – Island Diver #2</li><li>Richard Burden – Island Scientist</li><li>Taraina Sanford – Island Mother</li><li>Julius Tennon – General Security Chief</li><li>Sammi Rotibi – General Amajagh</li><li>Michael Cassidy – Jimmy Olsen</li><li>Wunmi Mosaku – Kahina Ziri</li><li>Dennis North – Senator Barrows</li><li>Kiff VandenHeuvel – Officer Mazzuccheli</li><li>Mason Heidger – Officer Rucka</li><li>Whitney Yang – Hostage Girl #1</li><li>Kristine Cabanban – Hostage Girl #3</li><li>Sebastian Sozzi – Cesar Santos</li><li>Kent Shocknek – Kent Shocknek</li><li>Ralph Lister – Emmet Vale</li><li>Sammy A. Publes – Metropolis Cop #1</li><li>Jay R. Adams – Metropolis Cop #2</li><li>Julia Glander – Hero's Park Jogger</li><li>Rebecca Buller – Jenny</li><li>Jay Towers – Reporter at Monument</li><li>Michael Ellison – Air Force MP</li><li>Kirill Ostapenko – Underground Fight Patron</li><li>Cleve McTier – Mob Boss</li><li>Bevin Kowal – Bartender</li><li>Rashontae Wawrzyniak – Beautiful Woman</li><li>Harry Lennix – Swanwick</li><li>Christina Wren – Major Farris</li><li>Tom Luginbill – Sports Announcer #1</li><li>Dave Pasch – Sports Announcer #2</li><li>Danny Mooney – Party Photographer</li><li>Henry Frost III – Party Doorman</li><li>Nicole Forester – LeBlanc - Library President</li><li>Debbie Stabenow – Metropolis Governor</li><li>Carmen Ayala – Kitchen Service Worker #1</li><li>Josh Carrizales – Kitchen Service Worker #2</li><li>James Quesada – Kitchen Service Worker #3</li><li>Jade Chynoweth – Carmen</li><li>Aida Munoz – Carmen's Mother</li><li>Vikram Gandhi – Vikram Gandhi</li><li>Andrew Sullivan – Andrew Sullivan</li><li>Charlie Rose – Charlie Rose</li><li>Chad Krowchuk – Glen Woodburn</li><li>Neil deGrasse Tyson – Neil deGrasse Tyson</li><li>Milica Govich – Colorado Woman</li><li>David Dailey Green – Colorado Father</li><li>Madison Autumn Mies – Colorado Daughter</li><li>John Lepard – Jail Guard #1</li><li>Thomas M. Taylor – Jail Guard #2</li><li>Sandra Love Aldridge – Finch's Receptionist</li><li>Graham Beal – James Harmon - Museum Director</li><li>Henri Franklin – Bunker Soldier #1</li><li>Jonathan West – Bunker Soldier #2</li><li>Soledad O'Brien – Soledad O'Brien</li><li>T.J. Martinelli – U.S. Park Officer</li><li>Chris Newman – Wayne Accountant</li><li>Dana Bash – Dana Bash</li><li>Lulu Dahl – Diner Waitress</li><li>Thom Kikot – Diner Owner</li><li>John Seibert – McGraw (Finch's Aide)</li><li>Liam Tailford – Capitol Cop</li><li>Zachary Schafer – D.C. Protestor #2</li><li>Monrico Ward – D.C. Protestor #3</li><li>Anne Marie Damman – D.C. Protestor #4</li><li>Connie Craig – D.C. Protestor #5</li><li>Henrietta Hermelin – D.C. Protestor #6</li><li>Patrick Leahy – Senator Purrington</li><li class="voice">Carla Gugino – Ship Voice (röst)</li><li><a href="/svenusling/p/1544.html">Kevin Costner</a> – Jonathan Kent</li><li>Nancy Grace – Nancy Grace</li><li>Ryan D'Silva – Convenience Store Clerk</li><li>Albert Valladares – Convenience Store Robber</li><li>David Paris – Helicopter Pilot</li><li>Erika R. Erickson – Erika Erickson</li><li>Anderson Cooper – Anderson Cooper</li><li>Brooke Baldwin – Brooke Baldwin</li><li>Abigail Kuklis – Flight Attendant</li><li>Greg Violand – Chairman of Joint Chiefs</li><li>Tiren Jhames – Vice Chairman of Joint Chiefs</li><li>Tom Whalen – Secretary of the Air Force</li><li>Steve Jasgur – Signals Officer - Air Force</li><li>Patrick Wilson – POTUS</li><li>Jonathan Stanley – Silo Officer #1</li><li>Jesse Nagy – Silo Officer #2</li><li>Duvale Murchison – Supermax Guard</li><li>Thomas J. Fentress – Prison Barber</li><li>Coburn Goss – Father Leone</li><li>Jeff Hanlin – Wagon Driver</li><li>Joseph Cranford – Pete Ross</li><li>Emily Peterson – Lana</li><li class="voice">Gary A. Hecker – Creature Vocals (röst)</li><li class="voice">Robin Atkin Downes – Creature Vocals (röst)</li><li>Jay J. Bidwell – Terrified Pedestrian</li><li>Ray Fisher – Cyborg</li><li>Sam Logan Khaleghi – DC Protestor</li><li>Rayvon McDonald – Police Officer</li><li>David Midura – Hero's Park Tourist</li><li>Ezra Miller – The Flash</li><li>Jason Momoa – Aquaman</li><li>Joe Morton – Silas</li><li>Andy Randhawa – Journalist</li><li>Lynch R. Travis – Protester</li><li>Monib Abhat – Angry Football Player 1 (uncredited)</li><li>Michele Sweeney Abrams – Ferry Passenger (uncredited)</li><li>Michael Alexander – Scientist (uncredited)</li><li>Matthew W. Allen – Upscale Couple (uncredited)</li><li>Dan Amboyer – Drone Pilot (uncredited)</li><li>Tom Andrades – Police Officer (uncredited)</li><li>Laura Atwood – Daily Planet Reporter (uncredited)</li><li>Apollo Bacala – Gotham City Citizen (uncredited)</li><li>Michael Barbee – Wayne Financial Executive (uncredited)</li><li>Ele Bardha – Truck (uncredited)</li><li>Billie Rae Bates – Citizen (uncredited)</li><li>Michael Baumeister – Red-Caped Supporter (uncredited)</li><li>Walbert Beltran – Police Officer (uncredited)</li><li>Dennis Berryman – Bus Driver (uncredited)</li><li>Clarence Black – Gotham Cop (uncredited)</li><li>Will Blagrove – Rusty (uncredited)</li><li>Brian Boland – Wayne Security (uncredited)</li><li>Vincent Bolger – Tourist (uncredited)</li><li>Aj Brander – Food Delivery Guy (uncredited)</li><li>Dante Briggins – Police Officer (uncredited)</li><li>Wayne E. Brown – Funeral Attender (uncredited)</li><li>Will Bruce – Parade Goer (uncredited)</li><li>Barton Bund – CIA Supervisor (uncredited)</li><li>Tiffany Burns – Citizen (uncredited)</li><li>Marko Caka – Reporter (uncredited)</li><li>Damon Caro – F-18 Pilot (uncredited)</li><li>Sandhya Chandel – Lex Corp Employee (uncredited)</li><li>James Chudnow – Train traveler reading papers near wife (uncredited)</li><li>Joe Cipriano – Metropolis Survivor (uncredited)</li><li>Karla Cipriano – Army Major (uncredited)</li><li>Kristofer Connor – Drone Captain McCarthy (uncredited)</li><li>David Cosey – D.C. Business Pedestrian (uncredited)</li><li>Alan J. Cronan – Lawyer / Soldier (uncredited)</li><li>Sonja Crosby – Desk Cop #2 (uncredited)</li><li>Kim Crozier – Wayne Financial Employee (uncredited)</li><li>Vincent Cucuzza – Cia (uncredited)</li><li>Lamar Curtis – 1st Class Passenger (uncredited)</li><li>Shawntay Dalon – Gotham City Survivor (uncredited)</li><li>Christopher De Stefano – GCU Football Fan (uncredited)</li><li>Josh DeLuca – DOD Kid (uncredited)</li><li>Christopher DerGregorian – Football Coach (uncredited)</li><li>Judy Dery – Old Polish Woman (uncredited)</li><li>Christine A. Donnelly – D.C. Business Pedestrian (uncredited)</li><li>Andrew Dubats – Ranchero Man (uncredited)</li><li>Steven Dutton – Paramedic (uncredited)</li><li>Lewis Duval – Lex Corp Employee (uncredited)</li><li>Heather Fairbanks – Daily Planet Reporter (uncredited)</li><li>Mark Falvo – Reporter (uncredited)</li><li>Joe Fishel – US Senator (uncredited)</li><li>Noel Fletcher – Supporter (uncredited)</li><li>Randolph Flick II – Party Guest (uncredited)</li><li>Diana Gaitirira – Nairomian Crying Woman #2 (uncredited)</li><li>Carmen Gangale – EMT (uncredited)</li><li>Shannon Garnett – GCU Football Player (uncredited)</li><li>Martavious Gayles – Police Officer (uncredited)</li><li>Esodie Geiger – Nairomian Crying Women (uncredited)</li><li>Meighan Gerachis – Chilean President (uncredited)</li><li>Isabella Gielniak – Child (uncredited)</li><li>Marcus Goddard – Lazy Server (uncredited)</li><li>Cruz Gonzalez-Cadel – Adriana Santos (uncredited)</li><li>Ahman Green – Thug #2 (uncredited)</li><li>Michael Haase – Firefighter (uncredited)</li><li>Brian Hagerty – LexCorp Employee (uncredited)</li><li>Tyler Harding – Farmer Festival Boy (uncredited)</li><li>Axel Harney – Basketball Player (uncredited)</li><li>Sidi Henderson – Building Supervisor (uncredited)</li><li>Kyle Hillinger – Theater Patron (uncredited)</li><li>Adam Hlavac – GCU Football Fan (uncredited)</li><li>Ane Marie Hodder – Young Woman (uncredited)</li><li>Emmitt Hoeft – Millitary Officer (uncredited)</li><li>Jen Horling – LexCorp Employee (uncredited)</li><li>Krystal Huffman – Bus passenger (uncredited)</li><li>Jason Hughley – EMT (uncredited)</li><li>Kasia Januszewski – Daily Planet Reporter (uncredited)</li><li>Mark Janz – Bus Driver (uncredited)</li><li>Jefferey Jaxen – Lex Corp Security Guard #1 (uncredited)</li><li>James Jerome – Capitol Police Officer (uncredited)</li><li>Dayl Johns – Daily Planet Reporter (uncredited)</li><li>Brian Jones – LexCorp SWAT (uncredited)</li><li>David M. Jones – Ferry Passenger (uncredited)</li><li>Demi Kazanis – Lex Luthor's Girlfriend (uncredited)</li><li>Connie Kincer – New York Socialite (uncredited)</li><li>Hrvoje Klecz – Passenger (uncredited)</li><li>Calhoun Koenig – Metropolis Survivor (uncredited)</li><li>Stephanie Koenig – Day Care Teacher (uncredited)</li><li>Scott Konkel – Airforce Technical Sergeant (uncredited)</li><li>Jodi Kraska – Protester (uncredited)</li><li>Vasiliy Krivtsov – Lawyer (uncredited)</li><li>Inder Kumar – Wayne Financial Employee (uncredited)</li><li>Mike Kuse – Reporter (uncredited)</li><li>Paul Lang – Protester (uncredited)</li><li>LaVelle LaRue – Cop (uncredited)</li><li>Dan Latham – Daily Planet Reporter (uncredited)</li><li>David Leach – Football Player (uncredited)</li><li>Zach Leboza – Luke (uncredited)</li><li>Audra Lemons – Witness (uncredited)</li><li>Ryan Liddicoatt – Metropolis Civilian (uncredited)</li><li>Scott Edward Logan – Nairomian Taxi Driver (uncredited)</li><li>Alan Longstreet – News Anchor (uncredited)</li><li>David Scott Lopez – Officer Schmitt (uncredited)</li><li>Sal Lopez – Mule Herder (uncredited)</li><li>Taras Los – Russian Foreign Minister (uncredited)</li><li>Al Luis – D.C. Business Pedestrian (uncredited)</li><li>Jalene Mack – Nairomian Crying Women (uncredited)</li><li>John Michael Mahlstedt – Ferry Passenger (uncredited)</li><li>Alma Martinez – Mule Herder (uncredited)</li><li>Christopher Martinez – Gotham University Football Fan (uncredited)</li><li>Josh Matthews – Metropolis Firefighter (uncredited)</li><li>Liam Matthews – Capitol Cop (uncredited)</li><li>Bryan Matti – Protestor (uncredited)</li><li>Ralph H. Meyer – Aristocrat (uncredited)</li><li>Valiant Michael – Gotham Police Captain (uncredited)</li><li>Gordon Michaels – Gotham Cop (uncredited)</li><li>Natasha Laws Mick – Ferry Patron (uncredited)</li><li>Patrick Monroe – DC Protester (uncredited)</li><li>Brian R. Moore – Lexcorp Employee (uncredited)</li><li>Jeffrey Dean Morgan – Thomas Wayne (uncredited)</li><li>Paul D. Morgan – The Patron (uncredited)</li><li>Stacee Myers – Metropolis Citizen #11 (uncredited)</li><li>Brian Neal – Theater Patron (uncredited)</li><li>Justin Nelson – Metropolis Survivor (uncredited)</li><li>Rose Anne Nepa – Reporter (uncredited)</li><li>William Nero Jr. – Tourist (uncredited)</li><li>Tommy Nowicki – Metropolis Pedestrian (uncredited)</li><li>Nene Nwoko – Nairomian Crying Women (uncredited)</li><li>Vince Orlando – Apache Commander Burrell (uncredited)</li><li>Rajeev Pahuja – Wayne Financial Employee (uncredited)</li><li>Russ Panzarella – First Class International Traveler (uncredited)</li><li>Zach Parente – Sanitation Worker (uncredited)</li><li>Terri Partyka – LexCorp Employee (uncredited)</li><li>Evan Pinsonnault – Funeral Mourner (uncredited)</li><li>Sandy Piña – Young Citizen (uncredited)</li><li>Mikey Pobuda – Football Player (uncredited)</li><li>LaTrallo Presley – Inmate (uncredited)</li><li>Mark Rademacher – Col. John Manley (Ret.) (uncredited)</li><li>Ardeshir Radpour – CIA Special Ops (uncredited)</li><li>Diezel Ramos – Soldier (uncredited)</li><li>Elizabeth Reiners – 1st Class Passenger (uncredited)</li><li>Nicholas Ritz – Comic Book Men (uncredited)</li><li>Nick Rush – The Dailey Planet Employee (uncredited)</li><li>Anthony J Sacco – Flight Passenger (uncredited)</li><li>Nicole Santini – First Class Lady (uncredited)</li><li>Cookie Santucci – Train traveler looking at papers near husband (uncredited)</li><li>Debbie Scaletta – Wayne Enterprise Executive (uncredited)</li><li>Epic Scon – Washington Lobbyist (uncredited)</li><li>George Seder – Cameraman #2 (uncredited)</li><li>Kimani Shillingford – Arrested Man (uncredited)</li><li>Jennifer Shumaker – Football fan (uncredited)</li><li>Kevin Slone – Metropolis Pedestrian (uncredited)</li><li>Chris Slonske – Photographer (uncredited)</li><li>Samantha Sookdeosingh – Flight Passenger (uncredited)</li><li>Sharon Spencer – Female Detective (uncredited)</li><li>Brett Stanfield – Soldier / Metropolis Paramedic (uncredited)</li><li>Dennis Styles – Protester (uncredited)</li><li>John E.L. Tenney – Metropolis Executive (uncredited)</li><li>Chris D. Thomas – Corporate Air Passenger (uncredited)</li><li>Justin M. Tolliver – Theatre Goers (uncredited)</li><li>Alfredo Torella – Wayne Financial Employee (uncredited)</li><li>Michael Villegas – Factory Worker (uncredited)</li><li>Maggie Wagner – Funny Football Wife (uncredited)</li><li>Harley Wallen – Fighter Trainer (uncredited)</li><li>Roger Wiggins – Metroplis Driver (uncredited)</li><li>Leroy S. Williams III – Firefighter (uncredited)</li><li>Janellyn Woo – Citizen (uncredited)</li><li>Trevor Zhou – Cuong (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>ASCAP Award - Top Box Office Films 1998</li><li>Blockbuster Entertainment Award - Favorite Actress - Sci-Fi 1998 (1972)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actor - Sci-Fi 1998 (Chris O'Donnell)</li><li>Blimp Award - Favorite Movie Actress 1998 (1023)</li><li>Razzie Award - Sämsta kvinnliga biroll 1998 (1023)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Bästa Fantasyfilm 1998</li><li>Saturn Award - Bästa kostym 1998</li><li>Saturn Award - Bästa smink 1998</li><li>Blockbuster Entertainment Award - Favorite Supporting Actor - Sci-Fi 1998 (1062)</li><li>Blockbuster Entertainment Award - Favorite Supporting Actress - Sci-Fi 1998 (1023)</li><li>Blimp Award - Favorite Movie 1998</li><li>Blimp Award - Favorite Movie Actress 1998 (1972)</li><li>Golden Reel Award - Best Sound Editing - Dialogue & ADR 1998</li><li>Razzie Award - Sämsta film 1998</li><li>Razzie Award - Sämsta regi 1998 (Joel Schumacher)</li><li>Razzie Award - Sämsta manliga biroll 1998 (Chris O'Donnell)</li><li>Razzie Award - Sämsta manliga biroll 1998 (1062)</li><li>Razzie Award - Sämsta kvinnliga biroll 1998 (1972)</li><li>Razzie Award - Sämsta manus 1998</li><li>Razzie Award - Sämsta originalsång (For the song "The End is The Beginning is The End".) 1998</li><li>Razzie Award - Sämsta nyinspelning eller uppföljare 1998</li><li>Razzie Award - Worst Reckless Disregard for Human Life and Public Property 1998</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

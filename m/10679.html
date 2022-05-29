@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Barfota I Parken | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Barfota I Parken <a href="#" class="grade">+++</a></h2>
+										<h3>Barefoot in the Park</h3>
+										<p>
+										Film från <time datetime="1967"><a href="#">1967</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Gene Saks</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1821.html">Robert Redford</a> – Paul Bratter</li><li><a href="/svenusling/p/1430.html">Jane Fonda</a> – Corie Bratter</li><li><a href="/svenusling/p/1143.html">Charles Boyer</a> – Victor Velasco</li><li>Mildred Natwick – Ethel Banks</li><li>Herb Edelman – Harry Pepper</li><li>Mabel Albertson – Harriet</li><li>Fritz Feld – Restaurant Proprietor</li><li>James Stone – Delivery Man</li><li>Ted Hartley – Frank</li><li>Billie Bird – Drunken Neighbor (uncredited)</li><li>Paul E. Burns – Bum in Park (uncredited)</li><li>Bill Derringer – Store Clerk (uncredited)</li><li>John Indrisano – Policeman with Drunk (uncredited)</li><li>Doris Roberts – Hotel Maid (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>WAFCA Award - Bästa skådespelarensemble 2002</li><li>Black Reel - Bästa manus (3:e plats) 2003</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Black Reel - Bästa film 2003</li><li>Black Reel - Bästa regi 2003 (Tim Story)</li><li>Black Reel - Bästa skådespelare 2003 (1390)</li><li>Black Reel - Bästa manliga biroll 2003 (Cedric the Entertainer)</li><li>Black Reel - Bästa Soundtrack 2003</li><li>Casting Society of America, Artios - Best Casting for Feature Film, Comedy 2003</li><li>Image Award - Bästa film 2003</li><li>Image Award - Bästa skådespelare 2003 (1390)</li><li>Image Award - Bästa manliga biroll 2003 (1052)</li><li>Image Award - Bästa manliga biroll 2003 (Cedric the Entertainer)</li><li>Image Award - Bästa kvinnliga biroll 2003 (Eve)</li><li>MTV Movie Award - Bästa film 2003</li><li>MTV Movie Award - Bästa komiska prestation 2003 (Cedric the Entertainer)</li><li>MTV Movie Award - Breakthrough Female Performance 2003 (Eve)</li><li>Teen Choice Award - Choice Movie Breakout Star - Male 2003 (Michael Ealy)</li><li>Teen Choice Award - Choice Movie Breakout Star - Female 2003 (Eve)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>A running gag is the absence of an elevator to get to the newlyweds' 6th-floor apartment; new arrivals are out of breath throughout the film. For its release in France, however, the dubbed dialogue placed the apartment on the 9th floor (equivalent to the 10th floor in the US), since in France, older buildings with six stories and no elevator are not uncommon and audiences wouldn't have understood why climbing the stairs was so arduous.</li><li>[Robert Redford][/p?id=1821] loathed wearing a suit and tie all day which was required for his character. During breaks between filming, [Redford][/p?id=1821] wore western boots and a black cowboy hat.</li><li>When actor [Robert Redford][/p?id=1821] was offered the lead male role in the film, he was surprised. [Redford][/p?id=1821] had played the part on Broadway and did not like the idea of repeating himself. [Redford][/p?id=1821] believed that it was standard practice for players in Broadway productions to not be considered for parts they had created on the stage for the Hollywood movie version. However, [Redford][/p?id=1821] decided to do the film.</li><li>Neil Simon based this story on his first marriage.</li><li>First box-office hit movie of actor [Robert Redford][/p?id=1821].</li><li>[Robert Redford][/p?id=1821] had effectively given up acting prior to filming this. Disillusioned after the relative failure of &quot;[This Property is Condemned][/f?id=Min%20Kropp%20%C3%84r%20F%C3%B6rd%C3%B6md]&quot; &quot;[Den Djävulska ][/f?id=Den%20Dj%C3%A4vulska%20]Jakten[][/f?id=]The Chase[[&quot; and &quot;][/f?id=%3A%3A%22%20and%20%22]Inside Daisy Clover][/f?id=%22%20and%20%22%5D%5B%2Ff%3Fid%3D%253A%253A%2522%2520and%2520%2522%5DInside%20Daisy%20Clover]&quot;, he quit Hollywood and spent a year travelling around Spain and Greece. It was only after Paramount threatened to sue him over certain &quot; contractual obligations &quot; that he returned home to star in this.</li><li>Debut theatrical feature film directed by actor-producer-director [Gene Saks][/p?id=Gene%20Saks]. [Saks][/p?id=Gene%20Saks] also directed other Neil Simon written films such as [The Odd Couple][/f?id=17257] (1968), [Brighton Beach Memoirs][/f?id=Brighton%20Beach%20Memoirs] (1986), and [Last of the Red Hot Lovers][/f?id=Last%20of%20the%20Red%20Hot%20Lovers] (1972). [Saks][/p?id=Gene%20Saks] also co-starred in Simon's [The Prisoner of Second Avenue][/f?id=18586] (1975).</li><li>[Redford][/p?id=1821], who was already familiar with the script and how the characters should be portrayed, worked well with Fonda. If she needed redirection he would take [Saks][/p?id=Gene%20Saks] aside, make the point in private, and then [Saks][/p?id=Gene%20Saks] would coach her.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

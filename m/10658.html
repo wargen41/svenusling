@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bad Taste | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Bad Taste <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1987"><a href="#">1987</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre22">Skräck</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Terry Potter – Ozzy / 3rd Class Alien</li><li>Pete O'Herne – Barry / 3rd Class Alien</li><li>Craig Smith – Giles / 3rd Class Alien</li><li>Mike Minett – Frank / 3rd Class Alien</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Derek / Robert</li><li>Doug Wren – Lord Crumb</li><li>Dean Lawrie – Lord Crumb SPFX Double / 3rd Class Alien</li><li>Peter Vere-Jones – Lord Crumb's Voice</li><li>Ken Hammon – 3rd Class Alien</li><li>Robin Griggs – 3rd Class Alien</li><li>Michael Gooch – 3rd Class Alien</li><li>Peter Gooch – 3rd Class Alien</li><li>Laurie Yarrall – 3rd Class Alien</li><li>Shane Yarrall – 3rd Class Alien</li><li>Philip Lamey – 3rd Class Alien</li><li>Costa Botes – 3rd Class Alien</li><li>Graham Butcher – 3rd Class Alien</li><li>Bob Haliburton – 3rd Class Alien</li><li>Andrew McKay – 3rd Class Alien</li><li>Clive Haywood – 3rd Class Alien</li><li>John McTavish – 3rd Class Alien</li><li>John Nelson – 3rd Class Alien</li><li>Graham Nesbitt – 3rd Class Alien</li><li>Steven Smith – 3rd Class Alien</li><li>John Logan Jr. – 3rd Class Alien</li><li>Matt Noonan – 3rd Class Alien</li><li>Cameron Chittock – 3rd Class Alien</li><li>Ray Battersby – 3rd Class Alien</li><li>Mike Appleby – 3rd Class Alien</li><li>Peter Appleby – 3rd Class Alien</li><li>Michael Kane – 3rd Class Alien</li><li>Robert Johnston – 3rd Class Alien</li><li>Scott Bradshaw – 3rd Class Alien</li><li>Mark Lamey – 3rd Class Alien</li><li>Giles Forrest – 3rd Class Alien</li><li>Grant Taylor – 3rd Class Alien</li><li>Carol Taylor – 3rd Class Alien</li><li>Dean Taylor – 3rd Class Alien</li><li>Kim Taylor – 3rd Class Alien</li><li>Dave Hamilton – 3rd Class Alien</li><li>Jock Fyfe – 3rd Class Alien</li><li>Tony Hiles – Coldfinger</li><li>John Ruby – 3rd Class Alien</li><li>Kerry Underhill – 3rd Class Alien</li><li>Robin Watene – 3rd Class Alien</li><li>Garry A. Brown – 3rd Class Alien</li><li>Mark Jackson – 3rd Class Alien</li><li>Peter Henderson – 3rd Class Alien</li><li>Janine Riely – 3rd Class Alien</li><li>Margaret Byford – 3rd Class Alien</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>TFCA Award - Bästa skådespelare 2009 (1696)</li><li>Venice Film Festival, Christopher D. Smithers Foundation Special Award 2009 (Werner Herzog)</li><li>Dublin International Film Festival, Dublin Film Critics Special Jury Prize 2010 (Werner Herzog)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Venice Film Festival, Golden Lion 2009 (Werner Herzog)</li><li>Chlotrudis Award - Bästa film 2010</li><li>Chlotrudis Award - Bästa regi 2010 (Werner Herzog)</li><li>Chlotrudis Award - Bästa skådespelare 2010 (1696)</li><li>Chlotrudis Award - Bästa originalmanus 2010</li><li>Independent Spirit Award - Bästa foto 2010</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Director [Peter Jackson][/p?id=1744] shot the film on weekends over a four-year period with friends playing the lead roles. [Jackson][/p?id=1744] funded most of the film himself until towards the end of the shoot when the New Zealand Film Commission gave him money to finish his project after being impressed with what he'd already produced. There was never a script for the movie; each scene was filmed from ideas the director had come up with during the week.</li><li>[Pete O'Herne][/p?id=Pete%20O'Herne] hadn't shaved before his first scene. Director [Peter Jackson][/p?id=1744] told him to keep that look for continuity. So for four years, [O'Herne][/p?id=Pete%20O'Herne] couldn't shave for more than once a week and this habit was hard to break after shooting was completed.</li><li>[Peter Jackson][/p?id=1744] constructed his own counterweighted steady-cam device for this film that cost only $15.</li><li>The film started life as a ten-minute short called &quot;Roast of the Day&quot;, which started shooting in 1981. The story concerned Giles ([Craig Smith][/p?id=Craig%20Smith]), an aid worker who comes to the small coastal town of Kaihoro on collection day. The young man encounters a psychopath named Robert who then pursues him. Giles escapes the madman and reaches an old heritage estate where he tries to contact the authorities. However, the same clan of cannibalistic psychos that Robert is from occupies the house and captures Giles. In an ironic twist the aid worker is later cooked up to relieve the famine of the cannibals. Along the way [Peter Jackson][/p?id=1744] added the &quot;special forces&quot; team that would be sent to rescue Giles, but in this early version the &quot;boys&quot; would turn out to be cannibals as well (they staged the whole thing because they like to play with their food). When it came time for [Jackson][/p?id=1744] to finally edit the film together he found that he had nearly 50 minutes' worth of usable footage. So with its length and being inspired by the 16mm efforts of [Sam Raimi's][/p?id=Sam%20Raimi] [The Evil Dead][/f?id=13513] (1981), [Jackson][/p?id=1744] continued shooting to make the movie a full-length feature.</li><li>[Peter Jackson][/p?id=1744] made all masks in his mother's kitchen. The heads of the aliens are bent backwards because otherwise they wouldn't fit in the oven where the latex was hardened.</li><li>[Craig Smith][/p?id=Craig%20Smith] was part of the original cast and was married and then divorced within the four-year time frame it took to make the film. Because most of the filming took place on weekends, he found himself written out because his new wife - a devout Christian - objected to him working on Sundays. [Smith][/p?id=Craig%20Smith] was written back into the film when he got divorced.</li><li>[Doug Wren][/p?id=Doug%20Wren] who played the Alien leader, Lord Crumb, died during post-production. Because of the non-audio filming, his voice was dubbed by a different actor.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

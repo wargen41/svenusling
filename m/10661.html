@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Baksmällan | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Baksmällan <a href="#" class="grade">+++</a></h2>
+										<h3>The Hangover</h3>
+										<p>
+										Film från <time datetime="2009"><a href="#">2009</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Todd Phillips</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1098.html">Bradley Cooper</a> – Phil</li><li>Ed Helms – Stu</li><li>Zach Galifianakis – Alan</li><li>Justin Bartha – Doug</li><li>Heather Graham – Jade</li><li>Sasha Barrese – Tracy</li><li>Jeffrey Tambor – Sid</li><li>Ken Jeong – Mr. Chow</li><li>Rachael Harris – Melissa</li><li>Mike Tyson – Mike Tyson</li><li>Mike Epps – Black Doug</li><li>Jernard Burks – Leonard</li><li>Rob Riggle – Officer Franklin</li><li>Cleo King – Officer Garden</li><li>Bryan Callen – Eddie</li><li>Matt Walsh – Dr. Valsh</li><li>Ian Anthony Dale – Chow's #1</li><li>Michael Li – Chow's #2</li><li>Sondra Currie – Linda</li><li>Gillian Vigman – Stephanie</li><li>Nathalie Fay – Lisa</li><li>Chuck Pacheco – Hotel Guest at Valet</li><li>Jesse Erwin – Hotel Valet</li><li>Dan Finnerty – Wedding Singer</li><li>Keith Lyle – Casino Dealer</li><li>Brody Stevens – Officer Foltz</li><li>Todd Phillips – Mr. Creepy</li><li>Mike Vallely – Neeco</li><li>James Martin Kelly – Police Clerk</li><li>Murray Gershenz – Felix</li><li>Andrew Astor – Eli</li><li>Casey Margolis – Budnick</li><li>Ken Flaherty – Old Timer at Gas Station</li><li>Joe Alexander – Pit Boss</li><li>Constance Broge – Woman in Elevator</li><li>Sue Pierce – Mini-Mart Cashier</li><li>Floyd Levine – Tailor</li><li>Robert A. Ringler – Minister</li><li>Britt Barrett – Bridesmaid</li><li>Chauntae Davies – Bridesmaid</li><li>Alisa Allapach – Bridesmaid</li><li>Nicholas Furu – Stun Gun Boy</li><li>Angelica Flameno – Stun Gun Girl</li><li>Lily Winn – Screaming Girl</li><li>Katerina Moutsatsou – Eddie's Assistant</li><li>Faleolo Alailima – Tyson's Bodyguard</li><li>Rio Ahn – Orderly (uncredited)</li><li>Neil Antonio – Casino Patron (uncredited)</li><li>John Jason Bailey – Ceasar's Palace Pimp (uncredited)</li><li>Bart Blackburn – Drunk Casino Patron (uncredited)</li><li>Jordan Bobbitt – Flower Girl #1 (uncredited)</li><li>Palmer Bocim – Bradley Cooper (uncredited)</li><li>Guile Branco – Guest at Casino (uncredited)</li><li>Joey Brander – Student (uncredited)</li><li>Michael Bravo – Convenience Store Patron (uncredited)</li><li>Shannon Brokaw – Precision Driver (uncredited)</li><li>Lisa Catara – Hotel Dancer (uncredited)</li><li>Kaitlin Clark – Girl in Elevator (uncredited)</li><li>Natalie Cohen – Casino Patron #6 (uncredited)</li><li>Matthew Corbett Davis – Blackjack Player (uncredited)</li><li>Roger Chico De Coster – Casino Guest (uncredited)</li><li>Cody Deal – Roman Soldier at Caesar's Palace (uncredited)</li><li>Charlene Geisler – Katie - Girl in the elevator (uncredited)</li><li>Lanette Fugit Hannah – High Roller (uncredited)</li><li>David Hill – Parent Driving Jaguar (uncredited)</li><li>Marcus Hinton – Pool Patron (uncredited)</li><li>Mitch Holleman – Max - Student (uncredited)</li><li>Grant Holmquist – Tyler (uncredited)</li><li>Brian Irvin – VIP Hotel Guest (uncredited)</li><li>Ty Izquierdo – Bartender (uncredited)</li><li>Brittani Jenee' – Bachelorette (uncredited)</li><li>Lucinda Jenney – Extra (uncredited)</li><li>Carrie Keagan – Casino Guest (uncredited)</li><li>Niko Koshet – Wedding Guest (uncredited)</li><li>Ivy Lee – Poolside Girl (uncredited)</li><li>Kimya Mallory – Dancer (uncredited)</li><li>Dov Markowich – Blackjack Player (uncredited)</li><li>Stephanie Mathis – Casino Guest (uncredited)</li><li>Rusty Meyers – Blackjack observer (uncredited)</li><li>Anthony Mingilino – Precision Driver (uncredited)</li><li>April Montgomery – Groom's Wedding Guest (uncredited)</li><li>Roy C. Peterson – Tri Card Player (uncredited)</li><li>Jessica Postrozny – Casino Guest (uncredited)</li><li>Alex Pulido – Private School Student (uncredited)</li><li>Richard Alan Reid – Vegas High Roller (uncredited)</li><li>Joan Riegert – High Roller Wife (uncredited)</li><li>Rachael Riegert – Cocktail Waitress (uncredited)</li><li>Michael A. Rizza – Guy in the elevator (uncredited)</li><li>Heather Roop – Mom in Elevator (uncredited)</li><li>Lina Roudeva – Actress (uncredited)</li><li>Joe Satriani – Guitarist in Wedding Band (uncredited)</li><li>Fran Severini – Dancing Grandma (uncredited)</li><li>Steve Somers – Wedding Planner (uncredited)</li><li>Tom Spano – Casino High Roller (uncredited)</li><li>Scott 'Carrot Top' Thompson – Scott 'Carrot Top' Thompson (uncredited)</li><li>Tomiko – Store Patron (uncredited)</li><li>Jaira Valenti – Bartender Hostess (uncredited)</li><li>Ryan Van de Kamp Buchanan – Wedding Waiter (uncredited)</li><li>Yvonne Vera – Extra (uncredited)</li><li>Emma Wetzel – Flower Girl (uncredited)</li><li>Victor Yerrid – Tiger (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>In real life, [Mike Tyson][/p?id=Mike%20Tyson] owns seven tigers.</li><li>No effects or prosthetics were created for Stu's missing tooth. Actor [Ed Helms][/p?id=Ed%20Helms] never had an adult incisor grow, and his fake incisor was taken out for the parts of filming where Stu's tooth is missing.</li><li>An actual taser was originally going to be used in the taser scene, but lawyers from Warner Bros. demanded that the crew use a prop.</li><li>[Lindsay Lohan][/p?id=Lindsay%20Lohan] was offered the part of the stripper, Jade, but turned it down. She did not like the script and thought the movie would bomb. [Heather Graham][/p?id=Heather%20Graham] was given the role instead. [Lohan][/p?id=Lindsay%20Lohan] later admitted to regretting the decision.</li><li>[Jack Black][/p?id=1397] turned down the role of Alan Garner and [Jonah Hill][/p?id=Jonah%20Hill], [Jake Gyllenhaal][/p?id=1407] and [Thomas Haden Church][/p?id=1930] were considered for the role before it was substantially rewritten during development.</li><li>[Paul Rudd][/p?id=1729] turned down the role of Phil Wenneck.</li><li>[Mike Tyson][/p?id=Mike%20Tyson] revealed that he appeared in the film to fund his drug habit and that he was high on cocaine when he filmed his scenes. [Tyson][/p?id=Mike%20Tyson] later said that working on the film convinced him to change his lifestyle.</li><li>[Ed Helms][/p?id=Ed%20Helms], [Zach Galifianakis][/p?id=Zach%20Galifianakis], and [Bradley Cooper][/p?id=1098] were all casual acquaintances before the movie was filmed, which [Helms][/p?id=Ed%20Helms] said he believed helped in establishing a rapport and chemistry amongst their characters. [Helms][/p?id=Ed%20Helms] credited [Todd Phillips][/p?id=Todd%20Phillips] for &quot;bringing together three guys who are really different, but really appreciate each others' humour and sensibilities.&quot; [Helms][/p?id=Ed%20Helms] also said the fact that the story of the three characters growing closer and bonding informed the friendship between the three actors: &quot;As you spend 14 hours a day together for three months, you see a lot of sides of somebody. We went through the wringer together, and that shared experience really made us genuine buddies.&quot;</li><li>[Mike Tyson][/p?id=Mike%20Tyson] originally refused to appear in the film, but he changed his mind when he found out that [Todd Phillips][/p?id=Todd%20Phillips] directed [Old School][/f?id=17250] (2003), which [Tyson][/p?id=Mike%20Tyson] liked.</li><li>[Jeremy Piven][/p?id=Jeremy%20Piven] turned down the part of Stu Price.</li><li>[Zach Galifianakis][/p?id=Zach%20Galifianakis] improvised the line &quot;I didn't know they gave out rings at the Holocaust&quot;. The initial line had Alan making a sexually inappropriate comment about Stu's mom, but Zach thought up the new line for two reasons: he wanted to show that Alan was someone who knew almost nothing about the world, and that a successful joke that mentioned the Holocaust would establish that the film was going to be hilarious overall. Everyone at set loved the joke ([Bradley Cooper][/p?id=1098] appears to be disgusted by it, but he was actually following the script's directions for Phil to look at Alan in contempt, after the original line that was written out) and [Todd Phillips][/p?id=Todd%20Phillips] said it would be in the film.</li><li>[Malin Akerman][/p?id=Malin%20Akerman] had been considered for the role of Jade that went to [Heather Graham][/p?id=Heather%20Graham].</li><li>[Todd Phillips][/p?id=Todd%20Phillips] and [Bradley Cooper][/p?id=1098] first film together.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

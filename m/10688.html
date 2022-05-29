@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Basic Instinct | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Basic Instinct <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1992"><a href="#">1992</a></time><br>										<ul class="genres"><li><a href="#genre19">Mystik</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Paul Verhoeven</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1646.html">Michael Douglas</a> – Detective Nick Curran</li><li><a href="/svenusling/p/1874.html">Sharon Stone</a> – Catherine Tramell</li><li>George Dzundza – Gus</li><li>Jeanne Tripplehorn – Dr. Beth Garner</li><li>Denis Arndt – Lieutenant Walker</li><li>Leilani Sarelle – Roxy</li><li>Bruce A. Young – Andrews</li><li>Chelcie Ross – Captain Talcott</li><li>Dorothy Malone – Hazel Dobkins</li><li><a href="/svenusling/p/1994.html">Wayne Knight</a> – John Correli</li><li>Daniel von Bargen – Lieutenant Nilsen</li><li><a href="/svenusling/p/1899.html">Stephen Tobolowsky</a> – Dr. Lamott</li><li>Benjamin Mouton – Harrigan</li><li>Jack McGee – Sheriff</li><li>Bill Cable – Johnny Boz</li><li>Stephen Rowe – Internal Affairs Investigator</li><li>Mitch Pileggi – Internal Affairs Investigator</li><li>Mary Pat Gleason – Juvenile Officer</li><li>Freda Foh Shen – Berkeley Registrar</li><li>William Duff-Griffin – Dr. Myron</li><li>James Rebhorn – Dr. McElwaine</li><li>David Wells – Polygraph Examiner</li><li>Bradford English – Campus Policeman</li><li>Mary Ann Rodgers – Nurse</li><li>Adilah Barnes – Nurse</li><li>Irene Olga López – Maid</li><li>Juanita Jennings – Receptionist</li><li>Craig C. Lewis – Bartender - Police Bar</li><li>Michael David Lally – Detective</li><li>Peter Appel – Detective</li><li>Michael Halton – Bartender - Country Western Bar</li><li>Keith McDaniel – Featured Dancer</li><li>Eric Poppick – Coroner's Guy</li><li>Ron Cacas – Policeman</li><li>Kayla Blake – Roxy's Friend</li><li>Ken Liebenson – Doo Wah Riders</li><li>Lindy Rasmusson – Doo Wah Riders</li><li>Byron Berline – Doo Wah Riders</li><li>Eddie Dunbar – Doo Wah Riders</li><li>Tod McKibbin – Doo Wah Riders</li><li>Julie Bond – Hand Puppet Model</li><li>Jeanne Basone –  (unconfirmed)</li><li>Doreen Foo Croft –  (unconfirmed)</li><li>Patricia Anne Isgate – Classmate (uncredited)</li><li>Anne Lockhart – Disco Patron (uncredited)</li><li>Andy Rolfes – Police Officer (uncredited)</li><li>Bob Sallese – Internal Affairs Detective (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Trailer - Best Voice Over 2003</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Jennifer Beals][/p?id=Jennifer%20Beals], [Jennifer Grey][/p?id=Jennifer%20Grey], [Jamie Lee Curtis][/p?id=1428], [Glenn Close][/p?id=1336], [Ally Sheedy][/p?id=Ally%20Sheedy], [Diane Keaton][/p?id=1242], [Stockard Channing][/p?id=Stockard%20Channing], [Annie Potts][/p?id=Annie%20Potts], Robin Wright, [Nancy Allen][/p?id=1683], [Joan Allen][/p?id=Joan%20Allen], [Rosanna Arquette][/p?id=Rosanna%20Arquette], [Kim Basinger][/p?id=Kim%20Basinger], [Ellen Barkin][/p?id=Ellen%20Barkin], [Patricia Clarkson][/p?id=1716], [Geena Davis][/p?id=Geena%20Davis], [Laura Dern][/p?id=1566], [Linda Fiorentino][/p?id=Linda%20Fiorentino], [Bridget Fonda][/p?id=Bridget%20Fonda], [Carrie Fisher][/p?id=1131], [Jodie Foster][/p?id=1467], [Melanie Griffith][/p?id=1636], [Linda Hamilton][/p?id=Linda%20Hamilton], [Daryl Hannah][/p?id=Daryl%20Hannah], [Helen Hunt][/p?id=1368], [Holly Hunter][/p?id=1375], [Anjelica Huston][/p?id=1045], [Amy Irving][/p?id=1030], [Nicole Kidman][/p?id=1697], [Diane Lane][/p?id=Diane%20Lane], [Christine Lahti][/p?id=Christine%20Lahti], [Jessica Lange][/p?id=Jessica%20Lange], [Jennifer Jason Leigh][/p?id=Jennifer%20Jason%20Leigh], [Julia Louis-Dreyfus][/p?id=Julia%20Louis-Dreyfus], [Heather Locklear][/p?id=Heather%20Locklear], [Andie MacDowell][/p?id=1033], Madonna, [Virginia Madsen][/p?id=Virginia%20Madsen], [Demi Moore][/p?id=1235], [Emma Thompson][/p?id=1282], [Uma Thurman][/p?id=1972], [Tatum O'Neal][/p?id=Tatum%20O'Neal], [Annette O'Toole][/p?id=1051], [Sarah Jessica Parker][/p?id=Sarah%20Jessica%20Parker], [Michelle Pfeiffer][/p?id=1668], [Greta Scacchi][/p?id=Greta%20Scacchi], [Elisabeth Shue][/p?id=1273], [Mary Steenburgen][/p?id=Mary%20Steenburgen], [Julia Roberts][/p?id=1522], [Mimi Rogers][/p?id=Mimi%20Rogers], [Isabella Rossellini][/p?id=Isabella%20Rossellini], [Meg Ryan][/p?id=1633], [Meryl Streep][/p?id=1641], [Sissy Spacek][/p?id=1885], [Kathleen Turner][/p?id=Kathleen%20Turner], [Sigourney Weaver][/p?id=1882] and [Debra Winger][/p?id=Debra%20Winger] were considered for the role of Catherine Tramell. [Kelly Lynch][/p?id=Kelly%20Lynch] was reportedly offered the role, and [Mariel Hemingway][/p?id=Mariel%20Hemingway], [Catherine O'Hara][/p?id=1138] and [Kelly McGillis][/p?id=Kelly%20McGillis] auditioned for it. [Lena Olin][/p?id=Lena%20Olin] reportedly wanted the role, but refused to work with [Paul Verhoeven][/p?id=Paul%20Verhoeven].</li><li>Writer [Joe Eszterhas][/p?id=Joe%20Eszterhas] and producer [Irwin Winkler][/p?id=Irwin%20Winkler] walked off the picture after failing to reach agreement with director [Paul Verhoeven][/p?id=Paul%20Verhoeven] over how the film should be tackled. [Verhoeven][/p?id=Paul%20Verhoeven] promptly hired [Total Recall][/f?id=Total%20Recall] (1990) writer [Gary Goldman][/p?id=Gary%20Goldman] to come up with some new scenes, most of which beefed up [Michael Douglas's][/p?id=1646] character and made him less wimpy. These changes were largely made at the behest of [Douglas][/p?id=1646]. It was during this stage that [Verhoeven][/p?id=Paul%20Verhoeven] realized his changes weren't going to work so he had to publicly make up with [Eszterhas][/p?id=Joe%20Eszterhas]. Problems reoccurred later when [Eszterhas][/p?id=Joe%20Eszterhas] wanted to make more changes to appease the gay and lesbian communities. [Verhoeven][/p?id=Paul%20Verhoeven] point blank refused to incorporate these changes.</li><li>To get an R-rating, [Paul Verhoeven][/p?id=Paul%20Verhoeven] had to re-cut the movie a total of fourteen times.</li><li>Writer [Joe Eszterhas][/p?id=Joe%20Eszterhas] was paid a then-unheard-of sum of $3 million for his script.</li><li>[Paul Verhoeven][/p?id=Paul%20Verhoeven] briefly considered [Peter Weller][/p?id=1756] for the role of Nick Curran.</li><li>The first film of [Jeanne Tripplehorn][/p?id=Jeanne%20Tripplehorn].</li><li>This marks the final film appearance of Oscar winner [Dorothy Malone][/p?id=Dorothy%20Malone].</li><li>[Harrison Ford][/p?id=1358], [Kevin Costner][/p?id=1544], [Mel Gibson][/p?id=1635], [Robert De Niro][/p?id=1808], [Sean Penn][/p?id=1868], [John Heard][/p?id=John%20Heard], [Tom Hanks][/p?id=1950], [Charlie Sheen][/p?id=1149], [Sylvester Stallone][/p?id=1915], [Jack Nicholson][/p?id=1402], [Bruce Willis][/p?id=1117], [Al Pacino][/p?id=1008], [Martin Sheen][/p?id=1620], [Nicolas Cage][/p?id=1696], [Dennis Quaid][/p?id=1239], [Jeff Bridges][/p?id=1441] and [John Travolta][/p?id=1501] were considered for the role of Nick Curran.</li><li>[Sharon Stone's][/p?id=1874] infamous leg-uncrossing scene was not in [Joe Eszterhas'][/p?id=Joe%20Eszterhas] original script; it was thought up by [Paul Verhoeven][/p?id=Paul%20Verhoeven] while the movie was being shot.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
