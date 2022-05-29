@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alan Ruck | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Alan Ruck</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1956-07-01">1956-07-01</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/18660.html">Speed</a></li><li><a href="/svenusling/m/21999.html">Young Guns II</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/13921.html">Fira Med Ferris</a></li><li><a href="/svenusling/m/14096.html">Fullt Hus</a></li><li><a href="/svenusling/m/19645.html">Star Trek: Generations</a></li><li><a href="/svenusling/m/21113.html">Twister</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/15309.html">Jonathans Frestelse</a></li><li><a href="/svenusling/m/21889.html">War Machine</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/14436.html">The Happening</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/18677.html">Spin City: Pilot</a></li><li><a href="/svenusling/m/18678.html">Spin City: The Great Pretender</a></li><li><a href="/svenusling/m/18679.html">Spin City: The Apartment (1996)</a></li><li><a href="/svenusling/m/18680.html">Spin City: Pride and Prejudice</a></li><li><a href="/svenusling/m/18682.html">Spin City: A Star Is Born</a></li><li><a href="/svenusling/m/18689.html">Spin City: Bye Bye Love</a></li><li><a href="/svenusling/m/18692.html">Spin City: Kiss Me, Stupid</a></li><li><a href="/svenusling/m/18710.html">Spin City: Family Affair</a></li><li><a href="/svenusling/m/18711.html">Spin City: Family Affair: Part 2</a></li><li><a href="/svenusling/m/18713.html">Spin City: Miracle Near 34th Street</a></li><li><a href="/svenusling/m/18715.html">Spin City: The Paul Lassiter Story</a></li><li><a href="/svenusling/m/18697.html">Spin City: Hot in the City</a></li><li><a href="/svenusling/m/18700.html">Spin City: Mayor Over Miami</a></li><li><a href="/svenusling/m/18779.html">Spin City: Goodbye: Part 2</a></li><li><a href="/svenusling/m/18744.html">Spin City: Back to the Future IV - Judgment Day</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/18753.html">Spin City Säsong 4</a></li><li><a href="/svenusling/m/18676.html">Spin City Säsong 1</a></li><li><a href="/svenusling/m/18754.html">Spin City: Catcher in the Bronx</a></li><li><a href="/svenusling/m/18755.html">Spin City: James and the Giant Speech</a></li><li><a href="/svenusling/m/18756.html">Spin City: All the Mayor's Men</a></li><li><a href="/svenusling/m/18757.html">Spin City: These Shoes Were Made for Cheatin'</a></li><li><a href="/svenusling/m/18758.html">Spin City: Rebel Without a Chair</a></li><li><a href="/svenusling/m/18681.html">Spin City: The Rivals</a></li><li><a href="/svenusling/m/18759.html">Spin City: The Mayor May Not</a></li><li><a href="/svenusling/m/18760.html">Spin City: The Great Debate</a></li><li><a href="/svenusling/m/18683.html">Spin City: Grand Illusion</a></li><li><a href="/svenusling/m/18761.html">Spin City: How to Bury a Millionaire</a></li><li><a href="/svenusling/m/18684.html">Spin City: The High and the Mighty</a></li><li><a href="/svenusling/m/18762.html">Spin City: The Thanksgiving Show</a></li><li><a href="/svenusling/m/18685.html">Spin City: Meet Tommy Dugan</a></li><li><a href="/svenusling/m/18763.html">Spin City: The Doorman Always Rings Twice</a></li><li><a href="/svenusling/m/18686.html">Spin City: The Competition</a></li><li><a href="/svenusling/m/18764.html">Spin City: Mustang Mikey</a></li><li><a href="/svenusling/m/18687.html">Spin City: Dog Day Afternoon</a></li><li><a href="/svenusling/m/18688.html">Spin City: Criss Cross</a></li><li><a href="/svenusling/m/18765.html">Spin City: My Dinner with Caitlin</a></li><li><a href="/svenusling/m/18766.html">Spin City: A Tale of Two Sisters</a></li><li><a href="/svenusling/m/18690.html">Spin City: Starting Over</a></li><li><a href="/svenusling/m/18767.html">Spin City: Casino</a></li><li><a href="/svenusling/m/18691.html">Spin City: Gabby's Song</a></li><li><a href="/svenusling/m/18768.html">Spin City: The Marry Caitlin Moore Show</a></li><li><a href="/svenusling/m/18769.html">Spin City: Suffragette City</a></li><li><a href="/svenusling/m/18693.html">Spin City: An Affair to Remember</a></li><li><a href="/svenusling/m/18694.html">Spin City: Snowbound</a></li><li><a href="/svenusling/m/18695.html">Spin City: Striptease</a></li><li><a href="/svenusling/m/18772.html">Spin City: Uneasy Rider</a></li><li><a href="/svenusling/m/18701.html">Spin City Säsong 2</a></li><li><a href="/svenusling/m/18702.html">Spin City: Paul Flew Over the Cuckoo's Nest</a></li><li><a href="/svenusling/m/18703.html">Spin City: Porn in the U.S.A.</a></li><li><a href="/svenusling/m/18704.html">Spin City: Wonder Woman</a></li><li><a href="/svenusling/m/18705.html">Spin City: The Goodbye Girl</a></li><li><a href="/svenusling/m/18706.html">Spin City: In the Heat of the Day</a></li><li><a href="/svenusling/m/18707.html">Spin City: Radio Daze</a></li><li><a href="/svenusling/m/18708.html">Spin City: The Thirty Year Itch</a></li><li><a href="/svenusling/m/18709.html">Spin City: My Life Is a Soap Opera</a></li><li><a href="/svenusling/m/18712.html">Spin City: They Shoot Horses, Don't They?</a></li><li><a href="/svenusling/m/18714.html">Spin City: Same Time Next Year</a></li><li><a href="/svenusling/m/18716.html">Spin City: Gentleman's Agreement</a></li><li><a href="/svenusling/m/18717.html">Spin City: Deaf Man Walking</a></li><li><a href="/svenusling/m/18718.html">Spin City: The Marrying Men</a></li><li><a href="/svenusling/m/18719.html">Spin City: One Wedding and a Funeral: Part 2</a></li><li><a href="/svenusling/m/18720.html">Spin City: A River Runs Through Me</a></li><li><a href="/svenusling/m/18721.html">Spin City: The Pope of Gracie Mansion</a></li><li><a href="/svenusling/m/18722.html">Spin City: Bye, Bye, Birdie</a></li><li><a href="/svenusling/m/18723.html">Spin City: The Lady or the Tiger</a></li><li><a href="/svenusling/m/18724.html">Spin City: Single White Male</a></li><li><a href="/svenusling/m/18725.html">Spin City: The Paul Bearer</a></li><li><a href="/svenusling/m/18696.html">Spin City: Deaf Becomes Her</a></li><li><a href="/svenusling/m/18773.html">Spin City: About Last Night</a></li><li><a href="/svenusling/m/18698.html">Spin City: Bone Free</a></li><li><a href="/svenusling/m/18699.html">Spin City: The Mayor Who Came to Dinner</a></li><li><a href="/svenusling/m/18778.html">Spin City: Goodbye: Part 1</a></li><li><a href="/svenusling/m/18726.html">Spin City Säsong 3</a></li><li><a href="/svenusling/m/18727.html">Spin City: Dead Dog Talking</a></li><li><a href="/svenusling/m/18728.html">Spin City: There's Something About Heidi</a></li><li><a href="/svenusling/m/18729.html">Spin City: Gone with the Wind</a></li><li><a href="/svenusling/m/18730.html">Spin City: The Deer Hunter</a></li><li><a href="/svenusling/m/18731.html">Spin City: It Happened One Night</a></li><li><a href="/svenusling/m/18732.html">Spin City: Three Men and a Little Lady</a></li><li><a href="/svenusling/m/18733.html">Spin City: An Officer and a Gentleman</a></li><li><a href="/svenusling/m/18734.html">Spin City: Quest for Fire</a></li><li><a href="/svenusling/m/18735.html">Spin City: The Kidney's All Right</a></li><li><a href="/svenusling/m/18736.html">Spin City: Gobble the Wonder Turkey Saves the Da</a></li><li><a href="/svenusling/m/18737.html">Spin City: Local Hero</a></li><li><a href="/svenusling/m/18738.html">Spin City: Monkey Business</a></li><li><a href="/svenusling/m/18739.html">Spin City: Taxi Driver</a></li><li><a href="/svenusling/m/18740.html">Spin City: The Nutty Deputy Mayor</a></li><li><a href="/svenusling/m/18741.html">Spin City: Not in the Line of Fire</a></li><li><a href="/svenusling/m/18742.html">Spin City: Internal Affairs</a></li><li><a href="/svenusling/m/18743.html">Spin City: Dick Clark's Rockin' Make-Out Party '99</a></li><li><a href="/svenusling/m/18745.html">Spin City: Politically Incorrect</a></li><li><a href="/svenusling/m/18746.html">Spin City: That's Entertainment</a></li><li><a href="/svenusling/m/18747.html">Spin City: The Last Temptation of Mike</a></li><li><a href="/svenusling/m/18748.html">Spin City: Carter & Stuart & Bennett & Deirdre</a></li><li><a href="/svenusling/m/18749.html">Spin City: The Mayor with Two Brains</a></li><li><a href="/svenusling/m/18750.html">Spin City: Wall Street</a></li><li><a href="/svenusling/m/18751.html">Spin City: Klumageddon: Part 1</a></li><li><a href="/svenusling/m/18752.html">Spin City: Klumageddon: Part 2</a></li><li><a href="/svenusling/m/18781.html">Spin City: Hello Charlie</a></li><li><a href="/svenusling/m/18782.html">Spin City: Smile</a></li><li><a href="/svenusling/m/19091.html">Stargate Atlantis: The Real World</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/18804.html">Spin City Säsong 6</a></li><li><a href="/svenusling/m/18805.html">Spin City: The Arrival</a></li><li><a href="/svenusling/m/18806.html">Spin City: A Tree Falls in Manhattan</a></li><li><a href="/svenusling/m/18807.html">Spin City: Wife with Mikey</a></li><li><a href="/svenusling/m/18808.html">Spin City: The Apartment (2001)</a></li><li><a href="/svenusling/m/18809.html">Spin City: Yet Another Stakeout</a></li><li><a href="/svenusling/m/18811.html">Spin City: Sleeping with the Enemy</a></li><li><a href="/svenusling/m/18816.html">Spin City: An Office and a Gentleman</a></li><li><a href="/svenusling/m/18817.html">Spin City: O Mother, Where Art Thou?</a></li><li><a href="/svenusling/m/18820.html">Spin City: Eyes Wide Open</a></li><li><a href="/svenusling/m/18770.html">Spin City: Mike's Best Friend's Boyfriend</a></li><li><a href="/svenusling/m/18771.html">Spin City: The Pig Whisperer</a></li><li><a href="/svenusling/m/18774.html">Spin City: Don't Get on the Bus</a></li><li><a href="/svenusling/m/18775.html">Spin City: Airplane!</a></li><li><a href="/svenusling/m/18776.html">Spin City: An American Deputy Mayor in Paris</a></li><li><a href="/svenusling/m/18777.html">Spin City: The Commitments</a></li><li><a href="/svenusling/m/18780.html">Spin City Säsong 5</a></li><li><a href="/svenusling/m/18783.html">Spin City: The Spanish Prisoner</a></li><li><a href="/svenusling/m/18784.html">Spin City: The Bone Collectors</a></li><li><a href="/svenusling/m/18785.html">Spin City: Blind Faith</a></li><li><a href="/svenusling/m/18786.html">Spin City: Balloons over Broadway</a></li><li><a href="/svenusling/m/18787.html">Spin City: Lost and Found</a></li><li><a href="/svenusling/m/18788.html">Spin City: All the Wrong Moves</a></li><li><a href="/svenusling/m/18789.html">Spin City: The Burgers of Wrath</a></li><li><a href="/svenusling/m/18790.html">Spin City: Toy Story</a></li><li><a href="/svenusling/m/18791.html">Spin City: The Perfect Dorm</a></li><li><a href="/svenusling/m/18792.html">Spin City: Hey Judith</a></li><li><a href="/svenusling/m/18793.html">Spin City: The Gambler</a></li><li><a href="/svenusling/m/18794.html">Spin City: In the Company of Dudes</a></li><li><a href="/svenusling/m/18795.html">Spin City: The Image Maker</a></li><li><a href="/svenusling/m/18796.html">Spin City: Trainstopping</a></li><li><a href="/svenusling/m/18797.html">Spin City: Rain on My Charades</a></li><li><a href="/svenusling/m/18798.html">Spin City: You've Got Male</a></li><li><a href="/svenusling/m/18800.html">Spin City: Science Friction</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16945.html">NCIS: Gut Check</a></li><li><a href="/svenusling/m/18810.html">Spin City: Yeah Baby!</a></li><li><a href="/svenusling/m/18812.html">Spin City: She's Gotta Habit</a></li><li><a href="/svenusling/m/18813.html">Spin City: The Wedding Scammer</a></li><li><a href="/svenusling/m/18814.html">Spin City: Fight Flub</a></li><li><a href="/svenusling/m/18815.html">Spin City: Chinatown</a></li><li><a href="/svenusling/m/18821.html">Spin City: Age Against the Machine</a></li><li><a href="/svenusling/m/18826.html">Spin City: A Friend in Need</a></li><li><a href="/svenusling/m/18799.html">Spin City: Minor League</a></li><li><a href="/svenusling/m/18801.html">Spin City: Brotherly Love</a></li><li><a href="/svenusling/m/18802.html">Spin City: A Shot in the Dark: Part 1</a></li><li><a href="/svenusling/m/18803.html">Spin City: A Shot in the Dark: Part 2</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bradley Whitford | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Bradley Whitford</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1959-10-10">1959-10-10</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10052.html">A Perfect World</a></li><li><a href="/svenusling/m/14242.html">Get Out</a></li><li><a href="/svenusling/m/17423.html">Philadelphia</a></li><li><a href="/svenusling/m/17501.html">The Post</a></li><li><a href="/svenusling/m/17969.html">Saving Mr. Banks</a></li><li><a href="/svenusling/m/21191.html">Uppvaknanden</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10998.html">Billy Madison</a></li><li><a href="/svenusling/m/11575.html">Cobb</a></li><li><a href="/svenusling/m/15504.html">Klienten</a></li><li><a href="/svenusling/m/16341.html">Misstänkt För Mord</a></li><li><a href="/svenusling/m/16558.html">My Fellow Americans</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/14293.html">Godzilla: King of the Monsters</a></li><li><a href="/svenusling/m/18511.html">Skriet Från Vildmarken (2020)</a></li><li><a href="/svenusling/m/20811.html">200-års Mannen</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/17735.html">RoboCop 3</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/21442.html">Vita Huset: 7A WF 83429</a></li><li><a href="/svenusling/m/21349.html">Vita Huset Säsong 1</a></li><li><a href="/svenusling/m/21350.html">Vita Huset: Pilot</a></li><li><a href="/svenusling/m/21352.html">Vita Huset: A Proportional Response</a></li><li><a href="/svenusling/m/21353.html">Vita Huset: Five Votes Down</a></li><li><a href="/svenusling/m/21354.html">Vita Huset: The Crackpots and These Women</a></li><li><a href="/svenusling/m/21355.html">Vita Huset: Mr. Willis of Ohio</a></li><li><a href="/svenusling/m/21356.html">Vita Huset: The State Dinner</a></li><li><a href="/svenusling/m/21357.html">Vita Huset: Enemies</a></li><li><a href="/svenusling/m/21358.html">Vita Huset: The Short List</a></li><li><a href="/svenusling/m/21359.html">Vita Huset: In Excelsis Deo</a></li><li><a href="/svenusling/m/21360.html">Vita Huset: Lord John Marbury</a></li><li><a href="/svenusling/m/21361.html">Vita Huset: He Shall, from Time to Time...</a></li><li><a href="/svenusling/m/21362.html">Vita Huset: Take Out the Trash Day</a></li><li><a href="/svenusling/m/21363.html">Vita Huset: Take This Sabbath Day</a></li><li><a href="/svenusling/m/21364.html">Vita Huset: Celestial Navigation</a></li><li><a href="/svenusling/m/21365.html">Vita Huset: 20 Hours in L.A.</a></li><li><a href="/svenusling/m/21366.html">Vita Huset: The White House Pro-Am</a></li><li><a href="/svenusling/m/21367.html">Vita Huset: Six Meetings Before Lunch</a></li><li><a href="/svenusling/m/21368.html">Vita Huset: Let Bartlet Be Bartlet</a></li><li><a href="/svenusling/m/21369.html">Vita Huset: Mandatory Minimums</a></li><li><a href="/svenusling/m/21370.html">Vita Huset: Lies, Damn Lies and Statistics</a></li><li><a href="/svenusling/m/21371.html">Vita Huset: What Kind of Day Has It Been</a></li><li><a href="/svenusling/m/21372.html">Vita Huset Säsong 2</a></li><li><a href="/svenusling/m/21374.html">Vita Huset: In the Shadow of Two Gunmen: Part II</a></li><li><a href="/svenusling/m/21375.html">Vita Huset: The Midterms</a></li><li><a href="/svenusling/m/21376.html">Vita Huset: In This White House</a></li><li><a href="/svenusling/m/21377.html">Vita Huset: And It's Surely to Their Credit</a></li><li><a href="/svenusling/m/21378.html">Vita Huset: The Lame Duck Congress</a></li><li><a href="/svenusling/m/21379.html">Vita Huset: The Portland Trip</a></li><li><a href="/svenusling/m/21380.html">Vita Huset: Shibboleth</a></li><li><a href="/svenusling/m/21381.html">Vita Huset: Galileo</a></li><li><a href="/svenusling/m/21382.html">Vita Huset: Noël</a></li><li><a href="/svenusling/m/21383.html">Vita Huset: The Leadership Breakfast</a></li><li><a href="/svenusling/m/21384.html">Vita Huset: The Drop In</a></li><li><a href="/svenusling/m/21385.html">Vita Huset: Bartlet's Third State of the Union</a></li><li><a href="/svenusling/m/21386.html">Vita Huset: The War at Home</a></li><li><a href="/svenusling/m/21387.html">Vita Huset: Ellie</a></li><li><a href="/svenusling/m/21388.html">Vita Huset: Somebody's Going to Emergency, Somebody's Going to Jail</a></li><li><a href="/svenusling/m/21389.html">Vita Huset: The Stackhouse Filibuster</a></li><li><a href="/svenusling/m/21390.html">Vita Huset: 17 People</a></li><li><a href="/svenusling/m/21391.html">Vita Huset: Bad Moon Rising</a></li><li><a href="/svenusling/m/21392.html">Vita Huset: The Fall's Gonna Kill You</a></li><li><a href="/svenusling/m/21393.html">Vita Huset: 18th and Potomac</a></li><li><a href="/svenusling/m/21394.html">Vita Huset: Two Cathedrals</a></li><li><a href="/svenusling/m/21398.html">Vita Huset: Manchester: Part 2</a></li><li><a href="/svenusling/m/21400.html">Vita Huset: On the Day Before</a></li><li><a href="/svenusling/m/21401.html">Vita Huset: War Crimes</a></li><li><a href="/svenusling/m/21403.html">Vita Huset: The Indians in the Lobby</a></li><li><a href="/svenusling/m/21404.html">Vita Huset: The Women of Qumar</a></li><li><a href="/svenusling/m/21405.html">Vita Huset: Bartlet for America</a></li><li><a href="/svenusling/m/21407.html">Vita Huset: 100,000 Airplanes</a></li><li><a href="/svenusling/m/21408.html">Vita Huset: The Two Bartlets</a></li><li><a href="/svenusling/m/21409.html">Vita Huset: Night Five</a></li><li><a href="/svenusling/m/21410.html">Vita Huset: Hartsfield's Landing</a></li><li><a href="/svenusling/m/21411.html">Vita Huset: Dead Irish Writers</a></li><li><a href="/svenusling/m/21412.html">Vita Huset: The U.S. Poet Laureate</a></li><li><a href="/svenusling/m/21413.html">Vita Huset: Stirred</a></li><li><a href="/svenusling/m/21414.html">Vita Huset: Enemies Foreign and Domestic</a></li><li><a href="/svenusling/m/21415.html">Vita Huset: The Black Vera Wang</a></li><li><a href="/svenusling/m/21416.html">Vita Huset: We Killed Yamamoto</a></li><li><a href="/svenusling/m/21417.html">Vita Huset: Posse Comitatus</a></li><li><a href="/svenusling/m/21419.html">Vita Huset: 20 Hours in America</a></li><li><a href="/svenusling/m/21420.html">Vita Huset: College Kids</a></li><li><a href="/svenusling/m/21439.html">Vita Huset: Commencement</a></li><li><a href="/svenusling/m/21440.html">Vita Huset: Twenty Five</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10420.html">Arkiv X: Firewalker</a></li><li><a href="/svenusling/m/21441.html">Vita Huset Säsong 5</a></li><li><a href="/svenusling/m/21443.html">Vita Huset: The Dogs of War</a></li><li><a href="/svenusling/m/21444.html">Vita Huset: Jefferson Lives</a></li><li><a href="/svenusling/m/21445.html">Vita Huset: Han</a></li><li><a href="/svenusling/m/21446.html">Vita Huset: Constituency of One</a></li><li><a href="/svenusling/m/21447.html">Vita Huset: Disaster Relief</a></li><li><a href="/svenusling/m/21448.html">Vita Huset: Separation of Powers</a></li><li><a href="/svenusling/m/21449.html">Vita Huset: Shutdown</a></li><li><a href="/svenusling/m/21450.html">Vita Huset: Abu el Banat</a></li><li><a href="/svenusling/m/21351.html">Vita Huset: Post Hoc, Ergo Propter Hoc</a></li><li><a href="/svenusling/m/21451.html">Vita Huset: The Stormy Present</a></li><li><a href="/svenusling/m/21452.html">Vita Huset: The Benign Prerogative</a></li><li><a href="/svenusling/m/21453.html">Vita Huset: Slow News Day</a></li><li><a href="/svenusling/m/21454.html">Vita Huset: The Warfare of Genghis Khan</a></li><li><a href="/svenusling/m/21455.html">Vita Huset: An Khe</a></li><li><a href="/svenusling/m/21456.html">Vita Huset: Full Disclosure</a></li><li><a href="/svenusling/m/21457.html">Vita Huset: Eppur Si Muove</a></li><li><a href="/svenusling/m/21458.html">Vita Huset: The Supremes</a></li><li><a href="/svenusling/m/21460.html">Vita Huset: Talking Points</a></li><li><a href="/svenusling/m/21373.html">Vita Huset: In the Shadow of Two Gunmen: Part I</a></li><li><a href="/svenusling/m/21461.html">Vita Huset: No Exit</a></li><li><a href="/svenusling/m/21462.html">Vita Huset: Gaza</a></li><li><a href="/svenusling/m/21395.html">Vita Huset Säsong 3</a></li><li><a href="/svenusling/m/21396.html">Vita Huset: Isaac and Ishmael</a></li><li><a href="/svenusling/m/21397.html">Vita Huset: Manchester: Part 1</a></li><li><a href="/svenusling/m/21399.html">Vita Huset: Ways and Means</a></li><li><a href="/svenusling/m/21402.html">Vita Huset: Gone Quiet</a></li><li><a href="/svenusling/m/21406.html">Vita Huset: H. Con-172</a></li><li><a href="/svenusling/m/21418.html">Vita Huset Säsong 4</a></li><li><a href="/svenusling/m/21421.html">Vita Huset: The Red Mass</a></li><li><a href="/svenusling/m/21422.html">Vita Huset: Debate Camp</a></li><li><a href="/svenusling/m/21423.html">Vita Huset: Game On</a></li><li><a href="/svenusling/m/21424.html">Vita Huset: Election Night</a></li><li><a href="/svenusling/m/21425.html">Vita Huset: Process Stories</a></li><li><a href="/svenusling/m/21426.html">Vita Huset: Swiss Diplomacy</a></li><li><a href="/svenusling/m/21427.html">Vita Huset: Arctic Radar</a></li><li><a href="/svenusling/m/21428.html">Vita Huset: Holy Night</a></li><li><a href="/svenusling/m/21429.html">Vita Huset: Guns Not Butter</a></li><li><a href="/svenusling/m/21430.html">Vita Huset: The Long Goodbye</a></li><li><a href="/svenusling/m/21431.html">Vita Huset: Inauguration: Part 1</a></li><li><a href="/svenusling/m/21432.html">Vita Huset: Inauguration: Part 2 - Over There</a></li><li><a href="/svenusling/m/21433.html">Vita Huset: The California 47th</a></li><li><a href="/svenusling/m/21434.html">Vita Huset: Red Haven's on Fire</a></li><li><a href="/svenusling/m/21435.html">Vita Huset: Privateers</a></li><li><a href="/svenusling/m/21436.html">Vita Huset: Angel Maintenance</a></li><li><a href="/svenusling/m/21437.html">Vita Huset: Evidence of Things Not Seen</a></li><li><a href="/svenusling/m/21438.html">Vita Huset: Life on Mars</a></li><li><a href="/svenusling/m/21469.html">Vita Huset: The Hubbert Peak</a></li><li><a href="/svenusling/m/21472.html">Vita Huset: In the Room</a></li><li><a href="/svenusling/m/21473.html">Vita Huset: Impact Winter</a></li><li><a href="/svenusling/m/21475.html">Vita Huset: Opposition Research</a></li><li><a href="/svenusling/m/21479.html">Vita Huset: Freedonia</a></li><li><a href="/svenusling/m/21481.html">Vita Huset: A Good Day</a></li><li><a href="/svenusling/m/21484.html">Vita Huset: In God We Trust</a></li><li><a href="/svenusling/m/21486.html">Vita Huset: 2162 Votes</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/21459.html">Vita Huset: Access</a></li><li><a href="/svenusling/m/21463.html">Vita Huset: Memorial Day</a></li><li><a href="/svenusling/m/21464.html">Vita Huset Säsong 6</a></li><li><a href="/svenusling/m/21465.html">Vita Huset: N.S.F. Thurmont</a></li><li><a href="/svenusling/m/21466.html">Vita Huset: The Birnam Wood</a></li><li><a href="/svenusling/m/21467.html">Vita Huset: Third Day Story</a></li><li><a href="/svenusling/m/21468.html">Vita Huset: Liftoff</a></li><li><a href="/svenusling/m/21470.html">Vita Huset: The Dover Test</a></li><li><a href="/svenusling/m/21471.html">Vita Huset: A Change Is Gonna Come</a></li><li><a href="/svenusling/m/21474.html">Vita Huset: Faith-Based Initiative</a></li><li><a href="/svenusling/m/21477.html">Vita Huset: King Corn</a></li><li><a href="/svenusling/m/21480.html">Vita Huset: Drought Conditions</a></li><li><a href="/svenusling/m/21482.html">Vita Huset: La Palabra</a></li><li><a href="/svenusling/m/21483.html">Vita Huset: Ninety Miles Away</a></li><li><a href="/svenusling/m/21485.html">Vita Huset: Things Fall Apart</a></li><li><a href="/svenusling/m/21487.html">Vita Huset Säsong 7</a></li><li><a href="/svenusling/m/21488.html">Vita Huset: The Ticket</a></li><li><a href="/svenusling/m/21489.html">Vita Huset: The Mommy Problem</a></li><li><a href="/svenusling/m/21490.html">Vita Huset: Message of the Week</a></li><li><a href="/svenusling/m/21491.html">Vita Huset: Mr. Frost</a></li><li><a href="/svenusling/m/21493.html">Vita Huset: The Al Smith Dinner</a></li><li><a href="/svenusling/m/21495.html">Vita Huset: Undecideds</a></li><li><a href="/svenusling/m/21497.html">Vita Huset: Running Mates</a></li><li><a href="/svenusling/m/21498.html">Vita Huset: Internal Displacement</a></li><li><a href="/svenusling/m/21499.html">Vita Huset: Duck and Cover</a></li><li><a href="/svenusling/m/21500.html">Vita Huset: The Cold</a></li><li><a href="/svenusling/m/21501.html">Vita Huset: Two Weeks Out</a></li><li><a href="/svenusling/m/21502.html">Vita Huset: Welcome to Wherever You Are</a></li><li><a href="/svenusling/m/21503.html">Vita Huset: Election Day</a></li><li><a href="/svenusling/m/21504.html">Vita Huset: Election Day: Part 2</a></li><li><a href="/svenusling/m/21505.html">Vita Huset: Requiem</a></li><li><a href="/svenusling/m/21506.html">Vita Huset: Transition</a></li><li><a href="/svenusling/m/21509.html">Vita Huset: Tomorrow</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/21492.html">Vita Huset: Here Today</a></li><li><a href="/svenusling/m/21496.html">Vita Huset: The Wedding</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
