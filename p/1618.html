@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Martin Landau | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Martin Landau</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1931-06-20">1931-06-20</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/15005.html">I Sista Minuten</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/13318.html">Edtv</a></li><li><a href="/svenusling/m/17101.html">9 (2009)</a> (röst)</li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10461.html">Arkiv X - Fight The Future</a></li><li><a href="/svenusling/m/13307.html">Ed Wood</a></li><li><a href="/svenusling/m/14612.html">Hollywood Homicide</a></li><li><a href="/svenusling/m/16008.html">Mannen Från Nasaret</a></li><li><a href="/svenusling/m/17790.html">Rounders - Sista Spelet</a></li><li><a href="/svenusling/m/18556.html">Sleepy Hollow</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/10690.html">Bastard – Den Dödsdömda Staden</a></li><li><a href="/svenusling/m/11561.html">Cleopatra</a></li><li><a href="/svenusling/m/16121.html">Meteor</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/10782.html">Begynnelsen</a></li><li><a href="/svenusling/m/17613.html">Ready To Rumble</a></li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/16215.html">Mission: Impossible (TV-serie): Operation Rogosh</a></li><li><a href="/svenusling/m/16227.html">Mission: Impossible (TV-serie): The Legacy</a></li><li><a href="/svenusling/m/16229.html">Mission: Impossible (TV-serie): The Frame</a></li><li><a href="/svenusling/m/16244.html">Mission: Impossible (TV-serie): The Survivors</a></li><li><a href="/svenusling/m/16252.html">Mission: Impossible (TV-serie): The Council: Part 1</a></li><li><a href="/svenusling/m/16253.html">Mission: Impossible (TV-serie): The Council: Part 2</a></li><li><a href="/svenusling/m/16264.html">Mission: Impossible (TV-serie): The Phoenix</a></li><li><a href="/svenusling/m/16280.html">Mission: Impossible (TV-serie): The Mind of Stefan Miklos</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/16212.html">Mission: Impossible (TV-serie) Säsong 1</a></li><li><a href="/svenusling/m/16213.html">Mission: Impossible (TV-serie): Pilot</a></li><li><a href="/svenusling/m/16214.html">Mission: Impossible (TV-serie): Memory</a></li><li><a href="/svenusling/m/16216.html">Mission: Impossible (TV-serie): Old Man Out: Part 1</a></li><li><a href="/svenusling/m/16218.html">Mission: Impossible (TV-serie): Odds On Evil</a></li><li><a href="/svenusling/m/16219.html">Mission: Impossible (TV-serie): Wheels</a></li><li><a href="/svenusling/m/16220.html">Mission: Impossible (TV-serie): The Ransom</a></li><li><a href="/svenusling/m/16221.html">Mission: Impossible (TV-serie): A Spool There Was</a></li><li><a href="/svenusling/m/16222.html">Mission: Impossible (TV-serie): The Carriers</a></li><li><a href="/svenusling/m/16228.html">Mission: Impossible (TV-serie): The Reluctant Dragon</a></li><li><a href="/svenusling/m/16230.html">Mission: Impossible (TV-serie): The Trial</a></li><li><a href="/svenusling/m/16231.html">Mission: Impossible (TV-serie): The Diamond</a></li><li><a href="/svenusling/m/16232.html">Mission: Impossible (TV-serie): The Legend</a></li><li><a href="/svenusling/m/16233.html">Mission: Impossible (TV-serie): Snowball In Hell</a></li><li><a href="/svenusling/m/16234.html">Mission: Impossible (TV-serie): The Confession</a></li><li><a href="/svenusling/m/16235.html">Mission: Impossible (TV-serie): Action!</a></li><li><a href="/svenusling/m/16236.html">Mission: Impossible (TV-serie): The Train</a></li><li><a href="/svenusling/m/16237.html">Mission: Impossible (TV-serie): Shock</a></li><li><a href="/svenusling/m/16238.html">Mission: Impossible (TV-serie): A Cube Of Sugar</a></li><li><a href="/svenusling/m/16239.html">Mission: Impossible (TV-serie): The Traitor</a></li><li><a href="/svenusling/m/16240.html">Mission: Impossible (TV-serie): The Psychic</a></li><li><a href="/svenusling/m/16241.html">Mission: Impossible (TV-serie) Säsong 2</a></li><li><a href="/svenusling/m/16242.html">Mission: Impossible (TV-serie): The Widow</a></li><li><a href="/svenusling/m/16245.html">Mission: Impossible (TV-serie): The Bank</a></li><li><a href="/svenusling/m/16246.html">Mission: Impossible (TV-serie): The Slave: Part 1</a></li><li><a href="/svenusling/m/16247.html">Mission: Impossible (TV-serie): The Slave: Part 2</a></li><li><a href="/svenusling/m/16248.html">Mission: Impossible (TV-serie): Operation 'Heart'</a></li><li><a href="/svenusling/m/16250.html">Mission: Impossible (TV-serie): The Seal</a></li><li><a href="/svenusling/m/16251.html">Mission: Impossible (TV-serie): Charity</a></li><li><a href="/svenusling/m/16254.html">Mission: Impossible (TV-serie): The Astrologer</a></li><li><a href="/svenusling/m/16255.html">Mission: Impossible (TV-serie): Echo Of Yesterday</a></li><li><a href="/svenusling/m/16256.html">Mission: Impossible (TV-serie): The Photographer</a></li><li><a href="/svenusling/m/16257.html">Mission: Impossible (TV-serie): The Spy</a></li><li><a href="/svenusling/m/16258.html">Mission: Impossible (TV-serie): A Game Of Chess</a></li><li><a href="/svenusling/m/16259.html">Mission: Impossible (TV-serie): The Emerald</a></li><li><a href="/svenusling/m/16260.html">Mission: Impossible (TV-serie): The Condemned</a></li><li><a href="/svenusling/m/16261.html">Mission: Impossible (TV-serie): The Counterfeiter</a></li><li><a href="/svenusling/m/16262.html">Mission: Impossible (TV-serie): The Town</a></li><li><a href="/svenusling/m/16263.html">Mission: Impossible (TV-serie): The Killing</a></li><li><a href="/svenusling/m/16265.html">Mission: Impossible (TV-serie): Trial By Fury </a></li><li><a href="/svenusling/m/16266.html">Mission: Impossible (TV-serie): Recovery</a></li><li><a href="/svenusling/m/16267.html">Mission: Impossible (TV-serie) Säsong 3</a></li><li><a href="/svenusling/m/16268.html">Mission: Impossible (TV-serie): The Heir Apparent</a></li><li><a href="/svenusling/m/16271.html">Mission: Impossible (TV-serie): The Mercenaries</a></li><li><a href="/svenusling/m/16272.html">Mission: Impossible (TV-serie): The Execution</a></li><li><a href="/svenusling/m/16273.html">Mission: Impossible (TV-serie): The Cardinal</a></li><li><a href="/svenusling/m/16274.html">Mission: Impossible (TV-serie): The Elixir</a></li><li><a href="/svenusling/m/16277.html">Mission: Impossible (TV-serie): The Bargain</a></li><li><a href="/svenusling/m/16279.html">Mission: Impossible (TV-serie): The Exchange</a></li><li><a href="/svenusling/m/16281.html">Mission: Impossible (TV-serie): The Test Case</a></li><li><a href="/svenusling/m/16282.html">Mission: Impossible (TV-serie): The System</a></li><li><a href="/svenusling/m/16283.html">Mission: Impossible (TV-serie): The Glass Cage</a></li><li><a href="/svenusling/m/16284.html">Mission: Impossible (TV-serie): Doomsday</a></li><li><a href="/svenusling/m/16285.html">Mission: Impossible (TV-serie): Live Bait</a></li><li><a href="/svenusling/m/16286.html">Mission: Impossible (TV-serie): The Bunker: Part 1</a></li><li><a href="/svenusling/m/16289.html">Mission: Impossible (TV-serie): Nicole</a></li><li><a href="/svenusling/m/16292.html">Mission: Impossible (TV-serie): The Interrogator</a></li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/11607.html">Columbo: Double Shock</a></li><li><a href="/svenusling/m/16217.html">Mission: Impossible (TV-serie): Old Man Out: Part 2</a></li><li><a href="/svenusling/m/16225.html">Mission: Impossible (TV-serie): Elena</a></li><li><a href="/svenusling/m/16243.html">Mission: Impossible (TV-serie): Trek</a></li><li><a href="/svenusling/m/16249.html">Mission: Impossible (TV-serie): The Money Machine</a></li><li><a href="/svenusling/m/16269.html">Mission: Impossible (TV-serie): The Contender: Part 1</a></li><li><a href="/svenusling/m/16275.html">Mission: Impossible (TV-serie): The Diplomat</a></li><li><a href="/svenusling/m/16276.html">Mission: Impossible (TV-serie): The Play</a></li><li><a href="/svenusling/m/16278.html">Mission: Impossible (TV-serie): The Freeze</a></li><li><a href="/svenusling/m/16287.html">Mission: Impossible (TV-serie): The Bunker: Part 2</a></li><li><a href="/svenusling/m/16288.html">Mission: Impossible (TV-serie): Nitro</a></li><li><a href="/svenusling/m/16290.html">Mission: Impossible (TV-serie): The Vault</a></li><li><a href="/svenusling/m/16291.html">Mission: Impossible (TV-serie): Illusion</a></li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/16270.html">Mission: Impossible (TV-serie): The Contender: Part 2</a></li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/16223.html">Mission: Impossible (TV-serie): Zubrovnik's Ghost</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
