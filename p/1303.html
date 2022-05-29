@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Frank Welker | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Frank Welker</h2>
+										<h3>Skådespelare</h3>
+										<p>
+										Skådespelare född <time datetime="1946-03-12">1946-03-12</time>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" /></a>
+									</div>
+								</header>
+
+<section id="movies"><h2>Filmer</h2><ul><li class="grades">+++++</li><ul class="movies"><li><a href="/svenusling/m/21166.html">Upp</a></li></ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/10108.html">Aladdin (1992)</a> (röst)</li><li><a href="/svenusling/m/10109.html">Aladdin (2019)</a> (röst)</li><li><a href="/svenusling/m/10110.html">Aladdin (Svenska röster)</a> (röst)</li><li><a href="/svenusling/m/10806.html">Bernard Och Bianca I Australien</a> (röst)</li><li><a href="/svenusling/m/11969.html">Den Lilla Sjöjungfrun</a> (röst)</li><li><a href="/svenusling/m/14339.html">Gremlins 2 - Det Nya Gänget</a> (röst)</li><li><a href="/svenusling/m/15059.html">Independence Day</a> (röst)</li><li><a href="/svenusling/m/15211.html">Janne Långben - The Movie (Svenska röster)</a> (röst)</li><li><a href="/svenusling/m/15280.html">Jimmy Neutron - Underbarnet</a> (röst)</li><li><a href="/svenusling/m/15697.html">Lejonkungen (1994)</a> (röst)</li><li><a href="/svenusling/m/16483.html">Mulan</a> (röst)</li><li><a href="/svenusling/m/16631.html">Myrmobbaren</a> (röst)</li><li><a href="/svenusling/m/17078.html">Nicke Nyfiken</a> (röst)</li><li><a href="/svenusling/m/17707.html">Ringaren I Notre Dame (1996)</a> (röst)</li><li><a href="/svenusling/m/18541.html">Skönheten Och Odjuret (1991)</a> (röst)</li><li><a href="/svenusling/m/18644.html">Space Jam</a> (röst)</li><li><a href="/svenusling/m/20725.html">Transformers 3</a> (röst)</li><li><a href="/svenusling/m/20724.html">Transformers: De Besegrades Hämnd</a> (röst)</li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/10112.html">Aladdin Och Rövarnas Konung</a> (röst)</li><li><a href="/svenusling/m/10214.html">Alice I Underlandet (2010)</a> (röst)</li><li><a href="/svenusling/m/11389.html">Buzz Lightyear</a> (röst)</li><li><a href="/svenusling/m/20746.html">De Tre Musketörerna (Tecknad)</a> (röst)</li><li><a href="/svenusling/m/11984.html">Den Otroliga Vandringen</a> (röst)</li><li><a href="/svenusling/m/12053.html">Det Magiska Svärdet: Kampen Om Camelot</a> (röst)</li><li><a href="/svenusling/m/13256.html">Dunston Checkar In</a> (röst)</li><li><a href="/svenusling/m/14338.html">Gremlins</a> (röst)</li><li><a href="/svenusling/m/14345.html">Grinchen - Julen Är Stulen</a> (röst)</li><li><a href="/svenusling/m/14931.html">101 Dalmatiner</a> (röst)</li><li><a href="/svenusling/m/15071.html">The Informant</a></li><li><a href="/svenusling/m/15188.html">Jafars Återkomst</a> (röst)</li><li><a href="/svenusling/m/15329.html">Jumanji</a> (röst)</li><li><a href="/svenusling/m/15702.html">Lejonkungen 3</a> (röst)</li><li><a href="/svenusling/m/15798.html">Looney Tunes: Back In Action</a> (röst)</li><li><a href="/svenusling/m/17181.html">Nu Är Det Jul Igen</a> (röst)</li><li><a href="/svenusling/m/18015.html">Scooby-Doo</a> (röst)</li><li><a href="/svenusling/m/18604.html">Snurre Sprätts Oscarsgala</a> (röst)</li><li><a href="/svenusling/m/19457.html">Star Trek III: The Search For Spock</a> (röst)</li><li><a href="/svenusling/m/18856.html">Stargate</a> (röst)</li><li><a href="/svenusling/m/20073.html">Teenage Mutant Ninja Turtles II</a> (röst)</li><li><a href="/svenusling/m/21285.html">Vem Satte Dit Roger Rabbit?</a> (röst)</li><li><a href="/svenusling/m/22032.html">Älskling, Jag Krympte Barnen</a> (röst)</li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/10318.html">Anaconda</a> (röst)</li><li><a href="/svenusling/m/10750.html">Beastmaster II - Genom Tidsbarriären</a> (röst)</li><li><a href="/svenusling/m/10990.html">Bill & Teds Galna Mardrömsresa</a> (röst)</li><li><a href="/svenusling/m/11910.html">Deep Blue Sea</a> (röst)</li><li><a href="/svenusling/m/11970.html">Den Lilla Sjöjungfrun II: Havets Hemlighet</a> (röst)</li><li><a href="/svenusling/m/13373.html">En Galen Dag I New York</a> (röst)</li><li><a href="/svenusling/m/14291.html">Godzilla (1998)</a> (röst)</li><li><a href="/svenusling/m/14975.html">Höken Är Lös</a> (röst)</li><li><a href="/svenusling/m/15926.html">Maffia!</a> (röst)</li><li><a href="/svenusling/m/16460.html">Mortal Kombat</a> (röst)</li><li><a href="/svenusling/m/18010.html">Scooby-Doo Och Ghoulskolan</a> (röst)</li><li><a href="/svenusling/m/18012.html">Scooby-Doo Och Inkräktarna Från Rymden</a> (röst)</li><li><a href="/svenusling/m/18014.html">Scooby-Doo: Pirater I Sikte!</a> (röst)</li><li><a href="/svenusling/m/18577.html">Smurfarna</a> (röst)</li><li><a href="/svenusling/m/18656.html">Species</a> (röst)</li><li><a href="/svenusling/m/20035.html">Ta Det Kallt, Scooby Doo!</a> (röst)</li><li><a href="/svenusling/m/20727.html">Transformers: The Last Knight</a> (röst)</li><li><a href="/svenusling/m/20722.html">Transformers: The Movie</a> (röst)</li><li><a href="/svenusling/m/21530.html">Vägen Till El Dorado</a> (röst)</li></ul><li class="grades">+</li><ul class="movies"><li><a href="/svenusling/m/10380.html">Arena</a></li><li><a href="/svenusling/m/10489.html">Atlantis - Milos Återkomst</a> (röst)</li><li><a href="/svenusling/m/14276.html">Glufz</a> (röst)</li><li><a href="/svenusling/m/14299.html">The Golden Child</a> (röst)</li><li><a href="/svenusling/m/15404.html">Katten</a> (röst)</li><li><a href="/svenusling/m/16345.html">Mitt I Plåten 2</a> (röst)</li><li><a href="/svenusling/m/17557.html">Python</a> (röst)</li><li><a href="/svenusling/m/18011.html">Scooby-Doo Och Den Motvillige Varulven</a> (röst)</li><li><a href="/svenusling/m/18654.html">Spawn</a> (röst)</li><li><a href="/svenusling/m/20693.html">Tom I Bollen II</a> (röst)</li><li><a href="/svenusling/m/20726.html">Transformers 4: Age Of Extinction</a> (röst)</li></ul><li class="grades">-</li><ul class="movies"><li><a href="/svenusling/m/19951.html">Super Mario Bros.</a> (röst)</li></ul></ul></section><section id="series"><h2>Serier (detta ska vara helt annorlunda)</h2><ul><li class="grades">++++</li><ul class="movies"><li><a href="/svenusling/m/14115.html">Futurama: When Aliens Attack</a> (röst)</li><li><a href="/svenusling/m/14117.html">Futurama: I Second That Emotion</a> (röst)</li><li><a href="/svenusling/m/14120.html">Futurama: Xmas Story</a> (röst)</li><li><a href="/svenusling/m/18045.html">SeaQuest DSV: The Devil's Window</a> (röst)</li><li><a href="/svenusling/m/18054.html">SeaQuest DSV: SeaWest</a> (röst)</li><li><a href="/svenusling/m/18055.html">SeaQuest DSV: Photon Bullet</a> (röst)</li><li><a href="/svenusling/m/18378.html">Simpsons: Bart's Dog Gets an F</a> (röst)</li><li><a href="/svenusling/m/18393.html">Simpsons: Lisa's Pony</a> (röst)</li><li><a href="/svenusling/m/18404.html">Simpsons: Dog of Death</a> (röst)</li></ul><li class="grades">+++</li><ul class="movies"><li><a href="/svenusling/m/13564.html">Family Guy: I Never Met the Dead Man</a> (röst)</li><li><a href="/svenusling/m/13638.html">Family Guy: Deep Throats</a> (röst)</li><li><a href="/svenusling/m/13686.html">Family Guy: Ocean's Three and a Half</a> (röst)</li><li><a href="/svenusling/m/14106.html">Futurama: Love's Labours Lost in Space</a></li><li><a href="/svenusling/m/14108.html">Futurama: A Fishful of Dollars</a></li><li><a href="/svenusling/m/14111.html">Futurama: Hell Is Other Robots</a> (röst)</li><li><a href="/svenusling/m/14114.html">Futurama: Mars University</a> (röst)</li><li><a href="/svenusling/m/18044.html">SeaQuest DSV: To Be or Not to Be</a> (röst)</li><li><a href="/svenusling/m/19755.html">Star Trek: Voyager: Nothing Human</a> (röst)</li></ul><li class="grades">++</li><ul class="movies"><li><a href="/svenusling/m/10455.html">Arkiv X: Teso dos Bichos</a></li></ul></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
