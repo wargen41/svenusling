@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Vilde Piraten | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Vilde Piraten <a href="#" class="grade">+++</a></h2>
+										<h3>Swashbuckler</h3>
+										<p>
+										Film från <time datetime="1976"><a href="#">1976</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>James Goldstone</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1822.html">Robert Shaw</a> – Ned Lynch</li><li><a href="/svenusling/p/1417.html">James Earl Jones</a> – Nick Debrett</li><li><a href="/svenusling/p/1736.html">Peter Boyle</a> – Lord Durant</li><li>Geneviève Bujold – Jane Barnet</li><li><a href="/svenusling/p/1068.html">Beau Bridges</a> – Major Folly</li><li>Geoffrey Holder – Cudjo</li><li>Avery Schreiber – Polonski</li><li>Tom Clancy – Mr. Moonbeam</li><li><a href="/svenusling/p/1045.html">Anjelica Huston</a> – Woman of Dark Visage</li><li>Bernard Behrens – Sir James Barnet</li><li>Dorothy Tristan – Alice</li><li>Mark Baker – Lute Player</li><li>Kip Niven – Willard Culverwell</li><li>Tom Fitzsimmons – Corporal</li><li>Louisa Horton – Lady Barnet</li><li>Sid Haig – Bald Pirate</li><li>Robert Ruth – Bearded Pirate</li><li>Bob Morgan – Peglegged Pirate</li><li>Jon Cedar – Pirate Gun Captain</li><li>Diana Chesney – Landlady</li><li>Manuel DePina – Barnet Servant</li><li>Tom Lacy – Chaplain</li><li>Alfie Wise – Sailor</li><li>Harry Basch – Banana Man</li><li>Lee Pulford – Pirates' Lady</li><li>Alyscia Maxwell – Pirates' Lady</li><li>Isobel Estorick – Pirates' Lady</li><li>Mary Margaret Amato – Pirates' Lady</li><li>Lisa Moore – Pirates' Lady</li><li>Lisa Daniels – Pirates' Lady</li><li>Catana Cayetano – Pirates' Lady</li><li>Erika Carlsson – Pirates' Lady</li><li>Pepe Serna – Street Entertainer</li><li>Ronald G. Joseph – Street Entertainer</li><li>Miguel Godreau – Street Entertainer</li><li>Avind Harum – Street Entertainer</li><li>Chester Hayes – Street Entertainer</li><li>Eduardo Reyna Juarez – Street Entertainer</li><li>Eleanor McCoy – Street Entertainer</li><li>Adele Yoshioka – Street Entertainer</li><li>Victoria Ally – Street Entertainer</li><li>Brenda Venus – Bath Attendant</li><li>Victoria Wells – Bath Attendant</li><li>Rutanya Alda – Bath Attendant</li><li>Kathryn Reynolds – Bath Attendant</li><li>D'Mitch Davis – Bath Attendant</li><li>Earl Maynard – Bath Attendant</li><li>Henry Kingi – Fencing Master</li><li>Joseph Lincoln Harrison Jr. – Fencing Master</li><li>Richard Washington – Fencing Master</li><li>The Golden Hinde – The Blarney Cock</li><li>Roger Cudney – Guard (uncredited)</li><li>Anthony De Longis – Soldier in Bar (uncredited)</li><li>Bob Minor – Pirate (uncredited)</li><li>Scott Palmer – Pirate Jim (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Anjelica Huston][/p?id=1045] never says a word in the movie.</li><li>Actor [Beau Bridges][/p?id=1068] spent months rehearsing a trick with a horse. After he perfected it, the filmmakers decided not to shoot it. [Bridges][/p?id=1068] did the rehearsal for nothing.</li><li>The picture was produced by Universal Studios which was the same studio which made [Jaws][/f?id=14407] (1975) which also top-billed actor [Robert Shaw][/p?id=1822]. According to [Time Out][/f?id=20389], &quot;The success of [Jaws][/f?id=14407] (1975) sent Hollywood scurrying for movie adventure styles to refurbish; hence this multi-million dollar pirate swash-buckler&quot;.</li><li>Actor [James Earl Jones][/p?id=1417] was injured during principal photography when his leg got caught in a moving carriage wheel. His injuries though were sleight and he was soon back at work.</li><li>Second of two films actress [Geneviève Bujold][/p?id=Genevi%C3%A8ve%20Bujold] made to fulfill her contract with Universal Studios. The first had been [Earthquake][/f?id=15310] (1974).</li><li>According to the documentary &quot;A Pirate Ship Sails Again! The Making of Swashbuckler&quot;, this picture is the first pirate film to make use of an actual recently constructed 16th Century warship complete with cannons. The ship, a replica of Sir [Francis Drake's][/p?id=Francis%20Drake] &quot;The Golden Hinde&quot;, was built and first launched in Devon in 1973, just a few years before this film was made.</li><li>The film is a &quot;...reworking of some old [Errol Flynn][/p?id=Errol%20Flynn] ideas&quot; according to Halliwells.</li><li>One of a number of pirate movies made between the mid 1970s and mid 1990s which were a flop at the box-office. The films include [Pirates][/f?id=17434] (1987), [Yellowbeard][/f?id=15388] (1983), Swashbuckler (1976), [Savage Islands][/f?id=22045] (1983), The Pirate Movie (1982) and [Cutthroat Island][/f?id=11738] (1995).</li><li>The film's opening prologue states: &quot;Once upon a time, some colonial outposts of Europe's great powers were ruled by villainous governors who stole the freedom and wealth which rightfully belonged to the people. Such was the tragic condition in Jamaica in seventeen eighteen under the cruelty of the acting governor, Lord Durant. The dungeons of his dark stone fortress cried with the voices of those who stood in his way. At the time, adventurous pirates sailed the waters of the Caribbean. Often, they were enemies of the tyrants and heroes of the people. Captain Ned Lynch was one of the most famous of these Swashbucklers...&quot;.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

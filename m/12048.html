@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Kan Hända Dig | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Kan Hända Dig <a href="#" class="grade">+++</a></h2>
+										<h3>It Could Happen to You</h3>
+										<p>
+										Film från <time datetime="1994"><a href="#">1994</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Andrew Bergman</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1696.html">Nicolas Cage</a> – Charlie Lang</li><li>Bridget Fonda – Yvonne Biasi</li><li>Rosie Perez – Muriel Lang</li><li>Wendell Pierce – Bo Williams</li><li>Isaac Hayes – Angel Dupree</li><li>Víctor Rojas – Jesu</li><li><a href="/svenusling/p/1873.html">Seymour Cassel</a> – Jack Gross</li><li><a href="/svenusling/p/1892.html">Stanley Tucci</a> – Eddie Biasi</li><li>J.E. Freeman – Sal Bontempo</li><li>Red Buttons – Walter Zakuto</li><li>Richard Jenkins – C. Vernon Hale</li><li>Robert Dorfman – Walter</li><li>Charles Busch – Timothy</li><li>Beatrice Winde – Judge</li><li>Ginny Yang – Mrs. Sun</li><li>Rene Rivera – Julio</li><li>Angel David – Esteban</li><li>Anna Lobell – Korean Deli Customer</li><li>Claudia Shear – Muriel's Customer</li><li>Jimmy Sabater – Fry Cook</li><li>Merwin Goldsmith – Bankruptcy Judge</li><li>Vincent Pastore – Bowling Team Member #1</li><li>Barry Squitieri – Bowling Team Member #2</li><li>Phil Stein – Bowling Team Member #3</li><li>Jerome Turner – Bowling Team Member #4</li><li>George J. Manos – Loto Official</li><li>Edward Goldstein – Candy Store Owner</li><li>Emily Deschanel – Paint Throwing Fur-Activist</li><li>Willie Colón – Mayor</li><li>Ranjit Chowdhry – Mr. Patel</li><li>Pedro Pietri – Homeless Man in Coffee Shop</li><li>Charles B. Lowlicht – Passersby at Subway Station #1</li><li>Jed Krascella – Passersby at Subway Station #2</li><li>Bob Sheppard – Yankee Stadium Announcer</li><li>Frank Pellegrino – Water's Edge Maitre D'</li><li>Kathleen McNenny – Plaza Desk Clerk</li><li>John Louis Fischer – Plaza Bellhop</li><li>Kaipo Schwab – Plaza Bellhop</li><li>Candece Tarpley – Bo's Wife</li><li>Emena C. Santiago – Bo's Daughter</li><li>Angela Pietropinto – Jury Foreperson</li><li>Mina Bern – Muriel's Neighbour</li><li>Feiga Martinez – Jesu's Mom</li><li>John Norman Thomas – Mr. Muktananda</li><li>John R. Russell – Blind Beggar</li><li>Ann Dowd – Carol</li><li>Kay Tong Lim – Sun</li><li>Jack Cafferty – Television Reporter</li><li>Budd Mishkin – Television Reporter</li><li>Carl White – Television Reporter</li><li>Cheryl Washington – Television Reporter</li><li>Peter Jacobson – Television Reporter</li><li>Douglas Bernstein – Television Reporter</li><li>Phil Parolisi – Television Reporter</li><li>Amy Atkins – Television Reporter</li><li>Alan Muraoka – Television Reporter</li><li>Laury Marker – Television Reporter</li><li>Felipe Luciano – Television Reporter</li><li>Brenda Pressley – Television Reporter</li><li>Ellen Lancaster – Television Reporter</li><li>Julia Campanelli – Bowler's Wife (uncredited)</li><li>Edward B. Goldstein – Candy Store Owner (uncredited)</li><li>Jos Laniado – Businessman (uncredited)</li><li>Alma Martinez – Juror (uncredited)</li><li>Nick Taylor – News Man (uncredited)</li><li>George Vincent – Cab Driver (uncredited)</li><li>Peter Yellen – Saxaphone Player (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The movie is based on the true story of Phyllis Penzo and Officer Robert Cunningham. For twenty-four years, Penzo served as a waitress at Sal's Pizzeria in Yonkers, New York. Cunningham, a thirty-year veteran of the police force in nearby Dobbs Ferry, N.Y., was a regular customer at the restaurant, well-liked by the staff there. (His favorite dish was linguine with clams.) One day in March, 1984, Cunningham asked Penzo for help picking his weekly lottery numbers. Penzo suggested three numbers, and Cunningham came up with three more numbers on his own. Cunningham jokingly promised that if he won, he would split the winnings with Penzo as a tip. The next day, to Penzo's surprise, Cunningham and his wife came to the diner with the winning lottery ticket in hand. Cunningham's ticket had won $6 million, which he split with Penzo, giving her $3 million. In real life, however (as stated in a disclaimer at the end of the movie), Cunningham and Penzo were both happily married to other people for many years.</li><li>The title was originally going to be &quot;Cop Gives Waitress Two Million Dollar Tip&quot;.</li><li>In the movie's initial phase, it was originally titled &quot;The $2 Million Tip&quot;. [Arnold Schwarzenegger][/p?id=1062] was slated to star in the movie, but ultimately chose to star in [Den Siste Actionhjälten][/f?id=11991]||Last Action Hero:: (1993) instead.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

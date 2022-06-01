@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Våras För Hitler | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Våras För Hitler <a href="#" class="grade">++++</a></h2>
+										<h3>The Producers</h3>
+										<p>
+										Film från <time datetime="1968"><a href="#">1968</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre17">Musik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1634.html">Mel Brooks</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/2016.html">Zero Mostel</a> – Max Bialystock</li><li><a href="/svenusling/p/1321.html">Gene Wilder</a> – Leo Bloom</li><li>Dick Shawn – 'L.S.D.' - Lorenzo St. DuBois</li><li>Kenneth Mars – Franz Liebkind</li><li>Lee Meredith – Ulla</li><li>Christopher Hewett – Roger De Bris</li><li>Andréas Voutsinas – Carmen Ghia</li><li>Estelle Winwood – 'Hold Me Touch Me'</li><li>Renée Taylor – Eva Braun</li><li>David Patch – Goebbels</li><li>William Hickey – The Drunk</li><li>Barney Martin – Göring</li><li>Shimen Ruskin – The Landlord</li><li>Frank Campanella – The Bartender</li><li>Josip Elic – Violinist</li><li>Madelyn Cates – Concierge</li><li>John Zoller – Drama Critic</li><li>Brutus Peck – Hot Dog Vendor</li><li>Anne Ives – Lady</li><li>Amelie Barleon – Lady</li><li>Lisa Kirk – Lady</li><li>Nell Harrison – Lady</li><li>Mary Love – Lady</li><li>Bernie Allen – Auditioning Hitler (uncredited)</li><li>Rusty Blitz – Auditioning Hitler (uncredited)</li><li>John Braden – Bar patron (uncredited)</li><li class="voice"><a href="/svenusling/p/1634.html">Mel Brooks</a> – Singer in 'Springtime for Hitler' (röst) (uncredited)</li><li>Ron Charles – Auditioning Hitler (uncredited)</li><li>Mae Crane – Showgirl (uncredited)</li><li>Michael Davis – Production Tenor (uncredited)</li><li>Diana Eden – Showgirl (uncredited)</li><li>David Evans – Lead Dancer (uncredited)</li><li>Anthony Gardell – Auditioning Hitler (uncredited)</li><li>Hank Garrett – Stagehand (uncredited)</li><li>Linda Gillen – Sax Player (uncredited)</li><li>Trent Gough – Auditioning Hitler (uncredited)</li><li>Zale Kessler – Jason Green (uncredited)</li><li>Mary Loane – Women in Theatre; investor (uncredited)</li><li>Bill Macy – Jury Foreman (uncredited)</li><li>Lore Noto – Audience Member (uncredited)</li><li>Patrick Owens – Theatre Orchestra Pit Conductor (uncredited)</li><li>Robert Paget – Auditioning Hitler (uncredited)</li><li>Arthur Rubin – Auditioning Hitler (uncredited)</li><li>Tucker Smith – Lead Dancer (uncredited)</li><li>Clifton Steere – Nazi in play (uncredited)</li><li>Bud Truland – Whiskey Sours Orderer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Globe - Bästa originalsång (For the song "The Prayer".) 1999</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Annie Awards, Annie - Bästa animerade film 1998</li><li>Annie Awards, Annie - Outstanding Individual Achievement for Effects Animation 1998</li><li>Casting Society of America, Artios - Best Casting for Animated Voiceover 1998</li><li>Oscar - Bästa originalsång (For the song "The Prayer".) 1999</li><li>Golden Reel Award - Best Sound Editing - Animated Feature 1999</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Mel Brooks'][/p?id=1634] voice is dubbed in for a singer in &quot;Springtime for Hitler&quot;.</li><li>Because of the &quot;Springtime For Hitler&quot; musical number, the film was banned in Germany. It wasn't shown in that country until it was included in a film festival featuring the works of Jewish filmmakers.</li><li>Adapted as a stage musical by [Mel Brooks][/p?id=1634], which opened in March 2001 with [Nathan Lane][/p?id=1689] as Bialystock and [Matthew Broderick][/p?id=1626] as Bloom. It won a record-breaking 12 Tony awards in 2001.</li><li>This is the first film directed by [Mel Brooks][/p?id=1634] and scored by [John Morris][/p?id=John%20Morris]. The two would continue to work together until [Life Stinks][/f?id=12068] (1991).</li><li>[Dustin Hoffman][/p?id=1254] was set to play Franz Liebkind, but declined when he got the part of Benjamin in [The Graduate][/f?id=Mandomsprovet] (1967). [Brooks][/p?id=1634] only allowed [Hoffman][/p?id=1254] the chance to go off to the audition for the film because his wife ([Anne Bancroft][/p?id=1048]) was in it, and [Brooks][/p?id=1634] was familiar enough with the role of Benjamin to know [Hoffman][/p?id=1254] was utterly wrong for it (as written) and would never be cast.</li><li>[Mel Brooks][/p?id=1634] based the character of Max Bialystock on a real Broadway producer he knew who used to seduce little old ladies in exchange for checks that were supposedly to produce his latest play, which would usually be called &quot;Cash.&quot;</li><li>[Mel Brooks][/p?id=1634] cannot read music. &quot;Springtime for Hitler&quot; and &quot;Prisoners of Love&quot; (as were all the songs [Brooks][/p?id=1634] writes for his films) were hummed into a tape recorder and transcribed by an expert.</li><li>The reason the film got released at all was due to the intervention of [Peter Sellers][/p?id=1751]. After [Brooks][/p?id=1634] completed the picture, he was told by Executive Producer Joseph E. Levine that the film, which was then called &quot;Springtime for Hitler&quot;, would not be released; Levine thought it was in poor taste and not very funny. While [Sellers][/p?id=1751] was in Hollywood making [I Love You, Alice B. Toklas!][/f?id=F%C3%A5r%20Jag%20Kyssa%20Din%20Fj%C3%A4ril%3F] (1968), he liked to have films screened for his friends and himself for entertainment. One night this film was screened and [Sellers][/p?id=1751] loved it. When he heard it would not be released he began calling Levine and eventually convinced him to release it, the only compromise being that the title of the film be changed to &quot;The Producers&quot;.</li><li>Although [Peter Sellers][/p?id=1751] was instrumental in the release of this film, [Mel Brooks][/p?id=1634] claims to have offered [Sellers][/p?id=1751] the role of Leo Bloom (eventually played by [Gene Wilder][/p?id=1321]) but turned it down.</li><li>[Gene Wilder][/p?id=1321] said in an interview on TCM that at the first reading of the script he excused himself to leave for a dentist appointment he could not miss when in fact, he had to go to the unemployment office to collect a check for $55 he desperately needed at the time.</li><li>[Mel Brooks's][/p?id=1634] original title for the film was &quot;Springtime for Hitler&quot; but the studio wouldn't allow it. They did say that they would allow Springtime for Mussolini. [Brooks][/p?id=1634] didn't like it and ended up calling it &quot;The Producers&quot;.</li><li>&quot;Roger De Bris&quot; character is based upon [Edward D. Wood Jr.][/p?id=1264].</li><li>[Mel Brooks][/p?id=1634] and [Zero Mostel][/p?id=2016] reportedly had clashes of ego on set and found it hard to get along. Indeed, they never worked together again.</li><li>To better get into character, [Kenneth Mars][/p?id=Kenneth%20Mars] slept in his costume every night.</li><li>It was [Kenneth Mars'][/p?id=Kenneth%20Mars] idea to have Liebkind's helmet spattered with pigeon defecation.</li><li>[Mel Brooks][/p?id=1634] always had [Zero Mostel][/p?id=2016] in mind to play Max Bialystock.</li><li>When Leo is going hysterical in Max's office, [Gene Wilder][/p?id=1321] imagined [Zero Mostel][/p?id=2016] was hurting his pet dog to put him in the right frame of mind.</li><li>[Gene Wilder][/p?id=1321] wondered if [Kenneth Mars][/p?id=Kenneth%20Mars] really was crazy throughout filming and not just acting because of some of his antics.</li><li>[Gene Wilder][/p?id=1321] imagined his reactions to the madness throughout the film would be the same as the audience's watching it.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

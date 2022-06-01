@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Stora Slaget | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Stora Slaget <a href="#" class="grade">+++</a></h2>
+										<h3>Battle of the Bulge</h3>
+										<p>
+										Film från <time datetime="1965"><a href="#">1965</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ken Annakin</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1371.html">Henry Fonda</a> – Lt. Col. Dan Kiley</li><li><a href="/svenusling/p/1822.html">Robert Shaw</a> – Col. Hessler</li><li>Robert Ryan – Gen. Grey</li><li><a href="/svenusling/p/1200.html">Dana Andrews</a> – Col. Pritchard</li><li>George Montgomery – Sgt. Duquesne</li><li>Ty Hardin – Lt. Schumacher</li><li>Pier Angeli – Louise</li><li>Barbara Werle – Elena</li><li><a href="/svenusling/p/1144.html">Charles Bronson</a> – Wolenski</li><li>Hans Christian Blech – Conrad</li><li>Werner Peters – Gen. Kohler</li><li>James MacArthur – Lt. Weaver</li><li>Karl-Otto Alberty – Von Diepel</li><li><a href="/svenusling/p/1922.html">Telly Savalas</a> – Sgt. Guffy</li><li>Steve Rowland – Eddy</li><li>Robert Woods – Joe - Kiley's Pilot</li><li>Charles Stalmaker – Maj. Burke</li><li>David Thomson – </li><li>Sebastian Cavalieri – </li><li>Raoul Perez – </li><li>Jack Gaskins – </li><li>Janet Brandt – Mother Superior</li><li>Max Slaten – </li><li>Carl Rapp – American MP Lieutenant</li><li>Axel Anderson – </li><li>Bud Strait – </li><li>Donald Pickering – </li><li>Ben Tatar – </li><li>Peter Herendeen – </li><li>Richard Ziedman –  (as Richard Zeidman)</li><li>Paul Eslheman –  (as Paul Eshelman)</li><li>John Schereschewsky – </li><li>Victor Brandt – </li><li>Richard Baxter – </li><li>William Boone – </li><li>John Clark – </li><li>Ward Maule – </li><li>Paul Polansky – </li><li>Freddie Toehl – </li><li>Leland Wyler – </li><li>Quinn Donoghue – Nun #2</li><li>John Friess – </li><li>Reginald Gillam – </li><li>Peter Grzcegorczyk – </li><li>Richard Laver – </li><li>Harry Van Der Linden – </li><li>Derek Robertson – </li><li>Martin Rolin – </li><li>Robert Royal – </li><li>Russ Stoddard – </li><li>William Conrad – Narrator (uncredited)</li><li>Robert Rietty – Announcer (uncredited)</li><li>Joe Zboran – German Tank Commander in Flames (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa manliga biroll 1948 (1263)</li><li>Oscar - Bästa manus 1948 (George Seaton)</li><li>Oscar - Bästa originalstory 1948</li><li>Golden Globe - Bästa manliga biroll 1948 (1263)</li><li>Golden Globe - Bästa manus 1948 (George Seaton)</li><li>Locarno International Film Festival, Prize - Bästa manus baserad på annan förlaga 1948 (George Seaton)</li><li>National Film Preservation Board, National Film Registry 2005</li><li>OFTA Film Hall of Fame - Film 2016</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa film 1948</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>This film was denounced by former President (and Supreme [Allied][/f?id=10254] Commander in Europe during WW2) [Dwight D. Eisenhower][/p?id=Dwight%20D.%20Eisenhower] soon after its release in a press conference due to its glaring historical inaccuracies.</li><li>An article dated December 2, 1965, and circulated by &quot;The Washington Post&quot; said that [Dwight D. Eisenhower][/p?id=Dwight%20D.%20Eisenhower] was &quot;outraged&quot; by this Warner Brothers movie. It said that Columbia Pictures had long had an epic movie in the works about the battle that had the cooperation of the Defense Department, as well as many of the generals who had been involved, including Eisenhower and [Bernard L. Montgomery][/p?id=Bernard%20L.%20Montgomery]. The working title of Columbia's movie was &quot;16th of December:The Battle of the Bulge.&quot; [Michael Anderson][/p?id=Michael%20Anderson] was slated to direct from a screenplay written by Byron Morgan and Tony Lazzarino, and the project was to be co-produced by Lazzorino and Kenneth T. Hoeck. The former president's son John S.[D. Eisenhower][/p?id=Dwight%20D.%20Eisenhower] was writing a companion history of the battle and serving as technical advisor. [Anderson][/p?id=Michael%20Anderson] was quoted as hoping to have [Van Heflin][/p?id=1974] as Eisenhower, [David Niven][/p?id=1221] as Montgomery, [John Wayne][/p?id=1504] as Gen. George S. Patton and [Laurence Olivier][/p?id=1568] as [Adolf Hitler][/p?id=Adolf%20Hitler]. Shortly after Columbia announced that filming would begin during the winter of 1964, Warner Brothers registered the title &quot;The Battle of the Bulge&quot; and announced that it was going to make its own fictional movie, upsetting the plans for Columbia's epic. Columbia obtained an injunction against Warners, dropping it after Warners agreed that its picture would not use the names of any of the real-life figures that had contributed to Columbia's project, such as Eisenhower, Montgomery, Omar Bradley, Anthony McAuliffe, Patton and 10 other figures. The Defense Department had also urged a Federal Trade Commission action against the movie on the grounds that its title was misleading the public. When the article appeared it stated that Columbia's project would go forward, with filming to begin at Camp Drum near Watertown, NY, in the fall of 1966, but the project fell through and the film was never made.</li><li>The film's senior military advisor, Brig. Gen. Meinrad von Lauchert, was the commander of the German 2nd Panzer Division during the real Battle of the Bulge. He then had the rank of Oberst (Colonel). Near the end an officer states that a German unit was within five miles of the Meuse River. Coincidental or not, that unit was commanded by von Laucher.</li><li>The character of the German colonel was first intended to be real-life Panzer officer Joachim Peiper, the youngest man in the German army to make the rank of full colonel (SS-Standartenführer, the direct SS equivalent to an Oberst or full colonel in the German army). A protégé of Reichsführer-SS [Heinrich Himmler][/p?id=Heinrich%20Himmler], the head of the Schutzstaffel (SS) and the third most powerful man in Germany after [Adolf Hitler][/p?id=Adolf%20Hitler], Peiper was promoted to the rank at the age of 29. However, as he was still living at the time the film was produced and was still a committed Nazi, his character was quickly changed to a fictitious officer in the regular German army, so as not to give him any connection to the film or risk a libel suit. It was Peiper's unit (Kampfgruppe Peiper) of the 1st SS Division, Leibstandarte SS [Adolf Hitler][/p?id=Adolf%20Hitler] that was responsible for the massacre of American POWs in Malmedy, Belgium, depicted--although inaccurately--in the film. After the war, he was convicted of war crimes and sentenced to death, but the sentence was commuted by the American Occupation Force because the trial had been fraught with illegalities, and Peiper wound up serving only 11 years in prison, despite having perpetrated war crimes on both the Eastern and Western fronts. He was assassinated at his home in France, likely by French communists, in 1976.</li><li>[Robert Shaw][/p?id=1822] earned $350,000 for his role as the German Panzer commander, more than he had earned in his entire career up to that point. That amount, after adjusting for inflation, would be equivalent to $2.6 million in 2015.</li><li>The entire film was shot, edited, scored and prepared for release in an unprecedented eight months.</li><li>This movie's closing epilogue states: &quot;To encompass the whole of the heroic contributions of all the participants, places, names and characters, have been generalized and action has been synthesized in order to convey the spirit and essence of the battle.&quot;</li><li>[Sergio Leone][/p?id=Sergio%20Leone] had wanted [Charles Bronson][/p?id=1144] for the [Lee Van Cleef][/p?id=Lee%20Van%20Cleef] role in [För Några Få ][/f?id=F%C3%B6r%20N%C3%A5gra%20F%C3%A5%20]Dollar[Per qualche dollaro in più][/f?id=%20Mer] (1965) but [Bronson][/p?id=1144] could not work around his commitment to this movie.</li><li>[Stanley Baker][/p?id=Stanley%20Baker] was offered the [Robert Shaw][/p?id=1822] part, but was committed to [Sands of the Kalahari][/f?id=Kalaharis%20gl%C3%B6dande%20sand] (1965).</li><li>[Richard Fleischer][/p?id=1786] was originally announced as director.</li><li>The film makes it seem like the battle only lasted for a few days. In reality, it lasted just over a month.</li><li>The Spanish army supplied over 500 soldiers and 75 tanks for the production.</li><li>[Edward Dmytryk][/p?id=Edward%20Dmytryk] was the next in line choice to direct after [Richard Fleischer][/p?id=1786] turned it down but Jack L. Warner refused to work with him for being one of the Hollywood Ten during the McCarthy witchhunts of the 1950s.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

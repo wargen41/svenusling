@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Ligger I Blodet | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Ligger I Blodet <a href="#" class="grade">+++++</a></h2>
+										<h3>His Girl Friday</h3>
+										<p>
+										Film från <time datetime="1940"><a href="#">1940</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1376.html">Howard Hawks</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1134.html">Cary Grant</a> – Walter Burns</li><li>Rosalind Russell – Hildegaard 'Hildy' Johnson</li><li>Ralph Bellamy – Bruce Baldwin</li><li><a href="/svenusling/p/1319.html">Gene Lockhart</a> – Sheriff Peter B.'Pinky' Hartwell</li><li>Porter Hall – Murphy - Reporter</li><li>Ernest Truex – Roy V. Bensinger - Reporter</li><li>Cliff Edwards – Endicott - Reporter</li><li>Clarence Kolb – Mayor</li><li>Roscoe Karns – McCue - Reporter</li><li>Frank Jenks – Wilson - Reporter</li><li>Regis Toomey – Sanders - Reporter</li><li>Abner Biberman – Louis 'Diamond Louie 'Palutso</li><li>Frank Orth – Duffy - Copy Editor</li><li>John Qualen – Earl Williams</li><li>Helen Mack – Mollie Malloy</li><li>Alma Kruger – Mrs. Baldwin</li><li>Billy Gilbert – Joe Pettibone</li><li>Pat West – Warden Cooley</li><li>Edwin Maxwell – Dr. Max J. Eggelhoffer</li><li>Irving Bacon – Gus - Waiter (uncredited)</li><li>Wade Boteler – Mike - Jail Guard (uncredited)</li><li>Harry C. Bradley – Insurance Doctor (uncredited)</li><li>Wheaton Chambers – Man in Elevator (uncredited)</li><li>Edmund Cobb – Policeman (uncredited)</li><li>Ann Doran – Newspaper Office Worker (uncredited)</li><li>Ralph Dunn – Plainclothesman (uncredited)</li><li>Earl Dwire – Pete Davis (uncredited)</li><li>Pat Flaherty – Policeman Frank (uncredited)</li><li>Eddie Hart – Plainclothesman (uncredited)</li><li>Marion Martin – Evangeline - Louie's Blonde Associate (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Walter Burns ([Cary Grant][/p?id=1134]) refers to some horrible fate suffered by the last person who crossed him: Archie Leach. Grant's real name was Archibald Leach and he ad-libbed the line. See also Arsenic and Old Lace (1944).</li><li>When Earl Williams tries to get out of the roll-top desk, Burns ([Cary Grant][/p?id=1134]) says: &quot;Get back in there, you Mock Turtle&quot;. Grant played the Mock Turtle in Alice in Wonderland (1933).</li><li>The famous in-joke about [Ralph Bellamy's][/p?id=Ralph%20Bellamy] character (&quot;He looks like that actor...[Ralph Bellamy][/p?id=Ralph%20Bellamy]!&quot;) was almost left on the cutting room floor: [Harry Cohn][/p?id=Harry%20Cohn], the studio head, saw the dailies and responded in fury at the impertinence, but he let [Howard Hawks][/p?id=1376] leave it in, and it has always been one of the biggest laughs in the film.</li><li>One of the first, if not the first, films to have characters talk over the lines of other characters, for a more realistic sound. Prior to this, movie characters completed their lines before the next lines were started.</li><li>[Rosalind Russell][/p?id=Rosalind%20Russell] thought, while shooting, that she didn't have as many good lines as [Cary Grant][/p?id=1134] had, so she hired an advertisement writer through her brother-in-law and had him write more clever lines for the dialog. Since [Howard Hawks][/p?id=1376] allowed for spontaneity and ad-libbing, he, and many of the cast and crew didn't notice it, but Grant knew she was up to something, leading him to greet her every morning: &quot;What have you got today?&quot;</li><li>[Jean Arthur][/p?id=Jean%20Arthur] was the first choice to play Hildy. Among the other actresses who also turned down the role were [Carole Lombard][/p?id=Carole%20Lombard], [Ginger Rogers][/p?id=Ginger%20Rogers], [Claudette Colbert][/p?id=Claudette%20Colbert] and [Irene Dunne][/p?id=1395].</li><li>Voted #10 in Total Film's 100 Greatest Movies Of All Time list (November 2005).</li><li>Premiere voted this movie as one of &quot;The 50 Greatest Comedies Of All Time&quot; in 2006.</li><li>The only music is in the first and last two minutes of the film.</li><li>The incident with Walter and Hildy hiding escaped killer Earl Williams in a desk in the city room was based on a real incident. Emile Gauvreau, the editor of the old New York City paper &quot;The New York Evening Graphic&quot;, hid an escaped killer in the city room of the newspaper, interviewed him, wrote the story and waited until the paper was on the street before turning him over to the police.</li><li>The Front Page opened at the Times Square Theater on August 14, 1929 and ran for 276 performances.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dessa Fantastiska Män I Deras Flygande Maskiner | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dessa Fantastiska Män I Deras Flygande Maskiner <a href="#" class="grade">+++</a></h2>
+										<h3>Those Magnificent Men in Their Flying Machines or How I Flew from London to Paris in 25 hours 11 minutes</h3>
+										<p>
+										Film från <time datetime="1965"><a href="#">1965</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre8">Familjefilm</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ken Annakin</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1909.html">Stuart Whitman</a> – Orvil Newton</li><li>Sarah Miles – Patricia Rawnsley</li><li><a href="/svenusling/p/1418.html">James Fox</a> – Richard Mays</li><li>Alberto Sordi – Count Emilio Ponticelli</li><li><a href="/svenusling/p/1816.html">Robert Morley</a> – Lord Rawnsley</li><li>Gert Fröbe – Count Manfred Von Holstein</li><li>Jean-Pierre Cassel – Pierre Dubois</li><li>Irina Demick – Brigitte / Ingrid / Marlene / Françoise / Yvette / Betty</li><li><a href="/svenusling/p/1284.html">Eric Sykes</a> – Courtney</li><li>Red Skelton – The Neanderthal Man / Ancient Greek Flyer / Medieval Flyer / Winged Bicycle Rider / Winged Car Rider / Jet Pack Tester / Ornithopter Pilot / Passenger in Airport</li><li><a href="/svenusling/p/1925.html">Terry-Thomas</a> – Sir Percy Ware-Armitage</li><li><a href="/svenusling/p/1077.html">Benny Hill</a> – Fire Chief Perkins</li><li>Yûjirô Ishihara – Yamamoto</li><li>Flora Robson – Mother Superior</li><li>Karl Michael Vogler – Captain Rumpelstrosse</li><li>Sam Wanamaker – George Gruber</li><li>Eric Barker – French Postman</li><li>Maurice Denham – Trawler Skipper</li><li>Fred Emney – Colonel on Road</li><li>Gordon Jackson – MacDougal</li><li>Davy Kaye – Jean Pascal</li><li>John Le Mesurier – French Painter</li><li>Jeremy Lloyd – Lieutenant Parsons</li><li>Zena Marshall – Countess Sofia Ponticelli</li><li>Millicent Martin – Airline Hostess</li><li>Eric Pohlmann – Italian Mayor</li><li>Marjorie Rhodes – Waitress</li><li>Norman Rossington – Assistant Fire Chief</li><li>William Rushton – Tremayne Gascoyne</li><li>Graham Stark – Fireman</li><li>Jimmy Thompson – Photographer</li><li>Michael Trubshawe – Niven</li><li>Tony Hancock – Harry Popperwell</li><li class="voice">James Robertson Justice – Narrator (röst)</li><li>John Adams – Gentleman (uncredited)</li><li>Lewis Alexander – Journalist (uncredited)</li><li>Baxter Annakin – Nelson - Parsons' Dog (uncredited)</li><li>Bernard Barnsley – Party Guest (uncredited)</li><li>William Baskiville – Gentleman (uncredited)</li><li>Sidonie Bond – Harry's girlfriend (uncredited)</li><li>Gerald Campion – Fireman (uncredited)</li><li>Alf Casha – Dignitary (uncredited)</li><li>Pauline Challoner – Ponticelli's Daughter (uncredited)</li><li>Pauline Chamberlain – Woman in Dover (uncredited)</li><li>Robin Chapman – Postman (uncredited)</li><li>Arthur Collins – Spectator (uncredited)</li><li>Cicely Courtneidge – Muriel - Colonel's Wife (uncredited)</li><li>Billy Dean – German Mechanic (uncredited)</li><li>Vernon Dobtcheff – Member of French Team (uncredited)</li><li>Maurice Dunster – French Policeman (uncredited)</li><li>Norma Foster – Minor Role (uncredited)</li><li>Chick Fowles – Reporter (uncredited)</li><li>Arthur Goodman – Party Guest (uncredited)</li><li>Gary Graham – Child at Air Show (uncredited)</li><li>Victor Harrington – Journalist (uncredited)</li><li>Max Howard – Boy in Crowd (uncredited)</li><li>Judy Huxtable – Girl at Dover Beach (uncredited)</li><li>Juba Kennerley – Journalist (uncredited)</li><li>Eric Kent – German Team (uncredited)</li><li>Nigel Kingsley – Youngest Child of Ponticelli (uncredited)</li><li>Ferdy Mayne – French Official (uncredited)</li><li>Manny Michael – Man in Crowd (uncredited)</li><li>Addo Miles – Patricia's Dog (uncredited)</li><li>Bill Nagy – American Journalist (uncredited)</li><li>Michael Oscars – Curious boy (uncredited)</li><li>Steve Plytas – Continental Journalist (uncredited)</li><li>Charles Price – Mechanic (uncredited)</li><li>Edith Raye – Woman in Crowd (uncredited)</li><li>Mike Read – Stuntman (uncredited)</li><li>Fred Real – Gentleman (uncredited)</li><li>Nicholas Smith – Fireman (uncredited)</li><li>Paddy Smith – Party Guest (uncredited)</li><li>Ronnie Stevens – Reporter (uncredited)</li><li>Kenjin Takari – Japanese Man (uncredited)</li><li>Rita Tobin-Weske – Nun (uncredited)</li><li>James Ure – Gentleman (uncredited)</li><li class="voice">James Villiers – Yamamoto (röst) (uncredited)</li><li>Pearl Walters – Party Guest (uncredited)</li><li>Philip Yardley – Philippe (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The French entry in the race, flown by Pierre Dubois, is a replica of the &quot;Demoiselle&quot;, designed by the [Brazilian][/f?id=11299] expatriate Alberto Santos Dumont, who had been believed by the French to be the first to fly a powered aircraft, until Wilbur and Orville Wright's demonstrations in 1908. The replica builders were faithful in constructing the Demoiselle, but no one could get it to leave the ground until it was discovered that Dumont had been a very small man who weighed only eighty-five pounds (thirty-eight and a half kilograms). Female pilot Joan Hughes was hired, and she successfully flew the plane throughout filming.</li><li>Most of the aerial scenes were filmed before ten a.m. each day when the air was least turbulent.</li><li>The 1910-era airplanes used in this movie were replicas built using the authentic materials of the originals, but with slightly more powerful engines. About twenty planes were built at a cost of about five thousand pounds sterling each.</li><li>[Michael Trubshawe's][/p?id=Michael%20Trubshawe] character's name is &quot;[Niven][/p?id=1221]&quot;. [Michael Trubshawe][/p?id=Michael%20Trubshawe] and [David Niven][/p?id=1221] were very close friends from when they served in the military garrison at Malta together, and [David Niven][/p?id=1221] would call uncredited characters in his movies &quot;[Trubshawe][/p?id=Michael%20Trubshawe]&quot; - so this was [Trubshawe's][/p?id=Michael%20Trubshawe] way of returning the compliment.</li><li>The beginning and ending sequences mark this as the final theatrical movie appearence for [Red Skelton][/p?id=Red%20Skelton].</li><li>Writer, Producer, and Director [Ken Annakin][/p?id=Ken%20Annakin] had been working on an adventure movie about transatlantic flight when the producer's bankruptcy aborted the production. He then made this movie.</li><li>Ad art and credit sequences were designed by the noted satiric British military artist Ronald Searle.</li><li>At three hundred thousand dollars, this was [Stuart Whitman's][/p?id=1909] largest paycheck.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

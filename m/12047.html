@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Hände I New York | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Hände I New York <a href="#" class="grade">++++</a></h2>
+										<h3>Miracle on 34th Street</h3>
+										<p>
+										Film från <time datetime="1947"><a href="#">1947</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre8">Familjefilm</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>George Seaton</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1630.html">Maureen O'Hara</a> – Doris Walker</li><li>John Payne – Fred Gailey</li><li><a href="/svenusling/p/1263.html">Edmund Gwenn</a> – Kris Kringle</li><li><a href="/svenusling/p/1319.html">Gene Lockhart</a> – Judge Henry X. Harper</li><li>Natalie Wood – Susan Walker</li><li>Porter Hall – Granville Sawyer</li><li>William Frawley – Charlie Halloran</li><li>Jerome Cowan – Dist. Atty. Thomas Mara</li><li>Philip Tonge – Julian Shellhammer</li><li>Sheryl Deauville – Double for Natalie Wood</li><li>Jack Albertson – Post Office Mail Sorter Next to Lou (uncredited)</li><li>Harry Antrim – Mr. R.H. Macy (uncredited)</li><li>Lela Bliss – Mrs. Shellhammer (uncredited)</li><li>Walden Boyle – Judge's Clerk (uncredited)</li><li>Kevin Burke – Child on Santa's Lap (uncredited)</li><li>Dorothy Christy – Secretary (uncredited)</li><li>Dick Cogan – Department Store Head (uncredited)</li><li>Jeff Corey – Reporter (uncredited)</li><li>Mike Donovan – Court Bailiff (uncredited)</li><li>Teddy Driver – Terry (uncredited)</li><li>Mary Field – Dutch Girl's Adopted Mother (uncredited)</li><li>William Forrest – Doctor Rogers at Bellevue (uncredited)</li><li>Jack Gargan – Chauffeur (uncredited)</li><li>Robert Gist – Department Store Window Dresser (uncredited)</li><li>Jane Green – Mrs. Harper (uncredited)</li><li>Alvin Greenman – Alfred (uncredited)</li><li>Alvin Hammer – George (uncredited)</li><li>Theresa Harris – Cleo (uncredited)</li><li>Percy Helton – Drunken Santa Claus (uncredited)</li><li>Herbert Heyes – Mr. Gimbel (uncredited)</li><li>Clark Howat – Patron in Macy's Lunchroom (uncredited)</li><li>Robert Hyatt – Thomas Mara Jr. (uncredited)</li><li>Richard Irving – Reporter (uncredited)</li><li>Robert Karnes – Second Bellevue Interne (uncredited)</li><li>Fran Lee – Customer (uncredited)</li><li>Marlene Lyden – Dutch Girl (uncredited)</li><li>Robert Lynn – Macy Salesman (uncredited)</li><li>Mae Marsh – Woman in Santa Line (uncredited)</li><li>Ida McGuire – Drum Majorette (uncredited)</li><li>Joseph McInerney – Bailiff (uncredited)</li><li>Jean O'Donnell – Miss Adams (uncredited)</li><li>Anne O'Neal – Secretary to Mr. Sawyer (uncredited)</li><li>'Snub' Pollard – Mail-Bearing Court Officer (uncredited)</li><li>Lorin Raker – Macy Salesman (uncredited)</li><li>Bob Reeves – Court Officer Bearing Mail (uncredited)</li><li>Thelma Ritter – Peter's Mother (uncredited)</li><li>Stephen Roberts – Security Guard (uncredited)</li><li>Jeffrey Sayre – Courtroom Reporter (uncredited)</li><li>James Seay – Dr. Pierce (uncredited)</li><li>Irene Shirley – R.H. Macy's Secretary (uncredited)</li><li>Patty Smith – Alice (uncredited)</li><li>Ray Spiker – Court Officer Bearing Mail (uncredited)</li><li>Ann Staunton – Mrs. Mara (uncredited)</li><li>Brick Sullivan – Guard (uncredited)</li><li>Anthony Sydes – Peter (uncredited)</li><li>Guy Thomajan – Lou (uncredited)</li><li>Basil Walker – Bellevue Intern (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa scenografi, färg 1961</li><li>Golden Globe - Bästa film - Komedi 1961</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 1961 (1887)</li><li>Laurel Awards, Golden Laurel - Top Female Comedy Performance (4:e plats) 1961 (1887)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>In the untranslated dialogue with the Dutch girl, Santa Claus asks the child what she wants for Christmas. She says she wants nothing, telling Santa she got her gift by being adopted by her new mother.</li><li>According to [Natalie Wood's][/p?id=Natalie%20Wood] biographer, during the shoot the young actress was convinced that [Edmund Gwenn][/p?id=1263] was actually Santa Claus (by all accounts, [Gwenn][/p?id=1263] was a very good-natured man on the set). It wasn't until [Wood][/p?id=Natalie%20Wood] saw him out of costume at the wrap party that she realized he wasn't Santa.</li><li>Both the actual Macy's and Gimbel's department stores were approached by the producers for permission to have them depicted in the film. Both stores wanted to see the finished film first before they gave approval. If either store had refused, the film would have had to been extensively edited and reshot to eliminate the references. Fortunately at the test viewing, both businesses were pleased with the film and gave their permission.</li><li>Unbeknownst to most parade watchers, [Edmund Gwenn][/p?id=1263] played Santa Claus in the actual Macy's Thanksgiving Day Parade held November 28, 1946. He fulfilled the duties of most parade Santas, including addressing the crowd from the marquee of Macy's after the parade was over. He was introduced to the crowd by [Philip Tonge][/p?id=Philip%20Tonge] (who played Mr. Shellhammer in the movie) and later unveiled the mechanical Christmas display windows to the accompaniment of Pyotr Ilyich Tchaikovsky's &quot;Nutcracker Suite.&quot; This gesture symbolized the opening of the Christmas shopping season at the store.</li><li>[Maureen O'Hara][/p?id=1630] was ultimately forced into her role against her will, as she had just returned to Ireland before being called back to America for the film. However, she immediately changed her sentiments upon reading the script.</li><li>Despite the fact that the film is set during Christmas, studio head [Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck] insisted that it be released in May because he argued that more people went to the movies during the summer. So the studio began scrambling to promote it while keeping the fact that it was a Christmas movie a secret.</li><li>In the 1970s [Natalie Wood][/p?id=Natalie%20Wood] and [Robert Wagner][/p?id=1827] were approached about doing a TV remake of the film with Natalie's daughter [Natasha Gregson Wagner][/p?id=Natasha%20Gregson%20Wagner] as Susan. [Wood][/p?id=Natalie%20Wood] turned it down because she'd been a child star herself and didn't want her very young daughter to start acting at such an early age.</li><li>Unusually, there were two Christmas films nominated for Best Film at the 1947 Academy Awards--this and [Henry Koster's][/p?id=Henry%20Koster] [The Bishop's Wife][/f?id=%C3%84ngel%20P%C3%A5%20Prov] (1947). They join [It's a Wonderful Life][/f?id=Livet%20%C3%84r%20Underbart] (1946) the year before as only three Christmas movies to be nominated for this coveted prize.</li><li>Film debut of [Thelma Ritter][/p?id=Thelma%20Ritter].</li><li>The cast and crew were unanimous in their opinion of [Edmund Gwenn][/p?id=1263]: they loved him. [Alvin Greenman][/p?id=Alvin%20Greenman] who played soft-spoken janitor Alfred called [Gwenn][/p?id=1263] &quot;a dear, dear man,&quot; and [Robert Hyatt][/p?id=Robert%20Hyatt], who played the judge's son Tommy, Jr., said in a 2001 interview, &quot;He was a really nice guy, always happy, always smiling. He had this little twinkle in his eye.&quot; Added [Maureen O'Hara][/p?id=1630]: &quot;...by the time we were halfway through the shoot, we all believed Edmund really was Santa Claus. I've never seen an actor more naturally suited for a role.&quot;</li><li>The entire cast enjoyed a special bond, according to [Maureen O'Hara][/p?id=1630], and always got along beautifully throughout the production. &quot;Each evening, when we were not working,&quot; recalled [O'Hara][/p?id=1630], &quot;[Edmund Gwenn][/p?id=1263], John and I went for a walk up Fifth Avenue. Natalie had to go to bed, but we didn't. We stopped and window-shopped at all the stores, which were beautifully decorated for the holidays. Edmund especially loved those nights and acted more like the kid who might be getting the presents instead of the Santa who would be giving them. I got such a big kick out of seeing the expressions of window dressers when they saw Edmund peering in at them--I knew then that he was going to make a big splash as Santa Claus.&quot;</li><li>In her autobiography, [Maureen O'Hara][/p?id=1630] nicely summed up what the film had come to mean to her over the years. &quot;Everyone felt the magic on the set and we all knew we were creating something special,&quot; she said. &quot;I am very proud to have been part of a film that has been continually shown and loved all over the world for nearly sixty years. [][/f?id=12047]Miracle[ on 34th Street][/f?id=%20on%2034th%20Street] (1947) has endured all this time because of the special relationship of the cast and crew, the uplifting story and its message of hope and love, which steals hearts all over the world every year. I don't think I will ever tire of children asking me, 'Are you the lady who knows Santa Claus?' I always answer, 'Yes, I am. What would you like me to tell him?'&quot;</li><li>[Edmund Gwenn][/p?id=1263] improvised his reaction to the beard-pull so that [Natalie Wood][/p?id=Natalie%20Wood] would be surprised.</li><li>This was [Alvin Greenman's][/p?id=Alvin%20Greenman] first movie. He said that [Edmund Gwenn][/p?id=1263] always took time to mentor him.</li><li>When [Edmund Gwenn][/p?id=1263] accepted his Best Supporting Actor Oscar®, he said, &quot;Now I know there's a Santa Claus.&quot;</li><li>In a separately filmed promotional trailer, [Rex Harrison][/p?id=1778], [Anne Baxter][/p?id=Anne%20Baxter], Peggy Ann Garner and Dick Haymes, all of whom were appearing in other Twentieth Century-Fox productions at the time, but not in this one, discuss the merits of the film.</li><li>In a separately filmed promotional trailer, actor [Charles Tannen][/p?id=Charles%20Tannen] plays studio head Ed Schaeffer, a thinly disguised impersonation of [Darryl F. Zanuck][/p?id=Darryl%20F.%20Zanuck], and [George E. Stone][/p?id=George%20E.%20Stone], [Gene Nelson][/p?id=Gene%20Nelson], and [Harry Seymour][/p?id=Harry%20Seymour] play other studio executives at a mock screening of what was to be the original trailer for the film.</li><li>On Kris Kringle's employment card, he's listed the names of Santa's Reindeer as his next of kin. While Donner is used frequently, the correct name as it appears in a hand written manuscript by Clement Clarke Moore is actually Donder, and that's how it appears on Kris Kringle's employment card.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

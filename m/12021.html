@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Departed | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Departed <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2006"><a href="#">2006</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1619.html">Martin Scorsese</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1582.html">Leonardo DiCaprio</a> – Billy Costigan</li><li><a href="/svenusling/p/1624.html">Matt Damon</a> – Colin Sullivan</li><li><a href="/svenusling/p/1402.html">Jack Nicholson</a> – Frank Costello</li><li><a href="/svenusling/p/1614.html">Mark Wahlberg</a> – Staff Sgt. Dignam</li><li><a href="/svenusling/p/1620.html">Martin Sheen</a> – Cpt. Queenan</li><li>Ray Winstone – Mr. French</li><li><a href="/svenusling/p/1975.html">Vera Farmiga</a> – Madolyn</li><li><a href="/svenusling/p/1052.html">Anthony Anderson</a> – Brown</li><li><a href="/svenusling/p/1017.html">Alec Baldwin</a> – Cpt. Ellerby</li><li>Kevin Corrigan – Cousin Sean</li><li>James Badge Dale – Barrigan</li><li>David O'Hara – Fitzy</li><li>Mark Rolston – Timothy Delahunt</li><li>Robert Wahlberg – FBI Agent Frank Lazio</li><li>Kristen Dalton – Gwen</li><li>Thomas B. Duffy – Governor</li><li>J.C. MacKenzie – Realtor</li><li>Mary Klug – Billy's Aunt</li><li>Peg Holzemer – Mrs. Kennefick</li><li>Robert 'Toshi' Kar Yuen Chan – Triad Boss</li><li>Gurdeep Singh – Pakistani Proprietor</li><li>Armen Garo – Providence Gangster #1</li><li>John Cenatiempo – Providence Gangster #2</li><li>Joseph Riccobene – Kneecapped Bankrobber</li><li>Billy Smith – Detective #1 Tailing Queenan</li><li>Lyman Chen – Translator</li><li>Kevin P. McCarthy – Detective #1 - Colin's Unit</li><li>Chris Fischer – Detective #2 - Colin's Unit</li><li>Brian Smyj – Man Glassed in Bar</li><li>William Severs – Older Priest</li><li>Larry Mitchell – Younger Priest</li><li>Anthony Estrella – Police Camera Tech</li><li>Andrew Breving – Police Cell Phone Tech</li><li>Tracey Paleo – Darlene the Secretary</li><li>Douglas Crosby – Man Killed by French</li><li>Dorothy Lyman – Woman at Bar #1</li><li>Audrie Neenan – Woman at Bar #2</li><li>Frank Mallicoat – News Anchor</li><li>Paula DeMers – Billy's Mother</li><li>Conor Donovan – Young Colin</li><li>Amanda Lynch – Carmen</li><li>Sallie Toussaint – Woman at Opera</li><li>Patrick Coppola – Bookie Harassed by French</li><li>Mick O'Rourke – Jimmy Bags</li><li>Deborah Carlson – Sister Mary Theresa</li><li>Nellie Sciutto – Queenan's Secretary</li><li>Peter Welch – Other Prisoner</li><li>Henry Yuk – Chinese Government Man</li><li>Dennis Lynch – Costello's Crew #1</li><li>Michael Byron – Costello's Crew #2</li><li>William Lee – Costello's Crew #3</li><li>John Rue – Luncheonette Proprietor</li><li>Peter Crafts – Man in Costello's Bar</li><li>Joseph P. Reidy – Priest with Young Colin</li><li>John Farrer – Priest at Billy's Funeral</li><li>Paris Karounos – Jimmy Pappas</li><li>Brian Haley – Detective #2 Tailing Queenan</li><li>Terry Serpico – Detective #3 Tailing Queenan</li><li>Jay Giannone – Detective #4 Tailing Queenan</li><li>John Polce – Lynn Detective</li><li class="voice">Bo Cleary – Drill Instructor #2 (röst)</li><li>David Conley – Gang Member with Mr. French</li><li>Victor Chan – Chinese Delivery Man</li><li>Jill Brown – Executed Woman</li><li>Sarah Fearon – French's Wife</li><li>Tom Kemp – Billy Costigan, Sr. (credit only)</li><li>Denece Ryland – Woman Doctor</li><li>Zachary Pauliks – Young Billy (credit only)</li><li>Daniel F. Risteen Jr. – Crack House Cop #1</li><li>Francis P. Hughes – Crack House Cop #2</li><li>Johnny Cicco – Crack Addict</li><li>Chance Kelly – Exam Instructor</li><li>Shay Duffin – Bartender at Brasserie</li><li>John McConnell – Bookie in Costello's Bar</li><li>Kenneth Stoddard – State Trooper #1</li><li>Jeffrey Winter – State Trooper #2</li><li>Paddy Curran – New Guy</li><li>Mark Philip Patrick – New Guy</li><li>David Fischer – Executed Man</li><li>Walter Y.F. Wong – Waiter in Alley</li><li>Tony M. Yee – Waiter in Alley</li><li>Francesca Scorsese – Little Girl at Airport</li><li>Alex Morris – Young Man at Airport</li><li>Emma Tillinger Koskoff – Woman with Dog</li><li>Craig Castaldo – Crack House Denizen</li><li>James P. Anderson – Boston Police Dignitary (uncredited)</li><li>Andrew Aninsman – Undercover Drug Agent (uncredited)</li><li>Dion Baia – Donegan - Police Cadet (uncredited)</li><li>Takumi Bando – Triad (uncredited)</li><li>Vincent Bivona – Cadet #15 (uncredited)</li><li>Eric Bruno Borgman – Reporter (uncredited)</li><li>David Boston – Boston Police Chief (uncredited)</li><li>Tracey Brennan – E.R. Doctor (uncredited)</li><li>Brendan Burke – Irish Thug (uncredited)</li><li>Shana Carr – Business Woman (uncredited)</li><li>Vic Clay – Businessman (uncredited)</li><li>Desiree April Connolly – Driver of Car in Chase (uncredited)</li><li>Jeffrey Corazzini – Crime Scene Unit (uncredited)</li><li>Buddy Dolan – Sean (uncredited)</li><li>Jim Evans – Police Officer (uncredited)</li><li>James Michael Farrell – Detective (uncredited)</li><li>Steve Flynn – State Police Detective (uncredited)</li><li>Lorre Fritchy – Extra (uncredited)</li><li>Trudi Goodman – Woman Office Worker (uncredited)</li><li>Mackenzie Hawe – Child at Carnival (uncredited)</li><li>Mark Hemphill – College Student (uncredited)</li><li>Henry Kwan – Asian Triad (uncredited)</li><li>Crystal Lisbon – Business Woman (uncredited)</li><li>Steve Lord – Academy Pistol Coach (uncredited)</li><li>Frank Mancuso – Inmate (uncredited)</li><li>Jack McCullough – EMT (uncredited)</li><li>Robert Myers – Cadet Parent (uncredited)</li><li>Nicolas Quilter – State Trooper (uncredited)</li><li>Osmani Rodriguez – Reporter (uncredited)</li><li>Steve Scarfo – Construction Worker (uncredited)</li><li>Billy Silvia – Chinatown Shopper (uncredited)</li><li>John Wayland Somers – Forensics Officer (uncredited)</li><li>Lawrence Cameron Steele – Academy Firearms Instructor (uncredited)</li><li>Stream – Shopper in China Town (uncredited)</li><li>Alfredo Suarez – Cop (uncredited)</li><li>Conor Timmis – Rugby Fan (uncredited)</li><li>Donna Wong – Waitress (uncredited)</li><li>Gail Yudain – Cadet Parent (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Laurel Awards, Golden Laurel - Top General Entertainment 1961</li><li>Laurel Awards, Golden Laurel - Top Male Comedy Performance (2:a plats) 1961 (1304)</li><li>Laurel Awards, Golden Laurel - Top Cinematography, Black and White (3:e plats) 1962</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa foto, svart-vit 1962</li><li>Oscar - Bästa specialeffekter 1962</li><li>Oscar - Best Art Direction-Set Decoration, Black-and-White 1962</li><li>Golden Globe - Bästa skådespelare - Komedi eller musikal 1962 (1304)</li><li>DGA Award - Bästa regi 1962 (Robert Stevenson)</li><li>WGA Award (Screen) - Best Written American Comedy 1962</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Martin Scorsese][/p?id=1619] wanted to shoot the film in Boston, where the story is set. But due to concerns on setting up production and politics, the producers chose New York City to double for Boston because of the state's 15% tax credit. The bulk of the movie was shot in New York City while a six-week shooting schedule was split in two for Boston, shooting the first half in June and the second half in August. After the success of this film, Massachusetts created a 25% tax credit for filmmaking.</li><li>A possible reason why [Leonardo DiCaprio][/p?id=1582] did not receive an Oscar nomination for his performance in this movie was because the Warner Bros. Studios initially did not want to favor [DiCaprio][/p?id=1582] over his co-stars and place him in the leading actor category. The studio favored [DiCaprio's][/p?id=1582] leading performance in Blood Diamond (2006) (which eventually got him a nomination). [DiCaprio][/p?id=1582] himself refused to campaign against his male co-stars in the supporting actor category, so Warner bought no supporting actor ads for [DiCaprio][/p?id=1582], and he did not receive a nomination.</li><li>[Leonardo DiCaprio][/p?id=1582] was cast in the title role in [The Good Shepherd][/f?id=Den%20Innersta%20Kretsen] (2006), but he dropped out to play Billy Costigan in this movie. [Matt Damon][/p?id=1624] then took the role. [Robert De Niro][/p?id=1808] turned down the role of Queenan to appear in [The Good Shepherd][/f?id=Den%20Innersta%20Kretsen].</li><li>[Mark Wahlberg][/p?id=1614] based his performance on the police officers who'd arrested him about two dozen times in his youth, and the reactions of his parents who had to come bail him out with their grocery money.</li><li>This is the movie with the most uses of the word &quot;fuck&quot; and its derivatives (237) to win the Best Picture Oscar.</li><li>When receiving the top award from the Director's Guild of America for this film, [Martin Scorsese][/p?id=1619] said that this &quot;is the first movie I have ever done with a plot.&quot;</li><li>[Martin Scorsese][/p?id=1619] said that he made this film to honor crime genre directors such as [Robert Aldrich][/p?id=Robert%20Aldrich], [Samuel Fuller][/p?id=Samuel%20Fuller] and [Don Siegel][/p?id=Don%20Siegel].</li><li>Originally, [Jack Nicholson][/p?id=1402] turned down his role in the movie, but after a meeting with [Martin Scorsese][/p?id=1619], [William Monahan][/p?id=William%20Monahan] and [Leonardo DiCaprio][/p?id=1582], he was finally convinced to play the role of [Frank Costello][/p?id=Frank%20Costello]. The main reason he joined the production was because he had previously done a few comedies, and wanted to play a villain again, and he considered the character of [Costello][/p?id=Frank%20Costello] to be the ultimate incarnation of evil.</li><li>As research for his character's occupation, [Matt Damon][/p?id=1624] worked with a Massachusetts State Police unit out of Boston. He accompanied them on routine patrols, participated in a drug raid and was taught proper police procedures like how to pat down a suspect.</li><li>[Martin Scorsese][/p?id=1619] had originally wanted to cast a known actress, either [Kate Winslet][/p?id=1530], [Emily Blunt][/p?id=1279] or [Hilary Swank][/p?id=1374], for the part of Madolyn. But he later decided to go with someone new instead ([Vera Farmiga][/p?id=1975]).</li><li>[Jack Nicholson][/p?id=1402] refused to wear a Boston Red Sox hat during filming and instead wore his New York Yankees hat.</li><li>[Martin Scorsese][/p?id=1619] put the finishing touches on this film a week before its theatrical release.</li><li>Originally [Brad Pitt][/p?id=1096] was cast as Colin Sullivan, but later dropped out to work with Alejandro González Iñárritu in Babel (2006). He continued to produce the film under his (and his then wife [Jennifer Aniston's][/p?id=1446]) production company, Plan B.</li><li>After completing The Aviator (2004), [Martin Scorsese][/p?id=1619] kept [Alec Baldwin][/p?id=1017] in mind for future collaboration and ultimately decided to cast him in the role of Ellerby which was offered to [Mel Gibson][/p?id=1635] first, but [Gibson][/p?id=1635] was unable to accept the part because he was starting production on [Apocalypto][/f?id=10369] (2006) at the time.</li><li>The scene where [Frank Costello][/p?id=Frank%20Costello] throws cocaine on hookers was one of many bizarre ideas contributed by [Jack Nicholson][/p?id=1402], who also suggested wearing a strap-on for the scene with [Matt Damon][/p?id=1624] in the porn theater.</li><li>The only remake of a foreign film to win an Academy Award for Best Picture.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

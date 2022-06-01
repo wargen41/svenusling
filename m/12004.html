@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Den Stora Stjärnparaden | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Den Stora Stjärnparaden <a href="#" class="grade">+++</a></h2>
+										<h3>Stage Door Canteen</h3>
+										<p>
+										Film från <time datetime="1943"><a href="#">1943</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre18">Musikal</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Frank Borzage</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Judith Anderson – Judith Anderson</li><li>Kenny Baker – Kenny Baker</li><li>Tallulah Bankhead – Tallulah Bankhead</li><li>Ralph Bellamy – Ralph Bellamy</li><li>Edgar Bergen – Edgar Berger</li><li>Charlie McCarthy – Charlie McCarthy</li><li>Ray Bolger – Ray Bolger</li><li>Ina Claire – Ina Claire</li><li>Katharine Cornell – Katherine Cornell</li><li>Gracie Fields – Gracie Fields</li><li>Lynn Fontanne – Lynn Fontaine</li><li>Helen Hayes – Helen Hayes</li><li><a href="/svenusling/p/1531.html">Katharine Hepburn</a> – Katharine Hepburn</li><li>Hugh Herbert – Hugh Herbert</li><li>Jean Hersholt – Jean Hersholt</li><li>George Jessel – George Jessel</li><li>Gypsy Rose Lee – Gypsy Rose Lee</li><li>Alfred Lunt – Alfred Lunt</li><li>Harpo Marx – Harpo Marx</li><li>Elsa Maxwell – Elsa Maxwell</li><li>Yehudi Menuhin – Yehudi Menuhin</li><li>Ethel Merman – Ethel Merman</li><li>Paul Muni – Paul Muni</li><li>Merle Oberon – Merle Oberon</li><li>George Raft – George Raft</li><li>Lanny Ross – Lanny Ross</li><li>Martha Scott – Martha Scott</li><li>Ethel Waters – Ethel Waters</li><li>Johnny Weissmuller – Johnny Weissmuller</li><li>Ed Wynn – Ed Wynn</li><li>Henry Armetta – Henry Armetta</li><li>Benny Baker – Beny Baker</li><li>Helen Broderick – Helen Broderick</li><li>Lloyd Corrigan – Lloyd Corrigan</li><li>Jane Darwell – Jane Darwell</li><li>William Demarest – William Demarest</li><li>Virginia Field – Virginia Field</li><li>Vinton Freedley – Vinton</li><li>Ann Gillis – Ann Gillis</li><li>Lucile Gleason – Lucille Gleason</li><li>Vera Gordon – Vera Gordon</li><li>Virginia Grey – Virginia Grey</li><li>Sam Jaffe – Sam Jaffe</li><li>Allen Jenkins – Allen Jenkins</li><li>Roscoe Karns – Roscoe Karns</li><li>Tom Kennedy – Tom Kennedy</li><li>Otto Kruger – Otto Kruger</li><li>June Lang – June Lang</li><li>Betty Lawford – Betty Lawford</li><li>Bert Lytell – Canteen Master of Ceremonies</li><li>Aline MacMahon – Aline MacMahon</li><li>Horace McMahon – Horace MacMahon</li><li>Helen Menken – Helen Minken</li><li>Peggy Moran – Peggy Moran</li><li>Ralph Morgan – Ralph Morgan</li><li>Alan Mowbray – Alan Mowbray</li><li>Elliott Nugent – Elliott Nugent</li><li>Patrick O'Moore – Australian</li><li>Franklin Pangborn – Franklin Pangborn</li><li>Helen Parrish – Helen Parrish</li><li>Brock Pemberton – Brock Pemberton</li><li>Selena Royle – Selena Royle</li><li>Marion Shockley – Lillian</li><li>Cornelia Otis Skinner – Cornelia Otis Skinner</li><li>Ned Sparks – Ned Sparks</li><li>Bill Stern – Bill Stern</li><li>Arleen Whelan – Arleen Whelan</li><li>May Whitty – May Whitty</li><li>Count Basie – Conductor of the Count Basie Orchestra</li><li>Xavier Cugat – Conductor of the Xavier Cugat Orchestra</li><li>Benny Goodman – Conductor of the Benny Goodman Orchestra</li><li>Kay Kyser – Conductor of the Kay Kyser Band</li><li>Guy Lombardo – Conductor of the Guy Lombardo Orchestra</li><li>Freddy Martin – Conductor of the Freddy Martin Orchestra</li><li>Cheryl Walker – Eileen Burke</li><li>William Terry – Dakota Smith</li><li>Marjorie Riordan – Jean</li><li>Lon McCallister – California Jack Gilman</li><li>Margaret Early – Ella Sue</li><li>Sunset Carson – Tex</li><li>Dorothea Kent – Mamie - Jersey's Girl</li><li>Frederick Brady – Jersey Wallace</li><li>Kay Kyser Band – Kay Kyser Band</li><li>Count Basie and His Orchestra – Count Basie Orchestra</li><li>Benny Goodman and His Orchestra – Benny Goodman Orchestra</li><li>Guy Lombardo Orchestra – Guy Lombardo Orchestra</li><li>Freddy Martin Orchestra – Freddy Martin Orchestra</li><li>Xavier Cugat and His Orchestra – Xavier Cugat Orchestra</li><li>Harry Babbitt – Kay Kyser Band Singer (uncredited)</li><li>Dave Barbour – Musician (uncredited)</li><li>Alice Barry – Sun Tan Girl (uncredited)</li><li>Leah Benner – Sun Tan Girl (uncredited)</li><li>Julie Conway – Kay Kyser Band Singer (uncredited)</li><li>Jane Cowl – Jane Cowl (uncredited)</li><li>Helen Dumas – Helen (uncredited)</li><li>Trudy Erwin – Kay Kyser Band Singer (uncredited)</li><li>Dorothy Fields – Dorothy Fields (uncredited)</li><li>Pat Flaherty – Dubious Army Sergeant (uncredited)</li><li>Arlene Francis – Arlene Francis (uncredited)</li><li>Mack Gray – Waiter (uncredited)</li><li>George E. Green – Freddy Martin Orchestra Member (uncredited)</li><li>Eddie Hall – Soldier on Train (uncredited)</li><li>Leonard Harper – Talent Scout (uncredited)</li><li>Edna Mae Harris – Sun Tan Girl (uncredited)</li><li>Louis Jean Heydt – Capt. Robinson (uncredited)</li><li>John James – Don Brandt - Marine with Virginia Grey (uncredited)</li><li>Virginia Kaye – Virgina Kaye (uncredited)</li><li>Kenner G. Kemp – Marine (uncredited)</li><li>Jack Lambert – Sailor Cutting In with Ina Claire (uncredited)</li><li>Gertrude Lawrence – Gertrude Lawrence (uncredited)</li><li>Peggy Lee – Benny Goodman Orchestra Singer (uncredited)</li><li>Maurice Marks – Jitterbugging Soldier (uncredited)</li><li>Jack Martin – Kay Kyser Band Singer (uncredited)</li><li>Sully Mason – Kay Kyser Band Singer (uncredited)</li><li>George Mathews – Marine Sergeant with Ray Bolger (uncredited)</li><li>Marian Moore – Marian Moore (uncredited)</li><li>Elizabeth Morgan – Elizabeth (uncredited)</li><li>Honeychile Perdue – Sun Tan Girl (uncredited)</li><li>Caleb Peterson – Johnny Jones (uncredited)</li><li>Francis Pierlot – Minister at Jersey's Wedding (uncredited)</li><li>Django Reinhardt – Django Reinhardt (uncredited)</li><li>Ruby Richards – Sun Tan Girl (uncredited)</li><li>Verna Richardson – Sun Tan Girl (uncredited)</li><li>Ruth Roman – Girl (uncredited)</li><li>Lina Romay – Xavier Cugat Orchestra Singer (uncredited)</li><li>Johnny Roventini – Johnny - Bellhop 'Living Trademark' for Philip Morris Cigarettes (uncredited)</li><li>Mortimer Snerd – Wooden Dummy (uncredited)</li><li>Anne G. Sterling – Attractive Woman (uncredited)</li><li>Arthur Walsh – Jitterbugging Soldier (uncredited)</li><li>Jesse White – Jesse White (uncredited)</li><li>Max Williams – Kay Kyser Band Singer (uncredited)</li><li>Matt Willis – Sergeant on Train (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>LAFCA Award - Bästa foto 1987</li><li>LAFCA Award - Bästa musik 1987</li><li>NYFCC Award - Bästa foto 1987</li><li>Oscar - Bästa film 1988</li><li>Oscar - Bästa regi 1988 (Bernardo Bertolucci)</li><li>Oscar - Bästa manus baserat på annan förlaga 1988 (Bernardo Bertolucci)</li><li>Oscar - Bästa foto 1988</li><li>Oscar - Bästa musik 1988</li><li>Oscar - Bästa kostym 1988</li><li>Oscar - Bästa ljud 1988</li><li>Oscar - Bästa klippning 1988</li><li>Oscar - Best Art Direction-Set Decoration 1988</li><li>Golden Globe - Bästa film - Drama 1988</li><li>Golden Globe - Bästa regi 1988 (Bernardo Bertolucci)</li><li>Golden Globe - Bästa manus 1988 (Bernardo Bertolucci)</li><li>Golden Globe - Bästa musik 1988</li><li>American Cinema Editors, Eddie - Best Edited Feature Film 1988</li><li>ASC Award - Bästa foto 1988</li><li>BSFC Award - Bästa foto 1988</li><li>British Society of Cinematographers - Best Cinematography Award 1988</li><li>Casting Society of America, Artios - Best Casting for Feature Film, Drama 1988</li><li>César Awards, César - Bästa utländska film 1988 (Bernardo Bertolucci)</li><li>David di Donatello Awards, David - Bästa film 1988</li><li>David di Donatello Awards, David - Bästa regi 1988 (Bernardo Bertolucci)</li><li>David di Donatello Awards, David - Bästa manliga biroll 1988 (1748)</li><li>David di Donatello Awards, David - Bästa producent 1988</li><li>David di Donatello Awards, David - Bästa manus 1988 (Bernardo Bertolucci)</li><li>David di Donatello Awards, David - Bästa foto 1988</li><li>David di Donatello Awards, David - Bästa kostym 1988</li><li>David di Donatello Awards, David - Bästa klippning 1988</li><li>David di Donatello Awards, David - Best Production Design 1988</li><li>DGA Award - Bästa regi 1988 (Bernardo Bertolucci)</li><li>European Film Awards, Special Prize of the Jury (For the cultural and economic achievements of the film.) 1988 (Bernardo Bertolucci)</li><li>Hochi Film Award - Bästa utländska film 1988 (Bernardo Bertolucci)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa regi 1988 (Bernardo Bertolucci)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa klippning 1988</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Best Production Design 1988</li><li>Joseph Plateau Award - Bästa utländska film 1988</li><li>Nikkan Sports Film Award - Bästa utländska film 1988 1988</li><li>Sant Jordi Awards, Audience Award - Bästa utländska film 1988 (Bernardo Bertolucci)</li><li>BAFTA Film Award - Bästa film 1989 (Bernardo Bertolucci)</li><li>BAFTA Film Award - Bästa kostym 1989</li><li>BAFTA Film Award - Bästa smink 1989</li><li>Award of the Japanese Academy - Bästa utländska film 1989</li><li>Grammy - Best Album of Original Instrumental Background Score Written for a Motion Picture or Television 1989</li><li>Guild of German Art House Cinemas, 	Guild Film Award - Gold - Bästa utländska film 1989</li><li>Kinema Junpo Award - Bästa utländska film 1989</li><li>Golden Screen 1990</li><li>National Board of Review, Freedom of Expression Award (For releasing the director's cut.) 1998 (Bernardo Bertolucci)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa skådespelare - Drama 1988 (John Lone)</li><li>ASC Award - Bästa foto 1988</li><li>César Awards, César - Best Poster 1988</li><li>WGA Award (Screen) - Bästa manus 1988 (Bernardo Bertolucci)</li><li>BAFTA Film Award - Bästa regi 1989 (Bernardo Bertolucci)</li><li>BAFTA Film Award - Bästa manliga biroll 1989 (1748)</li><li>BAFTA Film Award - Bästa foto 1989</li><li>BAFTA Film Award - Bästa musik 1989</li><li>BAFTA Film Award - Bästa ljud 1989</li><li>BAFTA Film Award - Bästa specialeffekter 1989</li><li>BAFTA Film Award - Bästa klippning 1989</li><li>BAFTA Film Award - Bästa Best Production Design 1989</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The real Stage Door Canteen on 44th Street was unable to be used for filming, as it was still an operating nightclub during World War II. As such, for this movie, it was re-created at R.K.O. Radio Pictures Studios in Culver City, California.</li><li>Features the only movie appearance of Katharine Cornell (Herself).</li><li>[Katharine Hepburn's][/p?id=1531] only musical movie.</li><li>Along with [Too Many Kisses][/f?id=Too%20Many%20Kisses] (1925), this is one of only two movies in which [Harpo Marx][/p?id=Harpo%20Marx] appeared without his brothers Chico and Groucho.</li><li>A similar movie, [Hollywood Canteen][/f?id=Hollywood%20Canteen] (1944), followed this movie. While it had the same basic concept, it was not a sequel to this movie.</li><li>[Loretta Young][/p?id=Loretta%20Young], [Danny Kaye][/p?id=Danny%20Kaye], and Morton Downey were announced to make cameo appearances in this movie, but eventually did not appear.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

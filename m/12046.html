@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Hände En Natt | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Hände En Natt <a href="#" class="grade">++++</a></h2>
+										<h3>It Happened One Night</h3>
+										<p>
+										Film från <time datetime="1934"><a href="#">1934</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Frank Capra</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1178.html">Clark Gable</a> – Peter</li><li>Claudette Colbert – Ellie</li><li>Walter Connolly – Andrews</li><li>Roscoe Karns – Oscar Shapeley</li><li>Jameson Thomas – Westley</li><li>Alan Hale – Danker</li><li>Arthur Hoyt – Zeke</li><li>Blanche Friderici – Zeke's wife</li><li>Charles C. Wilson – Gordon</li><li>Ernie Adams – The bag thief (uncredited)</li><li>Irving Bacon – Gas station attendant (uncredited)</li><li><a href="/svenusling/p/1989.html">Ward Bond</a> – Bus driver #1 (uncredited)</li><li>Harry C. Bradley – Henderson (uncredited)</li><li>George P. Breakston – Boy (uncredited)</li><li>Charles A. Browne – Reporter (uncredited)</li><li>James Burke – Detective (uncredited)</li><li>Edmund Burns – Best man (uncredited)</li><li>Ken Carson – Guitar player on bus (uncredited)</li><li>Eddy Chandler – Bus Driver #2 (uncredited)</li><li>Wallis Clark – Lovington (uncredited)</li><li>Ray Cooke – Drunk (uncredited)</li><li>Joseph Crehan – Detective (uncredited)</li><li>Ray Creighton – Bus passenger (uncredited)</li><li>Jack Curtis – Policeman (uncredited)</li><li>Mickey Daniels – Vendor on bus (uncredited)</li><li>Eva Dennison – Society woman (uncredited)</li><li>Neal Dodd – Minister (uncredited)</li><li>Oliver Eckhardt – Mr. Dykes (owner, Dykes Auto Camp) (uncredited)</li><li>Billy Engle – Bus passenger (uncredited)</li><li>Bess Flowers – Agnes (Gordon's secretary) (uncredited)</li><li>Allen Fox – Bus passenger (uncredited)</li><li>Dolores Fuller – Bit part (uncredited)</li><li>Kit Guard – Bus passenger (uncredited)</li><li>Sherry Hall – Drunk (uncredited)</li><li>Frank Holliday – Detective (uncredited)</li><li>Harry Holman – Auto Camp manager (uncredited)</li><li>Harry Hume – Policeman (uncredited)</li><li>Sam Josephson – Bus passenger (uncredited)</li><li>Eddie Kane – Radio announcer (uncredited)</li><li>Milton Kibbee – Drunk (uncredited)</li><li>Mimi Lindell – Bus passenger (uncredited)</li><li>Marvin Loback – Bus passenger (uncredited)</li><li>Rose May – Bus passenger (uncredited)</li><li>William McCall – Bus passenger (uncredited)</li><li>Claire McDowell – Mother (uncredited)</li><li>Kate Morgan – Bus passenger (uncredited)</li><li>Patsy O'Byrne – Bus passenger (uncredited)</li><li>Earl Pingree – Policeman (uncredited)</li><li>Hal Price – Reporter (uncredited)</li><li>Margaret Reid – Bus passenger (uncredited)</li><li>Tom Ricketts – Prissy old man (uncredited)</li><li>Ky Robinson – Detective (uncredited)</li><li>Blanche Rose – Bus passenger (uncredited)</li><li>Rita Ross – Bus passenger (uncredited)</li><li>Matty Roubert – Newsboy (uncredited)</li><li>Marvin Schecter – Bus passenger (uncredited)</li><li>Harry Schultz – Bus passenger (uncredited)</li><li>S.S. Simon – Bus passenger (uncredited)</li><li>Linda Lee Solomon – Bit part (uncredited)</li><li>Bert Starkey – Bus passenger (uncredited)</li><li>Ethel Sykes – Maid of honor (uncredited)</li><li>Jane Talent – Bus passenger (uncredited)</li><li>Emma Tansey – Bus passenger (uncredited)</li><li>Harry Todd – Flagman at railroad crossing (uncredited)</li><li>Maidel Turner – Manager's wife (uncredited)</li><li>Henry Wadsworth – Drunken boy (uncredited)</li><li>John Wallace – Bus passenger (uncredited)</li><li>Fred Walton – Butler (uncredited)</li><li>Blackjack Ward – Man who says 'Your bus leaves in 5 minutes' (uncredited)</li><li>Dave Wengren – Bus passenger (uncredited)</li><li>Charles Wilroy – Bus passenger (uncredited)</li><li>Frank Yaconelli – Tony (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa manliga biroll 1983 (1146)</li><li>Golden Globe - Bästa film - Komedi eller Musikal 1983</li><li>Golden Globe - Bästa skådespelerska - Komedi eller Musikal 1983 (Dolly Parton)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Myrna Loy][/p?id=Myrna%20Loy] turned down the role of Ellie Andrews because a recent film set on a bus had failed, and she didn't think that this one would succeed.</li><li>At the Miami bus station, friends of Peter Warne ([Clark Gable][/p?id=1178]) refer to him as &quot;the King&quot; - [Gable's][/p?id=1178] nickname in real life.</li><li>[Friz Freleng's][/p?id=Friz%20Freleng] unpublished memoirs mention that this was one of his favorite films, and that it contains at least three things upon which the character &quot;Bugs Bunny&quot; was based: - The character Oscar Shapely's ([Roscoe Karns][/p?id=Roscoe%20Karns]) personality - The manner in which Peter Warne ([Clark Gable][/p?id=1178]) was eating carrots and talking quickly at the same time - An imaginary character mentioned once to frighten Oscar Shapely named &quot;Bugs Dooley.&quot; Other mentions of &quot;Looney Tunes&quot; characters from the film include Alexander Andrews ([Walter Connolly][/p?id=Walter%20Connolly]) and King Westley ([Jameson Thomas][/p?id=Jameson%20Thomas]) being the inspirations for Yosemite Sam and Pepé LePew, respectively.</li><li>[Robert Montgomery][/p?id=Robert%20Mont] turned down the male lead, saying the script was the worst thing he had ever read.</li><li>This was the first film to win the Oscar &quot;grand slam&quot; (Best Picture, Best Actor, Best Actress, Best Director and Screenplay).</li><li>When [Clark Gable][/p?id=1178] showed up for work on the first day, he reportedly said grimly, &quot;Let's get this over with.&quot;</li><li>While shooting the scene where he undresses, [Clark Gable][/p?id=1178] had trouble removing his undershirt while keeping his humorous flow going and took too long. As a result the undershirt was abandoned altogether. It then became cool to not wear an undershirt which resulted in a large drop in undershirt sales around the country. [Legend][/f?id=15678] has it that in response, some underwear manufacturers tried to sue Columbia.</li><li>Is often credited as the very first screwball comedy.</li><li>[Clark Gable][/p?id=1178] gave his Oscar for It Happened One Night (1934) to a child who admired it, telling him it was the winning of the statue that had mattered, not owning it. The child returned the Oscar to the Gable family after Clark's death.</li><li>She was so convinced that she would lose the Oscar competition in 1935 to write-in nominee [Bette Davis][/p?id=Bette%20Davis], that [Claudette Colbert][/p?id=Claudette%20Colbert] decided not to attend the awards ceremony. When she, contrary to her belief, won, she was summoned from a train station to pick up her Oscar.</li><li>It is widely believed that MGM ensured their contracted star [Clark Gable][/p?id=1178] received the Best Actor Oscar to promote his career at the studio. Only three actors were nominated that year, and it was widely believed [Charles Laughton][/p?id=1147] would have easily won for his highly acclaimed performance as the tyrannical father in The Barretts of Wimpole Street (1934) had he received a nomination.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

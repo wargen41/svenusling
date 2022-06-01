@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Bästa Lilla Horhuset I Texas | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Bästa Lilla Horhuset I Texas <a href="#" class="grade">+++</a></h2>
+										<h3>The Best Little Whorehouse in Texas</h3>
+										<p>
+										Film från <time datetime="1982"><a href="#">1982</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre18">Musikal</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Colin Higgins</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1121.html">Burt Reynolds</a> – Sheriff Ed Earl Dodd</li><li>Dolly Parton – Mona Stangley</li><li><a href="/svenusling/p/1247.html">Dom DeLuise</a> – Melvin P. Thorpe</li><li><a href="/svenusling/p/1146.html">Charles Durning</a> – Governor</li><li>Jim Nabors – Deputy Fred</li><li>Robert Mandan – Senator Charles Wingwood</li><li>Lois Nettleton – Dulcie Mae</li><li>Theresa Merritt – Jewel</li><li>Noah Beery Jr. – Edsel</li><li>Barry Corbin – C.J.</li><li>Ken Magee – Mansel</li><li>Mary Jo Catlett – Rita Crowell</li><li>Mary Louise Wilson – Miss Modene</li><li>Howard K. Smith – Himself</li><li>Gail Benedict – Chicken Ranch Girl</li><li>Valerie Leigh Bixler – Chicken Ranch Girl</li><li>Leslie Cook – Chicken Ranch Girl</li><li>Carol Culver – Chicken Ranch Girl</li><li>Lorraine Fields – Chicken Ranch Girl</li><li>Trish Garland – Chicken Ranch Girl</li><li>Sandy Johnson – Chicken Ranch Girl</li><li>Lee Lund – Chicken Ranch Girl</li><li>Paula Lynn – Chicken Ranch Girl</li><li>Lily Mariye – Chicken Ranch Girl</li><li>Andrea Pike – Chicken Ranch Girl</li><li>Terri Robinson – Chicken Ranch Girl</li><li>Jennifer Nairn-Smith – Chicken Ranch Girl</li><li>Terri Treas – Chicken Ranch Girl</li><li>Melanie Winter – Chicken Ranch Girl</li><li>Stephen Bray – Aggie</li><li>Brian Bullard – Aggie</li><li>Jeff Calhoun – Aggie</li><li>Gary Chapman – Aggie</li><li>John Dolf – Aggie</li><li>David Engel – Aggie</li><li>Edmond Alan Forsyth – Aggie</li><li>Mark Fotopoulos – Aggie</li><li>Michael Fullington – Aggie</li><li>David Warren Gibson – Aggie</li><li>Joe Hart – Aggie</li><li>Jeffrey Hornaday – Aggie</li><li>Patrick Maguire – Aggie</li><li>Ted Marriot – Aggie</li><li>Jerry Mitchell – Aggie</li><li>Steven Moore – Aggie</li><li>Douglas Robb – Aggie</li><li>Kevin Ryan – Aggie</li><li>Tim Topper – Aggie</li><li>Marvin Tunney – Aggie</li><li>Randy Val Cupp – Aggie</li><li>Robert Warners – Aggie</li><li>Robin Lynn Funk – Dogette</li><li>Larry Kenton – Dogette</li><li>Mark Thomas McGee – Dogette</li><li>Karen McLain – Dogette</li><li>Benjamin Taylor – Dogette</li><li>Arnetia Walker – Dogette</li><li>Ty Whitney – Dogette</li><li>Robert Briscoe Evans – Melvin's Crew</li><li>John Walter Davis – Melvin's Crew</li><li>Gregory Itzin – Melvin's Crew</li><li><a href="/svenusling/p/1946.html">Timothy Stack</a> – Melvin's Crew</li><li>Larry B. Williams – Melvin's Crew</li><li>Harvey Christiansen – Old Farmer</li><li>Donald F. Colson – Jeff Gerald</li><li>Helen Kleeb – Dora</li><li>Mickey Jones – Henry</li><li>Bobby Fite – Dulcie Mae's Son</li><li>Paula Shaw – Wulla Jean</li><li>Kenneth White – Sheriff Jack Roy Wallace</li><li>Ted Gehring – Sheriff Chapman</li><li>Wayne Heffley – TV Station Manager</li><li>Verne Lundquist – Football Announcer</li><li>Lee Grosscup – Football Color Man</li><li>Lee Ritchey – Governor's Aide</li><li>Alice Drummond – Governor's Secretary</li><li>Karyn Harrison – Chicken Girl</li><li>Randy Bennett – Privates Boy</li><li>Willie T. Neely – Nester</li><li>Harold Offer – Nester</li><li>Kenneth Threadgill – Nester</li><li>John Edson – Male Reporter</li><li>Robert Ginnaven – Male Reporter</li><li>Sharon Ammann – Female Reporter</li><li>Claudette Gardner – Female Reporter</li><li>Suzi McLaughlin – Female Reporter</li><li>Raleigh Bond – Rufus, Mayor of Gilbert Texas</li><li>Kay Parker – </li><li>Mary Louise Smith – Modene</li><li>Bret Williams – Silhouette Cowboy</li><li>Chuck Dawson – JukeBox Delivery Man (uncredited)</li><li>Anne Gaybis – Chicken Ranch Girl (uncredited)</li><li>Catherine Wilkinson – Young Whore Dancer (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Other people that were up for [Burt Reynolds][/p?id=1121] and [Dolly Parton's][/p?id=Dolly%20Parton] roles in the film included [Willie Nelson][/p?id=Willie%20Nelson] for the role of Ed Earl Dodd and Barbara Mandrell and Crystal Gayle for the role Miss Mona Stangley.</li><li>The exterior of the Chicken Ranch was erected on the Universal lot where the Bates house from [Psycho (1960)][/f?id=17541] originally stood. The Bates house was moved to a more permanent location when filming began on [Psycho II][/f?id=17542] (1983).</li><li>The film went over budget because of the various production problems. Several directors came and went, the script was always being rewritten and [Dolly Parton][/p?id=Dolly%20Parton] wrote several more songs than were eventually included.</li><li>This was based upon a true story in which investigative reporter Marvin Zindler (who inspired [Dom DeLuise's][/p?id=1247] &quot;Melvin P. Thorpe&quot; character) closed down the &quot;Chicken Ranch&quot; brothel in LaGrange, Texas, in 1973. Zindler remained with ABC affiliate KTRK-TV in Houston until his death in 2007.</li><li>In terms of box-office [The Best Little Whorehouse in Texas][/f?id=12034] (1982) was the most successful movie-musical of the 1980's.</li><li>Marvin Zindler, on which Melvin P. Thorpe is based, liked the play but didn't like the film. Zindler said that his crusade against the Chicken Ranch has been taken out of context. He wasn't trying to get it closed down because of the prostitution, but because of the Ranch's reported ties to organized crime and other shady business dealings.</li><li>[Kris Kristofferson][/p?id=1558] and [Gene Hackman][/p?id=1317] were both considered to play Ed Earl.</li><li>The Chicken Ranch house went on to be the Firefly residence in House of 1000 Corpses (2003).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

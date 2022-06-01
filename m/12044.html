@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Gyllene Skinnet | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Gyllene Skinnet <a href="#" class="grade">++++</a></h2>
+										<h3>Jason and the Argonauts</h3>
+										<p>
+										Film från <time datetime="1963"><a href="#">1963</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre28">Äventyr</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Don Chaffey</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Todd Armstrong – Jason</li><li>Nancy Kovack – Medea</li><li>Gary Raymond – Acastus</li><li>Laurence Naismith – Argos</li><li>Niall MacGinnis – Zeus</li><li>Michael Gwynn – Hermes</li><li>Douglas Wilmer – Pelias</li><li>Jack Gwillim – King Aeetes</li><li>Honor Blackman – Hera</li><li>John Cairney – Hylas</li><li>Patrick Troughton – Phineas</li><li>Andrew Faulds – Phalerus</li><li>Nigel Green – Hercules</li><li>Ennio Antonelli – Dmitrius - Drummer on Argo (uncredited)</li><li>John Crawford – Polydeuces (uncredited)</li><li>Aldo Cristiani – Lynceus (uncredited)</li><li class="voice">Eva Haddon – Medea (röst) (uncredited)</li><li>Ferdinando Poggi – Castor (uncredited)</li><li>Doug Robinson – Eupaemus (uncredited)</li><li>Davina Taylor – Briseis (uncredited)</li><li class="voice">Tim Turner – Jason (röst) (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>It took [Ray Harryhausen][/p?id=Ray%20Harryhausen] four months to produce the skeleton scene, a massive amount of time for a scene which lasts, at the most, three minutes.</li><li>After the success of [Sergio Leone's][/p?id=Sergio%20Leone] [The Colossus of Rhodes][/f?id=Kolossen%20P%C3%A5%20Rhodos] (U.S. title: &quot;Colossus of Rhodes&quot;), it was decided to change the character of Talos into a living bronze giant. It would become one of [Ray Harryhausen's][/p?id=Ray%20Harryhausen] most famous creations.</li><li>[Ray Harryhausen][/p?id=Ray%20Harryhausen] regards this as his best film.</li><li>Presumably in order to capitalize on the success of [The 7th Voyage of Sinbad][/f?id=18448], [Ray Harryhausen][/p?id=Ray%20Harryhausen] originally conceived of the film as &quot;Sinbad in the Age of Muses&quot;. The story would still have been set in ancient Greece and would have involved Sinbad joining Jason in the search for the Golden Fleece.</li><li>The previous [Ray Harryhausen][/p?id=Ray%20Harryhausen] films were generally shown as part of a double feature in &quot;B&quot; theatres. Columbia was able to book this film as a single feature in many &quot;A&quot; theatres in the United States.</li><li>While filming footage of the Argo off the coast of Italy, shooting was interrupted when a replica of the Golden Hind sailed into view. The British television series Sir [Francis Drake][/p?id=Francis%20Drake] happened to be filming in the same location. Producer [Charles H. Schneer][/p?id=Charles%20H.%20Schneer] shouted, &quot;Get that ship out of here. You're in the wrong century!&quot; at the British crew, dispelling any tensions that arose from both shots being lost.</li><li>In the early stages of story development the twin monsters Scylla and Charybdis, a centaur, and the three-headed dog Cerebus were intended to appear.</li><li>This British / American film was filmed and released in the waning years of the Italian-produced sword-and-sandal / mythological muscleman movies. Many of those productions dealt with Jason. Most unusual for the time was the casting of British actor [Nigel Green][/p?id=Nigel%20Green] as Hercules. Although he was very tall, he lacked the bodybuilder physique that moviegoers were used to seeing for this character. Although film was not able to match the scale of spectacle of the European productions, the elaborate special effects by [Ray Harryhausen][/p?id=Ray%20Harryhausen] gave it the look of a more expensive production, contributing to its box-office success.</li><li>[Bernard Herrmann's][/p?id=Bernard%20Herrmann] score liberally utilizes the technique known as &quot;self-borrowing&quot;, which involves reusing elements from his previous scores. Exact passage reuse is taken from scores for [The Kentuckian][/f?id=16005], [Beneath the 12-Mile Reef][/f?id=19914], [5 Fingers][/f?id=Aff%C3%A4ren%20Cicero] and others, and reworking of passages from [North by Northwest][/f?id=15005], [The Day the Earth Stood Still][/f?id=16007] and [Vertigo][/f?id=19922] scores, among others.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

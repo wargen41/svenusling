@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Det Ljuva Livet | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Det Ljuva Livet <a href="#" class="grade">++</a></h2>
+										<h3>La dolce vita</h3>
+										<p>
+										Film från <time datetime="1960"><a href="#">1960</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Federico Fellini</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Marcello Mastroianni – Marcello Rubini</li><li>Anita Ekberg – Sylvia</li><li>Anouk Aimée – Maddalena</li><li>Yvonne Furneaux – Emma</li><li>Magali Noël – Fanny</li><li>Alain Cuny – Steiner</li><li>Annibale Ninchi – Il padre di Marcello</li><li>Walter Santesso – Paparazzo</li><li>Lex Barker – Robert - marito di Sylvia</li><li>Jacques Sernas – Il divo</li><li>Nadia Gray – Nadia</li><li>Valeria Ciangottini – Paola</li><li>Riccardo Garrone – Riccardo</li><li>Ida Galli – Debuttante dell'anno</li><li>Audrey McDonald – Jane</li><li>Polidor – Pagliaccio</li><li>Enrico Glori – Ammiratore di Nadia</li><li>Giuseppe Addobbati –  (uncredited)</li><li>Conte Brunoro Serego Aligheri – Young Man with Mink Coat (uncredited)</li><li>Federika André – Tenant in Steiner's House (uncredited)</li><li>Armando Annuale –  (uncredited)</li><li>Joan Antequera – Woman at Castle (uncredited)</li><li>Juan Antequero – Spanish Gentleman with Eyepatch at Castle (uncredited)</li><li>Gianni Baghino –  (uncredited)</li><li>Nadia Balabine – Reporter (uncredited)</li><li>Ignazio Balsamo –  (uncredited)</li><li>Remo Benedetti –  (uncredited)</li><li>Laura Betti – Laura (uncredited)</li><li>Leonardo Botta – Doctor (uncredited)</li><li>Ida Bracci Dorati –  (uncredited)</li><li>Ferdinando Brofferio – Maddalena's Lover (uncredited)</li><li>Giovanna Busetti – Lying Child of The Miracle (uncredited)</li><li>Massimo Busetti – Bimbo del miracolo (uncredited)</li><li>Tito Buzzo – Muscle Man (uncredited)</li><li>Daniela Calvino – Daniela (uncredited)</li><li>Tony Campanino – Man at Nightclub (uncredited)</li><li>Fabrizio Capucci – Photographer at Press Conference (uncredited)</li><li>Donato Castellaneta – Reporter (uncredited)</li><li>Adriano Celentano – Himself (uncredited)</li><li>Enzo Cerusico – Fotografo (uncredited)</li><li>Elisabetta Cini – Sleeping Duchess (uncredited)</li><li>Giulio Citti – Man at Nightclub (uncredited)</li><li>Nani Colombo – Woman at the Mirror (uncredited)</li><li>Mario Conocchia – Lawyer with Nadia's Bra (uncredited)</li><li>Francesco Consalvo – Scalise's Assistant (uncredited)</li><li>Tiziano Cortini – Movie News Cameraman (uncredited)</li><li>Decimo Cristiani – Young Man That Doesn't Talk (uncredited)</li><li>Mario De Grenet – Man at Castle That Dislikes Dog's Smell (uncredited)</li><li>Andrea De Pino –  (uncredited)</li><li>Adele De Rossi –  (uncredited)</li><li>Donatella Della Nora – Reporter (uncredited)</li><li>Christine Denise – Woman Eating a Chicken (uncredited)</li><li>Katherine Denise –  (uncredited)</li><li>Carlo Di Maggio – Toto Scalise (uncredited)</li><li>François Dieudonné – Reporter (uncredited)</li><li>Alain Dijon – Frankie Stout (uncredited)</li><li>Count Ivenda Dobrzensky – Giovanni (uncredited)</li><li>Enzo Doria – Fotografo (uncredited)</li><li>Mino Doro – Amante di Nadia (uncredited)</li><li>Donatella Esparmer – Lady with the Irritated Man (uncredited)</li><li>Paolo Fadda – Assistant Police Inspector (uncredited)</li><li>Umberto Felici – Reporter (uncredited)</li><li>Oretta Fiume – Lisa (uncredited)</li><li>Rina Franchetti – Mother of the Miracle Children (uncredited)</li><li>Giacomo Gabrielli – Maddalena's Father (uncredited)</li><li>Franco Giacobini – Journalist at the Telephone (uncredited)</li><li>Angela Giavalisco – Woman at Airport (uncredited)</li><li>Romolo Giordani – Man at Castle (uncredited)</li><li>Giulio Girola – Commissario di polizia (uncredited)</li><li>Christine Graefeck –  (uncredited)</li><li>Lily Granado – Lucy (uncredited)</li><li>Libero Grandi –  (uncredited)</li><li>Maurizio Guelfi – Reporter (uncredited)</li><li>Gloria Hendy – Woman in Via Veneto (uncredited)</li><li>April Hennessy – Woman in Via Veneto (uncredited)</li><li>Nina Hohenlohe – Woman at Castle (uncredited)</li><li>Antonio Jacono – Transvestite (uncredited)</li><li>Gloria Jones – Gloria (uncredited)</li><li>Carlo Kechler – Man with Clock (uncredited)</li><li>Else Knorr –  (uncredited)</li><li>Paolo Labia – Servant in Maddalena's Household (uncredited)</li><li>John Francis Lane – Reporter (uncredited)</li><li>Sondra Lee – Ballerina in Spoleto (uncredited)</li><li>Marianne Leibl – Yvonne's Companion in Miracle Sequence (uncredited)</li><li>Guglielmo Leoncini – Scalise's Secretary (uncredited)</li><li>Giuliana Lojodice – Servant at Steiner's House (uncredited)</li><li>Renée Longarini – Miss Steiner (uncredited)</li><li>Francisco Lori – Man in Miracle Sequence (uncredited)</li><li>Francesco Luzi – Radioreporter (uncredited)</li><li>Mario Mallarno – Reporter (uncredited)</li><li>Renato Mambor – A Tall Young Man (uncredited)</li><li>Vittorio Manfrino – Tabarin Director (uncredited)</li><li>Maria Marigliano – Massamilla (uncredited)</li><li>Carlo Mariotti – Male Nurse (uncredited)</li><li>Gino Marturano – Pimp (uncredited)</li><li>Maria Mazzanti – Woman at Airport (uncredited)</li><li>Harriet Medin – Sylvia's Secretary (uncredited)</li><li>Marta Melocco –  (uncredited)</li><li>Nello Meniconi – Man on Via Veneto (uncredited)</li><li>Alex Messoyedoff – Priest at the Miracle Site (uncredited)</li><li>Gianfranco Mingozzi – Priest That Lets Steiner Play Organ (uncredited)</li><li>Lucia Modigliani –  (uncredited)</li><li>Adriana Moneta – Ninni (uncredited)</li><li>Maite Morand – Reporter (uncredited)</li><li>Carlo Musto – Travestito (uncredited)</li><li>Aurelio Nardi – Uncle of Lying Children of The Miracle (uncredited)</li><li>Nico – Nico / Herself (uncredited)</li><li>Desmond O'Grady – Steiner's Guest (uncredited)</li><li>Liana Orfei –  (uncredited)</li><li>Umberto Orsini – Man in Sunglasses That Helps Nadia Strip (uncredited)</li><li>Contessa Cristina Paolozzi – Laughing Girl at Seance (uncredited)</li><li>Giulio Paradisi – Fotografo (uncredited)</li><li>Ada Passeri – Woman in Miracle Sequence (uncredited)</li><li>Franca Pasut – Girl Covered with Feathers (uncredited)</li><li>Loretta Pepi –  (uncredited)</li><li>Paola Petrini –  (uncredited)</li><li>Cesarino Miceli Picardi – Irate Man in Nightclub (uncredited)</li><li>Princess Doris Pignatelli – Lady in White Coat at Castle (uncredited)</li><li>Alberto Plebani – Doctor (uncredited)</li><li>Oliviero Prunas – Oliviero - Son of Prince (uncredited)</li><li>Giovanni Querrel – Man at Nightclub (uncredited)</li><li>Giulio Questi – Don Giulio (uncredited)</li><li>Concetta Ragusa – Reporter (uncredited)</li><li>Loretta Ramaciotti – Woman in Seance (uncredited)</li><li>Leonida Repaci – Steiner's Guest (uncredited)</li><li>Alfredo Rizzo – Television Director (uncredited)</li><li>Rosemary Rennel Rodd – English Medium (uncredited)</li><li>Giancarlo Romani – Policeman (uncredited)</li><li>Franco Rossellini – The Beautiful Horseman (uncredited)</li><li>Prince Eugenio Ruspoli di Poggio Suasa – Don Eugenio Mascalchi (uncredited)</li><li>Margherita Russo – Steiner's Guest (uncredited)</li><li>Anna Maria Salerno – Prostitute's Friend (uncredited)</li><li>Anna Salvatore – Steiner's Guest (uncredited)</li><li>Archie Savage – Negro Dancer (uncredited)</li><li>Leopoldo Savona – Negro Dancer (uncredited)</li><li>Lisa Schneider – Woman in Miracle Sequence (uncredited)</li><li>Maria Pia Serafini – Second Lady with the Irritated Man (uncredited)</li><li>Noel Sheldon – Man in Via Veneto (uncredited)</li><li>Isabella Soldani –  (uncredited)</li><li>Letizia Spadini – Steiner's Guest (uncredited)</li><li>Giò Stajano – Pierone (uncredited)</li><li>Gino Talamo –  (uncredited)</li><li>Sandra Tesi – Young Girl Living Nearby (uncredited)</li><li>Henry Thody – Reporter (uncredited)</li><li>Tomás Torres – Gianelli (uncredited)</li><li>Iris Tree – Poetess at Steiner's Party (uncredited)</li><li>Vando Tress – Police Inspector (uncredited)</li><li>Gondrano Trucchi – Servant at Caracalla's (uncredited)</li><li>Teresa Tsao – Woman in Nightclub (uncredited)</li><li>Winie Vagliani – Steiner's Guest (uncredited)</li><li>Leontine Van Strein – Matinee Idol's Girl Friend (uncredited)</li><li>Aldo Vasco – Man in Miracle Sequence (uncredited)</li><li>Lucia Vasilicò – Young Woman Making Confession at Nadia's Party (uncredited)</li><li>Maria Teresa Vianello – Woman at Airport (uncredited)</li><li>Sandy von Normand – Interpreter at the Press Conference (uncredited)</li><li>Antoinette Weynen –  (uncredited)</li><li>Angela Wilson – Woman in Via Veneto (uncredited)</li><li>Vadim Wolkowsky – Prince Mascalchi (uncredited)</li><li>Maria Teresa Wolodimeroff – The Bored Lady (uncredited)</li><li>Italo Zingarelli – Don Giulio (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Mystfest - Bästa film 1987 (John Mackenzie)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The famous scene in the Trevi Fountain was shot in March, when nights were still cold. According to [Federico Fellini][/p?id=Federico%20Fellini] (in an interview with Costanzo Costantini), [Anita Ekberg][/p?id=Anita%20Ekberg] stood in the cold water in her dress for hours without any trouble. [Marcello Mastroianni][/p?id=Marcello%20Mastroianni], on the other hand, had to wear a wetsuit beneath his clothes, and even that wasn't enough. Still freezing, he downed an entire bottle of vodka, so that he was completely drunk while shooting the scene.</li><li>The film contributed the term &quot;paparazzo&quot; to the language. The term derives from Marcello's photographer friend Paparazzo. [Federico Fellini][/p?id=Federico%20Fellini] took the name &quot;Paparazzo&quot;, as he explained in a later interview, from the name of someone he met in Calabria (Southern Italy) where Greek names are still common. &quot;Paparazzi&quot; is the plural meaning.</li><li>When shooting the famous Fontana di Trevi scene, director [Federico Fellini][/p?id=Federico%20Fellini] complained that the water in the fountain looked dirty. A representative of Scandinavian Airlines System (SAS) present at the shooting was able to supply the film team with some of the airline's green sea dye marker (for use in case of an emergency landing at sea). This was used to color the water, and the director was satisfied.</li><li>This was late film critic Roger Ebert's favorite movie. According to him, he saw it over 25 times.</li><li>After [Federico Fellini][/p?id=Federico%20Fellini] rejected the idea of [Paul Newman][/p?id=1727] for the lead role, Dino De Laurentiis suggested Gérard Philipe. He thought [Marcello Mastroianni][/p?id=Marcello%20Mastroianni] was &quot;too soft and goody-goody; a family man rather than the type who flings women onto the bed.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
