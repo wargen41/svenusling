@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Day After Tomorrow | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Day After Tomorrow <a href="#" class="grade">+++</a></h2>
+										<h3>The Day After Tomorrow</h3>
+										<p>
+										Film från <time datetime="2004"><a href="#">2004</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre21">Sci-fi</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Roland Emmerich</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1239.html">Dennis Quaid</a> – Jack Hall</li><li><a href="/svenusling/p/1407.html">Jake Gyllenhaal</a> – Sam Hall</li><li>Emmy Rossum – Laura Chapman</li><li>Dash Mihok – Jason Evans</li><li>Jay O. Sanders – Frank Harris</li><li>Sela Ward – Dr. Lucy Hall</li><li>Austin Nichols – J.D.</li><li>Arjay Smith – Brian Parks</li><li>Tamlyn Tomita – Janet Tokada</li><li>Sasha Roiz – Parker</li><li><a href="/svenusling/p/1386.html">Ian Holm</a> – Terry Rapson</li><li>Nassim Sharara – Saudi Delegate</li><li>Carl Alacchi – Venezuelan Delegate</li><li>Kenneth Welsh – Vice President Becker</li><li>Michel 'Gish' Abou-Samah – Saudi Translator</li><li>Robin Wilcock – Tony</li><li>Jason Blicker – Paul</li><li>Kenneth Moskow – Bob</li><li>Tim Hamaguchi – Taka</li><li>Glenn Plummer – Luther</li><li>Adrian Lester – Simon</li><li>Richard McMillan – Dennis</li><li>Nestor Serrano – Gomez</li><li>Sylvain Landry – Science Officer</li><li>Christopher Britton – Vorsteen</li><li>Vlasta Vrana – Booker (MPC)</li><li>Pauline Little – Lanson (SSL)</li><li>Alan Fawcett – Commander Daniels (Hurricane Hunter)</li><li>Howard Bilerman – Rookie Scientist (Hurricane Hunter)</li><li>John Maclaren – Veteran Scientist (Hurricane Hunter)</li><li>Frank Schorpion – DC Fireman</li><li>Rachelle Glait – Pinehurst Academy Teacher</li><li>Pierre Leblanc – International Reporter, New Delhi</li><li>Richard Zeman – Flight Director</li><li>Perry King – President Blake</li><li>Frank Fontaine – Caddy 'Cooper'</li><li>Mimi Kuzyk – Secretary of State</li><li>Al Vandecruys – Scholastic Decathlon Referee</li><li>Vitali Makarov – Yuri, Russian Astronaut</li><li>Russell Yuen – Hideki, Japanese Astronaut</li><li>Tim Bagley – Tommy</li><li>Pierre Lenoir – J.D.'s Doorman</li><li>Don Kirk – Victor, J.D.'s Driver</li><li>Lisa Canning – L.A. Anchorwoman</li><li>Terry Rhoads – L.A. Anchorman</li><li>Nicolas Feller – Shop Owner Grandson</li><li>J.P. Manoux – L.A. Cameraman</li><li>Chuck Shamata – General Pierce</li><li>Phillip Jarrett – Campbell</li><li>Tetchena Bellange – Jama</li><li>Tony Calabretta – Cabbie</li><li>Vivian Winther – Noel, Frozen Woman</li><li>Sheila McCarthy – Judith</li><li>Tom Rooney – Jeremy</li><li>Amy Sloan – Elsa</li><li>David Schaap – Financial Reporter</li><li>Marylou Belugou – Binata</li><li>Nobuya Shimamoto – Japanese Policeman</li><li>Bunrey Miyake – Japanese Shop Owner</li><li>Karen Glave – Maria</li><li>Jennifer Morehouse – French Reporter</li><li>Christian Tessier – Aaron</li><li>Joe Cobden – Zack</li><li>Caroline Keenan – Tina</li><li>Aaron Lustig – Bernie</li><li>Sam Woods – Mr. Walden</li><li>Jesus Perez – Mexican (NWS) Janitor</li><li>Jack Laufer – Jeff Baffin</li><li>Luke Letourneau – Peter</li><li>John Sanford Moore – New York Reporter</li><li>William Francis McGuire – Bart Chopper Reporter</li><li>Michael McNally – Buckingham Palace Reporter</li><li>Anne Day-Jones – Jeanette</li><li>Emanuel Hoss-Desmarais – Cecil</li><li>Lynne De Bel – Old Frozen Woman</li><li>Mikio Owaki – Noodle Chef</li><li>Terry Simpson – Cesar</li><li>Alvin Tam – Japanese Reporter</li><li>Joey Elias – Library Security Guard</li><li>Ron Darling – Hawaiian News Anchor</li><li>José Ramón Rosario – Cabbie 'Crazy Weather'</li><li>Kwasi Songui – Statue of Liberty Guard</li><li>John Colton – Fox Newscaster #1</li><li>Dilva Henry – Fox Newscaster #2</li><li>Mark Thompson – News Reporter</li><li>Wendy L. Walsh – Weather Channel Newscaster #1</li><li>Mark Pfister – Weather Channel Newscaster #2</li><li>Ana Garcia – Headline Reporter</li><li>Lauren Sanchez – International Newscaster</li><li>Rob Fukuzaki – National Newscaster</li><li>Ross King – British Reporter</li><li>Robert Holguin – Reporter #1</li><li>Suzanne Michaels – Reporter #2</li><li>Leyna Nguyen – Misc. Newscaster #1</li><li>Lina Patel – Misc. Newscaster #2</li><li>Rosey Edeh – New York Reporter</li><li>Lori Graham – Grocery Store Reporter</li><li>Jesse Todd – Scientist in Hallway</li><li>Gordon Masten – New York Bus Driver</li><li>Matt Adler – Truck Radio Announcer</li><li>Ray Légaré – Construction Man</li><li>Matt Holland – RAF #1</li><li>Greg Kramer – RAF #2</li><li>Joel McNichol – RAF #3</li><li>Rick Hoffman – NY Businessman on Bus (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Satellite Award - Bästa musik 2006 (Hans Zimmer)</li><li>Satellite Award - Bästa ljud 2006</li><li>Satellite Award - Bästa specialeffekter 2006</li><li>Satellite Award - Best DVD Extras 2006</li><li>Teen Choice Award - Movies - Choice Sleazebag 2006 (1387)</li><li>Golden Trailer - Summer 2006 Blockbuster (For the trailer.) 2006</li><li>Golden Trailer - Best Voice Over (For the teaser.) 2006</li><li>Golden Globe - Bästa musik 2007 (Hans Zimmer)</li><li>Art Directors Guild, Excellence in Production Design Award - Feature Film - Contemporary Film 2007</li><li>Award of the Japanese Academy - Bästa utländska film 2007</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa kompositör 2007 (Hans Zimmer)</li><li>Grammy - Best Score Soundtrack Album for Motion Picture, Television or Other Visual Media 2007 (Hans Zimmer)</li><li>Golden Reel Award - Best Sound Editing in a Feature Film: Dialogue and Automated Dialogue Replacement 2007</li><li>People's Choice Award - Favorite Movie Drama 2007</li><li>Razzie Award - Sämsta regissör 2007 (Ron Howard)</li><li>VES Award - Outstanding Compositing in a Motion Picture (For the Saint Sulpice sequence.) 2007</li><li>VES Award - Outstanding Supporting Visual Effects in a Motion Picture 2007</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>While speaking to fans in Denver, director [Roland Emmerich][/p?id=Roland%20Emmerich] said he became interested in doing a movie involving weather while shooting [The Patriot][/f?id=17386]  (2000). He said his whole day revolved around what the weather forecast was in order to shoot the outdoor scenes and that he really just wanted to control the weather himself. &quot;The Coming Global Superstorm&quot;, a non-fiction novel by [Art Bell][/p?id=Art%20Bell] and Whitley Strieber, was used for reference. [Emmerich][/p?id=Roland%20Emmerich] concedes that while the events portrayed in the film are indeed possible, the time frame over which they take place was implausibly short and tailored for sheer entertainment value. In keeping with the movie's ecological theme, [Emmerich][/p?id=Roland%20Emmerich] paid $200,000 from his own pocket to make the production &quot;carbon-neutral&quot; - the first of its kind in Hollywood - all carbon dioxide emitted by the production was offset by the planting of trees, and investments in renewable energy.</li><li>[Roland Emmerich][/p?id=Roland%20Emmerich] confided that the Statue of Liberty would be turned over by the force of the massive amount of water flowing around it but said he wanted to create a symbol of American values that stood up to the forces.</li><li>[Roland Emmerich][/p?id=Roland%20Emmerich] started writing the screenplay while he was filming [The Patriot][/f?id=17386] (2000). He stopped after 9/11, thinking a disaster movie inappropriate after such a cataclysmic real-life event.</li><li>This is the third time [Roland Emmerich][/p?id=Roland%20Emmerich] has destroyed New York. He did the same in [Independence Day][/f?id=15059] (1996) and [Godzilla (1998)][/f?id=14291].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

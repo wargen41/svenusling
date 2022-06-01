@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Blodtörstiga | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Blodtörstiga <a href="#" class="grade">+</a></h2>
+										<h3>The Masque of the Red Death</h3>
+										<p>
+										Film från <time datetime="1964"><a href="#">1964</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Roger Corman</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1978.html">Vincent Price</a> – Prince Prospero</li><li>Hazel Court – Juliana</li><li>Jane Asher – Francesca</li><li>David Weston – Gino</li><li>Nigel Green – Ludovico, Francesca's father</li><li>Patrick Magee – Alfredo</li><li>Paul Whitsun-Jones – Scarlatti</li><li>Robert Brown – Guard</li><li>Julian Burton – Señor Veronese</li><li>David Davies – </li><li>Skip Martin – Hop Toad</li><li>Gaye Brown – Señora Escobar</li><li>Verina Greenlaw – Esmeralda</li><li>Doreen Dawn – Anna-Marie</li><li>Brian Hewlett – Lampredi</li><li>Sarah Brackett – </li><li>David Allen – Male dancer (uncredited)</li><li>Dorothy Anelay – Female dancer (uncredited)</li><li>Gerry Atkins – Male dancer (uncredited)</li><li>Jill Bathurst – Female dancer (uncredited)</li><li>Julian Bolt – Male dancer (uncredited)</li><li>Norris Boyd – Female dancer (uncredited)</li><li>Ricky Clarke – Male dancer (uncredited)</li><li>Ronald Curran – Male dancer (uncredited)</li><li>Alan Dalton – Male dancer (uncredited)</li><li>Gladys Davison – Old woman (uncredited)</li><li>Robert de Warren – Male dancer (uncredited)</li><li>Rosemarie Dunham –  (uncredited)</li><li>Jane Evans – Female dancer (uncredited)</li><li>Dorothy Fraser – Female dancer (uncredited)</li><li>Edith Gey – Female dancer (uncredited)</li><li>Terry Gilbert – Special dancer (uncredited)</li><li>Sally Gilpin – Female dancer (uncredited)</li><li>Bertie Green – Special dancer (uncredited)</li><li>Harvey Hall – Clistor (uncredited)</li><li>Janet Hall – Female dancer (uncredited)</li><li>Janet Kedge – Female dancer (uncredited)</li><li>Brigitte Kelly-Espinoza – Female dancer (uncredited)</li><li>Joanna Kubik – Female dancer (uncredited)</li><li>Seraphina Lansdown – Female dancer (uncredited)</li><li>Gale Law – Male dancer (uncredited)</li><li>Delia Linden – Female dancer (uncredited)</li><li>Jean Lodge – Scarlatti's wife (uncredited)</li><li>Tony Manning – Male dancer (uncredited)</li><li>Len Martin – Special dancer (uncredited)</li><li>Norman McDowell – Special dancer (uncredited)</li><li>Stanley Meadows – Guard (uncredited)</li><li>Hugh Morton –  (uncredited)</li><li>Bill Owen – Male dancer (uncredited)</li><li>Joan Palethorpe – Female dancer (uncredited)</li><li>Fred Peters – Male dancer (uncredited)</li><li>Maureen Sims – Female dancer (uncredited)</li><li>Roy Staite – Male dancer (uncredited)</li><li>John Stone – Guard (uncredited)</li><li>Angela Symonds – Female dancer (uncredited)</li><li>Caroline Symonds – Female dancer (uncredited)</li><li>Stanley Tiller – Male dancer (uncredited)</li><li>Jenny Till – Female dancer (uncredited)</li><li>John Westbrook – Man in red (uncredited)</li><li>David Wishart – Male dancer (uncredited)</li><li>Selina Wylie – Female dancer (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BAFTA Film Award - Bästa specialeffekter 2005</li><li>BMI Film Music Award 2005</li><li>MTV Movie Award - Best Action Sequence ( For the destruction of Los Angeles.) 2005</li><li>VES Award - Best Single Visual Effect of the Year ( For the tidal wave.) 2005</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Irish Film and Television Awards, Audience Award - Bästa internationella skådespelare 2004 (1407)</li><li>Teen Choice Award - Choice Movie - Drama/Action Adventure 2004</li><li>Saturn Award - Bästa Science Fiction-film 2005</li><li>Saturn Award - Bästa specialeffekter 2005</li><li>MTV Movie Award - Bästa genombrottsinsats - Kvinna 2005 (Emmy Rossum)</li><li>Golden Reel Award - Best Sound Editing in Domestic Features - Sound Effects & Foley 2005</li><li>VES Award - Outstanding Visual Effects in a Visual Effects Driven Motion Picture 2005</li><li>Golden Trailer - Best Action 2005</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Roger Corman][/p?id=Roger%20Corman] and Daniel Haller were able to make this film look more opulent than earlier productions by using the sets left from [Becket][/f?id=10775] (1964).</li><li>This was [Roger Corman's][/p?id=Roger%20Corman] first film shot in England.</li><li>[Roger Corman][/p?id=Roger%20Corman] shot this film in England to take advantage of British tax laws. By making this a British production with a British crew, the production got a government subsidy.</li><li>[Roger Corman][/p?id=Roger%20Corman] had originally wanted this to be his second &quot;Poe&quot; picture following the success of [House of Usher][/f?id=G%C3%A4st%20I%20Skr%C3%A4ckens%20Hus] (1960). He passed it over because he felt that certain plot elements were too close to [Ingmar Bergman's][/p?id=1391] recent [Det Sjunde Inseglet][/f?id=12058] (1957).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

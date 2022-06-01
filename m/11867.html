@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Omutbara | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Omutbara <a href="#" class="grade">++++</a></h2>
+										<h3>The Untouchables</h3>
+										<p>
+										Film från <time datetime="1987"><a href="#">1987</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1105.html">Brian De Palma</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1544.html">Kevin Costner</a> – Eliot Ness</li><li><a href="/svenusling/p/1866.html">Sean Connery</a> – Jim Malone</li><li><a href="/svenusling/p/1148.html">Charles Martin Smith</a> – Agent Oscar Wallace</li><li>Andy Garcia – Agent George Stone / Giuseppe Petri</li><li><a href="/svenusling/p/1808.html">Robert De Niro</a> – Al Capone</li><li>Richard Bradford – Police Chief Mike Dorsett</li><li>Jack Kehoe – Walter Payne</li><li>Brad Sullivan – George</li><li>Billy Drago – Frank Nitti</li><li><a href="/svenusling/p/1716.html">Patricia Clarkson</a> – Catherine Ness</li><li>Vito D'Ambrosio – Bowtie Driver</li><li>Steven Goldstein – Scoop</li><li>Peter Aylward – Lt. Anderson</li><li>Don Harvey – Officer Preseuski</li><li>Robert Swan – Mountie Captain</li><li>John J. Walsh – Bartender</li><li>Del Close – Alderman</li><li>Colleen Bade – Mrs. Blackmer</li><li>Greg Noonan – Shooting Range Master</li><li>Sean Grennan – Cop Cousin</li><li>Larry Viverito Sr. – Italian Waiter</li><li>Kevin Michael Doyle – Williamson</li><li>Mike Bacarella – Overcoat Hood</li><li>Michael P. Byrne – Ness' Clerk</li><li>Kaitlin Montgomery – Ness' Daughter</li><li>Aditra Kohl – Blackmer Girl</li><li>Charles Keller Watson – Reporter</li><li>Larry Brandenburg – Reporter</li><li>Chelcie Ross – Reporter</li><li>Tim Gamble – Reporter</li><li>Sam Smiley – Bailiff</li><li>Pat Billingsley – Bailiff</li><li>John Bracci – Fat Man</li><li>Jennifer Anglin – Woman in Elevator</li><li>Eddie Minasian – Butler</li><li>Anthony Mockus Sr. – Judge</li><li>Will Zahrn – Defense Attorney</li><li>Louie Lanciloti – Barber</li><li>Vince Viverito – Bodyguard</li><li>Valentino Cimo – Bodyguard</li><li>Joe Greco – Bodyguard</li><li>Clem Caserta – Bodyguard</li><li>Bob Martana – Bodyguard</li><li>Joseph Scianablo – Bodyguard</li><li>George S. Spataro – Bodyguard</li><li>Melody Rae – Union Station Woman</li><li>Robert Miranda – Gunned Head</li><li>James Guthrie – Pagliacci</li><li>Basil Reale – Hotel Clerk</li><li>John Barrowman – Street Person (uncredited)</li><li>Jimmy Borto – Court Reporter (uncredited)</li><li>Stephen Burrows – Hoodlum (uncredited)</li><li>Ernest Capponi – Gangster at Round Table (uncredited)</li><li>Jack Fitzstephens – Train Announcer (uncredited)</li><li>Patricia E. Harrington – Street Person (uncredited)</li><li>Clifton James – District Attorney (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Golden Globe - Bästa kvinnliga biroll 1977 (Katharine Ross)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa kvinnliga biroll 1977 (1570)</li><li>Oscar - Bästa manus baserat på annan förlaga 1977</li><li>Oscar - Bästa musik 1977 (Lalo Schifrin)</li><li>Golden Globe - Bästa film - Drama 1977</li><li>Golden Globe - Bästa manliga biroll 1977 (Oskar Werner)</li><li>Golden Globe - Bästa kvinnliga biroll 1977 (1570)</li><li>Golden Globe - Bästa manus 1977</li><li>Golden Globe - Bästa musik 1977 (Lalo Schifrin)</li><li>Award of the Japanese Academy - Bästa utländska film 1978</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Brian De Palma][/p?id=1105] met [Bob Hoskins][/p?id=1091] over a drink in Los Angeles to discuss playing Al Capone if [De Palma's][/p?id=1105] first choice [Robert De Niro][/p?id=1808]  were to pass on the role. Since [De Niro][/p?id=1808] didn't say yes, [Hoskins][/p?id=1091] told [De Palma][/p?id=1105] he would do it if he were available. When [De Niro][/p?id=1808] finally took the role, [De Palma][/p?id=1105] sent [Hoskins][/p?id=1091] a thank you note, and the studio paid [Hoskins][/p?id=1091], who had a &quot;pay or play&quot; deal, $200,000. [Hoskins][/p?id=1091] called [De Palma][/p?id=1105] and asked if there were any more movies the director didn't want him to be in.</li><li>Albert H. Wolff, the last survivor of the real-life Untouchables, was a consultant to the film and helped [Kevin Costner][/p?id=1544] with his portrayal of Eliot Ness.</li><li>[Michael Douglas][/p?id=1646], [Don Johnson][/p?id=Don%20Johnson] and [Mel Gibson][/p?id=1635] were considered for the role of Eliot Ness and rejected. [Harrison Ford][/p?id=1358] was offered but turned down the role before [Kevin Costner][/p?id=1544] was signed.</li><li>[Robert De Niro][/p?id=1808] insisted on wearing the same style of silk underwear that Al Capone wore, even though it would never be seen on camera. The producers, knowing DeNiro's reputation as a Method actor, gave in.</li><li>[Robert De Niro][/p?id=1808] hadn't much time to gain the extra weight needed for his role, so that he had to wear pads and pillows for the desired effect of looking like the chunkier Capone.</li><li>In the original script, the final gunfight had Eliot Ness and George Stone battling Capone gunmen on a stopped train. [Brian De Palma][/p?id=1105]  conceived the gunfight on the steps in [Chicago's][/f?id=11526] Union Station when Paramount decided that staging the scene and finding a 1930s period train would be too expensive.</li><li>[Kevin Costner][/p?id=1544], [Sean Connery][/p?id=1866] and [Andy Garcia][/p?id=Andy%20Garcia] engaged in police tactic and weapons training for the film - from the 1950s.</li><li>According to [Brian De Palma][/p?id=1105] and Art Linson in the DVD documentary, it was [Sean Connery's][/p?id=1866] idea to film the &quot;blood oath&quot; scene between Ness and Malone in a Catholic church. Originally it was going to take place on the street (in the same scene that follows the church scene). [Connery][/p?id=1866] felt that a church would be the only &quot;safe&quot; place in [Chicago][/f?id=11526] where the two characters would make such a commitment to fight Capone.</li><li>The scene where Al Capone ([Robert De Niro][/p?id=1808]) suddenly pulls out a baseball bat at a dinner party and beats to death one of his men is based on a true incident which happened on May 7, 1929. Two of Capone's most feared hit men, Albert Anselmi and John Scalise, had hatched a plot to kill Capone and take over his gang. Capone got wind of it and invited all his associates to a dinner party, including Anselmi and Scalise. In the middle of the party, Capone pulled out a baseball bat and battered both men to death, then shot them both in the head. A conflicting version of the story has Tony &quot;Joe Batters&quot; Accardo, one of Capone's hit men, as the man who bludgeoned the traitors to death.</li><li>The character of Oscar Wallace ([Charles Martin Smith][/p?id=1148]) was loosely based on Frank Wilson, the IRS agent who worked to indict Capone for income tax evasion. Wilson had been working on this project since 1928, and had next to nothing to do with Ness and the Untouchables in real-life. Wilson was not killed by Capone, though Capone reportedly placed a contract on his life which was never carried out.</li><li>[Jack Nicholson][/p?id=1402] was also offered the role of Eliot Ness but declined.</li><li>[William Hurt][/p?id=2006] was considered for the role of Eliot Ness but was too busy with other projects.</li><li>[Patricia Clarkson's][/p?id=1716] film debut.</li><li>Director [Brian De Palma][/p?id=1105] met with both [Tom Berenger][/p?id=1948] and [Nick Nolte][/p?id=1693] to find out if they were interested in playing Eliot Ness.</li><li>[De Palma][/p?id=1105] also talked to [Jeff Bridges][/p?id=1441] and [Gene Hackman][/p?id=1317] about playing Ness and Malone.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

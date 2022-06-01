@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Sammanbitna | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Sammanbitna <a href="#" class="grade">++++</a></h2>
+										<h3>True Grit</h3>
+										<p>
+										Film från <time datetime="1969"><a href="#">1969</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre27">Västern</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Henry Hathaway</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1504.html">John Wayne</a> – Marshall Reuben J. 'Rooster' Cogburn</li><li>Glen Campbell – La Boeuf</li><li>Kim Darby – Mattie Ross</li><li>Jeremy Slate – Emmett Quincy</li><li><a href="/svenusling/p/1810.html">Robert Duvall</a> – Ned Pepper</li><li><a href="/svenusling/p/1238.html">Dennis Hopper</a> – Moon</li><li>Alfred Ryder – Mr. Goudy (Defense attorney)</li><li>Strother Martin – Colonel G. Stonehill</li><li>Jeff Corey – Tom Chaney</li><li>Ron Soble – Capt. Boots Finch</li><li>John Fiedler – Lawyer Daggett</li><li>James Westerfield – Judge Parker</li><li>John Doucette – Sheriff</li><li>Donald Woods – Barlow</li><li>Edith Atwater – Mrs. Floyd</li><li>Carlos Rivas – Dirty Bob</li><li>Isabel Boniface – Mrs. Bagby</li><li>H.W. Gim – Chen Lee</li><li>John Pickard – Frank Ross</li><li>Elizabeth Harrower – Mrs. Ross</li><li>Ken Renard – Yarnell Poindexter</li><li>Jay Ripley – Harold Parmalee</li><li>Kenneth Becker – Farrell Parmalee</li><li>General Sterling Price – Ginger Cat</li><li>Wilford Brimley –  (uncredited)</li><li>Myron Healey – Deputy at prisoner unloading (uncredited)</li><li>James McEachin – Judge Parker's bailiff (uncredited)</li><li>Dennis McMullen – Bailiff (uncredited)</li><li>Boyd 'Red' Morgan – Red (ferryman) (uncredited)</li><li>Robin Morse – Bit part (uncredited)</li><li>Stuart Randall – McAlester (uncredited)</li><li>Connie Sawyer – Talkative woman at hanging (uncredited)</li><li>Jay Silverheels – Condemned man at hanging (uncredited)</li><li>Dean Smith –  (uncredited)</li><li>Vince St. Cyr – Gaspargoo (uncredited)</li><li>Guy Wilkerson – The hangman (uncredited)</li><li>Hank Worden – R. Ryan (undertaker, Fort Smith, Arkansas) (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Laurel Awards, Golden Laurel - Action Performance (3:e plats) 1969 (1504)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Laurel Awards, Golden Laurel - Action-Drama (4:e plats) 1969</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The only film for which [John Wayne][/p?id=1504] ever won an Oscar.</li><li>Contrary to popular belief, [John Wayne][/p?id=1504] did not jump over the fence himself at the end of the movie. In fact, according to biographer Garry Wills in his book &quot;[John Wayne's][/p?id=1504] America&quot;, [Wayne][/p?id=1504] was not healthy enough to do such stunts. It should be remembered that [Wayne][/p?id=1504] had an entire lung removed four years prior to making the film and actually had trouble walking more than thirty feet without breathing heavily.</li><li>[John Wayne][/p?id=1504] had initially promised the role of Mattie Ross to his daughter [Aissa Wayne][/p?id=Aissa%20Wayne], but director [Henry Hathaway][/p?id=Henry%20Hathaway] refused to cast her.</li><li>[John Wayne][/p?id=1504] reportedly chased costar [Dennis][/f?id=12020] Hopper around Paramount with a loaded gun. Hopper had to hide in [Glen Campbell's][/p?id=Glen%20Campbell] dressing room until [Wayne][/p?id=1504] cooled down.</li><li>[Mia Farrow][/p?id=Mia%20Farrow], among other well-known actresses, was approached to play Mattie, but she turned it down. [Robert Mitchum][/p?id=1815] had told her that [Henry Hathaway][/p?id=Henry%20Hathaway] was impossible to work with. She later said it was one of the biggest professional mistakes of her career.</li><li>[Elvis Presley][/p?id=Elvis%20Presley] was considered for the role of La Boeuf, the Texas Ranger. However, his manager &quot;Colonel&quot; [Tom Parker][/p?id=Tom%20Parker] insisted that [Presley][/p?id=Elvis%20Presley] should receive top billing, so the part was given to [Glen Campbell][/p?id=Glen%20Campbell] instead.</li><li>This is the (uncredited) film debut of [Wilford Brimley][/p?id=Wilford%20Brimley].</li><li>After judging The Carpenters on a talent show, [John Wayne][/p?id=1504] had Karen Carpenter read for the part of Mattie. The producers went with [Kim Darby][/p?id=Kim%20Darby], who had acting experience; however, [Wayne][/p?id=1504] did not like working with her, because he felt she was unprofessional on the set.</li><li>The scene near the end where Rooster Cogburn ([John Wayne][/p?id=1504]) and Ned Pepper's gang meet in a field and Pepper ([Robert Duvall][/p?id=1810]) is shot was filmed in a clearing near the top of Owl Creek Pass outside Ridgway, CO. The field is off the road to the left and is very easy to find.</li><li>[John Wayne][/p?id=1504] was disappointed by the casting of [Kim Darby][/p?id=Kim%20Darby] as Mattie Ross, and the two hardly spoke at all off camera. He later said, &quot;Christ, talk about having no chemistry with your leading lady! She was the goddamn lousiest actress I ever worked with.&quot;</li><li>[Henry Hathaway][/p?id=Henry%20Hathaway] later said he hated [Glen Campbell's][/p?id=Glen%20Campbell] performance, which he described as wooden, and claimed the singer was only cast so he could have a hit with the theme song which would help promote the film.</li><li>[John Wayne's][/p?id=1504] Best Actor Oscar win was widely seen as a sentimental choice, more in recognition of his forty year career. His performance in this movie was dismissed by many critics as over-the-top and hammy.</li><li>[John Wayne][/p?id=1504] did not get along with [Robert Duvall][/p?id=1810] during filming, and at one point threatened to punch the young Method actor if he argued with the director again.</li><li>The character of Rooster Cogburn was supposed to be around forty. [John Wayne][/p?id=1504] was 61 when the film was made.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

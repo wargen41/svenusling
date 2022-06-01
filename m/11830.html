@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Day of the Dead | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Day of the Dead <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1985"><a href="#">1985</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>George A. Romero</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Lori Cardille – Sarah</li><li>Terry Alexander – John</li><li>Joseph Pilato – Rhodes</li><li>Jarlath Conroy – McDermott</li><li>Anthony Dileo Jr. – Miguel</li><li>Richard Liberty – Logan</li><li>Sherman Howard – Bub</li><li>Gary Howard Klar – Steel</li><li>Ralph Marrero – Rickles</li><li>John Amplas – Ted Fisher</li><li>Phillip G. Kellams – Miller</li><li>Taso N. Stavrakis – Torrez</li><li>Greg Nicotero – Johnson</li><li>Don Brockett – Featured Zombie</li><li>William Cameron – Featured Zombie</li><li>Deborah Carter – Featured Zombie</li><li>Winnie Flynn – Featured Zombie</li><li>Debra Gordon – Featured Zombie</li><li>Jeff Hogan – Featured Zombie</li><li>Barbara Holmes – Featured Zombie</li><li>David Kindlon – Featured Zombie</li><li>Bruce Kirkpatrick – Featured Zombie</li><li>'Wild Bill' Laczko – Featured Zombie</li><li>Susan Martinelli – Featured Zombie</li><li>Kim Maxwell – Featured Zombie</li><li>Barbara Russell – Featured Zombie</li><li>Gene A. Saraceni – Featured Zombie</li><li>John D. Schwartz – Featured Zombie</li><li>Mark Tierno – Featured Zombie</li><li>Mike Trcic – Featured Zombie</li><li>John Vulich – Featured Zombie</li><li>Joe Abeln – Mustachioed Zombie biting Rickles' fingers off (uncredited)</li><li>Terry Adams – 2nd Dirty Pink-Collared Shirted Zombie chasing Steel (uncredited)</li><li>Mike Ancas – Featured Zombie (uncredited)</li><li>Al Anderson – Mine Zombie Chasing Steel (uncredited)</li><li>Tom Ardolino – Mine Zombie Chasing Steel (uncredited)</li><li>Vini Bancalari – Zombie Feasting on Fisher's Dead Body (uncredited)</li><li>David Barckhoff – Zombie (uncredited)</li><li>Gabriel Bartalos – Camouflage Hat Zombie (uncredited)</li><li>Matt Bartlett – Zombie in Steel's Death Scene (uncredited)</li><li>Wayne Bartley – 2nd Soldier Zombie (uncredited)</li><li>Howard Berger – Spinaround Cave Zombie Shot by John (uncredited)</li><li>J.R. Bookwalter – Zombie (uncredited)</li><li>Tom Brown – Chef Zombie (uncredited)</li><li>Geoff Burkman – Dirty Pink Collared Shirted Zombie / Umpire Masked Zombie Eating Flesh (uncredited)</li><li>Everett Burrell – Surgeon Zombie in Cave (uncredited)</li><li class="voice">Adolph Caesar – Narrator of Theatrical Trailer (röst) (uncredited)</li><li>Frank Caputo – Nike Masked Elevator Zombie (uncredited)</li><li>Mary Caputo – Flower Hat Zombie (uncredited)</li><li>Glenn Charbonneau – Elevator Zombie (uncredited)</li><li>Michael Deak – Rhodes' Tallest Zombie Attacker (uncredited)</li><li class="voice">Delilah – The 2nd Balladeer (röst) (uncredited)</li><li>George Demick – Zombie who rips Rhodes' legs apart (uncredited)</li><li class="voice">Mark Dodson – Zombies (röst) (uncredited)</li><li>Enid Earle – Church Hat Lady Zombie who attacks Miguel (uncredited)</li><li>Billy Elmer – Zombie (uncredited)</li><li>Donald Farmer – Underground Zombie (uncredited)</li><li>Paul Gagne – Rickles' Bearded Zombie Attacker (uncredited)</li><li>David Granati – Rhodes' Zombie Attacker (uncredited)</li><li>Hermie Granati – Rhodes' Zombie Attacker (uncredited)</li><li>Joey Granati – Rhodes' Zombie Attacker (uncredited)</li><li>Rick Granati – Rhodes' Zombie Attacker (uncredited)</li><li>Bryan Gregory – Cameo (uncredited)</li><li>Barry Gress – Major Cooper's Corpse (uncredited)</li><li>Peter Iasillo Jr. – Elevator zombie (Tip O'Neil zombie) (uncredited)</li><li>Gary Jones – Zombie with Yellow Apron (uncredited)</li><li>Daniel Krell – Zombie (uncredited)</li><li>Ed Lammi – Zombie with Cast Arm (uncredited)</li><li>Ralph Langer – Zombie (uncredited)</li><li>Annie Loeffler – Female Cave Zombie Shot by John (uncredited)</li><li>Pat Logan – Bald Mustachioed Zombie Shot by Steel in Mines (uncredited)</li><li>David Long – Unknown Zombie in deserted city (uncredited)</li><li>Bill Love – Portly Bearded Denim Shirted Zombie Walking Out of First National Bank with Alligator (uncredited)</li><li>Kathy Love – White Shirted Female Zombie in deserted city (uncredited)</li><li>Al Magliochetti – Bathrobe Zombie / Sunglasses Zombie (uncredited)</li><li class="voice">Modern Man – Chorus (röst) (uncredited)</li><li>Robert Martin – Zombie (uncredited)</li><li>Akram Midani – Fisherman Zombie in Mines (uncredited)</li><li>Watfa Midani – Mine Zombie Next to Fisherman Zombie (uncredited)</li><li>Jeff Monahan – Featured Zombie (who pulls Steel's hat off) (uncredited)</li><li>Jim O'Rear – Attacking Zombie (uncredited)</li><li>Skot Pierson – Zombie (uncredited)</li><li>Michael 'D.O.C.' Porter – Pompadour Hairstyled Zombie in Steel's Death Scene (uncredited)</li><li>James Rogal – Sarah's Zombie Attacker in Dream: Hand Only (uncredited)</li><li>George A. Romero – Zombie with Scarf (uncredited)</li><li>Joe Savini – Gaunt Mustachioed White Striped Sweatered Zombie shot by Steel in Mines (uncredited)</li><li>Joey Spampinato – Mine Zombie Chasing Steel (uncredited)</li><li class="voice">Sputzy Sparacino – The Balladeer (röst) (uncredited)</li><li>C.T. Steele – Bloody Cheeked Zombie (wearing blue jean jacket & velor t-shirt) behind Fisherman Zombie (uncredited)</li><li>Mark Steensland – Rickles' Zombie Attacker (uncredited)</li><li>Eileen Sieff Stroup – Short Haired Female Plaid Shirted Zombie eating flesh in lab (uncredited)</li><li>Vincent D. Survinski – Elevator Zombie (uncredited)</li><li>Michael J. Tomaso – Zombie-Football Player - Florida (uncredited)</li><li>James Wetzel – Cave Zombie hit by Billy's shovel (uncredited)</li><li>Roy Wetzel – Rhodes' Zombie Attacker (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>All the extras who portrayed zombies in the climax received for their services: a cap that said &quot;I Played A Zombie In 'Day of the Dead'&quot;, a copy of the newspaper from the beginning of the film (the one that says THE DEAD WALK!), and one dollar.</li><li>The lowest-grossing film in [George A. Romero's][/p?id=George%20A.%20Romero] &quot;Dead&quot; trilogy. Nonetheless, it's gained a cult following over the last three decades.</li><li>During a holiday break in filming, makeup artist [Greg Nicotero][/p?id=Greg%20Nicotero] used the realistic and gruesome model of his own head (as seen in a laboratory scene in the film) to play a practical joke on his mother.</li><li>The original script, for which [George A. Romero][/p?id=George%20A.%20Romero] couldn't get budget, involved the scientists living above ground in a fortress protected by electrified fences and the military living safely underground. It also involved a small army of trained zombies and the conclusion to the trilogy more brutal than the released version. This later became the basis of [Land of the Dead][/f?id=Land%20of%20the%20Dead] (2005)</li><li>On the special edition DVD, director [George A. Romero][/p?id=George%20A.%20Romero] claims this is his favourite film out of the original &quot;dead trilogy&quot;.</li><li>Most of the zombie extras in this film were Pittsburgh residents who volunteered to help in the film.</li><li>Although never confirmed, it has been rumored by fans that the character Joe [Pilato][/p?id=Joseph%20Pilato] played in [Dawn of the Dead (1978)][/f?id=Dawn%20of%20the%20Dead%20(1978)] is in fact Rhodes as a cop. Fans believe that Rhodes started out as a cop then later joined the army and became Captain. Since no passage of time is given in the 'Dead' films it is very possible that years lapsed between 'Dawn' and 'Day', and that the Rhodes character could have went from being a cop to an army captain.</li><li>First attempts to shoot the scene where Sarah performs surgery on Miguel's arm failed when it simply bounced off the rubber, so [Tom Savini][/p?id=Tom%20Savini] remade it in wax and it worked perfectly.</li><li>According to Lori Cardille, the first attempt to shoot the beginning dream scene where the zombie arms suddenly spring out of the wall and attack her resulted in the faux wall and many of the actors behind it toppling over on her. The wall ended up needing to be completely rebuilt, this time much more stable.</li><li>The budget for [George A. Romero's][/p?id=George%20A.%20Romero] original script was estimated at $7 million, but he would only be given the money if he could film an R-rated film. He was told that if he went ahead and shot an unrated film with no limits on gore, the budget would be split in half to $3.5 million.</li><li>[George A. Romero][/p?id=George%20A.%20Romero] originally intended the film to be &quot;the [Gone with the Wind][/f?id=11270] (1939) of zombie films&quot;.</li><li>In an interview [Joseph Pilato][/p?id=Joseph%20Pilato] was asked if [George A. Romero][/p?id=George%20A.%20Romero] &quot;had him in mind&quot;, [Pilato][/p?id=Joseph%20Pilato] stated that one of the reasons why he got the role was because of the budget being scaled down from 7 to 3.5 million.</li><li>If one looks closely as Rhodes is torn in half, they'll see that a large section of his innards is a blood-covered rubber chicken.</li><li>There was a large problem with the scenes with guns firing, as the blanks used would almost never be caught on film, due to the camera's shutter. This made director [George A. Romero][/p?id=George%20A.%20Romero] animate almost all of the gun's muzzle flashes in post-production. Actress Lori Cardille also described using the Uzi during filming as having such a large recoil kick that it physically forced her back.</li><li>[Joseph Pilato][/p?id=Joseph%20Pilato] was cast as Rhodes, the film's antagonist. As stated by [Pilato][/p?id=Joseph%20Pilato] &quot;He pretty much just gave it to me. I don't know if he auditioned other people, but it was very quick. I came in and it was like, &quot;You got it!.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

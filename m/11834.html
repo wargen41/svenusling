@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Da Vinci-Koden | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Da Vinci-Koden <a href="#" class="grade">+++</a></h2>
+										<h3>The Da Vinci Code</h3>
+										<p>
+										Film från <time datetime="2006"><a href="#">2006</a></time><br>										<ul class="genres"><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Ron Howard</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1950.html">Tom Hanks</a> – Robert Langdon</li><li>Audrey Tautou – Sophie Neveu</li><li><a href="/svenusling/p/1387.html">Ian McKellen</a> – Sir Leigh Teabing</li><li>Jean Reno – Captain Bezu Fache</li><li><a href="/svenusling/p/1721.html">Paul Bettany</a> – Silas</li><li><a href="/svenusling/p/1022.html">Alfred Molina</a> – Bishop Manuel Aringarosa</li><li>Jürgen Prochnow – Andre Vernet</li><li>Jean-Yves Berteloot – Remy Jean</li><li>Etienne Chicot – Lt. Collet</li><li>Jean-Pierre Marielle – Jacques Saunière</li><li>Marie-Françoise Audollent – Sister Sandrine</li><li>Rita Davies – Elegant Woman at Rosslyn</li><li>Francesco Carnelutti – Prefect</li><li>Seth Gabel – Michael</li><li>Shane Zaza – Youth on Bus</li><li>Andy Clark – Docent</li><li>Fausto Maria Sciarappa – Young Church Official</li><li>Joe Grossi – Old Church Official</li><li>Denis Podalydès – Flight Controller</li><li>Harry Taylor – British Police Captain</li><li>Clive Carter – Biggin Hill Police Captain</li><li>Garance Mazureck – Sophie at 13 Years</li><li>Daisy Doidge-Hill – Sophie at 8 Years</li><li>Lilli Ella Kelleher – Sophie at 3 Years</li><li>Crisian Emanuel – Sophie's Mother</li><li>Charlotte Graham – Mary Magdalene</li><li>Xavier De Guillebon – Junkie</li><li>Tonio Descanvelle – Bank Guard</li><li>David Bark-Jones – Hawker Pilot</li><li>Seretta Wilson – American Woman</li><li>Eglantine Rembauville-Nicolle – Student</li><li>Dan Tondowski – Student</li><li>Aewia Huillet – Student</li><li>Roland John-Leopoldie – Student</li><li>David Saracino – DCPJ Agent</li><li>Lionel Guy-Bremond – Officer Ledoux</li><li>Yves Aubert – Louvre Computer Cop</li><li>Rachael Black – Policewoman</li><li>Dez Drummond – London Police</li><li>Mark Roper – London Police</li><li>Brock Little – American Embassy Cop</li><li>Matthew Butler – Westminster Cop</li><li>Roland Menou – DCPJ Technician</li><li>Hugh Mitchell – Young Silas</li><li>Tina Maskell – Mother of Silas</li><li>Peter Pedrero – Father of Silas</li><li>Sam Mancuso – Pope</li><li>Andre Lillis – Pope</li><li>Mario Vernazza – Young Constantine</li><li>Agathe Natanson – Ritual Priestess</li><li>Daz Parker – Peasant Mother</li><li>Andy Robb – Peasant Father</li><li>Tom Barker – Peasant Boy</li><li>Maggie McEwan – Peasant Girl</li><li>Michael Bertenshaw – Priest</li><li>Sarah Wildor – Priestess</li><li>David Bertrand – French Newscaster</li><li>Paul Adams – Grail Knight (uncredited)</li><li>Didier Dell Benjamin – Student (uncredited)</li><li>Lili Briand – Driver (uncredited)</li><li>Dan Brown – Man at Book Signing Party (uncredited)</li><li>Anna Cachia – Wedding Guest (uncredited)</li><li>Scott Davidson – French Detective (uncredited)</li><li>Laine Edwards – French Prostitute (uncredited)</li><li>Neil Findlater – Cardinal (uncredited)</li><li>Christopher Fosh – Armed Responce Police Officer (uncredited)</li><li>Sean Francis George – Scribe (uncredited)</li><li>Kas Graham – Crusader (uncredited)</li><li>Paul Hann – Policeman (uncredited)</li><li>Martin Heathcote – Arresting Police Officer (uncredited)</li><li>Paul Herbert – Sophie's Father (uncredited)</li><li>Cheryl Howard – Person at Book-Signing Lecture (uncredited)</li><li>Arnaud Klein – French Police Officer (uncredited)</li><li>Dhaffer L'Abidine – PTS Agent (uncredited)</li><li>Simon Lockwood – Drug Addict (uncredited)</li><li>Rob McGillivray – Grail Knight (uncredited)</li><li>Lynn Picknett – Bus Passenger (uncredited)</li><li>Clive Prince – Bus Passenger (uncredited)</li><li>Norman Campbell Rees – Passerby (uncredited)</li><li>Paul Sacks – Uniform Police Officer Outside Cathedral (uncredited)</li><li>Robert Stone – Priory Of Sion (uncredited)</li><li>Chris Wilson – Newton Funeral Guest (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Julie Delpy][/p?id=Julie%20Delpy] and [Kate Beckinsale][/p?id=1528]  were two of the original people thought of for the role of Sophie. [Delpy][/p?id=Julie%20Delpy] wanted the role badly and lobbied for it, but she was ultimately turned down.</li><li>[Ron Howard][/p?id=Ron%20Howard] always wanted [Audrey Tautou][/p?id=Audrey%20Tautou] for the role of Sophie, but she was never available for an audition. She also originally felt too young to play opposite [Tom Hanks][/p?id=1950]. After some convincing from [Howard][/p?id=Ron%20Howard] she auditioned. Other actors that auditioned for the role: [Sophie Marceau][/p?id=Sophie%20Marceau], [Virginie Ledoyen][/p?id=Virginie%20Ledoyen], [Judith Godrèche][/p?id=Judith%20Godr%C3%A8che], and [Linda Hardy][/p?id=Linda%20Hardy].</li><li>[Ron Howard's][/p?id=Ron%20Howard] first envisioned choice for the role of Robert Langdon was [Bill Paxton][/p?id=1083]. [Paxton][/p?id=1083] was interested but turned it down because of scheduling conflicts. [Russell Crowe][/p?id=1846] was then seriously considered for the role but ultimately [Howard][/p?id=Ron%20Howard] decided on his long-time friend [Tom Hanks][/p?id=1950] for the role. Other actors considered for the part were [Ralph Fiennes][/p?id=1767], [Hugh Jackman][/p?id=1379] and [George Clooney][/p?id=1325].</li><li>[Audrey Tautou][/p?id=Audrey%20Tautou] revealed that, during her audition, she asked if she could take a photo of [Ron Howard][/p?id=Ron%20Howard] and [Tom Hanks][/p?id=1950] to prove that she's actually met them.</li><li>[Ricky Gervais][/p?id=1796] has said in interviews he was offered Jean Remy.</li><li>In the novel, [Dan Brown][/p?id=Dan%20Brown] claims that the Disney film [][/f?id=The%20Little%20Mermaid]Den Lilla Sjöjungfrun[[  (1989) gave its heroine, Ariel, red hair, as a reference to paganism and a symbolic grail story. This is inaccurate. Ariel, in fact, had red hair to distinguish her from Madison in the film ][/f?id=%3A%3A%20%20(1989)%20gave%20its%20heroine%2C%20Ariel%2C%20red%20hair%2C%20as%20a%20reference%20to%20paganism%20and%20a%20symbolic%20grail%20story.%20This%20is%20inaccurate.%20Ariel%2C%20in%20fact%2C%20had%20red%20hair%20to%20distinguish%20her%20from%20Madison%20in%20the%20film%20]Splash][/f?id=%20%20(1989)%20gave%20its%20heroine%2C%20Ariel%2C%20red%20hair%2C%20as%20a%20reference%20to%20paganism%20and%20a%20symbolic%20grail%20story.%20This%20is%20inaccurate.%20Ariel%2C%20in%20fact%2C%20had%20red%20hair%20to%20distinguish%20her%20from%20Madison%20in%20the%20film%20%5D%5B%2Ff%3Fid%3D%253A%253A%2520%2520(1989)%2520gave%2520its%2520heroine%252C%2520Ariel%252C%2520red%2520hair%252C%2520as%2520a%2520reference%2520to%2520paganism%2520and%2520a%2520symbolic%2520grail%2520story.%2520This%2520is%2520inaccurate.%2520Ariel%252C%2520in%2520fact%252C%2520had%2520red%2520hair%2520to%2520distinguish%2520her%2520from%2520Madison%2520in%2520the%2520film%2520%5DSplash] (1984). That film was the first collaboration between director [Ron Howard][/p?id=Ron%20Howard] and [Tom Hanks][/p?id=1950].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dead Man Walking | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dead Man Walking <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1942.html">Tim Robbins</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1911.html">Susan Sarandon</a> – Sister Helen Prejean</li><li><a href="/svenusling/p/1868.html">Sean Penn</a> – Matthew Poncelet</li><li><a href="/svenusling/p/1820.html">Robert Prosky</a> – Hilton Barber</li><li>Raymond J. Barry – Earl Delacroix</li><li><a href="/svenusling/p/1764.html">R. Lee Ermey</a> – Clyde Percy</li><li>Celia Weston – Mary Beth Percy</li><li>Lois Smith – Helen's Mother</li><li>Scott Wilson – Chaplain Farley</li><li>Roberta Maxwell – Lucille Poncelet</li><li>Margo Martindale – Sister Colleen</li><li>Barton Heyman – Captain Beliveau</li><li>Steve Boles – Sgt. Neal Trapp</li><li>Nesbitt Blaisdell – Warden Hartman</li><li>Ray Aranha – Luis Montoya</li><li>Larry Pine – Guy Gilardi</li><li>Gil Robbins – Bishop Norwich</li><li>Kevin Cooney – Governor Benedict</li><li>Clancy Brown – State Trooper</li><li>Adele Robbins – Nurse</li><li>Michael Cullen – Carl Vitello</li><li><a href="/svenusling/p/1750.html">Peter Sarsgaard</a> – Walter Delacroix</li><li>Missy Yager – Hope Percy</li><li>Jenny Krochmal – Emily Percy</li><li><a href="/svenusling/p/1397.html">Jack Black</a> – Craig Poncelet</li><li>Jon Abrahams – Sonny Poncelet</li><li>Arthur Bridgers – Troy Poncelet</li><li>Steve Carlisle – Helen's Brother</li><li>Helen Hester – Helen's Sister</li><li>Eva Amurri – 9-Year-Old Helen</li><li>Jack Henry Robbins – Opossum Kid #1</li><li>Gary 'Buddy' Boe – Opossum Kid #2</li><li>Amy Long – Opossum Kid #3</li><li>Dennis Neal – Henry</li><li>Molly Bryant – Nellie</li><li>Pamela Garmon – Mirabeau</li><li>Adrian Colon – Reporter</li><li>John D. Wilmot – Supporter</li><li>Margaret Lane – Reporter #1</li><li>Sally Ann Roberts – Reporter #2</li><li>Alec Gifford – Reporter #3</li><li>John Hurlbutt – Reporter #4</li><li>Mike Longman – News Anchor</li><li>Pete Burris – Parent #1</li><li>Joan Glover – Parent #2</li><li>Florrie Hathorn – Parent #3</li><li>Lenore Banks – Parent #4</li><li>Idella Cassamier – Idella</li><li>Marlon Horton – Herbie</li><li>Kenitra Singleton – Kenitra</li><li>Palmer Jackson – Palmer</li><li>Johnathan Thomas – Johnathan</li><li>Walter Breaux Jr. – Guard #1</li><li>Scott Sowers – Guard #2</li><li>Cortez Nance Jr. – Guard #3</li><li>Adam Nelson – Guard #4</li><li>Dalvin Ford – Guard #5</li><li>Derek Steeley – Guard #6</li><li>Jeremy Knaster – Guard #7</li><li>Mary Robbins – Aide to Governor Benedict</li><li>Miles Robbins – Boy in Church</li><li>Marcus Lyle Brown – Parole Board Member (uncredited)</li><li>Joanna Doherty – Nun (uncredited)</li><li>Anthony Michael Frederick – Trustee (uncredited)</li><li>Rawleigh Moreland – La. Senator (uncredited)</li><li>Helen Prejean – Woman at Vigil (uncredited)</li><li>Codie Scott – Cop (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>DGA Award - Bästa regi 1960 (1483)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The scene where Sister Helen was pulled over is based on an incident that happened to [Helen Prejean][/p?id=Helen%20Prejean] during filming. She thought it was so funny that she asked to have it put into the film.</li><li>After being told that she would be played in the film by &quot;a famous actress from [Thelma &amp; Louise][/f?id=20335] (1991)&quot;, Sister [Helen Prejean][/p?id=Helen%20Prejean] was introduced to [Susan Sarandon][/p?id=1911] and said &quot;Thank God, she's Louise.&quot;</li><li>The title &quot;[Dead Man Walking][/f?id=11885]&quot; is a slang term used by prison guards when escorting death row prisoners from their cells to the execution chambers.</li><li>When director [Tim Robbins][/p?id=1942] needed songs written for the film, he simply sent a cut of the film to several noted composers, among them [Bruce Springsteen][/p?id=Bruce%20Springsteen] and Steve Earle and asked for a song.</li><li>Because [Peter Sarsgaard][/p?id=1750] and [Missy Yager's][/p?id=Missy%20Yager] brutal rape scene was filmed in the mud, every time they did a new take they had to get up, get showered, get dressed, put new makeup on and do it again. It took all night to film.</li><li>In reality, Elmo Patrick Sonnier and [Robert Lee][/p?id=Robert%20Lee] Willie, both inmates on whom [Sean Penn's][/p?id=1868] character Matthew Poncelet is based on, were executed by the electric chair in Louisiana in 1984; by 1993, Louisiana switched that penalty to lethal injection as the most humane way to execute. Both [Tim Robbins][/p?id=1942] and [Helen Prejean][/p?id=Helen%20Prejean] opted to use lethal injection in the film instead of the electric chair because, according to [Prejean's][/p?id=Helen%20Prejean] interview, &quot;We don't want to give people the moral (of the most humane death) out whereby people could say 'Oh well, we used to do electrocution but that's too barbaric so now we are humane and inject them'.&quot;</li><li>First cinema feature of [Peter Sarsgaard][/p?id=1750].</li><li>The film was very much a family affair for [Tim Robbins][/p?id=1942]. Aside from directing his long term companion [Susan Sarandon][/p?id=1911] to an Oscar, he also cast his father, [Gil Robbins][/p?id=Gil%20Robbins] (Bishop Norwich), mother [Mary Robbins][/p?id=Mary%20Robbins] (aide to the governor), sister [Adele Robbins][/p?id=Adele%20Robbins] (nurse), and son [Jack Henry Robbins][/p?id=Jack%20Henry%20Robbins] (opossum kid) and [Miles Robbins][/p?id=Miles%20Robbins] (boy in church). His brother, [David Robbins][/p?id=David%20Robb], composed the soundtrack.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

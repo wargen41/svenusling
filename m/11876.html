@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Tappras Väg | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Tappras Väg <a href="#" class="grade">+++</a></h2>
+										<h3>The Horse Soldiers</h3>
+										<p>
+										Film från <time datetime="1959"><a href="#">1959</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre15">Krig</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1483.html">John Ford</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1504.html">John Wayne</a> – Col. John Marlowe</li><li><a href="/svenusling/p/2005.html">William Holden</a> – Maj. Henry Kendall</li><li>Constance Towers – Hannah Hunter</li><li>Judson Pratt – Sgt. Maj. Kirby</li><li>Hoot Gibson – Sgt. Brown</li><li>Ken Curtis – Cpl. Wilkie</li><li>Willis Bouchey – Col. Phil Secord</li><li>Bing Russell – Dunker</li><li>O.Z. Whitehead – Hoppy Hopkins</li><li>Hank Worden – Deacon Clump</li><li>Chuck Hayward – Union Captain</li><li>Denver Pyle – Jackie Jo</li><li>Strother Martin – Virgil</li><li>Basil Ruysdael – Commandant</li><li>Carleton Young – Col. Jonathan Miles</li><li>William Leslie – Maj. Richard Gray</li><li>William Henry – Captain</li><li>Walter Reed – Union Officer</li><li>Anna Lee – Mrs. Buford</li><li>William Forrest – Gen. Steve Hurlburt</li><li>Ron Hagerthy – Bugler</li><li>Russell Simpson – Sheriff Goodbody</li><li>Althea Gibson – Lukey</li><li>Sarge Allen – Union Officer (uncredited)</li><li>Gertrude Astor – Townswoman (uncredited)</li><li>Bill Borzage – Townsman (uncredited)</li><li>Danny Borzage – Old Soldier in Line (uncredited)</li><li>Otis Courville – Soldier (uncredited)</li><li>Jane Crowley – Townswoman (uncredited)</li><li>Richard H. Cutting – Gen. William T. Sherman (uncredited)</li><li>Duke Fishman – Prisoner at Newton (uncredited)</li><li>Fred Graham – Union Soldier (uncredited)</li><li>Sam Harris – Major (uncredited)</li><li>Stuart Holmes – Passenger to Newton Station (uncredited)</li><li>Michael Jeffers – Prisoner at Newton (uncredited)</li><li>Stan Jones – Gen. Ulysses S. Grant (uncredited)</li><li>Fred Kennedy – Soldier (uncredited)</li><li>Roy Kennedy – Wrangler (uncredited)</li><li>Wilbur Mack – Townsman (uncredited)</li><li>Jack Pennick – Sgt. Maj. 'Mitch' Mitchell (uncredited)</li><li>Charles Seel – Newton Station Bartender (uncredited)</li><li>George Sowards – Wagon Driver (uncredited)</li><li>Jan Stine – Hoskins - Dying Soldier (uncredited)</li><li>William Wellman Jr. – Bugler (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>NBR Award - Bästa manliga biroll 1987 (1866)</li><li>Oscar - Bästa manliga biroll 1988 (1866)</li><li>Golden Globe - Bästa manliga biroll 1988 (1866)</li><li>BAFTA Film Award - Bästa musik 1988 (Ennio Morricone)</li><li>ASCAP Award - Top Box Office Films 1988 (Ennio Morricone)</li><li>Blue Ribbon Award - Bästa utländska film 1988 (1105)</li><li>Grammy - Best Album of Original Instrumental Background Score Written for a Motion Picture or Television 1988 (Ennio Morricone)</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Bästa musik 1988 (Ennio Morricone)</li><li>KCFCC Award - Bästa manliga biroll 1988 (1866)</li><li>ALFS Award - Årets skådespelare 1988 (1866)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa musik 1988 (Ennio Morricone)</li><li>Oscar - Bästa kostym 1988</li><li>Oscar - Bästa scenografi 1988</li><li>Golden Globe - Bästa musik 1988 (Ennio Morricone)</li><li>BAFTA Film Award - Bästa manliga biroll 1988 (1866)</li><li>BAFTA Film Award - Bästa kostym 1988</li><li>BAFTA Film Award - Bästa scenografi 1988</li><li>ASC Award - Outstanding Achievement in Cinematography in Theatrical Releases 1988</li><li>Award of the Japanese Academy - Bästa utländska film 1988</li><li>César Awards, César - Bästa utländska film 1988 (1105)</li><li>WGA Award (Screen) - Bästa manus baserad på annan förlaga 1988 (David Mamet)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The film marked the beginning of mega-deals for Hollywood stars. [John Wayne][/p?id=1504] and [William Holden][/p?id=2005] received $775,000 each, plus 20% of the overall profits, an unheard-of sum for that time. The final contract involved six companies and numbered twice the pages of the movie's script. The film, however, was a financial failure, with no profits to be shared in the end.</li><li>Because of the lead actor's vastly different political views--[John Wayne][/p?id=1504] was very conservative and [William Holden][/p?id=2005] was very liberal--some of the animosity shown on the screen was real, a result of personal conflicts. Following the wrap each actor vowed to never again work with the other.</li><li>During filming of the climactic battle scene, veteran stuntman [Fred Kennedy][/p?id=Fred%20Kennedy] executed a fall from a horse improperly, broke his neck and died. According to fellow stuntmen, [Kennedy][/p?id=Fred%20Kennedy] had broken his neck two years earlier, but it had healed. [Kennedy][/p?id=Fred%20Kennedy] had appeared in several films directed by [John Ford][/p?id=1483] and the director was greatly affected by [Kennedy's][/p?id=Fred%20Kennedy] death. After the incident [Ford][/p?id=1483] halted filming and immediately moved the production back to Hollywood. The film was scripted to end with the triumphant arrival of Marlowe's forces in Baton Rouge, but [Ford][/p?id=1483] &quot;simply lost interest&quot; after [Kennedy's][/p?id=Fred%20Kennedy] death. He ended the film with Marlowe's farewell to Hannah Hunter before crossing and blowing up the bridge.</li><li>The film is based on the true-life raid by Col. Benjamin Grierson, who, as shown in the movie, began his expedition, known as Grierson's Raid, from LeGrange, TN, in April of 1863.</li><li>Director [John Ford's][/p?id=1483] only feature film set during the Civil War, although he did direct a segment of [How the West Was Won][/f?id=20028] (1962) that was set during the Civil War.</li><li>[John Ford][/p?id=1483] made sure to pay the black extras in Louisiana and Mississippi the same pay as the white extras, raising a few eyebrows in the Southern communities.</li><li>Lukey's dialogue was originally written in a stereotypic &quot;Negro&quot; dialect that [Althea Gibson][/p?id=Althea%20Gibson] found offensive. She informed [John Ford][/p?id=1483] that she would not deliver her lines as written. Though [Ford][/p?id=1483] was notorious for his intolerance of actors' demands, he agreed to modify the script.</li><li>Because of racial segregation laws in Louisiana, [Althea Gibson][/p?id=Althea%20Gibson] would have been forced to stay in separate housing during the shoot, so all her scenes were shot in Hollywood, with doubles used in long shots filmed on location.</li><li>The producers originally wanted [Clark Gable][/p?id=1178] to play Col. Marlowe, with [James Stewart][/p?id=1425] as Maj. Kendall. However, it was felt that the younger [John Wayne][/p?id=1504] and [William Holden][/p?id=2005] would be better suited to the characters.</li><li>[John Wayne][/p?id=1504] viewed this as a film that would allow him to funnel some of the profits into his own pet project, [][/f?id=10114]The Alamo:::: (1960), which he was already in the process of casting and producing.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

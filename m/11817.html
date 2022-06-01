@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dark Waters (2019) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dark Waters (2019) <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2019"><a href="#">2019</a></time><br>										<ul class="genres"><li><a href="#genre3">Biografi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Todd Haynes</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1611.html">Mark Ruffalo</a> – Rob Bilott</li><li><a href="/svenusling/p/1049.html">Anne Hathaway</a> – Sarah Barlage Bilott</li><li><a href="/svenusling/p/1942.html">Tim Robbins</a> – Tom Terp</li><li><a href="/svenusling/p/1084.html">Bill Pullman</a> – Harry Dietzler</li><li>Bill Camp – Wilbur Tennant</li><li>Victor Garber – Phil Donnelly</li><li>Mare Winningham – Darlene Kiger</li><li>William Jackson Harper – James Ross</li><li>Louisa Krause – Carla Pfeiffer</li><li>Kevin Crowley – Larry Winter</li><li>Bruce Cromer – Kim Burke</li><li>Denise Dal Vera – Sandra Tennant</li><li>Richard Hagerman – Joe Kiger</li><li>Abi Van Andel – Kathleen Welch</li><li>John Newberg – Dr. Gillespie</li><li>Barry Mulholland – Charles Holliday</li><li>Jeffrey Grover – Edward Wallace</li><li>Jim Azelvandre – Jim Tennant</li><li>Bucky Bailey – Bucky Bailey</li><li>Marcia Dangerfield – Grammer</li><li>Brian Gallagher – David</li><li>Michael Haney – Managing Partner</li><li>Barry G. Bernson – Retired Partner</li><li>Michael King – Unpleasant Partner</li><li>Greg Violand – Union Carbide Lawyer</li><li>Michael Joseph Thomas Ward – DOW Lawyer</li><li>John Moll – Exxon Lawyer</li><li>Clara Harris – Receptionist</li><li>Bella Falcone – Crystal Tennant (11-13)</li><li>Scarlett Hicks – Amy Tennant (10-12)</li><li>Amy Morse – Tom's Secretary</li><li>Aidan Brogan – Teddy Bilott (12-14)</li><li>Nathan Slaughter – Teddy Bilott (7-10)</li><li>Graham Caldwell – Teddy Bilott (3-5)</li><li>Beau Hartwig – Tony Bilott (10-11)</li><li>Jacob Bukowski – Tony Bilott (4)</li><li>Keating P. Sharp – Charlie Bilott (11-12)</li><li>Mikel Furlow – Silas Pfeiffer (5)</li><li>Amy Warner – Sarah's Mother</li><li>Linnea Bond – Clerk</li><li>David Myers Gregory – Diner Owner</li><li>Shyra Thomas – Waitress</li><li>Ian Short – Doctor</li><li>Kyndra Jefferies – OB</li><li>Courtney DeCosky – All-American Mom</li><li>Ken Early – Chair of the Hearing</li><li>Kelly Mengelkoch – Dr. Mary-Sue Kimball</li><li>Annie Fitzpatrick – Judge</li><li>Buz Davis – Fire Captain</li><li>Ronald Jenkins – Security Guard</li><li>Wynn Reichert – Mediator</li><li>Mike Seely – Dr. Brooks</li><li>Teri Clark – Neurologist</li><li>Brian Robertson – Minister</li><li>Chaney Morrow – Young Farmer</li><li>Jon Osbeck – Sarah's Brother</li><li>Clyde Tyrone Harper – Judge #2</li><li>Lisa DeRoberts – Young Mother</li><li>Sara Mackie – Young Woman</li><li>Nathan Neorr – Local Reporter</li><li>Barbara Ann Crumm – Courtroom Deputy</li><li>Sheryl Annette Colley – Courtroom Employee</li><li>Logan Laskarzewski – Stenographer</li><li>Phil Fiorini – Pastor</li><li>Manuel Venegas Zepeda – Benihana Chef</li><li>Jennie Malone – Guitar Player / Singer</li><li>Jason M. Griggs – Allied Lawyer</li><li>George Zamary – Awbury Lawyer</li><li>Kurt Roberson – Mover</li><li>Todd Minobe – Cow Puppeteer #1</li><li>Jim Laprelle – Cow Puppeteer #2</li><li>Sydney Miles – Laura Doggett</li><li>Catch Farley – Scruffy Boy</li><li>Trent Rowland – Tall Boy</li><li>Geoff Falk – Worker #1</li><li>Glen Yrigoyen – Worker #2</li><li>Elizabeth Marvel – Dr. Karen Frank</li><li>Tera Smith – Business Woman</li><li>Mark Angel – Protester (uncredited)</li><li>Denise Barone – Arby's Customer (uncredited)</li><li>Judy McQueen Bauer – Patient / Blood Test (uncredited)</li><li>Lea Hutton Beasmore – EPA / Dinner Guest (uncredited)</li><li>Anita Farmer Bergman – EPA Agent (uncredited)</li><li>Bill Bower – Lawyer (uncredited)</li><li>Braden – Waiter (uncredited)</li><li>Steven Brittingham – Taft Lawyer (uncredited)</li><li>John E. Brownlee – Taft Lawyer (uncredited)</li><li>Lyman Chen – Hack Scientist (uncredited)</li><li>Tyler Craig –  (uncredited)</li><li>William Cross – Sarah's Father (uncredited)</li><li>Laura Dejean – Bar Patron / Cincinnati Pedestrian (uncredited)</li><li>Corey Dolan – Taft Lawyer (uncredited)</li><li>Richard Doone – EPA Man / Taft Law Partner (uncredited)</li><li>Terry Dunn – Protester (uncredited)</li><li>George W. Ellerman – Court Room Gallery (uncredited)</li><li>Kathleen Ellerman – Court Room Gallery (uncredited)</li><li>Mark Falvo – Court Room Gallery (uncredited)</li><li>Reese Foster – Church Parishioner (uncredited)</li><li>David Fultz – Blood Test Patient (uncredited)</li><li>Keith Gavigan – Commuter (uncredited)</li><li>Robert Gerding – Lawyer (uncredited)</li><li>Sammy Geroulis – Taft Lawyer (uncredited)</li><li>John W. Harden – Waiter (uncredited)</li><li>Al Harland – Parkersburg Citizen (uncredited)</li><li>Trina Hayes – Parkersburg Woman / Church Member (uncredited)</li><li>Dennis Craig Hensley – DuPont Lawyer (uncredited)</li><li>Daniel R. Hill – DuPont Security Guard (uncredited)</li><li>Marc Hockl – Church Goer (uncredited)</li><li>Sue Hopkins – Rob Bilott's Mother (uncredited)</li><li>Matt Hudson – Police Officer (uncredited)</li><li>Steven Hudson – Registered Nurse (uncredited)</li><li>Trenton Hudson – Medical Patient (uncredited)</li><li>Conner P. Kelley – Smoker (uncredited)</li><li>Angel Kerns – Parkersburg Resident (uncredited)</li><li>Jim Kirsch – Taft Lawyer (uncredited)</li><li>Bret Aaron Knower – EPA (uncredited)</li><li>Karen Koester – Chemical Wife (uncredited)</li><li>Paul Kulis – Taft Lawyer (uncredited)</li><li>Julie Leskiv – Wilbur's Family (uncredited)</li><li>Viktoria Leskiv – Wilbur's Family (uncredited)</li><li>Michael Lineman – Camera Operator (uncredited)</li><li>Kenny Lykins – Wilbur Tennant's Nephew (uncredited)</li><li>Gary Maloney – Taft Lawyer (uncredited)</li><li>Anita S Martin – EPA Hearing Attendee (uncredited)</li><li>Rodger Masten – Hand Double (uncredited)</li><li>Bryan McCallum – Taft Lawyer (uncredited)</li><li>Karen Olchovy – Parkersburg Resident (uncredited)</li><li>Michelle Peter – Office Nurse (uncredited)</li><li>David Pittinger – Taft Lawyer (uncredited)</li><li>Derek Polen – Taft Lawyer (uncredited)</li><li>Joanne Popolin – EPA Lawyer / Taft Lawyer (uncredited)</li><li>Joseph m Robinson – Church Parishioner (uncredited)</li><li>Steven Schraub – Taft Lawyer (uncredited)</li><li>Ramona Schwalbach – Plantiff's Family (uncredited)</li><li>Harrison Sheckler – Paralegal Intern Harrison (uncredited)</li><li>Kevin W. Shiveley II – Taft Lawyer (uncredited)</li><li>Elaine Marie Smith – EPA Official (uncredited)</li><li>James Logan Steed – Diner (uncredited)</li><li>Carly Tamborski – EPA Hearing Attendee / Church Parishioner (uncredited)</li><li>Damian Tanenbaum – Patron (uncredited)</li><li>Kathleen Tawney – Blood Mobile RN (uncredited)</li><li>Caleb Dwayne Tucker – Parkersburg Resident (uncredited)</li><li>Andrew Van Camp – Hipster Student (uncredited)</li><li>Steven Terry Walker – Taft Partner (uncredited)</li><li>Ming Wang – Waitress (uncredited)</li><li>Ryan Yates – Church Parishioner, Blood Test Patient (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Austin Film Critics Award - Bästa film 2008</li><li>Austin Film Critics Award - Bästa regi 2008 (1170)</li><li>Austin Film Critics Award - Bästa manliga biroll 2008 (1366)</li><li>Austin Film Critics Award - Bästa manus baserad på annan förlaga 2008</li><li>Austin Film Critics Award - Bästa musik 2008</li><li>Australian Film Institute, International Award - Bästa skådespelare (Postumt) 2008 (1366)</li><li>BSFC Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>CFCA Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>CFCA Award - Bästa foto 2008</li><li>DFWFCA Award - Bästa manliga biroll 2008 (1366)</li><li>DFWFCA Award - Bästa foto 2008</li><li>FFCC Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>FFCC Award - Bästa foto 2008</li><li>Hochi Film Award - Bästa utländska film 2008</li><li>Hollywood Film Festival, Hollywood Movie of the Year 2008 (1170)</li><li>Sierra Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>LAFCA Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>National Movie Award - Best Superhero 2008</li><li>PFCS Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>PFCS Award - Bästa scenografi 2008</li><li>PFCS Award - Bästa stunts 2008</li><li>PFCS Award - Bästa specialeffekter 2008</li><li>SDFCS Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>SFFCC Award - Bästa manliga biroll (Postumt) 2008 (1366)</li><li>SFFCC Award - Bästa foto 2008</li><li>Satellite Award - Bästa ljud 2008</li><li>SEFCA Award - Bästa manliga biroll 2008 (1366)</li><li>TFCA Award - Bästa manliga biroll 2008 (1366)</li><li>WAFCA Award - Bästa manliga biroll 2008 (1366)</li><li>Golden Trailer - Best Action 2008</li><li>Golden Trailer - Best Summer 2008 Blockbuster Poster (For the teaser.) 2008</li><li>Oscar - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>Oscar - Bästa ljud 2009</li><li>Golden Globe - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>BAFTA Film Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>Saturn Award - Bästa Action/Äventyr/Thriller Film 2009</li><li>Saturn Award - Bästa manliga biroll 2009 (1366)</li><li>Saturn Award - Bästa manus 2009</li><li>Saturn Award - Bästa musik 2009</li><li>Saturn Award - Bästa specialeffekter 2009</li><li>Art Directors Guild, Excellence in Production Design Award - Fantasy Films 2009</li><li>Award of the Japanese Academy - Bästa utländska film 2009</li><li>Blue Ribbon Award - Bästa utländska film 2009</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa Actionfilm 2009</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>COFCA Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>COFCA Award - Bästa skådespelarensemble 2009</li><li>COFCA Award - Bästa foto 2009</li><li>CDG Award - Excellence in Costume Design for Film - Fantasy 2009</li><li>Empire Award - Bästa film 2009</li><li>Empire Award - Bästa regi 2009 (1170)</li><li>Empire Award - Bästa skådespelare 2009 (1163)</li><li>Grammy - Best Score Soundtrack Album for Motion Picture, Television or Other Visual Media 2009</li><li>Italian National Syndicate of Film Journalists, Silver Ribbon - Best Dubbing (For the voice of Heath Ledger.) 2009</li><li>KCFCC Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>Kansas City Film Critics Circle Awards, Vincent Koehler Award for Outstanding Science Fiction, Fantasy or Horror Film 2009</li><li>MTV Movie Award - Bästa skurk (Postumt) 2009 (1366)</li><li>Mainichi Film Concours - Bästa utländska film 2009</li><li>Golden Reel Award - Best Sound Editing - Music in a Feature Film 2009</li><li>Golden Reel Award - Best Sound Editing - Sound Effects and Foley in a Feature Film 2009</li><li>OFCS Award - Bästa regi 2009 (1170)</li><li>OFCS Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>OFCS Award - Bästa foto 2009</li><li>OFCS Award - Bästa musik 2009</li><li>People's Choice Awards, People's Choice Award - Favorite Movie 2009</li><li>People's Choice Awards, People's Choice Award - Favorite Action Movie 2009</li><li>People's Choice Awards, People's Choice Award - Favorite Superhero (As Bruce Wayne/Batman.) 2009 (1163)</li><li>People's Choice Awards, People's Choice Award - Favorite On-Screen Match-Up 2009</li><li>People's Choice Awards, People's Choice Award - Favorite Cast 2009</li><li>Rembrandt Award - Bästa internationella skådespelare 2009 (1366)</li><li>Screen Actors Guild Awards, Actor - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>Screen Actors Guild Awards, Actor - Bästa stuntensemble i en film 2009</li><li>Society of Camera Operators, Camera Operator of the Year Award 2009</li><li>VFCC Award - Bästa manliga biroll (Postumt) 2009 (1366)</li><li>VES Award - Outstanding Created Environment in a Feature Motion Picture (For the IMAX Gotham City scapes.) 2009</li><li>VES Award - Outstanding Models and Miniatures in a Feature Motion Picture (For the garbage truck crash models and miniatures.) 2009</li><li>VES Award - Outstanding Special Effects in a Motion Picture (For the overall effects.) 2009</li><li>Taurus Award - Best Fight (Batman fights bad guys in building construction site. Using wires Batman moves to a lower floor and fights with hand to hand combat. The fight ends with five SWAT members being thrown off the side of the building.) 2009</li><li>Taurus Award - Best High Work (Five stunt men are thrown out of a building by Batman. The stunt men use a slide to eject themselves from the 420' building while all attached to one common line as well as separate cables attached to individual deceleration devices.) 2009</li><li>Taurus Award - Best Speciality Stunt (Stunt man drives a semi and does a large forward cannon flipping the tractor and trailer end over end.) 2009</li><li>Taurus Award - Best Work With a Vehicle (Batman and Joker chase a police van through the streets of Gotham. Chase features police cars, SWAT vans, a tractor-trailer, Batmobile and Batman's motorcycle. Driving in narrow lanes on the streets below a raised freeway, the vehicles crash and explode. The chase ends with the tractor-trailer doing a forward end over end cannon turnover.) 2009</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>CFCA Award - Bästa film 2008</li><li>CFCA Award - Bästa regi 2008 (1170)</li><li>CFCA Award - Bästa manus baserad på annan förlaga 2008</li><li>CFCA Award - Bästa musik 2008</li><li>National Movie Award - Bästa skådespelare 2008 (1163)</li><li>Satellite Award - Bästa regi 2008 (1170)</li><li>Satellite Award - Bästa manliga biroll 2008 (1366)</li><li>Satellite Award - Bästa specialeffekter 2008</li><li>Satellite Award - Bästa klippning 2008</li><li>Teen Choice Award - Choice Summer Movie: Action Adventure 2008</li><li>Golden Trailer - Best Motion/Title Graphics 2008</li><li>Golden Trailer - Best Summer 2008 Blockbuster Poster (For the Batman teaser.) 2008</li><li>Oscar - Bästa foto 2009</li><li>Oscar - Bästa ljud 2009</li><li>Oscar - Bästa specialeffekter 2009</li><li>Oscar - Bästa klippning 2009</li><li>Oscar - Bästa smink 2009</li><li>Oscar - Bästa scenografi 2009</li><li>BAFTA Film Award - Bästa foto 2009</li><li>BAFTA Film Award - Bästa musik 2009</li><li>BAFTA Film Award - Bästa kostym 2009</li><li>BAFTA Film Award - Bästa ljud 2009</li><li>BAFTA Film Award - Bästa specialeffekter 2009</li><li>BAFTA Film Award - Bästa smink/hår 2009</li><li>BAFTA Film Award - Bästa klippning 2009</li><li>BAFTA Film Award - Bästa scenografi 2009</li><li>Saturn Award - Bästa regi 2009 (1170)</li><li>Saturn Award - Bästa skådespelare 2009 (1163)</li><li>Saturn Award - Bästa manliga biroll 2009 (Aaron Eckhart)</li><li>Saturn Award - Bästa kvinnliga biroll 2009 (1600)</li><li>Saturn Award - Bästa kostym 2009</li><li>Saturn Award - Bästa smink 2009</li><li>Saturn Award - Best DVD Special Edition Release (Two-Disc Special Edition.) 2009</li><li>American Cinema Editors, Eddie - Best Edited Feature Film (Dramatic) 2009</li><li>ASC Award - Outstanding Achievement in Cinematography in Theatrical Releases 2009</li><li>Bodil Awards, Bodil - Bästa amerikanska film 2009 (1170)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa film 2009</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa regi 2009 (1170)</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa skådespelarensemble 2009</li><li>Broadcast Film Critics Association Awards, Critics Choice Award - Bästa musik 2009</li><li>Casting Society of America, Artios - Outstanding Achievement in Casting - Big Budget Feature - Drama 2009</li><li>C.A.S. Award - Outstanding Achievement in Sound Mixing for Motion Pictures 2009</li><li>CEC Award - Bästa utländska film 2009</li><li>DGA Award - Bästa regi 2009 (1170)</li><li>Empire Award - Best Sci-Fi/Fantasy/Superhero 2009</li><li>Goya Awards, Goya - Bästa europeiska film 2009 (1170)</li><li>Hugo Awards, Hugo - Best Dramatic Presentation - Long Form 2009</li><li>Blimp Award - Favorite Movie 2009</li><li>ALFS Award - British Director of the Year 2009 (1170)</li><li>ALFS Award - Actor of the Year 2009 (1366)</li><li>MTV Movie Award - Bästa film 2009</li><li>MTV Movie Award - Bästa skådespelare 2009 (1163)</li><li>MTV Movie Award - Bästa Fight 2009</li><li>Golden Reel Award - Best Sound Editing - Dialogue and ADR in a Feature Film 2009</li><li>OFCS Award - Bästa film 2009</li><li>OFCS Award - Bästa manus baserad på annan förlaga 2009</li><li>OFCS Award - Bästa klippning 2009</li><li>PGA Awards, Motion Picture Producer of the Year Award - Theatrical Motion Pictures 2009</li><li>Robert Festival, Robert - Bästa amerikanska film 2009 (1170)</li><li>World Soundtrack Award - Film Composer of the Year 2009 (Hans Zimmer)</li><li>WGA Award (Screen) - Bästa manus baserad på annan förlaga 2009</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

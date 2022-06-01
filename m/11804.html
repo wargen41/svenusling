@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Daredevil | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Daredevil <a href="#" class="grade">+</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2003"><a href="#">2003</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mark Steven Johnson</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1070.html">Ben Affleck</a> – Matt Murdock / Daredevil</li><li>Jennifer Garner – Elektra Natchios</li><li>Colin Farrell – Bullseye</li><li><a href="/svenusling/p/1645.html">Michael Clarke Duncan</a> – Wilson Fisk / The Kingpin</li><li><a href="/svenusling/p/1507.html">Jon Favreau</a> – Franklin 'Foggy' Nelson</li><li>Scott Terra – Young Matt</li><li>Ellen Pompeo – Karen Page</li><li><a href="/svenusling/p/1469.html">Joe Pantoliano</a> – Ben Urich</li><li>Leland Orser – Wesley Owen Welch</li><li>Lennie Loftin – Nick Manolis</li><li><a href="/svenusling/p/1287.html">Erick Avari</a> – Nikolas Natchios</li><li>Derrick O'Connor – Father Everett</li><li>Paul Ben-Victor – Jose Quesada</li><li>David Keith – Jack Murdock</li><li>Frankie J. Allison – Abusive Father</li><li>Joe J. Garcia – Meat Packer</li><li>John Rothman – Quesada Attorney</li><li>Jim FitzGerald – Ring Announcer</li><li>Casey McCarthy – Angela Sutton</li><li>Louis Bernstein – Judge #1</li><li>Josie DiVincenzo – Josie</li><li>Jorge Noa – NY Cop #1</li><li>Levett M. Washington – Kid #1</li><li>Alberto Gutierrez – Kid #2</li><li>Lakeith S. Evans – Kid #3</li><li>Stefanos Miltsakakis – Stavros</li><li>Pat Crawford Brown – Old Lady on Plane</li><li>Carrie Geiben – Flight Attendant</li><li>Luke Strode – Little Boy</li><li>Bruce Mibach – Rookie Cop</li><li>David Doty – Drunken Englishman</li><li>Ron Mathews – Sharpshooter</li><li><a href="/svenusling/p/1549.html">Kevin Smith</a> – Jack Kirby, Forensic Assistant</li><li>Daniel B. Wing – Quesada's Friend #1</li><li>Jeff Padilla – Quesada's Friend #2</li><li>Dan Brinkle – Boxing Referee #1</li><li>Jack Reiss – Boxing Referee #2</li><li>Stan Lee – Old Man at Crossing</li><li>Sonya Didenko – Quesada's Friend #3</li><li>Greg 'Christopher' Smith – Swat Leader</li><li>Christopher Prescott – Policeman</li><li>Ari Randall – Waitress</li><li>John S. Bakas – Greek Priest</li><li>Greg Collins – Fisk Bodyguard</li><li>Robert Iler – Bully #1</li><li>Chad Christopher Tucker – Bully #2</li><li>Jamie Mahoney – Bully #3</li><li>Jorn H. Winther – Stavros' Friend</li><li>Frank Miller – Man with Pen in Head</li><li>Jude Ciccolella – Robert McKensie (Director's Cut)</li><li>Coolio – Dante Jackson (Director's Cut)</li><li>André Gordon – Body Guard</li><li>Collin Grant – London Airport Guard #2 (Director's Cut)</li><li>Roy Lee Jones – Judge #2 (Director's Cut)</li><li>Edward J. Krall – Cab Driver (Director's Cut)</li><li>Gregg Marc Miller – Dock Supervisor (Director's Cut)</li><li>Vivian Palermo Winther – Nun (Director's Cut)</li><li>Dina Rosenmeier – Biker Girl (Director's Cut)</li><li>Kevin Spirtas – Prosecutor at Jackson Trial (Director's Cut)</li><li>Bernard Williams – London Airport Guard #1 (Director's Cut)</li><li>Christian Boeving – Bodyguard (uncredited)</li><li>Adam Blake Boswell – Irish Drunk (uncredited)</li><li>David Burrows – Man at the Ball (uncredited)</li><li>Carlo Corazon – Gangster at Bar (uncredited)</li><li>Michael Duisenberg – Bartender (uncredited)</li><li>Halley Eveland – Boy at Funeral (uncredited)</li><li>Claudine Farrell – Girl in Pub / Voice on Answering Machine (uncredited)</li><li>Kane Hodder – Fallon's Bodyguard (uncredited)</li><li>Suzie Johnson – Dancer at Party (uncredited)</li><li>Boyd Kelly – UPS Man (uncredited)</li><li>Tina Lorraine – Model at Ball (uncredited)</li><li>Mark Margolis – Fallon (uncredited)</li><li>Rebecca Michael – Dancer at Party (uncredited)</li><li>Hector Morales – Boxing Trainer (uncredited)</li><li>Kelly Nish – Girl on Playground (uncredited)</li><li>Brian M. Olson – Dancer at Party (uncredited)</li><li>Kevin Porter – Bodyguard (uncredited)</li><li>Tanoai Reed – Pool Hall Thug (uncredited)</li><li>Thierry Segall – Photographer (uncredited)</li><li>Sandra Teles – Woman at the Ball (uncredited)</li><li>Nancy Wetzel – Kate (uncredited)</li><li>Patrick Williams – Tavern Patron (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Vin Diesel][/p?id=Vin%20Diesel] was approached for the role of Bullseye, later given to [Colin Farrell][/p?id=Colin%20Farrell]. Other contenders for the role of [Daredevil][/f?id=11804] were [Matt Damon][/p?id=1624], [Edward Norton][/p?id=1266] and [Guy Pearce][/p?id=1348].</li><li>[Ben Affleck][/p?id=1070] was cast as [Daredevil][/f?id=11804] because [Kevin Smith][/p?id=1549] suggested him to the director, [Mark Steven Johnson][/p?id=Mark%20Steven%20Johnson].</li><li>The film was originally due to be filmed in Montreal but, because of a Canadian entertainment industry strike, 20th Century Fox had it filmed in Los Angeles.</li><li>[Ben Affleck][/p?id=1070] was virtually blind as he had to wear heavy-duty contact lenses which blocked out most of his vision.</li><li>In their big fight scene, [Jennifer Garner][/p?id=Jennifer%20Garner] accidentally kicked [Ben Affleck][/p?id=1070] so hard in the head that he briefly blacked out.</li><li>[Jolene Blalock][/p?id=Jolene%20Blalock] was considered for the role of [Elektra][/f?id=13336].</li><li>[Neve Campbell][/p?id=Neve%20Campbell] was originally considered for the role of [Elektra][/f?id=13336].</li><li>The first time [Colin Farrell][/p?id=Colin%20Farrell] had been able to use his own Irish accent in an American movie.</li><li>[Vin Diesel][/p?id=Vin%20Diesel] was considering playing the part of [Daredevil][/f?id=11804] but opted for [Pitch Black][/f?id=17446] (2000) instead.</li><li>In November 2006, [Ben Affleck][/p?id=1070]  stated that he would never reprise the role, having felt &quot;by playing a superhero in [Daredevil][/f?id=11804], I have inoculated myself from ever playing another superhero... Wearing a costume was a source of humiliation for me and something I wouldn't want to do again soon.&quot;</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Utvalda | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Utvalda <a href="#" class="grade">+++</a></h2>
+										<h3>Runaway Jury</h3>
+										<p>
+										Film från <time datetime="2003"><a href="#">2003</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Gary Fleder</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1480.html">John Cusack</a> – Nicholas Easter</li><li><a href="/svenusling/p/1317.html">Gene Hackman</a> – Rankin Fitch</li><li><a href="/svenusling/p/1254.html">Dustin Hoffman</a> – Wendell Rohr</li><li><a href="/svenusling/p/1766.html">Rachel Weisz</a> – Marlee</li><li><a href="/svenusling/p/1113.html">Bruce Davison</a> – Durwood Cable</li><li><a href="/svenusling/p/1116.html">Bruce McGill</a> – Judge Harkin</li><li>Jeremy Piven – Lawrence Green</li><li>Nick Searcy – Doyle</li><li>Stanley Anderson – Henry Jankle</li><li>Cliff Curtis – Frank Herrera</li><li>Nestor Serrano – Janovich</li><li>Leland Orser – Lamb</li><li>Jennifer Beals – Vanessa Lembeck</li><li>Gerry Bamman – Herman Grimes</li><li>Joanna Going – Celeste Wood</li><li>Bill Nunn – Lonnie Shaver</li><li>Juanita Jennings – Loreen Duke</li><li>Marguerite Moreau – Amanda Monroe</li><li>Nora Dunn – Stella Hulic</li><li>Guy Torry – Eddie Weese</li><li>Rusty Schwimmer – Millie Dupree</li><li>Margo Moorer – Kaufman</li><li>David Dwyer – Birk</li><li>Michael Arata – Raines</li><li>Rhoda Griffis – Rikki Coleman</li><li>Fahnlohnee R. Harris – Sylvia Deshazo</li><li>Corri English – Lydia Deets</li><li>Jason Davis – Phillip Savelle</li><li>Xuan Van Nguyen – Henry Wu</li><li>Douglas M. Griffin – Terry Docken</li><li>Carol Sutton – Lou Dell</li><li>Deneen Tyler – Receptionist</li><li>Zach Hanner – Ted</li><li>Andrea Powell – Deborah</li><li>Ted Manson – Pulaski</li><li>David Jensen – Shamburg</li><li>Lori Heuring – Maxine</li><li>Adella Gauthier – Voodoo Shopkeeper</li><li>Afemo Omilami – SUV Driver</li><li>Barret O'Brien – Techie</li><li>Ned Bellamy – Jerome</li><li>Orlando Jones – Russell</li><li>Michelle M. Miller – Reporter #1</li><li>Eric Paulsen – Reporter #2</li><li>Margaret Lawhon – Reporter #3</li><li>Gary Grubbs – Dobbs</li><li>Lark Marie Fall – Singing Woman</li><li>Marco St. John – Daley</li><li>Henry Darrow – Sebald</li><li>Don Henderson Baker – Thernstrom</li><li>Danny Kamin – Cash</li><li>Lance E. Nichols – Agent Shield</li><li>Deacon Dawson – Hoppy Dupree</li><li>Elliott Street – Ringwald</li><li>Mike Pniewski – Strode</li><li>Joe Chrest – Owens</li><li>David Ramsey – Jimmy Hoke</li><li>Marcus Hester – Kyle Murphy</li><li>Lara Grice – Blonde Decoy</li><li>Loren Kinsella – Cafe Waitress</li><li>Mark Jeffrey Miller – Vaughn</li><li>Wayne Roberts – Clerk</li><li>Harvey Reaves – Agent Crowley</li><li>Wayne Ferrara – Agent Novecki</li><li><a href="/svenusling/p/1745.html">Peter Jurasik</a> – Professor Phelan</li><li>Shannon Eubanks – Phyllis</li><li>Celia Weston – Mrs. Brandt</li><li>Irene Ziegler – Peg Grimes</li><li>Ed Nelson – George Dressler</li><li>Bernard Hocke – Mason Foley</li><li>Mark Krasnoff – Aggressive Reporter</li><li>Christopher Mankiewicz – Bartender</li><li>Cedric Pendleton – Homeboy</li><li>Perry Brown – Potential Juror #1</li><li>Don Hood – Potential Juror #2</li><li>Elizabeth Omilami – Potential Juror #3</li><li>Claudia Coffee – Reporter #4</li><li>Charlie Detraz – Reporter #5</li><li>Sally Ann Roberts – Reporter with Cable</li><li>Stuart Greer – Kincaid</li><li>Kathy Seiden – Kathy</li><li>Jack Massey – Henry Wood</li><li>Jude Cambise – Lamb's Assistant / WarRoom Techie (uncredited)</li><li>Alan Davidson – Landlord (Cincinnati) (uncredited)</li><li>Justin Groetsch – Spectator (uncredited)</li><li>Luis Guzmán – Jerry Hernandez (uncredited)</li><li>Murphy Martin – Man on Cell Phone at Cafe DuMond (uncredited)</li><li>Dylan McDermott – Jacob Woods (uncredited)</li><li>Darlene Moore – Reporter (uncredited)</li><li>Annie Morgan – College Girl (uncredited)</li><li>T.J. Toups – Hotel Desk Clerk (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa specialeffekter 1946</li><li>Oscar - Bästa ljud 1946</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>This is [Gene Hackman's][/p?id=1317] and [Dustin Hoffman's][/p?id=1254] first film together. At the Pasadena Playhouse they were classmates and were both voted &quot;Least Likely to Succeed&quot;.</li><li>This is the 10th movie starring both [John Cusack][/p?id=1480] and [Jeremy Piven][/p?id=Jeremy%20Piven].</li><li>After being in development for several years, director [Alfonso Cuarón][/p?id=Alfonso%20Cuar%C3%B3n] became attached to direct and co-write the film. He ended up leaving the project a few months after that.</li><li>[Naomi Watts][/p?id=1685] was offered the role of Marlee but turned it due to scheduling conflicts. </li><li>Other notable actresses auditioning for the role of Marlee included [Bridget Moynahan][/p?id=Bridget%20Moynahan] and [Amanda Peet][/p?id=1026].</li><li>The much anticipated bathroom scene in [Runaway Jury][/f?id=11882] (2003), where Rohr confronts Finch is the first ever dialog in a movie between [Dustin Hoffman][/p?id=1254] and [Gene Hackman][/p?id=1317]. It was written while the rest of the movie was being filmed, after someone on the crew found out that the two, though they had been friends since 1956, had never starred in a movie together. It was finally shot on a single day at the very end, weeks after both [Hackman][/p?id=1317] and [Hoffman][/p?id=1254] had finished their other work.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

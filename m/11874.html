@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Stora Träden | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Stora Träden <a href="#" class="grade">++</a></h2>
+										<h3>The Big Trees</h3>
+										<p>
+										Film från <time datetime="1952"><a href="#">1952</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Felix E. Feist</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1554.html">Kirk Douglas</a> – Jim Fallon</li><li>Eve Miller – Alicia Chadwick</li><li>Patrice Wymore – Daisy Fisher / Dora Figg</li><li><a href="/svenusling/p/1270.html">Edgar Buchanan</a> – Walter 'Yukon' Burns</li><li>John Archer – Frenchy LeCroix</li><li>Alan Hale Jr. – Tiny</li><li>Roy Roberts – Judge Crenshaw</li><li>Charles Meredith – Elder Bixby</li><li>Harry Cording – Cleve Gregg</li><li>Ellen Corby – Sister Blackburn</li><li>Mel Archer – Ole (uncredited)</li><li>John Barton – Lumberman (uncredited)</li><li>Lilian Bond – Daisy's Girl (uncredited)</li><li>Chet Brandenburg – Lumberman (uncredited)</li><li>Sue Casey – Young Lady (uncredited)</li><li>William Challee – Brother Williams (uncredited)</li><li>Lane Chandler – Brother Dorn (uncredited)</li><li>Bud Cokes – Lumberman (uncredited)</li><li>Ben Frommer – Lumberman (uncredited)</li><li>Frank Hagney – Glen - Lumberman with Rifle (uncredited)</li><li>Michael Jeffers – Lumberman (uncredited)</li><li>Fred Kelsey – Townsman (uncredited)</li><li>Jack Kenny – Townsman (uncredited)</li><li>Johnny Kern – Lumberman (uncredited)</li><li>Jack Low – Lumberman (uncredited)</li><li>Kathy Marlowe – Daisy's Girl (uncredited)</li><li>Michael McHale – Accountant (uncredited)</li><li>Bill McLean – Ivan (uncredited)</li><li>Art Millan – Charlie (uncredited)</li><li>Frank Mills – Lumberman (uncredited)</li><li>Kansas Moehring – Barfly (uncredited)</li><li>Artie Ortego – Lumberman (uncredited)</li><li>Jack Perry – Townsman (uncredited)</li><li>Vici Raaf – Daisy's Girl (uncredited)</li><li>Buddy Roosevelt – Lumberman (uncredited)</li><li>Lester Sharpe – Gray (uncredited)</li><li>Elizabeth Slifer – Sister Wallace (uncredited)</li><li>Ray Spiker – Lumberman (uncredited)</li><li>Ann Stuart – Young Lady (uncredited)</li><li>Sailor Vincent – Lumberman (uncredited)</li><li>Duke Watson – Murdock (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BSFC Award - Bästa manliga biroll 1995 (1550)</li><li>NBR Award - Topp top filmer 1995</li><li>NBR Award - Bästa manliga biroll 1995 (1550)</li><li>NBR Award - Bästa skådespelarensemble 1995</li><li>NYFCC Award - Bästa manliga biroll 1995 (1550)</li><li>Seattle International Film Festival, Golden Space Needle Award - Bästa regi 1995 (Bryan Singer)</li><li>Seattle International Film Festival, Golden Space Needle Award - Bästa manliga biroll 1995 (1550)</li><li>STFC Award - Bästa film 1995</li><li>STFC Award - Bästa regi 1995 (Bryan Singer)</li><li>STFC Award - Bästa manliga biroll 1995 (1550)</li><li>STFC Award - Bästa originalmanus 1995 (Christopher McQuarrie)</li><li>Tokyo International Film Festival, Silver Award 1995 (Bryan Singer)</li><li>Oscar - Bästa manliga biroll 1996 (1550)</li><li>Oscar - Bästa originalmanus 1996 (Christopher McQuarrie)</li><li>BAFTA Film Award - Bästa originalmanus 1996 (Christopher McQuarrie)</li><li>BAFTA Film Award - Bästa klippning 1996</li><li>Saturn Award - Bästa Action/Äventyrsfilm 1996</li><li>Saturn Award - Bästa musik 1996</li><li>Casting Society of America, Artios - Best Casting for Feature Film, Drama 1996</li><li>CFCA Award - Bästa manliga biroll 1996 (1550)</li><li>CFCA Award - Bästa manus 1996 (Christopher McQuarrie)</li><li>Chlotrudis Award - Bästa manliga biroll 1996 (1550)</li><li>DFWFCA Award - Bästa manliga biroll 1996 (1550)</li><li>Edgar Allan Poe Awards, Edgar - Bästa film 1996 (Christopher McQuarrie)</li><li>Empire Award - Bästa debut 1996 (Bryan Singer)</li><li>Independent Spirit Award - Bästa manliga biroll 1996 (Benicio Del Toro)</li><li>Independent Spirit Award - Bästa manus 1996 (Christopher McQuarrie)</li><li>NSFC Award - Bästa manliga biroll (2:a plats) 1996 (1550)</li><li>Sant Jordi Awards, Sant Jordi - Bästa utländska skådespelare 1996 (Chazz Palminteri)</li><li>Kinema Junpo Awards, Readers' Choice Award - Bästa utländska film 1996 (Bryan Singer)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa manliga biroll 1996 (1550)</li><li>BAFTA Film Award - Bästa film 1996</li><li>Saturn Award - Bästa regi 1996 (Bryan Singer)</li><li>American Cinema Editors, Eddie - Best Edited Feature Film 1996</li><li>César Awards, César - Bästa utländska film 1996 (Bryan Singer)</li><li>Independent Spirit Award - Bästa foto 1996</li><li>Screen Actors Guild Awards, Actor - Bästa manliga biroll 1996 (1550)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>According to [Kirk Douglas][/p?id=1554] in his autobiography &quot;The Ragman's Son&quot;, he agreed to act in this film for free, in order to end his contract with Warner Bros. He later said, &quot;It's a bad movie.&quot;</li><li>As of 2002, the rights to this film became public domain, and DVD copies that were &quot;digitally remastered&quot; began appearing in 99 Cent stores in LA area in 2004.</li><li>Apart from [Kirk Douglas][/p?id=1554] working for free, Warner Brothers also saved money on the picture by reusing footage from [Valley of the Giants][/f?id=J%C3%A4ttarnas%20Dal] (1938).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Fördömdas By | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Fördömdas By <a href="#" class="grade">+++</a></h2>
+										<h3>Village of the Damned</h3>
+										<p>
+										Film från <time datetime="1960"><a href="#">1960</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Wolf Rilla</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1328.html">George Sanders</a> – Gordon Zellaby</li><li>Barbara Shelley – Anthea Zellaby</li><li>Martin Stephens – David Zellaby</li><li>Michael Gwynn – Alan Bernard</li><li>Laurence Naismith – Doctor Willers</li><li>Richard Warner – Harrington</li><li>Jenny Laird – Mrs. Harrington</li><li>Sarah Long – Evelyn Harrington</li><li>Thomas Heathcote – James Pawle</li><li>Charlotte Mitchell – Janet Pawle</li><li>Pamela Buck – Milly Hughes</li><li>Rosamund Greenwood – Miss Ogle</li><li>Susan Richards – Mrs. Plumpton</li><li>Bernard Archard – Vicar</li><li><a href="/svenusling/p/1754.html">Peter Vaughan</a> – P.C. Gobby</li><li>John Phillips – General Leighton</li><li>Richard Vernon – Sir Edgar Hargraves</li><li>John Stuart – Professor Smith</li><li>Keith Pyott – Dr. Carlisle</li><li>Alexander Archdale – The Coroner</li><li>Sheila Robins – Nurse</li><li>Tom Bowman – Pilot</li><li>Anthony Harrison – Lieutenant</li><li>Diane Aubrey – W.R.A.C. Secretary</li><li>Gerald Paris – Sapper</li><li>Bruno – The Dog</li><li>June Cowell – The Children</li><li>Linda Bateson – The Children</li><li>John Kelly – The Children</li><li>Carlo Cura – The Children</li><li>Lesley Scoble – The Children</li><li>Mark Milleham – The Children</li><li>Roger Malik – The Children</li><li>Elizabeth Munden – The Children</li><li>Teri Scoble – The Children</li><li>Peter Preidel – The Children</li><li>Peter Taylor – The Children</li><li>Howard Knight – The Children</li><li>Brian Smith – The Village Children</li><li>Janice Howley – The Village Children</li><li>Paul Norman – The Village Children</li><li>Robert Marks – The Village Children</li><li>John Bush – The Village Children</li><li>Billy Lawrence – The Village Children</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Bavarian Film Award - Best Direction - Young Film 2006 (Florian Henckel von Donnersmarck)</li><li>Bavarian Film Award - Skådespelare 2006 (Ulrich Mühe)</li><li>Bavarian Film Award - Bästa manus 2006 (Florian Henckel von Donnersmarck)</li><li>Bavarian Film Awards, VGF Award 2006</li><li>Copenhagen International Film Festival, Audience Award 2006 (Florian Henckel von Donnersmarck)</li><li>Copenhagen International Film Festival, Golden Swan - Bästa skådespelare 2006 (Ulrich Mühe)</li><li>Denver International Film Festival, People's Choice Award - Best Narrative Film 2006 (Florian Henckel von Donnersmarck)</li><li>European Film Award - Bästa film 2006</li><li>European Film Award - Bästa skådespelare 2006 (Ulrich Mühe)</li><li>European Film Award - Bästa manus 2006 (Florian Henckel von Donnersmarck)</li><li>German Film Awards, Film Award in Gold - Bästa film 2006</li><li>German Film Awards, Film Award in Gold - Bästa regi 2006 (Florian Henckel von Donnersmarck)</li><li>German Film Awards, Film Award in Gold - Bästa skådespelare 2006 (Ulrich Mühe)</li><li>German Film Awards, Film Award in Gold - Bästa manliga biroll 2006 (1971)</li><li>German Film Awards, Film Award in Gold - Bästa manus 2006 (Florian Henckel von Donnersmarck)</li><li>German Film Awards, Film Award in Gold - Bästa foto 2006</li><li>German Film Awards, Film Award in Gold - Bästa scenografi 2006</li><li>Guild of German Art House Cinemas, Guild Film Award - Gold - Tysk film 2006 (Florian Henckel von Donnersmarck)</li><li>High Falls Film Festival, Audience Award - Bästa film 2006 (Florian Henckel von Donnersmarck)</li><li>Locarno International Film Festival, Audience Award 2006 (Florian Henckel von Donnersmarck)</li><li>London Film Festival, Satyajit Ray Award 2006 (Florian Henckel von Donnersmarck)</li><li>LAFCA Award - Bästa utländska film 2006 (Florian Henckel von Donnersmarck)</li><li>Montréal Festival of New Cinema, Montréal Festival of New Cinema  2006 (Florian Henckel von Donnersmarck)</li><li>Munich Film Festival, Bernhard Wicki Film Award 2006</li><li>New Faces Award - Regi 2006 (Florian Henckel von Donnersmarck)</li><li>Vancouver International Film Festival, Most Popular Film 2006 (Florian Henckel von Donnersmarck)</li><li>Warsaw International Film Festival, Audience Award 2006 (Florian Henckel von Donnersmarck)</li><li>Oscar - Bästa utländska film 2007</li><li>Academy of Motion Picture Arts and Sciences of Argentina, Award of the Argentinean Academy - Bästa utländska film 2007 (Florian Henckel von Donnersmarck)</li><li>Bodil Awards, Bodil - Bästa ickeamerikanska film 2007 (Florian Henckel von Donnersmarck)</li><li>British Independent Film Award - Bästa utländska independentfilm 2007</li><li>David di Donatello Awards, David - Bästa europeiska film 2007 (Florian Henckel von Donnersmarck)</li><li>German Film Critics Award - Bästa filmdebut 2007 (Florian Henckel von Donnersmarck)</li><li>German Film Critics Award - Bästa skådespelare 2007 (Ulrich Mühe)</li><li>German Film Critics Award - Bästa foto 2007</li><li>German Film Critics Award - Bästa klippning 2007</li><li>Golden Globes, Italy, Golden Globe - Bästa europeiska film 2007 (Florian Henckel von Donnersmarck)</li><li>Golden Globes, Italy, Golden Globe - Bästa auropeiska film 2007 (1870)</li><li>Golden Globes, Italy, Golden Globe - Bästa distibutör 2007</li><li>Guldbagge - Bästa utländska film 2007 (Florian Henckel von Donnersmarck)</li><li>Independent Spirit Award - Bästa utländska film 2007 (Florian Henckel von Donnersmarck)</li><li>Italian National Syndicate of Film Journalists, European Silver Ribbon 2007 (Martina Gedeck)</li><li>NYFCC Award - Bästa utländska film 2007</li><li>Palm Springs International Film Festival, Audience Award 2007 (Florian Henckel von Donnersmarck)</li><li>Portland International Film Festival, Audience Award - Bästa film 2007 (Florian Henckel von Donnersmarck)</li><li>Portland International Film Festival, Audience Award - Bästa nya regissör 2007 (Florian Henckel von Donnersmarck)</li><li>Robert Festival, Robert - Bästa ickeamerikanska film 2007 (Florian Henckel von Donnersmarck)</li><li>Rotterdam International Film Festival, Audience Award (Florian Henckel von Donnersmarck)</li><li>Turia Awards, Turia Award - Bästa utländska film 2007 (Florian Henckel von Donnersmarck)</li><li>Turia Awards, Audience Award - Bästa utländska film 2007 (Florian Henckel von Donnersmarck)</li><li>BAFTA Film Award - Bästa icke engelskspråkiga film 2008</li><li>Argentinean Film Critics Association Awards, Silver Condor - Bästa utländska film 2008</li><li>COFCA Award - Bästa utländska film 2008</li><li>Chlotrudis Awards - Bästa originalmanus 2008 (Florian Henckel von Donnersmarck)</li><li>Cinema Brazil Grand Prize - Bästa utländska film 2008</li><li>CEC Award - Bästa utländska film 2008</li><li>César Awards, César - Bästa utländska film 2008 (Florian Henckel von Donnersmarck)</li><li>FCCA Award - Bästa utländska film 2008 (Florian Henckel von Donnersmarck)</li><li>French Syndicate of Cinema Critics, Critics Award - Bästa utländska film 2008 (Florian Henckel von Donnersmarck)</li><li>IFTA Award - Bästa internationella film 2008</li><li>Kinema Junpo Awards, Readers' Choice Award - Bästa utländska film 2008 (Florian Henckel von Donnersmarck)</li><li>ALFS Award - Årets utländska film 2008</li><li>ALFS Award - Årets manus 2008 (Florian Henckel von Donnersmarck)</li><li>Polish Film Awards, Eagle - Bästa europeiska film 2008 (Florian Henckel von Donnersmarck)</li><li>London Critics Circle Film Awards, 30th Year Anniversary Award (3:e plats) 2010</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa utländska film 2007</li><li>Copenhagen International Film Festival, Golden Swan - Bästa film 2006 (Florian Henckel von Donnersmarck)</li><li>European Film Award - Bästa regi 2006 (Florian Henckel von Donnersmarck)</li><li>European Film Award - Bästa skådespelerska 2006 (Martina Gedeck)</li><li>European Film Award - Bästa musik 2006</li><li>German Film Awards, Film Award in Gold - Bästa musik 2006</li><li>German Film Awards, Film Award in Gold - Bästa kostym 2006</li><li>German Film Awards, Film Award in Gold - Bästa ljud 2006</li><li>German Film Awards, Film Award in Gold - Bästa klippning 2006</li><li>Satellite Award - Bästa utländska film 2006</li><li>Satellite Award - Bästa musik 2006</li><li>Golden Camera - Bästa tyska skådespelare 2007 (Ulrich Mühe)</li><li>Satellite Award - Best Overall DVD 2007</li><li>BAFTA Film Award - Bästa film 2008</li><li>BAFTA Film Award - Bästa regi 2008 (Florian Henckel von Donnersmarck)</li><li>BAFTA Film Award - Bästa skådespelare 2008 (Ulrich Mühe)</li><li>BAFTA Film Award - Bästa originalmanus 2008 (Florian Henckel von Donnersmarck)</li><li>Chlotrudis Award - Bästa film 2008</li><li>IFTA Award - Bästa internationella skådespelare 2008 (Ulrich Mühe)</li><li>ALFS Award - Årets regissör 2008 (Florian Henckel von Donnersmarck)</li><li>ALFS Award - Årets skådespelare 2008 (Ulrich Mühe)</li><li>OFCS Award - Bästa utländska film 2008</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The blond wigs that the children wear had a built-in dome to give the impression that they had a larger than normal cranium.</li><li>Originally begun in 1957 as an American picture to star [Ronald Colman][/p?id=Ronald%20Colman], MGM shelved the project, because it was deemed potentially inflammatory and controversial, specifically due to its sinister depiction of virgin birth.</li><li>[Ronald Colman][/p?id=Ronald%20Colman] was originally supposed to star in this film. He passed away in 1958 and was replaced by [George Sanders][/p?id=1328], who had married [Colman's][/p?id=Ronald%20Colman] widow Benita Hume in 1959.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

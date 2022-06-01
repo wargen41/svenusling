@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Misstänkta | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Misstänkta <a href="#" class="grade">++++</a></h2>
+										<h3>The Usual Suspects</h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Bryan Singer</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1894.html">Stephen Baldwin</a> – Michael McManus</li><li>Gabriel Byrne – Dean Keaton</li><li>Benicio Del Toro – Fred Fenster</li><li>Kevin Pollak – Todd Hockney</li><li><a href="/svenusling/p/1550.html">Kevin Spacey</a> – Roger 'Verbal' Kint</li><li>Chazz Palminteri – Dave Kujan, US Customs</li><li><a href="/svenusling/p/1735.html">Pete Postlethwaite</a> – Kobayashi</li><li>Giancarlo Esposito – Jack Baer, FBI</li><li>Suzy Amis – Edie Finneran</li><li>Dan Hedaya – Sgt. Jeffrey 'Jeff' Rabin</li><li>Paul Bartel – Smuggler</li><li>Carl Bressler – Saul Berg</li><li>Phillipe Simon – Fortier</li><li>Jack Shearer – Renault</li><li>Christine Estabrook – Dr. Plummer</li><li><a href="/svenusling/p/1179.html">Clark Gregg</a> – Dr. Walters</li><li>Morgan Hunter – Arkosh Kovash</li><li>Ken Daly – Translator</li><li>Michelle Clunie – Sketch Artist</li><li>Louis Lombardi – Strausz</li><li>Frank Medrano – Rizzi</li><li>Ron Gilbert – Daniel Metzheiser, Dept. of Justice</li><li>Vito D'Ambrosio – Arresting Officer</li><li>Gene Lythgow – Cop on Pier</li><li>Robert Elmore – Bodyguard #1</li><li>David Powledge – Bodyguard #2</li><li>Bob Pennetta – Bodyguard #3</li><li>Billy Bates – Bodyguard #4</li><li>Smadar Hanson – Keyser's Wife</li><li>Castulo Guerra – Arturro Marquez</li><li>Peter Rocca – Jaime, Arturro's Bodyguard</li><li>Bert Williams – Old Cop in Property</li><li>Jaime H. Campos – Police Officer (uncredited)</li><li>John Gillespie –  (uncredited)</li><li>Peter Greene – Redfoot the Fence (uncredited)</li><li>Michael McKay – Cop in Hallway (uncredited)</li><li>Christopher McQuarrie – Interrogation Cop (uncredited)</li><li>Scott B. Morgan – Keyser Söze (in flashback) (uncredited)</li><li>Michael Robert Nyman – N.Y. Uniform Cop (uncredited)</li><li>Grace Sinden – Nurse (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Christopher McQuarrie's][/p?id=Christopher%20McQuarrie] inspiration for the character of Keyser Soze was a real-life murderer by the name of John List, who murdered his family and then disappeared for 17 years.</li><li>The line-up scene was scripted as a serious scene, but after a full day of filming takes where the actors couldn't keep a straight face, director [Bryan Singer][/p?id=Bryan%20Singer] decided to use the funniest takes. A making-of documentary shows [Singer][/p?id=Bryan%20Singer] becoming furious at the actors for the constant cracking-up. In an interview (on the Special Edition DVD), [Kevin Pollak][/p?id=Kevin%20Pollak] states that the hilarity came about when [Benicio Del Toro][/p?id=Benicio%20Del%20Toro] &quot;farted, like 12 takes in a row.&quot; [Del Toro][/p?id=Benicio%20Del%20Toro] himself said &quot;somebody&quot; farted, but no one knew who.</li><li>When Redfoot flicks his cigarette into the face of McManus, it was originally intended to hit his chest, so McManus' reaction is actually [Stephen Baldwin's][/p?id=1894] real unscripted reaction that [Bryan Singer][/p?id=Bryan%20Singer] decided to keep in the movie.</li><li>The role of Dave Kujan was offered to [Robert De Niro][/p?id=1808] and [Christopher Walken][/p?id=1173], who both turned it down.</li><li>[Michael Biehn][/p?id=1642] turned down the role of McManus because of his previous commitment to filming Jade.</li><li>The idea for this movie started only with the concept of a movie poster of five of guys in a lineup.</li><li>In a poll on IMDb, the movie was voted as having the best plot twist, beating out [The Sixth Sense][/f?id=18486], [The Crying Game][/f?id=11729], and [Witness for the Prosecution][/f?id=22018].</li><li>Originally, Keyser Soze was supposed to have the name Keyser Sume, named after [Christopher McQuarrie's][/p?id=Christopher%20McQuarrie] old boss. He allowed his old boss to read the script, and decided he did not want to be associated with an inherently evil villain, so requested a change be made.</li><li>[Kevin Spacey][/p?id=1550] had the fingers on his left hand glued together to make his character's disability more realistic, and filed down his shoes to make them look worn by his character's gimp.</li><li>[Al Pacino][/p?id=1008] also read the part of Dave Kujan, but had to pass due to scheduling conflicts. [Pacino][/p?id=1008] has since noted that this is the film he regrets turning down the most.</li><li>The part of Verbal Kint was always intended for actor [Kevin Spacey][/p?id=1550].</li><li>[Gabriel Byrne][/p?id=Gabriel%20Byrne] originally turned down the film, not believing that the filmmakers could pull it off. He was convinced after a sit-down meeting with [Christopher McQuarrie][/p?id=Christopher%20McQuarrie] and [Bryan Singer][/p?id=Bryan%20Singer], impressed by their enthusiasm and vision. As the start date approached, Bryne backed out. He was undergoing personal issues at the time and wasn't able to leave Los Angeles. Consequently [Singer][/p?id=Bryan%20Singer] reshuffled the schedule so that the entire film could be made in the LA area over a period of five weeks, all to accommodate his lead actor.</li><li>[Stephen Baldwin][/p?id=1894] was wary about joining the production as he was tired of taking part in independent films that turned out to be merely exploitative.</li><li>[Benicio Del Toro][/p?id=Benicio%20Del%20Toro] was cast at the suggestion of [Kevin Spacey][/p?id=1550]. His part was originally written for someone like [Harry Dean Stanton][/p?id=1361].</li><li>[Christopher Walken][/p?id=1173], [Tommy Lee Jones][/p?id=1957], [Jeff Bridges][/p?id=1441], [Charlie Sheen][/p?id=1149], [James Spader][/p?id=James%20Spader], [Al Pacino][/p?id=1008] and [Johnny Cash][/p?id=Johnny%20Cash] were all offered the part of Redfoot, the LA fence.</li><li>All the actors worked for less than their usual fees.</li><li>[Kevin Spacey][/p?id=1550] met with doctors and experts on cerebral palsy to discuss how it might affect his characterization.</li><li>The film was promoted by a teaser campaign with the tagline &quot;Who is Keyzer Soze?&quot;.</li><li>[Kevin Spacey][/p?id=1550] had to read the script twice when he first received it to make sure he fully understood it.</li><li>Neither [Bryan Singer][/p?id=Bryan%20Singer] or [Christopher McQuarrie][/p?id=Christopher%20McQuarrie] realized that the film's famous line, &quot;the greatest trick the Devil ever pulled was convincing the world he didn't exist&quot;, was actually a quote from French poet Baudelaire.</li><li>All the actors were encouraged to ad lib perplexed reactions to [Benicio Del Toro's][/p?id=Benicio%20Del%20Toro] oddball vocal stylings.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

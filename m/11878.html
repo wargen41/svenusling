@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Tio Budorden (1956) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Tio Budorden (1956) <a href="#" class="grade">+++</a></h2>
+										<h3>The Ten Commandments</h3>
+										<p>
+										Film från <time datetime="1956"><a href="#">1956</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre11">Historia</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Cecil B. DeMille</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice"><a href="/svenusling/p/1151.html">Charlton Heston</a> – Moses / God (röst)</li><li><a href="/svenusling/p/2014.html">Yul Brynner</a> – Rameses</li><li>Anne Baxter – Nefretiri</li><li>Edward G. Robinson – Dathan</li><li>Yvonne De Carlo – Sephora</li><li>Debra Paget – Lilia</li><li>John Derek – Joshua</li><li><a href="/svenusling/p/1140.html">Cedric Hardwicke</a> – Sethi</li><li>Nina Foch – Bithiah</li><li>Martha Scott – Yochabel</li><li>Judith Anderson – Memnet</li><li><a href="/svenusling/p/1978.html">Vincent Price</a> – Baka</li><li><a href="/svenusling/p/1476.html">John Carradine</a> – Aaron</li><li>Olive Deering – Miriam</li><li>Douglass Dumbrille – Jannes</li><li>Frank DeKova – Abiram</li><li>Henry Wilcoxon – Pentaur</li><li>Eduard Franz – Jethro</li><li>Donald Curtis – Mered</li><li>Lawrence Dobkin – Hur Ben Caleb</li><li>H.B. Warner – Amminadab</li><li>Julia Faye – Elisheba</li><li>Lisa Mitchell – Jethro's Daughter</li><li>Noelle Williams – Jethro's Daughter</li><li>Joanna Merlin – Jethro's Daughter</li><li>Pat Richard – Jethro's Daughter</li><li>Joyce Vanderveen – Jethro's Daughter</li><li>Diane Hall – Jethro's Daughter</li><li>Abbas El Boughdadly – Rameses' Charioteer</li><li>Fraser Clarke Heston – The Infant Moses</li><li>John Miljan – The Blind One</li><li>Francis McDonald – Simon</li><li>Ian Keith – Rameses I</li><li>Paul De Rolf – Eleazar</li><li><a href="/svenusling/p/2012.html">Woody Strode</a> – King of Ethiopia</li><li>Tommy Duran – Gershom</li><li>Eugene Mazzola – Rameses' Son</li><li>Ramsay Hill – Korah</li><li>Joan Woodbury – Korah's Wife</li><li>Esther Brown – Princess Tharbis</li><li>Rushdy Abaza –  (as Rushti Abaza)</li><li>Dorothy Adams – Slave Woman / Hebrew at Golden Calf / Hebrew at Rameses' Gate</li><li>Eric Alden – High Ranking Officer / Taskmaster / Slave / Officer</li><li>E.J. André – Sheik of Hazerath</li><li>Babette Bain – Little Miriam</li><li>Baynes Barron – Taskmaster</li><li>Kay Bell – Taskmaster / Red-Bearded Slave</li><li>Mary Benoit – Guardian of the Prince / Court Woman / Hebrew at Dathan's Tent / Hebrew at Crag and Corridor / Mother</li><li>Henry Brandon – Commander of the Hosts</li><li>Robert Carson – Eleazar as an Adult</li><li>Bobby Clark – Little Boy in Exodus</li><li>Rus Conklin – Whip-Scarred Brick-Carrier / Hebrew at Dathan's Tent</li><li>Mike Connors – Amalekite Herder</li><li>Henry Corden – Sheik of Sinai</li><li>Edna Mae Cooper – Woman of the Court</li><li>Kem Dibbs – Corporal</li><li>Maude Fealy – Slave Woman / Hebrew at Crag and Corridor</li><li>Mimi Gibson – Little Egyptian Girl</li><li>Diane Gump – Slave</li><li>Nancy Hale – Court Lady in Pool</li><li>June Jocelyn – Court Lady / Hebrew at Crag and Corridor / Hebrew at Dathan's Tent / Wife of Overseer</li><li>Richard Kean – Old Hebrew at Moses' House / Hebrew Toward Corridor</li><li>Gail Kobe – Pretty Slave Girl</li><li>Fred Kohler Jr. – Foreman</li><li>Kenneth MacDonald – Hebrew at Crag and Corridor / Slave</li><li>Peter Mamakos – Chief Driver</li><li>Irene Martin – Tuya</li><li>George Melford – Hebrew at Golden Calf / Nobleman</li><li>John Merton – Architect's Assistant</li><li>Amena Mohamed – Architect's Assistant</li><li>Paula Morgan – Hebrew Woman / Slave Woman</li><li>Dorothy Neumann – Hebrew at Crag and Corridor / Slave / Hebrew at Dathan's Tent</li><li>John Parrish – Sheik of Rephidim</li><li>Rodd Redwing – Taskmaster / Hebrew at Golden Calf</li><li>Addison Richards – Fan Bearer</li><li>Keith Richards – Hebrew at Golden Calf / Courtier / Slave / Hebrew at Dathan's Tent / Hebrew at Crag and Corridor / Overseer</li><li>Marcoreta Starr – Slave / Hebrew at Golden Calf</li><li>Onslow Stevens – Lugal</li><li>Clint Walker – Sardinian Captain</li><li>Amanda Webb – Hebrew at Golden Calf / Young Woman / Hebrew in Exodus</li><li>Frank Wilcox – Wazir</li><li>Jeane Wood – Slave / Hebrew at Crag and Corridor / Hebrew at Golden Calf</li><li>Richard McGough – Boy</li><li>Abdullah Abbas – Taskmaster (uncredited)</li><li>Gorgen Raymond Aghayan – Hebrew at Golden Calf (uncredited)</li><li>Ahmed Salah Sayed Ahmed – Slave (uncredited)</li><li>Luis Alberni – Old Hebrew at Moses' House (uncredited)</li><li>Lillian Albertson – Slave (uncredited)</li><li>Ted Allan – Hebrew at Rameses' Gate (uncredited)</li><li>Herb Alpert – Drummer on Mt. Sinai (uncredited)</li><li>Claire Andre – Slave (uncredited)</li><li>Dorothy Andre – Slave (uncredited)</li><li>Michael Ansara – Taskmaster (uncredited)</li><li>Bart Antinora – Slave (uncredited)</li><li>Alan Aric – Hebrew at Golden Calf (uncredited)</li><li>Joel Ashley – Taskmaster (uncredited)</li><li>Maria Elena Aza – Dancing Girl (uncredited)</li><li>William Bagdad – Slave (uncredited)</li><li>Vicki Bakken – Egyptian Courtesan (uncredited)</li><li>Peter Baldwin – Courtier (uncredited)</li><li>Patti Ballon – Hebrew Girl at Rameses' Gate (uncredited)</li><li>Judith Barrett – Hebrew at Golden Calf (uncredited)</li><li>Norman Bartold – Signalman (uncredited)</li><li>Betty Bassett – Court Woman (uncredited)</li><li>Jack Baston – Fan Bearer (uncredited)</li><li>Arthur Batanides – Hebrew at Rameses' Gate / Hebrew at Golden Calf (uncredited)</li><li>George Baxter – 2nd Wazir (uncredited)</li><li>Prudence Beers – Hebrew at Crag and Corridor / Hebrew at Golden Calf (uncredited)</li><li>Don Bender – Young Boy (uncredited)</li><li>Marc Bender – Child Slave (uncredited)</li><li>Richard Bender – Grainary Child / Child Slave (uncredited)</li><li>Rita Bennett – Slave (uncredited)</li><li>Steven Benson – Little Boy in Exodus (uncredited)</li><li>Butch Bernard – Grainary Child (uncredited)</li><li>Dehl Berti – Pharaoh's Manservant / Architect's Assistant (uncredited)</li><li>Robert Bice – Sergeant (uncredited)</li><li>Jan Bradley – Court Lady / Slave / Hebrew at Crag and Corridor (uncredited)</li><li>Harriett Brest – Hebrew in Exodus (uncredited)</li><li>Cindy Brown – Slave (uncredited)</li><li>Linda Sue Brown – Girl with Doll (uncredited)</li><li>Naaman Brown – Ethiopian (uncredited)</li><li>Wanda Brown – Slave (uncredited)</li><li>Zeev Bufman – Slave / Hebrew in Exodus / Hebrew at Golden Calf (uncredited)</li><li>Rexford Burnett – Slave (uncredited)</li><li>Polly Burson – Slave (uncredited)</li><li>Iris Burton – Dancer (uncredited)</li><li>Herbert Butterfield – Royal Physician (uncredited)</li><li>Lillian Buyeff – Mother (uncredited)</li><li>Tim Cagney – Gershom - Age 6 (uncredited)</li><li>Florine Carlan – Hebrew Woman (uncredited)</li><li>Cliff Carnell – Edomite Ambassador (uncredited)</li><li>Larry Chance – Taskmaster at Brick Pits (uncredited)</li><li>Anna Cheselka – Extra (uncredited)</li><li>Babs Christie – Jethro's Daughter (uncredited)</li><li>Ken Christy – Slave (uncredited)</li><li>Shari Clark – Slave / Hebrew Toward Corridor (uncredited)</li><li>Elizabeth Cloud-Miller – Old Hebrew Woman at Moses' House (uncredited)</li><li>Fred Coby – Taskmaster / Hebrew at Golden Calf (uncredited)</li><li>Peter Coe – Egyptian Soldier (uncredited)</li><li>Lesley-Marie Colburn – Slave Child (uncredited)</li><li>Edward Colebrook – Slave (uncredited)</li><li>Zebedy Colt – Slave (uncredited)</li><li>John Compton – Slave (uncredited)</li><li>Roger Creed – Taskmaster / Slave / Baka's Guard (uncredited)</li><li>John F. Cretan – Courtier / Slave / Hebrew Toward Corridor (uncredited)</li><li>Dorothy Crider – Hebrew in Exodus (uncredited)</li><li>Dean Cromer – Courtier (uncredited)</li><li>Kio Cuddy – Priestess (uncredited)</li><li>Fairy Cunningham – Court Lady / Slave (uncredited)</li><li>Jack Cunningham – Spearman (uncredited)</li><li>Tony Dante – Libyan Captain (uncredited)</li><li>Jann Darlyn – Swimmer (uncredited)</li><li>Steve Darrell – Man with Bedding (uncredited)</li><li>Frankie Darro – Slave (uncredited)</li><li>Madelyn Darrow – Court Lady in Pool (uncredited)</li><li>James Davies – Hebrew at Golden Calf (uncredited)</li><li>Terence de Marney – Hebrew at Rameses' Gate (uncredited)</li><li>Cecil B. DeMille – Narrator (uncredited)</li><li>Vera Denham – Slave / Hebrew in Dathan's Tent / Hebrew at Crag and Corridor (uncredited)</li><li>Adeline De Walt Reynolds – Frail Old Lady (uncredited)</li><li>John Diggs – Babylonian Ambassador (uncredited)</li><li>Sophie Dimitry – Slave (uncredited)</li><li>Allan Douglas – Hebrew in Exodus / Hebrew at Golden Calf (uncredited)</li><li>John Drexel – Courtier (uncredited)</li><li>Robert Dumas – Palace Guard (uncredited)</li><li>Margie Duncan – Slave (uncredited)</li><li>Marjie Duncan – Slave (uncredited)</li><li>Edward Earle – Slave (uncredited)</li><li>Mohamed El Deeb – Elder (uncredited)</li><li>Mah Salah Eldin – Treasury Guard (uncredited)</li><li>Henry A. Escalante – Taskmaster / Palace Guard (uncredited)</li><li>Hanaf Abou Esma – Treasury Guard (uncredited)</li><li>Anthony Eustrel – First High Priest (uncredited)</li><li>Charles Evans – Councillor (uncredited)</li><li>Matty Fain – Slave (uncredited)</li><li>Gamel Faris – Sergeant (uncredited)</li><li>Richard Farnsworth – Chariot Driver (uncredited)</li><li>Franklyn Farnum – High Official (uncredited)</li><li>Frank Fayad – Hebrew at Rameses' Gate (uncredited)</li><li>Tido Fedderson – Court Lady (uncredited)</li><li>Lila Finn – Slave (uncredited)</li><li>Jack Fleming – Servant (uncredited)</li><li>Mary Elizabeth Forbes – Hebrew Woman / Hebrew at Rameses' Gate (uncredited)</li><li>Eddie Foster – Slave (uncredited)</li><li>Mona Fouad – Slave (uncredited)</li><li>John Frederick – Officer / Egyptian Captain (uncredited)</li><li>Robert Fuller – Extra (uncredited)</li><li>Kathy Garver – Rachel (uncredited)</li><li>Paul Gary – Slave (uncredited)</li><li>Anthony George – Slave (uncredited)</li><li>Chief Leonard George – Slave (uncredited)</li><li>Hal Gerard – Slave / Hebrew at Crag and Corridor / Hebrew at Golden Calf (uncredited)</li><li>Jeanne Gerson – Slave Woman with Donkey / Hebrew in Exodus (uncredited)</li><li>Emily Getchell – Old Hebrew Woman / Woman at Moses' House (uncredited)</li><li>Jo Gilbert – Slave (uncredited)</li><li>Richard Gilden – Hebrew in Dathan's Tent (uncredited)</li><li>Andy Glick – Hebrew Boy at Rameses' Gate (uncredited)</li><li>Joe Gold – Egyptian Guard (uncredited)</li><li>Gavin Gordon – Trojan Ambassador (uncredited)</li><li>Judy Goren – Girl with Donkey (uncredited)</li><li>Cliff Gould – Nobleman (uncredited)</li><li>Bernie Gozier – Extra (uncredited)</li><li>Jaclynne Greene – Mother (uncredited)</li><li>Maia Gregory – Slave (uncredited)</li><li>Robert Griffin – High Priest (uncredited)</li><li>Mary Ann Griggs – Hebrew at Golden Calf (uncredited)</li><li>Jerry Groves – Slave (uncredited)</li><li>Lyn Guild – Slave (uncredited)</li><li>Frank Hagney – Hebrew at Golden Calf (uncredited)</li><li>Chuck Hamilton – Slave / Hebrew at Crag and Corridor (uncredited)</li><li>Kay Hammond – Grease Woman (uncredited)</li><li>Peter Hansen – Young Aide (uncredited)</li><li>Charmienne Harker – Court Lady / Cretan Lady (uncredited)</li><li>Michael Harris – Courtier (uncredited)</li><li>John Hart – Cretan Ambassador (uncredited)</li><li>Maurice Hart – Slave (uncredited)</li><li>Jean Harvey – Slave (uncredited)</li><li>Paul Harvey – Royal Physician (uncredited)</li><li>Edmund Hashim – Captain of the Guards / Officer / Captain of Trumpeters (uncredited)</li><li>Mary Ann Hawkins – Slave (uncredited)</li><li>Donald Hayne – God (Pillar of Fire) (uncredited)</li><li>Helene Heigh – Court Lady (uncredited)</li><li>Len Hendry – Hebrew in Dathan's Tent (uncredited)</li><li>Bob Herron – Courier (uncredited)</li><li>Herbert Heyes – Old Councillor (uncredited)</li><li>Salah Higazy – Sergeant (uncredited)</li><li>Hallene Hill – Old Woman (uncredited)</li><li>Ed Hinton – Taskmaster / Flagman (uncredited)</li><li>Patricia Hitchcock – Court Lady (uncredited)</li><li>Madeleine Holmes – Slave (uncredited)</li><li>Robert Hunter – Courier (uncredited)</li><li>Patricia Iannone – Grainary Child (uncredited)</li><li>Adele Cook Johnson – Court Lady (uncredited)</li><li>Lorna Jordon – Hebrew at Golden Calf (uncredited)</li><li>Eddie Kane – Hebrew at Crag and Corridor (uncredited)</li><li>Mary Ellen Kay – Court Lady in Pool (uncredited)</li><li>Max Keith – Nobleman (uncredited)</li><li>Robert Kendall – Slave Boy with Pigeons / Architect's Assistant (uncredited)</li><li>Don Kent – Captain of Tintyru (uncredited)</li><li>George Khoury – Hebrew at Golden Calf (uncredited)</li><li>George Kilburn – Slave (uncredited)</li><li>Glen Kilburn – Hebrew at Dathan's Tent (uncredited)</li><li>Walter Woolf King – Herald (uncredited)</li><li>Charlotte Knight – Slave (uncredited)</li><li>Mel Koontz – Ethiopian Witch Doctor (uncredited)</li><li>Walter Kray – Courtier (uncredited)</li><li>Frank Lackteen – Old Slave Praying (uncredited)</li><li>Ethan Laidlaw – Elder of Joseph (uncredited)</li><li>Harry Landers – Architect's Assistant / Hebrew at Rameses' Gate (uncredited)</li><li>Bob LaVarre – Taskmaster (uncredited)</li><li>Mitchell Lawrence – Slave (uncredited)</li><li>Norman Leavitt – Slave (uncredited)</li><li>Michael Legend – Courtier / Spearman (uncredited)</li><li>David Leonard – Elderly Treader (uncredited)</li><li>Carol LeVeque – Hebrew at Golden Calf (uncredited)</li><li>Harry Lewis – Slave (uncredited)</li><li>Frank Leyva – Hebrew at Rameses' Gate (uncredited)</li><li>Ronald Lisa – Slave (uncredited)</li><li>Tony Louis – Hebrew at Golden Calf (uncredited)</li><li>Jerry Lucas – Hebrew at Rameses' Gate / Jailer (uncredited)</li><li>Don Lynch – Officer / Hebrew at Golden Calf (uncredited)</li><li>Emmett Lynn – Old Slave / Hebrew at Golden Calf (uncredited)</li><li>Herbert Lytton – Sethi's Attendant / Hebrew at Crag and Corridor (uncredited)</li><li>Casey MacGregor – Slave (uncredited)</li><li>Barry Macollum – Slave / Hebrew at Golden Calf (uncredited)</li><li>Terry MacRae – Courtier / Slave (uncredited)</li><li>Ralph Major – Spearman (uncredited)</li><li>Larue Malouf – Hebrew Girl at Sphinx (uncredited)</li><li>Sharon Manns – Girl with Water Bag / Hebrew Girl at Crag and Corridor (uncredited)</li><li>Tony Marcos – Treasury Guard (uncredited)</li><li>Michael Mark – Hebrew at Dathan's Tent / Old Man Who Blesses Moses (uncredited)</li><li>Anthony Marsh – Slave / Hebrew at Golden Calf (uncredited)</li><li>Saul Martell – Slave (uncredited)</li><li>Jack Mather – High Priest (uncredited)</li><li>Frank McMahon – Slave (uncredited)</li><li>Albert P. Meissner – Hebrew at Dathan's Tent (uncredited)</li><li>Madge Meredith – Slave (uncredited)</li><li>John Milford – Attendant to Trojan Ambassador / Young Father (uncredited)</li><li>Joyce Miller – Court Lady (uncredited)</li><li>Miliza Milo – Slave (uncredited)</li><li>Nico Minardos – Courtier (uncredited)</li><li>Gordon Mitchell – Egyptian Guard (uncredited)</li><li>Steve Mitchell – Slave (uncredited)</li><li>Julie Mitchum – Slave (uncredited)</li><li>John Mixon – Slave (uncredited)</li><li>Michael Moore – Father (uncredited)</li><li>Pat Moran – Slave (uncredited)</li><li>Neyle Morrow – Slave / Hebrew at Dathan's Tent / Standard Bearer / Hebrew at Golden Calf (uncredited)</li><li>Robin Morse – Pit Slave (uncredited)</li><li>Lorraine Moscati – Court Lady (uncredited)</li><li>Alix Nagy – Water Carrier / Hebrew at Golden Calf (uncredited)</li><li>Frank Nechero – Slave (uncredited)</li><li>Ron Nyman – Egyptian Guard (uncredited)</li><li>Inez Palange – Slave (uncredited)</li><li>Jacqueline Park – Hebrew at Golden Calf (uncredited)</li><li>Eugenia Paul – Hebrew Girl at Sphinx (uncredited)</li><li>Yvonne Peattie – Slave / Hebrew at Crag and Corridor (uncredited)</li><li class="voice">Edmund Penney – High Priest (röst) (uncredited)</li><li>Jon Peters – Boy on Donkey Crossing Red Sea (uncredited)</li><li>Preston Peterson – Slave (uncredited)</li><li>Greigh Phillips – Spearman / Hebrew at Golden Calf (uncredited)</li><li>Mary Ellen Popel – Hebrew at Golden Calf (uncredited)</li><li>Stanley Price – Slave Carrying Load (uncredited)</li><li>Elizabeth Prudhomme – Hebrew at Golden Calf (uncredited)</li><li>Vernon Rabar – Extra (uncredited)</li><li>Stuart Randall – Elder of Joseph (uncredited)</li><li>Harry Rand – Courtier / Slave (uncredited)</li><li>Ida Ratliff – Hebrew in Exodus (uncredited)</li><li>Marlee Sue Regen – Child Slave (uncredited)</li><li>Gloria Rhoads – Slave (uncredited)</li><li>Dawn Richard – Pharaoh's Daughter / Court Lady in Pool (uncredited)</li><li>Kent Lewis Richland – Slave Boy / Hebrew Boy at Rameses' Gate (uncredited)</li><li>Carlos Rivero – Slave (uncredited)</li><li>Mel Roberts – Little Boy in Exodus (uncredited)</li><li>Stephen Roberts – Councillor (uncredited)</li><li>George Robotham – Attendant (uncredited)</li><li>Ric Roman – Hebrew at Rameses' Gate (uncredited)</li><li>Victor Romito – Officer / Hebrew in Exodus / Hebrew at Golden Calf (uncredited)</li><li>Mickey Roth – Officer (uncredited)</li><li>Linda Sue Rowen – Little Girl at Crag and Corridor (uncredited)</li><li>Paul Salata – Amalekite (uncredited)</li><li>Joan Samuels – Pharaoh's Court Dancer (uncredited)</li><li>Serena Sande – Hebrew Girl at Sphinx (uncredited)</li><li>Archie Savage – Ethiopian (uncredited)</li><li>Carl Saxe – Amalekite / High Priest (uncredited)</li><li>Jefferson Dudley Searles – Hebrew Toward Corridor / Slave (uncredited)</li><li>Ister Shatta – Slave (uncredited)</li><li>Naomi Shaw – Slave (uncredited)</li><li>Kathryn Sheldon – Old Hebrew Woman Kneading Bread at Moses' House / Hebrew in Exodus (uncredited)</li><li>Hal Sherman – Slave (uncredited)</li><li>Mike Sill – Golden Calf Bearer (uncredited)</li><li>Mickey Simpson – Overseer Watching from Door (uncredited)</li><li>Marc Snegoff –  (uncredited)</li><li>Marc Snow – Slave (uncredited)</li><li>Robert St. Claire – Hebrew at Dathan's Tent (uncredited)</li><li>Charles Stevens – Slave (uncredited)</li><li>Emilie Stevens – Hebrew in Dathan's Tent (uncredited)</li><li>Robert Stevenson – Courtier (uncredited)</li><li>Bob Stratton – Nobleman (uncredited)</li><li>Carl 'Alfalfa' Switzer – Slave (uncredited)</li><li>Irene Tedrow – Extra (uncredited)</li><li>Hy Terman – Slave (uncredited)</li><li>Ken Terrell – Amalekite (uncredited)</li><li>Arthur Tookoian – Fan Bearer (uncredited)</li><li>Pat Tribble – Woman (uncredited)</li><li>Patricia Turner – Hebrew at Rameses' Gate (uncredited)</li><li>Julian Upton – Spearman (uncredited)</li><li>Connie Van – Slave (uncredited)</li><li><a href="/svenusling/p/1826.html">Robert Vaughn</a> – Spearman / Hebrew at Golden Calf (uncredited)</li><li>Louise Volding – Slave (uncredited)</li><li>Bunny Warner – Little Girl (uncredited)</li><li>Joan Warner – Hebrew at Golden Calf (uncredited)</li><li>Paul Weber – Architect / Hebrew at Dathan's Tent / Hebrew at Crag and Corridor (uncredited)</li><li>Alan Wells – Hebrew at Crag and Corridor (uncredited)</li><li>Paul Wexler – Hebrew at Crag and Corridor / Hebrew at Golden Calf (uncredited)</li><li>Dan White – Slave (uncredited)</li><li>Loray White – Nubian Slave (uncredited)</li><li>Marilyn Winston – Grainary Child (uncredited)</li><li>Harry Woods – Officer (uncredited)</li><li>Norman Wright – Assyrian Ambassador (uncredited)</li><li>Than Wyenn – Slave (uncredited)</li><li>Stephen Wyman – Nobleman (uncredited)</li><li>Guy Zanette – Slave (uncredited)</li><li>Fred Zendar – Slave / Taskmaster (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Oscar - Bästa skådespelare 1970 (1504)</li><li>Golden Globe - Bästa skådespelare - Drama 1970 (1504)</li><li>Laurel Awards, Golden Laurel - General Entertainment 1970</li><li>Laurel Awards, Golden Laurel - Action Performance 1970 (1504)</li><li>Laurel Awards, Golden Laurel - Male New Face (3:e plats) 1970 (Glen Campbell)</li><li>Laurel Awards, Golden Laurel - Female New Face (3:e plats) 1970 (Kim Darby)</li><li>Western Heritage Awards, Bronze Wrangler - Theatrical Motion Picture 1970</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Oscar - Bästa originalsång (For the song "True Grit") 1970 (Elmer Bernstein)</li><li>Golden Globe - Mest lovande nykomling 1970 (Glen Campbell)</li><li>Golden Globe - Bästa originalsång (For the song True Grit.) 1970 (Elmer Bernstein)</li><li>BAFTA Film Award - Most Promising Newcomer to Leading Film Roles 1970 (Kim Darby)</li><li>WGA Award (Screen) - Best Drama Adapted from Another Medium 1970</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>To create the effect of the sandstorms, in the narrated desert sequence, as Moses left Egypt and headed to Midian, (unknown, to him), [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille] used the engine blast from tied-down Egyptian air force planes.</li><li>[Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille] suffered a heart attack during the production after climbing 130 feet to check a faulty camera perched on one of the giant gates used during the exodus sequence, as it was occurring. He took two of days off and then, against his doctor's orders, returned to work to complete the film.</li><li>The orgy sequence took 3 weeks to film.</li><li>Every year since 1973, American TV network ABC airs this film on Easter, or Passover. In 1999, when for some reason ABC chose not to televise it, they received numerous irate phone calls from people accustomed to watching it every Easter than they have for any other film they have ever telecast.</li><li>Up until the release of [The Passion Of The Christ][/f?id=17380] (2004) in 2004, De tio budorden  (1956) was the highest grossing religious epic in history, earning over $65.5 million in 1956. (This translates into $446 million, in current figures and inflation, throughout the years.)</li><li>Last film directed and produced by [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille], who, despite his fame and success, won only one Oscar, for &quot;[The Greatest Show on Earth][/f?id=21792]&quot; - not for his Biblical spectaculars.</li><li>Just under 5% of the film was actually shot in Egypt.</li><li>Apart from [Charlton Heston][/p?id=1151], almost no one in the leading and major supporting parts were actually Paramount contract players. By 1954, when the film began shooting, most of the studios had dropped their contract players due to sweeping changes in the industry and competition with television.</li><li>This was legendary film composer Elmer Bernstein's first major project. Bernstein had just had some success with his jazz score for [The Man with the Golden Arm][/f?id=16014] (1955). However, he was not [Cecil B. DeMille's][/p?id=Cecil%20B.%20DeMille] first choice to score the film. [DeMille][/p?id=Cecil%20B.%20DeMille] had a long relationship with Paramount contract composer Victor Young, who had been working with [DeMille][/p?id=Cecil%20B.%20DeMille] since [North West Mounted Police][/f?id=Hj%C3%A4lteskvadronen] (1940). Unfortunately, Young had become very ill and could not accept the assignment.</li><li>[Cecil B. DeMille's][/p?id=Cecil%20B.%20DeMille] original choice for Moses was [William Boyd][/p?id=William%20Boyd], best known as &quot;Hopalong Cassidy&quot;. [Boyd][/p?id=William%20Boyd] turned down the role, fearing his &quot;Hopalong Cassidy&quot; popularity, would hurt the movie's fame, deeply.</li><li>[Charlton Heston][/p?id=1151] was chosen for the role of Moses by [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille] because he bore a resemblance to Michelangelo's statue of Moses in Rome. [Heston][/p?id=1151] later played Michelangelo in [The Agony and the Ecstasy][/f?id=21524] (1965).</li><li>When [Woody Strode][/p?id=2012] reported to work, he presented [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille] with an antique Bible, that [Woody Strode's][/p?id=2012] wife had found. [DeMille][/p?id=Cecil%20B.%20DeMille] was so impressed with the gift he not only put [Strode][/p?id=2012] in two parts in the film but told [Strode][/p?id=2012] that if he ever wanted a part in a future [DeMille][/p?id=Cecil%20B.%20DeMille] film, all he had to do was ask. Unfortunately, this project was [DeMille's][/p?id=Cecil%20B.%20DeMille] final film, due to declining health.</li><li>Urban legend has it that [Anne Baxter's][/p?id=Anne%20Baxter] character's name was changed from Nefertiti to Nefertiri because [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille]  was afraid people would make &quot;boob&quot; jokes. In reality, [DeMille][/p?id=Cecil%20B.%20DeMille] was sticking to history: Rameses II's queen was called Nefretiri. Nefertiti lived about 60 years earlier than Rameses and Nefertiti. Both names mean &quot;Beautiful&quot;.</li><li>Feature film debut of [Robert Vaughn][/p?id=1826].</li><li>Producer/Director [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille]  reached 75 years of age during the production of this film, making him the oldest working Hollywood director. He later suffered a heart-attack on the set, returning to the set only two days later. After this was completed, he planned on another epic production. He died in 1959, before he could direct or produce another, making this his final film.</li><li>During the early part of principal photography, [Yul Brynner][/p?id=2014] was still on Broadway starring in [The King and I][/f?id=15576] (1956). All of his shots on the actual Egyptian locations were done in one day after which he had to fly back to New York.</li><li>[Charlton Heston][/p?id=1151] personally requested to [Cecil B. DeMille][/p?id=Cecil%20B.%20DeMille] to let him be the voice of God, at the scene of the Burning Bush, and [DeMille][/p?id=Cecil%20B.%20DeMille] agreed.</li><li>The pillar of fire, which kept the Egyptians from getting closer to the Israelites just before they crossed the Red Sea, was not achieved through the use of actual flames, but was instead, an animated &quot;cartoon fire&quot;. Of all the special effects in the film, it is the one that looks the least realistic to modern audiences, and probably seemed just as unrealistic in 1956.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>De Drogo Västerut… | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>De Drogo Västerut… <a href="#" class="grade">+++</a></h2>
+										<h3>Canyon Passage</h3>
+										<p>
+										Film från <time datetime="1946"><a href="#">1946</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre17">Musik</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre27">Västern</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Jacques Tourneur</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1200.html">Dana Andrews</a> – Logan Stuart</li><li>Brian Donlevy – George Camrose</li><li>Susan Hayward – Lucy Overmire</li><li>Patricia Roc – Caroline Marsh</li><li><a href="/svenusling/p/1989.html">Ward Bond</a> – Honey Bragg</li><li>Hoagy Carmichael – Hi Linnet</li><li>Fay Holden – Mrs. Overmire</li><li>Stanley Ridges – Jonas Overmire</li><li><a href="/svenusling/p/1589.html">Lloyd Bridges</a> – Johnny Steele</li><li>Andy Devine – Ben Dance</li><li>Victor Cutler – Vane Blazier</li><li>Rose Hobart – Marta Lestrade</li><li>Halliwell Hobbes – Clenchfield</li><li>James Cardwell – Gray Bartlett</li><li>Onslow Stevens – Jack Lestrade</li><li>Tad Devine – Asa Dance</li><li>Denny Devine – Bushrod Dance</li><li>Erville Alderson – Judge (uncredited)</li><li>Richard Alexander – Miner (uncredited)</li><li>Harlan Briggs – Dr. Balance (uncredited)</li><li>Roy Bucko – Miner (uncredited)</li><li>Spencer Chan – Miner (uncredited)</li><li>Jack Rube Clifford – Miner (uncredited)</li><li>Chester Clute – Portland Storekeeper (uncredited)</li><li>Tex Cooper – Miner (uncredited)</li><li>Ben Corbett – Miner (uncredited)</li><li>Victor Cox – Townsman (uncredited)</li><li>Jack Curtis – Settler (uncredited)</li><li>Tex Driscoll – Townsman (uncredited)</li><li>Eddie Dunn – Miner (uncredited)</li><li>Frank Ferguson – Preacher (uncredited)</li><li>Janet Ann Gallow – Little Girl (uncredited)</li><li>John George – Miner (uncredited)</li><li>Karl Hackett – Miner (uncredited)</li><li>Sherry Hall – Clerk (uncredited)</li><li>Daral Hudson – Miner (uncredited)</li><li>Jack Ingram – Trail Rider (uncredited)</li><li>Willy Kaufman – Card Player (uncredited)</li><li>Jack Kenny – Miner (uncredited)</li><li>Walter Lawrence – Miner (uncredited)</li><li>Rex Lease – Card Player (uncredited)</li><li>Joseph P. Mack – Miner (uncredited)</li><li>Mathew McCue – Townsman (uncredited)</li><li>Francis McDonald – Cobb (uncredited)</li><li>Kansas Moehring – Miner (uncredited)</li><li>Charles Morton – Miner (uncredited)</li><li>Mary Newton – Townswoman (uncredited)</li><li>William H. O'Brien – Miner (uncredited)</li><li>Virginia Patton – Liza Stone / Bartlett (uncredited)</li><li>Ralph Peters – Harry Stutchell (uncredited)</li><li>Dorothy Peterson – Mrs. Dance (uncredited)</li><li>'Snub' Pollard – Miner (uncredited)</li><li>Bob Reeves – Miner (uncredited)</li><li>Jack Rockwell – Teamster (uncredited)</li><li>Gene Roth – Miner (uncredited)</li><li>Sam Savitsky – Miner (uncredited)</li><li>Wallace Scott – Mack McIver (uncredited)</li><li>Allen D. Sewall – Miner (uncredited)</li><li>Lucile Sewall – Settler (uncredited)</li><li>Harry Shannon – Henry McLane (uncredited)</li><li>Tom Smith – Townsman (uncredited)</li><li>Count Stefenelli – Townsman (uncredited)</li><li>Ray Teal – Neal Howison (uncredited)</li><li>Peter Whitney – Cornelius - Baggage Clerk (uncredited)</li><li>Chief Yowlachie – Indian Spokesman (uncredited)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Bästa internationella film 2008</li><li>Golden Trailer - Best Action Poster 2008</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Although the story is fictional, the town of Jacksonville, Oregon is not. In this movie, it's very remote, with few residents and it hardly qualifies as a town at all. And its real life history is having been founded as a gold mining town, like in this movie.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

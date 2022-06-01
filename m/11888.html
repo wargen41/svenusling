@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Dead Zone | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>The Dead Zone <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1983"><a href="#">1983</a></time><br>																				</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>David Cronenberg</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1173.html">Christopher Walken</a> – Johnny Smith</li><li>Brooke Adams – Sarah Bracknell</li><li>Tom Skerritt – Sheriff Bannerman</li><li><a href="/svenusling/p/1373.html">Herbert Lom</a> – Dr. Sam Weizak</li><li>Anthony Zerbe – Roger Stuart</li><li>Colleen Dewhurst – Henrietta Dodd</li><li><a href="/svenusling/p/1620.html">Martin Sheen</a> – Greg Stillson</li><li>Nicholas Campbell – Frank Dodd</li><li>Sean Sullivan – Herb Smith</li><li>Jackie Burroughs – Vera Smith</li><li>Géza Kovács – Sonny Elliman</li><li>Roberta Weiss – Alma Frechette</li><li>Simon Craig – Chris Stuart</li><li>Peter Dvorsky – Dardis</li><li>Julie-Ann Heathwood – Amy</li><li>Barry Flatman – Walt</li><li>Raffi Tchalikian – Denny #1</li><li>Ken Pogue – Vice President</li><li>Gordon Jocelyn – Five-Star General</li><li>Bill Copeland – Secretary of State</li><li>Jack Messinger – Therapist</li><li>Chapelle Jaffe – Nurse</li><li>Cindy Hinds – Natalie</li><li>Helene Udy – Weizak's Mother</li><li>Ramon Estevez – Teenage Boy with Camera</li><li>Joseph Domenchini – Young Weizak</li><li>Roger Dunn – Reporter</li><li>Wally Bondarenko – Reporter</li><li>Claude Rae – Reporter</li><li>John Koensgen – T.V. Anchorman</li><li>Leslie Carlson – Brenner</li><li>James Bearden – Deputy #1</li><li>Hardee T. Lineham – Deputy #2</li><li>William B. Davis – Ambulance Driver</li><li>Seirge LeBlanc – Denny #2</li><li>Vera Winiauski – Polish Peasant</li><li>Joe Kapnaiko – Polish Peasant</li><li>David Rigby – Truck Driver</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Saturn Award - Bästa musik 1998</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Director [David Cronenberg][/p?id=David%20Cronenberg] had to re-shoot the scene in which [John Smith][/p?id=John%20Smith] has his first premonition. It showed a little girl's room burning and a small E.T. doll could be seen on one of the shelves. The scene had to be re-shot when Universal Pictures threatened to sue.</li><li>[Cronenberg][/p?id=David%20Cronenberg] fired a .357 Magnum loaded with blanks just off camera to make [Smith's][/p?id=John%20Smith] flinches seem more involuntary; this was [Christopher Walken's][/p?id=1173] own idea.</li><li>The &quot;sweat&quot; on [Christopher Walken's][/p?id=1173] face during the &quot;burning bedroom&quot; sequence was in fact a flame-retardant chemical that had been sprayed onto him. The resulting effect, which hadn't been anticipated, looked surprisingly dramatic on film.</li><li>One of only three [David Cronenberg][/p?id=David%20Cronenberg] films that do not have a score by his friend, composer Howard Shore. This was due to studio politics in which Paramount wanted a more familiar composer to write the music for the film. Michael Kamen, who had written the music for the film [Venom][/f?id=Svarta%20mamban] (1981) for the studio, was chosen instead.</li><li>During the time Michael Kamen was composing the music for the film in London, he would play the score on the piano in his home. He received several complaints by his neighbors who asked, &quot;Can you please stop playing that music? I can't sleep and it's giving my family nightmares.&quot;</li><li>[Hal Holbrook][/p?id=1352] was [Cronenberg's][/p?id=David%20Cronenberg] original choice to play Sherrif Bannerman, but Dino De Laurentiis rejected this idea as he had never heard of [Holbrook][/p?id=1352] at the time.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
