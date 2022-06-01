@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Diktatorn | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Diktatorn <a href="#" class="grade">++++</a></h2>
+										<h3>The Great Dictator</h3>
+										<p>
+										Film från <time datetime="1940"><a href="#">1940</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1145.html">Charles Chaplin</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1145.html">Charles Chaplin</a> – Hynkel - Dictator of Tomania / A Jewish Barber</li><li>Jack Oakie – Napaloni - Dictator of Bacteria</li><li>Reginald Gardiner – Schultz</li><li>Henry Daniell – Garbitsch</li><li>Billy Gilbert – Herring</li><li>Grace Hayle – Madame Napaloni</li><li>Carter DeHaven – Bacterian Ambassador</li><li>Paulette Goddard – Hannah</li><li>Maurice Moscovitch – Mr. Jaeckel</li><li>Emma Dunn – Mrs. Jaeckel</li><li>Bernard Gorcey – Mr. Mann</li><li>Paul Weigel – Mr. Agar</li><li>Chester Conklin – Barber's Customer</li><li>Esther Michelson – Jewish Woman</li><li>Hank Mann – Storm Trooper Stealing Fruit</li><li>Florence Wright – Blonde Secretary</li><li>Eddie Gribbon – Tomanian Storm Trooper</li><li>Rudolph Anders – Tomanian Commandant at Osterlich</li><li>Eddie Dunn – Whitewashed Storm Trooper</li><li>Nita Pike – Secretary</li><li>George Lynn – Commander of Storm Troopers</li><li class="voice">Wheeler Dryden – Heinrich Schtick - Translator (röst)</li><li>Fred Aldrich – Soldier (uncredited)</li><li>Richard Alexander – Tomainian Prison Guard in 1918 (uncredited)</li><li>William Arnold – Tomanian Officer (uncredited)</li><li>Sig Arno – Compact Parachute Inventor (uncredited)</li><li>Joe Bordeaux – Ghetto Extra (uncredited)</li><li>Don Brodie – Reporter from International Press (uncredited)</li><li>Hans Conried – Undetermined Role (uncredited)</li><li>Gino Corrado – Sculptor (uncredited)</li><li>John Davidson – Hospital Superintendent (uncredited)</li><li>Max Davidson – Jewish Man (uncredited)</li><li>Lew Davis – Hospital Orderly (uncredited)</li><li>Francis Ernest Drake – Storm Trooper (uncredited)</li><li>Pat Flaherty – Friendly Storm Trooper (uncredited)</li><li>Bud Geary – Storm Trooper (uncredited)</li><li>Sam Harris – Officer (uncredited)</li><li>Eddie Hart – Policeman (uncredited)</li><li>Leyland Hodgson – Big Bertha Gunnery Officer (uncredited)</li><li>William Irving – Man Seated on Bed (uncredited)</li><li>Charles Irwin – Banquet Butler (uncredited)</li><li>Ethelreda Leopold – Blonde Secretary (uncredited)</li><li>Torben Meyer – Bald Barbershop Customer (uncredited)</li><li>Jules Michelson – Man in Ghetto (uncredited)</li><li>Bert Moorhouse – Hynkel's Staff Officer (uncredited)</li><li>Nellie V. Nichols – Jewish Woman (uncredited)</li><li>Manuel París – Dance Extra at Ball (uncredited)</li><li>Jack Perrin – Jewish Man (uncredited)</li><li>Lucien Prival – Storm Trooper Officer (uncredited)</li><li>Cyril Ring – Officer Extra (uncredited)</li><li>Henry Roquemore – Soldier (uncredited)</li><li>Tiny Sandford – Soldier in 1918 Tomainia (uncredited)</li><li>Hans Schumm – Soldier (uncredited)</li><li>Harry Semels – Jewish Fruit Stand Proprietor (uncredited)</li><li>Charles Sullivan – Prison Guard (uncredited)</li><li>Carl Voss – Officer (uncredited)</li><li>Leo White – Hynkel's Barber (uncredited)</li><li>Harry Wilson – Soldier in Field (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Charles Chaplin][/p?id=1145] got the idea when a friend, Alexander Korda, noted that his screen persona and [Adolf Hitler][/p?id=Adolf%20Hitler] looked somewhat similar. [Chaplin][/p?id=1145] later learned they were both born within a week of each other, were roughly the same height and weight and both struggled in poverty until they reached great success in their respective fields. When [Chaplin][/p?id=1145] learned of [Hitler's][/p?id=Adolf%20Hitler] policies of racial oppression and nationalist aggression, he used their similarities as an inspiration to attack [Hitler][/p?id=Adolf%20Hitler] on film.</li><li>[Charles Chaplin][/p?id=1145] said that had he known the true extent of Nazi atrocities, he &quot;could not have made fun of their homicidal insanity&quot;.</li><li>Some reports refute [Charles Chaplin's][/p?id=1145] claims of ignorance as to the true extent of Nazi atrocities, stating that [Chaplin][/p?id=1145] was very much aware of the various goings-on, but decided to make the film anyway as an attack on Nazi ideology.</li><li>When this film was released, [Adolf Hitler][/p?id=Adolf%20Hitler] banned it in Germany and in all countries occupied by the Nazis. Curiosity eventually got the best of him and he had a print brought in through Portugal. He screened it not once but twice. Unfortunately, history did not record his reaction to the film. When told of this, [Charles Chaplin][/p?id=1145] said, &quot;I'd give anything to know what he thought of it.&quot;</li><li>Although this movie was banned in all occupied countries by the Nazis, it was screened once to a German audience. In the occupied Balkans, members of a resistance group switched the reels in a military cinema and replaced a comedic opera with a copy of this film, which they had smuggled in from Greece. So a group of German soldiers enjoyed a screening of this film until they realized what it was. Some left the cinema and some were reported to have fired shots at the screen.</li><li>This was the last movie in which Charles [Chaplin][/p?id=1145] used the &quot;Tramp&quot; outfit - the bowler hat and the walking cane - but although he appears to be playing The Tramp once again, that character had actually been retired in his previous film, [Modern Times][/f?id=16359] (1936). [Chaplin][/p?id=1145] was said not to consider this movie a &quot;Tramp&quot; film.</li><li>Released 13 years after the end of the silent era, this was [Charles Chaplin's][/p?id=1145] first all-talking, all-sound film.</li><li>According to documentaries on the making of the film, [Charles Chaplin][/p?id=1145] began to feel more uncomfortable lampooning [Adolf Hitler][/p?id=Adolf%20Hitler] the more he heard of [Hitler's][/p?id=Adolf%20Hitler] actions in Europe. Ultimately, the invasion of France inspired [Chaplin][/p?id=1145] to change the ending of his film to include his famous speech.</li><li>[Charles Chaplin][/p?id=1145] said wearing Hynkel's costume made him feel more aggressive, and those close to him remember him being more difficult to work with on days he was shooting as Hynkel.</li><li>Shot for 539 days.</li><li>According to his biographer [David Robinson][/p?id=David%20Robinson], [Chaplin][/p?id=1145] despised script girls and refused to abide by their guidance, resulting in continuity lapses in this movie.</li><li>[Charles Chaplin][/p?id=1145] spent some time attempting to simulate the sound of an airplane motor with various methods, only to be upstaged by one of his sound technicians who simply went to an airport for the appropriate sounds.</li><li>[Chaplin][/p?id=1145] wrote the entire script in script form, except for the fake German, which was improvised. In addition, he also scripted every movement in the globe dance sequence.</li><li>When [Charles Chaplin's][/p?id=1145] young son Sydney Chaplin saw the scene where the artillery shell drops out of the supergun for the first time, he burst out laughing. It ruined the take.</li><li>[Charles Chaplin][/p?id=1145] considered [Adolf Hitler][/p?id=Adolf%20Hitler] to be one of the greatest actors he had ever seen, while [Hitler][/p?id=Adolf%20Hitler] assumed that [Chaplin][/p?id=1145] was a Jew.</li><li>When [Charles Chaplin][/p?id=1145] first announced that he was going to make this film, the British government - whose policy at the time was one of appeasement towards Nazi Germany - announced that they would ban it. By the time of the film's release, though, Britain was at war with Germany and in the midst of the blitz, so the government's attitude towards the film had completely changed toward a film with such obvious value as propaganda.</li><li>[Charles Chaplin][/p?id=1145] blinks fewer than ten times during the entire final speech, which lasts over five minutes.</li><li>At the 1941 Academy Awards, the film got five nominations. It failed to win any Academy Awards, and [Charles Chaplin][/p?id=1145] was hurt by this. He already had spent twenty-seven years in Hollywood. [James Stewart][/p?id=1425], the winner of the Best Actor Award (for which [Chaplin][/p?id=1145] was nominated), was not even planning on going to the ceremony until someone told him to go there hours before it began. Interestingly enough, this was the first year in which the winners remained secret until the moment they won their Awards.</li><li>Financed entirely by [Charles Chaplin][/p?id=1145] himself, and his biggest box-office hit.</li><li>When he had heard that studios were trying to discourage him from making the film, President [Franklin Delano Roosevelt][/p?id=Franklin%20Delano%20Roosevelt] sent a representative, Harry Hopkins, to [Charles Chaplin][/p?id=1145] to encourage him to make the film.</li><li>[Charles Chaplin][/p?id=1145] originally intended to call the film &quot;The Dictator&quot;, but received notice from Paramount Pictures that they would charge him $25,000 for use of the title-they owned the rights to an unrelated novel by Richard Harding Davis. [Chaplin][/p?id=1145] balked at the conditions and inserted &quot;Great&quot; into the title.</li><li>[Jack Oakie][/p?id=Jack%20Oakie] once said that he &quot;had made hundreds of pictures, but they only remember me as Napaloni in The Great Dictator (1940).&quot;</li><li>This movie was [Charles Chaplin's][/p?id=1145] biggest-ever box-office hit, grossing about $US 5 million at the time.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

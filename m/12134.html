@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dick Tracy | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dick Tracy <a href="#" class="grade">+++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1990"><a href="#">1990</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre20">Romantik</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1991.html">Warren Beatty</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1991.html">Warren Beatty</a> – Dick Tracy</li><li>Charlie Korsmo – Kid</li><li>Michael Donovan O'Donnell – McGillicuddy</li><li>Jim Wilkey – Stooge</li><li>Stig Eldred – Shoulders</li><li>Neil Summers – The Rodent</li><li>Chuck Hicks – The Brow</li><li>Lawrence Steven Meyers – Little Face</li><li>William Forsythe – Flattop</li><li>Ed O'Ross – Itchy</li><li><a href="/svenusling/p/1339.html">Glenne Headly</a> – Tess Trueheart</li><li>Marvelee Cariaga – Soprano</li><li>Michael Gallup – Baritone</li><li><a href="/svenusling/p/1873.html">Seymour Cassel</a> – Sam Catchem</li><li>James Keane – Pat Patton</li><li><a href="/svenusling/p/1146.html">Charles Durning</a> – Chief Brandon</li><li>Allen Garfield – Reporter</li><li>John Schuck – Reporter</li><li>Charles Fleischer – Reporter</li><li>Madonna – Breathless Mahoney</li><li>Mandy Patinkin – 88 Keys</li><li>Paul Sorvino – Lips Manlis</li><li>Robert Costanzo – Lips' Bodyguard</li><li>Jack Kehoe – Customer at Raid</li><li>Marshall Bell – Lips' Cop</li><li>Mike Hagerty – Doorman</li><li>Lew Horn – Lefty Moriarty</li><li>Arthur Malet – Diner Patron</li><li>Tom Signorelli – Mike</li><li>Tony Epper – Steve the Tramp</li><li><a href="/svenusling/p/1008.html">Al Pacino</a> – Big Boy Caprice</li><li>James Tolkan – Numbers</li><li>R.G. Armstrong – Pruneface</li><li><a href="/svenusling/p/1254.html">Dustin Hoffman</a> – Mumbles</li><li><a href="/svenusling/p/1535.html">Kathy Bates</a> – Mrs. Green</li><li>Jack Goode Jr. – Lab Technician</li><li>Ray Stoddard – Lab Technician</li><li>Dick Van Dyke – D.A. Fletcher</li><li>Hamilton Camp – Store Clerk</li><li>Ed McCready – Cop at Tess'</li><li>Colm Meaney – Cop at Tess'</li><li><a href="/svenusling/p/1138.html">Catherine O'Hara</a> – Texie Garcia</li><li>Henry Silva – Influence</li><li>Robert Beecher – Ribs Mocca</li><li><a href="/svenusling/p/1412.html">James Caan</a> – Spaldoni</li><li>Bert Remsen – Bartender</li><li>Frank Campanella – Judge Harper</li><li>Sharmagne Leland-St. John – Club Ritz Patron</li><li>Bing Russell – Club Ritz Patron</li><li><a href="/svenusling/p/1653.html">Michael J. Pollard</a> – Bug Bailey</li><li>Tom Finnegan – Uniform Cop at Ritz</li><li>Billy Clevenger – Newspaper Vendor</li><li>Ned Claflin – Radio Announcer</li><li class="voice">John Moschitta Jr. – Radio Announcer (röst)</li><li class="voice">Neil Ross – Radio Announcer (röst)</li><li class="voice">Walker Edmiston – Radio Announcer (röst)</li><li>Estelle Parsons – Mrs. Trueheart</li><li>Ian Wolfe – Forger</li><li>Mary Woronov – Welfare Person</li><li>Henry Jones – Night Clerk</li><li>Mike Mazurki – Old Man at Hotel</li><li>Rita Bland – Dancer</li><li>Lada Boder – Dancer</li><li>Dee Hengstler – Dancer</li><li>Liz Imperio – Dancer</li><li>Michelle Johnston – Dancer</li><li>Karyne Ortega – Dancer</li><li>Karen Russell – Dancer</li><li>Tamara Carrera – Cigarette Girl (uncredited)</li><li>Bernie Jones – Night Club Musician (uncredited)</li><li>Sheila Lussier – Gangster's girlfriend (uncredited)</li><li>Bruce Mahler – Reporter (uncredited)</li><li>Jerry St. John – Driver (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The main colors in the film are the six that the original comic strip appeared in: red, blue, yellow, green, orange, purple, plus black and white.</li><li>One of the hardest characters for the make-up artists to create was &quot;Littleface&quot; Finney, one of the hoodlums killed in the garage shootout at the beginning of the film. The character, as created in the comics, has a normal sized head with a face no bigger the average adult nose. In order to create this effect, a child was cast as Finney and then fitted into an over-sized body and made-up head as shown by behind the scenes photos. His voice is overdubbed in the film and cut-away shots where you only see his back were done with an adult actor.</li><li>As a tie-in with the movie, Walt Disney comics released &quot;Dick Tracy: The Tommy Guns and Truehearts Trilogy&quot; which explained the back story leading up to the movie with the actual film plot used as the third installment.</li><li>The villains, in this film, have an infrastructure (i.e. Big Boy is the boss of Flattop and Itchy, Lips Manlis is the boss of the five card-playing villains in the beginning), unlike in the comic where villains each arose and fought Tracy one-by-one in a fashion largely independent of each other with no hierarchy.</li><li>Of all the villains, &quot;Numbers&quot; Norton (played by [James Tolkan][/p?id=James%20Tolkan]) was the only one created for the film.</li><li>[Dustin Hoffman][/p?id=1254] made a cameo as Mumbles as a favor for [Warren Beatty][/p?id=1991].</li><li>The make-up used for all of the villains was based directly on how they were drawn by Chester Gould in the original comic strip. The only exception was Big Boy Caprice, whose make-up was designed by [Al Pacino][/p?id=1008] himself.</li><li>During the make-up tests it was suggested that [Warren Beatty][/p?id=1991] be given the detective's famous hooked nose. But after some initial tests the make-up artists decided that it would have been a crime to hide one of the cinema's most famous faces behind putty and latex.</li><li>The backup dancers and singers supporting Breathless Mahoney ([Madonna][/p?id=Madonna]) were all skilled Broadway performers who were taught how to intentionally sing poorly for comic effect.</li><li>[Warren Beatty][/p?id=1991] originally wanted [Bob Fosse][/p?id=Bob%20Fosse] to direct, but Fosse turned him down. [Martin Scorsese][/p?id=1619] was also a fan of the comic strip and considered directing at one point, but he lost interest and chose to make [Goodfellas][/f?id=15927] (1990).</li><li>The highest-grossing film of [Warren Beatty's][/p?id=1991] career.</li><li>Earlier in pre-production, [Tim Burton][/p?id=1937] was offered the chance to direct the movie, but declined because he was already in production with [Edward Scissorhands][/f?id=13319] (1990).</li><li>[Robert De Niro][/p?id=1808] and [Jack Nicholson][/p?id=1402] were offered the role of Dick Tracy. [Nicholson][/p?id=1402] was committed to playing The Joker in [Batman][/f?id=10692] (1989), and [De Niro][/p?id=1808] refused the role for fear of being typecast as a grim, hardened tough guy similar to his Travis Bickle character in [Taxi Driver][/f?id=20058] (1976).</li><li>At one point, [John Landis][/p?id=1490] was set to direct. He hired [Jim Cash][/p?id=Jim%20Cash] and [Jack Epps Jr.][/p?id=Jack%20Epps%20Jr.] to write the screenplay. His orders to the writers were to do the screenplay for the film centered on Big Boy Caprice as the main villain, and in a 1930s atmosphere. But [Landis][/p?id=1490], after an on-set accident on [Twilight Zone: The Movie][/f?id=Twilight%20Zone%20-%20P%C3%A5%20Gr%C3%A4nsen%20Till%20Det%20Ok%C3%A4nda] (1983), left the project.</li><li>[Estelle Parsons][/p?id=Estelle%20Parsons] and [Michael J. Pollard][/p?id=1653] reunites with [Warren Beatty][/p?id=1991] 23 years after their success in [Bonnie and Clyde][/f?id=11260] (1967).</li><li>[Macaulay Culkin][/p?id=Macaulay%20Culkin] was considered for the role of kid, but turned it down as he preferred to do [Home Alone][/f?id=13431] (1990) over this film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

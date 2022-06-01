@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Djungelboken (Svenska röster) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Djungelboken (Svenska röster) <a href="#" class="grade">+++</a></h2>
+										<h3>The Jungle Book</h3>
+										<p>
+										Film från <time datetime="1967"><a href="#">1967</a></time><br>										<ul class="genres"><li><a href="#genre2">Animerat</a></li><li><a href="#genre28">Äventyr</a></li><li><a href="#genre8">Familjefilm</a></li><li><a href="#genre18">Musikal</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Martin Söderhjelm</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice">Beppe Wolgers – Björnen Baloo (röst)</li><li class="voice">Rolf Bengtsson – Björnen Baloo (röst) (sång)</li><li class="voice">Gösta Prützelius – Bagheera (röst)</li><li class="voice">Pontus Gustafsson – Mowgli (röst)</li><li class="voice">Stefan Feierbach – Mowgli (röst) (sång)</li><li class="voice">Leppe Sundevall – Kung Louie (röst)</li><li class="voice">Olof Thunberg – Shere Khan (röst)</li><li class="voice">Carl-Eric Hellström – Shere Khan (röst) (sång)</li><li class="voice">Hans Lindgren – Kaa (röst)</li><li class="voice"><a href="/svenusling/p/1061.html">Arne Källerud</a> – Överste Hathi (röst)</li><li class="voice">Hanny Schedin – Winifred (röst)</li><li class="voice">Sten Ardenstam – Akela (röst)</li><li class="voice">Tor Isedal – Rama (röst)</li><li class="voice">Ulla Neumann – Djungelflickan (röst)</li><li class="voice">Jörgen Düberg – Babyelefanten (röst)</li><li class="voice">Rolf Larsson – Apa (röst)</li><li class="voice">Sten Mattsson – Apa (röst)</li><li class="voice">Stig Grybe – Gam (röst)</li><li class="voice">Mille Schmidt – Gam (röst)</li><li class="voice">Carl-Axel Elfving – Gam (röst)</li><li class="voice">Gunnar 'Knas' Lindkvist – Gam (röst)</li><li class="voice">Lars Lennartsson – Elefant (röst)</li><li class="voice">Ulf Lindqvist – Elefant (röst)</li><li class="voice">Bert-Åke Varg – Elefant (röst)</li><li class="voice">Axel Düberg – Elefant (röst)</li><li class="voice">Guy de la Berg – Elefant (röst)</li><li class="voice">Ove Lind – Övriga roller (röst)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>WFCC Award - Worst Male Images in a Movie 2016</li><li>Golden Trailer - Best Comedy Poster 2016</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Trailer - Trashiest Trailer 2016</li><li>Golden Trailer - Trashiest Trailer 2016</li><li>Golden Trailer - Best Teaser Poster 2016</li><li>Golden Trailer - Trashiest Poster 2016</li><li>Alliance of Women Film Journalists, EDA Special Mention Award - Most Egregious Age Difference Between the Leading Man and the Love Interest 2017</li><li>Golden Trailer - Best Voice Over TV Spot 2017</li><li>Razzie Award - Sämsta film 2017</li><li>Razzie Award - Sämsta skådespelare 2017 (1808)</li><li>Razzie Award - Sämsta kvinnliga biroll 2017 (Julianne Hough)</li><li>Razzie Award - Sämsta kvinnliga biroll 2017 (Aubrey Plaza)</li><li>Razzie Award - Sämsta manus 2017</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The last film personally overseen by [Walt Disney][/p?id=1984].</li><li>Baloo the bear, Bagheera the panther, and Hathi the elephant are named after the words in Hindi for their species. Shere Khan means Tiger King.</li><li>A scene with a near-sighted, short-tempered rhinoceros named Rocky, who would encounter Baloo and Mowgli after the fall of King Louie's palace, was cut out of the script after Walt Disney figured that two comic scenes back-to-back was poor movie-making. Rocky was to be voiced by [Frank Fontaine][/p?id=Frank%20Fontaine], who recorded his lines, and animation went as far as detailed storyboards.</li><li>Walt Disney told his animation crew to &quot;throw away&quot; Rudyard Kipling's book, &quot;The Jungle Book&quot; because the original concept storyboards were too dark and dramatic. During pre-production, Disney assigned animator [Larry Clemmons][/p?id=Larry%20Clemmons] to head story development on the project. He gave [Clemmons][/p?id=Larry%20Clemmons] a copy of &quot;The Jungle Book,&quot; and told him, &quot;The first thing I want you to do is not read it.&quot;</li><li>According to Elsie Kipling Baimbridge, Rudyard Kipling's daughter, &quot;Mowgli&quot; is pronounced &quot;MAU-glee&quot;, not &quot;MOH-glee&quot;. She reportedly never forgave Walt Disney for the gaffe.</li><li>Walt Disney died during production of this film. Many people wondered at what the studio's fate would be, particularly the animation division. The film performed extremely well at the box office, ensuring that the animators would not be put out of work. Had the film failed, it is likely that animation would have been closed down at the Disney studio.</li><li>When [Gregory Peck][/p?id=1345] was the President of the Academy of Motion Pictures and Science, he tried his hardest to get a full-length animated feature film (most notably the The Jungle Book (1967)) not only nominated for Best Picture Academy Award but actually win the award. He resigned as President in 1970 when other members didn't agree with him about animated films being nominated for the award. It would be over 20 years later before the Academy would reconsider, allowing [Skönheten Och ][/f?id=Sk%C3%B6nheten%20Och%20]Odjuret[Beauty and the Beast][/f?id=] (1991) to be nominated.</li><li>Kaa the snake is a completely different character in the film than he is in the original book. In the book, he is a friend and advisor of Mowgli, and the one who rescues him from the monkeys. In the film, he is a villain bent on eating Mowgli.</li><li>Many cultural scholars (including Edward Schiappa and [Susan Miller][/p?id=Susan%20Miller] &amp; Greg Rode) have singled out the King Louie character as a particularly offensive racial stereotype (especially given the political and civil rights climates in America during the time The Jungle Book (1967) was released).</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

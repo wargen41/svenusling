@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dirty Grandpa | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dirty Grandpa <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2016"><a href="#">2016</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Dan Mazer</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1808.html">Robert De Niro</a> – Dick Kelly</li><li>Zac Efron – Jason Kelly</li><li>Zoey Deutch – Shadia</li><li>Aubrey Plaza – Lenore</li><li>Jason Mantzoukas – Tan Pam</li><li>Dermot Mulroney – David Kelly</li><li>Julianne Hough – Meredith</li><li>Jeffrey Bowyer-Chapman – Bradley</li><li>Brandon Mychal Smith – Tyrone</li><li>Jake Picking – Cody</li><li>Michael Hudson – Brah</li><li>Adam Pally – Cousin Nick</li><li>Mo Collins – Officer Finch</li><li>Henry Zebrowski – Officer Reiter</li><li><a href="/svenusling/p/1208.html">Danny Glover</a> – Stinky</li><li>Catherine Dyer – Brooke Kelly</li><li>Deena Dill – Cougar #1</li><li>Lane Carlock – Cougar #2</li><li>Chris Setticase – College Kid</li><li>Eric Goins – Father at the Beach</li><li>Gavin Munn – Boy on Beach</li><li>DeRon Horton – Georgia Student #1</li><li>Michael H. Cole – Catholic Priest</li><li>Sallye McDougald Hooks – Female Hippie Chick</li><li>Amy Parrish – Wedding Planner</li><li>Eugenia Kuzmina – Hippie Cathy</li><li>Joshua Mikel – Hippie Griz</li><li>Warren Steele – Hippie Bart</li><li>Stephanie Astalos-Jones – Rest Stop Waitress</li><li>Chandler Darby – Teenager</li><li>Matthew Cornwell – Father at Wake</li><li>Shawn Shepard – Karaoke MC</li><li>Michaele Chappell – Jamaican Nurse</li><li>Blaque Fowler – Rabbi</li><li>Nelson Bonilla – Random Cop</li><li>Amelia Brain – Party Girl</li><li>Wiley Rinaldi – Uncle Rubin</li><li>Paul Manzella – ASL Signer at Wedding</li><li>Kati Akins – Karaoke Bar Girl (uncredited)</li><li>Sean Apuzzo – Spring Breaker (uncredited)</li><li>Deanne Black – Beach Girl (uncredited)</li><li>Johnathan Blake – Restaurant Patron (uncredited)</li><li>Bradley Bowen – Hobo (uncredited)</li><li>Glenn D. Bridges – Beach-Goer (uncredited)</li><li>Nicole Broadway – Drunk Girl (uncredited)</li><li>Shaylin Broady – Spring Breaker (uncredited)</li><li>Lance Brock – Spring Breaker (uncredited)</li><li>David Brut – Precision Driver (uncredited)</li><li>Anthony Bryant – Beach Goer (uncredited)</li><li>Teo Ciltia – Spring Breaker (uncredited)</li><li>Andrew Cunningham – Hype Man (uncredited)</li><li>Alyssa D'Addieco – Funeral Patron (uncredited)</li><li>Ruth Dalton – Wedding Guest (uncredited)</li><li>Maria Diavolitsis – Wedding Brunch Server (uncredited)</li><li>Payson Durant – Car Driver (uncredited)</li><li>Heath Estep – Spring Breaker (uncredited)</li><li>Shaun Forker – Wedding Brunch Guest (uncredited)</li><li>Frank Francisco – Karaoke Bar Patron (uncredited)</li><li>Rachel Freidt – Party Goer (uncredited)</li><li>Toni Ann Gambale – Classy Spring Breaker (uncredited)</li><li>Maggie Harrison – Bridesmaid (uncredited)</li><li>James Harvley – Funeral attendee (uncredited)</li><li>Rory Healy – Wedding Guest (uncredited)</li><li>Walter Hendrix III – Funeral Patron (uncredited)</li><li>Vin Hill – Tyrone's Friend (uncredited)</li><li>Connor Hinkle – Beach Goer (uncredited)</li><li>Anniston Howell – Funeral Guest (uncredited)</li><li>Jon M Hudson – Spring Breaker (uncredited)</li><li>Carter Ian – Cop (uncredited)</li><li>Zuri James – Nice Guy (uncredited)</li><li>Andrew R. Kaplan – Uncle Larry (uncredited)</li><li>John Archer Lundgren – Assisted living resident (uncredited)</li><li>Jennifer Lynn – Spring Breaker (uncredited)</li><li>Ashley D. Merritt – Spring Break Student (uncredited)</li><li>Bill Moylan – Usher (Front of Church) (uncredited)</li><li>Brian Neal – Beach Goer (uncredited)</li><li>Michael Jamaal Nelson – Flex Off Competitor (uncredited)</li><li>Daniel Nickels – Detective (uncredited)</li><li>Natalia Nova – Springbreaker (uncredited)</li><li>Darla Pelton-Perez – Funeral Wake (uncredited)</li><li>John Phillips – Outraged Wedding Guest (uncredited)</li><li>Richard Pis – Prisoner (uncredited)</li><li>Quentin Plair – African Studies Professor (uncredited)</li><li>Zach Prengler – Spring Breaker (uncredited)</li><li>Chris Russell – Spring breaker (uncredited)</li><li>Heather Schell – Spring Breaker (uncredited)</li><li>Reuben Shaw – Tyrones Crew (uncredited)</li><li>Mark Smith – Beach-Goer / Biker / Construction Worker (uncredited)</li><li>Juanita P. Taylor – Picture Driver (uncredited)</li><li>Jordan Verroi – Groomsman (uncredited)</li><li>Ruben Vidal – Highway Precision Driver (uncredited)</li><li>Joe Warshaw – Funeral attendee (uncredited)</li><li>William Willet – Rest Stop Diner (uncredited)</li><li>Boriana Williams – Little Girl on Beach (uncredited)</li><li>Richard Williams – Beach-Goer (uncredited)</li><li>Tiree Worley – Beach bum (uncredited)</li><li>Jessica Yoshimura – Goldstein Wedding Guest (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Annie Awards, Annie - Bästa animerade kortfilm 2008</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>For the film's theatrical poster, [Robert De Niro][/p?id=1808] lifted [Zac Efron][/p?id=Zac%20Efron] on his back without any help. [Efron][/p?id=Zac%20Efron] confirmed it while promoting the film on Instagram.</li><li>The screenplay was featured in the 2011 Blacklist, a list of the &quot;most liked&quot; unmade scripts of the year.</li><li>[Aubrey Plaza][/p?id=Aubrey%20Plaza] has said that she accepted the role of Lenore because it was different from the characters she usually played, and because she wanted to engage in physical comedy.</li><li>[Robert De Niro][/p?id=1808] was not involved in the promotional circuit.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

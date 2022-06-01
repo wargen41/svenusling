@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Divergent | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Divergent <a href="#" class="grade">++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2014"><a href="#">2014</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre19">Mystik</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Neil Burger</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Shailene Woodley – Tris</li><li>Theo James – Four</li><li>Ashley Judd – Natalie</li><li>Jai Courtney – Eric</li><li>Ray Stevenson – Marcus</li><li>Zoë Kravitz – Christina</li><li>Miles Teller – Peter</li><li>Tony Goldwyn – Andrew</li><li>Ansel Elgort – Caleb</li><li>Maggie Q – Tori</li><li>Mekhi Phifer – Max</li><li><a href="/svenusling/p/1530.html">Kate Winslet</a> – Jeanine</li><li>Ben Lloyd-Hughes – Will</li><li>Christian Madsen – Al</li><li>Amy Newbold – Molly</li><li>Ben Lamb – Edward</li><li>Janet Ulrich Brooks – Erudite Teacher</li><li>Clara Burger – Little Abnegation Girl</li><li>Anthony Fleming – Guard</li><li>Ryan Carr – Dauntless Man</li><li>Alexander Hashioka Oatfield – Erudite Guard</li><li>Will Blagrove – Dauntless Patrol Man</li><li>Rotimi – Ezra</li><li>Justine Wachsberger – Lauren</li><li>Michael Gideon Sherry – Bullied Abnegation Boy</li><li>Lukas Burger – Jonathan Ziegler</li><li>Austin Lyon – Zipline #1</li><li>Renee Puente – Zipline #2</li><li>Lucas Ross – Zipline #3</li><li>Chris Hayes – Dauntless Instructor</li><li>Ana Corbi – Factionless Girl</li><li>Eric Kaldor – Factionless Man #1</li><li>Alice Bowden – Factionless Woman #2</li><li>Cleo Anthony – Dauntless Patrol #1</li><li>Alice Rietveld – Dauntless Patrol #2</li><li>Brad Greiner – Dauntless Patrol #3</li><li>Yasmine Aker – Dauntless Patrol #4</li><li>Michael James Bell – Erudite Scientist #1</li><li>Leigh Bush – Erudite Scientist #2</li><li>Bob Rumnock – Older Abnegation Man</li><li>Elyse Cole – Ten Year Old Tris</li><li>Efé – Candor Judge</li><li>Christopher Weir – Candor Lawyer</li><li>Doyle Brand – Candor Witness</li><li>Faye Jackson – Abnegation Woman</li><li>Scott Roberts – Abnegation Man</li><li>Sophia Marzocchi – Candor Attorney #2</li><li>Marc Abbink – Abnegation (uncredited)</li><li>Michele Sweeney Abrams – Factionless (uncredited)</li><li>Ken Adams – Amity Adult (uncredited)</li><li>Christine Ames – Erudite Woman (uncredited)</li><li>Caitlin Erin Anderson – Dauntless (uncredited)</li><li>Lisa Marie Austin – Adult Amity (uncredited)</li><li>Joseph Aviel – Captain - Dauntless (uncredited)</li><li>MarkAnthony Baca – Dauntless Rebel (uncredited)</li><li>Blythe Baird – Erin Quinn (uncredited)</li><li>Brian Barber – Dauntless Core (uncredited)</li><li>Kevin Wayne Berger – Abnegation (uncredited)</li><li>Stephanie J. Bertenshaw – Abnegation Teen (uncredited)</li><li>Michael T. Black – Erudite Citizen (uncredited)</li><li>Aaron Blake – Erudite Citizen (uncredited)</li><li>Jennifer Blankenship – Jeanine's Aide (uncredited)</li><li>Ben Bloom – Dauntless (uncredited)</li><li>Brandon Bowens – Dauntless (uncredited)</li><li>Stephen J. Branagan – Candor (uncredited)</li><li>Andrew Calin – Dauntless Guard (uncredited)</li><li>Matthew Campbell – Dauntless Patrol (uncredited)</li><li>Presley Cole Carlson – Young Dauntless Boy (uncredited)</li><li>Rinska Carrasco – Dauntless Core (uncredited)</li><li>Mick Cetera – Dauntless (uncredited)</li><li>Elena Chernyakova – Erudite Student (uncredited)</li><li>Roberta Chung – Dauntless (uncredited)</li><li>Patricia Urbonas Clark – Amity Farmer (uncredited)</li><li>Gemma Clarke – Dauntless Born Initiate (uncredited)</li><li>Jonathan Coffin – Dauntless Born (uncredited)</li><li>Sharon Coleman – Abnegation (uncredited)</li><li>Justine M. Constantino – Abnegation Teen (uncredited)</li><li>David Cosey – Dauntless / Amity Farmer (uncredited)</li><li>Diana Dahl – Amity Adult (uncredited)</li><li>Heidi Grace Danser – Little Girl in Brown and White Dress (uncredited)</li><li>Kate Rees Davies – Candor (uncredited)</li><li>J. Denise – Factionless (uncredited)</li><li>Jeff Dlugolecki – Amity Adult (uncredited)</li><li>Tony Domino – Amity Adult (uncredited)</li><li>Kevin Driscoll – Erudite Lab Technician (uncredited)</li><li>Marty Dubin – Dauntless-Born Initiate (uncredited)</li><li>Sherman T. Edwards Jr. – Amity (uncredited)</li><li>Hudson Ford – Abnegation Child (uncredited)</li><li>Weston Ford – Abnegation Child (uncredited)</li><li>Susie Ganiere – Amity Adult (uncredited)</li><li>Leiah Garcia – Dauntless (uncredited)</li><li>Nathan Geist – Crying Abnegation (uncredited)</li><li>Malte Grohnert – Dauntless (uncredited)</li><li>Jenny Hale – Erudite Lab Tech / Jeanine's Tea Server (uncredited)</li><li>Kathryn Henzler – Amity Woman (uncredited)</li><li>Margaret Herman – Erudite Adult (uncredited)</li><li>Jaiden Hidalgo – Abnegation Child (uncredited)</li><li>Dennis Hindman – Abnegation towns people (uncredited)</li><li>Killian Hughes – Abnegation boy (uncredited)</li><li>Emma Hutchison – Abnegation Child (uncredited)</li><li>Janell Islas – Abnegation Citizen (uncredited)</li><li>Matt Iwinski – Erudite Member (uncredited)</li><li>Terra Jackson – Erudite Teen (uncredited)</li><li>Adrienne Jane – Extra (uncredited)</li><li>Michael John – Factionless Amity (uncredited)</li><li>Ryan Browning Johnson – Erudite Adult (uncredited)</li><li>Casimere Jollette – Claire Sutron (uncredited)</li><li>Wes Jones – Dauntless Guard (uncredited)</li><li>Christopher Kahler – Dauntless (uncredited)</li><li>J. Anthony Kopec – Amity Adult (uncredited)</li><li>Caleb Kurowski – Abnegation Teen (uncredited)</li><li>Dan Latham – Amity Farmer (uncredited)</li><li>Kira Legg – Abnegation (uncredited)</li><li>Jennifer Lenius – Amity Teen (uncredited)</li><li>Adrienne Lewis – Transfer Initiate (uncredited)</li><li>Sandra Linz – Abnegation Woman (uncredited)</li><li>Erin Luboff – Amity Woman (uncredited)</li><li>Kendyl Lynch – Erudite Citizen (uncredited)</li><li>Ashley MacDonald – Dauntless (uncredited)</li><li>Evan MacHendrick – Dauntless Technician (uncredited)</li><li>Parker Mack – Sam Robertson (uncredited)</li><li>Emmanuel Manzanares – Dauntless Born (uncredited)</li><li>Tj McGinty – Amity Teen (uncredited)</li><li>Chandra Michaels – Erudite Adult (uncredited)</li><li>Mahogany Milan – Dauntless Faction (uncredited)</li><li>Jaime Mire – Myra (uncredited)</li><li>Charles D. Moisant – Amity Adult (uncredited)</li><li>Selene Montijo – Amity Faction (uncredited)</li><li>Matt Mullins – Fighter on Ring (uncredited)</li><li>Rebecca Mullins – Dauntless Member (uncredited)</li><li>Denis Mulvihill – Candor Man (uncredited)</li><li>Mary Angela Munez – Dauntless Soldier (uncredited)</li><li>Brian Neal – Erudite Student (uncredited)</li><li>Ryan Paddock – Factionless Man (uncredited)</li><li>Mackenzie Parker – Burly Dauntless (uncredited)</li><li>J.J. Perry – Bodyguard in Jeanine's Office (uncredited)</li><li>Matt Philliben – Jeanine's Bodyguard (uncredited)</li><li>Sandy Piña – Candor Teen (uncredited)</li><li>Rebecca Ray – Dark Tris (uncredited)</li><li>Asta Razma – Candor Adult (uncredited)</li><li>Elizabeth Reiners – Erudite Adult (uncredited)</li><li>Michael D. Reynolds – Dauntless (uncredited)</li><li>Emilio Rigales – Dauntless (uncredited)</li><li>Deshun Robinson – Dauntless Lieutenant (uncredited)</li><li>Michelle Roman – Dauntless Faction (uncredited)</li><li>Jaclyn Rose – Abnegation Member (uncredited)</li><li>Rich Rose – Duantless (uncredited)</li><li>Veronica Roth – Dauntless Initiate (uncredited)</li><li>Nick Rush – Dauntless Coach (uncredited)</li><li>Carrie Salter – Amity Adult (uncredited)</li><li>Bailey Schmid – Erudite Member (uncredited)</li><li>Blake Sewell – Homeless Factionless (uncredited)</li><li>Kitsy Smith – Amity Teen (uncredited)</li><li>January Stern – Dauntless Faction (uncredited)</li><li>Kyle Sudges – Amity Teen (uncredited)</li><li>Joel Thingvall – Amity Adult (uncredited)</li><li>Chris D. Thomas – Marcus' Assistant (uncredited)</li><li>Mallory Thompson – Dauntless Climber (uncredited)</li><li>Charles E Tiedje – Max's Lieutenant (uncredited)</li><li>Vince Tolentino – Abnegation Teen (uncredited)</li><li>Lucky Townley – Dauntless Lieutenant (uncredited)</li><li>Dorinda Townsend – Abnegation Council (uncredited)</li><li>Adrianadesiree Vega – Dauntless Extra (uncredited)</li><li>Sebastian Weigman – Amity Teen (uncredited)</li><li>Tiiu Wu – Candor (uncredited)</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

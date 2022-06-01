@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dimmornas Bro | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dimmornas Bro <a href="#" class="grade">++++</a></h2>
+										<h3>Waterloo Bridge</h3>
+										<p>
+										Film från <time datetime="1940"><a href="#">1940</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre15">Krig</a></li><li><a href="#genre20">Romantik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Mervyn LeRoy</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Vivien Leigh – Myra</li><li><a href="/svenusling/p/1825.html">Robert Taylor</a> – Roy Cronin</li><li>Lucile Watson – Lady Margaret Cronin</li><li>Virginia Field – Kitty</li><li>Maria Ouspenskaya – Madame Olga Kirowa</li><li>C. Aubrey Smith – The Duke</li><li>Janet Shaw – Maureen</li><li>Janet Waldo – Elsa</li><li>Steffi Duna – Lydia</li><li>Virginia Carroll – Sylvia</li><li>Leda Nicova – Marie</li><li>Florence Baker – Beatrice</li><li>Margery Manning – Mary</li><li>Frances MacInerney – Violet</li><li>Eleanor Stewart – Grace</li><li>Lowden Adams – The Duke's Butler (uncredited)</li><li>Harry Allen – Taxi Driver (uncredited)</li><li>Jimmy Aubrey – Cockney in Air-Raid Shelter (uncredited)</li><li>Phyllis Barry – Second Girl at Estate Dance (uncredited)</li><li>Colin Campbell – Groom (uncredited)</li><li>Rita Carlyle – Flower Woman on Bridge (uncredited)</li><li><a href="/svenusling/p/1577.html">Leo G. Carroll</a> – Policeman (uncredited)</li><li>David Cavendish – Generous Man at Estate Dance (uncredited)</li><li>David Clyde – Barnes - Cronin's Butler (uncredited)</li><li>Kathryn Collier – Barmaid (uncredited)</li><li class="voice">Tom Conway –  (röst) (uncredited)</li><li>Frank Dawson – Vicar's Butler (uncredited)</li><li>Connie Emerald – Waitress at Restaurant (uncredited)</li><li>Gilbert Emery – Colonel at Luncheon (uncredited)</li><li>Herbert Evans – Commissionaire (uncredited)</li><li>Maria Genardi – Dancers' Italian Mother (uncredited)</li><li>Douglas Gordon – Taxi Driver (uncredited)</li><li>Denis Green – Sergeant on Bridge (uncredited)</li><li>Ethel Griffies – Mrs. Clark - Landlady (uncredited)</li><li>Bobby Hale – Taxi Driver (uncredited)</li><li>Winifred Harris – Dowager at Estate Dance (uncredited)</li><li>Halliwell Hobbes – Vicar at St. Matthews (uncredited)</li><li>Harold Howard – Ticket Collector at Waterloo Station (uncredited)</li><li>Charles Irwin – Candlelight Club Announcer (uncredited)</li><li>Bill James – Sergeant (uncredited)</li><li>George Kirby – Waiter (uncredited)</li><li>Eric Lonsdale – Soldier at Waterloo Station (uncredited)</li><li>Wilfred Lucas – Elderly Huntsman at Estate Dance (uncredited)</li><li>Dan Maxwell – Cockney in Air-Raid Shelter (uncredited)</li><li>James May – Cockney in Air-Raid Shelter (uncredited)</li><li>Florine McKinney – Viola - First Girl at Estate Dance (uncredited)</li><li>Charles McNaughton – Mack the Waiter (uncredited)</li><li>Frank Mitchell – Father (uncredited)</li><li>Edmund Mortimer – Dance Floor Extra (uncredited)</li><li>Leonard Mudie – Thomas Parker - Roy's Driver (uncredited)</li><li>Judith Nelles – Gertrude - Tart at Waterloo Station (uncredited)</li><li>Gordon Orbell – Newsboy (uncredited)</li><li>Tempe Pigott – Cockney in Air-Raid Shelter (uncredited)</li><li>John Power – Toff's Companion (uncredited)</li><li>Elsie Prescott – Cockney in Air-Raid Shelter (uncredited)</li><li>Jean Prescott – Third Girl at Estate Dance (uncredited)</li><li>Clara Reid – Mrs. Bassett - Estate Dance (uncredited)</li><li>Fred Sassoni – Newsboy (uncredited)</li><li>Paul Scardon – Backdoor Stage Doorman (uncredited)</li><li>John Graham Spacey – British Officer at Luncheon Table (uncredited)</li><li>Wyndham Standing – Toff (uncredited)</li><li>Harry Stubbs – Proprietor of Eating House (uncredited)</li><li>William Tetley – Boy Opening Taxi Door (uncredited)</li><li>Cyril Thornton – Sergeant (uncredited)</li><li>David Thursby – First Cockney in Air-Raid Shelter (uncredited)</li><li>Norma Varden – Hostess at Restaurant (uncredited)</li><li>Pat Welsh –  (uncredited)</li><li>Martha Wentworth – Tart on Bridge at the End (uncredited)</li><li class="voice">Frank Whitbeck – Trailer Narrator (röst) (uncredited)</li><li>Eric Wilton – Head Waiter at Candlelight Club (uncredited)</li><li>Robert Winkler – Boy Delivering Flowers (uncredited)</li><li>Douglas Wood – Vicar at Estate Dance (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>Gérardmer Film Festival, Critics Award 2008 (George A. Romero)</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Rondo Hatton Classic Horror Awards, Rondo Statuette - Bästa film 2008 (George A. Romero)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Of her films, this was [Vivien Leigh's][/p?id=Vivien%20Leigh] personal favorite.</li><li>This was [Robert Taylor's][/p?id=1825] favorite of his films.</li><li>The scene in which Myra and Roy dance to &quot;Auld Lang Syne&quot; was supposed to have dialogue, but nobody could come up with the right words. At about 3:00 in the morning before shooting the scene was to take place, [Mervyn LeRoy][/p?id=Mervyn%20LeRoy], a veteran of silent films, realized that there shouldn't be any lines and that the images should speak for themselves. The result is the most celebrated scene of the film.</li><li>Released a few months after the invasion of Poland, and in the middle of the Blitzkrieg, this is likely the earliest Hollywood film to include the Second World War in its plot.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

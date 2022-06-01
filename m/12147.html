@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dinocroc VS Supergator | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Dinocroc VS Supergator <a href="#" class="grade">+</a></h2>
+										<h3>Dinocroc vs. Supergator</h3>
+										<p>
+										Film från <time datetime="2010"><a href="#">2010</a></time><br>										<ul class="genres"><li><a href="#genre22">Skräck</a></li><li><a href="#genre21">Sci-fi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Jim Wynorski</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1213.html">David Carradine</a> – Jason Drake</li><li>Rib Hillis – The Cajun</li><li>Amy Rasimas Holt – Cassidy Swanson</li><li>John Callahan – Charlie Swanson</li><li>Corey Landis – Paul Beaumont</li><li>Lisa Clapperton – Victoria</li><li>James C. Burns – FBI Agent</li><li>Delia Sheppard – Kimberly Taft</li><li>Jeff Rector – Stewart Taft</li><li>Eddie Spivak – Bruce</li><li>Jenny Robinson – Girl at Beach</li><li>Carrie Stevens – Drake's Nurse</li><li>Michael Bernardi – Chaz Kingsley</li><li>Aurelia Scheppers – Chaz' Girl #1</li><li>Brandi Williams – Chaz' Girl #2</li><li>Adrian Alvarado – Lerner</li><li>Terrill Hardaway – Mercenary Leader</li><li>Matt Riggle – Monroe</li><li>Travis Richey – Marsden</li><li>Ryan Satin – Patterson</li><li>Eduardo Rojas – Weeks</li><li>Michael Swan – Delirious Scientist</li><li>Bryan Hanna – Bouncer Guard</li><li>Roy Schwaede – Doctor</li><li>Paula Schwaede – Night Nurse</li><li>Jason Schwaede – Scientist</li><li>Ashley Murphy – Poolside Girl #1</li><li>Katy Magnuson – Poolside Girl #2</li><li>Victor Macias – Creep At Pool</li><li>Jerry Hess – Concierge</li><li>Brooks Kephart – Reese Hammond</li><li>Bob Bean – Zack Taylor</li><li>Jim Wynorski – Roy Jensen</li><li>Malcolm Rodriguez – Ethan Cooms</li><li>Samantha Manson – Agent Conrad</li><li>Tamie Sheffield – Tour Guide</li><li>Bam Bam – Bus Driver</li><li>Poppy Shell – Elvis Fan</li><li>Bob Meyer – Tourist Companion</li><li>Alex Morrow – Young Man Tourist 1</li><li>Chris King – Young Man Tourist 2</li><li>Irina De Grancy – Background Scientist</li><li>Mary Szudy – Background Scientist</li><li>Orit Shuckroon – Background Scientist</li><li>Bobby Baron – Background Scientist</li><li>Emeka Ndukwe – Background Scientist</li><li>Gerald Jenkinson – Background Scientist</li><li>Herbert Becher – Background Scientist</li><li>Jeff Fukushima – Background Scientist</li><li>John White – Background Scientist</li><li>Michael Edelstein – Background Scientist</li><li>Paul Levenhagen – Background Scientist</li><li>Reuben Tafoya – Background Scientist</li><li>Shane Schoeppner – Scientist - Kill #2</li><li>Spencer Douglas – Background Scientist</li><li>Timur Suk – Background Scientist</li><li>Steve Silverie – Lane (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BMI Film Music Award 2003 (David Arnold)</li><li>Empire Award - Bästa nykomling 2003 (Rosamund Pike)</li><li>Image Award - Bästa kvinnliga biroll 2003 (Halle Berry)</li><li>Razzie Award - Sämsta kvinnliga biroll 2003 (Madonna)</li><li>Taurus Award - Best Overall Stunt by a Stunt Woman (Two stunt women fight on an airplane that is about to crash. This fight uses multiple swords and weapons, as well as acrobatic and martial arts moves.) 2003</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Golden Globe - Bästa originalsång (For the song "Die Another Day".) 2003</li><li>Saturn Award - Bästa Action/Adventure/Thriller Film 2003</li><li>Saturn Award - Bästa skådespelare 2003 (1760)</li><li>Saturn Award - Bästa manliga biroll 2003 (Toby Stephens)</li><li>Saturn Award - Bästa kvinnliga biroll 2003 (Halle Berry)</li><li>Academy of Science Fiction, Fantasy & Horror Films, Cinescape Genre Face of the Future Award - Kvinna 2003 (Rosamund Pike)</li><li>Black Reel - Bästa kvinnliga biroll 2003 (Halle Berry)</li><li>Empire Award - Bästa film 2003</li><li>Empire Award - Bästa skådespelerska 2003 (Halle Berry)</li><li>Empire Award - Årets scen (For the sword fight.) 2003</li><li>Hollywood Makeup Artist and Hair Stylist Guild Award - Best Contemporary Hair Styling - Feature 2003</li><li>Blimp Award - Favorite Movie Actress 2003 (Halle Berry)</li><li>Blimp Award - Favorite Female Butt Kicker 2003 (Halle Berry)</li><li>MTV Movie Award - Bästa skådespelerska 2003 (Halle Berry)</li><li>Golden Reel Award - Best Sound Editing in Foreign Features 2003</li><li>PFCS Award - Bästa originalsång (For the song "Die Another Day".) 2003</li><li>Razzie Award - Sämsta originalsång (For the song "Die Another Day".) 2003</li><li>Golden Satellite Award - Bästa originalsång (For the song "Die Another Day".) 2003</li><li>Teen Choice Award - Choice Movie Actress - Drama/Action Adventure 2003 (Halle Berry)</li><li>VES Award - Best Models and Miniatures in a Motion Picture 2003</li><li>VES Award - Best Special Effects in a Motion Picture 2003</li><li>Taurus Award - Best Fight (Two stunt men fight using swords throughout a palace. Fight includes the use of different swords starting with epees and progresses to samurai and broad swords showing the different application for each weapon.) 2003</li><li>Taurus Award - Best Specialty Stunt (Three surfers ride large waves, crossing each other on the face of the wave and moving closely together, as they make their way to the beach.) 2003</li><li>Taurus Award - Best Stunt Coordinator and/or 2nd Unit Director: Feature 2003</li><li>Taurus Award - Best Work With a Vehicle (Stunt drivers chase each other through a melting building made entirely of ice and on a frozen tundra. Machine guns and explosives are fired at each car as they make their way around the palace and crash into walls and drive around pools of water. One car is flipped on its hood and skids along the ice.) 2003</li><li>Taurus Award - Best Work With a Vehicle (Stunt men drive hovercrafts around a mine field while shooting at each other. Hovercrafts are blown up, flipped and glide over fire and muddy pools. Two stunt men also fight on the moving vehicles. The chase ends when the vehicles crash over a cliff, into a pool of water.) 2003</li><li>Golden Satellite Award - Best Classic DVD Release (For "The James Bond DVD Collection", volumes 2 & 3.) 2004</li><li>Razzie Award - Årtiondets sämsta skådespelerska 2010 (Madonna)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[David Carradine][/p?id=1213] only worked for one day.</li><li>Director [Jim Wynorski][/p?id=Jim%20Wynorski] broke his arm during the making of this film when he fell out of a helicopter.</li><li>One of [David Carradine's][/p?id=1213] last movies.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

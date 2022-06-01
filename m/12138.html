@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Die Hard - Hämningslöst | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Die Hard - Hämningslöst <a href="#" class="grade">+++</a></h2>
+										<h3>Die Hard - With A Vengeance</h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John McTiernan</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1117.html">Bruce Willis</a> – John McClane</li><li><a href="/svenusling/p/1451.html">Jeremy Irons</a> – Simon Gruber</li><li><a href="/svenusling/p/1856.html">Samuel L. Jackson</a> – Zeus Carver</li><li>Graham Greene – Joe Lambert</li><li><a href="/svenusling/p/1188.html">Colleen Camp</a> – Connie Kowalski</li><li>Larry Bryggman – Insp. Walter Cobb</li><li>Anthony Peck – Ricky Walsh</li><li>Nicholas Wyman – Mathias Targo</li><li>Sam Phillips – Katya</li><li>Kevin Chamberlin – Charles Weiss</li><li>Sharon Washington – Officer Jane</li><li>Stephen Pearlman – Dr. Fred Schiller</li><li>Michael Alexander Jackson – Dexter</li><li>Aldis Hodge – Raymond</li><li>Mischa Hausserman – Mischa</li><li>Edwin Hodge – Dexter's Friend</li><li>Robert Sedgwick – Rolf</li><li>Tony Halme – Roman</li><li>Bill Christ – Ivan</li><li>Anthony Thomas – Gang Member #1</li><li>Glenn Herman – Gang Member #2</li><li>Kent Faulcon – Gang Member #3</li><li>Akili Prince – Gang Member #4</li><li>Ardie Fuqua – Gang Member #5</li><li>Mike Jefferson – Gang Member #6</li><li>Andre Ware – Gang Member #7</li><li>Michael Lee Merrins – Van Driver</li><li>Birdie M. Hale – Harlem Woman</li><li>Daryl Edwards – Livery Driver</li><li>Barbara Hipkiss – Phone Woman</li><li>Aasif Mandvi – Arab Cabbie</li><li>William Kux – Businessman in Taxi</li><li>Scott Nicholson – Transit Cop</li><li>Ralph Buckley – Businessman at Station</li><li>Charles Dumas – FBI Agent Andy Cross</li><li>Michael Cristofer – Bill Jarvis, from Another Organization</li><li>Phyllis Yvonne Stickney – Wanda Shepard</li><li>J.R. Horne – Sgt. John Turley</li><li>Michael Tadross – Greek Deli Proprietor</li><li>Elvis Duran – Radio D.J.</li><li>John McTiernan Sr. – Fisherman</li><li>Greg A. Skoric – Kurt</li><li>Sven Toorvald – Karl</li><li>Todd A. Langenfeld – Berndt</li><li>Timothy Adams – Gunther</li><li>John C. Vennema – Felix Little</li><li>Gerrit Vooren – Nils</li><li>Willis Sparks – Klaus</li><li>Tony Travis – Marshal #1</li><li>Danny Dutton – Marshal #2</li><li>James Saito – Korean Proprietor</li><li>Patrick Borriello – Kid #1</li><li>Víctor Rojas – Kid #2</li><li>Jeffrey Dreisbach – Yuppie Stockbroker</li><li>Joe Zaloom – Jerry Parks</li><li>John Doman – Foreman</li><li>Patricia Mauceri – Miss Thomas</li><li>Franchelle Stewart Dorn – Principal Martinez</li><li>Kharisma – Little Tina</li><li>Gerry Becker – Larry Griffith</li><li>Richard Council – Otto</li><li>John Robert Tillotson – Broker #2</li><li>Ray Aranha – Janitor</li><li>Phil Theis – Erik</li><li>Flip – Subway Man</li><li>Dory Binyon – Reporter</li><li>David Vitt – Kid at Gas Station</li><li>John Hoyt – Federal Reserve Guard #1</li><li>Bray Poor – Federal Reserve Guard #2</li><li>Shari-Lyn Safir – Secretary</li><li>Ivan Skoric – Villain A</li><li>Faisal Hassan – FBI Agent</li><li>Richard Russell Ramos – FBI Chief</li><li>Angela Amato – Cop #1</li><li>Richard V. Allen – Chief Allen</li><li>Shirley J. Hatcher – Cop #2</li><li>David P. Martin – Federal Reserve Guard #3</li><li>James Patrick Whalen Sr. – Fat Larry Lumis</li><li>Paul Simon – Man in Precinct</li><li>Carl Brewer – Helicopter Villain</li><li>Steve Altes – Gang Member #9 (uncredited)</li><li>Tony Brubaker – Man at Subway Station (uncredited)</li><li>Vernon Campbell – Large Gang Member (uncredited)</li><li>Dick Cheney – Police Official (uncredited)</li><li>Dick Durock – Man at Subway Station (uncredited)</li><li>Jeannie Epper – Woman at Subway Station (uncredited)</li><li>Anibal O. Lleras – Train Passenger (uncredited)</li><li>Michael Luggio – Teacher (uncredited)</li><li><a href="/svenusling/p/1012.html">Alan Rickman</a> – Hans Gruber (uncredited|archive footage)</li><li>David Sontag – Biker (uncredited)</li><li>Alex Thaler – Background Actor (uncredited)</li><li>Don Vasicek –  (uncredited)</li><li>Ralph A. Villani – Bomb Squad Detective (uncredited)</li><li>Don Wallace – Gang Member #8 (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Originally titled &quot;Simon Says&quot; (where Zeus was scripted as a woman) and was considered as the third sequel to [Lethal Weapon][/f?id=13287] (1987).</li><li>The sandwich board that [Bruce Willis][/p?id=1117] wore while filming in Harlem said &quot;I hate everyone&quot; rather than the more racist version that appears in the film. The sign was changed with CGI in post-production to read &quot;I Hate Niggers&quot;, though the &quot;I hate everyone&quot; version is used for some television broadcasts of the film.</li><li>The sex scene between [Jeremy Irons][/p?id=1451] and [Sam Phillips][/p?id=Sam%20Phillips] was added in at the last minute because [John McTiernan][/p?id=John%20McTiernan] knew that the film would get an R rating and he might as well put a sex scene in.</li><li>Although he wasn't hired for the film, [Alan Rickman][/p?id=1012] is still credited as playing Hans Gruber (in McClane's flashback).</li><li>[Laurence Fishburne][/p?id=1567] was the original choice to play Zeus Carver, but turned down the part. When he reconsidered the decision, [Samuel L. Jackson][/p?id=1856] was already cast.</li><li>[Jeremy Irons][/p?id=1451] replaced [David Thewlis][/p?id=1227].</li><li>[Sean Connery][/p?id=1866] was [John McTiernan's][/p?id=John%20McTiernan] very first choice for the role of Simon Gruber. He turned down the role, saying that he didn't want to play such a diabolical villain.</li><li>Although [Bruce Willis][/p?id=1117] and [Samuel L. Jackson][/p?id=1856] had both appeared in [Loaded Weapon 1][/f?id=15607] (1993) and [Pulp Fiction][/f?id=17549] (1994), this is the first movie where the two appear on-screen together.</li><li>The only &quot;[Die Hard][/f?id=12136]&quot; movie based on an original screenplay. The first [Die Hard][/f?id=12136] (1988) is based on the novel by 'Roderick Thorpe', [Die Hard 2][/f?id=12137] (1990) is based on a novel by Walter Wager and [Die Hard 4.0][/f?id=12139] (2007) is based on an article by [John Carlin][/p?id=John%20Carlin].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

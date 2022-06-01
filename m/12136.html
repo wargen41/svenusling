@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Die Hard | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Die Hard <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1988"><a href="#">1988</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre12">Kriminalare</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>John McTiernan</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1117.html">Bruce Willis</a> – Officer John McClane</li><li><a href="/svenusling/p/1012.html">Alan Rickman</a> – Hans Gruber</li><li>Bonnie Bedelia – Holly Gennaro McClane</li><li>Alexander Godunov – Karl</li><li><a href="/svenusling/p/1773.html">Reginald VelJohnson</a> – Sgt. Al Powell</li><li>William Atherton – Richard Thornburg</li><li>Paul Gleason – Deputy Police Chief Dwayne T. Robinson</li><li>Hart Bochner – Harry Ellis</li><li>James Shigeta – Joseph Yoshinobu Takagi</li><li>Andreas Wisniewski – Tony</li><li>Clarence Gilyard Jr. – Theo</li><li>De'voreaux White – Argyle</li><li>Dennis Hayden – Eddie</li><li>Bruno Doyon – Franco</li><li>Joey Plewa – Alexander</li><li>Lorenzo Caccialanza – Marco</li><li>Gérard Bonn – Kristoff</li><li>Al Leong – Uli</li><li>Gary Roberts – Heinrich</li><li>Hans Buhringer – Fritz</li><li>Wilhelm von Homburg – James</li><li><a href="/svenusling/p/1807.html">Robert Davi</a> – FBI Special Agent Big Johnson</li><li>Grand L. Bush – FBI Agent Little Johnson</li><li>Bill Marcus – City Engineer</li><li><a href="/svenusling/p/1794.html">Rick Ducommun</a> – Walt, City Worker</li><li>Matt Landers – Capt. Mitchell</li><li>Carmine Zozzora – Rivers</li><li>Dustyn Taylor – Ginny</li><li>George Christy – Dr. Hasseldorf</li><li>Anthony Peck – Young Cop</li><li>Cheryl Baker – Woman</li><li>Richard Parker – Man</li><li>David Ursin – Harvey Johnson</li><li>Mary Ellen Trainor – Gail Wallens</li><li>Diana James – Police Supervisor</li><li>Shelley Pogoda – Dispatcher</li><li>Selma Archerd – Hostage</li><li>Scot Bennett – Hostage</li><li>Rebecca Broussard – Hostage</li><li>Kate Finlayson – Hostage</li><li>Shanna Higgins – Hostage</li><li>Kym Malin – Hostage</li><li>Taylor Fry – Lucy McClane</li><li>Noah Land – John McClane Jr.</li><li>Betty Carvalho – Paulina</li><li>Kip Waldo – Convenience Store Clerk</li><li>Mark Goldstein – Station Manager</li><li>Tracy Reiner – Thornburg's Assistant</li><li>Rick Cicetti – Guard</li><li>Fred Lerner – Guard</li><li>Bill Margolin – Producer</li><li>Bob Jennings – Cameraman</li><li>Bruce P. Schultz – Cameraman</li><li>David Katz – Soundman</li><li>Robert Lesser – Businessman</li><li>Stella Hall – Stewardess</li><li>Terri Lynn Doss – Girl at Airport</li><li>Jon E. Greene – Boy at Airport</li><li>P. Randall Bowers – Kissing Man</li><li>Michele Laybourn – Girl in Window</li><li>Rick Bross – Cameraman (uncredited)</li><li>Charlie Picerni – Dwayne T. Robinson's Driver (uncredited)</li><li>Gary Pinkston – Hostage (uncredited)</li><li>Dean Rubin – Stunt man (uncredited)</li><li>Mark Winn – Police Detective (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The scene in which Gruber and McClane meet was inserted in to the script after [Alan Rickman][/p?id=1012] (Hans Gruber) was found to be proficient at mimicking American accents. The filmmakers had been looking for a way to have the two characters meet prior to the climax and capitalized on [Rickman's][/p?id=1012] talent.</li><li>The original poster for the film did not feature [Bruce Willis][/p?id=1117] likeness, just the building. The producers originally thought it might deter non-[Willis][/p?id=1117] fans from seeing the movie. Posters were later altered after the early box office success.</li><li>[Alan Rickman's][/p?id=1012] feature film debut.</li><li>[Bruce Willis][/p?id=1117] received a then unheard of $5 million, a fee that was OK'd by Rupert Murdoch. Bruce and [Demi Moore][/p?id=1235] tied the knot at the Golden Nugget hotel in Las Vegas during this shoot, [Moore][/p?id=1235] having recently broken her engagement to actor [Emilio Estevez][/p?id=1278]. [Little Richard][/p?id=Little%20Richard] presided over the ceremony and former brat packer [Ally Sheedy][/p?id=Ally%20Sheedy] was a bridesmaid.</li><li>[Richard Gere][/p?id=1787] was considered for the role of John McClane.</li><li>[Don Johnson][/p?id=Don%20Johnson] and [Richard Dean Anderson][/p?id=1784], both established action stars in television, were considered for the role of John McClane.</li><li>The scene where McClane falls down a shaft was a mistake by the stuntman, who was supposed to grab the first vent, as it originally was planned. He slipped and continued to fall, but the shot was used anyway; it was edited together with one where McClane grabs the next vent down as he falls.</li><li>Director [John McTiernan][/p?id=John%20McTiernan] found it necessary to smash cut away from Hans Gruber's face whenever he fired a gun, because of [Alan Rickman's][/p?id=1012] uncontrollable habit of flinching from the noise and muzzle flash. If you look at [Rickman's][/p?id=1012] face when he shoots Takagi, you can see him wincing.</li><li>It is often said that [Bruce Willis's][/p?id=1117] lines during the scene when he pulls the glass out of his feet were ad-libbed. Indeed, it is said that upon learning this, [Terry Gilliam][/p?id=1926] cast [Willis][/p?id=1117] as the lead in [Twelve Monkeys][/f?id=20685] (1995). However when comparing the original script, it appears that [Willis][/p?id=1117] only veered very slightly from the original written dialog.</li><li>[Bruce Willis][/p?id=1117] was the sixth choice for the main character. It originally went to [Arnold Schwarzenegger][/p?id=1062], then [Sylvester Stallone][/p?id=1915], then [Burt Reynolds][/p?id=1121], then [Richard Gere][/p?id=1787], then [Harrison Ford][/p?id=1358], then [Mel Gibson][/p?id=1635] before [Willis][/p?id=1117] got it.</li><li>[Bruce Willis][/p?id=1117] personally recommended [Bonnie Bedelia][/p?id=Bonnie%20Bedelia] for the role of his estranged wife.</li><li>The scene where [Bruce Willis][/p?id=1117] and [Alan Rickman][/p?id=1012] meet up was unrehearsed to create a greater feeling of spontaneity between the two actors.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
