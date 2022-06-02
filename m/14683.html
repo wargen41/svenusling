@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hot Fuzz | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Hot Fuzz <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="2007"><a href="#">2007</a></time><br>										<ul class="genres"><li><a href="#genre1">Action</a></li><li><a href="#genre13">Komedi</a></li><li><a href="#genre19">Mystik</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Edgar Wright</li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1884.html">Simon Pegg</a> – Nicholas Angel</li><li>Martin Freeman – Met Sergeant</li><li><a href="/svenusling/p/1082.html">Bill Nighy</a> – Met Chief Inspector</li><li>Robert Popper – 'Not' Janine</li><li>Joe Cornish – Bob</li><li>Chris Waitt – Dave</li><li>Eric Mason – Bernard Cooper</li><li>Billie Whitelaw – Joyce Cooper</li><li>Nick Frost – PC Danny Butterman</li><li>Peter Wight – Roy Porter</li><li>Julia Deakin – Mary Porter</li><li>Tom Strode Walton – Underage Drinker #1</li><li>Troy Woollan – Underage Drinker #2</li><li>Rory Lowings – Underage Drinker #3</li><li>Bill Bailey – Sergeant Turner</li><li>Paul Freeman – Rev. Philip Shooter</li><li>Trevor Nichols – Greg Prosser</li><li>Elizabeth Elvin – Sheree Prosser</li><li><a href="/svenusling/p/1910.html">Stuart Wilson</a> – Dr. Robin Hatcher</li><li>Lorraine Hilton – Amanda Paver</li><li>Kevin Wilson – Butcher Brother</li><li>Nicholas Wilson – Butcher Brother</li><li><a href="/svenusling/p/1944.html">Timothy Dalton</a> – Simon Skinner</li><li><a href="/svenusling/p/1459.html">Jim Broadbent</a> – Inspector Frank Butterman</li><li>Paddy Considine – DS Andy Wainwright</li><li>Rafe Spall – DC Andy Cartwright</li><li>Kevin Eldon – Sergeant Tony Fisher</li><li>Karl Johnson – PC Bob Walker</li><li>Sampson – Saxon</li><li><a href="/svenusling/p/1706.html">Olivia Colman</a> – PC Doris Thatcher</li><li>Edward Woodward – Tom Weaver</li><li>Graham Low – The Living Statue</li><li>Patricia Franklin – Annette Roper</li><li>Anne Reid – Leslie Tiller</li><li><a href="/svenusling/p/1541.html">Kenneth Cranham</a> – James Reaper</li><li>Adam Buxton – Tim Messenger</li><li>Stephen Merchant – Peter Ian Staker</li><li>Elvis – The Swan</li><li>Tim Barlow – Mr. Treacher</li><li>Ben McKay – Peter Cocker</li><li>Rory McCann – Michael Armstrong</li><li>Alice Lowe – Tina</li><li>Ron Cook – George Merchant</li><li>David Threlfall – Martin Blower</li><li>Lucy Punch – Eve Draper</li><li>David Bradley – Arthur Webley</li><li>Colin Michael Carmichael – Heston Services Clerk</li><li>Maria Charles – Mrs. Reaper</li><li>Alexander King – Aaron A. Aaronson</li><li><a href="/svenusling/p/1137.html">Cate Blanchett</a> – Janine (uncredited)</li><li><a href="/svenusling/p/1901.html">Steve Coogan</a> – Metropolitan Police Inspector (uncredited)</li><li>David William James Elliott – Wesker Policeman (uncredited)</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Thief Dressed as Santa (uncredited)</li><li>Garth Jennings – Crack Addict (uncredited)</li><li>Joseph McManners – Gabriel (uncredited)</li><li>Joel Stubbs – The Black Cloaked Figure (uncredited)</li><li>Peter Wild – Village of The Year Judge (uncredited)</li><li>Edgar Wright – Shelf Stacker / Voice of Dave (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>[Simon Pegg][/p?id=1884] had weapons training in preparation for his role as Nick Angel, and also learned how to skid a bicycle properly along the way.</li><li>[Nick Frost][/p?id=Nick%20Frost] is in fact a West Ham fan and apparently hated wearing the Bristol Rovers shirt.</li><li>The judges for the Best Kept Village competition near the end of the film are played by Peter Wild and the mothers of [Edgar Wright][/p?id=Edgar%20Wright] and [Simon Pegg][/p?id=1884].</li><li>Although [Bill Bailey][/p?id=Bill%20Bailey] plays two different Sergeant Turners they both wear a uniform with service number 101 - even when they are appearing in the same scene.</li><li>[Nick Frost][/p?id=Nick%20Frost] got so attached to his Winchester shotgun during filming he named it &quot;Emma&quot;.</li><li>[Simon Pegg][/p?id=1884] also became attached to his Mossberg shotgun and named it &quot;Sarah&quot;.</li><li>When in costume [Nick Frost][/p?id=Nick%20Frost] and [Simon Pegg][/p?id=1884] often were assumed to be police officers. Many strangers asked them for directions and instead of telling the truth they went along with it. They claimed it made them feel powerful.</li><li>In their DVD commentary, [Edgar Wright][/p?id=Edgar%20Wright] and [Simon Pegg][/p?id=1884] revealed that they fully expected the intentional misspellings of newspaper headlines to turn up in the IMDb's 'Goofs' section.</li><li>In the scene where [Timothy Dalton][/p?id=1944] raises his glass to the &quot;memory&quot; of Eve and Martin, [Dalton][/p?id=1944] very briefly looks into the camera. Director [Edgar Wright][/p?id=Edgar%20Wright] liked it so much he synchronized the sound of a cash register &quot;ching&quot; at the same time.</li><li>At a Q&amp;A session following a screening of the film in Newcastle-Upon-Tyne, [Edgar Wright][/p?id=Edgar%20Wright] revealed that the film featured disguised cameos by two Oscar winners: [Cate Blanchett][/p?id=1137] and [Peter Jackson][/p?id=1744]. [Jackson][/p?id=1744] appears as the Santa Claus who stabs Nick Angel through the hand during the opening montage, and [Blanchett][/p?id=1137] appears masked as Angel's ex-girlfriend who is a Scene of Crime Officer (SOCO), which is the Metropolitan Police's term for an officer who collects and processes forensic evidence at the scene of a crime (roughly analogous to a CSI).</li><li>According to the director, actor [Paddy Considine][/p?id=Paddy%20Considine] sneaked two [Robert De Niro][/p?id=1808] impressions into the movie, the first a facial mug in the incident room during Angel's &quot;Murder rant&quot;, the second during the final stand off in the pub.</li><li>When wearing his Reverend's costume, [Paul Freeman][/p?id=Paul%20Freeman] was approached many times by strangers assuming he was from the cathedral.</li><li>[Jim Broadbent][/p?id=1459] was a big fan of [Pegg][/p?id=1884] and [Wright's][/p?id=Edgar%20Wright] Shaun of the Dead and asked them for a role in their next film. They wrote the part of Inspector Butterman for him.</li><li>Danny's DVD collection is made up of the entire combined collection of director [Edgar Wright][/p?id=Edgar%20Wright], his brother Oscar [Wright][/p?id=Edgar%20Wright] and his friend [Joe Cornish][/p?id=Joe%20Cornish].</li><li>In the script, Frank's wife's name was Iris, but since [Jim Broadbent][/p?id=1459] had recently won an Oscar for playing the husband of a woman named Iris in Iris, he thought viewers might see it as a reference to that, so he asked for her name to be changed, which it was - to Irene.</li><li>The filming of Angel and Skinner's first meeting at the supermarket was filmed over the course of two days. The conversation was filmed entirely from [Timothy Dalton's][/p?id=1944] perspective first. The next day, early in the morning, they were to film the conversation with Angel's perspective and close-ups. [Dalton][/p?id=1944], much to the surprise of the crew, showed up early the next morning, and even though he wasn't going to be on camera for that particular portion of the filming, he sat off-camera in Skinner's chair and played the role so that [Simon Pegg][/p?id=1884] would be able to have him to work with while filming his part as Angel. [Pegg][/p?id=1884] stated it really showed [Dalton's][/p?id=1944] professionalism.</li><li>[Timothy Dalton][/p?id=1944] has said this film, particularly the sequence where Skinner and Angel are shooting at each other during the chase, was the most fun he's ever had on a film. [Jim Broadbent][/p?id=1459] stated it was a thrill for him to be driving &quot;James Bond&quot; around during that sequence. [Simon Pegg][/p?id=1884] also stated the sequence and the fistfight between Angel and Skinner was the same type of thrill for him to shoot, staying it was very much in the front of his mind that he was being shot at, and fighting with &quot;James Bond&quot;.</li><li>[Edgar Wright][/p?id=Edgar%20Wright] said that the role of Simon Skinner was written with [Timothy Dalton][/p?id=1944] in mind, so they were thrilled when he signed on to play the character. [Simon Pegg][/p?id=1884] says that he and [Wright][/p?id=Edgar%20Wright] shared a thumbs-up when [Dalton][/p?id=1944] first played the character in the read-through, as they both knew they'd gotten the perfect person for the part.</li><li>The second in [Simon Pegg's][/p?id=1884] and [Edgar Wright's][/p?id=Edgar%20Wright] unofficial &quot;Blood and Ice Cream&quot; trilogy. The first was [Shaun Of The Dead][/f?id=18286], and the third is called &quot;The World's End&quot;.</li><li>[Nick Frost][/p?id=Nick%20Frost] only agreed to do the film if he could get to name his character. He was also asked to watch over 20 action films to warm up for the role. He only watched one, [Bad Boys II][/f?id=10653].</li><li>[Cate Blanchett][/p?id=1137] was given a cameo because she's a huge fan of [Shaun Of The Dead][/f?id=18286].</li><li>[Simon Pegg][/p?id=1884] and [Edgar Wright][/p?id=Edgar%20Wright] spent 18 months writing the script.</li><li>[Shane Black][/p?id=Shane%20Black], a veteran scriptwriter of action films thought very highly of [Hot Fuzz][/f?id=14683].</li><li>After the huge success of Shaun of the Dead, [Simon Pegg][/p?id=1884] and [Edgar Wright][/p?id=Edgar%20Wright] were given free rein to do whatever they wanted on their next film.</li><li>Several members of the cast have appeared in the rebooted [Doctor Who (2005)][/f?id=12765] series. [Simon Pegg][/p?id=1884], [Bill Nighy][/p?id=1082], [Timothy Dalton][/p?id=1944], [Olivia Colman][/p?id=1706] and [Bill Bailey][/p?id=Bill%20Bailey].</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

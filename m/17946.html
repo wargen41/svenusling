@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sagan Om De Två Tornen (förlängd) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Sagan Om De Två Tornen (förlängd) <a href="#" class="grade">+++++</a></h2>
+										<h3>The Lord Of The Rings: The Two Towers (Extended edition)</h3>
+										<p>
+										Film från <time datetime="2003"><a href="#">2003</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Bruce Allpress – Aldor</li><li><a href="/svenusling/p/1864.html">Sean Astin</a> – Sam</li><li>John Bach – Madril</li><li>Sala Baker – Man Flesh Uruk</li><li><a href="/svenusling/p/1137.html">Cate Blanchett</a> – Galadriel</li><li><a href="/svenusling/p/1710.html">Orlando Bloom</a> – Legolas</li><li>Billy Boyd – Pippin</li><li>Jed Brophy – Sharku / Snaga</li><li>Sam Comery – Eothain</li><li>Brad Dourif – Wormtongue</li><li>Calum Gittins – Haleth</li><li>Bernard Hill – Theoden</li><li>Bruce Hopkins – Gamling</li><li>Paris Howe Strewe – Theodred</li><li><a href="/svenusling/p/1169.html">Christopher Lee</a> – Saruman</li><li>Nathaniel Lees – Ugluk</li><li>John Leigh – Háma</li><li>Robbie Magasiva – Mauhur</li><li>Robyn Malcolm – Morwen</li><li><a href="/svenusling/p/1387.html">Ian McKellen</a> – Gandalf</li><li>Dominic Monaghan – Merry</li><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Aragorn</li><li>Miranda Otto – Eowyn</li><li>Craig Parker – Haldir</li><li>Bruce Phillips – Rohan Soldier</li><li>Robert Pollock – Mordor Orc</li><li><a href="/svenusling/p/1497.html">John Rhys-Davies</a> – Gimli / Voice of Treebeard</li><li><a href="/svenusling/p/1039.html">Andy Serkis</a> – Gollum</li><li>Olivia Tennet – Freda</li><li>Ray Trickitt – Bereg</li><li>Liv Tyler – Arwen</li><li><a href="/svenusling/p/1527.html">Karl Urban</a> – Eomer</li><li>Stephen Ure – Grishnakh</li><li><a href="/svenusling/p/1381.html">Hugo Weaving</a> – Elrond</li><li><a href="/svenusling/p/1229.html">David Wenham</a> – Faramir</li><li><a href="/svenusling/p/1272.html">Elijah Wood</a> – Frodo</li><li>Victoria Beynon-Cole – Hero Orc</li><li>Lee Hartley – Hero Orc</li><li>Phil Grieve – Hero Orc</li><li>Billy Jackson – Cute Rohan Refugee Child</li><li>Katie Jackson – Cute Rohan Refugee Child</li><li><a href="/svenusling/p/1865.html">Sean Bean</a> – Boromir (extended edition)</li><li>Phillip Spencer Harris – Ranger 1 (extended edition)</li><li>Timothy Lee – Wildman (extended edition)</li><li>John Noble – Denethor (extended edition)</li><li>Richard Alexander – Uruk-hai (uncredited)</li><li>Geoff Allen – Gondorian Soldier / Orc / Rohan Soldier / Uruk-hai (uncredited)</li><li>Frazer Anderson – Orc / Ranger (uncredited)</li><li>Daniel Andrews – Gondorian Soldier / Orc / Uruk-hai (uncredited)</li><li>Ben Barrington – Gondorian Soldier / Ranger / Orc (uncredited)</li><li>Jarl Benzon – Elven Warrior / Rohan Stable Boy (uncredited)</li><li>Jørn Benzon – Elven Warrior (uncredited)</li><li>Owen Black – Rivendell Elf (uncredited)</li><li>Dorothy Anne Bonner – Rohan Woman (uncredited)</li><li>Ben Britton – Elf Warrior / Man of Rohan (uncredited)</li><li>Riley Brophy – Cute Rohan Refugee Child (uncredited)</li><li>Alistair Browning – Damrod (uncredited)</li><li>Alix Bushnell – Rohan Refugee (uncredited)</li><li>Sean Button – Uruk-hai (uncredited)</li><li>Ryan Carey – Uruk-hai (uncredited)</li><li>Robert Catto – Elf / Gondorian Soldier / Orc / Uruk-hai (uncredited)</li><li>Rodney Cook – Uruk-hai (uncredited)</li><li>Kelly Corbishley – Rohan Refugee (uncredited)</li><li>Tack Daniel – Uruk-hai (uncredited)</li><li>Augie Davis – Uruk-hai (uncredited)</li><li>Mana Hira Davis – Gondorian Soldier / Harad Warrior / Orc / Rohan Soldier / Uruk-hai (uncredited)</li><li>Shane Dawson – Harad Warrior / Uruk-hai (uncredited)</li><li>Karlos Drinkwater – Easterling Warrior (uncredited)</li><li>Aron Eastwood – Rohan Soldier (uncredited)</li><li>Frank Edwards – Rohan Man (uncredited)</li><li>Clint Elvy – Harad Warrior (uncredited)</li><li>Alexia Fairbrother – Elven Warrior (uncredited)</li><li>Daniel Falconer – Elven Warrior / Rivendell Elf (uncredited)</li><li>David Gatward Ferguson – Uruk-hai (uncredited)</li><li>Siosa Fonua – Orc / Uruk-hai (uncredited)</li><li>Kester Fordham – Elf Warrior (uncredited)</li><li>Michael Fowler – Elf (uncredited)</li><li>Ben Fransham – Elven Warrior (uncredited)</li><li>Frank Goldingham – Rohan Refugee (uncredited)</li><li>Winham Hammond – Uruk-hai (uncredited)</li><li>Jonathan Harding – Elf Warrior (uncredited)</li><li>Dan Hennah – Rohan Recruit (uncredited)</li><li>Liz Hewson – Fighting Elf / Rohan Refugee (uncredited)</li><li>Paul Holmes – Orc (uncredited)</li><li>Jason Hood – Theoden's Royal Guard (uncredited)</li><li>Davey Hughes – Rohan Soldier (uncredited)</li><li>Lani Jackson – Uruk-hai (uncredited)</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Spear-Throwing Rohan Soldier (uncredited)</li><li>Gareth Jensen – Elf Warrior (uncredited)</li><li>Ralph Johnson – Orc / Rohan Soldier / Uruk-hai (uncredited)</li><li>Are Manea Karati – Harad Warrior (uncredited)</li><li>Sam Kelly – Elf Warrior / Uruk-hai (uncredited)</li><li>Ron Kerkmeester – Easterling / Gondorian Soldier / Orc / Rohan Soldier (uncredited)</li><li>Richard Knowles – Rohan Soldier (uncredited)</li><li>Sandro Kopp – Elven Warrior (uncredited)</li><li>Sam La Hood – Orc Pitmaster (uncredited)</li><li>Greg Lane – Berserker Torch-Bearer / Uruk-hai (uncredited)</li><li>Don Langridge – Rohan Guard (uncredited)</li><li>Jaime Lawrence – Elf / Rohan Refugee (uncredited)</li><li>Michael Lawrence – Wildman (uncredited)</li><li>Alan Lee – Rohan Recruit (uncredited)</li><li>Cameron Lemon – Rohan Refugee (uncredited)</li><li>Lance Louez – Orc / Uruk-hai (uncredited)</li><li>Jono Manks – Twilight Ringwraith (uncredited|archiveFootage)</li><li>Brent McIntyre – Witch-king (uncredited|archiveFootage)</li><li>Dra McKay – Rohan Woman (uncredited)</li><li>Joseph Mika-Hunt – Uruk-hai / Gondorian Soldier (uncredited)</li><li>Dean Morganty – Haradrim Warrior / Ranger / Uruk-hai (uncredited)</li><li>Henry Mortensen – Rohan Boy Recruit (uncredited)</li><li>Francis Mountjoy – Elf / Gondorian Soldier / Orc / Uruk-hai (uncredited)</li><li>Paul Norell – Easterling (uncredited)</li><li>Barrie M. Osborne – Rock-throwing Rohan Soldier (uncredited)</li><li>Wayne Phillips – Captain of the Guards (uncredited)</li><li>Nooroa Poa – Uruk-hai (uncredited)</li><li>Allan Poppleton – Uruk-hai (uncredited)</li><li>Gareth Reeves – Fighting Elf (uncredited)</li><li>Miranda Rivers – Rohan Refugee (uncredited)</li><li>Campbell Rousselle – Tree-cutting Orc (uncredited)</li><li>Matthew Saville – Gondorian Soldier (uncredited)</li><li>Jeremy Sciascia – Harad Warrior (uncredited)</li><li>Samuel E. Shore – Rohan Refugee, Elf (uncredited)</li><li>Shaneel Sidal – Orc (uncredited)</li><li>Allan Smith – Dead Marshes Elf (uncredited)</li><li>Dianne Smith – Rohan Woman (uncredited)</li><li>Ken Stratton – Easterling / Haradrim Warrior / Isengard Orc / Ranger / Rohan Soldier / Uruk-hai (uncredited)</li><li>Sarah Thomas – Rohan Refugee (uncredited)</li><li>Marcus Thorne – Featured Orc (uncredited)</li><li>Robbie Titchener – Easterling / Rohan Guard / Uruk-hai (uncredited)</li><li>Greg Tozer – Conscripting Rohan Soldier (uncredited)</li><li>Piripi Waretini – Uruk-hai Warrior (uncredited)</li><li>Tim Wong – Uruk-hai (uncredited)</li><li>Hannah Wood – Rohan Woman in Cave (uncredited)</li><li>John Wraight – Stable Hand (uncredited)</li><li>Kelley Kerr Young – Rohan Refugee (uncredited)</li><li>Robert Young – Uruk-hai (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>They couldn't recruit enough men in the six foot height area to play Uruk-hai, so men from five foot high were cast as well. They were affectionately nicknamed the Uruk-Low.</li><li>[Viggo Mortensen][/p?id=1977] broke two toes while kicking the steel helmet by the orc pyre, and that take is the one that appears in the final cut. Director [Peter Jackson][/p?id=1744] said that he was really impressed with the shout of pain Aragorn cried out for the fate of the two Hobbits, realizing only later that it was real pain for his toes. He was also impressed by the fact that [Mortensen][/p?id=1977] continued acting, even while so seriously injured. [Mortensen][/p?id=1977] later remarked that the only reason it was even mentioned, on the DVD release, was because he was an actor, and that the stunt crew were injured far worse and pushed through it.</li><li>[Andy Serkis][/p?id=1039] was pitched the role of Gollum by his agent, who rang him up and asked him if he wanted to do three weeks' voice-over work in New Zealand. However, Director [Peter Jackson][/p?id=1744] was so blown away by [Serkis'][/p?id=1039] audition, that he decided to have him perform the movements for Gollum as well.</li><li>[Andy Serkis][/p?id=1039] said he based Gollum's desperation and cravings on the withdrawals of heroin addicts.</li><li>There were so many extras used in the sequences at Helm's Deep, and the filming went on for so many months, that almost all the extras and principal actors got t-shirts reading &quot;I survived Helm's Deep&quot;. There were so many of these shirts, that extras would often meet other extras in New Zealand's main cities, because they would recognize the shirts.</li><li>When Grima Wormtongue sees Saruman's army of ten thousand, he is so shocked, that a tear falls from one of his eyes. This wasn't in the script. It's something that [Brad Dourif][/p?id=Brad%20Dourif] can do at will, and he and the filmmakers decided that it would work well for the scene.</li><li>[Viggo Mortensen][/p?id=1977] was so impressed with the horse his character rode, that he purchased him from the owners. The horse was shipped back to New Zealand for the additional shots that were filmed in 2002.</li><li>On the wall of Helm's Deep during the battle, a one-eyed warrior turns to the camera, revealing his scarred empty socket. The performer who played him showed up as an extra, wearing an eye patch. Director [Peter Jackson][/p?id=1744] politely asked to see what was under the patch, and then inquired if the gentleman would be interested in appearing in the film sans eye patch. The gentleman was reluctant at first, and quite self-conscious, but afterward, said the experience had made him more comfortable with his condition.</li><li>As the Orcs have black blood, it was only natural that the inside of their mouths should not be pink, but black as well. To achieve this, the Orc actors had to swill a liquorice-based mouthwash prior to each of their scenes.</li><li>One time, while [Bernard Hill][/p?id=Bernard%20Hill] was in Glasgow, Scotland, a woman came up to him and told him about how one of her children had died shortly before then, and that parents shouldn't have to bury their child. His confrontation with this woman affected him so much, that he asked to have a line put in about it.</li><li>[Andy Serkis][/p?id=1039] drank bottles and bottles of &quot;Gollum juice&quot; (a mixture of honey, lemon, and ginger) to keep his throat lubricated for his intense vocal performance.</li><li>When [Miranda Otto][/p?id=Miranda%20Otto] arrived on-set, she was introduced first to the people she'd be working with the most. When she met [Viggo Mortensen][/p?id=1977], she commented about her character falling in love with his: &quot;It's going to be SO easy to fall in love with this man!&quot;</li><li>[John Rhys-Davies][/p?id=1497] (Gimli) had lost the tip of his left middle finger in a farm accident when he was younger, so special prosthetic fingertips were made from a cast of his right middle finger. During shooting, he decided to pull a prank on Director [Peter Jackson][/p?id=1744]. He cut the tip off the prosthetic finger and filled it with fake blood, then went up to [Jackson][/p?id=1744] and said &quot;Boss, I had an accident.&quot;</li><li>The main door of Helm's Deep was built so heavy, and so well, that the real battering ram, that was built to knock down the gates, failed to do so until the door was weakened. Someone had built the door a little bit too well, and Director [Peter Jackson][/p?id=1744] can be heard on the Extended Edition DVD commenting that if they had to defend a castle, he would want the WETA workshop guys to build the door.</li><li>[Andy Serkis][/p?id=1039] said that he based Gollum's voice on the sound of a cat coughing up a hairball.</li><li>When Frodo ([Elijah Wood][/p?id=1272]) and Sam ([Sean Astin][/p?id=1864]) are in Osgiliath, Sam says, &quot;By rights, we shouldn't even be here.&quot; This was a nod to the deviation the screenplay had taken from the book's storyline. In the book, Sam and Frodo never passed through Osgiliath.</li><li>The Helm's Deep battle took four months to shoot, all of it at night.</li><li>[John Rhys-Davies][/p?id=1497] also provided the voice for Treebeard. It wasn't achieved by electronic distortion, but by making the actor speak in his naturally booming voice at the lowest pitch possible, through a wooden megaphone.</li><li>In the wide shots of Legolas, Aragorn, and Gimli running after the Orcs, all three performers are running injured. [Orlando Bloom][/p?id=1710] had a couple of broken ribs (from a fall off of a horse). [Viggo Mortensen][/p?id=1977] had a broken toe (from kicking the helmet in the Orcs funeral pyre scene). Brett Beattie (Gimli's stunt double) had a knee injury. [Peter Jackson][/p?id=1744] said that all three were very dedicated and continued to film the scene, often yelling &quot;ouch&quot; or &quot;ow&quot; after &quot;cut&quot; was called.</li><li>The ten thousand Uruk-Hai battle chants for the Helm's Deep battle sequence were provided by a stadium of twenty-five thousand cricket fans, who chanted the war chants, &quot;Derbgoo, nashgshoo, derbgoo, dashshoo&quot;, spelled out on the Diamond Vision screen, with [Peter Jackson][/p?id=1744] leading the crowd.</li><li>Between takes, [Brad Dourif][/p?id=Brad%20Dourif] stayed in character by continuing to speak with an English accent, until all his footage had been completed. This was so convincing that, at the end, when he spoke with his normal voice again, [Bernard Hill][/p?id=Bernard%20Hill] thought that his English accent was real, and that his American accent must be fake.</li><li>On [Miranda Otto's][/p?id=Miranda%20Otto] first day of shooting, [Liv Tyler][/p?id=Liv%20Tyler] was said to have welcomed her with enthusiastic open arms, saying, &quot;I'm so glad there's another woman in this film.&quot;</li><li>About two hundred to three hundred horses were used in the trilogy. Because most of the scenes involving horses are intense battle scenes, where the horses could likely be harmed, a horse and rider were fitted with the same type of suit that [Andy Serkis][/p?id=1039] wore for his role, and were filmed in the studio doing typical &quot;battle&quot; things, like galloping and rearing up, so the footage could be inserted digitally into the battle scenes. In that way, no horses were hurt.</li><li>The scene with the Uruk-hai before the Battle for Helm's Deep starts, where they stomp their spears into the ground, was inspired by the same act the stuntmen would do between takes to pass time. After seeing it, [Peter Jackson][/p?id=1744] liked it, and put it in the movie.</li><li>[Bernard Hill][/p?id=Bernard%20Hill] would spend up to nine hours in make-up to become the aged Theoden. He wore contact lenses to give his eyes the milky look that very old people can have, but it wasn't sufficiently successful, so his eyes were later tinkered with digitally.</li><li>When Gollum spits in disgust at Sam's cooking of rabbits, that is [Andy Serkis'][/p?id=1039] spittle flying through the air. [Serkis][/p?id=1039] lists that scene as his favorite from all three movies.</li><li>In the scene where Aragorn has washed up on the shore of the river that he fell in when the Warg dragged him off the cliff and Arwen comes to him in a dream to revive him, the dialogue was originally in English. But, [Liv Tyler][/p?id=Liv%20Tyler] was entranced by the Elvish language, and since both characters and cast members knew how to speak it, she talked [Peter Jackson][/p?id=1744] into letting them translate the script for that scene. Everyone agreed that it turned out much better her way, than the way it had been originally planned.</li><li>Gollum is a CGI character, but [Peter Jackson][/p?id=1744] wanted the character to be performer-oriented, so [Andy Serkis][/p?id=1039], the voice of Gollum, played the character in a motion capture suit. [Serkis][/p?id=1039] also played scenes with [Elijah Wood][/p?id=1272] (Frodo) and [Sean Astin][/p?id=1864] (Sam) on-set to give the actors a focal point. On those occasions, when [Serkis][/p?id=1039] was actually in the shot, Gollum was composited over him in post-production.</li><li>To increase the number of Rohirrim riders, many of the &quot;men&quot; were actually women with beards glued on. [Peter Jackson][/p?id=1744] and others have noted, that in many cases, they were more skilled riders than the men.</li><li>It was clear to the writers from the beginning, that the entire final sequence of the individual novel (Frodo and Sam's encounter with Shelob) would be part of the third movie, not this one. Also, the confrontation with a defeated Saruman at Isengard was deemed to be too anti-climactic, and was therefore moved to the third movie as well. This tactical move meant the battle for Helm's Deep became this movie's natural climax.</li><li>In the cave scene where Faramir lifts the Ring from under Frodo's shirt, [David Wenham][/p?id=1229] was afraid of accidentally stabbing [Elijah Wood][/p?id=1272] so a swordsman was called on to do the scene.</li><li>[Sean Bean][/p?id=1865] had finished shooting his scenes and had returned to England, when he was asked to return to New Zealand to film an elaborate flashback scene. Unfortunately, this scene did not make it into the theatrical cut of the movie, although it is included in the Extended Edition.</li><li>Originally, Arwen ([Liv Tyler][/p?id=Liv%20Tyler]) was to be included in the fighting force of Elves who join the men, in the battle of Helm's Deep. This was a relic of the script treatment for Miramax, which condensed the one thousand plus page novel into two movies, and met with fan fury on the internet with its free-and-easy approach to J.R.R. Tolkien's work. [Tyler][/p?id=Liv%20Tyler] had even trained with sword fighters in preparation for her scenes, when the decision to remove her was made by the Writers, who realized that this approach wasn't working. Arwen, who doesn't appear in the individual book of &quot;The Two Towers&quot;, was ultimately re-worked into the story by lifting elements from the Appendices at the back of the novel, utilizing flashbacks to her and Aragorn at Rivendell. It took the Writers about a year to come up with this solution.</li><li>[Viggo Mortensen][/p?id=1977] broke a tooth during the shoot. He immediately wanted to continue filming and requested super glue to reattach the broken tooth, so he could use the pain for his character. Producer [Barrie M. Osborne][/p?id=Barrie%20M.%20Osborne] told him that they were taking him to a dentist, and that they would finish filming afterwards.</li><li>[Andy Serkis][/p?id=1039] did the voices for the three orcs arguing with each other at the Fangorn Camp scene.</li><li>When Merry and Pippin are being carried off on the back of the Uruk'hai, [Billy Boyd][/p?id=Billy%20Boyd] and [Dominic Monaghan][/p?id=Dominic%20Monaghan] are in reality being carried on the backs of two stuntmen wearing oversized costumes, and a false enormous head, to give the impression of height difference.</li><li>Sir [Christopher Lee][/p?id=1169] read &quot;The Lord of Rings&quot; once a year until his death in 2015, and is the only member of the cast to have met J.R.R. Tolkien.</li><li>[Peter Jackson][/p?id=1744] and [Barrie M. Osborne][/p?id=Barrie%20M.%20Osborne] actively campaigned for [Andy Serkis][/p?id=1039] to receive an Oscar nomination for Best Actor in a Supporting Role for his portrayal of Gollum. Academy regulations, however, forbid an actor to be nominated, when he is not physically to be seen on-screen, despite [Serkis'][/p?id=1039] active input into the role.</li><li>The scene where King Theoden, Legolas, and Gimli arrive at Helm's Deep, having lost Aragorn, was [Bernard Hill's][/p?id=Bernard%20Hill] and [Miranda Otto's][/p?id=Miranda%20Otto] first day on-set.</li><li>[Peter Jackson][/p?id=1744] felt that in the book, Faramir's casual refusal to seek the Ring was anti-climactic, and inconsistent with the Ring's maddening temptation of other characters, such as the Nazgul, Gollum, and Boromir. For this reason, he added the now-controversial subplot involving Faramir's hubris and the captivity of Frodo and Sam in Osgiliath.</li><li>Initially, the musical score was deemed ineligible for the Academy Awards, because of a new rule, which stated that scores featuring themes used in a previous movie were not eligible for submission. This rule was very unpopular, and was quickly abandoned. The score became eligible again, though it did not receive a nomination.</li><li>The first sequel to be nominated for an Academy Award for Best Picture, when the first movie did not win the award, and the third sequel to be nominated for Best Picture.</li><li>[Kate Winslet][/p?id=1530] was offered the role of Eowyn.</li><li>One of the main reasons [Sean Astin][/p?id=1864] took the part of Samwise Gamgee, was the advice of his stepfather [John Astin][/p?id=John%20Astin], who had previously worked with Director [Peter Jackson][/p?id=1744] and [Fran Walsh][/p?id=Fran%20Walsh] on [The Frighteners][/f?id=14069] (1996), and had been enthused with their rapport, understanding of film, and appreciation of their crew.</li><li>Edoras was only filmed during the day, as it was nearly impossible to transport all the necessary night-time lighting equipment up to the location.</li><li>[Patrick McGoohan][/p?id=Patrick%20McGoohan] and Sir [Nigel Hawthorne][/p?id=Nigel%20Hawthorne] turned down the role of Gandalf due to poor health.</li><li>The only Best Picture Oscar nominee that year not to be nominated in any of the lead acting categories, or in any acting category.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

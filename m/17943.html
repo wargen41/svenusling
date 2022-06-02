@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sagan Om Ringen (2001) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Sagan Om Ringen (2001) <a href="#" class="grade">+++++</a></h2>
+										<h3>The Lord Of The Rings: The Fellowship Of The Ring</h3>
+										<p>
+										Film från <time datetime="2001"><a href="#">2001</a></time><br>										<ul class="genres"><li><a href="#genre28">Äventyr</a></li><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice">Alan Howard – Voice of the Ring (röst)</li><li>Noel Appleby – Everard Proudfoot</li><li><a href="/svenusling/p/1864.html">Sean Astin</a> – Sam</li><li>Sala Baker – Sauron</li><li><a href="/svenusling/p/1865.html">Sean Bean</a> – Boromir</li><li><a href="/svenusling/p/1137.html">Cate Blanchett</a> – Galadriel</li><li><a href="/svenusling/p/1710.html">Orlando Bloom</a> – Legolas</li><li>Billy Boyd – Pippin</li><li><a href="/svenusling/p/1621.html">Marton Csokas</a> – Celeborn</li><li>Megan Edwards – Mrs. Proudfoot</li><li>Michael Elsworth – Gondorian Archivist</li><li>Mark Ferguson – Gil-galad</li><li><a href="/svenusling/p/1386.html">Ian Holm</a> – Bilbo</li><li><a href="/svenusling/p/1169.html">Christopher Lee</a> – Saruman</li><li>Lawrence Makoare – Lurtz</li><li class="voice"><a href="/svenusling/p/1039.html">Andy Serkis</a> – Gollum (röst)</li><li>Brent McIntyre – Witch-king</li><li><a href="/svenusling/p/1387.html">Ian McKellen</a> – Gandalf</li><li>Peter McKenzie – Elendil</li><li>Sarah McLeod – Rosie Cotton</li><li>Dominic Monaghan – Merry</li><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Aragorn</li><li>Ian Mune – Bounder</li><li>Craig Parker – Haldir</li><li>Cameron Rhodes – Farmer Maggot</li><li><a href="/svenusling/p/1497.html">John Rhys-Davies</a> – Gimli</li><li>Martyn Sanderson – Gate Keeper</li><li>Harry Sinclair – Isildur</li><li>Liv Tyler – Arwen</li><li>David Weatherley – Barliman Butterbur</li><li><a href="/svenusling/p/1381.html">Hugo Weaving</a> – Elrond</li><li><a href="/svenusling/p/1272.html">Elijah Wood</a> – Frodo</li><li>Victoria Beynon-Cole – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Lee Hartley – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Sam La Hood – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Chris Streeter – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Jonathan Jordan – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Semi Kuresa – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Clinton Ulyatt – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Paul Bryson – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Lance Fabian Kemp – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Jono Manks – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Ben Price – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Phil Grieve – Hero Orcs / Goblins / Uruks / Ringwraiths</li><li>Billy Jackson – Cute Hobbit Child</li><li>Katie Jackson – Cute Hobbit Child</li><li>Gino Acevedo – Ring Dwarf-lord (uncredited)</li><li>Betty Adams – Hobbit (uncredited)</li><li>Daniel Andrews – Orc / Uruk-hai (uncredited)</li><li>Matt Appleton – Council Elf (uncredited)</li><li>Rodney Bane – Orc (uncredited)</li><li>Timothy Bartlett – Hobbit (uncredited)</li><li>Jarl Benzon – Last Alliance Elf (uncredited)</li><li>Jørn Benzon – Lothlorien Elf (uncredited)</li><li>Lynden Berryman – Uruk at Amon Hen (uncredited)</li><li>Bob Blackwell – Hobbit (uncredited)</li><li>Ben Britton – Last Alliance Elf / Rivendell Elf (uncredited)</li><li>Jed Brophy – Ringwraith (uncredited)</li><li>Riley Brophy – Cute Hobbit Child (uncredited)</li><li>Ryan Carey – Uruk-hai (uncredited)</li><li>Norman Cates – Party Hobbit (uncredited)</li><li>Merrin Cavel – Elf (uncredited)</li><li>Rachel Clentworth – Goblin (uncredited)</li><li>Randall William Cook – Cave Troll (uncredited)</li><li>Sabine Crossen – Rivendell Elf (uncredited)</li><li>Tack Daniel – Uruk-hai (uncredited)</li><li>Peter Daube – Khai (uncredited)</li><li>Mana Hira Davis – Goblin / Orc / Uruk-hai (uncredited)</li><li>Shane Dawson – Uruk-hai (uncredited)</li><li>Branko Dordevich – Uruk-hai (uncredited)</li><li>Rebecca Fitzgerald – Breelander (uncredited)</li><li>Siosa Fonua – Orc / Uruk-hai (uncredited)</li><li>Kester Fordham – Last Alliance Elf / Rivendell Elf (uncredited)</li><li>Xander Forterie – Ring Dwarf-lord (uncredited)</li><li>Ben Fransham – Goblin / Lothlorien Elf / Uruk-hai (uncredited)</li><li>Mark Fry – Man in the Prancing Pony (uncredited)</li><li>Phoebe Gittins – Cute Hobbit Child (uncredited)</li><li>Warren Green – Isengard Orc Blacksmith (uncredited)</li><li>Andy Gunn – Last Alliance Soldier / Rivendell Elf (uncredited)</li><li>Winham Hammond – Goblin / Orc / Uruk-hai (uncredited)</li><li>Jonathan Harding – Council Elf / Lothlorien Elf (uncredited)</li><li>Zo Hartley – Kissing Hobbit (uncredited)</li><li>Taea Hartwell – Cute Hobbit Child (uncredited)</li><li>Ray Henwood – Council Man (uncredited)</li><li>Dave Houma – Hobbit (uncredited)</li><li>John Howe – Ring King of Men (uncredited)</li><li>Lani Jackson – Goblin (uncredited)</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Albert Dreary (uncredited)</li><li>Gareth Jensen – Rivendell Elf (uncredited)</li><li>Ralph Johnson – Council Man / Orc (uncredited)</li><li>Stu Johnson – Isengard Orc Blacksmith (uncredited)</li><li>Tim Kano – Gondorian Citizen (uncredited)</li><li>Sam Kelly – Council Elf / Last Alliance Elf (uncredited)</li><li>Jeff Kingsford-Brown – Party Hobbit (uncredited)</li><li>Greg Lane – Uruk-hai (uncredited)</li><li>Alan Lee – Ring King of Men (uncredited)</li><li>Sacha Lee – Arms of Gollum (uncredited)</li><li>Bernie Lord – Hobbit (uncredited)</li><li>Peter Lyon – Isengard Orc Blacksmith (uncredited)</li><li>Marta Martí – Village Female Hobbit (uncredited)</li><li>Sharon Maxwell – Goblin (uncredited)</li><li>Richard Maybery – Ring Dwarf-lord (uncredited)</li><li>Ax McClennan – Lothlorien Elf (uncredited)</li><li>Bret McKenzie – Figwit (uncredited)</li><li>Tim McLachlan – Uruk-hai (uncredited)</li><li>Liz Merton – Hobbit Band Member (uncredited)</li><li>Dean Morganty – Uruk-hai (uncredited)</li><li>Greg 'Danger' Morrison – Uruk-hai (uncredited)</li><li>Blair Morton – Council Elf (uncredited)</li><li>Andrew Munro – Uruk-hai (uncredited)</li><li>David J. Muzzerall – Goblin (uncredited)</li><li>Timothy Patrick – Hobbit / Orc (uncredited)</li><li>Christy Qulliam – Galadriel's Elf (uncredited)</li><li>Shane Rangi – Witch-king (uncredited)</li><li>Chris Reid – Orc (uncredited)</li><li>Steve Reinsfield – Goblin (uncredited)</li><li>Larry Rew – Ring King of Men (uncredited)</li><li>Grant Roa – Uruk-hai (uncredited)</li><li>Thomas Robins – Hand of Gollum (uncredited)</li><li>Vincent Roxburgh – Uruk-hai (uncredited)</li><li>Chris Ryan – Breelander (uncredited)</li><li>Jason Secto – Last Alliance Elf / Lothlorien Elf (uncredited)</li><li>Paul Shapcott – Burning Ringwraith (uncredited)</li><li>Samuel E. Shore – Refugee / Orc (uncredited)</li><li>Mike Stearne – Uruk-hai (uncredited)</li><li>Andrew Stehlin – Uruk-hai (uncredited)</li><li>Ken Stratton – Isengard Orc / Last Alliance Soldier / Morgul Orc / Uruk-hai (uncredited)</li><li>Jo Surgison – Hobbit (uncredited)</li><li>Tom Walsh – Fredegar Bolger (uncredited)</li><li>James Waterhouse-Brown – Goblin (uncredited)</li><li>Tim Wong – Uruk-hai (uncredited)</li><li>Robert Young – Goblin (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Sir [Christopher Lee][/p?id=1169] (Saruman) read &quot;The Lord of the Rings&quot; once a year until his death in 2015, and had done so since the year it was published. He was also the only member of the cast and crew ever to have met J.R.R. Tolkien.</li><li>Gandalf's painful encounter with a ceiling beam in Bilbo's hobbit-hole was not in the script. Sir [Ian McKellen][/p?id=1387] banged his forehead against the beam accidentally. [Peter Jackson][/p?id=1744] thought [McKellen][/p?id=1387] did a great job &quot;acting through&quot; the mistake, and kept it in.</li><li>[Peter Jackson][/p?id=1744] gave one of the rings used in the movies to both [Elijah Wood][/p?id=1272] and [Andy Serkis][/p?id=1039] as a gift when the shoot was finished. They both thought they had the only one.</li><li>[Viggo Mortensen][/p?id=1977] did his own stunts. He also insisted on using only the real steel sword, instead of a significantly lighter aluminum sword, or safer rubber sword, which were manufactured for battle scenes and stunts.</li><li>When Pippin is being hit with the apples after asking about second breakfast, it is [Viggo Mortensen][/p?id=1977] chucking the apple at his head. They had to shoot the scene sixteen times to get it just right, and [Billy Boyd][/p?id=Billy%20Boyd] says he believes [Mortensen][/p?id=1977] enjoyed himself immensely.</li><li>The cast often had to fly to remote shoot locations by helicopter. [Sean Bean][/p?id=1865] (Boromir) was afraid of flying and would only do it when absolutely necessary. When they were shooting the scenes of the Fellowship crossing the snowy mountains he'd spend two hours every morning climbing from the base of the mountain to the set near the top, already dressed as Boromir. The crew being flown up could see him from their helicopters.</li><li>For high-tech tasks, a computer program called MASSIVE made armies of CGI orcs, elves, and humans. These digital creations could &quot;think&quot; and battle independently, identifying friend or foe, thanks to individual fields of vision. [Peter Jackson's][/p?id=1744] team could click on one creature, in a crowd scene of twenty thousand, and see through his &quot;eyes&quot;. Different species even boast unique fighting styles.</li><li>[Viggo Mortensen][/p?id=1977] joined the film when it was already shooting, never having met [Peter Jackson][/p?id=1744] before, nor indeed having read the J.R.R. Tolkien books. It was [Mortensen's][/p?id=1977] eleven-year-old son [Henry Mortensen][/p?id=Henry%20Mortensen], who was the chief instigator in convincing [Mortensen][/p?id=1977] to sign on as Aragorn.</li><li>Originally, the narration at the prologue was to be spoken by [Elijah Wood][/p?id=1272], but it was felt that the information imparted had little bearing on the character of Frodo. Sir [Ian McKellen][/p?id=1387] also recorded a narration, but once again, it was felt that Gandalf wasn't the right character to speak it. They eventually settled on [Cate Blanchett][/p?id=1137] as Galadriel, as it emphasizes the timelessness of the elves.</li><li>Veteran Sword Master [Bob Anderson][/p?id=Bob%20Anderson] called [Viggo Mortensen][/p?id=1977] &quot;the best swordsman I've ever trained&quot;.</li><li>[Peter Jackson's][/p?id=1744] original plan was to exclusively hire British actors for the roles of the hobbits. As it turned out, [Billy Boyd][/p?id=Billy%20Boyd] and [Dominic Monaghan][/p?id=Dominic%20Monaghan] were the only ones, and one of the tasks he charged them with was to coach [Elijah Wood][/p?id=1272] and [Sean Astin][/p?id=1864] in the ways of British pub culture.</li><li>[Orlando Bloom][/p?id=1710] landed the role of Legolas two days before he finished drama school.</li><li>[Viggo Mortensen][/p?id=1977] chipped a tooth while filming a fight sequence. He wanted [Peter Jackson][/p?id=1744] to superglue it back on, so he could finish his scene, but [Jackson][/p?id=1744] took him to the dentist on his lunch break, had it patched up, and returned to the set that afternoon.</li><li>During filming, most of the members of the Fellowship took up surfing in New Zealand in their spare time. Among them was [Viggo Mortensen][/p?id=1977], who wiped out terribly one day, and bruised one whole side of his face. The next day, Make-up Artists tried to mask the bruising and swelling, but were unsuccessful. Instead, [Peter Jackson][/p?id=1744] opted to film Mortenson from one side for the entire scene. In the Mines of Moria, when they find the tomb, Aragorn is only seen from one side in the whole scene.</li><li>When the dragon firework goes off at the party, the shriek heard is [Billy Boyd][/p?id=Billy%20Boyd] actually screaming, as he was unaware at the time that the firework was really going to explode on-set (he thought that it would be in a separate shot). It was not scripted, but the take ended up in the final film.</li><li>Boromir's speech at the Council of Rivendell is read from a sheet of paper sitting on [Sean Bean's][/p?id=1865] lap, as it was only given to him the night before.</li><li>Boromir's speech at the Council of Rivendell is read from a sheet of paper sitting on [Sean Bean's][/p?id=1865] lap, as it was only given to him the night before.</li><li>The hobbits needed to appear about three to four feet tall, tiny compared with the seven-foot Gandalf. This was often accomplished using forced perspective, placing Sir [Ian McKellen][/p?id=1387] (Gandalf) consistently closer to the camera than [Elijah Wood][/p?id=1272], in order to trick the eye into thinking [McKellen][/p?id=1387] is towering.</li><li>As well as being the only member of the cast and crew to have met J.R.R. Tolkien face to face, Sir [Christopher Lee][/p?id=1169] was also the first person to be cast in the trilogy, because of his extensive knowledge of the books. He frequently visited the Make-up Department, and often gave tips about the facial design of the monsters.</li><li>[Liv Tyler][/p?id=Liv%20Tyler] accidentally stabbed herself up in the right thigh when filming the &quot;If you want him, come and claim him!&quot; sequence. The footage was featured in bloopers and outtakes of the film.</li><li>Although in the movie, it seems to be only a week or so, in the book, the time between when Gandalf leaves to research the Ring, tries to find Gollum, and when he returns to send Frodo on his adventure, is a span of seventeen years.</li><li>While filming the trilogy, [Viggo Mortensen][/p?id=1977] got so into character, that during a conversation, [Peter Jackson][/p?id=1744] referred to him as &quot;Aragorn&quot; for over half an hour without him realizing it.</li><li>Sir [Ian McKellen][/p?id=1387] based Gandalf's accent on that of J.R.R. Tolkien.</li><li>The two most renowned Tolkien artists are [Alan Lee][/p?id=Alan%20Lee] and John Howe, and so it was important to [Peter Jackson][/p?id=1744] to have those two on board. [Lee][/p?id=1169] was tracked down to a tiny little village in Dartmoor, England, and was FedExed a package of [Jackson's][/p?id=1744] Heavenly Creatures (1994) and a letter outlining his intentions. They monitored the progress of the FedEx package every step of the way, but were somewhat surprised when [Lee][/p?id=1169] rang them only three hours after delivery, to say he'd love to work with them. Howe, meanwhile, was living in Switzerland, and because someone hadn't worked out the time differences between Switzerland and New Zealand correctly, he was called at about 2 a.m. He says that the biggest frustration with that phone call, was waiting for [Jackson][/p?id=1744] to finish his pitch, before he could say yes.</li><li>[Liv Tyler][/p?id=Liv%20Tyler] deepened her voice so much to play Arwen, that her father [Steven Tyler][/p?id=Steven%20Tyler] asked her if her voice had been dubbed by someone else.</li><li>[Stuart Townsend][/p?id=Stuart%20Townsend] was originally cast as Aragorn, but was replaced by [Viggo Mortensen][/p?id=1977] after four days of shooting, because [Peter Jackson][/p?id=1744] realized that an older actor was needed.</li><li>A rubber puppet with a horrific face, was superimposed over Sir [Ian Holm's][/p?id=1386] face when Bilbo Baggins covets the ring in Rivendell. [Holm][/p?id=1386] was so delighted with the puppet, that the design team had a cast iron version of it made for his mantelpiece, and gave it to him as a parting gift, when [Holm][/p?id=1386] wrapped all his scenes on the film.</li><li>In one take of the Bucklebury Ferry scene, [Elijah Wood][/p?id=1272] overshot his jump, and ended up in the river instead of on the ferry.</li><li>Throughout the trilogy, the color of Legolas' eyes change from blue to brown. This is because the contact lenses [Orlando Bloom][/p?id=1710] was wearing scratched his corneas, and could not be worn every day. In some of the shots, the post-production team digitally changed the color of his eyes.</li><li>The original cut ran four hours and thirty minutes.</li><li>[Sean Astin][/p?id=1864] gained thirty pounds for his role as Samwise Gamgee.</li><li>[Orlando Bloom][/p?id=1710] spent two months learning how to use a bow and arrow.</li><li>[John Rhys-Davies][/p?id=1497] suffered from a reaction to his prosthetics, usually inflammation around the eyes. That meant that he could never be filmed on consecutive days, and would always require at least a day off for his skin to return to normal. He was never anything less than three hours in the make-up chair.</li><li>The climactic fight scene was shot in the middle of a heatwave, with temperatures in excess of one hundred degrees Fahrenheit (thirty-eight degrees Celsius). Many of the actors playing the Uruk-Hai had to be carried off the set with heat exhaustion.</li><li>Sir [Sean Connery][/p?id=1866] was, at one point, offered the role for Gandalf, but he turned it down, due to reportedly &quot;not understanding the story&quot;.</li><li>[Peter Jackson][/p?id=1744] considered casting [Sylvester McCoy][/p?id=Sylvester%20McCoy] as Bilbo Baggins before settling on Sir [Ian Holm][/p?id=1386]. [McCoy][/p?id=Sylvester%20McCoy] would later play Radagast the Brown in The Hobbit trilogy.</li><li>[Sean Astin][/p?id=1864] reckons that there were fifty separate days of the sixteen-month shoot, where the Hobbits had their prosthetic feet applied, and they were never seen on camera.</li><li>[Cate Blanchett's][/p?id=1137] role as Galadriel required her to film for only a month.</li><li>[Peter Jackson's][/p?id=1744] first two choices for the role of Aragorn, were [Daniel Day-Lewis][/p?id=1204] and [Russell Crowe][/p?id=1846]. [Crowe][/p?id=1846] was excited about the prospect of being involved with a major motion picture in New Zealand, but couldn't commit, due to scheduling conflicts in America. [Crowe][/p?id=1846] was born in, and lived in New Zealand until he was four years old, when his family moved to Australia.</li><li>New Line Cinema insisted on a prologue of two minutes. What they received was one that lasts for seven and a half minutes.</li><li>Sir [Patrick Stewart][/p?id=1717] was offered the role of Gandalf, but he turned it down, because he didn't like the script.</li><li>Miramax was the first studio to express an interest in [Peter Jackson's][/p?id=1744] interpretation of the books, but wanted to do it all in one film. [Jackson][/p?id=1744] refused, leaving him with four weeks to find another studio for funding, touting the project as two films. Calling upon his friend Mark Ordesky, who was an Executive at New Line Cinema, a pitch was set up with New Line Cinema President [Robert Shaye][/p?id=Robert%20Shaye]. His only quibble with the presentation, was that it had to be three films.</li><li>In the film's first theatrical release, a story circulated that when Sam tells Frodo that he is now the farthest he has ever been from home, a car is visible driving by in the background (top-right corner of the screen). Arguments ensued. Some said it was smoke from a chimney, others said they saw the glint of sunlight reflected from the windshield of a fast-moving vehicle. In the version of the film released on DVD, there is definitely no car, only chimney smoke and a one-frame flash of light, that could conceivably be a car, but not in any sense that could be considered a goof. [Peter Jackson][/p?id=1744] says (in the commentary track on the Extended DVD) that he looked at every frame on a computer, and has never seen anything resembling a car, and claims that it's nonsense (and certainly the original sighting remains unconfirmed by IMDb goof spotters). In the documentary of the Extended DVD version, Editor [John Gilbert][/p?id=John%20Gilbert] says that there was a car in the background, but they thought no one would notice it. They got rid of it in the DVD version. In a subsequent magazine interview, [Jackson][/p?id=1744] agreed that the car was there.</li><li>[James Horner][/p?id=James%20Horne] was contacted to compose the music for the film, but he was unavailable, because of his work on [A Beautiful Mind][/f?id=A%20Beautiful%20Mind] (2001). The choice of [Howard Shore][/p?id=Howard%20Shore] as Composer, took some people by surprise, because he was associated with dark thriller films, and he had never worked on an epic film of this scale. He ultimately won his first Academy Award for Best Original Score for this film.</li><li>While Sir [Christopher Lee][/p?id=1169] was always [Peter Jackson's][/p?id=1744] first choice for the role of Saruman, [Jackson][/p?id=1744] did consider [Tim Curry][/p?id=1938], [Jeremy Irons][/p?id=1451], and [Malcolm McDowell][/p?id=1604] for the role.</li><li>[David Bowie][/p?id=David%20Bowie] expressed interest in the role of Elrond, but [Peter Jackson][/p?id=1744] stated, &quot;To have a famous, beloved character and a famous star colliding is slightly uncomfortable.&quot;</li><li>Pregnancy changed [Peter Jackson's][/p?id=1744] vision of &quot;Lord of the Rings&quot;. Originally, he wanted to cast [Lucy Lawless][/p?id=Lucy%20Lawless] as Galadriel, and [Uma Thurman][/p?id=1972] as Arwen. Unfortunately, both became pregnant after being asked to read, and the roles were filled in by [Cate Blanchett][/p?id=1137] and [Liv Tyler][/p?id=Liv%20Tyler], respectively. [Uma Thurman][/p?id=1972] was also considered to play Eowyn in later installments, but [Miranda Otto][/p?id=Miranda%20Otto] landed that role.</li><li>In the mines of Moria, the battery for Sir [Ian McKellen's][/p?id=1387] illuminated staff was hidden within the folds of his robes.</li><li>Sir [Ian Holm][/p?id=1386] was always [Peter Jackson's][/p?id=1744] first choice to play Bilbo Baggins.</li><li>[Peter Jackson][/p?id=1744] shot many scenes directly from the earlier, animated adaptation of [The Lord of the Rings][/f?id=17942] (1978) directed by [Ralph Bakshi][/p?id=Ralph%20Bakshi].</li><li>[Liam Neeson][/p?id=1584] turned down the role of Boromir.</li><li>Miramax spent fourteen million dollars to develop the project, but because of the projected budget, the [Weinsteins][/p?id=Harvey%20Weinstein] needed Disney's approval to go ahead. [Harvey Weinstein][/p?id=Harvey%20Weinstein] made the pitch for two films, with a projected budget of no more than one hundred eighty million dollars. Disney's head Michael Eisner rejected his proposal. He thought The Lord of the Rings would not translate well to film, and there was a limited audience for the fantasy genre. After Eisner's rejection, the [Weinsteins][/p?id=Harvey%20Weinstein] reluctantly let [Peter Jackson][/p?id=1744] shop the project to other studios. After sitting through [Jackson's][/p?id=1744] presentation, New Line Cinema's Chief Executive, [Robert Shaye][/p?id=Robert%20Shaye], committed to three films, with a combined budget of three hundred fifty million dollars.</li><li>[Cate Blanchett][/p?id=1137] joked that she took the role of Galadriel because, &quot;I've always wanted pointy ears&quot;.</li><li>Sir [Anthony Hopkins][/p?id=1053] and [Kate Winslet][/p?id=1530] turned down roles in the trilogy.</li><li>[Richard Taylor's][/p?id=Richard%20Taylor] Weta Workshop made over forty-five thousand individual items from prosthetics to armor for the films.</li><li>[Tom Baker][/p?id=Tom%20Baker] was a candidate for the role of Gandalf after his brief, but praised, cameo as the dying elven king in [Dungeons &amp; Dragons][/f?id=13253] (2000). He turned it down, not willing to spend sixteen months in New Zealand.</li><li>[Sam Neill][/p?id=1852] was considered for the role of Gandalf.</li><li>[Bill Bailey][/p?id=Bill%20Bailey] auditioned for the role of Gimli.</li><li>[Tom Wilkinson][/p?id=1955] was offered a role in the trilogy, but he didn't like the prospect of a sixteen-month-long production keeping him away from his family.</li><li>[Bruce Willis][/p?id=1117], a fan of the book, expressed interest in the role of Boromir.</li><li>[Helena Bonham Carter][/p?id=1370] expressed an interest in the role of Arwen.</li><li>[Stanley Kubrick][/p?id=1891] once considered directing a Lord of the Rings adaptation. Ironically, his death was indirectly responsible for [Peter Jackson][/p?id=1744] being able to get the cast he wanted. Sir [Ian McKellen][/p?id=1387] and [Cate Blanchett][/p?id=1137] were going to appear in the film [Minority Report][/f?id=16200] (2002). [Kubrick's][/p?id=1891] death caused Spielberg to delay that film, and make Artificial Intelligence: AI (2001) first.</li><li>[Christopher Plummer][/p?id=1171] was offered the role of Gandalf, but turned it down, because of the long filming commitment.</li><li>[Bernard Hill][/p?id=Bernard%20Hill] was considered to play Gandalf. He played King Theoden in the next two films.</li><li>[Johnny Vegas][/p?id=Johnny%20Vegas] auditioned for the role of Sam. He recalled, &quot;I was dreadful. I'm in front of a bluescreen, they go, 'Imagine a spider' and there's me going, 'Oooh, Shelob! Shelob!' [Peter Jackson's][/p?id=1744] taking his glasses off and rubbing his eyes, saying: I flew from New Zealand for this.&quot;</li><li>[Nicolas Cage][/p?id=1696] turned down the role of Aragorn, due to family obligations.</li><li>[Patrick McGoohan][/p?id=Patrick%20McGoohan] and [Nigel Hawthorne][/p?id=Nigel%20Hawthorne] turned down the role of Gandalf, due to ill health.</li><li>[Ian McKellen][/p?id=1387] was the only Best Supporting Actor Oscar nominee that year that was from a Best Picture nominated film.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

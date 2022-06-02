@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Forgotten Silver | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#awards">Priser</a></li><li><a href="#nominations">Nomineringar</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Forgotten Silver <a href="#" class="grade">++++</a></h2>
+										<h3></h3>
+										<p>
+										Film från <time datetime="1995"><a href="#">1995</a></time><br>										<ul class="genres"><li><a href="#genre13">Komedi</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li>Costa Botes</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li class="voice">Jeffrey Thomas – Narrator (röst)</li><li>Costa Botes – Himself - Film Maker</li><li>Marguerite Hurst – Herself</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Himself</li><li>Leonard Maltin – Himself - Film Historian</li><li>Johnny Morris – Himself - Film Archivist</li><li><a href="/svenusling/p/1852.html">Sam Neill</a> – Himself - Actor / Director</li><li>John O'Shea – Himself</li><li>Lindsay Shelton – Himself</li><li>Harvey Weinstein – Himself - Miramax Films</li><li>Stevan Eldred-Grigg – Himself (scenes deleted)</li><li>Beatrice Ashton – Hannah McKenzie (uncredited)</li><li>Peter Corrigan – Stan the Man (uncredited)</li><li>John Girdlestone – One of the Gloomer's Brothers (in picture) (uncredited)</li><li>Julie Holmes – Market girl Extra (uncredited)</li><li>Charlie McClellan – Soldier firing machine gun in Gallipolli (uncredited)</li><li>Sarah McLeod – May Belle (uncredited)</li><li>George Port – Undertermined role (uncredited)</li><li>Thomas Robins – Colin McKenzie (uncredited)</li><li>Richard Shirtcliffe – Brooke McKenzie (uncredited)</li><li>Richard Taylor – First Aviator (uncredited)</li><li>Gallina Thurshead – Undertermined role (uncredited)</li><li>Davina Whitehouse – Herself (uncredited)</li></ul></section><section id="awards"><h2>Priser</h2><ul class="awards"><li>BSFC Award - Bästa utländska film 2004</li><li>BSFC Award - Bästa regi 2004 (Yimou Zhang)</li><li>BSFC Award - Bästa foto 2004</li><li>Golden Rooster - Bästa scenografi 2004</li><li>LAFCA Award - Bästa utländska film 2004 (Yimou Zhang)</li><li>NBR Award - Bästa scenografi 2004</li><li>NYFCO Award - Top Films of the Year 2004</li><li>SLFCA Award - Bästa foto 2004</li><li>ASSG Award - Bästa Filmsoundtrack 2005</li><li>ASSG Award - Bästa ljuddesign 2005</li><li>Golden Trailer -  Best Foreign Independent 2005</li><li>Golden Trailer - Best Foreign 2005</li><li>Huabiao Film Award - Bästa skådespelerska 2005 (2017)</li><li>Golden Reel Award -  Best Sound Editing in Foreign Features 2005</li><li>NSFC Award - Bästa regi 2005 (Yimou Zhang)</li><li>NSFC Award - Bästa foto 2005</li><li>OFTA Film Award - Bästa kostym 2005</li><li>Golden Satellite Award - Bästa foto 2005</li><li>Golden Satellite Award - Bästa specialeffekter 2005</li></ul></section><section id="nominations"><h2>Nomineringar</h2><ul class="nominations"><li>Awards Circuit Community Awards, ACCA - Bästa utländska film 2004</li><li>European Film Awards, Screen International Award 2004</li><li>Golden Rooster - Bästa film 2004</li><li>Golden Rooster - Bästa regi 2004 (Yimou Zhang)</li><li>Golden Rooster - Bästa ljud 2004</li><li>LAFCA Award - Bästa foto 2004</li><li>LAFCA Award - Bästa scenografi 2004</li><li>NSFC Award - Bästa utländska film 2004</li><li>NYFCC Award - Bästa regi 2004 (Yimou Zhang)</li><li>UFCA Award - Bästa icke-egnelskspråkiga film 2004</li><li>Oscar - Bästa foto 2005</li><li>Golden Globe - Bästa utländska film 2005</li><li>BAFTA Film Award - Bästa utländska film 2005</li><li>BAFTA Film Award - Bästa skådespelerska 2005 (2017)</li><li>BAFTA Film Award - Bästa foto 2005</li><li>BAFTA Film Award - Bästa ljud 2005</li><li>BAFTA Film Award - Bästa specialeffekter 2005</li><li>BAFTA Film Award - Bästa klippning 2005</li><li>BAFTA Film Award - Bästa kostym 2005</li><li>BAFTA Film Award - Bästa klippning 2005</li><li>BAFTA Film Award - Bästa smink/hår 2005</li><li>Saturn Award - Bästa Fantasyfilm 2005</li><li>Saturn Award - Bästa regi 2005 (Yimou Zhang)</li><li>Saturn Award - Bästa skådespelerska 2005 (2017)</li><li>Saturn Award - Bästa kostym 2005</li><li>Broadcast Film Critics Association Awards, Critics Choice Award, Critics Choice Award - Bästa utländska film 2005</li><li>China Film Directors' Guild Award - Bästa skådespelerska 2005 (2017)</li><li>DFWFCA Award - Bästa utländska film 2005</li><li>DFWFCA Award - Bästa foto 2005</li><li>Gold Derby Award - Bästa utländska film 2005</li><li>Gold Derby Award - Bästa foto 2005</li><li>Gold Derby Award - Bästa kostym 2005</li><li>Gold Derby Award - Bästa scenografi 2005</li><li>Golden Bauhinia - Bästa film 2005</li><li>Golden Bauhinia - Bästa foto 2005</li><li>Golden Trailer - Bästa musik 2005</li><li>Hong Kong Film Award - Bästa asiatiska film 2005</li><li>Huabiao Film Award - Bästa film 2005</li><li>Image Award - Bästa Independent eller Utländska film 2005</li><li>INOCA - Bästa utländska film 2005 (Yimou Zhang)</li><li>INOCA - Bästa foto 2005</li><li>INOCA - Bästa kostym 2005</li><li>INOCA - Bästa scenografi 2005</li><li>IOMA - Bästa specialeffekter 2005</li><li>IOMA - Bästa ljudeffekter 2005</li><li>IOMA - Bästa kostm 2005</li><li>ALFS Award - Årets film 2005</li><li>ALFS Award - Årets regissör 2005 (Yimou Zhang)</li><li>ALFS Award - Årets utländska film 2005</li><li>MTV Movie Award - Bästa Fight (For Zhang Ziyi vs. The Emperor's guards.) 2005</li><li>NSFC Award - Bästa utländska film 2005</li><li>OFTA Film Award - Bästa utländska film 2005</li><li>OFTA Film Award - Bästa foto 2005</li><li>OFTA Film Award - Bästa originalsång (For the song "Lovers".) 2005</li><li>OFTA Film Award - Bästa ljudeffekter 2005</li><li>OFTA Film Award - Bästa scenografi 2005</li><li>OFCS Award - Bästa utländska film 2005</li><li>OFCS Award - Bästa foto 2005</li><li>OFCS Award - Bästa klippning 2005</li><li>Golden Satellite Award - Bästa utländska film 2005</li><li>Golden Satellite Award - Bästa ljud 2005</li><li>Golden Satellite Award - Bästa klippning 2005</li><li>Golden Satellite Award - Bästa kostym 2005</li><li>Golden Satellite Award - Bästa scenografi 2005</li><li>Taurus Award - Bästa Fight (Two men fight with swords in an autumn field. Their fight carries them into winter, as they begin to use their bodies in addition to swords to fight.) 2005</li><li>Golden Eagle - Bästa utländska film 2006 (Yimou Zhang)</li><li>Hundred Flowers Award - Bästa regi 2006 (Yimou Zhang)</li><li>Hundred Flowers Award - Bästa skådespelerska 2006 (2017)</li><li>Hundred Flowers Award - Bästa manliga biroll 2006 (Andy Lau)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>This was originally screened as a genuine documentary to an unsuspecting New Zealand public, and was only revealed to be a hoax a few days afterwards.</li><li>The photographs showing Colin and Brooke McKenzie as children are actual vintage photographs from the 1800s. They depict the grandfather and great uncle of the wife of co-director [Costa Botes][/p?id=Costa%20Botes].</li><li>The interview with [Sam Neill][/p?id=1852] was taken during the filming of Cinema of Unease: A Personal Journey by [Sam Neill][/p?id=1852].</li><li>On the DVD commentary, co-director [Costa Botes][/p?id=Costa%20Botes] noted that in the process of &quot;aging&quot; the faked film clips, the production team decided to avoid the use of line scratches, which was considered to be too obvious and clichéd. Too age the film, the crew spent a great deal of time running the film through dirt, rubbing dust and spit into it, and dragging it around on the floor of the basement of the processing laboratory facility.</li><li>One of Colin MacKenzie's &quot;innovations&quot; in this film is the first feature length film, which he makes in 1908. It was not until after the completion of this film that another, The Story of the Kelly Gang, resurfaced and was discovered to be the real title holder for &quot;first ever feature length film&quot;.</li><li>The filmmakers consciously avoided putting lines through the faked film footage, particularly the scenes from Salome, since when important films are re-released they are often cleaned up and restored so that there are as few scratches as possible. When this happens, good quality prints usually have corrected contrast, so that hues and texture are easily visible, as is the case with the Salome footage.</li><li>The television network that first broadcast the film received mountains of angry and even threatening mail. Some of these letters are reenacted with voice overs in Behind the Bull: [Forgotten Silver][/f?id=14002].</li><li>According to the DVD commentary by [Costa Botes][/p?id=Costa%20Botes], one shot from 'Salome' showing dozens of extras fighting on the palace steps swallowed almost half of the film's overall budget, even though digital compositing was used to make it seem like the size of the set and number of extras were much greater.</li><li>According to the DVD commentary by [Costa Botes][/p?id=Costa%20Botes], he wanted to put the real credits at the end, but [Peter Jackson][/p?id=1744] wanted to &quot;keep with the lie&quot;, so most of the end credits are fake. But, the real actors who play the &quot;fake real people&quot; are credited with their real names in &quot;For their generous assistance with research thanks to&quot;.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

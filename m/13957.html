@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Flickan Från Ovan | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Flickan Från Ovan <a href="#" class="grade">+++</a></h2>
+										<h3>The Lovely Bones</h3>
+										<p>
+										Film från <time datetime="2009"><a href="#">2009</a></time><br>										<ul class="genres"><li><a href="#genre6">Drama</a></li><li><a href="#genre9">Fantasy</a></li><li><a href="#genre26">Thriller</a></li></ul>										</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1614.html">Mark Wahlberg</a> – Jack Salmon</li><li><a href="/svenusling/p/1766.html">Rachel Weisz</a> – Abigail Salmon</li><li><a href="/svenusling/p/1911.html">Susan Sarandon</a> – Grandma Lynn</li><li><a href="/svenusling/p/1892.html">Stanley Tucci</a> – George Harvey</li><li>Michael Imperioli – Len Fenerman</li><li><a href="/svenusling/p/1858.html">Saoirse Ronan</a> – Susie Salmon</li><li>Rose McIver – Lindsey Salmon</li><li>Christian Thomas Ashdale – Buckley Salmon</li><li>Reece Ritchie – Ray Singh</li><li>Carolyn Dando – Ruth Connors</li><li>Nikki SooHoo – Holly</li><li>Andrew James Allen – Samuel Heckler</li><li>Jake Abel – Brian Nelson</li><li>Amanda Michalka – Clarissa</li><li>Thomas McCarthy – Principal Caden</li><li>Stink Fisher – Mr. Connors</li><li>Evelyn Lennon – Susie Salmon - Aged 3 Years</li><li>Stefania Owen – Flora Hernandez</li><li>Ashley Brimfield – Teenage Girl in Parking Lot</li><li>John Jezior – Mr. O'Dwyer</li><li>Anna George – Mrs. Singh</li><li>Kirit Kapadia – Mr. Singh</li><li>Richard Lambeth – Deputy</li><li>William Zielenski – Deputy</li><li>Glen Drake – Deputy</li><li>Dan Kern – Hospital Doctor</li><li>Greg Wood – Hospital Doctor</li><li>Freya Milner – Jackie Meyer</li><li>Katie Jackson – Leah Fox</li><li>Ruby Hudson – Lana Johnson</li><li>Tina Graham – Sophie Cichetti</li><li>Phoebe Gittins – Mr. Harvey's Victim</li><li>Anna Dawson – Mr. Harvey's Victim</li><li>Lili Bayliss – Mr. Harvey's Victim</li><li>Bruce Phillips – Grandfather</li><li>Veronica Horn – Grace Tarking</li><li>Jack Hoffman – Fashion Show MC</li><li>David C. Roehm Sr. – Mr. Coleman</li><li>Seth F. Miller – Soccer Coach</li><li>Lee Miller – Townsperson</li><li>Michael A. Salvato – Townsperson</li><li>William Hummel – Townsperson</li><li>James Vassanelli – Townsperson</li><li>Billy Jackson – Mall Shopper</li><li>Grace Carden-Horton – Police Station Girl</li><li>Gabby Greig – Police Station Girl</li><li>Bravo – Holiday - Dog</li><li>Jean Orlando – Mall Shopper</li><li>Michael Ahl – Traveler / Shopper (uncredited)</li><li>Courtney Baxter – School Kid (uncredited)</li><li>Gary Beck – Tim - Gas Station Attendant (uncredited)</li><li>Robert Bizik – Mall Shopper (uncredited)</li><li>Michael Edward Brooks – Suspect #1 in Mall (uncredited)</li><li>Lee Burkett – Christmas Shopper (uncredited)</li><li>Jennifer Butler – Christmas Shopper (uncredited)</li><li>Gregory R. Campbell – Mall Shopper (uncredited)</li><li>Catherine Corcoran – Murder Victim (uncredited)</li><li>Martha Gay – Diner Waitress (uncredited)</li><li>Richard Graves – Mall Patron (uncredited)</li><li><a href="/svenusling/p/1744.html">Peter Jackson</a> – Man at Pharmacy (uncredited)</li><li>JaQuinley Kerr – Mall Shopper (uncredited)</li><li>Bruce Kirkpatrick – Mr. Steadman (uncredited)</li><li>Charlie Kirkwood – Bell Bottoms Guy - mall (uncredited)</li><li>David Kneeream – Mall Shopper (uncredited)</li><li>Sandra Landers – Schoolteacher / Victim (uncredited)</li><li>Maximilian Law – Police Officer Perez (uncredited)</li><li>Robyn Malcolm – Foreman's Wife (uncredited)</li><li>Fallon Maressa – Nurse (uncredited)</li><li>Michelle Nagy – Toy Store Cashier (uncredited)</li><li>Johnny Pulcinella – Soccer Player (uncredited)</li><li>Vincent Riviezzo – Store Owner (uncredited)</li><li>Shawnee Robertson – Mall Patron / Traveler (uncredited)</li><li>Charlie Saxton – Ronald Drake (uncredited)</li><li>Chuck Schanamann – Pedestrian (uncredited)</li><li>Brian Michael Scully – Mall Patron (uncredited)</li><li>Joseph Tornatore – Mall Shopper (uncredited)</li><li>Dan Van Wert – Hospital Orderly (uncredited)</li><li>Mark Violi – Mall Shopper (uncredited)</li><li>Richard Whiteside – Detective (uncredited)</li><li>Mike Wilson – Mall Shopper (uncredited)</li><li>John Wooten – Shopper (uncredited)</li><li>Scott Yannick – Police Officer Henderson (uncredited)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>Alice Sebold, who wrote the novel, said that she preferred an unknown actress for the role of Susie Salmon. After she was cast for this film, the relatively unknown [Saoirse Ronan][/p?id=1858] was nominated for an Academy Award for Best Supporting Actress for [Atonement][/f?id=F%C3%B6rsoning] (2007).</li><li>[Helen Hunt][/p?id=1368] was reportedly considered for the role of Abigail Salmon. Instead, [Rachel Weisz][/p?id=1766] accepted the role, and was the first actor cast in the film.</li><li>[Hugh Jackman][/p?id=1379] and [Rachel Weisz][/p?id=1766] were the first actors who got an offer to appear in the film, which would have been their second collaboration together (after [The Fountain][/f?id=14015] (2006)). However, while [Weisz][/p?id=1766] accepted her part, [Jackman][/p?id=1379] had to turn his down. [Ryan Gosling][/p?id=1848] was cast instead, although he would drop out as well, three days before the shooting started. Eventually, [Mark Wahlberg][/p?id=1614] got the part. </li><li>[Mark Wahlberg][/p?id=1614] replaced [Ryan Gosling][/p?id=1848]  just days before shooting began. In preparation for the role, [Gosling][/p?id=1848] had gained 20 pounds and grew out a beard. However, he vacated the role due to creative differences. [Wahlberg][/p?id=1614], who had just completed shooting [The Happening][/f?id=14436] (2008), another production in Pennsylvania, became available just in time to accept [Gosling's][/p?id=1848] role.</li><li>Despite being a last-minute replacement, [Mark Wahlberg][/p?id=1614] was always one of [Peter Jackson's][/p?id=1744] first choices for the leading role.</li><li>[Saoirse Ronan][/p?id=1858] landed the role of Susie Salmon based on an audition tape she had sent in. They were so impressed by the tape that no meetings or further auditions were necessary before offering her the lead role in the film.</li><li>Lynne Ramsay was interested in directing the film before [Peter Jackson][/p?id=1744] acquired the rights to the novel.</li><li>For his role as George Harvey, [Stanley Tucci][/p?id=1892]  had his skin lightened, his chest and arm hair dyed to match his blondish-brown comb-over wig, and wore false teeth to alter his jaw line. He also wore blue contact lenses and a lentil-filled fat suit to widened his girth. All topped off with square-frame eyeglasses, a fake mustache and sideburns.</li><li>The main reason '[Ryan Gosling'][/p?id=1848] quit his role as Jack before filming start was mainly because during read through sessions with [Peter Jackson][/p?id=1744]  and the rest of the cast he felt that he was too young for the role, given he was 26, whereas Jack was supposed to be in his late 30s. Despite repeated assurances from [Jackson][/p?id=1744] that he can portray Jack under proper makeup, [Gosling][/p?id=1848] insisted that he could not portray the character well given of him being a method-actor and finally was let go.</li><li>This was one of the two films besides [Up In The Air][/f?id=21165]  (2009/I) that Paramount used its remaining marketing budget of 2009 to promote both film and for marketing and for Academy Awards consideration. This forced the other studio film, [Shutter Island][/f?id=18335] (2010) to be postponed its release to February 2010.</li><li>In Alice Sebold's original novel, a disturbing rape scene is recounted in great detail, an experience Sebold had personally experienced herself as a young woman. Director [Peter Jackson][/p?id=1744]  chose to omit this section of the book, feeling that the re-enactment of the ordeal would have, not just overwhelmed the film, but been too traumatic a sequence for the young [Saoirse Ronan][/p?id=1858] to endure.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

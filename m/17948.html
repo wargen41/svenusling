@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sagan Om Konungens Återkomst (förlängd) | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 40rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<!--<section id="sectionnav">
+									<ul>
+<li><a href="#director">Regi</a></li><li><a href="#actors">Skådespelare</a></li><li><a href="#trivia">Visste du?</a></li>									</ul>
+								</section>-->
+								<header>
+									<div class="title">
+										<h2>Sagan Om Konungens Återkomst (förlängd) <a href="#" class="grade">+++++</a></h2>
+										<h3>The Lord of the Rings: The Return of the King (extended edition)</h3>
+										<p>
+										Film från <time datetime="2004"><a href="#">2004</a></time><br>																				</p>
+									</div>
+									<div class="meta">
+										<a href="#" class="poster"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="Sagan om Ringen poster" /></a>
+									</div>
+								</header>
+
+<section id="director"><h2>Regi</h2><ul class="director" style="column-count:3; column-gap:2em;"><li><a href="/svenusling/p/1744.html">Peter Jackson</a></li></ul></section><section id="actors"><h2>Skådespelare</h2><ul class="actors" style="column-count:3; column-gap:2em;"><li>Noel Appleby – Everard Proudfoot</li><li>Alexandra Astin – Elanor Gamgee</li><li><a href="/svenusling/p/1864.html">Sean Astin</a> – Sam</li><li>David Aston – Gondorian Soldier 3</li><li>John Bach – Madril</li><li><a href="/svenusling/p/1865.html">Sean Bean</a> – Boromir</li><li><a href="/svenusling/p/1137.html">Cate Blanchett</a> – Galadriel</li><li><a href="/svenusling/p/1710.html">Orlando Bloom</a> – Legolas</li><li>Billy Boyd – Pippin</li><li>Sadwyn Brophy – Eldarion</li><li>Alistair Browning – Damrod</li><li><a href="/svenusling/p/1621.html">Marton Csokas</a> – Celeborn</li><li>Richard Edge – Gondorian Soldier 1</li><li>Jason Fitch – Uruk 2</li><li>Bernard Hill – Theoden</li><li><a href="/svenusling/p/1386.html">Ian Holm</a> – Bilbo</li><li>Bruce Hopkins – Gamling</li><li>Ian Hughes – Irolas</li><li>Lawrence Makoare – Witch King/Gothmog</li><li><a href="/svenusling/p/1387.html">Ian McKellen</a> – Gandalf</li><li>Bret McKenzie – Elf Escort</li><li>Sarah McLeod – Rosie Cotton</li><li>Maisie McLeod-Riera – Baby Gamgee</li><li>Dominic Monaghan – Merry</li><li><a href="/svenusling/p/1977.html">Viggo Mortensen</a> – Aragorn</li><li>John Noble – Denethor</li><li>Paul Norell – King of the Dead</li><li>Miranda Otto – Eowyn</li><li>Bruce Phillips – Grimbold</li><li>Shane Rangi – Harad Leader 2</li><li><a href="/svenusling/p/1497.html">John Rhys-Davies</a> – Gimli</li><li>Todd Rippon – Harad Leader 1</li><li>Thomas Robins – Deagol</li><li><a href="/svenusling/p/1039.html">Andy Serkis</a> – Gollum/Smeagol</li><li>Harry Sinclair – Isildur</li><li>Peter Tait – Shagrat</li><li>Joel Tobeck – Orc Lieutenant 1</li><li>Liv Tyler – Arwen</li><li><a href="/svenusling/p/1527.html">Karl Urban</a> – Eomer</li><li>Stephen Ure – Gorbag</li><li><a href="/svenusling/p/1381.html">Hugo Weaving</a> – Elrond</li><li><a href="/svenusling/p/1229.html">David Wenham</a> – Faramir</li><li><a href="/svenusling/p/1272.html">Elijah Wood</a> – Frodo</li><li class="voice">Alan Howard – The Ring (röst)</li><li>Sala Baker – Orc/Sauron</li><li>Robert Pollock – Orc</li><li>Ross Duncan – Orc</li><li>Pete Smith – Orc</li><li>Jed Brophy – Orc</li><li>Lee Hartley – Orc</li><li>Billy Jackson – Child</li><li>Katie Jackson – Child</li><li>Brad Dourif – Grima Wormtongue (extended edition)</li><li><a href="/svenusling/p/1169.html">Christopher Lee</a> – Saruman (extended edition)</li><li>Bruce Spence – The Mouth of Sauron (extended edition)</li><li class="voice"><a href="/svenusling/p/1497.html">John Rhys-Davies</a> – Lavskägge (röst)</li></ul></section><section id="trivia"><h2>Visste du?</h2><ul class="trivia"><li>The dead oliphant carcass used in this movie is reportedly the largest prop ever built for a movie. According to members of the prop department, director [Peter Jackson][/p?id=1744] still thought it could have been bigger.</li><li>[Andy Serkis][/p?id=1039] and [Elijah Wood][/p?id=1272] were each given prop rings by [Peter Jackson][/p?id=1744] used in the movie. They both thought they had the only one.</li><li>Since [John Rhys-Davies][/p?id=1497] suffered constant rashes from wearing the Gimli make-up, the make-up department gave him the opportunity to throw his Gimli mask into the fire on his last day of pick-up photography. He didn't hesitate a moment to grab and burn it.</li><li>The final day of filming on the trilogy actually happened over a month after this movie was theatrically released, and three weeks after the 2004 Academy Awards. [Peter Jackson][/p?id=1744] arranged to film one final shot of skulls on the floor in the tunnel of the Paths of the Dead, which was included in the Extended Edition DVD. He thought it was funny to be doing filming on a movie that had already won the Best Picture Oscar.</li><li>Great caution was taken for the scene where Faramir is dragged back to Minas Tirith on his horse. The filmmakers were afraid that the horse might suddenly start to run, dragging [David Wenham][/p?id=1229] behind it, so a release system was built into the saddle. [Wenham][/p?id=1229] held a handle in his right hand, and if the horse started to run, he could simply pull it and be released from the stirrup. Fortunately, they ended up not needing it.</li><li>[Billy Boyd's][/p?id=Billy%20Boyd] singing scene largely came about because co-writer Philippa Boyens went for a night out at a karaoke bar with the younger male cast members, and she was very struck by the quality of his voice. Remembering that Denethor asks Pippin to sing him a song when Faramir heads off to war, she resurrected the lyrics from the novel, and [Boyd][/p?id=Billy%20Boyd] came up with the tune for it.</li><li>Gollum is missing his left ear lobe. This is due to an air trap in the casting that was made for [Peter Jackson's][/p?id=1744] approval of the figure. When looking at the casting, the design team concluded that it should stay that way, since it looked like a battle wound that might have occurred during Gollum's past adventures.</li><li>To get enough extras for the Battle at the Black Gate, a few hundred members of the New Zealand Army were brought in. They apparently were so enthusiastic during the battle scenes that they kept breaking the wooden swords and spears they were given.</li><li>The movie made a 1,408% profit for New Line Studios on their initial outlay.</li><li>In the book, Eowyn rides into battle with the Rohirrim, taking Merry with her, but without revealing her identity to them or the audience. Instead, she is disguised as a character who calls himself &quot;Dernhelm&quot;, and only reveals herself in the battle when she takes off her helmet to show the Witch-king of Angmar that she is a woman. In the movie, Merry and the audience are always aware that it is Eowyn. The filmmakers made this change because they felt that, in a visual medium, it would be difficult to conceal her identity, and because not recognizing her would make Merry look like &quot;the stupidest Hobbit on Earth.&quot;</li><li>The Lord of the Rings trilogy became the most nominated film franchise in Academy Award history with thirty nominations, surpassing The Godfather trilogy (twenty-eight) and the Star Wars film franchise (twenty-one).</li><li>Fans of this movie often speculate why the characters didn't just fly on the giant eagles into Mordor and drop the ring into Mount Doom. This is not, in fact, a plot hole. This was explained in the book, but the filmmakers didn't think there would have been a need to, because they felt it was obvious why they didn't do this. The Eye of Sauron would have been a major obstacle. Even Professor J.R.R. Tolkien vetoed the abuse of eagles' intervention, when presented an early project of a movie from his book. Also, it is explained that the eagles are very proud creatures, and did not take sides in the War of the Ring until the end, so they would not have assisted.</li><li>[Peter Jackson][/p?id=1744] is arachnophobic, and based the Shelob design on the types of spiders he feared the most.</li><li>It has the highest perfect score at the Academy Awards, with eleven wins out of eleven nominations. Its wins also means that The Lord of the Rings film franchise has won every category, for which it was nominated, except one (Best Actor in a Supporting Role).</li><li>The last spoken line of the movie, &quot;Well, I'm back&quot;, is also the last line of the book.</li><li>The last shot of principal photography was when the newly-crowned Aragorn bows to the four Hobbits. Although [Viggo Mortensen][/p?id=1977] did not need to be on-set for that day, he nevertheless insisted on attending. He didn't have a crown (it wasn't necessary, he wasn't being filmed), so he fashioned one out of paper. With each successive take, the crown was becoming more ornate and sillier as crew members kept decorating it, so the four actors playing the Hobbits often had difficulty suppressing their giggles.</li><li>The Battle of Pelennor Fields was filmed on a large field heavily populated with rabbits. The place had to be carefully inspected for rabbit holes, which were all filled, due to the danger they would pose if a horse were to step into one, which could cause a major pile-up, with injuries to horses and riders.</li><li>According to a magazine article, [Peter Jackson][/p?id=1744] hated the Army of the Dead, thinking it was too unbelievable. He kept it in the script because he did not wish to disappoint diehard fans of the book.</li><li>During one of the shots filming the charge of the Rohirrim, a horse rider fell off the back of his horse. All the horses that came behind him miraculously managed to either miss or avoid him.</li><li>Special care was taken to make sure that the destruction of Sauron's tower of Barad-dûr did not resemble the destruction of the World Trade Center. For this reason, it disintegrates from the ground up, and the sound was made from breaking glass, so that it would not sound or look as if it were exploding.</li><li>This movie was originally going to end with a voice-over epilogue by Galadriel ([Cate Blanchett][/p?id=1137]), detailing the fate of the Fellowship of the Ring after the events of the movie. Scenes showing Gimli and Legolas for this purpose had been shot, but were not used in any version of the finished movie.</li><li>Denethor ([John Noble][/p?id=John%20Noble]) carried a sword strapped to his belt. Although he never draws it, the prop department made a full sword that could be drawn from its sheath, so that [Noble][/p?id=John%20Noble] would feel as important as the rest of the cast, which used their swords.</li><li>This is the second movie featuring [Bernard Hill][/p?id=Bernard%20Hill] that earned eleven Academy Awards. The first was [Titanic][/f?id=20448] (1997).</li><li>[Andy Serkis'][/p?id=1039] last day of filming was only a few weeks before the theatrical release. On the carpet of the floor of [Peter Jackson's][/p?id=1744] house, they filmed the facial reaction of Gollum when he realizes Frodo intends to destroy the ring. The resulting video was e-mailed to Weta Digital so the animators could replicate the shot with the CGI character.</li><li>Scenes were shot that involved Aragorn tackling a physical manifestation of Sauron one-on-one while outside the Black Gate. In the scene, Sauron would have appeared even taller than the Sauron seen at the start of The Fellowship of the Ring. Once footage was reviewed, however, it was decided that to include this scene would pervert J.R.R. Tolkien's ideas, and also distracted too much from the climax of Frodo and Sam's storyline. Footage from the fight was re-used in other ways: Aragorn would originally step forward and see an image of Sauron in his original, Elvish-like appearance. This was changed to Aragorn gazing at the Eye of Sauron, beckoning to him from atop the tower of Barad-dûr. Aragorn's charge towards the Black Gate was to take him into a heated sword fight with the real, armor-clad Sauron. A large troll was digitally imposed over the stuntman playing Sauron. The temporary work on this scene can be seen on the third disc of the Extended Edition DVD.</li><li>To get the idea of perspective as Denethor drags and throws out Pippin from the burial chamber, [Billy Boyd's][/p?id=Billy%20Boyd] double was dragged and rolled out. When the double hit him in the back, he popped up.</li><li>The first sequel since [The Godfather: Part II][/f?id=14370] (1974) to win an Oscar for Best Picture.</li><li>Of the three movies to have won eleven Academy Awards, it is the only one not to have received a nomination for its acting.</li><li>[Alison Doody][/p?id=Alison%20Doody] had been asked by [Peter Jackson][/p?id=1744] to play Eowyn, but had to decline the role due to her pregnancy and the sixteen-month commitment.</li></ul></section>
+							</article>
+
+					</div>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<!--<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>-->			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
