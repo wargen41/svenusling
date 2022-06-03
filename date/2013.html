@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>År 2013 | Sven Usling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/svenusling/assets/css/main.css" /><!-- TEST -->
+<style>
+/* Detta bör väl lyftas in i sass/css-filen sen */
+@media screen and (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; scroll-padding-top: 5em; }
+}
+
+#main > article > section { margin-bottom: 2.5em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+ul li { padding-left: 0; }
+ul li.grades { font-family: "Raleway", Helvetica, sans-serif; font-size: 150%; margin-bottom:-0.5em; }
+/*#main section ul { counter-reset: my-test-counter }
+#main section ul > li::before { counter-increment: my-test-counter; content: counter(my-test-counter) ". "; }*/
+
+/*#main > article > #sectionnav > ul { transform: translateY(-100%); }*/
+/*#main > article > #sectionnav { margin: 0 0 0 -5em; transform: translateY(15em); position:sticky; top:-11.5em; height:0; }
+#sectionnav > ul { width: 2em; overflow: hidden; background: silver; }
+#sectionnav > ul > li { display: inline; }
+#sectionnav > ul > li { display: block; }
+#sectionnav > ul > li > a { margin:0 1em 0 1em; }
+#sectionnav > ul > li > a:nth-of-type(1) { margin-left: 0; }*/
+#main > article > #sectionnav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background: silver;
+	z-index: 99;
+	text-align: center;
+}
+#sectionnav > ul > li { display: inline; margin:0 1em 0 1em; }
+
+/* https://moderncss.dev/pure-css-smooth-scroll-back-to-top/ */
+.back-to-top-link {
+  /* `fixed` is fallback when `sticky` not supported */
+  position: fixed;
+  /* preferred positioning, requires prefixing for most support, and not supported on Safari
+     @link https://caniuse.com/#search=position%3A%20sticky */
+  position: sticky;
+ /* reinstate clicks */
+  pointer-events: all;
+  /* achieves desired positioning within the viewport
+     relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used */
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #d6e3f0;
+  /* emoji don't behave like regular fonts
+     so this helped position it correctly */
+  padding: 0.25rem;
+}
+/* How far of a scroll travel within <main> prior to the
+   link appearing */
+/* $scrollLength: 100vh;*/
+
+.back-to-top-wrapper {
+  /* uncomment to visualize "track" */
+  /*outline: 1px solid red;*/
+  position: absolute;
+  top: calc(100vh + 2rem);
+  right: 0.25rem;
+  bottom: 0em;
+  /*TEST*/ /*height:10000px;*/
+  /* Required for best support in browsers not supporting `sticky` */
+  width: 3em;
+  /* Disable interaction with this element */
+  pointer-events: none;
+}
+  /* required to make sure the `absolute` positioning of
+     the anchor wrapper is indeed `relative` to this element vs. the body */
+	#wrapper {
+		position: relative;
+	}
+
+</style>
+	</head>
+	<body id="top" class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Sven Usling</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="/svenusling/all-titles.html">Betyg</a></li>
+								<li><a href="#">Listor</a></li>
+								<li><a href="#">Videorecensioner</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Sök</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Betyg</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Listor</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Videorecensioner</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Adipiscing</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li>
+										<a href="#" class="button large fit">Språk: Svenska</a>
+									</li>
+									<!--<li><a href="#" class="button large fit">Log In</a></li>-->
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>År 2013 (94)</h2>
+									</div>
+								</header>
+<style>
+.gradeinfo { position:absolute; right:3em; visibility:hidden; }
+.filmlist li:hover .gradeinfo { visibility:visible; padding-right:0.5em }
+.filmlist li { border-radius:0.4em; }
+.filmlist li:hover { background-color:rgba(160,160,160,0.1); }
+</style>
+<ul id="filmlistUL" class="filmlist complete">
+<li id="m20813" class="film"><a href="/svenusling/m/20813.html">12 Years A Slave</a><span class="gradeinfo">+++++</span></li><li id="m10752" class="film"><a href="/svenusling/m/10752.html">Beautiful Creatures</a><span class="gradeinfo">++++</span></li><li id="m12032" class="film"><a href="/svenusling/m/12032.html">Det Blå Paraplyet</a><span class="gradeinfo">++++</span></li><li id="m14080" class="film"><a href="/svenusling/m/14080.html">Frost</a><span class="gradeinfo">++++</span></li><li id="m12033" class="film"><a href="/svenusling/m/12033.html">Det Blåser Upp En Vind</a><span class="gradeinfo">++++</span></li><li id="m17425" class="film"><a href="/svenusling/m/17425.html">Philomena</a><span class="gradeinfo">++++</span></li><li id="m17941" class="film"><a href="/svenusling/m/17941.html">Sagan Om Prinsessan Kaguya</a><span class="gradeinfo">++++</span></li><li id="m17969" class="film"><a href="/svenusling/m/17969.html">Saving Mr. Banks</a><span class="gradeinfo">++++</span></li><li id="m14934" class="film"><a href="/svenusling/m/14934.html">Hundraåringen Som Klev Ut Genom Fönstret Och Försvann</a><span class="gradeinfo">++++</span></li><li id="m19829" class="film"><a href="/svenusling/m/19829.html">Star Trek Into Darkness</a><span class="gradeinfo">++++</span></li><li id="m21891" class="film"><a href="/svenusling/m/21891.html">Warm Bodies</a><span class="gradeinfo">++++</span></li><li id="m19849" class="film"><a href="/svenusling/m/19849.html">Still Life (2013)</a><span class="gradeinfo">++++</span></li><li id="m17315" class="film"><a href="/svenusling/m/17315.html">Oz: The Great And The Powerful</a><span class="gradeinfo">++++</span></li><li id="m11690" class="film"><a href="/svenusling/m/11690.html">Craig Ferguson: I'm Here To Help</a><span class="gradeinfo">++++</span></li><li id="m15279" class="film"><a href="/svenusling/m/15279.html">Jimmy Carr: Laughing And Joking</a><span class="gradeinfo">++++</span></li><li id="m15282" class="film"><a href="/svenusling/m/15282.html">Jodorowsky's Dune</a><span class="gradeinfo">++++</span></li><li id="m11447" class="film"><a href="/svenusling/m/11447.html">Captain Phillips</a><span class="gradeinfo">++++</span></li><li id="m13241" class="film"><a href="/svenusling/m/13241.html">Dumma Mej 2</a><span class="gradeinfo">++++</span></li><li id="m14012" class="film"><a href="/svenusling/m/14012.html">42</a><span class="gradeinfo">++++</span></li><li id="m11725" class="film"><a href="/svenusling/m/11725.html">Croodarna</a><span class="gradeinfo">++++</span></li><li id="m17619" class="film"><a href="/svenusling/m/17619.html">Red 2</a><span class="gradeinfo">++++</span></li><li id="m12006" class="film"><a href="/svenusling/m/12006.html">Den Store Gatsby (2013)</a><span class="gradeinfo">++++</span></li><li id="m14321" class="film"><a href="/svenusling/m/14321.html">Gravity</a><span class="gradeinfo">++++</span></li><li id="m16380" class="film"><a href="/svenusling/m/16380.html">Monsters University</a><span class="gradeinfo">++++</span></li><li id="m14335" class="film"><a href="/svenusling/m/14335.html">Greg Davies Live: The Back of My Mum's Head</a><span class="gradeinfo">++++</span></li><li id="m14603" class="film"><a href="/svenusling/m/14603.html">Hobbit: Smaugs Ödemark</a><span class="gradeinfo">+++</span></li><li id="m17173" class="film"><a href="/svenusling/m/17173.html">Now You See Me</a><span class="gradeinfo">+++</span></li><li id="m12056" class="film"><a href="/svenusling/m/12056.html">Det Regnar Köttbullar 2: Den Stora Matkampen</a><span class="gradeinfo">+++</span></li><li id="m10041" class="film"><a href="/svenusling/m/10041.html">A Field in England</a><span class="gradeinfo">+++</span></li><li id="m10042" class="film"><a href="/svenusling/m/10042.html">A Good Day To Die Hard</a><span class="gradeinfo">+++</span></li><li id="m11067" class="film"><a href="/svenusling/m/11067.html">Blue Jasmine</a><span class="gradeinfo">+++</span></li><li id="m20804" class="film"><a href="/svenusling/m/20804.html">Turbo</a><span class="gradeinfo">+++</span></li><li id="m17225" class="film"><a href="/svenusling/m/17225.html">Oblivion (2013)</a><span class="gradeinfo">+++</span></li><li id="m15184" class="film"><a href="/svenusling/m/15184.html">Jack The Giant Slayer</a><span class="gradeinfo">+++</span></li><li id="m14937" class="film"><a href="/svenusling/m/14937.html">The Hunger Games: Catching Fire</a><span class="gradeinfo">+++</span></li><li id="m14686" class="film"><a href="/svenusling/m/14686.html">Hotell</a><span class="gradeinfo">+++</span></li><li id="m13425" class="film"><a href="/svenusling/m/13425.html">Enemies Closer</a><span class="gradeinfo">+++</span></li><li id="m11387" class="film"><a href="/svenusling/m/11387.html">The Butler</a><span class="gradeinfo">+++</span></li><li id="m15996" class="film"><a href="/svenusling/m/15996.html">Man Of Steel</a><span class="gradeinfo">+++</span></li><li id="m17276" class="film"><a href="/svenusling/m/17276.html">One Chance</a><span class="gradeinfo">+++</span></li><li id="m13439" class="film"><a href="/svenusling/m/13439.html">Epic - Skogens Hemliga Rike</a><span class="gradeinfo">+++</span></li><li id="m20352" class="film"><a href="/svenusling/m/20352.html">Thor: The Dark World</a><span class="gradeinfo">+++</span></li><li id="m13448" class="film"><a href="/svenusling/m/13448.html">Escape From Planet Earth</a><span class="gradeinfo">+++</span></li><li id="m13449" class="film"><a href="/svenusling/m/13449.html">Escape Plan</a><span class="gradeinfo">+++</span></li><li id="m17292" class="film"><a href="/svenusling/m/17292.html">Orc Wars</a><span class="gradeinfo">+++</span></li><li id="m21912" class="film"><a href="/svenusling/m/21912.html">Welcome To The Jungle (2013)</a><span class="gradeinfo">+++</span></li><li id="m18074" class="film"><a href="/svenusling/m/18074.html">The Secret Life Of Walter Mitty</a><span class="gradeinfo">+++</span></li><li id="m13979" class="film"><a href="/svenusling/m/13979.html">Flygplan</a><span class="gradeinfo">+++</span></li><li id="m21918" class="film"><a href="/svenusling/m/21918.html">What If</a><span class="gradeinfo">+++</span></li><li id="m17317" class="film"><a href="/svenusling/m/17317.html">Pacific Rim</a><span class="gradeinfo">+++</span></li><li id="m18599" class="film"><a href="/svenusling/m/18599.html">Snowpiercer</a><span class="gradeinfo">+++</span></li><li id="m11437" class="film"><a href="/svenusling/m/11437.html">Cape Town Cops</a><span class="gradeinfo">+++</span></li><li id="m15793" class="film"><a href="/svenusling/m/15793.html">The Lone Ranger</a><span class="gradeinfo">+++</span></li><li id="m15028" class="film"><a href="/svenusling/m/15028.html">Identity Thief</a><span class="gradeinfo">+++</span></li><li id="m21967" class="film"><a href="/svenusling/m/21967.html">World War Z</a><span class="gradeinfo">+++</span></li><li id="m21968" class="film"><a href="/svenusling/m/21968.html">The World's End</a><span class="gradeinfo">+++</span></li><li id="m11479" class="film"><a href="/svenusling/m/11479.html">The Challenger</a><span class="gradeinfo">+++</span></li><li id="m12012" class="film"><a href="/svenusling/m/12012.html">Den Tyske Läkaren</a><span class="gradeinfo">+++</span></li><li id="m20718" class="film"><a href="/svenusling/m/20718.html">TPB AFK: The Pirate Bay Away From Keyboard</a><span class="gradeinfo">+++</span></li><li id="m17408" class="film"><a href="/svenusling/m/17408.html">Percy Jackson Och Monsterhavet</a><span class="gradeinfo">++</span></li><li id="m15121" class="film"><a href="/svenusling/m/15121.html">Iron Man 3</a><span class="gradeinfo">++</span></li><li id="m17938" class="film"><a href="/svenusling/m/17938.html">Safe Haven</a><span class="gradeinfo">++</span></li><li id="m13342" class="film"><a href="/svenusling/m/13342.html">Elysium</a><span class="gradeinfo">++</span></li><li id="m17698" class="film"><a href="/svenusling/m/17698.html">Riddick</a><span class="gradeinfo">++</span></li><li id="m15658" class="film"><a href="/svenusling/m/15658.html">The Last Stand</a><span class="gradeinfo">++</span></li><li id="m17469" class="film"><a href="/svenusling/m/17469.html">Pojken Med Det Tickande Hjärtat (Svensk version)</a><span class="gradeinfo">++</span></li><li id="m13901" class="film"><a href="/svenusling/m/13901.html">The Fifth Estate</a><span class="gradeinfo">++</span></li><li id="m20048" class="film"><a href="/svenusling/m/20048.html">Tarzan (2013)</a><span class="gradeinfo">++</span></li><li id="m14678" class="film"><a href="/svenusling/m/14678.html">The Host (2013)</a><span class="gradeinfo">++</span></li><li id="m14173" class="film"><a href="/svenusling/m/14173.html">G.I. Joe 2: Retaliation</a><span class="gradeinfo">++</span></li><li id="m17253" class="film"><a href="/svenusling/m/17253.html">Olympus Has Fallen</a><span class="gradeinfo">++</span></li><li id="m13424" class="film"><a href="/svenusling/m/13424.html">Ender's Game</a><span class="gradeinfo">++</span></li><li id="m15478" class="film"><a href="/svenusling/m/15478.html">Killing Season</a><span class="gradeinfo">++</span></li><li id="m14215" class="film"><a href="/svenusling/m/14215.html">Gangster Squad</a><span class="gradeinfo">++</span></li><li id="m21915" class="film"><a href="/svenusling/m/21915.html">The Whale</a><span class="gradeinfo">++</span></li><li id="m21955" class="film"><a href="/svenusling/m/21955.html">The Wolverine</a><span class="gradeinfo">++</span></li><li id="m18637" class="film"><a href="/svenusling/m/18637.html">The Sound of Music Live!</a><span class="gradeinfo">++</span></li><li id="m10478" class="film"><a href="/svenusling/m/10478.html">Assault On Wall Street</a><span class="gradeinfo">++</span></li><li id="m15352" class="film"><a href="/svenusling/m/15352.html">Justin Och De Tappra Krigarna</a><span class="gradeinfo">++</span></li><li id="m17736" class="film"><a href="/svenusling/m/17736.html">Robocroc</a><span class="gradeinfo">+</span></li><li id="m16468" class="film"><a href="/svenusling/m/16468.html">Movie 43</a><span class="gradeinfo">+</span></li><li id="m17498" class="film"><a href="/svenusling/m/17498.html">Poseidon Rex</a><span class="gradeinfo">+</span></li><li id="m10085" class="film"><a href="/svenusling/m/10085.html">After Earth</a><span class="gradeinfo">+</span></li><li id="m10091" class="film"><a href="/svenusling/m/10091.html">Age of Dinosaurs</a><span class="gradeinfo">+</span></li><li id="m12946" class="film"><a href="/svenusling/m/12946.html">Dracano</a><span class="gradeinfo">+</span></li><li id="m21928" class="film"><a href="/svenusling/m/21928.html">White House Down</a><span class="gradeinfo">+</span></li><li id="m17584" class="film"><a href="/svenusling/m/17584.html">R.I.P.D.</a><span class="gradeinfo">+</span></li><li id="m19937" class="film"><a href="/svenusling/m/19937.html">Suddenly</a><span class="gradeinfo">+</span></li><li id="m15338" class="film"><a href="/svenusling/m/15338.html">Jurassic Attack</a><span class="gradeinfo">+</span></li><li id="m14061" class="film"><a href="/svenusling/m/14061.html">Free Birds</a><span class="gradeinfo">+</span></li><li id="m10479" class="film"><a href="/svenusling/m/10479.html">Assumed Killer</a><span class="gradeinfo">+</span></li><li id="m10487" class="film"><a href="/svenusling/m/10487.html">Atlantic Rim</a><span class="gradeinfo">+</span></li><li id="m18277" class="film"><a href="/svenusling/m/18277.html">Sharknado</a><span class="gradeinfo">-</span></li><li id="m15963" class="series"><a href="/svenusling/m/15963.html">Man Down</a><span class="gradeinfo"></span></li></ul>
+
+							</article>
+
+					</div>
+
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="#" class="logo"><!--<img src="images/logo.jpg" alt="" />--><img src="siluett.jpeg" alt="" /></a>
+								<header>
+									<h2>Sven Usling</h2>
+									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+								</header>
+							</section>
+
+						<!-- Posts List -->
+							<section>
+								<h2>Senast betygsatta</h2>
+								<ul class="posts">
+									<li>
+										<article>
+											<header>
+												<h3><a href="/svenusling/m/17944.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="/svenusling/m/17944.html" class="image"><img src="/svenusling/images/Green_Lantern_Emerald_Knights.jpg" alt="" /></a>										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="/svenusling/m/17944.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="/svenusling/m/17944.html" class="image"><img src="/svenusling/images/Polisprefekten.jpg" alt="" /></a>										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="/svenusling/m/17944.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="/svenusling/m/17944.html" class="image"><img src="/svenusling/images/Justice_League_The_New_Frontier.jpg" alt="" /></a>										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="/svenusling/m/17944.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="/svenusling/m/17944.html" class="image"><img src="/svenusling/images/Green_Lantern_First_Flight.jpg" alt="" /></a>										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="/svenusling/m/17944.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="/svenusling/m/17944.html" class="image"><img src="/svenusling/images/Sagan_Om_Ringen01.jpg" alt="" /></a>										</article>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Mini Posts -->
+							<section>
+								<h2>Fler videorecensioner</h2>
+								<div class="mini-posts">
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Vitae sed condimentum</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
+												<time class="published" datetime="2015-10-19">October 19, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Odio congue mattis</a></h3>
+												<time class="published" datetime="2015-10-18">October 18, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Enim nisl veroeros</a></h3>
+												<time class="published" datetime="2015-10-17">October 17, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										</article>
+
+								</div>
+							</section>
+							
+							<section id="demolinks">
+								<h2>Länkar till demosidor</h2>
+								<ul class="actions stacked">
+									<li><a href="/svenusling/all-titles.html" class="button fit primary">Alla filmer och serier</a></li>
+									<li><a href="/svenusling/vip.html" class="button fit primary">VIP</a></li>
+									<li><a href="/svenusling/average-year.html" class="button fit primary">Genomsnittsbetyg för filmer per år</a></li>
+									<li><a href="/svenusling/average-episode.html" class="button fit primary">Genomsnittsbetyg för serier</a></li>
+									<li><a href="/svenusling/m/10002.html" class="button fit primary">A Bear Named Winnie</a></li>
+									<li><a href="/svenusling/m/10037.html" class="button fit primary">A Civil Action</a></li>
+									<li><a href="/svenusling/m/17944.html" class="button fit primary">Sagan Om Ringen (förlängd version)</a></li>
+									<li><a href="/svenusling/p/1744.html" class="button fit primary">Peter Jackson</a></li>
+								</ul>							
+							</section>
+
+						<!-- About -->
+							<section class="blurb">
+								<h2>About</h2>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul>
+							</section>
+
+<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+	</section>
+	<!-- Back to Top link -->
+	<div class="back-to-top-wrapper">
+		<a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a>
+	</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="/svenusling/assets/js/jquery.min.js"></script>			<script src="/svenusling/assets/js/jquery.scrollex.min.js"></script>			<script src="/svenusling/assets/js/browser.min.js"></script>			<script src="/svenusling/assets/js/breakpoints.min.js"></script>			<script src="/svenusling/assets/js/util.js"></script>			<script src="/svenusling/assets/js/main.js"></script>
+	</body>
+</html>
