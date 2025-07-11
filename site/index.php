@@ -1,3 +1,4 @@
+<?php require 'includes/db.php';?>
 <!DOCTYPE html>
 <html>
     <head>
