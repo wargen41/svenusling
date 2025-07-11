@@ -1,4 +1,4 @@
-<?php $navText = getTexts('navigation', 'sv'); ?>
+<?php $navText = getTexts('navigation', $GLOBALS['my_language']); ?>
 <nav>
     <ul>
         <li>

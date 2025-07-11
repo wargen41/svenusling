@@ -14,7 +14,21 @@ function getSiteVars() {
     return $vars;
 }
 
-function getTexts($category, $lang) {
+function getTextLanguages() {
+    $res = $GLOBALS['db']->query("PRAGMA table_info(site_text)");
+
+    $lang = [];
+    while ($row = $res->fetchArray(SQLITE3_NUM)) {
+        array_push($lang, $row[1]);
+    }
+
+    // The first two columns are id and category, so we remove them
+    array_splice($lang, 0, 2);
+
+    return $lang;
+}
+
+function getTexts( $category, $lang ) {
     $query = "SELECT id, " . $lang . " FROM site_text WHERE category='" . $category . "'";
     $res = $GLOBALS['db']->query($query);
 
@@ -22,6 +36,7 @@ function getTexts($category, $lang) {
     while ($row = $res->fetchArray()) {
         $texts[$row['id']] = $row[$lang];
     }
+
     return $texts;
 }
 
