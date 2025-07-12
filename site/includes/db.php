@@ -40,13 +40,33 @@ function getTexts( $category, $lang ) {
     return $texts;
 }
 
-function getTextInSpecifiedLanguage( $str, $lang ) {
-    $query = "SELECT " . $lang . " FROM site_text WHERE id='" . $str . "'";
+function getTextInSpecifiedLanguage( $id, $lang ) {
+    $query = "SELECT " . $lang . " FROM site_text WHERE id='" . $id . "'";
     $res = $GLOBALS['db']->query($query);
 
     $row = $res->fetchArray();
     $text = $row[$lang];
 
     return $text;
+}
+
+function getArticleInAllLanguages( $id ) {
+    $query = "SELECT * FROM site_articles WHERE id='" . $id . "'";
+    $res = $GLOBALS['db']->query($query);
+
+    $article = [];
+    while ($row = $res->fetchArray()) {
+        $lang = $row['lang'];
+        $langArticle = [];
+        $langArticle['title'] = $row['title'];
+        $langArticle['ingress'] = $row['ingress'];
+        $langArticle['body'] = $row['body'];
+        $langArticle['author'] = $row['author'];
+        $article[$lang] = $langArticle;
+    }
+
+    //var_dump($article);
+
+    return $article;
 }
 ?>

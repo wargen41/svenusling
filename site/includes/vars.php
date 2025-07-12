@@ -4,8 +4,14 @@ $GLOBALS['my_site'] = getSiteVars();
 $GLOBALS['my_supported_languages'] = getTextLanguages();
 $GLOBALS['my_language'] = tbs_get_client_browser_lang( $my_supported_languages, $my_supported_languages[0] );
 
-function getStr($str) {
-    return getTextInSpecifiedLanguage( $str, $GLOBALS['my_language'] );
+function getStr($id) {
+    return getTextInSpecifiedLanguage( $id, $GLOBALS['my_language'] );
+}
+
+function getArticle($id) {
+    // Behöver lägga in en fallback här som hämtar från default-språket ifall det inte finns på aktuellt språk
+    $articleVersions = getArticleInAllLanguages( $id );
+    return $articleVersions[ $GLOBALS['my_language'] ];
 }
 
 // https://medium.com/@akmashish15/how-to-detect-browser-language-in-php-87442c39496a
