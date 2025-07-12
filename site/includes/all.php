@@ -1,2 +1,5 @@
-<?php require 'db.php';?>
-<?php require 'global.php';?>
+<?php
+require 'db.php';
+require 'global.php';
+require 'libraries.php';
+?>
