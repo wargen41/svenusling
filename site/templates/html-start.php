@@ -93,6 +93,7 @@ nav ul > li {
 }
 #site-widget {
     position: sticky;
+    z-index: 999;
     top: 0;
     display: inline-block;
     margin: 0 0 0 0;
