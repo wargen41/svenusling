@@ -40,4 +40,13 @@ function getTexts( $category, $lang ) {
     return $texts;
 }
 
+function getTextInSpecifiedLanguage( $str, $lang ) {
+    $query = "SELECT " . $lang . " FROM site_text WHERE id='" . $str . "'";
+    $res = $GLOBALS['db']->query($query);
+
+    $row = $res->fetchArray();
+    $text = $row[$lang];
+
+    return $text;
+}
 ?>
