@@ -9,9 +9,30 @@ function getStr($id) {
 }
 
 function getArticle($id) {
-    // Behöver lägga in en fallback här som hämtar från default-språket ifall det inte finns på aktuellt språk
-    $articleVersions = getArticleInAllLanguages( $id );
-    return $articleVersions[ $GLOBALS['my_language'] ];
+    $articleVersions = getArticleInAllLanguages($id);
+
+    $lang = $GLOBALS['my_language'];
+    if (!array_key_exists($lang, $articleVersions)) {
+        $supported = $GLOBALS['my_supported_languages'];
+        // Loop through the array of supported languages and use the first one which exists
+        foreach ($supported as $supportedLang) {
+            if (array_key_exists($supportedLang, $articleVersions)) {
+                $lang = $supportedLang;
+                break; // Stop after finding the first available language
+            }
+        }
+    }
+    return $articleVersions[$lang];
+}
+
+function includeArticle($id) {
+    $theArticle = getArticle($id);
+    $theId = $id;
+    include 'templates/dynamic-article.php';
+}
+
+function includeModule($file) {
+    include 'modules/' . $file;
 }
 
 // https://medium.com/@akmashish15/how-to-detect-browser-language-in-php-87442c39496a

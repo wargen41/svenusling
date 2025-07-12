@@ -62,6 +62,7 @@ function getArticleInAllLanguages( $id ) {
         $langArticle['ingress'] = $row['ingress'];
         $langArticle['body'] = $row['body'];
         $langArticle['author'] = $row['author'];
+        $langArticle['date'] = $row['date'];
         $article[$lang] = $langArticle;
     }
 

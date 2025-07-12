@@ -20,6 +20,22 @@ h1,h2,h3 {
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
     font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 }
+.skip-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: .5rem;
+    translate: 0 -100%;
+    transition: translate 150ms ease-in-out;
+}
+.skip-link:focus {
+    translate: 0;
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content"><?php echo getStr('SKIP_TO_MAIN'); ?></a>

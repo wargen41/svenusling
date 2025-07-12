@@ -1,6 +1,6 @@
 <main id="main-content">
-<?php $articleID = 'INTRODUCTION'; include 'templates/article.php'; ?>
-<?php include 'modules/puff-rated-movies.php'; ?>
-<?php include 'modules/puff-video-reviews.php'; ?>
-<?php include 'modules/puff-misc-lists.php'; ?>
+<?php includeArticle('INTRODUCTION'); ?>
+<?php includeModule('puff-rated-movies.php'); ?>
+<?php includeModule('puff-video-reviews.php'); ?>
+<?php includeModule('puff-misc-lists.php'); ?>
 </main>

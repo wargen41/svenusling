@@ -1,2 +1,2 @@
 <?php require 'db.php';?>
-<?php require 'vars.php';?>
+<?php require 'global.php';?>
