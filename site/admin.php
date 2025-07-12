@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'includes/all.php';
-$page_title = getStr('START_TITLE');
+
+$page_title = 'Admin';
 
 require 'templates/html-start.php';
 include 'templates/header.php';
-include 'templates/site-widget.php';
-include 'templates/main-index.php';
+include 'templates/main-admin.php';
 include 'templates/footer.php';
 require 'templates/html-end.php';
 
