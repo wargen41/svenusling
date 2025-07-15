@@ -1,7 +1,9 @@
 <?php
 
-$db_path = "/var/www/db/svenusling/";
-$GLOBALS['db'] = new SQLite3($db_path . 'svenusling.db');
+$db_conf = parse_ini_file('../../db.ini');
+$db_path = $db_conf['path'];
+$db_name = $db_conf['name'];
+$GLOBALS['db'] = new SQLite3($db_path . $db_name);
 
 function getSiteVars() {
     $res = $GLOBALS['db']->query('SELECT * FROM site');
