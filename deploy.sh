@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is to be run via SSH on the web server
+
 # Check if the domain argument is provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <domain>"
@@ -19,7 +21,8 @@ wget https://github.com/wargen41/svenusling/archive/main.zip
 unzip main.zip "svenusling-main/site/*"
 
 # Move files to public_html
-mv -f svenusling-main/site/* public_html
+# Save backups of the earlier version
+mv -b svenusling-main/site/* public_html
 
 # Remove unnecessary directories and files
 rmdir svenusling-main/site
