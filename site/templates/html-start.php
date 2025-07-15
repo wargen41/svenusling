@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $GLOBALS['my_language']; ?>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,8 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    padding: .5rem;
+    padding: .5rem 0;
+    text-wrap: balance;
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
     font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
     /* https://github.com/system-fonts/modern-font-stacks#didone */
@@ -45,7 +46,7 @@ article > h1 {
     background: var(--background-color-default);
 }
 p {
-    text-align: justify;
+    text-align: left;
 }
 .skip-link {
     position: fixed;
