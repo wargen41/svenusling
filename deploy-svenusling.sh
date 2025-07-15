@@ -19,7 +19,7 @@ wget https://github.com/wargen41/svenusling/archive/main.zip
 
 # Unzip files in the site directory
 # Do not include config.php
-unzip main.zip "svenusling-main/site/*" -x "svenusling-main/site/config.php"
+unzip main.zip "svenusling-main/site/*"
 
 # Move files to public_html
 # Save backups of the earlier version
