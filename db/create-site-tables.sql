@@ -21,8 +21,8 @@ CREATE TABLE site_articles(
 );
 -- CONTENT
 -- general site variables
-INSERT INTO site VALUES('root', '/svenusling-site/');
 INSERT INTO site VALUES('name', 'Sven Usling');
+INSERT INTO site VALUES('logo', '/assets/siluett.jpeg');
 -- text strings
 INSERT INTO site_text VALUES('SKIP_TO_MAIN', 'accessibility', 'Gå till primärt innehåll', 'Skip to main content');
 INSERT INTO site_text VALUES('START_TITLE', 'titles', 'Välkommen', 'Welcome');
