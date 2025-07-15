@@ -17,8 +17,9 @@ cd ~/domains/"$domain" || exit
 # Download the zip file
 wget https://github.com/wargen41/svenusling/archive/main.zip
 
-# Unzip specific files
-unzip main.zip "svenusling-main/site/*"
+# Unzip files in the site directory
+# Do not include config.php
+unzip main.zip "svenusling-main/site/*" -x "svenusling-main/site/config.php"
 
 # Move files to public_html
 # Save backups of the earlier version
