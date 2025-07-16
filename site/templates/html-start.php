@@ -19,6 +19,12 @@ body {
     font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     color: var(--text-color-default);
     padding: 0;
+    /* Positioning the site-widget */
+    text-align: right;
+}
+body * {
+    /* Default text alignment */
+    text-align: left;
 }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
@@ -64,6 +70,28 @@ p {
     translate: 0;
     z-index: 999;
 }
+img.circle {
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+}
+footer {
+    position: relative;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1em;
+    flex-direction: row;
+
+    padding: 1rem 0;
+    margin-top: 5rem;
+
+    background: var(--background-color-inverted);
+    color: var(--text-color-inverted);
+}
+footer a {
+    color: var(--text-color-inverted);
+}
 header {
     position: relative;
     width: 100%;
@@ -105,9 +133,27 @@ nav ul > li {
     width: 2.2rem;
     height: 2.2rem;
 }
-img.circle {
-    border-radius: 50%;
-    object-fit: cover; /* Ensures the image fills the circle without distortion */
+#site-widget a:first-of-type {
+    display: inline-block;
+    padding: .7rem 1rem 1rem .5rem;
+}
+#site-name {
+    height: 2.2rem;
+    display: inline-block;
+    transform: translateY(-30%)
+}
+/*#site-widget {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+#site-widget img:first-of-type,
+#site-widget a:first-of-type {
+    width: 2.2rem;
+    height: 2.2rem;
 }
 #site-widget a:first-of-type {
     display: inline-block;
@@ -117,7 +163,7 @@ img.circle {
     height: 2.2rem;
     display: inline-block;
     transform: translateY(-30%)
-}
+}*/
 </style>
 </head>
 <body>
