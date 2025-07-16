@@ -49,6 +49,29 @@ function getTextInSpecifiedLanguage( $id, $lang ) {
     return $text;
 }
 
+function getAllArticles() {
+    $query = "SELECT * FROM site_articles";
+    $res = $GLOBALS['db']->query($query);
+
+    $articles = [];
+    while ($row = $res->fetchArray()) {
+        $id = $row['id'];
+        $lang = $row['lang'];
+        if(!array_key_exists($id, $articles)) {
+            $articles[$id] = [];
+        }
+        $articles[$id][$lang] = array(
+            "title"=>$row['title'],
+            "ingress"=>$row['ingress'],
+            "body"=>$row['body'],
+            "author"=>$row['author'],
+            "date"=>$row['date']
+        );
+    }
+
+    return $articles;
+}
+
 function getArticleInAllLanguages( $id ) {
     $query = "SELECT * FROM site_articles WHERE id='" . $id . "'";
     $res = $GLOBALS['db']->query($query);
@@ -64,8 +87,6 @@ function getArticleInAllLanguages( $id ) {
         $langArticle['date'] = $row['date'];
         $article[$lang] = $langArticle;
     }
-
-    //var_dump($article);
 
     return $article;
 }
