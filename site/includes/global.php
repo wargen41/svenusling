@@ -2,7 +2,7 @@
 $GLOBALS['my_site'] = getSiteVars();
 
 $GLOBALS['my_supported_languages'] = getTextLanguages();
-$GLOBALS['my_language'] = tbs_get_client_browser_lang( $my_supported_languages, $my_supported_languages[0] );
+$GLOBALS['my_language'] = tbs_get_client_browser_lang( $my_supported_languages, $my_site['default_language'] );
 
 function getStr($id) {
     return getTextInSpecifiedLanguage( $id, $GLOBALS['my_language'] );
