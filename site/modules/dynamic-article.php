@@ -1,5 +1,5 @@
 <?php
-// Do not include directly, instead use includeArticle($id)
+// Do not include directly, instead use dynamicArticle($id)
 // to include specified article using this template
 // Variables to use:
 // $theArticle (contains title, ingress, body, author and date)

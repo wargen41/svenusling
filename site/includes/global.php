@@ -25,10 +25,10 @@ function getArticle($id) {
     return $articleVersions[$lang];
 }
 
-function includeArticle($id) {
+function dynamicArticle($id) {
     $theArticle = getArticle($id);
     $theId = $id;
-    include 'templates/dynamic-article.php';
+    include 'modules/dynamic-article.php';
 }
 
 function includeModule($file) {

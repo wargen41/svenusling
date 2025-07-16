@@ -1,4 +1,4 @@
 <header>
-<?php include 'templates/navigation.php';?>
+<?php include 'templates/quick-links.php';?>
 </header>
 <header>TEST</header>

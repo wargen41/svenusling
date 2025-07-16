@@ -45,7 +45,7 @@ main {
     margin: 1rem auto;
     padding: 0 1.5rem;
 }
-article > h1 {
+main h1 {
     text-align: center;
     position: sticky;
     top: 0;
@@ -53,6 +53,12 @@ article > h1 {
 }
 p {
     text-align: left;
+}
+details > summary {
+    cursor: pointer;
+}
+details > summary > * {
+    display: inline-block;
 }
 .skip-link {
     position: fixed;
