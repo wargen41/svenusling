@@ -12,7 +12,7 @@ fi
 domain=$1
 
 # Navigate to the domain directory
-cd ~/domains/"$domain" || exit
+cd ~/domains/"$domain" || { echo "Error: The domain '$domain' does not exist."; exit 1; }
 
 # Download the zip file
 wget https://github.com/wargen41/svenusling/archive/main.zip
