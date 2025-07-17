@@ -25,6 +25,6 @@ unzip main.zip "svenusling-main/site/*"
 rsync -av --backup --suffix=~ svenusling-main/site/ public_html/
 
 # Remove unnecessary directories and files
-rmdir svenusling-main/site
-rmdir svenusling-main
+# But only remove the unzipped folder after confirmation
 rm main.zip
+rm -ri svenusling-main
