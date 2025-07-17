@@ -22,7 +22,7 @@ unzip main.zip "svenusling-main/site/*"
 
 # Move files to public_html
 # Save backups of the earlier version
-mv -b svenusling-main/site/* public_html
+rsync -av --progress --backup --suffix=~ svenusling-main/site/ public_html/
 
 # Remove unnecessary directories and files
 rmdir svenusling-main/site
