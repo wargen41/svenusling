@@ -24,7 +24,6 @@ unzip main.zip "svenusling-main/site/*"
 # Save backups of the earlier version
 rsync -av --backup --suffix=~ svenusling-main/site/ public_html/
 
-# Remove unnecessary directories and files
-# But only remove the unzipped folder after confirmation
+# Remove temporary directories and files
 rm main.zip
-rm -ri svenusling-main
+rm -r svenusling-main
