@@ -20,6 +20,9 @@ wget https://github.com/wargen41/svenusling/archive/main.zip
 # Unzip files in the site directory
 unzip main.zip "svenusling-main/site/*"
 
+# Create backup copy of public_html
+tar -czvf public_html-backup.tar.gz public_html
+
 # Move files to public_html
 # Save backups of the earlier version
 rsync -av --backup --suffix=~ svenusling-main/site/ public_html/
