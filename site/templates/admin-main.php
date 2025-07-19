@@ -11,7 +11,8 @@ $GLOBALS["admin_texts"]["sv"] = array(
     "ADMIN_PAGE_TITLE"=>"Administrationssida",
     "GENERAL_SECTION_TITLE"=>"Generellt",
     "INDEX_CONTENT_SECTION_TITLE"=>"Startsidans innehåll",
-    "ARTICLES_SECTION_TITLE"=>"Hantera artiklar"
+    "ARTICLES_SECTION_TITLE"=>"Hantera artiklar",
+    "COUNT_ARTICLES"=>"Antal artiklar"
 );
 
 function admStr( $id ) {
@@ -46,8 +47,8 @@ Här ska man kunna välja innehåll på startsidan<br>
 
 <details>
 <summary><h2><?php echo admStr('ARTICLES_SECTION_TITLE'); ?></h2></summary>
+<p><?php echo admStr('COUNT_ARTICLES').': '.countArticles(); ?></p>
 <?php
-// Display start page content selection
 $allArticles = getAllArticles();
 foreach ($allArticles as $id => $languageVersion) {
     foreach ($languageVersion as $lang => $entry) {

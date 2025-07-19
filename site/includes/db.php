@@ -2,6 +2,13 @@
 
 $GLOBALS['db'] = new SQLite3($GLOBALS['db_path'] . $GLOBALS['db_name']);
 
+function countAll($table) {
+    $query = "SELECT COUNT(*) FROM ".$table;
+    $res = $GLOBALS['db']->querySingle($query);
+
+    return $res;
+}
+
 function getSiteVars() {
     $res = $GLOBALS['db']->query('SELECT * FROM site');
 
@@ -47,6 +54,10 @@ function getTextInSpecifiedLanguage( $id, $lang ) {
     $text = $row[$lang];
 
     return $text;
+}
+
+function countArticles() {
+    return countAll('site_articles');
 }
 
 function getAllArticles() {
