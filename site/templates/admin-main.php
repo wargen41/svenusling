@@ -25,41 +25,10 @@ function admStr( $id ) {
 ?>
 <h1><?php echo admStr('ADMIN_PAGE_TITLE'); ?></h1>
 
-<details>
-<summary><h2><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h2></summary>
-<?php
-// Display site variables
-$table = "site";
-echo simpleTextInputList($my_site, array(
-    "prefix"=>$table,
-    "delimiter"=>"<br>"
-));
-?>
-</details>
+<?php include 'admin-general.php'; ?>
 
-<details>
-<summary><h2><?php echo admStr('INDEX_CONTENT_SECTION_TITLE'); ?></h2></summary>
-<?php
-// Display start page content selection
+<?php include 'admin-index-content.php'; ?>
 
-?>
-Här ska man kunna välja innehåll på startsidan<br>
-
-</details>
-
-<details>
-<summary><h2><?php echo admStr('ARTICLES_SECTION_TITLE'); ?></h2></summary>
-<p><?php echo admStr('COUNT_ARTICLES').': '.countArticles(); ?></p>
-<?php
-$allArticles = getAllArticles();
-foreach ($allArticles as $id => $languageVersion) {
-    foreach ($languageVersion as $lang => $entry) {
-        foreach ($entry as $key => $value) {
-            echo "$id ($lang): $key = $value <br>";
-        }
-    }
-}
-?>
-</details>
+<?php include 'admin-articles.php'; ?>
 
 </main>
