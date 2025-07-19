@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/all.php';
+require 'includes/include-default.php';
 
 $page_title = 'Admin';
 
