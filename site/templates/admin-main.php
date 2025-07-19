@@ -29,9 +29,11 @@ function admStr( $id ) {
 <summary><h2><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h2></summary>
 <?php
 // Display site variables
-foreach ($my_site as $var => $value) {
-    echo "$var: $value <br>";
-}
+$table = "site";
+echo simpleTextInputList($my_site, array(
+    "prefix"=>$table,
+    "delimiter"=>"<br>"
+));
 ?>
 </details>
 
