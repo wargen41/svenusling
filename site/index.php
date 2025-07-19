@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/include-default.php';
+require 'includes/includes-default.php';
 $page_title = getStr('START_TITLE');
 
 require 'templates/html-start.php';
