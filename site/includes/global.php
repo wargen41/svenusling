@@ -9,10 +9,10 @@ function getStr($id) {
 }
 
 function getArticle($id) {
-    $articleVersions = getArticleInAllLanguages($id);
+    $articleVersions = getArticleInAllLanguages( $id );
 
     $lang = $GLOBALS['my_language'];
-    if (!array_key_exists($lang, $articleVersions)) {
+    if (!array_key_exists( $lang, $articleVersions )) {
         $supported = $GLOBALS['my_supported_languages'];
         // Loop through the array of supported languages and use the first one which exists
         foreach ($supported as $supportedLang) {

@@ -118,12 +118,11 @@ function htmlTextInput(array $props = []): string {
     $html = "";
     $attrStr = "";
 
-    // Behövs allt detta? Jag kommenterar bort lite och testar utan
-    // if(!isset($props['attributes'])) {
-    //     $props['attributes'] = [];
-    // }
-    //
-    // $attr = $props['attributes'];
+    if(!isset($props['attributes'])) {
+        $props['attributes'] = [];
+    }
+
+    $attr = $props['attributes'];
 
     if(!empty($attr)) {
         $attrStr = " ".keyValueString($attr);

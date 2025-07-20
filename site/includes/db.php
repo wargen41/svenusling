@@ -10,14 +10,14 @@ function closeDB() {
     $GLOBALS['db']->close();
 }
 
-function htmlSafeOutput($text) {
+function htmlSafeOutput(array|string $text): array|string {
     if(is_array($text)){
         return array_map('htmlSafeOutput', $text);
     }
     return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
-function sanitizeSingleLineText($text, $limit=0) {
+function sanitizeSingleLineText(string $text, int $limit=0): string {
     $text = trim($text);
     // Remove invisible control characters
     $text = preg_replace('/[\x00-\x1F\x7F]/u', '', $text);
@@ -30,7 +30,7 @@ function sanitizeSingleLineText($text, $limit=0) {
     return $text;
 }
 
-function sanitizeMultiLineText($text, $limit=0) {
+function sanitizeMultiLineText(string $text, int $limit=0): string {
     $text = trim($text);
     // Remove invisible control characters but keep \r and \n
     $text = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $text);
@@ -43,32 +43,23 @@ function sanitizeMultiLineText($text, $limit=0) {
     return $text;
 }
 
-// function dbPrepareStringForBinding($array) {
-//     foreach ($array as $key => $value) {
-//         $result[] = sprintf('%s=:%s', $key, $key);
-//     }
-//     $string = implode(', ', $result);
-//
-//     return $string;
-// }
-//
-function dbArrayToStringForBinding($array) {
-    foreach ($array as $name) {
+function dbArrayToStringForBinding(array $arr): string {
+    foreach ($arr as $name) {
         $result[] = sprintf('%s=:%s', $name, $name);
     }
-    $string = implode(', ', $result);
+    $str = implode(', ', $result);
 
-    return $string;
+    return $str;
 }
 
-function countAll($table) {
+function countAll(string $table): int {
     $query = "SELECT COUNT(*) FROM ".$table;
     $res = $GLOBALS['db']->querySingle($query);
 
-    return $res;
+    return (int)$res;
 }
 
-function getSiteVars($htmlSafe=true) {
+function getSiteVars(bool $htmlSafe=true): array {
     $res = $GLOBALS['db']->query('SELECT * FROM site');
 
     $vars = [];
@@ -85,7 +76,7 @@ function getSiteVars($htmlSafe=true) {
     return $vars;
 }
 
-function getSiteVarsKeys() {
+function getSiteVarsKeys(): array {
     $res = $GLOBALS['db']->query('SELECT var FROM site');
 
     $vars = [];
@@ -96,7 +87,7 @@ function getSiteVarsKeys() {
     return $vars;
 }
 
-function getTextLanguages() {
+function getTextLanguages(): array {
     $res = $GLOBALS['db']->query("PRAGMA table_info(site_text)");
 
     $lang = [];
@@ -110,7 +101,7 @@ function getTextLanguages() {
     return $lang;
 }
 
-function getAllTexts($htmlSafe=true) {
+function getAllTexts(bool $htmlSafe=true): array {
     $query = "SELECT * FROM site_text";
     $res = $GLOBALS['db']->query($query);
 
@@ -128,8 +119,8 @@ function getAllTexts($htmlSafe=true) {
     return $texts;
 }
 
-function getTexts( $category, $lang ) {
-    $query = "SELECT id, " . $lang . " FROM site_text WHERE category='" . $category . "'";
+function getTexts(string $category, string $lang): array {
+    $query = "SELECT id, ".$lang." FROM site_text WHERE category='".$category."'";
     $res = $GLOBALS['db']->query($query);
 
     $texts = [];
@@ -140,8 +131,8 @@ function getTexts( $category, $lang ) {
     return $texts;
 }
 
-function getTextInSpecifiedLanguage( $id, $lang ) {
-    $query = "SELECT " . $lang . " FROM site_text WHERE id='" . $id . "'";
+function getTextInSpecifiedLanguage(string $id, string $lang): string {
+    $query = "SELECT ".$lang." FROM site_text WHERE id='".$id."'";
     $res = $GLOBALS['db']->query($query);
 
     $row = $res->fetchArray(SQLITE3_ASSOC);
@@ -150,11 +141,11 @@ function getTextInSpecifiedLanguage( $id, $lang ) {
     return $text;
 }
 
-function countArticles() {
+function countArticles(): int {
     return countAll('site_articles');
 }
 
-function getAllArticles() {
+function getAllArticles(): array {
     $query = "SELECT * FROM site_articles";
     $res = $GLOBALS['db']->query($query);
 
@@ -166,19 +157,19 @@ function getAllArticles() {
             $articles[$id] = [];
         }
         $articles[$id][$lang] = array(
-            "title"=>$row['title'],
-            "ingress"=>$row['ingress'],
-            "body"=>$row['body'],
-            "author"=>$row['author'],
-            "date"=>$row['date']
+            "title" => $row['title'],
+            "ingress" => $row['ingress'],
+            "body" => $row['body'],
+            "author" => $row['author'],
+            "date" => $row['date']
         );
     }
 
     return $articles;
 }
 
-function getArticleInAllLanguages( $id ) {
-    $query = "SELECT * FROM site_articles WHERE id='" . $id . "'";
+function getArticleInAllLanguages(string $id): array {
+    $query = "SELECT * FROM site_articles WHERE id='".$id."'";
     $res = $GLOBALS['db']->query($query);
 
     $article = [];
