@@ -25,10 +25,10 @@ function admStr( $id ) {
 ?>
 <h1><?php echo admStr('ADMIN_PAGE_TITLE'); ?></h1>
 
-<?php include 'admin-general.php'; ?>
+<?php include 'general.php'; ?>
 
-<?php include 'admin-index-content.php'; ?>
+<?php include 'content-index.php'; ?>
 
-<?php include 'admin-articles.php'; ?>
+<?php include 'articles.php'; ?>
 
 </main>

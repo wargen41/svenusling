@@ -9,4 +9,4 @@
     padding: .5rem;
 }
 </style>
-<div id="admin-widget"><?php echo "Du är inloggad"; ?></div>
+<div id="admin-widget"><a href="admin.php"><?php echo "Du är inloggad"; ?></a></div>

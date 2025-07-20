@@ -1,6 +1,32 @@
 <?php
 
-$GLOBALS['db'] = new SQLite3($GLOBALS['db_path'] . $GLOBALS['db_name']);
+// Automatically open connection to db where this is included
+openDB();
+
+function openDB() {
+    $GLOBALS['db'] = new SQLite3($GLOBALS['db_path'] . $GLOBALS['db_name']);
+}
+function closeDB() {
+    $GLOBALS['db']->close();
+}
+
+// function dbPrepareStringForBinding($array) {
+//     foreach ($array as $key => $value) {
+//         $result[] = sprintf('%s=:%s', $key, $key);
+//     }
+//     $string = implode(', ', $result);
+//
+//     return $string;
+// }
+//
+function dbArrayToStringForBinding($array) {
+    foreach ($array as $name) {
+        $result[] = sprintf('%s=:%s', $name, $name);
+    }
+    $string = implode(', ', $result);
+
+    return $string;
+}
 
 function countAll($table) {
     $query = "SELECT COUNT(*) FROM ".$table;
@@ -15,6 +41,17 @@ function getSiteVars() {
     $vars = [];
     while ($row = $res->fetchArray()) {
         $vars[$row['var']] = $row['value'];
+    }
+
+    return $vars;
+}
+
+function getSiteVarsKeys() {
+    $res = $GLOBALS['db']->query('SELECT var FROM site');
+
+    $vars = [];
+    while ($row = $res->fetchArray()) {
+        array_push($vars, $row['var']);
     }
 
     return $vars;

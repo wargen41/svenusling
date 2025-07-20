@@ -52,7 +52,8 @@ function simpleTextInputList($arr, $options) {
             "label"=>$varStr,
             "attributes"=>array(
                 "value"=>$value,
-                "id"=>$varStr
+                "id"=>$varStr,
+                "name"=>$var
             )
         ));
         $html .= $delimiter;
