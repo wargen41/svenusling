@@ -9,7 +9,7 @@ function keyValueString($array) {
     return $string;
 }
 
-function elmWrap($elm, $inner, $attr=[]) {
+function htmlWrap($elm, $inner, $attr=[]) {
     $html = "";
     $attrStr = "";
 
@@ -25,7 +25,67 @@ function elmWrap($elm, $inner, $attr=[]) {
     return $html;
 }
 
-function elmTextInput($props=[]) {
+function htmlTableFromAssocArrayRows($rows, $options=[]) {
+    $html = "";
+    $headerHTML = "";
+    $bodyHTML = "";
+    $footerHTML = ""; // To be implemented
+
+    // The key exists AND its value is an array
+    if(isset($options['headers']) && is_array($options['headers'])) {
+        // UNTESTED
+        $headerHTML .= '<tr>';
+        foreach (array_keys($options['headers']) as $header) {
+            $headerHTML .= htmlWrap('th', $header, null);
+        }
+        $headerHTML .= '</tr>';
+    }
+    // The key does not exist in the array OR the key exists and its value is true
+    // Using Null Coalescing Operator (PHP 7.0+)
+    // ?? checks if the key exists; if not, it uses true as the default
+    else if(($options['autoheaders'] ?? true) === true){
+        $headerHTML .= '<tr>';
+        foreach (array_keys($rows[0]) as $header) {
+            $headerHTML .= htmlWrap('th', $header, null);
+        }
+        $headerHTML .= '</tr>';
+    }
+
+    foreach ($rows as $row) {
+        $bodyHTML .= '<tr>';
+        foreach ($row as $value) {
+            $bodyHTML .= htmlWrap('td', $value, null);
+        }
+        $bodyHTML .= '</tr>';
+    }
+
+    if($headerHTML !== ""){
+        $html .= htmlWrap('thead', $headerHTML);
+    }
+
+    $html .= htmlWrap('tbody', $bodyHTML);
+
+    if($footerHTML !== ""){
+        $html .= htmlWrap('tbody', $footerHTML);
+    }
+
+    return htmlWrap('table', $html);
+}
+
+function htmlVerticalTableFromAssocArray($arr, $options=[]) {
+    $html = "";
+
+    foreach ($arr as $key => $value) {
+        $html .= '<tr>';
+        $html .= htmlWrap('td', $key, null);
+        $html .= htmlWrap('td', $value, null);
+        $html .= '</tr>';
+    }
+
+    return htmlWrap('table', $html);
+}
+
+function htmlTextInput($props=[]) {
     $html = "";
     $attrStr = "";
 
@@ -53,7 +113,7 @@ function elmTextInput($props=[]) {
     return $html;
 }
 
-function simpleTextInputList($arr, $options) {
+function htmlTextInputsFromArray($arr, $options=[]) {
     $html = "";
     $prefix = "";
     $delimiter = "";
@@ -67,7 +127,7 @@ function simpleTextInputList($arr, $options) {
 
     foreach ($arr as $var => $value) {
         $varStr = $prefix.'_'.$var;
-        $html .= elmTextInput(array(
+        $html .= htmlTextInput(array(
             "label"=>$varStr,
             "attributes"=>array(
                 "value"=>$value,

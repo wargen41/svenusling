@@ -6,7 +6,8 @@
 $formName = "general";
 // Display site variables
 $prefix = "site";
-echo simpleTextInputList(getSiteVars(), array(
+echo htmlVerticalTableFromAssocArray(getSiteVars());
+echo htmlTextInputsFromArray(getSiteVars(), array(
     "prefix"=>$prefix,
     "delimiter"=>"<br>"
 ));
@@ -25,26 +26,8 @@ $prefix = "text";
 
 $rows = getAllTexts();
 
-// 1. Check for data
 if (!empty($rows)) {
-    echo '<table>';
-
-    // 2. Output headers
-    echo '<tr>';
-    foreach (array_keys($rows[0]) as $header) {
-        echo "<th>{$header}</th>";
-    }
-    echo '</tr>';
-
-    // 3. Output data rows
-    foreach ($rows as $row) {
-        echo '<tr>';
-        foreach ($row as $value) {
-            echo "<td>{$value}</td>";
-        }
-        echo '</tr>';
-    }
-    echo '</table>';
+    echo htmlTableFromAssocArrayRows($rows);
 } else {
     echo "No data found.";
 }
