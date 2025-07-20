@@ -10,6 +10,32 @@ function closeDB() {
     $GLOBALS['db']->close();
 }
 
+function sanitizeSingleLineText($text, $limit=0) {
+    $text = trim($text);
+    // Remove invisible control characters
+    $text = preg_replace('/[\x00-\x1F\x7F]/u', '', $text);
+
+    // Optionally limit length
+    if ($limit > 0 && mb_strlen($text) > $limit) {
+        die('Too long!');
+    }
+
+    return $text;
+}
+
+function sanitizeMultiLineText($text, $limit=0) {
+    $text = trim($text);
+    // Remove invisible control characters but keep \r and \n
+    $text = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $text);
+
+    // Optionally limit length
+    if ($limit > 0 && mb_strlen($text) > $limit) {
+        die('Too long!');
+    }
+
+    return $text;
+}
+
 // function dbPrepareStringForBinding($array) {
 //     foreach ($array as $key => $value) {
 //         $result[] = sprintf('%s=:%s', $key, $key);
@@ -40,7 +66,7 @@ function getSiteVars() {
 
     $vars = [];
     while ($row = $res->fetchArray()) {
-        $vars[$row['var']] = $row['value'];
+        $vars[$row['var']] = htmlspecialchars($row['value'], ENT_QUOTES, 'UTF-8');
     }
 
     return $vars;

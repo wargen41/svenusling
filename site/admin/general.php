@@ -3,9 +3,9 @@
 <form method="post" action="admin-update.php">
 <?php
 // Display site variables
-$table = "site";
-echo simpleTextInputList($my_site, array(
-    "prefix"=>$table,
+$prefix = "site";
+echo simpleTextInputList(getSiteVars(), array(
+    "prefix"=>$prefix,
     "delimiter"=>"<br>"
 ));
 ?>

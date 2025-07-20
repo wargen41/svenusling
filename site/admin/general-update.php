@@ -6,7 +6,7 @@
 
     $keys = getSiteVarsKeys();
     foreach ($keys as $key) {
-        $value = $_POST[$key];
+        $value = sanitizeSingleLineText($_POST[$key]);
 
         $stmt = $db->prepare($updatePrepared);
         $stmt->bindValue(':key', $key, SQLITE3_TEXT);
