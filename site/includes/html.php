@@ -9,7 +9,23 @@ function keyValueString($array) {
     return $string;
 }
 
-function elmTextInput($props) {
+function elmWrap($elm, $inner, $attr=[]) {
+    $html = "";
+    $attrStr = "";
+
+    if(!empty($attr)) {
+        $attrStr = " ".keyValueString($attr);
+    }
+
+    $html .=
+    '<'.$elm.$attrStr.'>'.
+    $inner.
+    '</'.$elm.'>';
+
+    return $html;
+}
+
+function elmTextInput($props=[]) {
     $html = "";
     $attrStr = "";
 
@@ -28,7 +44,10 @@ function elmTextInput($props) {
         if(isset($attr['id'])){
             $forName = " ".keyValueString(array("for"=>$attr['id']));
         }
-        $html .= '<label'.$forName.'>'.$props['label'].'</label>'." ";
+        $html .=
+        '<label'.$forName.'>'.
+        $props['label'].
+        '</label>'." ";
     }
     $html .= '<input type="text"'.$attrStr.'>';
     return $html;

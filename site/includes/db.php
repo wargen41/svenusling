@@ -10,6 +10,13 @@ function closeDB() {
     $GLOBALS['db']->close();
 }
 
+function htmlSafeOutput($text) {
+    if(is_array($text)){
+        return array_map('htmlSafeOutput', $text);
+    }
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+}
+
 function sanitizeSingleLineText($text, $limit=0) {
     $text = trim($text);
     // Remove invisible control characters
@@ -61,12 +68,18 @@ function countAll($table) {
     return $res;
 }
 
-function getSiteVars() {
+function getSiteVars($htmlSafe=true) {
     $res = $GLOBALS['db']->query('SELECT * FROM site');
 
     $vars = [];
-    while ($row = $res->fetchArray()) {
-        $vars[$row['var']] = htmlspecialchars($row['value'], ENT_QUOTES, 'UTF-8');
+    if($htmlSafe == true){
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            $vars[$row['var']] = htmlSafeOutput($row['value']);
+        }
+    }else{
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            $vars[$row['var']] = $row['value'];
+        }
     }
 
     return $vars;
@@ -76,7 +89,7 @@ function getSiteVarsKeys() {
     $res = $GLOBALS['db']->query('SELECT var FROM site');
 
     $vars = [];
-    while ($row = $res->fetchArray()) {
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
         array_push($vars, $row['var']);
     }
 
@@ -97,12 +110,30 @@ function getTextLanguages() {
     return $lang;
 }
 
+function getAllTexts($htmlSafe=true) {
+    $query = "SELECT * FROM site_text";
+    $res = $GLOBALS['db']->query($query);
+
+    $texts = [];
+    if($htmlSafe == true){
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            array_push($texts, htmlSafeOutput($row));
+        }
+    }else{
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            array_push($texts, $row);
+        }
+    }
+
+    return $texts;
+}
+
 function getTexts( $category, $lang ) {
     $query = "SELECT id, " . $lang . " FROM site_text WHERE category='" . $category . "'";
     $res = $GLOBALS['db']->query($query);
 
     $texts = [];
-    while ($row = $res->fetchArray()) {
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
         $texts[$row['id']] = $row[$lang];
     }
 
@@ -113,7 +144,7 @@ function getTextInSpecifiedLanguage( $id, $lang ) {
     $query = "SELECT " . $lang . " FROM site_text WHERE id='" . $id . "'";
     $res = $GLOBALS['db']->query($query);
 
-    $row = $res->fetchArray();
+    $row = $res->fetchArray(SQLITE3_ASSOC);
     $text = $row[$lang];
 
     return $text;
@@ -128,7 +159,7 @@ function getAllArticles() {
     $res = $GLOBALS['db']->query($query);
 
     $articles = [];
-    while ($row = $res->fetchArray()) {
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
         $id = $row['id'];
         $lang = $row['lang'];
         if(!array_key_exists($id, $articles)) {
@@ -151,7 +182,7 @@ function getArticleInAllLanguages( $id ) {
     $res = $GLOBALS['db']->query($query);
 
     $article = [];
-    while ($row = $res->fetchArray()) {
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
         $lang = $row['lang'];
         $langArticle = [];
         $langArticle['title'] = $row['title'];
