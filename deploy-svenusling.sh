@@ -30,3 +30,5 @@ rsync -av --backup --suffix=~ svenusling-main/site/ public_html/
 # Remove temporary directories and files
 rm main.zip
 rm -r svenusling-main
+
+echo "Done!"
