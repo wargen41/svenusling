@@ -1,6 +1,29 @@
 <section id="puff-rated-movies">
 <h2><?php echo getStr('RATED_MOVIES_TITLE'); ?></h2>
-<p>
-Proin ullamcorper bibendum interdum. Maecenas porta ligula eu tortor hendrerit ornare. Cras commodo enim lectus, vitae lobortis ante semper vel. Pellentesque et posuere diam. Fusce eleifend sollicitudin suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex sapien, tempus in eros sagittis, dignissim posuere nunc. In posuere rutrum augue sit amet sagittis. Sed auctor vulputate felis vel porttitor. Nam neque justo, maximus vel vulputate in, eleifend eget tellus. Maecenas iaculis dignissim cursus. Quisque tempor pretium lorem eu viverra.
-</p>
+<?php
+$movieCount = dbCountAllRows('movies');
+$movieCountStr = 'Typ '.$movieCount.' betygsatta filmer';
+?>
+<p>Typ <?php echo $movieCount; ?> betygsatta filmer så långt</p>
+
+<p>Här är de senaste:</p>
+<ul>
+<?php
+$query = implode(' ', [
+    "SELECT m.Title, media.FileName, media.Directory",
+    "FROM movies m",
+    "JOIN media_movies mm ON m.MovieID = mm.MovieID",
+    "JOIN media ON mm.MediaID = media.MediaID",
+    "WHERE mm.MediaID = m.PosterImageID",
+    "AND m.PublishedDate != '' AND m.Grade != ''",
+    "ORDER BY PublishedDate DESC LIMIT 6",
+]);
+$res = $GLOBALS['db']->query($query);
+while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+    $imgPath = $row['Directory'].$row['FileName'];
+    $imgHTML = '<img alt="['.$row['Title'].' poster]" src="'.$imgPath.'"> ';
+    echo htmlWrap('li', $imgHTML.$row['Title']);
+}
+?>
+</ul>
 </section>

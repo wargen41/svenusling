@@ -53,7 +53,7 @@ function dbArrayToStringForBinding(array $arr): string {
     return $str;
 }
 
-function countAll(string $table): int {
+function dbCountAllRows(string $table): int {
     $query = "SELECT COUNT(*) FROM ".$table;
     $res = $GLOBALS['db']->querySingle($query);
 
@@ -163,7 +163,7 @@ function getTextInSpecifiedLanguage(string $id, string $lang): string {
 }
 
 function countArticles(): int {
-    return countAll('site_articles');
+    return dbCountAllRows('site_articles');
 }
 
 function getAllArticles(): array {
@@ -207,4 +207,5 @@ function getArticleInAllLanguages(string $id): array {
 
     return $article;
 }
+
 ?>
