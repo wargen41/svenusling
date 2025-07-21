@@ -107,7 +107,7 @@ function htmlTableFromAssocArrayRows(array $rows, array $props = []): string {
  *
  * bool 'autoheaders' (default = true)
  *
- * int 'headercolumns' (to be implemented)
+ * int 'columnheaders' (default = 0)
  *
  * string 'primarykey' (default = key of the first column)
  * @param array<int, array<string>> $rows
@@ -120,22 +120,32 @@ function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): s
     $bodyHTML = "";
     $footerHTML = ""; // To be implemented
 
-    $prefix = "";
+    $prefix = $props['prefix'] ?? "";
     $headers = [];
+    $numberOfColumnHeaders = $props['columnheaders'] ?? 0;
 
-    if(isset($props['prefix'])) {
-        $prefix = $props['prefix'];
-    }
+    // if(isset($props['prefix'])) {
+    //     $prefix = $props['prefix'];
+    // }
 
+    $headersAuto = array_keys($rows[0]);
     // The key exists AND its value is an array
     if(isset($props['headers']) && is_array($props['headers'])) {
         $headers = $props['headers'];
+
+        // If the headers provided are not enough for all columns AND
+        // autoheaders are on, fill remaining columns with automatic headers
+        $hCount = count($headers);
+        $aCount = count($headersAuto);
+        if($hCount < $aCount){
+            $headers = array_merge($headers, array_slice($headersAuto, $hCount));
+        }
     }
     // The key does not exist in the array OR the key exists and its value is true
     // Using Null Coalescing Operator (PHP 7.0+)
     // ?? checks if the key exists; if not, it uses true as the default
     else if(($props['autoheaders'] ?? true) === true){
-        $headers = array_keys($rows[0]);
+        $headers = $headersAuto;
     }
     $headerHTML .= '<tr>';
     foreach ($headers as $header) {
@@ -145,7 +155,7 @@ function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): s
 
     // If primarykey wasn't set, use the first column
     if(empty($props['primarykey'])){
-        $props['primarykey'] = $headers[0];
+        $props['primarykey'] = array_keys($rows[0])[0];
     }
 
     $len = count($rows);
@@ -154,19 +164,38 @@ function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): s
         $primarykey = $props['primarykey'];
 
         $bodyHTML .= '<tr>';
+
+        $columnCounter = 0;
         foreach ($row as $key => $value) {
+            $columnCounter++;
+
             $idStr = $prefix.$key;
             $nameID = $row[$primarykey];
             $nameStr = $key.'['.$nameID.']';
 
-            $input = htmlTextInput(array(
-                "attributes" => array(
-                    "value" => $value,
-                    "id" => $idStr,
-                    "name" => $nameStr
-                )
-            ));
-            $bodyHTML .= htmlWrap('td', $input);
+            if($columnCounter > $numberOfColumnHeaders){
+                $textInput = htmlTextInput(array(
+                    "attributes" => array(
+                        "value" => $value,
+                        "id" => $idStr,
+                        "name" => $nameStr
+                    )
+                ));
+                $bodyHTML .= htmlWrap('td', $textInput);
+            }else{
+                $thContent = $value;
+                if($key === $primarykey) {
+                    $hiddenInput = htmlHiddenInput(array(
+                        "attributes" => array(
+                            "value" => $value,
+                            "id" => $idStr,
+                            "name" => $nameStr
+                        )
+                    ));
+                    $thContent .= $hiddenInput;
+                }
+                $bodyHTML .= htmlWrap('th', $thContent);
+            }
         }
         $bodyHTML .= '</tr>';
     }
@@ -233,6 +262,29 @@ function htmlVerticalTextInputTableFromAssocArray(array $arr, array $props = [])
     }
 
     return htmlWrap('table', $html);
+}
+
+/**
+ * Creates a hidden input with optional label and attributes.
+ * @param array<mixed> $props
+ * @return string
+ */
+function htmlHiddenInput(array $props = []): string {
+    $html = "";
+    $attrStr = "";
+
+    if(!isset($props['attributes'])) {
+        $props['attributes'] = [];
+    }
+
+    $attr = $props['attributes'];
+
+    if(!empty($attr)) {
+        $attrStr = " ".keyValueString($attr);
+    }
+
+    $html .= '<input type="hidden"'.$attrStr.'>';
+    return $html;
 }
 
 /**

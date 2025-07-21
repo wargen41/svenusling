@@ -27,7 +27,13 @@ $rows = getAllTexts();
 
 if (!empty($rows)) {
     //echo htmlTableFromAssocArrayRows($rows);
-    echo htmlTextInputTableFromAssocArrayRows($rows);
+    echo htmlTextInputTableFromAssocArrayRows($rows, array(
+        "headers" => array(
+            "Textens namn", "Kategori"
+        ),
+        "autoheaders" => true,
+        "columnheaders" => 2
+    ));
 } else {
     echo "No data found.";
 }
