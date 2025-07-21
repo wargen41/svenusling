@@ -1,5 +1,10 @@
 <main id="main-content">
 
+<?php dynamicArticle('INTRODUCTION'); ?>
+<?php includeModule('puff-rated-movies.php'); ?>
+<?php includeModule('puff-video-reviews.php'); ?>
+<?php includeModule('puff-misc-lists.php'); ?>
+
 <h2>Citattest</h2>
 <p>Mal</p>
 <blockquote>
@@ -36,8 +41,4 @@ Mal
 > Still workin' the details.
 </pre>
 
-<?php dynamicArticle('INTRODUCTION'); ?>
-<?php includeModule('puff-rated-movies.php'); ?>
-<?php includeModule('puff-video-reviews.php'); ?>
-<?php includeModule('puff-misc-lists.php'); ?>
 </main>

@@ -11,6 +11,9 @@ include 'templates/header.php';
 include 'templates/site-widget.php';
 include 'templates/index-main.php';
 include 'templates/footer.php';
+if(isset($_SESSION["favcolor"])) {
+    include 'templates/admin-widget.php';
+}
 require 'templates/html-end.php';
 
 closeDB();

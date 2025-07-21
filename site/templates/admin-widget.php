@@ -2,7 +2,7 @@
 #admin-widget {
     position: fixed;
     bottom: 0;
-    right: 0;
+    left: 0;
     text-align: center;
     background: #333;
     color: white;

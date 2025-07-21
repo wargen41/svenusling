@@ -174,8 +174,3 @@ nav ul > li {
 </head>
 <body>
 <a class="skip-link" href="#main-content"><?php echo getStr('SKIP_TO_MAIN'); ?></a>
-<?php
-if(isset($_SESSION["favcolor"])) {
-    include 'admin-widget.php';
-}
-?>
