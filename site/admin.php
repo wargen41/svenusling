@@ -6,6 +6,7 @@ $page_title = 'Admin';
 
 require 'templates/html-start.php';
 include 'templates/header.php';
+include 'templates/site-widget.php';
 include 'admin/admin-main.php';
 include 'templates/footer.php';
 require 'templates/html-end.php';

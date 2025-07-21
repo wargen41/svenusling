@@ -5,7 +5,7 @@
 <summary><h3><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h3></summary>
 <form method="post" action="admin-update.php">
 <?php
-$formName = "general-site";
+$formName = "settings-site";
 $prefix = "site_";
 
 echo htmlVerticalTextInputTableFromAssocArray(
@@ -23,7 +23,7 @@ echo htmlVerticalTextInputTableFromAssocArray(
 <summary><h3><?php echo admStr('TEXT_SECTION_TITLE'); ?></h3></summary>
 <form method="post" action="admin-update.php">
 <?php
-$formName = "general-text";
+$formName = "settings-text";
 $prefix = "text_";
 
 $rows = getAllTexts();
