@@ -1,21 +1,35 @@
 <?php
     $table = "site_text";
 
-// Work in progress
-    $updatePrepared = 'UPDATE '.$table.' SET '."value=:value".' WHERE var=:key';
+    // Work in progress
+    $keys = getKeysFromTable($table);
+    $constantKeys = ['id', 'category'];
 
-    $keys = getSiteVarsKeys();
-    foreach ($keys as $key) {
-        $value = sanitizeSingleLineText($_POST[$key]);
+    $langKeys = [];
+    foreach($keys as $key) {
+        if(!in_array($key, $constantKeys)){
+            array_push($langKeys, $key);
+        }
+    }
 
+    $fieldsToSet = dbArrayToStringForBinding($langKeys);
+
+    $updatePrepared = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE id=:id';
+
+    $primaryKeys = $_POST['id'];
+    foreach($primaryKeys as $id) {
         $stmt = $db->prepare($updatePrepared);
-        $stmt->bindValue(':key', $key, SQLITE3_TEXT);
-        $stmt->bindValue(':value', $value, SQLITE3_TEXT);
+
+        $stmt->bindValue(':id', $id, SQLITE3_TEXT);
+        foreach($langKeys as $lang) {
+            $value = sanitizeSingleLineText($_POST[$lang][$id]);
+            $stmt->bindValue(':'.$lang, $value, SQLITE3_TEXT);
+        }
 
         $result = $stmt->execute();
 
         if ($result) {
-            echo "$key updated successfully!";
+            echo "$id updated successfully!";
         } else {
             echo "Update failed: ".$db->lastErrorMsg();
         }

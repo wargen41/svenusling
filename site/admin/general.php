@@ -4,13 +4,13 @@
 <form method="post" action="admin-update.php">
 <?php
 $formName = "general-site";
-// Display site variables
-$prefix = "site";
-echo htmlVerticalTableFromAssocArray(getSiteVars());
-echo htmlTextInputsFromArray(getSiteVars(), array(
-    "prefix"=>$prefix,
-    "delimiter"=>"<br>"
-));
+$prefix = "site_";
+
+echo htmlVerticalTextInputTableFromAssocArray(
+    getSiteVars(), array(
+        "prefix" => $prefix
+    )
+);
 ?>
 <input type="hidden" name="form" value="<?php echo $formName; ?>">
 <input type="submit">
@@ -21,13 +21,13 @@ echo htmlTextInputsFromArray(getSiteVars(), array(
 <form method="post" action="admin-update.php">
 <?php
 $formName = "general-text";
-// Display site_text values
-$prefix = "text";
+$prefix = "text_";
 
 $rows = getAllTexts();
 
 if (!empty($rows)) {
-    echo htmlTableFromAssocArrayRows($rows);
+    //echo htmlTableFromAssocArrayRows($rows);
+    echo htmlTextInputTableFromAssocArrayRows($rows);
 } else {
     echo "No data found.";
 }

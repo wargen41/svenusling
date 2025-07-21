@@ -44,8 +44,9 @@ function sanitizeMultiLineText(string $text, int $limit=0): string {
 }
 
 function dbArrayToStringForBinding(array $arr): string {
+    $result = [];
     foreach ($arr as $name) {
-        $result[] = sprintf('%s=:%s', $name, $name);
+        array_push($result, sprintf('%s=:%s', $name, $name));
     }
     $str = implode(', ', $result);
 
@@ -57,6 +58,26 @@ function countAll(string $table): int {
     $res = $GLOBALS['db']->querySingle($query);
 
     return (int)$res;
+}
+
+function getKeysFromTable(string $table): array {
+    $res = $GLOBALS['db']->query('SELECT * FROM '.$table.' LIMIT 1');
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+
+    $keys = array_keys($row);
+
+    return $keys;
+}
+
+function getFirstColumnValuesFromTable(string $table): array {
+    $res = $GLOBALS['db']->query('SELECT var FROM '.$table);
+
+    $keys = [];
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        array_push($keys, $row['var']);
+    }
+
+    return $keys;
 }
 
 function getSiteVars(bool $htmlSafe=true): array {
@@ -76,17 +97,17 @@ function getSiteVars(bool $htmlSafe=true): array {
     return $vars;
 }
 
-function getSiteVarsKeys(): array {
-    $res = $GLOBALS['db']->query('SELECT var FROM site');
-
-    $vars = [];
-    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
-        array_push($vars, $row['var']);
-    }
-
-    return $vars;
-}
-
+// function getSiteVarsKeys(): array {
+//     $res = $GLOBALS['db']->query('SELECT var FROM site');
+//
+//     $keys = [];
+//     while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+//         array_push($keys, $row['var']);
+//     }
+//
+//     return $keys;
+// }
+//
 function getTextLanguages(): array {
     $res = $GLOBALS['db']->query("PRAGMA table_info(site_text)");
 
@@ -102,7 +123,7 @@ function getTextLanguages(): array {
 }
 
 function getAllTexts(bool $htmlSafe=true): array {
-    $query = "SELECT * FROM site_text";
+    $query = "SELECT * FROM site_text  ORDER BY category";
     $res = $GLOBALS['db']->query($query);
 
     $texts = [];

@@ -2,9 +2,10 @@
 
     $table = "site";
 
+    $keys = getFirstColumnValuesFromTable($table);
+
     $updatePrepared = 'UPDATE '.$table.' SET '."value=:value".' WHERE var=:key';
 
-    $keys = getSiteVarsKeys();
     foreach ($keys as $key) {
         $value = sanitizeSingleLineText($_POST[$key]);
 

@@ -40,6 +40,14 @@ function htmlWrap(string $elm, string $inner, array $attr = []): string {
 
 /**
  * Builds an HTML table from an array of associative arrays (rows) and optional properties.
+ *
+ * Options (in array $props):
+ *
+ * array 'headers' (strings with headers to use)
+ *
+ * bool 'autoheaders' (default = true)
+ *
+ * int 'headercolumns' (to be implemented)
  * @param array<int, array<string>> $rows
  * @param array<mixed> $props
  * @return string
@@ -91,6 +99,92 @@ function htmlTableFromAssocArrayRows(array $rows, array $props = []): string {
 }
 
 /**
+ * Builds an HTML table with text inputs from an array of associative arrays (rows) and optional properties.
+ *
+ * Options (in array $props):
+ *
+ * array 'headers' (strings with headers to use)
+ *
+ * bool 'autoheaders' (default = true)
+ *
+ * int 'headercolumns' (to be implemented)
+ *
+ * string 'primarykey' (default = key of the first column)
+ * @param array<int, array<string>> $rows
+ * @param array<mixed> $props
+ * @return string
+ */
+function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): string {
+    $html = "";
+    $headerHTML = "";
+    $bodyHTML = "";
+    $footerHTML = ""; // To be implemented
+
+    $prefix = "";
+    $headers = [];
+
+    if(isset($props['prefix'])) {
+        $prefix = $props['prefix'];
+    }
+
+    // The key exists AND its value is an array
+    if(isset($props['headers']) && is_array($props['headers'])) {
+        $headers = $props['headers'];
+    }
+    // The key does not exist in the array OR the key exists and its value is true
+    // Using Null Coalescing Operator (PHP 7.0+)
+    // ?? checks if the key exists; if not, it uses true as the default
+    else if(($props['autoheaders'] ?? true) === true){
+        $headers = array_keys($rows[0]);
+    }
+    $headerHTML .= '<tr>';
+    foreach ($headers as $header) {
+        $headerHTML .= htmlWrap('th', $header);
+    }
+    $headerHTML .= '</tr>';
+
+    // If primarykey wasn't set, use the first column
+    if(empty($props['primarykey'])){
+        $props['primarykey'] = $headers[0];
+    }
+
+    $len = count($rows);
+    for ($i=0; $i < $len; $i++) {
+        $row = $rows[$i];
+        $primarykey = $props['primarykey'];
+
+        $bodyHTML .= '<tr>';
+        foreach ($row as $key => $value) {
+            $idStr = $prefix.$key;
+            $nameID = $row[$primarykey];
+            $nameStr = $key.'['.$nameID.']';
+
+            $input = htmlTextInput(array(
+                "attributes" => array(
+                    "value" => $value,
+                    "id" => $idStr,
+                    "name" => $nameStr
+                )
+            ));
+            $bodyHTML .= htmlWrap('td', $input);
+        }
+        $bodyHTML .= '</tr>';
+    }
+
+    if($headerHTML !== ""){
+        $html .= htmlWrap('thead', $headerHTML);
+    }
+
+    $html .= htmlWrap('tbody', $bodyHTML);
+
+    if($footerHTML !== ""){
+        $html .= htmlWrap('tbody', $footerHTML);
+    }
+
+    return htmlWrap('table', $html);
+}
+
+/**
  * Builds an HTML table with key/value pairs as rows.
  * @param array<string> $arr
  * @param array<mixed> $props
@@ -101,8 +195,40 @@ function htmlVerticalTableFromAssocArray(array $arr, array $props = []): string 
 
     foreach ($arr as $key => $value) {
         $html .= '<tr>';
-        $html .= htmlWrap('td', (string)$key);
+        $html .= htmlWrap('td', $key);
         $html .= htmlWrap('td', (string)$value);
+        $html .= '</tr>';
+    }
+
+    return htmlWrap('table', $html);
+}
+
+/**
+ * Builds an HTML table with key/value pairs as rows and the values as text input elements.
+ * @param array<string> $arr
+ * @param array<mixed> $props
+ * @return string
+ */
+function htmlVerticalTextInputTableFromAssocArray(array $arr, array $props = []): string {
+    $html = "";
+    $prefix = "";
+
+    if(isset($props['prefix'])) {
+        $prefix = $props['prefix'];
+    }
+
+    foreach ($arr as $key => $value) {
+        $idStr = $prefix.$key;
+        $input = htmlTextInput(array(
+            "attributes" => array(
+                "value" => $value,
+                "id" => $idStr,
+                "name" => $key
+            )
+        ));
+        $html .= '<tr>';
+        $html .= htmlWrap('td', $key);
+        $html .= htmlWrap('td', $input);
         $html .= '</tr>';
     }
 
@@ -161,12 +287,12 @@ function htmlTextInputsFromArray(array $arr, array $props = []): string {
     }
 
     foreach ($arr as $var => $value) {
-        $varStr = $prefix.'_'.$var;
+        $idStr = $prefix.$var;
         $html .= htmlTextInput(array(
-            "label"=>$varStr,
+            "label"=>$idStr,
             "attributes"=>array(
                 "value"=>$value,
-                "id"=>$varStr,
+                "id"=>$idStr,
                 "name"=>$var
             )
         ));
