@@ -19,7 +19,7 @@ function keyValueString(array $arr): string {
  * Wraps inner HTML in an element with optional attributes.
  * @param string $elm
  * @param string $inner
- * @param array<string, string> $attr
+ * @param array $attr
  * @return string
  */
 function htmlWrap(string $elm, string $inner, array $attr = []): string {
@@ -39,9 +39,9 @@ function htmlWrap(string $elm, string $inner, array $attr = []): string {
 }
 
 /**
- * Builds an HTML table from an array of associative arrays (rows) and options.
- * @param array<int, array<string, mixed>> $rows
- * @param array<string, mixed> $props
+ * Builds an HTML table from an array of associative arrays (rows) and optional properties.
+ * @param array<int, array<string>> $rows
+ * @param array<mixed> $props
  * @return string
  */
 function htmlTableFromAssocArrayRows(array $rows, array $props = []): string {
@@ -92,8 +92,8 @@ function htmlTableFromAssocArrayRows(array $rows, array $props = []): string {
 
 /**
  * Builds an HTML table with key/value pairs as rows.
- * @param array<string, mixed> $arr
- * @param array<string, mixed> $props
+ * @param array<string> $arr
+ * @param array<mixed> $props
  * @return string
  */
 function htmlVerticalTableFromAssocArray(array $arr, array $props = []): string {
@@ -111,7 +111,7 @@ function htmlVerticalTableFromAssocArray(array $arr, array $props = []): string 
 
 /**
  * Creates a text input with optional label and attributes.
- * @param array<string, mixed> $props
+ * @param array<mixed> $props
  * @return string
  */
 function htmlTextInput(array $props = []): string {
@@ -144,8 +144,8 @@ function htmlTextInput(array $props = []): string {
 
 /**
  * Creates multiple text inputs from an associative array.
- * @param array<string, mixed> $arr
- * @param array<string, mixed> $props
+ * @param array<string> $arr
+ * @param array<mixed> $props
  * @return string
  */
 function htmlTextInputsFromArray(array $arr, array $props = []): string {
