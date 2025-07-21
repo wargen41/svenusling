@@ -1,23 +1,20 @@
 <main id="main-content">
 <?php
-// Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
 
-// Admin page texts
 $GLOBALS["admin_texts"] = [];
 $GLOBALS["admin_texts"]["sv"] = array(
     "ADMIN_PAGE_TITLE"=>"Administrationssida",
-    "GENERAL_SECTION_TITLE"=>"Allmänna inställningar",
-    "TEXT_SECTION_TITLE"=>"Texter i gränssnittet",
+    "SETTINGS_CATEGORY_TITLE"=>"Inställningar",
+    "CONTENT_CATEGORY_TITLE"=>"Innehåll",
+    "GENERAL_SECTION_TITLE"=>"Allmänt",
+    "TEXT_SECTION_TITLE"=>"Text i gränssnittet",
     "INDEX_CONTENT_SECTION_TITLE"=>"Startsidans innehåll",
-    "ARTICLES_SECTION_TITLE"=>"Hantera artiklar",
+    "ARTICLES_SECTION_TITLE"=>"Artiklar/texter",
     "COUNT_ARTICLES"=>"Antal artiklar"
 );
 
 function admStr( $id ) {
-    $lang = "sv";//$my_site["default_language"];
+    $lang = "sv";
     $str = $GLOBALS["admin_texts"][$lang][$id];
 
     return $str;
@@ -28,10 +25,13 @@ function admStr( $id ) {
 
 <?php include 'general.php'; ?>
 
-<?php /*include 'text.php';*/ ?>
-
-<?php include 'content-index.php'; ?>
-
-<?php include 'articles.php'; ?>
+<?php include 'content.php'; ?>
 
 </main>
+
+<?php
+// Set session variables demo
+$_SESSION["favcolor"] = "green";
+$_SESSION["favanimal"] = "cat";
+echo "Session variables are set.";
+?>

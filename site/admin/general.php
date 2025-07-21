@@ -1,6 +1,8 @@
 <details>
+<summary><h2><?php echo admStr('SETTINGS_CATEGORY_TITLE'); ?></h2></summary>
 
-<summary><h2><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h2></summary>
+<details>
+<summary><h3><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h3></summary>
 <form method="post" action="admin-update.php">
 <?php
 $formName = "general-site";
@@ -15,6 +17,7 @@ echo htmlVerticalTextInputTableFromAssocArray(
 <input type="hidden" name="form" value="<?php echo $formName; ?>">
 <input type="submit">
 </form>
+</details>
 
 <details>
 <summary><h3><?php echo admStr('TEXT_SECTION_TITLE'); ?></h3></summary>
