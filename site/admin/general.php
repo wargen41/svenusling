@@ -3,7 +3,7 @@
 <summary><h2><?php echo admStr('GENERAL_SECTION_TITLE'); ?></h2></summary>
 <form method="post" action="admin-update.php">
 <?php
-$formName = "general";
+$formName = "general-site";
 // Display site variables
 $prefix = "site";
 echo htmlVerticalTableFromAssocArray(getSiteVars());
