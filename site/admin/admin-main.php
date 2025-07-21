@@ -5,6 +5,9 @@ $GLOBALS["admin_texts"] = [];
 $GLOBALS["admin_texts"]["sv"] = array(
     "ADMIN_PAGE_TITLE"=>"Administration",
 
+    "QUICK_CATEGORY_TITLE"=>"Snabbstart",
+    "QUICK_MOVIE_TITLE"=>"Mata in filmer",
+
     "DB_CATEGORY_TITLE"=>"Databas",
     "MOVIES_SECTION_TITLE"=>"Filmer",
     "PERSONS_SECTION_TITLE"=>"Personer",
@@ -28,6 +31,8 @@ function admStr( $id ) {
 
 ?>
 <h1><?php echo admStr('ADMIN_PAGE_TITLE'); ?></h1>
+
+<?php include 'quick.php'; ?>
 
 <?php include 'database.php'; ?>
 
