@@ -1,7 +1,7 @@
 <section id="puff-rated-movies">
 <h2><?php echo getStr('RATED_MOVIES_TITLE'); ?></h2>
 <?php
-$movieCount = dbCountAllRows('movies');
+$movieCount = dbCountType('movies', 'film');
 $movieCountStr = 'Typ '.$movieCount.' betygsatta filmer';
 ?>
 <p>Typ <?php echo $movieCount; ?> betygsatta filmer så långt</p>
@@ -15,7 +15,7 @@ $query = implode(' ', [
     "JOIN media_movies mm ON m.MovieID = mm.MovieID",
     "JOIN media ON mm.MediaID = media.MediaID",
     "WHERE mm.MediaID = m.PosterImageID",
-    "AND m.PublishedDate != '' AND m.Grade != ''",
+    "AND m.PublishedDate != '' AND m.Grade != '' AND m.Type = 'film'",
     "ORDER BY PublishedDate DESC LIMIT 6",
 ]);
 $res = $GLOBALS['db']->query($query);

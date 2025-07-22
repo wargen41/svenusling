@@ -2,13 +2,23 @@
 
 /**
  * Returns a string of key="value" pairs from an associative array.
+ *
+ * If a value is boolean false, that key will not be included
+ *
+ * If a value is boolean true, only the key will be included (no value)
  * @param array<string, string> $arr
  * @return string
  */
-function keyValueString(array $arr): string {
+function htmlKeyValueString(array $arr): string {
     $result = [];
     foreach ($arr as $key => $value) {
-        $result[] = sprintf('%s="%s"', $key, addslashes($value));
+        if($value !== false){
+            if($value === true){
+                $result[] = $key;
+            }else{
+                $result[] = sprintf('%s="%s"', $key, addslashes($value));
+            }
+        }
     }
     $string = implode(' ', $result);
 
@@ -27,7 +37,7 @@ function htmlWrap(string $elm, string $inner, array $attr = []): string {
     $attrStr = "";
 
     if(!empty($attr)) {
-        $attrStr = " ".keyValueString($attr);
+        $attrStr = " ".htmlKeyValueString($attr);
     }
 
     $html .=
@@ -280,7 +290,7 @@ function htmlHiddenInput(array $props = []): string {
     $attr = $props['attributes'];
 
     if(!empty($attr)) {
-        $attrStr = " ".keyValueString($attr);
+        $attrStr = " ".htmlKeyValueString($attr);
     }
 
     $html .= '<input type="hidden"'.$attrStr.'>';
@@ -303,13 +313,13 @@ function htmlPasswordInput(array $props = []): string {
     $attr = $props['attributes'];
 
     if(!empty($attr)) {
-        $attrStr = " ".keyValueString($attr);
+        $attrStr = " ".htmlKeyValueString($attr);
     }
 
     if(isset($props['label'])) {
         $forName = "";
         if(isset($attr['id'])){
-            $forName = " ".keyValueString(array("for"=>$attr['id']));
+            $forName = " ".htmlKeyValueString(array("for"=>$attr['id']));
         }
         $html .=
         '<label'.$forName.'>'.
@@ -336,13 +346,13 @@ function htmlTextInput(array $props = []): string {
     $attr = $props['attributes'];
 
     if(!empty($attr)) {
-        $attrStr = " ".keyValueString($attr);
+        $attrStr = " ".htmlKeyValueString($attr);
     }
 
     if(isset($props['label'])) {
         $forName = "";
         if(isset($attr['id'])){
-            $forName = " ".keyValueString(array("for"=>$attr['id']));
+            $forName = " ".htmlKeyValueString(array("for"=>$attr['id']));
         }
         $html .=
         '<label'.$forName.'>'.

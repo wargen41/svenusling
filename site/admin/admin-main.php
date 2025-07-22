@@ -1,16 +1,16 @@
 <main id="main-content">
 
-<h1><?php echo admStr('ADMIN_PAGE_TITLE'); ?></h1>
+<h1>Administration</h1>
 
 <?php
 
-include $GLOBALS['my_dir'].'admin/quick.php';
+include $GLOBALS['my_dir'].'admin/quick_start.php';
 
-include $GLOBALS['my_dir'].'admin/database.php';
+include $GLOBALS['my_dir'].'admin/category-database.php';
 
-include $GLOBALS['my_dir'].'admin/content.php';
+include $GLOBALS['my_dir'].'admin/category-content.php';
 
-include $GLOBALS['my_dir'].'admin/settings.php';
+include $GLOBALS['my_dir'].'admin/category-settings.php';
 
 ?>
 

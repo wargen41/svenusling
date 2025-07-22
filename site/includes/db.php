@@ -1,5 +1,6 @@
 <?php
 
+// Vid tillfälle ska jag ta bort openBD() och lägga in manuellt på varje sida som ska ha den
 // Automatically open connection to db where this is included
 openDB();
 
@@ -60,6 +61,13 @@ function dbCountAllRows(string $table): int {
     return (int)$res;
 }
 
+function dbCountType(string $table, string $type): int {
+    $query = "SELECT COUNT(*) FROM ".$table." WHERE Type='".$type."'";
+    $res = $GLOBALS['db']->querySingle($query);
+
+    return (int)$res;
+}
+
 function getKeysFromTable(string $table): array {
     $res = $GLOBALS['db']->query('SELECT * FROM '.$table.' LIMIT 1');
     $row = $res->fetchArray(SQLITE3_ASSOC);
@@ -97,17 +105,6 @@ function getSiteVars(bool $htmlSafe=true): array {
     return $vars;
 }
 
-// function getSiteVarsKeys(): array {
-//     $res = $GLOBALS['db']->query('SELECT var FROM site');
-//
-//     $keys = [];
-//     while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
-//         array_push($keys, $row['var']);
-//     }
-//
-//     return $keys;
-// }
-//
 function getTextLanguages(): array {
     $res = $GLOBALS['db']->query("PRAGMA table_info(site_text)");
 

@@ -1,10 +1,9 @@
 <details>
-<summary><h2><?php echo admStr('CONTENT_CATEGORY_TITLE'); ?></h2></summary>
+<summary><h2>Innehåll</h2></summary>
 
 <details>
-<summary><h3><?php echo admStr('INDEX_CONTENT_SECTION_TITLE'); ?></h3></summary>
+<summary><h3>Startsidans innehåll</h3></summary>
 <?php
-// Display start page content selection
 
 ?>
 Här ska man kunna välja innehåll på startsidan<br>
@@ -12,8 +11,8 @@ Här ska man kunna välja innehåll på startsidan<br>
 </details>
 
 <details>
-<summary><h3><?php echo admStr('ARTICLES_SECTION_TITLE'); ?></h3></summary>
-<p><?php echo admStr('COUNT_ARTICLES').': '.countArticles(); ?></p>
+<summary><h3>Artiklar/texter</h3></summary>
+<p>Antal artiklar <?php echo countArticles(); ?></p>
 <?php
 $allArticles = getAllArticles();
 foreach ($allArticles as $id => $languageVersion) {
