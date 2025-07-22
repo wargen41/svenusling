@@ -265,7 +265,7 @@ function htmlVerticalTextInputTableFromAssocArray(array $arr, array $props = [])
 }
 
 /**
- * Creates a hidden input with optional label and attributes.
+ * Creates a hidden input with optional attributes.
  * @param array<mixed> $props
  * @return string
  */
@@ -284,6 +284,39 @@ function htmlHiddenInput(array $props = []): string {
     }
 
     $html .= '<input type="hidden"'.$attrStr.'>';
+    return $html;
+}
+
+/**
+ * Creates a password input with optional label and attributes.
+ * @param array<mixed> $props
+ * @return string
+ */
+function htmlPasswordInput(array $props = []): string {
+    $html = "";
+    $attrStr = "";
+
+    if(!isset($props['attributes'])) {
+        $props['attributes'] = [];
+    }
+
+    $attr = $props['attributes'];
+
+    if(!empty($attr)) {
+        $attrStr = " ".keyValueString($attr);
+    }
+
+    if(isset($props['label'])) {
+        $forName = "";
+        if(isset($attr['id'])){
+            $forName = " ".keyValueString(array("for"=>$attr['id']));
+        }
+        $html .=
+        '<label'.$forName.'>'.
+        $props['label'].
+        '</label>'." ";
+    }
+    $html .= '<input type="password"'.$attrStr.'>';
     return $html;
 }
 

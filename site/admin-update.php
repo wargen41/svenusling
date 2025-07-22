@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request.";
 }
 
+// Detta körs aldrig när man blir omdirigerad av
+// respektive uppdateringsskript
+// Hur löser vi det?
 closeDB();
 
 ?>
