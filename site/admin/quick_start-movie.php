@@ -13,7 +13,7 @@ echo htmlTextInput(array(
         "size" => 1,
         "name" => "rating",
         "id" => "quick-movie-rating",
-        "autofocus" => true
+        "autofocus" => false
     )
 ));
 ?>
