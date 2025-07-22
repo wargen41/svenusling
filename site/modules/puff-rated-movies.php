@@ -15,7 +15,7 @@ $query = implode(' ', [
     "JOIN media_movies mm ON m.MovieID = mm.MovieID",
     "JOIN media ON mm.MediaID = media.MediaID",
     "WHERE mm.MediaID = m.PosterImageID",
-    "AND m.PublishedDate != '' AND m.Grade != '' AND m.Type = 'film'",
+    "AND m.Hidden IS NOT 1 AND m.PublishedDate IS NOT '' AND m.Type = 'film'",
     "ORDER BY PublishedDate DESC LIMIT 6",
 ]);
 $res = $GLOBALS['db']->query($query);
