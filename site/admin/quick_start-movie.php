@@ -1,11 +1,17 @@
 <p>Filmer inmatade här är dolda tills du aktivt valt att publicera dem.</p>
 
-<form method="post" action="">
+<form method="post" action="insert/index.php">
+<input type="hidden" name="form" value="quick_start-movie">
 
 <fieldset>
 <legend>Ny film</legend>
 
 <?php
+$autoFocus = false;
+if(isset($_GET) && isset($_GET['mata'])){
+    $autoFocus = true;
+}
+
 echo htmlTextInput(array(
     "label" => "Betyg",
     "attributes" => array(
@@ -13,7 +19,7 @@ echo htmlTextInput(array(
         "size" => 1,
         "name" => "rating",
         "id" => "quick-movie-rating",
-        "autofocus" => false
+        "autofocus" => $autoFocus
     )
 ));
 ?>
