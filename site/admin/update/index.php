@@ -1,15 +1,15 @@
 <?php
 session_start();
-require 'includes/includes-admin.php';
+require __DIR__.'/../../includes/includes-admin.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $form = $_POST['form'];
 
-    include 'admin/'.$form.'-update.php';
+    include $GLOBALS['my_dir'].'admin/update/'.$form.'.php';
 
 } else {
-    echo "Invalid request.";
+    echo $GLOBALS['BAD_REQUEST_TEXT'];
 }
 
 // Detta körs aldrig när man blir omdirigerad av

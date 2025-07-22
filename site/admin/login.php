@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/required.php';
+require __DIR__.'/../includes/includes-login.php';
 
 function passwordIsCorrect($password) {
     if($password != ''){

@@ -9,4 +9,8 @@
     padding: .5rem;
 }
 </style>
-<div id="admin-widget"><a href="admin.php"><?php echo "Du är inloggad"; ?></a></div>
+<div id="admin-widget">
+    <a href="<?php echo $GLOBALS['base_uri'].'/admin'; ?>">
+        <?php echo "Du är inloggad"; ?>
+    </a>
+</div>

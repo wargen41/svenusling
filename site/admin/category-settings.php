@@ -3,9 +3,9 @@
 
 <details>
 <summary><h3>Allmänt</h3></summary>
-<form method="post" action="admin-update.php">
+<form method="post" action="update/index.php">
+<input type="hidden" name="form" value="settings-general">
 <?php
-$formName = "settings-site";
 $prefix = "site_";
 
 echo htmlVerticalTextInputTableFromAssocArray(
@@ -14,14 +14,14 @@ echo htmlVerticalTextInputTableFromAssocArray(
     )
 );
 ?>
-<input type="hidden" name="form" value="<?php echo $formName; ?>">
 <input type="submit">
 </form>
 </details>
 
 <details>
 <summary><h3>Text i gränssnittet</h3></summary>
-<form method="post" action="admin-update.php">
+<form method="post" action="update/index.php">
+<input type="hidden" name="form" value="settings-text">
 <?php
 $formName = "settings-text";
 $prefix = "text_";
@@ -41,7 +41,6 @@ if (!empty($rows)) {
     echo "No data found.";
 }
 ?>
-<input type="hidden" name="form" value="<?php echo $formName; ?>">
 <input type="submit">
 </form>
 </details>
