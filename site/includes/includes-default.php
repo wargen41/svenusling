@@ -1,7 +1,7 @@
 <?php
-require __DIR__ . "/../../config.php";
-require 'db.php';
-require 'global.php';
-require 'libraries.php';
-require 'html.php';
+
+$GLOBALS['my_dir'] = __DIR__.'/../';
+
+require $GLOBALS['my_dir'].'includes/required.php';
+
 ?>

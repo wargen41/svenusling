@@ -1,3 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+
+require $GLOBALS['my_dir'].'vendor/autoload.php';
+
 ?>

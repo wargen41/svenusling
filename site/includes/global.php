@@ -1,4 +1,5 @@
 <?php
+
 $GLOBALS['my_site'] = getSiteVars();
 
 $GLOBALS['my_supported_languages'] = getTextLanguages();
@@ -28,11 +29,11 @@ function getArticle($id) {
 function dynamicArticle($id) {
     $theArticle = getArticle($id);
     $theId = $id;
-    include 'modules/dynamic-article.php';
+    include $GLOBALS['my_dir'].'modules/dynamic-article.php';
 }
 
 function includeModule($file) {
-    include 'modules/' . $file;
+    include $GLOBALS['my_dir'].'modules/' . $file;
 }
 
 // https://medium.com/@akmashish15/how-to-detect-browser-language-in-php-87442c39496a

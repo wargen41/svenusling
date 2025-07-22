@@ -1,3 +1,9 @@
 <header>
-<?php include 'templates/quick-links.php';?>
+
+<?php
+
+include $GLOBALS['my_dir'].'templates/quick-links.php';
+
+?>
+
 </header>
