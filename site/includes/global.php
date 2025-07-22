@@ -52,4 +52,30 @@ function tbs_get_client_browser_lang( $checklanguages, $default ){
     return $default;
 }
 
+function addQueryToURL(string $url, string $key, string|int $value): string {
+    $query = [];
+    $queryStr = "";
+    // Make sure the query string contains $key,
+    // without removing any other existing querys
+    $url = parse_url($_SERVER['HTTP_REFERER']);
+    if(isset($url['query'])){
+        parse_str($url['query'], $query);
+    }
+    if(!isset($query[$key])){
+        $query[$key] = $value;
+    }
+    $queryStr = http_build_query($query);
+
+    $queryURL = $url['scheme'].'://'.$url['host'].$url['path'].'?'.$queryStr;
+    return $queryURL;
+}
+
+function sanitizeQuery(string $value): string {
+    // Remove everything but lower case letters a to z and integers
+    $value = preg_replace('/[^a-z0-9]/', '', $value);
+
+    return $value;
+}
+
+
 ?>

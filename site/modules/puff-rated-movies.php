@@ -20,9 +20,11 @@ $query = implode(' ', [
 ]);
 $res = $GLOBALS['db']->query($query);
 while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
-    $imgPath = $row['Directory'].$row['FileName'];
-    $imgHTML = '<img alt="['.$row['Title'].' poster]" src="'.$imgPath.'"> ';
-    echo htmlWrap('li', $imgHTML.$row['Title']);
+    $title = htmlSafeOutput($row['Title']);
+    $imgSrc = urlSafeOutput($row['Directory'].$row['FileName']);
+
+    $imgHTML = '<img alt="['.$title.' poster]" src="'.$imgSrc.'"> ';
+    echo htmlWrap('li', $imgHTML.$title);
 }
 ?>
 </ul>

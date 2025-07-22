@@ -2,8 +2,6 @@
 session_start();
 require 'includes/includes-default.php';
 
-openDB();
-
 $page_title = getStr('START_TITLE');
 
 require 'templates/html-start.php';

@@ -32,20 +32,7 @@ if (!$result) {
 }
 
 if (empty($errors)) {
-    $query = [];
-    $queryStr = "";
-    // Make sure the query string contains "mata",
-    // without removing any other existing querys
-    $url = parse_url($_SERVER['HTTP_REFERER']);
-    if(isset($url['query'])){
-        parse_str($url['query'], $query);
-    }
-    if(!isset($query['mata'])){
-        $query['mata'] = 1;
-    }
-    $queryStr = http_build_query($query);
-
-    $locStr = $url['scheme'].'://'.$url['host'].$url['path'].'?'.$queryStr;
+    $locStr = addQueryToURL($_SERVER['HTTP_REFERER'], 'mata', 1);
     header("Location: {$locStr}");
     exit;
 }

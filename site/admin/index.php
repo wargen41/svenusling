@@ -1,7 +1,7 @@
 <?php
 session_start();
 require __DIR__.'/../includes/includes-admin.php';
-//require 'includes/includes-admin.php';
+openDB();
 
 $isLoggedIn = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true);
 

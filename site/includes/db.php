@@ -1,9 +1,5 @@
 <?php
 
-// Vid tillfälle ska jag ta bort openBD() och lägga in manuellt på varje sida som ska ha den
-// Automatically open connection to db where this is included
-openDB();
-
 function openDB() {
     $GLOBALS['db'] = new SQLite3($GLOBALS['db_path'] . $GLOBALS['db_name']);
 }
@@ -16,6 +12,11 @@ function htmlSafeOutput(array|string $text): array|string {
         return array_map('htmlSafeOutput', $text);
     }
     return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+}
+
+function urlSafeOutput(array|string $text): array|string {
+    // Kanske hitta på något mer/annat här sen
+    return htmlSafeOutput($text);
 }
 
 function sanitizeSingleLineText(string $text, int $limit=0): string {
