@@ -30,9 +30,10 @@ function htmlKeyValueString(array $arr): string {
  * @param string $elm
  * @param string $inner
  * @param array $attr
+ * @param array $newline
  * @return string
  */
-function htmlWrap(string $elm, string $inner, array $attr = []): string {
+function htmlWrap(string $elm, string $inner, array $attr = [], array $newline = ["\n", "", "", ""]): string {
     $html = "";
     $attrStr = "";
 
@@ -41,9 +42,9 @@ function htmlWrap(string $elm, string $inner, array $attr = []): string {
     }
 
     $html .=
-    '<'.$elm.$attrStr.'>'.
-    $inner.
-    '</'.$elm.'>';
+    $newline[0]."<{$elm}{$attrStr}>".
+    $newline[2].$inner.$newline[3].
+    "</{$elm}>".$newline[1];
 
     return $html;
 }

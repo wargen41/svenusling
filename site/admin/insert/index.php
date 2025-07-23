@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__.'/../../includes/includes-admin.php';
+require __DIR__.'/../../includes/collections/admin.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

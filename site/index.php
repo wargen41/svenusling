@@ -1,19 +1,19 @@
 <?php
 session_start();
-require 'includes/includes-default.php';
+require 'includes/collections/default.php';
 
 $page_title = getStr('START_TITLE');
 
-require 'templates/html-start.php';
-include 'templates/header.php';
-include 'templates/site-widget.php';
+require 'includes/snippets/html-start.php';
+include 'includes/templates/header.php';
+include 'includes/templates/site-widget.php';
 
-include 'templates/index-main.php';
+include 'includes/templates/index-main.php';
 
-include 'templates/footer.php';
+include 'includes/templates/footer.php';
 
-include 'includes/admin-tools.php';
-require 'templates/html-end.php';
+include 'includes/snippets/admin-tools.php';
+require 'includes/snippets/html-end.php';
 
 closeDB();
 
