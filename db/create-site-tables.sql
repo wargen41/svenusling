@@ -29,6 +29,7 @@ INSERT INTO site VALUES('logo', '/assets/siluett.jpeg');
 INSERT INTO site_text VALUES('SKIP_TO_MAIN', 'accessibility', 'Gå till primärt innehåll', 'Skip to main content');
 INSERT INTO site_text VALUES('MAIN_MENU_TITLE', 'accessibility', 'Meny', 'Menu');
 INSERT INTO site_text VALUES('START_TITLE', 'titles', 'Välkommen', 'Welcome');
+INSERT INTO site_text VALUES('QUOTE_OTD_TITLE', 'titles', 'Dagens citat', 'Quote of the day');
 INSERT INTO site_text VALUES('RATED_MOVIES_TITLE', 'titles', 'Betygsatta filmer', 'Rated movies');
 INSERT INTO site_text VALUES('FILMS_AND_SERIES_LIST_TITLE', 'titles', 'Filmer och serier', 'Movies and series');
 INSERT INTO site_text VALUES('FILMS_LIST_TITLE', 'titles', 'Filmer', 'Movies');

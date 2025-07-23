@@ -15,4 +15,10 @@ function suRating(int $rating): string {
     return str_pad('', $rating, '+');
 }
 
+function print_rPRE($value){
+    echo '<pre>';
+    print_r($value);
+    echo '</pre>';
+}
+
 ?>
