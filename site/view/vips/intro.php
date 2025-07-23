@@ -1,3 +1,4 @@
+<h1>Blablabla</h1>
 <?php
 
 echo "Ja här ska väl vara något kanske."

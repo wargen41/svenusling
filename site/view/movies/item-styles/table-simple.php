@@ -1,7 +1,7 @@
 <?php
 
-/* This only creates list items */
-/* Don't forget to wrap in ul or ol where this is included */
+/* This only creates table rows */
+/* Don't forget to wrap in table (and maybe tbody) where this is included */
 
 while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $title = htmlSafeOutput($row['Title']);
@@ -9,13 +9,13 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $rating = htmlSafeOutput($row['Rating']);
 
     $titleHTML = $title ?? '???';
-    $titleHTML = htmlWrap('span', $titleHTML, array(
+    $titleHTML = htmlWrap('td', $titleHTML, array(
         "class" => "title"
     ));
 
     $yearHTML = $year ?? '';
     if($yearHTML != ''){
-        $yearHTML = htmlWrap('span', "(<time>{$yearHTML}</time>)", array(
+        $yearHTML = htmlWrap('td', "<time>{$yearHTML}</time>", array(
             "class" => "year"
         ));
     }
@@ -23,17 +23,13 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $ratingHTML = $rating ?? '';
     if($ratingHTML != ''){
         $ratingHTML = suRating($ratingHTML);
-        $ratingHTML = htmlWrap('span', "{$ratingHTML}", array(
+        $ratingHTML = htmlWrap('td', "{$ratingHTML}", array(
             "class" => "rating"
         ));
     }
 
-    $itemHTML = htmlWrap('span', "{$titleHTML} {$yearHTML}", array(
-        "class" => "item"
-    ));
-
-    $movieHTML = "{$itemHTML} {$ratingHTML}";
-    echo htmlWrap('li', $movieHTML);
+    $movieHTML = "{$titleHTML} {$yearHTML} {$ratingHTML}";
+    echo htmlWrap('tr', $movieHTML);
 }
 
 ?>
