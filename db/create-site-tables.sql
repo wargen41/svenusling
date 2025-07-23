@@ -23,8 +23,9 @@ CREATE TABLE site_articles(
 -- general site variables
 INSERT INTO site VALUES('name', 'Sven Usling');
 INSERT INTO site VALUES('default_language', 'sv');
-INSERT INTO site VALUES('icon', '/assets/siluett.jpeg');
-INSERT INTO site VALUES('logo', '/assets/siluett.jpeg');
+INSERT INTO site VALUES('icon', '/assets/logo.jpg');
+INSERT INTO site VALUES('logo', '/assets/logo.jpg');
+INSERT INTO site VALUES('bigerror', '/assets/png-clipart-glass-computer-icons-broken-glass-glass-angle.png');
 -- text strings
 INSERT INTO site_text VALUES('SKIP_TO_MAIN', 'accessibility', 'Gå till primärt innehåll', 'Skip to main content');
 INSERT INTO site_text VALUES('MAIN_MENU_TITLE', 'accessibility', 'Meny', 'Menu');

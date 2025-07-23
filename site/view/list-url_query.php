@@ -18,10 +18,14 @@ if($listType == 'list'){
     $listTypeElm = 'ol';
 }
 
-echo "<{$listTypeElm} class=\"{$listType} {$viewType}\">";
+$listPath = $GLOBALS['my_dir']."view/{$viewType}/item-styles/{$listType}-{$listStyle}.php";
 
-include $GLOBALS['my_dir']."view/{$viewType}/item-styles/{$listType}-{$listStyle}.php";
-
-echo "</{$listTypeElm}>";
+if(file_exists($listPath)){
+    echo "<{$listTypeElm} class=\"{$listType} {$viewType}\">";
+    include $listPath;
+    echo "</{$listTypeElm}>";
+}else{
+    echo bigErrorIcon();
+}
 
 ?>
