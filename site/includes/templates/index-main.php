@@ -2,7 +2,7 @@
 
 <?php
 
-dynamicArticle('INTRODUCTION');
+dynamicArticle('THE_MOVIES');
 
 includeModule('puff-rated-movies.php');
 

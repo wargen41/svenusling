@@ -1,6 +1,6 @@
 <?php
 
-dynamicArticle('THE_MOVIES');
+dynamicArticle('INTRODUCTION');
 
 includeModule('puff-rated-movies.php');
 
