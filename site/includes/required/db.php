@@ -121,7 +121,7 @@ function getTextLanguages(): array {
 }
 
 function getAllTexts(bool $htmlSafe=true): array {
-    $query = "SELECT * FROM site_text  ORDER BY category";
+    $query = "SELECT * FROM site_text  ORDER BY category, id";
     $res = $GLOBALS['db']->query($query);
 
     $texts = [];

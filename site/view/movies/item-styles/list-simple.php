@@ -1,6 +1,6 @@
 <?php
 
-// Don't forget to wrap in ul or ol where this is included
+/* Don't forget to wrap in ul or ol where this is included */
 
 while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $title = htmlSafeOutput($row['Title']);

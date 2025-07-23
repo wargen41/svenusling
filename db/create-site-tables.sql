@@ -36,6 +36,10 @@ INSERT INTO site_text VALUES('FILMS_LIST_TITLE', 'titles', 'Filmer', 'Movies');
 INSERT INTO site_text VALUES('SERIES_LIST_TITLE', 'titles', 'Serier', 'Series');
 INSERT INTO site_text VALUES('VIDEO_REVIEWS_TITLE', 'titles', 'Videorecensioner', 'Video
 reviews');
+INSERT INTO site_text VALUES('VIPS_TITLE', 'titles', 'VIP', 'VIP');
+INSERT INTO site_text VALUES('VIPS_LIST_TITLE', 'titles', 'VIP', 'VIP');
+INSERT INTO site_text VALUES('DIRECTORS_LIST_TITLE', 'titles', 'Regissörer', 'Directors');
+INSERT INTO site_text VALUES('ACTORS_LIST_TITLE', 'titles', 'Skådespelare', 'Actors');
 INSERT INTO site_text VALUES('MISC_LISTS_TITLE', 'titles', 'Listor', 'Lists');
 -- articles
 INSERT INTO site_articles VALUES(
