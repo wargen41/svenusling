@@ -24,6 +24,11 @@ if(isset($_GET) && isset($_GET['id'])){
         $snabbData[$key] = htmlSafeOutput($value);
     }
 
+    $ratingStr = '';
+    if($row['Rating']!==''){
+        $ratingStr = suRating($row['Rating']);
+    }
+
     $page_title = $snabbData['Title'];
 }else{
     $page_title = 'Lost you are???';
@@ -40,6 +45,9 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 <?php
 
 echo htmlWrap('h1', $page_title);
+echo htmlWrap('p', $ratingStr, array(
+    "style" => "text-align: center;"
+));
 
 if(strpos($page_title, '???') !== false){
     echo bigErrorIcon();
