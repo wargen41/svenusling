@@ -24,9 +24,11 @@ if(isset($_GET) && isset($_GET['id'])){
         $snabbData[$key] = htmlSafeOutput($value);
     }
 
+    $page_title = $snabbData['Title'];
+}else{
+    $page_title = 'Lost you are???';
 }
 
-$page_title = $snabbData['Title'];
 
 require $GLOBALS['my_dir'].'includes/snippets/html-start.php';
 include $GLOBALS['my_dir'].'includes/templates/header.php';
@@ -35,10 +37,15 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
 <main id="main-content">
 
-<h1><?php echo $snabbData['Title']; ?></h1>
 <?php
 
-print_rPRE($snabbData);
+echo htmlWrap('h1', $page_title);
+
+if(strpos($page_title, '???') !== false){
+    echo bigErrorIcon();
+}else{
+    print_rPRE($snabbData);
+}
 
 ?>
 
