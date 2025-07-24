@@ -7,6 +7,7 @@
 }
 html {
     scroll-behavior: smooth;
+    border-box: content-box;
 }
 body {
     margin: 0 0 4rem 0;
@@ -52,6 +53,7 @@ p {
     text-align: left;
 }
 a,
+button,
 details > summary,
 label[for]:not([for=""])
 {
@@ -128,12 +130,12 @@ nav ul > li {
     padding: .5rem;
 }
 #site-widget {
-position: sticky;
-z-index: 999;
-top: 0;
-display: inline-block;
-margin: 0 0 0 0;
-padding: 0 0 0 0;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 /* Test med input[type=button] (funkade inte, testar button istället) */
 /*#site-widget input:first-of-type
@@ -159,7 +161,7 @@ padding: .7rem 1rem 1rem .5rem;
     padding: .7rem 1rem 1rem .5rem;
 }*/
 /* Försök med button istället */
-#site-widget img:first-of-type,
+/*#site-widget img:first-of-type,
 #site-widget button:first-of-type
 {
     width: 2.2rem;
@@ -171,11 +173,24 @@ padding: .7rem 1rem 1rem .5rem;
     background-color: #04AA6D;
     border: none;
     padding: .7rem 1rem 1rem .5rem;
+}*/
+#site-widget img
+{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+#site-widget button
+{
+    background-color: LightCoral;
+    border: none;
+    display: inline-block;
+    padding: .7rem 1rem 1rem .5rem;
 }
 
 #site-widget-label {
-height: 2.2rem;
-display: inline-block;
-transform: translateY(-30%)
+    background-color: LightSeaGreen;
+    padding: .88rem 0 1.25rem 0;
+    display: inline-block;
+    transform: translateY(-.6rem);
 }
 </style>
