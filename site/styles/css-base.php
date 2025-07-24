@@ -27,6 +27,8 @@ body * {
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     padding: .5rem 0;
+    margin-top: .55em;
+    margin-bottom: .4em;
     text-wrap: balance;
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
     font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
