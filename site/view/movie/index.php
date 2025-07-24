@@ -2,19 +2,31 @@
 session_start();
 require __DIR__.'/../../includes/collections/default.php';
 
-$query = implode(' ', [
-    "SELECT Title, Year, Rating",
-    "FROM movies",
-    "WHERE Hidden IS NOT 1 AND MovieID = 10002",
-]);
-$res = $GLOBALS['db']->query($query);
+if(isset($_GET) && isset($_GET['id'])){
+    $id = sanitizeSingleLineText($_GET['id']); // Sanitize ska vara endast siffror sen
 
-$row = $res->fetchArray(SQLITE3_ASSOC);
+    $query = implode(' ', [
+        "SELECT *",
+        "FROM movies",
+        "WHERE Hidden IS NOT 1 AND MovieID = ".$id,
+    ]);
+    $res = $GLOBALS['db']->query($query);
 
-$title = htmlSafeOutput($row['Title']);
-$year = htmlSafeOutput($row['Year']);
+    $row = $res->fetchArray(SQLITE3_ASSOC);
 
-$page_title = $title;
+    $snabbData = array();
+    foreach($row as $key => $value){
+        if($value === null){
+            $value = 'NULL';
+        }if(is_int($value)){
+            $value = (string)$value;
+        }
+        $snabbData[$key] = htmlSafeOutput($value);
+    }
+
+}
+
+$page_title = $snabbData['Title'];
 
 require $GLOBALS['my_dir'].'includes/snippets/html-start.php';
 include $GLOBALS['my_dir'].'includes/templates/header.php';
@@ -23,11 +35,12 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
 <main id="main-content">
 
-<p>Här ska vara en sida som visar alla möjliga uppgifter om en enskild film eller serie.</p>
+<h1><?php echo $snabbData['Title']; ?></h1>
+<?php
 
-<h1><?php echo $title; ?></h1>
+print_rPRE($snabbData);
 
-<p><?php echo $year ?></p>
+?>
 
 </main>
 

@@ -3,7 +3,7 @@
 <?php
 
 $query = implode(' ', [
-    "SELECT Title, Year, Rating",
+    "SELECT Title, Year, Rating, MovieID",
     "FROM movies",
     "WHERE Hidden IS NOT 1 AND Type = 'film'",
     "ORDER BY Sorting",

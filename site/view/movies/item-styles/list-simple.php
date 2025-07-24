@@ -7,8 +7,14 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $title = htmlSafeOutput($row['Title']);
     $year = htmlSafeOutput($row['Year']);
     $rating = htmlSafeOutput($row['Rating']);
+    $id = urlSafeOutput($row['MovieID']);
+
+    $href = $GLOBALS['base_uri']."/view/movie/?id={$id}";
 
     $titleHTML = $title ?? '???';
+    $titleHTML = htmlWrap('a', $titleHTML, array(
+        "href" => $href
+    ));
     $titleHTML = htmlWrap('span', $titleHTML, array(
         "class" => "title"
     ));
