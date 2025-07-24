@@ -4,6 +4,8 @@
     --background-color-inverted: #333;
     --text-color-default: #444;
     --text-color-inverted: white;
+    --main-margin: 1.5rem;
+    --main-margin-negative: calc(0rem - var(--main-margin));
 }
 html {
     scroll-behavior: smooth;
@@ -26,9 +28,8 @@ body * {
 }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    padding: .5rem 0;
-    margin-top: .55em;
-    margin-bottom: .4em;
+    margin-top: .65em;
+    margin-bottom: .65em;
     text-wrap: balance;
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
     font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
@@ -42,15 +43,19 @@ h1 {
 }
 main {
     max-width: 36em;
-    margin: 1rem auto;
-    padding: 0 1.5rem;
+    margin: 0 auto; /* Centrera innehållet på skärmar större än maxbredd */
+    padding: 0 var(--main-margin); /* Marginaler när skärmen är mindre än maxbredd */
 }
 main h1 {
     text-align: center;
     position: sticky;
     top: 0;
+    padding: .5rem var(--main-margin);;
+    margin-left: var(--main-margin-negative);
+    margin-right: var(--main-margin-negative);
     background: var(--background-color-default);
 }
+main >
 p {
     text-align: left;
 }
