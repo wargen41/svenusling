@@ -1,4 +1,4 @@
-<h1><?php echo getStr('FILMS_AND_SERIES_LIST_TITLE'); ?></h1>
+<a href="#top"><h1><?php echo getStr('FILMS_AND_SERIES_LIST_TITLE'); ?></h1></a>
 
 <?php
 
