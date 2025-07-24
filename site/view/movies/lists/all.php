@@ -1,6 +1,8 @@
-<a href="#top"><h1><?php echo getStr('FILMS_AND_SERIES_LIST_TITLE'); ?></h1></a>
-
 <?php
+
+$viewType = 'movies';
+
+echo pgHeadingHTML(getStr('FILMS_AND_SERIES_LIST_TITLE'), $viewType);
 
 $query = implode(' ', [
     "SELECT Title, Year, Rating, MovieID",
@@ -10,7 +12,6 @@ $query = implode(' ', [
 ]);
 $res = $GLOBALS['db']->query($query);
 
-$viewType = 'movies';
 include $GLOBALS['my_dir']."view/list-url_query.php";
 
 ?>

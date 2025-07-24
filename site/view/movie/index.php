@@ -2,6 +2,10 @@
 session_start();
 require __DIR__.'/../../includes/collections/default.php';
 
+// Sen ska vi nog köra på samma upplägg som för listorna
+// med viewType och listType och listStyle
+// (fast kanske skippa listType och kalla det pageStyle istället)
+// viewType vill jag ha på alla sidor, så jag kan utnyttja pageHeading-funktionen
 if(isset($_GET) && isset($_GET['id'])){
     $id = sanitizeSingleLineText($_GET['id']); // Sanitize ska vara endast siffror sen
 

@@ -1,6 +1,8 @@
-<h1><?php echo getStr('VIPS_LIST_TITLE'); ?></h1>
-
 <?php
+
+$viewType = 'vips';
+
+echo pgHeadingHTML(getStr('VIPS_LIST_TITLE'), $viewType);
 
 $query = implode(' ', [
     "SELECT Name",
@@ -9,7 +11,6 @@ $query = implode(' ', [
 ]);
 $res = $GLOBALS['db']->query($query);
 
-$viewType = 'vips';
 include $GLOBALS['my_dir']."view/list-url_query.php";
 
 ?>
