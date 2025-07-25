@@ -105,7 +105,7 @@ echo htmlWrap('p', $ratingStr, array(
 ));
 
 if(strpos($page_title, '???') !== false){
-    echo bigErrorIcon();
+    echo big404Image();
 }else{
     echo htmlWrap('h2', 'movies');
     print_rPRE($movies);
