@@ -1,13 +1,25 @@
 <style>
-:root {
-    --background-color-default: white;
+:root
+{
+    --background-color-default: #ddd;
     --background-color-inverted: #333;
-    --text-color-default: #444;
+    --text-color-default: black;
     --text-color-inverted: white;
     --main-margin: 1.5rem;
     --main-margin-negative: calc(0rem - var(--main-margin));
 }
-html {
+
+@media (prefers-color-scheme: dark)
+:root
+{
+    --background-color-default: #333;
+    --background-color-inverted: #ddd;
+    --text-color-default: white;
+    --text-color-inverted: black;
+}
+
+html
+{
     scroll-behavior: smooth;
     border-box: content-box;
 }
