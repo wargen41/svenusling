@@ -5,8 +5,8 @@ $GLOBALS['my_site'] = getSiteVars();
 $GLOBALS['my_supported_languages'] = getTextLanguages();
 $GLOBALS['my_language'] = tbs_get_client_browser_lang( $GLOBALS['my_supported_languages'], $GLOBALS['my_site']['default_language'] );
 
-function bigErrorIcon() {
-    return "<img alt=\"ERROR\" src=\"{$GLOBALS['base_uri']}{$GLOBALS['my_site']['bigerror']}\">";
+function big404Image() {
+    return "<img class=\"lost\" alt=\"ERROR\" src=\"{$GLOBALS['base_uri']}{$GLOBALS['my_site']['bigerror']}\">";
 }
 
 function getStr($id) {
