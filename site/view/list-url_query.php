@@ -25,7 +25,7 @@ if(file_exists($listPath)){
     include $listPath;
     echo "</{$listTypeElm}>";
 }else{
-    echo bigErrorIcon();
+    echo big404Image();
 }
 
 ?>
