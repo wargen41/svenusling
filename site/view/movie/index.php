@@ -6,26 +6,32 @@ require __DIR__.'/../../includes/collections/default.php';
 // med viewType och listType och listStyle
 // (fast kanske skippa listType och kalla det pageStyle istället)
 // viewType vill jag ha på alla sidor, så jag kan utnyttja pageHeading-funktionen
+
+// Detta är bara för att snabbt få ut all data på sidan, så man kan enklare kolla
+// saker under utvecklingen av admindelen för film- och persondata
+// Sen kommer det ju bli en del joins och sånt också
+// Nu gör jag bara några väldigt simpla queries
 if(isset($_GET) && isset($_GET['id'])){
     $id = sanitizeSingleLineText($_GET['id']); // Sanitize ska vara endast siffror sen
 
+    // movies
     $query = implode(' ', [
         "SELECT *",
         "FROM movies",
-        "WHERE Hidden IS NOT 1 AND MovieID = ".$id,
+        "WHERE MovieID = ".$id,
     ]);
     $res = $GLOBALS['db']->query($query);
 
     $row = $res->fetchArray(SQLITE3_ASSOC);
 
-    $snabbData = array();
+    $movies = array();
     foreach($row as $key => $value){
         if($value === null){
             $value = 'NULL';
         }if(is_int($value)){
             $value = (string)$value;
         }
-        $snabbData[$key] = htmlSafeOutput($value);
+        $movies[$key] = htmlSafeOutput($value);
     }
 
     $ratingStr = '';
@@ -33,7 +39,52 @@ if(isset($_GET) && isset($_GET['id'])){
         $ratingStr = suRating($row['Rating']);
     }
 
-    $page_title = $snabbData['Title'];
+    // NEDANSTÅENDE BEHÖVER LOOPA EN EXTRA GÅNG OCH SPARA VARJE RAD FÖR SIG
+    // (SOM DET ÄR NU TROR JAG DET SKRIVS ÖVER MED SISTA RADEN)
+
+    // movies_genres
+    $query = implode(' ', [
+        "SELECT *",
+        "FROM movies_genres",
+        "WHERE MovieID = ".$id,
+    ]);
+    $res = $GLOBALS['db']->query($query);
+
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+    if($row===false){ $row = []; }
+
+    $movies_genres = array();
+    foreach($row as $key => $value){
+        if($value === null){
+            $value = 'NULL';
+        }if(is_int($value)){
+            $value = (string)$value;
+        }
+        $movies_genres[$key] = htmlSafeOutput($value);
+    }
+
+    // movies_persons
+    $query = implode(' ', [
+        "SELECT *",
+        "FROM movies_persons",
+        "WHERE MovieID = ".$id,
+    ]);
+    $res = $GLOBALS['db']->query($query);
+
+    $row = $res->fetchArray(SQLITE3_ASSOC);
+    if($row===false){ $row = []; }
+
+    $movies_persons = array();
+    foreach($row as $key => $value){
+        if($value === null){
+            $value = 'NULL';
+        }if(is_int($value)){
+            $value = (string)$value;
+        }
+        $arr[$key] = htmlSafeOutput($value);
+    }
+
+    $page_title = $movies['Title'];
 }else{
     $page_title = 'Lost you are???';
 }
@@ -56,7 +107,12 @@ echo htmlWrap('p', $ratingStr, array(
 if(strpos($page_title, '???') !== false){
     echo bigErrorIcon();
 }else{
-    print_rPRE($snabbData);
+    echo htmlWrap('h2', 'movies');
+    print_rPRE($movies);
+    echo htmlWrap('h2', 'movies_genres');
+    print_rPRE($movies_genres);
+    echo htmlWrap('h2', 'movies_persons');
+    print_rPRE($movies_persons);
 }
 
 ?>
