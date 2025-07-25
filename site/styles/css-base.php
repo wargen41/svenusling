@@ -1,7 +1,7 @@
 <style>
 :root
 {
-    --background-color-default: #ddd;
+    --background-color-default: #ccc;
     --background-color-inverted: #333;
     --text-color-default: black;
     --text-color-inverted: white;
@@ -13,9 +13,9 @@
 :root
 {
     --background-color-default: #333;
-    --background-color-inverted: #ddd;
+    --background-color-inverted: #black;
     --text-color-default: white;
-    --text-color-inverted: black;
+    --text-color-inverted: white;
 }}
 
 html
