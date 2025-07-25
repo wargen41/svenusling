@@ -1,21 +1,30 @@
 <style>
 :root
 {
-    --background-color-default: #ccc;
-    --background-color-inverted: #333;
-    --text-color-default: black;
-    --text-color-inverted: white;
     --main-margin: 1.5rem;
     --main-margin-negative: calc(0rem - var(--main-margin));
+
+    --background-color-default: rgb(238, 246, 238);
+    --text-color-default: black;
+    --background-color-alternate: #333;
+    --text-color-alternate: white;
+    --text-color-light: #333;
+
+    --background-sticky-heading: rgba(238, 246, 238, 0.85);
+    --border-color-default: black;
 }
 
 @media (prefers-color-scheme: dark){
 :root
 {
-    --background-color-default: #333;
-    --background-color-inverted: #black;
-    --text-color-default: white;
-    --text-color-inverted: white;
+    --background-color-default: rgb(34, 34, 34);
+    --text-color-default: #eef6ee;
+    --background-color-alternate: #111;
+    --text-color-alternate: #ddd;
+    --text-color-light: #999;
+
+    --background-sticky-heading: rgba(34, 34, 34, 0.85);
+    --border-color-default: black;
 }}
 
 html
@@ -35,15 +44,50 @@ body {
     /* Positioning the site-widget */
     text-align: right;
 }
-body * {
+
+body *
+{
     /* Default text alignment */
     text-align: left;
 }
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+
+/* Generell marginal mellan element i main */
+main > * + * {
+    margin-top: 2em;
+}
+
+/* Marginal på h1 som följs av ett syskonelement */
+h1/*:has(+ *)*/
+{
+    margin-bottom: .7em;
+}
+
+/* Generell marginal mellan element i en artikel */
+/* Ingen marginal efter h1, för där ska h1 själv styra marginalen */
+article > *:not(h1) + *
+{
+    margin-top: 1.2em;
+}
+
+/* Generell marginal mellan element i en section */
+/* En section bör inte ha någon h1, eftersom det per definition inte är huvudinnehållet */
+section > * + *
+{
     margin-top: .65em;
-    margin-bottom: .65em;
-    text-wrap: balance;
+}
+
+main > section
+{
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    padding-inline: 1rem;
+    border: 1px solid var(--border-color-default);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*line-height: 1.2;*/
+    /*margin-top: .65em;
+    margin-bottom: .65em;*/
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
     font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
     /* https://github.com/system-fonts/modern-font-stacks#didone */
@@ -51,25 +95,60 @@ h1, h2, h3, h4, h5, h6 {
     /* https://github.com/system-fonts/modern-font-stacks#antique */
     /*font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;*/
 }
-h1 {
+
+h1
+{
     font-size: 200%;
 }
-main {
+
+a
+{
+    color: var(--text-color-default);
+    text-decoration: none;
+}
+
+a:hover,
+a:active
+{
+    text-decoration: 1px underline solid;
+}
+
+/* Får inte visited att funka :( */
+a:visited:hover,
+a:visited:active
+{
+    text-decoration: 1px overline dotted;
+}
+
+a:hover:visited,
+a:active:visited
+{
+    text-decoration: 1px overline dotted;
+}
+
+main
+{
     max-width: 36em;
     margin: 0 auto; /* Centrera innehållet på skärmar större än maxbredd */
     padding: 0 var(--main-margin); /* Marginaler när skärmen är mindre än maxbredd */
 }
-main h1 {
+
+main > h1,
+main > article > h1,
+main > article > hgroup:first-of-type
+{
     text-align: center;
     position: sticky;
     top: 0;
     padding: .5rem var(--main-margin);;
     margin-left: var(--main-margin-negative);
     margin-right: var(--main-margin-negative);
-    background: var(--background-color-default);
+
+    background: var(--background-sticky-heading);
 }
-main >
-p {
+
+main > p
+{
     text-align: left;
 }
 a,
@@ -88,8 +167,8 @@ details > summary > * {
     left: 0;
     right: 0;
     text-align: center;
-    background-color: var(--background-color-inverted);
-    color: var(--text-color-inverted);
+    background-color: var(--background-color-alternate);
+    color: var(--text-color-alternate);
     padding: .5rem;
     translate: 0 -100%;
     transition: translate 150ms ease-in-out;
@@ -110,7 +189,8 @@ img.lost
     width: 100%;
 }
 
-footer {
+footer
+{
     position: relative;
     width: auto;
     display: flex;
@@ -122,13 +202,19 @@ footer {
     padding: 1rem 0;
     margin-top: 5rem;
 
-    background: var(--background-color-inverted);
-    color: var(--text-color-inverted);
+    background: var(--background-color-alternate);
+    color: var(--text-color-alternate);
+
+    border-block: 1px solid var(--border-color-default);
 }
-footer a {
-    color: var(--text-color-inverted);
+
+footer a
+{
+    color: var(--text-color-alternate);
 }
-header {
+
+header
+{
     position: relative;
     width: 100%;
     display: flex;
@@ -137,11 +223,13 @@ header {
     gap: 3rem;
     flex-direction: row;
 
-    background: var(--background-color-inverted);
-    color: var(--text-color-inverted);
+    background: var(--background-color-alternate);
+    color: var(--text-color-alternate);
+
+    border-bottom: 1px solid var(--border-color-default);
 }
 header a {
-    color: var(--text-color-inverted);
+    color: var(--text-color-alternate);
 }
 nav ul {
     list-style-type: none;
@@ -216,8 +304,8 @@ padding: .7rem 1rem 1rem .5rem;
 
 #site-widget-label {
     background-color: LightSeaGreen;
-    padding: .88rem 0 1.25rem 0;
+    padding: .82rem 0 1.25rem 0;
     display: inline-block;
-    transform: translateY(-.6rem);
+    transform: translateY(-.7rem);
 }
 </style>

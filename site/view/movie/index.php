@@ -39,6 +39,11 @@ if(isset($_GET) && isset($_GET['id'])){
         $ratingStr = suRating($row['Rating']);
     }
 
+    $originalTitle = '';
+    if($row['OriginalTitle']!==''){
+        $originalTitle = $row['OriginalTitle'];
+    }
+
     // NEDANSTÅENDE BEHÖVER LOOPA EN EXTRA GÅNG OCH SPARA VARJE RAD FÖR SIG
     // (SOM DET ÄR NU TROR JAG DET SKRIVS ÖVER MED SISTA RADEN)
 
@@ -97,9 +102,13 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
 <main id="main-content">
 
+<article>
+
 <?php
 
-echo htmlWrap('h1', $page_title);
+echo htmlWrap('hgroup', htmlWrap('h1', $page_title).htmlWrap('p', $originalTitle));
+// echo htmlWrap('h1', $page_title);
+// echo htmlWrap('p', $originalTitle);
 echo htmlWrap('p', $ratingStr, array(
     "style" => "text-align: center;"
 ));
@@ -116,6 +125,8 @@ if(strpos($page_title, '???') !== false){
 }
 
 ?>
+
+</article>
 
 </main>
 

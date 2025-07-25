@@ -8,7 +8,7 @@ require 'includes/snippets/html-start.php';
 include 'includes/templates/header.php';
 include 'includes/templates/site-widget.php';
 
-include 'includes/templates/index-main.php';
+include 'index-main.php';
 
 include 'includes/templates/footer.php';
 
