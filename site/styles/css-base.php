@@ -9,14 +9,14 @@
     --main-margin-negative: calc(0rem - var(--main-margin));
 }
 
-@media (prefers-color-scheme: dark)
+@media (prefers-color-scheme: dark){
 :root
 {
     --background-color-default: #333;
     --background-color-inverted: #ddd;
     --text-color-default: white;
     --text-color-inverted: black;
-}
+}}
 
 html
 {
