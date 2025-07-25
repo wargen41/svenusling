@@ -98,11 +98,18 @@ details > summary > * {
     translate: 0;
     z-index: 999;
 }
+
 img.circle
 {
     border-radius: 50%;
     object-fit: cover; /* Ensures the image fills the circle without distortion */
 }
+
+img.lost
+{
+    width: 100%;
+}
+
 footer {
     position: relative;
     width: auto;
