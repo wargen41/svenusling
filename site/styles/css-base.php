@@ -30,6 +30,7 @@ body {
     /* https://github.com/system-fonts/modern-font-stacks#humanist */
     font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     color: var(--text-color-default);
+    background-color: var(--background-color-default);
     padding: 0;
     /* Positioning the site-widget */
     text-align: right;
