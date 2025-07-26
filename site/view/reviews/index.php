@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require __DIR__.'/../../includes/collections/default.php';
 
 $page_title = getStr('VIDEO_REVIEWS_TITLE');

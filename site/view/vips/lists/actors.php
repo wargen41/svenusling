@@ -2,7 +2,7 @@
 
 $viewType = 'vips';
 
-echo pgHeadingHTML(getStr('ACTORS_LIST_TITLE'), $viewType);
+echo pgHeadingHTML($viewType, getStr('ACTORS_LIST_TITLE'));
 
 $query = implode(' ', [
     "SELECT Name",

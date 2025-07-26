@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'includes/collections/default.php';
 
 $page_title = getStr('START_TITLE');

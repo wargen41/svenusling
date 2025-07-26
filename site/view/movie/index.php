@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require __DIR__.'/../../includes/collections/default.php';
 
 // Sen ska vi nog köra på samma upplägg som för listorna
@@ -106,7 +106,8 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
 <?php
 
-echo htmlWrap('hgroup', htmlWrap('h1', $page_title).htmlWrap('p', $originalTitle));
+echo pgHeadingHTML('movie', $page_title, $originalTitle);
+//echo htmlWrap('hgroup', htmlWrap('h1', $page_title).htmlWrap('p', $originalTitle));
 // echo htmlWrap('h1', $page_title);
 // echo htmlWrap('p', $originalTitle);
 echo htmlWrap('p', $ratingStr, array(

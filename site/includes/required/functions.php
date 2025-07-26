@@ -8,21 +8,33 @@ function pgTitle(string $text): string {
  * Use this for a uniform page heading.
  *
  * Different things may happen depending on the $viewType argument
- * @param string $text
  * @param string $viewType
+ * @param string $text
+ * @param ?string $text2
  * @return string
  */
-function pgHeadingHTML(string $text, string $viewType): string {
+function pgHeadingHTML(string $viewType, string $text, ?string $text2 = ""): string {
     $str = $text;
     // There are not always breaks in the switch (is intended)
     switch($viewType) {
         case "movies":
-            $str = "{$viewType} {$str}";
+            $str = "Ms {$str}";
+        case "movie":
+            $str = "M {$str}";
+        case "persons":
+            $str = "Ps {$str}";
+        case "person":
+            $str = "P {$str}";
         default:
             // We may also do something for each case without a break statement
             // or where there was no matching case
     }
-    return htmlWrap('h1', $str);
+
+    $headingHTML = htmlWrap('h1', $str);
+    if($text2){
+        $headingHTML = htmlWrap('hgroup', $headingHTML.htmlWrap('p', $text2));
+    }
+    return $headingHTML;
 }
 
 /**

@@ -96,10 +96,6 @@ h1, h2, h3, h4, h5, h6 {
     /*font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;*/
 }
 
-h1
-{
-    font-size: 200%;
-}
 
 a
 {
@@ -145,6 +141,17 @@ main > article > hgroup:first-of-type
     margin-right: var(--main-margin-negative);
 
     background: var(--background-sticky-heading);
+}
+
+h1,
+hgroup *
+{
+    text-align: center;
+}
+
+h1
+{
+    font-size: 200%;
 }
 
 main > p

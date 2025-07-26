@@ -2,7 +2,7 @@
 
 $viewType = 'movies';
 
-echo pgHeadingHTML(getStr('FILMS_LIST_TITLE'), $viewType);
+echo pgHeadingHTML($viewType, getStr('FILMS_LIST_TITLE'));
 
 $query = implode(' ', [
     "SELECT Title, Year, Rating, MovieID",
