@@ -2,9 +2,10 @@
 
 <?php
 
-echo htmlPasswordInput(array(
+echo htmlInput(array(
     "label" => "Lösenord",
     "attributes" => array(
+        "type" => "password",
         "name" => "password",
         "id" => "password"
     )

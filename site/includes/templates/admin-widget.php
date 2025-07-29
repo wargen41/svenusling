@@ -11,6 +11,6 @@
 </style>
 <div id="admin-widget">
     <a href="<?php echo $GLOBALS['base_uri'].'/admin'; ?>">
-        <?php echo "Du är inloggad"; ?>
+        <?php echo "Admin"; ?>
     </a>
 </div>

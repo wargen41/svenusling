@@ -1,9 +1,9 @@
 <?php
 session_start();
+$isLoggedIn = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true);
+
 require __DIR__.'/../includes/collections/admin.php';
 openDB();
-
-$isLoggedIn = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true);
 
 if($isLoggedIn){
     $page_title = 'Admin';
@@ -17,7 +17,12 @@ if($isLoggedIn) {
     include $GLOBALS['my_dir'].'includes/templates/header.php';
     include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
-    include $GLOBALS['my_dir'].'admin/admin-main.php';
+    if(isset($_GET) && isset($_GET['edit'])){
+        $kindOfEdit = sanitizeQuery($_GET['edit']);
+        include $GLOBALS['my_dir'].'admin/edit/'.$kindOfEdit.'.php';
+    }else{
+        include $GLOBALS['my_dir'].'admin/admin-main.php';
+    }
 
     include $GLOBALS['my_dir'].'includes/templates/footer.php';
 }

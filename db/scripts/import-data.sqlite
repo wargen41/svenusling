@@ -1,7 +1,7 @@
 -- IMPORT CSV DATA in SQLite
 -- Place the csv files in a folder named "import-data"
 .mode csv
-.separator ";"
+.separator ","
 .import 'import-data/table-genres.csv' genres
 .import 'import-data/table-relations.csv' relations
 .import 'import-data/table-media.csv' media
@@ -18,6 +18,8 @@
 .import 'import-data/table-movies_trivia.csv' movies_trivia
 .import 'import-data/table-persons_trivia.csv' persons_trivia
 .import 'import-data/table-relations_persons.csv' relations_persons
+
+-- Remove null values
 
 -- Display some imported data
 .mode table

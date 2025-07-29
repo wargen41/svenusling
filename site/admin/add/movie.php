@@ -1,7 +1,7 @@
 <p>Filmer inmatade här är dolda tills du aktivt valt att publicera dem.</p>
 
 <form method="post" action="insert/index.php">
-<input type="hidden" name="form" value="quick_start-movie">
+<input type="hidden" name="form" value="movie">
 
 <fieldset>
 <legend>Ny film</legend>
@@ -12,37 +12,37 @@ if(isset($_GET) && isset($_GET['mata'])){
     $autoFocus = true;
 }
 
-echo htmlTextInput(array(
+echo htmlInput(array(
     "label" => "Betyg",
     "attributes" => array(
         "required" => true,
         "size" => 1,
         "name" => "rating",
-        "id" => "quick-movie-rating",
+        "id" => "add-movie-rating",
         "autofocus" => $autoFocus
     )
 ));
 ?>
 
 <?php
-echo htmlTextInput(array(
+echo htmlInput(array(
     "label" => "Titel",
     "attributes" => array(
         "required" => true,
         "name" => "title",
-        "id" => "quick-movie-title"
+        "id" => "add-movie-title"
     )
 ));
 ?>
 
 <?php
-echo htmlTextInput(array(
+echo htmlInput(array(
     "label" => "År",
     "attributes" => array(
         "required" => false,
         "size" => 4,
         "name" => "year",
-        "id" => "quick-movie-year"
+        "id" => "add-movie-year"
     )
 ));
 ?>

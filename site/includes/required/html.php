@@ -196,8 +196,9 @@ function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): s
             }else{
                 $thContent = $value;
                 if($key === $primarykey) {
-                    $hiddenInput = htmlHiddenInput(array(
+                    $hiddenInput = htmlInput(array(
                         "attributes" => array(
+                            "type" => "hidden",
                             "value" => $value,
                             "id" => $idStr,
                             "name" => $nameStr
@@ -276,79 +277,24 @@ function htmlVerticalTextInputTableFromAssocArray(array $arr, array $props = [])
 }
 
 /**
- * Creates a hidden input with optional attributes.
+ * Creates an input with optional label and attributes. If no attribute for type is set, the default is text.
  * @param array<mixed> $props
  * @return string
  */
-function htmlHiddenInput(array $props = []): string {
+function htmlInput(array $props = []): string {
     $html = "";
     $attrStr = "";
 
     if(!isset($props['attributes'])) {
         $props['attributes'] = [];
-    }
-
-    $attr = $props['attributes'];
-
-    if(!empty($attr)) {
-        $attrStr = " ".htmlKeyValueString($attr);
-    }
-
-    $html .= '<input type="hidden"'.$attrStr.'>';
-    return $html;
-}
-
-/**
- * Creates a password input with optional label and attributes.
- * @param array<mixed> $props
- * @return string
- */
-function htmlPasswordInput(array $props = []): string {
-    $html = "";
-    $attrStr = "";
-
-    if(!isset($props['attributes'])) {
-        $props['attributes'] = [];
-    }
-
-    $attr = $props['attributes'];
-
-    if(!empty($attr)) {
-        $attrStr = " ".htmlKeyValueString($attr);
-    }
-
-    if(isset($props['label'])) {
-        $forName = "";
-        if(isset($attr['id'])){
-            $forName = " ".htmlKeyValueString(array("for"=>$attr['id']));
+    }else{
+        if(!isset($props['attributes']['type'])){
+            $props['attributes']['type'] = 'text';
         }
-        $html .=
-        '<label'.$forName.'>'.
-        $props['label'].
-        '</label>'." ";
-    }
-    $html .= '<input type="password"'.$attrStr.'>';
-    return $html;
-}
-
-/**
- * Creates a text input with optional label and attributes.
- * @param array<mixed> $props
- * @return string
- */
-function htmlTextInput(array $props = []): string {
-    $html = "";
-    $attrStr = "";
-
-    if(!isset($props['attributes'])) {
-        $props['attributes'] = [];
     }
 
     $attr = $props['attributes'];
-
-    if(!empty($attr)) {
-        $attrStr = " ".htmlKeyValueString($attr);
-    }
+    $attrStr = " ".htmlKeyValueString($attr);
 
     if(isset($props['label'])) {
         $forName = "";
@@ -385,11 +331,12 @@ function htmlTextInputsFromArray(array $arr, array $props = []): string {
     foreach ($arr as $var => $value) {
         $idStr = $prefix.$var;
         $html .= htmlTextInput(array(
-            "label"=>$idStr,
+            "label" => $idStr,
             "attributes"=>array(
-                "value"=>$value,
-                "id"=>$idStr,
-                "name"=>$var
+                "type" => "text",
+                "value" => $value,
+                "id" => $idStr,
+                "name" => $var
             )
         ));
         $html .= $delimiter;

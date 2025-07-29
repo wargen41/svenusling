@@ -7,14 +7,17 @@ function closeDB() {
     $GLOBALS['db']->close();
 }
 
-function htmlSafeOutput(array|string $text): array|string {
+function htmlSafeOutput(array|string|null $text): array|string {
     if(is_array($text)){
         return array_map('htmlSafeOutput', $text);
+    }
+    if(is_null($text)){
+        return "";
     }
     return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
-function urlSafeOutput(array|string $text): array|string {
+function urlSafeOutput(array|string|null $text): array|string {
     // Kanske hitta på något mer/annat här sen
     return htmlSafeOutput($text);
 }

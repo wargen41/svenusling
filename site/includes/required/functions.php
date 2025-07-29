@@ -51,7 +51,13 @@ function suRating(int $rating): string {
 
     return str_pad('', $rating, '+');
 }
-function print_rPRE($value){
+
+// Not done yet
+function resCountZero() {
+    return '<p>Hittade inget</p>';
+}
+
+function print_rPRE($value) {
     echo '<pre>';
     print_r($value);
     echo '</pre>';

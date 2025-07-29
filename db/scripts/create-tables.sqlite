@@ -1,0 +1,112 @@
+-- CREATE TABLES
+-- and set up primary keys
+CREATE TABLE media(
+    MediaID INTEGER PRIMARY KEY,
+    FileName TEXT NOT NULL,
+    Type TEXT NOT NULL,
+    Directory TEXT NOT NULL,
+    Caption TEXT,
+    Attribution TEXT
+);
+CREATE TABLE persons(
+    PersonID INTEGER PRIMARY KEY,
+    Category TEXT NOT NULL,
+    Name TEXT NOT NULL,
+    BirthDate TEXT,
+    DeathDate TEXT,
+    PosterImageID INTEGER
+);
+CREATE TABLE genres(
+    GenreID INTEGER PRIMARY KEY,
+    Common INTEGER NOT NULL,
+    sv TEXT NOT NULL,
+    en TEXT NOT NULL
+);
+CREATE TABLE movies(
+    MovieID INTEGER PRIMARY KEY,
+    Hidden INTEGER NOT NULL,
+    PublishedDate TEXT,
+    Type TEXT NOT NULL,
+    SeriesID INTEGER,
+    SeasonID INTEGER,
+    Number INTEGER,
+    Number2 INTEGER,
+    Title TEXT NOT NULL,
+    OriginalTitle TEXT,
+    Sorting TEXT NOT NULL,
+    Year TEXT,
+    Year2 TEXT,
+    Rating INTEGER NOT NULL,
+    ViewDate TEXT,
+    PosterImageID INTEGER,
+    LargeImageID INTEGER,
+    IMDbID TEXT
+);
+CREATE TABLE movies_genres(
+    MovieID INTEGER NOT NULL,
+    GenreID INTEGER NOT NULL
+);
+CREATE TABLE movies_persons(
+    MovieID INTEGER NOT NULL,
+    PersonID INTEGER NOT NULL,
+    PersonName TEXT NOT NULL,
+    Category TEXT NOT NULL,
+    RoleName TEXT,
+    Note TEXT
+);
+CREATE TABLE movies_trivia(
+    MovieID INTEGER NOT NULL,
+    sv TEXT,
+    en TEXT
+);
+CREATE TABLE persons_trivia(
+    PersonID INTEGER NOT NULL,
+    sv TEXT,
+    en TEXT
+);
+CREATE TABLE media_persons(
+    MediaID INTEGER NOT NULL,
+    PersonID INTEGER NOT NULL
+);
+CREATE TABLE media_movies(
+    MediaID INTEGER NOT NULL,
+    MovieID INTEGER NOT NULL
+);
+CREATE TABLE movies_quotes(
+    MovieID INTEGER NOT NULL,
+    Quote TEXT NOT NULL
+);
+CREATE TABLE awards(
+    AwardID INTEGER PRIMARY KEY,
+    Award TEXT NOT NULL,
+    Category TEXT
+);
+CREATE TABLE awards_persons(
+    AwardID INTEGER NOT NULL,
+    Year TEXT,
+    MovieID INTEGER,
+    PersonID INTEGER,
+    PersonName TEXT NOT NULL,
+    Won INTEGER NOT NULL,
+    Note TEXT
+);
+CREATE TABLE awards_movies(
+    AwardID INTEGER NOT NULL,
+    Year TEXT,
+    MovieID INTEGER,
+    Won INTEGER NOT NULL,
+    Note TEXT
+);
+CREATE TABLE relations(
+    RelationID INTEGER PRIMARY KEY,
+    sv TEXT,
+    en INTEGER
+);
+CREATE TABLE relations_persons(
+    PersonID INTEGER NOT NULL,
+    Person2ID INTEGER,
+    Person2Name TEXT,
+    RelationID INTEGER NOT NULL,
+    Date1 TEXT,
+    Date2 TEXT
+);
