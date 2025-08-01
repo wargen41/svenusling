@@ -58,7 +58,7 @@ if($isLoggedIn){
             echo resCountZero();
         }
         
-        $back = {$_SERVER['HTTP_REFERER']} ?? null;
+        $back = $_SERVER['HTTP_REFERER'] ?? null;
         if(!is_null($back)){
             echo htmlWrap('a', 'Tillbaka', array(
                 "href" => $back
