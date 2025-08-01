@@ -57,6 +57,14 @@ if($isLoggedIn){
         if(isset($resCount) && $resCount === 0){
             echo resCountZero();
         }
+        
+        $back = {$_SERVER['HTTP_REFERER']} ?? null;
+        if(!is_null($back)){
+            echo htmlWrap('a', 'Tillbaka', array(
+                "href" => $back
+            ));
+        }
+        
     }else{
         echo big404Image();
     }
