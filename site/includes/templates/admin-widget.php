@@ -11,6 +11,6 @@
 </style>
 <div id="admin-widget">
     <a href="<?php echo $GLOBALS['base_uri'].'/admin'; ?>">
-        <?php echo "Admin"; ?>
+        <?php echo "Administration"; ?>
     </a>
 </div>

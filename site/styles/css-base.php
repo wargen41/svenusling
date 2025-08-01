@@ -9,8 +9,12 @@
     --background-color-alternate: #333;
     --text-color-alternate: white;
     --text-color-light: #333;
+    --text-color-faint: #aaa;
 
     --background-sticky-heading: rgba(238, 246, 238, 0.85);
+    --background-sticky-heading-opaque: rgba(238, 246, 238, 1);
+    --gradient-sticky-heading: linear-gradient(0deg, var(--background-sticky-heading-opaque) 0%, var(--background-sticky-heading-opaque) 100%);
+
     --border-color-default: black;
 }
 
@@ -22,8 +26,10 @@
     --background-color-alternate: #111;
     --text-color-alternate: #ddd;
     --text-color-light: #999;
+    --text-color-faint: #555;
 
     --background-sticky-heading: rgba(34, 34, 34, 0.85);
+    --background-sticky-heading-opaque: rgba(34, 34, 34, 1);
     --border-color-default: black;
 }}
 
@@ -96,13 +102,34 @@ h1, h2, h3, h4, h5, h6 {
     /*font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;*/
 }
 
+main.login {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+
+main.login > form {
+    margin: auto;
+}
 
 a
 {
     color: var(--text-color-default);
+    text-decoration: 1px underline solid var(--text-color-faint);
+}
+
+.list a
+{
     text-decoration: none;
 }
 
+.list li:hover a,
+.list li:active a
+{
+    text-decoration: 1px underline solid var(--text-color-faint);
+}
+
+.list li:hover a:hover,
 a:hover,
 a:active
 {
@@ -141,6 +168,8 @@ main > article > hgroup:first-of-type
     margin-right: var(--main-margin-negative);
 
     background: var(--background-sticky-heading);
+    /* Detta funkar inte */
+    background: var(--gradient-sticky-heading);
 }
 
 h1,
@@ -303,14 +332,16 @@ padding: .7rem 1rem 1rem .5rem;
 }
 #site-widget button
 {
-    background-color: LightCoral;
+    /*background-color: LightCoral;*/
+    background: none;
     border: none;
     display: inline-block;
     padding: .7rem 1rem 1rem .5rem;
 }
 
 #site-widget-label {
-    background-color: LightSeaGreen;
+    /*background-color: LightSeaGreen;*/
+    background: none;
     padding: .82rem 0 1.25rem 0;
     display: inline-block;
     transform: translateY(-.7rem);

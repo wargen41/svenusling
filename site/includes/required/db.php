@@ -72,6 +72,13 @@ function dbCountType(string $table, string $type): int {
     return (int)$res;
 }
 
+function dbCountHiddenMovies(): int {
+    $query = "SELECT COUNT(*) FROM movies WHERE Hidden=1";
+    $res = $GLOBALS['db']->querySingle($query);
+
+    return (int)$res;
+}
+
 function getKeysFromTable(string $table): array {
     $res = $GLOBALS['db']->query('SELECT * FROM '.$table.' LIMIT 1');
     $row = $res->fetchArray(SQLITE3_ASSOC);

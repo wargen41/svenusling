@@ -1,3 +1,5 @@
+<main id="main-content" class="login">
+
 <form method="post" action="login.php">
 
 <?php
@@ -13,5 +15,7 @@ echo htmlInput(array(
 
 ?>
 
-<input type="submit">
+<input type="submit" value="Logga in">
 </form>
+
+</main>

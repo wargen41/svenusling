@@ -23,7 +23,7 @@ if($isLoggedIn){
 
     // Default values
     $listType = 'list';
-    $listStyle = 'simple';
+    $listStyle = 'edit';
 
     // Use values from URL query if there is one
     if(isset($_GET['type'])){
@@ -50,6 +50,8 @@ if($isLoggedIn){
         ]);
         $res = $GLOBALS['db']->query($query);
 
+        echo htmlWrap('p', "Klicka på respektive titel om du vill redigera filmens upgifter och/eller publicera den");
+
         echo "<{$listTypeElm} class=\"{$listType} {$viewType}\">";
         include $listPath;
         echo "</{$listTypeElm}>";
@@ -58,12 +60,12 @@ if($isLoggedIn){
             echo resCountZero();
         }
         
-        $back = $_SERVER['HTTP_REFERER'] ?? null;
-        if(!is_null($back)){
-            echo htmlWrap('a', 'Tillbaka', array(
-                "href" => $back
-            ));
-        }
+        // $back = $_SERVER['HTTP_REFERER'] ?? null;
+        // if(!is_null($back)){
+        //     echo htmlWrap('p', htmlWrap('a', 'Tillbaka', array(
+        //         "href" => $back
+        //     )));
+        // }
         
     }else{
         echo big404Image();

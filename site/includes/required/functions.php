@@ -15,19 +15,20 @@ function pgTitle(string $text): string {
  */
 function pgHeadingHTML(string $viewType, string $text, ?string $text2 = ""): string {
     $str = $text;
-    // There are not always breaks in the switch (is intended)
     switch($viewType) {
         case "movies":
             $str = "Ms {$str}";
+            break;
         case "movie":
             $str = "M {$str}";
+            break;
         case "persons":
             $str = "Ps {$str}";
+            break;
         case "person":
             $str = "P {$str}";
+            break;
         default:
-            // We may also do something for each case without a break statement
-            // or where there was no matching case
     }
 
     $headingHTML = htmlWrap('h1', $str);
