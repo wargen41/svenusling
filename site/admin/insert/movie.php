@@ -6,15 +6,17 @@ $table = "movies";
 
 $columns = array(
     "Title",
+    "Sorting",
     "Year",
     "Rating",
     "Hidden"
 );
 $columnsStr = implode(', ', $columns);
 
-$statement = 'INSERT INTO '.$table.' ('.$columnsStr.') VALUES(:Title, :Year, :Rating, 1)';
+$statement = 'INSERT INTO '.$table.' ('.$columnsStr.') VALUES(:Title, :Sorting, :Year, :Rating, 1)';
 
 $title = sanitizeSingleLineText($_POST['title']);
+$sorting = autoSortingString($title);
 // OBS! Nedan ska uppdateras till sifferkoll när det finns en sådan
 // Samt även begränsas i längd
 $year = sanitizeSingleLineText($_POST['year']);
@@ -22,6 +24,7 @@ $rating = sanitizeSingleLineText($_POST['rating']);
 
 $stmt = $db->prepare($statement);
 $stmt->bindValue(':Title', $title, SQLITE3_TEXT);
+$stmt->bindValue(':Sorting', $sorting, SQLITE3_TEXT);
 $stmt->bindValue(':Year', $year, SQLITE3_TEXT);
 $stmt->bindValue(':Rating', $rating, SQLITE3_NUM);
 

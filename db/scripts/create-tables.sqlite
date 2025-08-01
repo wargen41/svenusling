@@ -26,7 +26,7 @@ CREATE TABLE movies(
     MovieID INTEGER PRIMARY KEY,
     Hidden INTEGER NOT NULL,
     PublishedDate TEXT,
-    Type TEXT NOT NULL,
+    Type TEXT,
     SeriesID INTEGER,
     SeasonID INTEGER,
     Number INTEGER,

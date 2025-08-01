@@ -37,6 +37,11 @@ function pgHeadingHTML(string $viewType, string $text, ?string $text2 = ""): str
     return $headingHTML;
 }
 
+function autoSortingString(string $title): string {
+    // Här ska vi göra lite fixar sen, såsom att ta bort The från början av titeln etc.
+    return $title;
+}
+
 /**
  * Converts an integer to a string of plus signs.
  *
