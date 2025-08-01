@@ -15,8 +15,6 @@ include $GLOBALS['my_dir'].'includes/templates/site-widget.php';
 
 <?php
 
-$isLoggedIn = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true);
-
 $viewType = 'movies';
 
 if($isLoggedIn){
