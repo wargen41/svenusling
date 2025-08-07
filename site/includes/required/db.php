@@ -22,6 +22,19 @@ function urlSafeOutput(array|string|null $text): array|string {
     return htmlSafeOutput($text);
 }
 
+function sanitizeIntegers(string $text, int $limit=0): string {
+    $text = trim($text);
+    // Remove everything but integers
+    $text = preg_replace('/[^\d]/', '', $text);
+
+    // Optionally limit length
+    if ($limit > 0 && mb_strlen($text) > $limit) {
+        die('Too long!');
+    }
+
+    return $text;
+}
+
 function sanitizeSingleLineText(string $text, int $limit=0): string {
     $text = trim($text);
     // Remove invisible control characters

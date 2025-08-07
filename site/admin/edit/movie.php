@@ -6,8 +6,7 @@ $query = implode(' ', [
     "WHERE MovieID = :id",
 ]);
 
-// OBS! Nedan ska uppdateras till sifferkoll när det finns en sådan
-$id = sanitizeSingleLineText($_GET['id']) ?? null;
+$id = sanitizeIntegers($_GET['id']) ?? null;
 
 $stmt = $db->prepare($query);
 $stmt->bindValue(':id', $id, SQLITE3_NUM);
