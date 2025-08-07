@@ -185,7 +185,7 @@ function htmlTextInputTableFromAssocArrayRows(array $rows, array $props = []): s
             $nameStr = $key.'['.$nameID.']';
 
             if($columnCounter > $numberOfColumnHeaders){
-                $textInput = htmlTextInput(array(
+                $textInput = htmlInput(array(
                     "attributes" => array(
                         "value" => $value,
                         "id" => $idStr,
@@ -260,7 +260,7 @@ function htmlVerticalTextInputTableFromAssocArray(array $arr, array $props = [])
 
     foreach ($arr as $key => $value) {
         $idStr = $prefix.$key;
-        $input = htmlTextInput(array(
+        $input = htmlInput(array(
             "attributes" => array(
                 "value" => $value,
                 "id" => $idStr,
@@ -286,7 +286,7 @@ function htmlInput(array $props = []): string {
     $attrStr = "";
 
     if(!isset($props['attributes'])) {
-        $props['attributes'] = [];
+        $props['attributes'] = array("type" => "text");
     }else{
         if(!isset($props['attributes']['type'])){
             $props['attributes']['type'] = 'text';
@@ -296,17 +296,17 @@ function htmlInput(array $props = []): string {
     $attr = $props['attributes'];
     $attrStr = " ".htmlKeyValueString($attr);
 
+    $inputHTML = '<input'.$attrStr.'>';
+
     if(isset($props['label'])) {
-        $forName = "";
+        $labelAttr = array();
         if(isset($attr['id'])){
-            $forName = " ".htmlKeyValueString(array("for"=>$attr['id']));
+            $labelAttr = array("for" => $attr['id']);
         }
-        $html .=
-        '<label'.$forName.'>'.
-        $props['label'].
-        '</label>'." ";
+        $inputHTML = htmlWrap('label', "{$props['label']} {$inputHTML}", $labelAttr);
     }
-    $html .= '<input type="text"'.$attrStr.'>';
+
+    $html .= $inputHTML;
     return $html;
 }
 
@@ -330,7 +330,7 @@ function htmlTextInputsFromArray(array $arr, array $props = []): string {
 
     foreach ($arr as $var => $value) {
         $idStr = $prefix.$var;
-        $html .= htmlTextInput(array(
+        $html .= htmlInput(array(
             "label" => $idStr,
             "attributes"=>array(
                 "type" => "text",
