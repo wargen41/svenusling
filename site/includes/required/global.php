@@ -61,7 +61,7 @@ function addQueryToURL(string $url, string $key, string|int $value): string {
     $queryStr = "";
     // Make sure the query string contains $key,
     // without removing any other existing querys
-    $url = parse_url($_SERVER['HTTP_REFERER']);
+    $url = parse_url($url);
     if(isset($url['query'])){
         parse_str($url['query'], $query);
     }

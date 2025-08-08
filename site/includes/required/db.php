@@ -35,6 +35,13 @@ function sanitizeIntegers(string $text, int $limit=0): string {
     return $text;
 }
 
+function sanitizeLettersLower(string $text, int $limit=0): string {
+    // Remove everything but lowercase letters
+    $text = preg_replace('/[^a-z]/', '', $text);
+
+    return sanitizeSingleLineText($text, $limit);
+}
+
 function sanitizeSingleLineText(string $text, int $limit=0): string {
     $text = trim($text);
     // Remove invisible control characters
