@@ -102,13 +102,41 @@ h1, h2, h3, h4, h5, h6 {
     /*font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;*/
 }
 
-main.login {
+label
+{
+    white-space: nowrap;
+}
+
+*:not(legend):has(+ label)
+{
+    margin-right: 1rem;
+}
+
+fieldset + input
+{
+    margin-top: .5rem;
+}
+
+fieldset
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+fieldset > *
+{
+    flex: auto;
+}
+
+main.login
+{
     height: 100dvh;
     display: flex;
     align-items: center;
 }
 
-main.login > form {
+main.login > form
+{
     margin: auto;
 }
 
@@ -187,17 +215,24 @@ main > p
 {
     text-align: left;
 }
+
 a,
 button,
 details > summary,
-label[for]:not([for=""])
+label[for]:not([for=""]),
+input[type="submit"],
+input[type="button"]
 {
     cursor: pointer;
 }
-details > summary > * {
+
+details > summary > *
+{
     display: inline-block;
 }
-.skip-link {
+
+.skip-link
+{
     position: fixed;
     top: 0;
     left: 0;
@@ -209,7 +244,9 @@ details > summary > * {
     translate: 0 -100%;
     transition: translate 150ms ease-in-out;
 }
-.skip-link:focus {
+
+.skip-link:focus
+{
     translate: 0;
     z-index: 999;
 }
