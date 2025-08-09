@@ -125,7 +125,7 @@ fieldset + input
     margin-top: .8em;
 }
 
-input[type="submit"]
+input[type="submit"]:not(.login)
 {
     text-align: center;
     min-width: 50%;

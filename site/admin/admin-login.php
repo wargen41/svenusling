@@ -15,7 +15,7 @@ echo htmlInput(array(
 
 ?>
 
-<input type="submit" value="Logga in">
+<input class="login" type="submit" value="Logga in">
 </form>
 
 </main>
