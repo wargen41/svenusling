@@ -102,6 +102,36 @@ h1, h2, h3, h4, h5, h6 {
     /*font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;*/
 }
 
+main > details
+{
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    padding-inline: 1rem;
+}
+
+main > details > summary
+{
+    margin-top: -.5rem;
+    margin-right: -1rem;
+    margin-bottom: .5em;
+    margin-left: -1.7em;
+}
+
+details > summary
+{
+    margin-left: -1em;
+}
+
+details > details + details
+{
+    margin-top: 1em;
+}
+
+details > details > * + *
+{
+    margin-block: .5em;
+}
+
 label
 {
     white-space: nowrap;
