@@ -23,7 +23,7 @@ $movies = $res->fetchArray(SQLITE3_ASSOC);
 
 <?php
 $sections = array(
-    "general" => "Grunduppgifter",
+    "general" => "Allmänt",
     "media" => "Media"
 );
 $longestSectionNameLength = 0;
@@ -45,24 +45,7 @@ if(isset($_GET) && isset($_GET['section'])){
         include $GLOBALS['my_dir'].'admin/edit/movie/general.php';
     }
     else if($section === 'media'){
-        echo "MEDIA";
-//         $fieldsetHTML = htmlWrap('legend', 'Media');
-//
-//         $inputsHTML = array();
-//
-//         array_push($inputsHTML, htmlInput(array(
-//             "label" => "Titel",
-//             "attributes" => array(
-//                 "required" => true,
-//                 "name" => "title",
-//                 "id" => "edit-movie-title",
-//                 "value" => $movies['Title'] ?? ''
-//             )
-//         )));
-//
-//         $fieldsetHTML .= implode("\n", $inputsHTML);
-//
-//         echo htmlWrap('fieldset', $fieldsetHTML);
+        include $GLOBALS['my_dir'].'admin/edit/movie/media.php';
     }
 
     echo '<input type="submit" value="Spara">';
