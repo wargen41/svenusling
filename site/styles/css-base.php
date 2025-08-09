@@ -107,25 +107,65 @@ label
     white-space: nowrap;
 }
 
-*:not(legend):has(+ label)
+fieldset > *:not(legend) + *
 {
-    margin-right: 1rem;
-}
-
-fieldset + input
-{
-    margin-top: .5rem;
+    margin-top: .65em;
 }
 
 fieldset
 {
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    padding-inline: 1rem;
 }
 
-fieldset > *
+fieldset + fieldset,
+fieldset + input
 {
+    margin-top: .8em;
+}
+
+input[type="submit"]
+{
+    text-align: center;
+    min-width: 50%;
+}
+
+.input-row + .input-row {
+    margin-top: .5em;
+}
+
+.input-row {
+    display: flex;
+    gap: .5em;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+/* Allow the label to grow and shrink */
+.input-row label {
     flex: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+/* But where the input has a [size] attribute, do not use flexible size */
+.input-row label:has(input[size]) {
+    flex: initial;
+}
+
+/* All inputs expand to fill their label */
+.input-row input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* But inputs with a [size] attribute keep their natural size */
+.input-row input[size] {
+    width: auto;
+    min-width: 0;
+    flex: none;
 }
 
 main.login

@@ -6,6 +6,7 @@
 <fieldset>
 <legend>Ny film</legend>
 
+<div class="input-row">
 <?php
 $autoFocus = false;
 if(isset($_GET) && isset($_GET['mata'])){
@@ -52,6 +53,8 @@ echo htmlInput(array(
     )
 ));
 ?>
+
+</div>
 
 </fieldset>
 
