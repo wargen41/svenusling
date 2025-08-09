@@ -14,7 +14,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(passwordIsCorrect($_POST['password'])){
         $_SESSION["loggedIn"] = true;
     }
-    header("Location: {$_SERVER['HTTP_REFERER']}");
+    $location = $_SERVER['HTTP_REFERER'] ?? $GLOBALS['base_uri'].'/admin/';
+    header("Location: {$location}");
     exit;
 }
 else{
