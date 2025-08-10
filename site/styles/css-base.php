@@ -201,6 +201,7 @@ input[type="submit"]:not(.login)
 
 .form-actions {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
