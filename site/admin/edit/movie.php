@@ -80,12 +80,12 @@ else{
 
 print_rPRE($movies);
 
-$back = $_SERVER['HTTP_REFERER'] ?? null;
-if(!is_null($back)){
-    echo htmlWrap('p', htmlWrap('a', 'Tillbaka', array(
-        "href" => $back
-    )));
-}
+// $back = $_SERVER['HTTP_REFERER'] ?? null;
+// if(!is_null($back)){
+//     echo htmlWrap('p', htmlWrap('a', 'Tillbaka', array(
+//         "href" => $back
+//     )));
+// }
 
 ?>
 
