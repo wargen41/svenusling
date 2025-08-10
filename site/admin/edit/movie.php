@@ -1,4 +1,5 @@
 <?php
+
 // Collect movie info
 $query = implode(' ', [
     "SELECT *",
@@ -48,10 +49,21 @@ if(isset($_GET) && isset($_GET['section'])){
         include $GLOBALS['my_dir'].'admin/edit/movie/media.php';
     }
 
+    echo '<div class="form-actions">';
     echo '<input type="submit" value="Spara">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $back_url = removeQueryFromURL($page_url, 'section');
+    echo htmlWrap('a', htmlWrap('button', 'Avbryt'), array(
+        "href" => $back_url
+    ));
+
+    echo '</div>';
+
     echo '</form>';
 
-}else{
+}
+else{
     $sectionsHTML = "";
     foreach($sections as $section => $title){
         $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

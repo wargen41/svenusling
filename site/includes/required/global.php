@@ -74,9 +74,33 @@ function addQueryToURL(string $url, string $key, string|int $value): string {
     return $queryURL;
 }
 
+function removeQueryFromURL(string $url, string $key): string {
+    $query = [];
+    $queryStr = "";
+
+    // Remove given key if it exists in query
+    $url = parse_url($url);
+    if(isset($url['query'])){
+        parse_str($url['query'], $query);
+        if(isset($query[$key])){
+            unset($query[$key]);
+        }
+    }
+    $queryStr = http_build_query($query);
+
+    $queryURL = $url['scheme'].'://'.$url['host'].$url['path'].'?'.$queryStr;
+    return $queryURL;
+}
+
 function sanitizeQuery(string $value): string {
     // Remove everything but lower case letters a to z and integers
     $value = preg_replace('/[^a-z0-9]/', '', $value);
+
+    return $value;
+}
+
+function sanitizeRedirect(string $value): string {
+    // Don't yet know what to do here
 
     return $value;
 }

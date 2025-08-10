@@ -16,12 +16,12 @@ foreach($keys as $key) {
 
 $fieldsToSet = dbArrayToStringForBinding($langKeys);
 
-$updatePrepared = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE id=:id';
+$statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE id=:id';
 
 $primaryKeys = $_POST['id'];
 
 foreach($primaryKeys as $id) {
-    $stmt = $db->prepare($updatePrepared);
+    $stmt = $db->prepare($statement);
 
     $stmt->bindValue(':id', $id, SQLITE3_TEXT);
     foreach($langKeys as $lang) {
@@ -37,7 +37,8 @@ foreach($primaryKeys as $id) {
 }
 
 if (empty($errors)) {
-    header("Location: {$_SERVER['HTTP_REFERER']}");
+    $location = $_SERVER['HTTP_REFERER'] ?? $GLOBALS['base_uri'].'/admin/';
+    header("Location: {$location}");
     exit;
 }
 else {

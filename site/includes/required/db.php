@@ -22,47 +22,64 @@ function urlSafeOutput(array|string|null $text): array|string {
     return htmlSafeOutput($text);
 }
 
-function sanitizeIntegers(string $text, int $limit=0): string {
-    $text = trim($text);
+function sanitizeDate(string $input): string|bool {
+    $date = trim($input);
+
+    // Check format with regex: 4 digits, dash, 2 digits, dash, 2 digits
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
+        return false; // Invalid format
+    }
+
+    // Use DateTime to check for valid date (e.g., not 2025-02-30)
+    $dt = DateTime::createFromFormat('Y-m-d', $date);
+    if ($dt && $dt->format('Y-m-d') === $date) {
+        return $date; // Valid date in ISO format
+    }
+
+    return false; // Invalid date
+}
+
+function sanitizeIntegers(string $input, int $limit=0): string|bool {
+    $text = trim($input);
     // Remove everything but integers
     $text = preg_replace('/[^\d]/', '', $text);
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        die('Too long!');
+        return false;
     }
 
     return $text;
 }
 
-function sanitizeLettersLower(string $text, int $limit=0): string {
+function sanitizeLettersLower(string $text, int $limit=0): string|bool {
     // Remove everything but lowercase letters
     $text = preg_replace('/[^a-z]/', '', $text);
 
     return sanitizeSingleLineText($text, $limit);
 }
 
-function sanitizeSingleLineText(string $text, int $limit=0): string {
+function sanitizeSingleLineText(string $text, int $limit=0): string|bool {
     $text = trim($text);
     // Remove invisible control characters
     $text = preg_replace('/[\x00-\x1F\x7F]/u', '', $text);
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        die('Too long!');
+        return false;
     }
 
     return $text;
 }
 
-function sanitizeMultiLineText(string $text, int $limit=0): string {
+function sanitizeMultiLineText(string $text, int $limit=0): string|bool {
     $text = trim($text);
     // Remove invisible control characters but keep \r and \n
     $text = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $text);
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        die('Too long!');
+        return false;
     }
 
     return $text;

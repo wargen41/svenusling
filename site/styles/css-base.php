@@ -150,7 +150,8 @@ fieldset
 }
 
 fieldset + fieldset,
-fieldset + input
+fieldset + input,
+fieldset + .form-actions
 {
     margin-top: .8em;
 }
@@ -196,6 +197,11 @@ input[type="submit"]:not(.login)
     width: auto;
     min-width: 0;
     flex: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
 }
 
 main.login

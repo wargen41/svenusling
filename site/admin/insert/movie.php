@@ -17,10 +17,8 @@ $statement = 'INSERT INTO '.$table.' ('.$columnsStr.') VALUES(:Title, :Sorting, 
 
 $title = sanitizeSingleLineText($_POST['title']);
 $sorting = autoSortingString($title);
-// OBS! Nedan ska uppdateras till sifferkoll när det finns en sådan
-// Samt även begränsas i längd
-$year = sanitizeSingleLineText($_POST['year']);
-$rating = sanitizeSingleLineText($_POST['rating']);
+$year = sanitizeIntegers($_POST['year'], 4);
+$rating = sanitizeIntegers($_POST['rating'], 1);
 
 $stmt = $db->prepare($statement);
 $stmt->bindValue(':Title', $title, SQLITE3_TEXT);
@@ -35,8 +33,9 @@ if (!$result) {
 }
 
 if (empty($errors)) {
-    $locStr = addQueryToURL($_SERVER['HTTP_REFERER'], 'mata', 1);
-    header("Location: {$locStr}");
+    $location = $_SERVER['HTTP_REFERER'] ?? $GLOBALS['base_uri'].'/admin/';
+    $location = addQueryToURL($location, 'mata', 1);
+    header("Location: {$location}");
     exit;
 }
 else {

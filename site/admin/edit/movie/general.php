@@ -1,5 +1,29 @@
+<?php
+$page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$location = removeQueryFromURL($page_url, 'section');
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "hidden",
+        "name" => "redirect",
+        "id" => "edit-movie-redirect",
+        "value" => $location
+    )
+));
+?>
+
 <fieldset>
 <legend>Grunduppgifter</legend>
+
+<?php
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "hidden",
+        "name" => "movieid",
+        "id" => "edit-movie-movieid",
+        "value" => $movies['MovieID'] ?? ''
+    )
+));
+?>
 
 <div class="input-row">
 <?php
@@ -68,7 +92,7 @@ echo htmlInput(array(
 <fieldset>
 <legend>Dolda uppgifter</legend>
 
-<p>Dessa uppgifter visas inte någonstans för vanliga besökare (men de kan ändå påverka hur vissa andra saker ser ut).</p>
+<p>Dessa uppgifter visas inte för besökare (men de kan ändå påverka hur vissa andra saker ser ut).</p>
 
 <div class="input-row">
 <?php

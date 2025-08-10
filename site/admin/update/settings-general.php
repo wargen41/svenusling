@@ -6,12 +6,12 @@ $table = "site";
 
 $keys = getFirstColumnValuesFromTable($table);
 
-$updatePrepared = 'UPDATE '.$table.' SET '."value=:value".' WHERE var=:key';
+$statement = 'UPDATE '.$table.' SET '."value=:value".' WHERE var=:key';
 
 foreach ($keys as $key) {
     $value = sanitizeSingleLineText($_POST[$key]);
 
-    $stmt = $db->prepare($updatePrepared);
+    $stmt = $db->prepare($statement);
     $stmt->bindValue(':key', $key, SQLITE3_TEXT);
     $stmt->bindValue(':value', $value, SQLITE3_TEXT);
 
@@ -23,8 +23,16 @@ foreach ($keys as $key) {
 }
 
 if (empty($errors)) {
-    header("Location: {$_SERVER['HTTP_REFERER']}");
-    exit;
+    if(isset($_POST) && isset($_POST['redirect'])){
+        $location = sanitizeRedirect($_POST['redirect']);
+        header("Location: {$location}");
+        exit;
+    }
+    else{
+        $location = $_SERVER['HTTP_REFERER'] ?? $GLOBALS['base_uri'].'/admin/';
+        header("Location: {$location}");
+        exit;
+    }
 }
 else {
     echo "Update failed!<br>";
