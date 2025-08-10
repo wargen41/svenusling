@@ -54,8 +54,9 @@ if(isset($_GET) && isset($_GET['section'])){
 
     $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $back_url = removeQueryFromURL($page_url, 'section');
-    echo htmlWrap('a', htmlWrap('button', 'Avbryt'), array(
-        "href" => $back_url
+    echo htmlWrap('a', 'Avbryt', array(
+        "href" => $back_url,
+        "class" => "button"
     ));
 
     echo '</div>';
