@@ -174,7 +174,8 @@ input[type="submit"]:not(.login)
 }
 
 /* Allow the label to grow and shrink */
-.input-row label {
+.input-row label
+{
     flex: auto;
     display: flex;
     align-items: center;
@@ -187,7 +188,9 @@ input[type="submit"]:not(.login)
 }
 
 /* All inputs expand to fill their label */
-.input-row input {
+.input-row label input,
+.input-row label select
+{
     width: 100%;
     box-sizing: border-box;
 }

@@ -345,4 +345,41 @@ function htmlTextInputsFromArray(array $arr, array $props = []): string {
     return $html;
 }
 
+function htmlSelect(array $props = []): string {
+    $html = "";
+    $attrStr = "";
+    $optionsHTML = "";
+
+    if(isset($props['options'])) {
+        foreach ($props['options'] as $value => $text) {
+            $selected = false;
+            if(isset($props['selected']) && $props['selected'] === $value){
+                $selected = true;
+            }
+
+            $optionsHTML .= htmlWrap('option', $text, array(
+                "value" => $value,
+                "selected" => $selected
+            ));
+        }
+    }
+
+    if(!isset($props['attributes'])) {
+        $props['attributes'] = array();
+    }
+
+    $selectHTML = htmlWrap('select', $optionsHTML, $props['attributes']);
+
+    if(isset($props['label'])) {
+        $labelAttr = array();
+        if(isset($attr['id'])){
+            $labelAttr = array("for" => $attr['id']);
+        }
+        $selectHTML = htmlWrap('label', "{$props['label']} {$selectHTML}", $labelAttr);
+    }
+
+    $html .= $selectHTML;
+    return $html;
+}
+
 ?>
