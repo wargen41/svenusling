@@ -1,5 +1,18 @@
+<?php
+$page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$location = $page_url;
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "hidden",
+        "name" => "redirect",
+        "id" => "edit-movie-redirect",
+        "value" => $location
+    )
+));
+?>
+
 <fieldset>
-<legend>Grundläggande</legend>
+<legend>Typ av film/serie</legend>
 
 <?php
 echo htmlInput(array(
@@ -34,27 +47,11 @@ echo htmlSelect(array(
         "id" => "edit-movie-type",
     )
 ));
+
 echo htmlInput(array(
     "attributes" => array(
         "type" => "submit",
-        "value" => "Ändra typ"
-    )
-));
-?>
-
-</div>
-
-<div class="input-row">
-
-<?php
-$hidden = $movies['Hidden'];
-$visibilityText = ($hidden > 0) ? 'Publicera' : 'Dölj';
-echo htmlInput(array(
-    "label" => "Synlighet",
-    "attributes" => array(
-        "type" => "button",
-        "id" => "edit-movie-visibility",
-        "value" => $visibilityText
+        "value" => "Spara"
     )
 ));
 ?>

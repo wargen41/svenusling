@@ -39,6 +39,16 @@ function sanitizeDate(string $input): string|bool {
     return false; // Invalid date
 }
 
+function sanitizeBoolean(string $input): string|bool {
+    $text = sanitizeIntegers($input);
+    // Check that the value is either a 0 or a 1
+    if($text === '0' || $text === '1'){
+        return $text;
+    }
+
+    return false;
+}
+
 function sanitizeIntegers(string $input, int $limit=0): string|bool {
     $text = trim($input);
     // Remove everything but integers

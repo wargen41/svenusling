@@ -69,14 +69,6 @@ if(isset($_GET) && isset($_GET['section'])){
 
 }
 else{
-    $basicFormHTML = "";
-    $formName = "movie-basic";
-
-    echo '<form method="post" action="update/">';
-    echo '<input type="hidden" name="form" value="'.$formName.'">';
-    include $GLOBALS['my_dir'].'admin/edit/movie/basic.php';
-    echo '</form>';
-
     /* Section links */
     $sectionsHTML = "";
     foreach($sections as $section => $title){
@@ -88,6 +80,18 @@ else{
     }
 
     echo htmlWrap('ul', $sectionsHTML);
+
+    $formName = "movie-type";
+    echo '<form method="post" action="update/">';
+    echo '<input type="hidden" name="form" value="'.$formName.'">';
+    include $GLOBALS['my_dir'].'admin/edit/movie/type.php';
+    echo '</form>';
+
+    $formName = "movie-visibility";
+    echo '<form method="post" action="update/">';
+    echo '<input type="hidden" name="form" value="'.$formName.'">';
+    include $GLOBALS['my_dir'].'admin/edit/movie/visibility.php';
+    echo '</form>';
 
 }
 
