@@ -31,6 +31,10 @@ $sections = array(
     "general" => "Allmänt",
     "media" => "Media"
 );
+$sectionTexts = array(
+    "general" => "Betyg, titel etc.",
+    "media" => "Bilder med mera"
+);
 $longestSectionNameLength = 0;
 foreach($sections as $key => $value){
     if(strlen($key) > $longestSectionNameLength){
@@ -69,23 +73,28 @@ if(isset($_GET) && isset($_GET['section'])){
 
 }
 else{
-    /* Section links */
-    $sectionsHTML = "";
-    foreach($sections as $section => $title){
-        $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $section_url = addQueryToURL($page_url, 'section', $section);
-        $sectionsHTML .= htmlWrap('li', htmlWrap('a', $title, array(
-            "href" => $section_url
-        )));
-    }
-
-    echo htmlWrap('ul', $sectionsHTML);
-
     $formName = "movie-type";
     echo '<form method="post" action="update/">';
     echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/type.php';
     echo '</form>';
+
+    /* Section links */
+    $sectionsHTML = "";
+    foreach($sections as $section => $title){
+        $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $section_url = addQueryToURL($page_url, 'section', $section);
+
+        $section_text = "";
+        if(isset($sectionTexts[$section])){
+            $section_text = htmlWrap('span', $sectionTexts[$section]);
+        }
+        $sectionsHTML .= htmlWrap('li', htmlWrap('a', htmlWrap('button', $title), array(
+            "href" => $section_url
+        )).$section_text);
+    }
+
+    echo htmlWrap('ul', $sectionsHTML);
 
     $formName = "movie-visibility";
     echo '<form method="post" action="update/">';

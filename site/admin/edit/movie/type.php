@@ -12,7 +12,7 @@ echo htmlInput(array(
 ?>
 
 <fieldset>
-<legend>Typ av film/serie</legend>
+<legend>Typ</legend>
 
 <?php
 echo htmlInput(array(
@@ -38,7 +38,7 @@ $movieTypes = array(
 );
 $typeOptions = array_merge(array("" => "--"), $movieTypes);
 echo htmlSelect(array(
-    "label" => "Typ",
+    //"label" => "Typ",
     "options" => $typeOptions,
     "selected" => $movies['Type'] ?? '',
     "attributes" => array(
