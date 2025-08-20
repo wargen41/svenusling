@@ -298,7 +298,7 @@ function htmlInput(array $props = []): string {
 
     $inputHTML = '<input'.$attrStr.'>';
 
-    if(isset($props['label'])) {
+    if(isset($props['label']) && $attr['type'] != 'hidden') {
         $labelAttr = array();
         if(isset($attr['id'])){
             $labelAttr = array("for" => $attr['id']);

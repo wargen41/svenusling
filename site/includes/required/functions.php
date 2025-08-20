@@ -58,6 +58,63 @@ function suRating(int $rating): string {
     return str_pad('', $rating, '+');
 }
 
+function typesOfMovie(): array {
+    return array(
+        "film",
+        "series",
+        "season",
+        "episode",
+        "miniseries",
+        "filmseries"
+    );
+}
+
+function typesOfMovieTexts(): array {
+    return array(
+        "film" => "Film",
+        "series" => "Serie",
+        "season" => "Säsong",
+        "episode" => "Avsnitt",
+        "miniseries" => "Miniserie",
+        "filmseries" => "Filmserie"
+    );
+}
+
+function typeUndefined(string|null $type): bool {
+    if($type == '' || $type == null) {
+        return true;
+    }
+    return false;
+}
+
+function typeSeriesOrUndefined(string|null $type): bool {
+    if($type == '' || $type == 'series') {
+        return true;
+    }
+    return false;
+}
+
+function typeFilmOrUndefined(string|null $type): bool {
+    if($type == '' || $type == 'film') {
+        return true;
+    }
+    return false;
+}
+
+function typeCanBePartOfSeries(string|null $type): bool {
+    if($type == 'film' || $type == 'season' || $type == 'episode') {
+        return true;
+    }
+    return false;
+}
+
+function typeCanBePartOfSeason(string|null $type): bool {
+    if($type == 'episode') {
+        return true;
+    }
+    return false;
+}
+
 // Not done yet
 function resCountZero() {
     return '<p>Hittade inget</p>';

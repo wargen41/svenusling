@@ -27,7 +27,7 @@ function sanitizeDate(string $input): string|bool {
 
     // Check format with regex: 4 digits, dash, 2 digits, dash, 2 digits
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
-        return false; // Invalid format
+        return null; // Invalid format
     }
 
     // Use DateTime to check for valid date (e.g., not 2025-02-30)
@@ -36,7 +36,13 @@ function sanitizeDate(string $input): string|bool {
         return $date; // Valid date in ISO format
     }
 
-    return false; // Invalid date
+    return null; // Invalid date
+}
+
+function sanitizeByList(string $input, array $list): string|bool {
+    $text = trim($input);
+    // Check that the value is in the list, otherwise return false
+    return in_array($text, $list, true) ? $text : null;
 }
 
 function sanitizeBoolean(string $input): string|bool {
@@ -46,7 +52,7 @@ function sanitizeBoolean(string $input): string|bool {
         return $text;
     }
 
-    return false;
+    return null;
 }
 
 function sanitizeIntegers(string $input, int $limit=0): string|bool {
@@ -56,7 +62,7 @@ function sanitizeIntegers(string $input, int $limit=0): string|bool {
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        return false;
+        return null;
     }
 
     return $text;
@@ -76,7 +82,7 @@ function sanitizeSingleLineText(string $text, int $limit=0): string|bool {
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        return false;
+        return null;
     }
 
     return $text;
@@ -89,7 +95,7 @@ function sanitizeMultiLineText(string $text, int $limit=0): string|bool {
 
     // Optionally limit length
     if ($limit > 0 && mb_strlen($text) > $limit) {
-        return false;
+        return null;
     }
 
     return $text;
