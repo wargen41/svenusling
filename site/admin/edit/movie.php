@@ -23,39 +23,37 @@ $movies = $res->fetchArray(SQLITE3_ASSOC);
 <article>
 
 <?php
-echo pgHeadingHTML('movies', 'Redigera film', $movies['Title']);
+echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 ?>
 
 <?php
 $sections = array(
     "general" => "Allmänt",
+    "connections" => "Kopplingar",
     "media" => "Media"
 );
 $sectionTexts = array(
     "general" => "Betyg, titel etc.",
+    "connections" => "Serietillhörighet etc.",
     "media" => "Bilder med mera"
 );
-$longestSectionNameLength = 0;
-foreach($sections as $key => $value){
-    if(strlen($key) > $longestSectionNameLength){
-        $longestSectionNameLength = strlen($key);
+$section = null;
+
+if(isset($_GET) && isset($_GET['section'])){
+    $section = sanitizeByList($_GET['section'], array_keys($sections));
+    if(is_null($section)){
+        echo big404Image();
     }
 }
 
-if(isset($_GET) && isset($_GET['section'])){
+if(isset($section)){
 
-    $section = sanitizeLettersLower($_GET['section'], $longestSectionNameLength);
     $formName = "movie-".$section;
 
     echo '<form method="post" action="update/">';
     echo '<input type="hidden" name="form" value="'.$formName.'">';
 
-    if($section === 'general'){
-        include $GLOBALS['my_dir'].'admin/edit/movie/general.php';
-    }
-    else if($section === 'media'){
-        include $GLOBALS['my_dir'].'admin/edit/movie/media.php';
-    }
+    include $GLOBALS['my_dir'].'admin/edit/movie/'.$section.'.php';
 
     echo '<div class="form-actions">';
     echo '<input type="submit" value="Spara">';
@@ -81,13 +79,13 @@ else{
 
     /* Section links */
     $sectionsHTML = "";
-    foreach($sections as $section => $title){
+    foreach($sections as $sect => $title){
         $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $section_url = addQueryToURL($page_url, 'section', $section);
+        $section_url = addQueryToURL($page_url, 'section', $sect, true);
 
         $section_text = "";
-        if(isset($sectionTexts[$section])){
-            $section_text = htmlWrap('span', $sectionTexts[$section]);
+        if(isset($sectionTexts[$sect])){
+            $section_text = htmlWrap('span', $sectionTexts[$sect]);
         }
         $sectionsHTML .= htmlWrap('li', htmlWrap('a', htmlWrap('button', $title), array(
             "href" => $section_url

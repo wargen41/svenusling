@@ -56,7 +56,12 @@ function tbs_get_client_browser_lang( $checklanguages, $default ){
     return $default;
 }
 
-function addQueryToURL(string $url, string $key, string|int $value): string {
+function addQueryToURL(string $url, string $key, string|int $value, bool|null $replace = null): string {
+    // If the replace option is set, remove the query in case it exists
+    if(isset($replace)){
+        $url = removeQueryFromURL($url, $key);
+    }
+
     $query = [];
     $queryStr = "";
     // Make sure the query string contains $key,

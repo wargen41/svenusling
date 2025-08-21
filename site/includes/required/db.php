@@ -22,7 +22,7 @@ function urlSafeOutput(array|string|null $text): array|string {
     return htmlSafeOutput($text);
 }
 
-function sanitizeDate(string $input): string|bool {
+function sanitizeDate(string $input): string|null {
     $date = trim($input);
 
     // Check format with regex: 4 digits, dash, 2 digits, dash, 2 digits
@@ -39,7 +39,7 @@ function sanitizeDate(string $input): string|bool {
     return null; // Invalid date
 }
 
-function sanitizeByList(string $input, array $list): string|bool {
+function sanitizeByList(string $input, array $list): string|null {
     $text = trim($input);
     // Check that the value is in the list, otherwise return false
     return in_array($text, $list, true) ? $text : null;
@@ -55,7 +55,7 @@ function sanitizeBoolean(string $input): string|bool {
     return null;
 }
 
-function sanitizeIntegers(string $input, int $limit=0): string|bool {
+function sanitizeIntegers(string $input, int $limit=0): string|null {
     $text = trim($input);
     // Remove everything but integers
     $text = preg_replace('/[^\d]/', '', $text);
@@ -65,17 +65,20 @@ function sanitizeIntegers(string $input, int $limit=0): string|bool {
         return null;
     }
 
+    if($text === '') {
+        return null;
+    }
     return $text;
 }
 
-function sanitizeLettersLower(string $text, int $limit=0): string|bool {
+function sanitizeLettersLower(string $text, int $limit=0): string|null {
     // Remove everything but lowercase letters
     $text = preg_replace('/[^a-z]/', '', $text);
 
     return sanitizeSingleLineText($text, $limit);
 }
 
-function sanitizeSingleLineText(string $text, int $limit=0): string|bool {
+function sanitizeSingleLineText(string $text, int $limit=0): string|null {
     $text = trim($text);
     // Remove invisible control characters
     $text = preg_replace('/[\x00-\x1F\x7F]/u', '', $text);
@@ -88,7 +91,7 @@ function sanitizeSingleLineText(string $text, int $limit=0): string|bool {
     return $text;
 }
 
-function sanitizeMultiLineText(string $text, int $limit=0): string|bool {
+function sanitizeMultiLineText(string $text, int $limit=0): string|null {
     $text = trim($text);
     // Remove invisible control characters but keep \r and \n
     $text = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $text);

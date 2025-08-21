@@ -15,21 +15,21 @@ function pgTitle(string $text): string {
  */
 function pgHeadingHTML(string $viewType, string $text, ?string $text2 = ""): string {
     $str = $text;
-    switch($viewType) {
-        case "movies":
-            $str = "Ms {$str}";
-            break;
-        case "movie":
-            $str = "M {$str}";
-            break;
-        case "persons":
-            $str = "Ps {$str}";
-            break;
-        case "person":
-            $str = "P {$str}";
-            break;
-        default:
-    }
+    // switch($viewType) {
+    //     case "movies":
+    //         $str = "Ms {$str}";
+    //         break;
+    //     case "movie":
+    //         $str = "M {$str}";
+    //         break;
+    //     case "persons":
+    //         $str = "Ps {$str}";
+    //         break;
+    //     case "person":
+    //         $str = "P {$str}";
+    //         break;
+    //     default:
+    // }
 
     $headingHTML = htmlWrap('h1', $str);
     if($text2){
