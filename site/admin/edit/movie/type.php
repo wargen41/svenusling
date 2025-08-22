@@ -50,12 +50,29 @@ echo htmlSelect(array(
     ));
 //}
 
-if(typeCanBePartOfSeries($movies['Type'])){
-    echo htmlWrap('p', 'Länk till connections?');
-}
 
 ?>
 
 </div>
 
 </fieldset>
+
+<?php
+if(typeCanBePartOfSeries($movies['Type'])){
+    echo "<fieldset>";
+    echo "<legend>Kopplingar</legend>";
+
+    echo '<div class="input-row">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $section_url = addQueryToURL($page_url, 'section', 'connections', true);
+    $section_text = htmlWrap('span', 'Serietillhörighet etc.');
+    echo htmlWrap('p', htmlWrap('a', htmlWrap('button', 'Kopplingar'), array(
+        "href" => $section_url
+    )).$section_text);
+
+    echo "</div>";
+    echo "</fieldset>";
+
+}
+?>

@@ -29,12 +29,12 @@ echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 <?php
 $sections = array(
     "general" => "Allmänt",
-    "connections" => "Kopplingar",
+//    "connections" => "Kopplingar",
     "media" => "Media"
 );
 $sectionTexts = array(
     "general" => "Betyg, titel etc.",
-    "connections" => "Serietillhörighet etc.",
+//    "connections" => "Serietillhörighet etc.",
     "media" => "Bilder med mera"
 );
 $section = null;
