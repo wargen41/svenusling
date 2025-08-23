@@ -12,7 +12,7 @@ echo htmlInput(array(
 ?>
 
 <fieldset>
-<legend>Typ</legend>
+<legend>Kopplingar</legend>
 
 <?php
 echo htmlInput(array(
@@ -26,30 +26,6 @@ echo htmlInput(array(
 ?>
 
 <div class="input-row">
-
-<?php
-$movieTypes = typesOfMovieTexts();
-$typeOptions = array_merge(array("" => "--"), $movieTypes);
-echo htmlSelect(array(
-    //"label" => "Typ",
-    "options" => $typeOptions,
-    "selected" => $movies['Type'] ?? '',
-    "attributes" => array(
-        "required" => true,
-        "name" => "type",
-        "id" => "edit-movie-type",
-    )
-));
-
-if(!typeCanBePartOfSeries($movies['Type'])){
-    echo htmlInput(array(
-        "attributes" => array(
-            "type" => "submit",
-            "value" => "Spara"
-        )
-    ));
-}
-?>
 
 </div>
 
@@ -136,17 +112,6 @@ echo htmlInput(array(
 
 if(typeCanBePartOfSeries($movies['Type']) || typeCanBePartOfSeason($movies['Type'])) {
     echo '</div>';
-}
-?>
-
-<?php
-if(typeCanBePartOfSeries($movies['Type'])){
-    echo htmlInput(array(
-        "attributes" => array(
-            "type" => "submit",
-            "value" => "Spara"
-        )
-    ));
 }
 ?>
 

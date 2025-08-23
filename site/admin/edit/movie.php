@@ -27,6 +27,11 @@ echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 ?>
 
 <?php
+$allowedSections = array(
+    "general",
+    "connections",
+    "media"
+);
 $sections = array(
     "general" => "Allmänt",
 //    "connections" => "Kopplingar",
@@ -40,7 +45,7 @@ $sectionTexts = array(
 $section = null;
 
 if(isset($_GET) && isset($_GET['section'])){
-    $section = sanitizeByList($_GET['section'], array_keys($sections));
+    $section = sanitizeByList($_GET['section'], $allowedSections);
     if(is_null($section)){
         echo big404Image();
     }
@@ -76,6 +81,23 @@ else{
     echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/type.php';
     echo '</form>';
+
+    if(typeCanBePartOfSeries($movies['Type'])){
+        echo "<fieldset>";
+        echo "<legend>Kopplingar</legend>";
+
+        echo '<div class="input-row">';
+
+        $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $section_url = addQueryToURL($page_url, 'section', 'connections', true);
+        $section_text = htmlWrap('span', 'Serietillhörighet etc.');
+        echo htmlWrap('p', htmlWrap('a', htmlWrap('button', 'Redigera kopplingar'), array(
+            "href" => $section_url
+        )).$section_text);
+
+        echo "</div>";
+        echo "</fieldset>";
+    }
 
     /* Section links */
     $sectionsHTML = "";
