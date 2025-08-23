@@ -1,5 +1,29 @@
+<?php
+$page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$location = removeQueryFromURL($page_url, 'section');
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "hidden",
+        "name" => "redirect",
+        "id" => "edit-movie-redirect",
+        "value" => $location
+    )
+));
+?>
+
 <fieldset>
 <legend>Bilder</legend>
+
+<?php
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "hidden",
+        "name" => "movieid",
+        "id" => "edit-movie-movieid",
+        "value" => $movies['MovieID'] ?? ''
+    )
+));
+?>
 
 <div class="input-row">
 <?php
@@ -7,7 +31,7 @@ echo htmlInput(array(
     "label" => "Poster",
     "attributes" => array(
         "required" => false,
-        "name" => "posterimage",
+        "name" => "posterimageid",
         "id" => "edit-movie-posterimage",
         "value" => $movies['PosterImageID'] ?? ''
     )
@@ -19,7 +43,7 @@ echo htmlInput(array(
     "label" => "Omslagsbild (stor)",
     "attributes" => array(
         "required" => false,
-        "name" => "largeimage",
+        "name" => "largeimageid",
         "id" => "edit-movie-largeimage",
         "value" => $movies['LargeImageID'] ?? ''
     )
@@ -35,7 +59,7 @@ echo htmlInput(array(
 
 <div class="input-row">
 
-Lista alla mediafiler som kopplats till filmen
+Här ska vi lista alla mediafiler som kopplats till filmen
 
 </div>
 
