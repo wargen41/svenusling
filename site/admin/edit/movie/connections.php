@@ -14,6 +14,8 @@ echo htmlInput(array(
 <fieldset>
 <legend>Kopplingar</legend>
 
+<p>OBS! Redigering av kopplingar är än så länge väldigt grundläggande och har inte mycket hjälp för att göra det smidigare att använda. Man fyller i interna ID och där är ingen kontroll att det ifyllda ID:t faktiskt är något som man bör skapa en koppling till.</p>
+
 <?php
 echo htmlInput(array(
     "attributes" => array(
@@ -24,10 +26,6 @@ echo htmlInput(array(
     )
 ));
 ?>
-
-<div class="input-row">
-
-</div>
 
 <?php
 // Sen behöver det här vara lite smartare, för att det ska vara enkelt för användaren
