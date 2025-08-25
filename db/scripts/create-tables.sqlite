@@ -51,6 +51,7 @@ CREATE TABLE movies_persons(
     PersonID INTEGER NOT NULL,
     PersonName TEXT NOT NULL,
     Category TEXT NOT NULL,
+    Order INTEGER NOT NULL,
     RoleName TEXT,
     Note TEXT
 );
