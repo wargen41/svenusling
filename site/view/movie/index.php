@@ -12,7 +12,7 @@ require __DIR__.'/../../includes/collections/default.php';
 // Sen kommer det ju bli en del joins och sånt också
 // Nu gör jag bara några väldigt simpla queries
 if(isset($_GET) && isset($_GET['id'])){
-    $id = sanitizeSingleLineText($_GET['id']); // Sanitize ska vara endast siffror sen
+    $id = sanitizeIntegers($_GET['id']);
 
     // movies
     $query = implode(' ', [
@@ -44,9 +44,6 @@ if(isset($_GET) && isset($_GET['id'])){
         $originalTitle = $row['OriginalTitle'];
     }
 
-    // NEDANSTÅENDE BEHÖVER LOOPA EN EXTRA GÅNG OCH SPARA VARJE RAD FÖR SIG
-    // (SOM DET ÄR NU TROR JAG DET SKRIVS ÖVER MED SISTA RADEN)
-
     // movies_genres
     $query = implode(' ', [
         "SELECT *",
@@ -55,17 +52,13 @@ if(isset($_GET) && isset($_GET['id'])){
     ]);
     $res = $GLOBALS['db']->query($query);
 
-    $row = $res->fetchArray(SQLITE3_ASSOC);
-    if($row===false){ $row = []; }
-
     $movies_genres = array();
-    foreach($row as $key => $value){
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        $value = $row['GenreID'];
         if($value === null){
             $value = 'NULL';
-        }if(is_int($value)){
-            $value = (string)$value;
         }
-        $movies_genres[$key] = htmlSafeOutput($value);
+        array_push($movies_genres, htmlSafeOutput($value));
     }
 
     // movies_persons
@@ -80,13 +73,8 @@ if(isset($_GET) && isset($_GET['id'])){
     if($row===false){ $row = []; }
 
     $movies_persons = array();
-    foreach($row as $key => $value){
-        if($value === null){
-            $value = 'NULL';
-        }if(is_int($value)){
-            $value = (string)$value;
-        }
-        $arr[$key] = htmlSafeOutput($value);
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        array_push($movies_persons, htmlSafeOutput($row));
     }
 
     $page_title = $movies['Title'];
