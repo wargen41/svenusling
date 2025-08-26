@@ -27,19 +27,59 @@ echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 ?>
 
 <?php
+function formActionsHTML() {
+    $actionsHTML = "";
+
+    $actionsHTML .= '<div class="form-actions">';
+    $actionsHTML .= '<input type="submit" value="Spara">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $back_url = removeQueryFromURL($page_url, 'section');
+    $actionsHTML .= htmlWrap('a', 'Avbryt', array(
+        "href" => $back_url,
+        "class" => "button"
+    ));
+
+    $actionsHTML .= '</div>';
+
+    return $actionsHTML;
+}
+
+function editMoreLinkHTML($title, $sectionID, $linkText, $infoText) {
+    $linkHTML = "";
+
+    $linkHTML .= htmlWrap('legend', $title);
+
+    $linkHTML .= '<div class="input-row">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
+    $section_text = htmlWrap('span', $infoText);
+    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
+        "href" => $section_url
+    )).$section_text);
+
+    $linkHTML .= "</div>";
+
+    $linkHTML = htmlWrap('fieldset', $linkHTML);
+
+    return $linkHTML;
+}
+
 $allowedSections = array(
     "general",
     "connections",
     "media",
     "genres",
 );
-$sections = array(
+$autoSections = array(
     "general" => "Allmänt",
     "media" => "Media",
     "genres" => "Genrer",
 );
 $sectionTexts = array(
     "general" => "Betyg, titel etc.",
+    "connections" => "Serietillhörighet etc.",
     "media" => "Bilder med mera",
     "genres" => "Klassificera efter genre",
 );
@@ -54,55 +94,57 @@ if(isset($_GET) && isset($_GET['section'])){
 
 if(isset($section)){
 
-    $formName = "movie-".$section;
-
-    echo '<form method="post" action="update/">';
-    echo '<input type="hidden" name="form" value="'.$formName.'">';
+    // $formName = "movie-".$section;
+    //
+    // echo '<form method="post" action="update/">';
+    // echo '<input type="hidden" name="form" value="'.$formName.'">';
 
     include $GLOBALS['my_dir'].'admin/edit/movie/'.$section.'.php';
 
-    echo '<div class="form-actions">';
-    echo '<input type="submit" value="Spara">';
+    // echo '<div class="form-actions">';
+    // echo '<input type="submit" value="Spara">';
+    //
+    // $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    // $back_url = removeQueryFromURL($page_url, 'section');
+    // echo htmlWrap('a', 'Avbryt', array(
+    //     "href" => $back_url,
+    //     "class" => "button"
+    // ));
+    //
+    // echo '</div>';
 
-    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $back_url = removeQueryFromURL($page_url, 'section');
-    echo htmlWrap('a', 'Avbryt', array(
-        "href" => $back_url,
-        "class" => "button"
-    ));
-
-    echo '</div>';
-
-    echo '</form>';
+    // echo '</form>';
 
 }
 else{
-    $formName = "movie-type";
-    echo '<form method="post" action="update/">';
-    echo '<input type="hidden" name="form" value="'.$formName.'">';
+    // $formName = "movie-type";
+    // echo '<form method="post" action="update/">';
+    // echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/type.php';
-    echo '</form>';
+    // echo '</form>';
 
     if(typeCanBePartOfSeries($movies['Type'])){
-        echo "<fieldset>";
-        echo "<legend>Kopplingar</legend>";
-
-        echo '<div class="input-row">';
-
-        $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $section_url = addQueryToURL($page_url, 'section', 'connections', true);
-        $section_text = htmlWrap('span', 'Serietillhörighet etc.');
-        echo htmlWrap('p', htmlWrap('a', htmlWrap('button', 'Redigera kopplingar'), array(
-            "href" => $section_url
-        )).$section_text);
-
-        echo "</div>";
-        echo "</fieldset>";
+        $sect = 'connections';
+        echo editMoreLinkHTML('Kopplingar', $sect, 'Redigera kopplingar', $sectionTexts[$sect]);
+        // echo "<fieldset>";
+        // echo "<legend>Kopplingar</legend>";
+        //
+        // echo '<div class="input-row">';
+        //
+        // $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        // $section_url = addQueryToURL($page_url, 'section', 'connections', true);
+        // $section_text = htmlWrap('span', 'Serietillhörighet etc.');
+        // echo htmlWrap('p', htmlWrap('a', htmlWrap('button', 'Redigera kopplingar'), array(
+        //     "href" => $section_url
+        // )).$section_text);
+        //
+        // echo "</div>";
+        // echo "</fieldset>";
     }
 
     /* Section links */
     $sectionsHTML = "";
-    foreach($sections as $sect => $title){
+    foreach($autoSections as $sect => $title){
         $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $section_url = addQueryToURL($page_url, 'section', $sect, true);
 
@@ -117,11 +159,11 @@ else{
 
     echo htmlWrap('ul', $sectionsHTML);
 
-    $formName = "movie-visibility";
-    echo '<form method="post" action="update/">';
-    echo '<input type="hidden" name="form" value="'.$formName.'">';
+    // $formName = "movie-visibility";
+    // echo '<form method="post" action="update/">';
+    // echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/visibility.php';
-    echo '</form>';
+    // echo '</form>';
 
 }
 

@@ -1,3 +1,6 @@
+<form method="post" action="update/">
+<input type="hidden" name="form" value="movie-visibility">
+
 <?php
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $location = $page_url;
@@ -52,3 +55,5 @@ echo htmlInput(array(
 </div>
 
 </fieldset>
+
+</form>

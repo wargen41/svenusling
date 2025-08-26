@@ -1,3 +1,6 @@
+<form method="post" action="update/">
+<input type="hidden" name="form" value="movie-general">
+
 <?php
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $location = removeQueryFromURL($page_url, 'section');
@@ -154,3 +157,10 @@ echo htmlInput(array(
 </div>
 
 </fieldset>
+
+<?php
+echo formActionsHTML();
+?>
+
+</form>
+

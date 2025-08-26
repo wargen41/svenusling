@@ -1,3 +1,6 @@
+<form method="post" action="update/">
+<input type="hidden" name="form" value="movie-media">
+
 <?php
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $location = removeQueryFromURL($page_url, 'section');
@@ -64,3 +67,9 @@ Här ska vi lista alla mediafiler som kopplats till filmen
 </div>
 
 </fieldset>
+
+<?php
+echo formActionsHTML();
+?>
+
+</form>

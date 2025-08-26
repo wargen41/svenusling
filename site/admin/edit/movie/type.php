@@ -1,3 +1,6 @@
+<form method="post" action="update/">
+<input type="hidden" name="form" value="movie-type">
+
 <?php
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $location = $page_url;
@@ -31,7 +34,6 @@ echo htmlInput(array(
 $movieTypes = typesOfMovieTexts();
 $typeOptions = array_merge(array("" => "--"), $movieTypes);
 echo htmlSelect(array(
-    //"label" => "Typ",
     "options" => $typeOptions,
     "selected" => $movies['Type'] ?? '',
     "attributes" => array(
@@ -41,18 +43,17 @@ echo htmlSelect(array(
     )
 ));
 
-//if(!typeCanBePartOfSeries($movies['Type'])){
-    echo htmlInput(array(
-        "attributes" => array(
-            "type" => "submit",
-            "value" => "Spara"
-        )
-    ));
-//}
-
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "submit",
+        "value" => "Spara"
+    )
+));
 
 ?>
 
 </div>
 
 </fieldset>
+
+</form>
