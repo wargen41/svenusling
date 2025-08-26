@@ -11,9 +11,6 @@ echo htmlInput(array(
 ));
 ?>
 
-<fieldset>
-<legend>Bilder</legend>
-
 <?php
 echo htmlInput(array(
     "attributes" => array(
@@ -24,6 +21,9 @@ echo htmlInput(array(
     )
 ));
 ?>
+
+<fieldset>
+<legend>Bilder</legend>
 
 <div class="input-row">
 <?php

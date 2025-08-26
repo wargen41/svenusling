@@ -135,6 +135,24 @@ function dbCountHiddenMovies(): int {
     return (int)$res;
 }
 
+function dbGetGenres(bool $htmlSafe=true): array {
+    $query = "SELECT * FROM genres ORDER BY Common DESC, sv ASC";
+    $res = $GLOBALS['db']->query($query);
+
+    $genres = [];
+    if($htmlSafe == true){
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            array_push($genres, htmlSafeOutput($row));
+        }
+    }else{
+        while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+            array_push($genres, $row);
+        }
+    }
+
+    return $genres;
+}
+
 function getKeysFromTable(string $table): array {
     $res = $GLOBALS['db']->query('SELECT * FROM '.$table.' LIMIT 1');
     $row = $res->fetchArray(SQLITE3_ASSOC);

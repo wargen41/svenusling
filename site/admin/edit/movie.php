@@ -30,17 +30,18 @@ echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 $allowedSections = array(
     "general",
     "connections",
-    "media"
+    "media",
+    "genres",
 );
 $sections = array(
     "general" => "Allmänt",
-//    "connections" => "Kopplingar",
-    "media" => "Media"
+    "media" => "Media",
+    "genres" => "Genrer",
 );
 $sectionTexts = array(
     "general" => "Betyg, titel etc.",
-//    "connections" => "Serietillhörighet etc.",
-    "media" => "Bilder med mera"
+    "media" => "Bilder med mera",
+    "genres" => "Klassificera efter genre",
 );
 $section = null;
 

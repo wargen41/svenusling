@@ -351,15 +351,42 @@ function htmlSelect(array $props = []): string {
     $optionsHTML = "";
 
     if(isset($props['options'])) {
-        foreach ($props['options'] as $value => $text) {
+        if(!isset($props['options'][0])){
+            // Om det är en associativ array gör vi om det till en indexerad array
+            // som innehåller associativa arrayer
+            $tempArr = [];
+            foreach ($props['options'] as $value => $text) {
+                array_push($tempArr, array(
+                    "value" => $value,
+                    "text" => $text,
+                ));
+            }
+            $props['options'] = $tempArr;
+        }else if(isset($props['options'][0]) && !is_array($props['options'][0])){
+            // Om det är en indexerad array med vanliga värden gör vi om det till
+            // en indexerad array som innehåller associativa arrayer
+            $tempArr = [];
+            $len = count($props['options']);
+            for ($i = 0; $i < $len; $i++) {
+                array_push($tempArr, array(
+                    "value" => $i,
+                    "text" => $props['options'][$i],
+                ));
+            }
+            $props['options'] = $tempArr;
+        }
+        foreach ($props['options'] as $item) {
             $selected = false;
-            if(isset($props['selected']) && $props['selected'] === $value){
+            if(isset($props['selected']) && $props['selected'] === $item['value']){
                 $selected = true;
             }
 
-            $optionsHTML .= htmlWrap('option', $text, array(
-                "value" => $value,
-                "selected" => $selected
+            $disabled = $item['disabled'] ?? false;
+
+            $optionsHTML .= htmlWrap('option', $item['text'], array(
+                "value" => $item['value'],
+                "selected" => $selected,
+                "disabled" => $disabled,
             ));
         }
     }
