@@ -98,7 +98,7 @@ print_rPRE($movies_genres);
 </fieldset>
 
 <?php
-echo formActionsHTML();
+echo formActionsHTML(array('back'));
 ?>
 
 </form>

@@ -27,44 +27,6 @@ echo pgHeadingHTML('movies', 'Redigera filmobjekt', $movies['Title']);
 ?>
 
 <?php
-function formActionsHTML() {
-    $actionsHTML = "";
-
-    $actionsHTML .= '<div class="form-actions">';
-    $actionsHTML .= '<input type="submit" value="Spara">';
-
-    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $back_url = removeQueryFromURL($page_url, 'section');
-    $actionsHTML .= htmlWrap('a', 'Avbryt', array(
-        "href" => $back_url,
-        "class" => "button"
-    ));
-
-    $actionsHTML .= '</div>';
-
-    return $actionsHTML;
-}
-
-function editMoreLinkHTML($title, $sectionID, $linkText, $infoText) {
-    $linkHTML = "";
-
-    $linkHTML .= htmlWrap('legend', $title);
-
-    $linkHTML .= '<div class="input-row">';
-
-    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
-    $section_text = htmlWrap('span', $infoText);
-    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
-        "href" => $section_url
-    )).$section_text);
-
-    $linkHTML .= "</div>";
-
-    $linkHTML = htmlWrap('fieldset', $linkHTML);
-
-    return $linkHTML;
-}
 
 $allowedSections = array(
     "general",

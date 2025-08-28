@@ -394,6 +394,7 @@ function htmlSelect(array $props = []): string {
     if(!isset($props['attributes'])) {
         $props['attributes'] = array();
     }
+    $attr = $props['attributes'];
 
     $selectHTML = htmlWrap('select', $optionsHTML, $props['attributes']);
 
@@ -407,6 +408,77 @@ function htmlSelect(array $props = []): string {
 
     $html .= $selectHTML;
     return $html;
+}
+
+// Nedanstående hör egentligen inte hemma här
+// HTML.php är tänkt till mer allmänna HTML-element
+function formActionsHTML(array $actions = ['save', 'cancel']): string {
+    $actionsHTML = "";
+
+    $actionsHTML .= '<div class="form-actions">';
+
+    foreach($actions as $action) {
+        switch($action) {
+            case "save":
+                $actionsHTML .= formActionsSaveHTML();
+                break;
+            case "cancel":
+                $actionsHTML .= formActionsCancelHTML();
+                break;
+            case "back":
+                $actionsHTML .= formActionsBackHTML();
+                break;
+        }
+    }
+
+    // if(in_array('save', $actions)){
+    //     $actionsHTML .= formActionsSaveHTML();
+    // }
+    //
+    // if(in_array('cancel', $actions)){
+    //     $actionsHTML .= formActionsCancelHTML();
+    // }
+
+    $actionsHTML .= '</div>';
+
+    return $actionsHTML;
+}
+
+function formActionsSaveHTML(): string {
+    return '<input type="submit" value="Spara">';
+}
+
+function formActionsCancelHTML(string $text = 'Avbryt'): string {
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $back_url = removeQueryFromURL($page_url, 'section');
+    return htmlWrap('a', $text, array(
+        "href" => $back_url,
+        "class" => "button"
+    ));
+}
+function formActionsBackHTML(): string {
+    return formActionsCancelHTML('Tillbaka');
+}
+
+function editMoreLinkHTML(string $title, string $sectionID, string $linkText, string $infoText): string {
+    $linkHTML = "";
+
+    $linkHTML .= htmlWrap('legend', $title);
+
+    $linkHTML .= '<div class="input-row">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
+    $section_text = htmlWrap('span', $infoText);
+    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
+        "href" => $section_url
+    )).$section_text);
+
+    $linkHTML .= "</div>";
+
+    $linkHTML = htmlWrap('fieldset', $linkHTML);
+
+    return $linkHTML;
 }
 
 ?>
