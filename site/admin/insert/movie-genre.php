@@ -2,32 +2,29 @@
 
 $errors = [];
 
-$table = "movies";
+$table = "movies_genres";
 
 $columns = array(
-    "PosterImageID",
-    "LargeImageID",
+    "MovieID",
+    "GenreID",
 );
+$columnsStr = implode(', ', $columns);
 $fieldsToSet = dbArrayToStringForBinding($columns);
 
-$statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE MovieID=:MovieID';
+$statement = 'INSERT INTO '.$table.' ('.$columnsStr.') VALUES(:MovieID, :GenreID)';
 
 $movieid = sanitizeIntegers($_POST['movieid']);
-$posterimageid = sanitizeIntegers($_POST['posterimageid']);
-$largeimageid = sanitizeIntegers($_POST['largeimageid']);
+$genreid = sanitizeIntegers($_POST['genreid']);
 
 $stmt = $db->prepare($statement);
 $stmt->bindValue(':MovieID', $movieid, SQLITE3_NUM);
-$stmt->bindValue(':PosterImageID', $posterimageid, is_null($posterimageid) ? SQLITE3_NULL : SQLITE3_NUM);
-$stmt->bindValue(':LargeImageID', $largeimageid, is_null($largeimageid) ? SQLITE3_NULL : SQLITE3_NUM);
+$stmt->bindValue(':GenreID', $genreid, SQLITE3_NUM);
+
 $result = $stmt->execute();
 
 if (!$result) {
     array_push($errors, $db->lastErrorMsg());
 }
-
-echo $posterimageid;
-echo '<br>'.$largeimageid;
 
 if (empty($errors)) {
     if(isset($_POST) && isset($_POST['redirect'])){

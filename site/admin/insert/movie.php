@@ -39,7 +39,7 @@ if (empty($errors)) {
     exit;
 }
 else {
-    echo "Update failed!<br>";
+    echo htmlWrap('h1', "Uppdatering misslyckades!");
     echo implode('<br>', $errors);
 }
 

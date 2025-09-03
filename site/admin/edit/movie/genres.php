@@ -1,9 +1,10 @@
-<form method="post" action="update/">
-<input type="hidden" name="form" value="movie-genres">
+<form method="post" action="insert/">
+<input type="hidden" name="form" value="movie-genre">
 
 <?php
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$location = removeQueryFromURL($page_url, 'section');
+//$location = removeQueryFromURL($page_url, 'section');
+$location = $page_url;
 echo htmlInput(array(
     "attributes" => array(
         "type" => "hidden",
@@ -71,8 +72,15 @@ echo htmlSelect(array(
     "options" => $genreOptions,
     "attributes" => array(
         "required" => false,
-        "name" => "addgenre",
+        "name" => "genreid",
         "id" => "edit-movie-add-genre"
+    )
+));
+
+echo htmlInput(array(
+    "attributes" => array(
+        "type" => "submit",
+        "value" => "Spara"
     )
 ));
 ?>
@@ -80,6 +88,8 @@ echo htmlSelect(array(
 </div>
 
 </fieldset>
+
+</form>
 
 <fieldset>
 <legend>Associerade genrer</legend>
@@ -100,5 +110,3 @@ print_rPRE($movies_genres);
 <?php
 echo formActionsHTML(array('back'));
 ?>
-
-</form>
