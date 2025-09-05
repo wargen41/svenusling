@@ -46,7 +46,7 @@ echo htmlSelect(array(
 echo htmlInput(array(
     "attributes" => array(
         "type" => "submit",
-        "value" => "Spara"
+        "value" => "Uppdatera"
     )
 ));
 
