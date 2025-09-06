@@ -125,46 +125,49 @@ echo htmlInput(array(
 <fieldset>
 <legend>Ta bort genre</legend>
 
-<p>Ta bort en associerad genre genom att klicka på den.</p>
-
-<div class="input-list">
 <?php
-// Create one little form for each genre to enable deletion
-foreach($movies_genres as $genre) {
-    $deleteHTML = htmlInput(array(
-        "attributes" => array(
-            "type" => "hidden",
-            "name" => "form",
-            "value" => "movie-genre"
-        )
-    ));
-    $deleteHTML .= htmlInput(array(
-        "attributes" => array(
-            "type" => "hidden",
-            "name" => "movieid",
-            "value" => $movies['MovieID'] ?? ''
-        )
-    ));
-    $deleteHTML .= htmlInput(array(
-        "attributes" => array(
-            "type" => "hidden",
-            "name" => "genreid",
-            "value" => $genre
-        )
-    ));
-    $deleteHTML .= htmlInput(array(
-        "attributes" => array(
-            "type" => "submit",
-            "value" => $movies_genres_names[$genre]
-        )
-    ));
-    echo htmlWrap('form', $deleteHTML, array(
-        "method" => "post",
-        "action" => "delete/"
-    ));
+if(count($movies_genres) === 0) {
+    echo htmlWrap('p', "Inga genrer tillagda");
+}else{
+    echo htmlWrap('p', "Ta bort en associerad genre genom att klicka på den");
+    echo '<div class="input-list">';
+    // Create one little form for each genre to enable deletion
+    foreach($movies_genres as $genre) {
+        $deleteHTML = htmlInput(array(
+            "attributes" => array(
+                "type" => "hidden",
+                "name" => "form",
+                "value" => "movie-genre"
+            )
+        ));
+        $deleteHTML .= htmlInput(array(
+            "attributes" => array(
+                "type" => "hidden",
+                "name" => "movieid",
+                "value" => $movies['MovieID'] ?? ''
+            )
+        ));
+        $deleteHTML .= htmlInput(array(
+            "attributes" => array(
+                "type" => "hidden",
+                "name" => "genreid",
+                "value" => $genre
+            )
+        ));
+        $deleteHTML .= htmlInput(array(
+            "attributes" => array(
+                "type" => "submit",
+                "value" => $movies_genres_names[$genre]
+            )
+        ));
+        echo htmlWrap('form', $deleteHTML, array(
+            "method" => "post",
+            "action" => "delete/"
+        ));
+    }
+    echo '</div>';
 }
 ?>
-</div>
 
 </fieldset>
 

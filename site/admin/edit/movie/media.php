@@ -60,9 +60,9 @@ echo htmlInput(array(
 <fieldset>
 <legend>Associerade mediafiler</legend>
 
-<div class="input-row">
+<div class="input-list">
 
-Här ska vi lista alla mediafiler som kopplats till filmen
+<p>Här ska vi lista alla mediafiler som kopplats till filmen</p>
 
 </div>
 

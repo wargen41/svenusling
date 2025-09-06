@@ -221,6 +221,11 @@ input[type="submit"]:not(.login)
     flex: none;
 }
 
+.input-row > select:has(+ input[type=submit])
+{
+    flex: auto;
+}
+
 .form-actions {
     display: flex;
     align-items: center;

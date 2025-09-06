@@ -247,16 +247,16 @@ function editMoreLinkHTML(string $title, string $sectionID, string $linkText, st
 
     $linkHTML .= htmlWrap('legend', $title);
 
-    $linkHTML .= '<div class="input-row">';
+    //$linkHTML .= '<div class="input-row">';
 
     $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
     $section_text = htmlWrap('span', $infoText);
-    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
+    $linkHTML .= htmlWrap('ul', htmlWrap('li', htmlWrap('a', htmlWrap('button', $linkText), array(
         "href" => $section_url
-    )).$section_text);
+    )).$section_text));
 
-    $linkHTML .= "</div>";
+    //$linkHTML .= "</div>";
 
     $linkHTML = htmlWrap('fieldset', $linkHTML);
 
