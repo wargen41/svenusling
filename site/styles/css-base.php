@@ -91,7 +91,7 @@ main > section
 }
 
 h1, h2, h3, h4, h5, h6 {
-    /*line-height: 1.2;*/
+    line-height: 1.4;
     /*margin-top: .65em;
     margin-bottom: .65em;*/
     /* https://github.com/system-fonts/modern-font-stacks#geometric-humanist */
@@ -159,7 +159,7 @@ fieldset + .form-actions
 input[type="submit"]:not(.login)
 {
     text-align: center;
-    min-width: 50%;
+    min-width: 47%;
 }
 
 .input-row + .input-row {
