@@ -156,6 +156,17 @@ fieldset + .form-actions
     margin-top: .8em;
 }
 
+fieldset > ul
+{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+fieldset > ul > li + li
+{
+    margin-top: 0.6em;
+}
+
 input[type="submit"]:not(.login)
 {
     text-align: center;

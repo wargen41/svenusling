@@ -49,6 +49,12 @@ function htmlWrap(string $elm, string $inner, array $attr = [], array $newline =
     return $html;
 }
 
+function htmlFieldset(string|null $legend, string $inner, array $attr = []): string {
+    $legendHTML = $legend ? htmlWrap('legend', $legend) : '';
+    $html = htmlWrap('fieldset', $legendHTML.$inner, $attr);
+    return $html;
+}
+
 /**
  * Builds an HTML table from an array of associative arrays (rows) and optional properties.
  *

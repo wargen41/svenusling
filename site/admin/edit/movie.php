@@ -55,53 +55,14 @@ if(isset($_GET) && isset($_GET['section'])){
 }
 
 if(isset($section)){
-
-    // $formName = "movie-".$section;
-    //
-    // echo '<form method="post" action="update/">';
-    // echo '<input type="hidden" name="form" value="'.$formName.'">';
-
     include $GLOBALS['my_dir'].'admin/edit/movie/'.$section.'.php';
-
-    // echo '<div class="form-actions">';
-    // echo '<input type="submit" value="Spara">';
-    //
-    // $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    // $back_url = removeQueryFromURL($page_url, 'section');
-    // echo htmlWrap('a', 'Avbryt', array(
-    //     "href" => $back_url,
-    //     "class" => "button"
-    // ));
-    //
-    // echo '</div>';
-
-    // echo '</form>';
-
 }
 else{
-    // $formName = "movie-type";
-    // echo '<form method="post" action="update/">';
-    // echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/type.php';
-    // echo '</form>';
 
     if(typeCanBePartOfSeries($movies['Type'])){
         $sect = 'connections';
         echo editMoreLinkHTML('Kopplingar', $sect, 'Redigera kopplingar', $sectionTexts[$sect]);
-        // echo "<fieldset>";
-        // echo "<legend>Kopplingar</legend>";
-        //
-        // echo '<div class="input-row">';
-        //
-        // $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        // $section_url = addQueryToURL($page_url, 'section', 'connections', true);
-        // $section_text = htmlWrap('span', 'Serietillhörighet etc.');
-        // echo htmlWrap('p', htmlWrap('a', htmlWrap('button', 'Redigera kopplingar'), array(
-        //     "href" => $section_url
-        // )).$section_text);
-        //
-        // echo "</div>";
-        // echo "</fieldset>";
     }
 
     /* Section links */
@@ -119,13 +80,9 @@ else{
         )).$section_text);
     }
 
-    echo htmlWrap('ul', $sectionsHTML);
+    echo htmlFieldset('Redigera mera', htmlWrap('ul', $sectionsHTML));
 
-    // $formName = "movie-visibility";
-    // echo '<form method="post" action="update/">';
-    // echo '<input type="hidden" name="form" value="'.$formName.'">';
     include $GLOBALS['my_dir'].'admin/edit/movie/visibility.php';
-    // echo '</form>';
 
 }
 
@@ -135,14 +92,6 @@ else{
 
 <?php
 print_rPRE($movies);
-
-// $back = $_SERVER['HTTP_REFERER'] ?? null;
-// if(!is_null($back)){
-//     echo htmlWrap('p', htmlWrap('a', 'Tillbaka', array(
-//         "href" => $back
-//     )));
-// }
-
 ?>
 
 </main>
