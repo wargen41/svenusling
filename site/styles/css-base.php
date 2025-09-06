@@ -189,7 +189,7 @@ input[type="submit"]:not(.login)
     display: flex;
     gap: .5em;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: start;
 }
 
 /* Allow the label to grow and shrink */
