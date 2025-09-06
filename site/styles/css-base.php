@@ -173,6 +173,14 @@ input[type="submit"]:not(.login)
     min-width: 47%;
 }
 
+.input-list
+{
+    display: flex;
+    gap: .5em;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
 .input-row + .input-row {
     margin-top: .5em;
 }

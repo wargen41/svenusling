@@ -31,12 +31,11 @@ echo htmlInput(array(
 
 <div class="input-row">
 <?php
-// Collect movie genre info
-$query = implode(' ', [
-    "SELECT *",
-    "FROM movies_genres",
-    "WHERE MovieID = :id",
-]);
+$query =
+"SELECT mg.GenreID, g.sv AS GenreName
+FROM movies_genres mg
+JOIN genres g ON mg.GenreID = g.GenreID
+WHERE mg.MovieID = :id";
 
 $id = sanitizeIntegers($_GET['id']) ?? null;
 
@@ -46,8 +45,10 @@ $stmt->bindValue(':id', $id, SQLITE3_NUM);
 $res = $stmt->execute();
 
 $movies_genres = array();
+$movies_genres_names = array();
 while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     array_push($movies_genres, $row['GenreID']);
+    $movies_genres_names[$row['GenreID']] = $row['GenreName'];
 }
 
 $emptyOption = array(
@@ -122,17 +123,47 @@ echo htmlInput(array(
 </form>
 
 <fieldset>
-<legend>Associerade genrer</legend>
+<legend>Ta bort genre</legend>
 
-<div class="input-row">
+<p>Ta bort en associerad genre genom att klicka på den.</p>
 
-Här ska vi lista alla genrer som kopplats till filmen
-
+<div class="input-list">
 <?php
-
-print_rPRE($movies_genres);
+// Create one little form for each genre to enable deletion
+foreach($movies_genres as $genre) {
+    $deleteHTML = htmlInput(array(
+        "attributes" => array(
+            "type" => "hidden",
+            "name" => "form",
+            "value" => "movie-genre"
+        )
+    ));
+    $deleteHTML .= htmlInput(array(
+        "attributes" => array(
+            "type" => "hidden",
+            "name" => "movieid",
+            "value" => $movies['MovieID'] ?? ''
+        )
+    ));
+    $deleteHTML .= htmlInput(array(
+        "attributes" => array(
+            "type" => "hidden",
+            "name" => "genreid",
+            "value" => $genre
+        )
+    ));
+    $deleteHTML .= htmlInput(array(
+        "attributes" => array(
+            "type" => "submit",
+            "value" => $movies_genres_names[$genre]
+        )
+    ));
+    echo htmlWrap('form', $deleteHTML, array(
+        "method" => "post",
+        "action" => "delete/"
+    ));
+}
 ?>
-
 </div>
 
 </fieldset>
