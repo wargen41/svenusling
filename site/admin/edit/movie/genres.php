@@ -51,25 +51,55 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 }
 
 $emptyOption = array(
-    "value" => "",
-    "text" => "--"
+    "label" => false,
+    "options" => array(
+        array(
+            "value" => "",
+            "text" => "--"
+        )
+    )
 );
 $movieGenres = dbGetGenres(true);
-$genreOptions = array();
-foreach($movieGenres as $item) {
+$genresByCommonality = splitIntoArraysByPropertyValue($movieGenres, 'Common');
+$common = $genresByCommonality[1];
+$uncommon = $genresByCommonality[0];
+$commonOptions = array(
+    "label" => "Vanliga",
+    "options" => array()
+);
+$uncommonOptions = array(
+    "label" => "Ovanliga",
+    "options" => array()
+);
+
+foreach($common as $item) {
     $disabled = false;
     if(in_array($item['GenreID'], $movies_genres)){
         $disabled = true;
     }
-    array_push($genreOptions, array(
+    array_push($commonOptions['options'], array(
         "value" => $item['GenreID'],
         "text" => $item['sv'],
         "disabled" => $disabled
     ));
 }
-array_unshift($genreOptions, $emptyOption);
+
+foreach($uncommon as $item) {
+    $disabled = false;
+    if(in_array($item['GenreID'], $movies_genres)){
+        $disabled = true;
+    }
+    array_push($uncommonOptions['options'], array(
+        "value" => $item['GenreID'],
+        "text" => $item['sv'],
+        "disabled" => $disabled
+    ));
+}
+
+$genreOptions = array($emptyOption, $commonOptions, $uncommonOptions);
+
 echo htmlSelect(array(
-    "options" => $genreOptions,
+    "optgroups" => $genreOptions,
     "attributes" => array(
         "required" => false,
         "name" => "genreid",
@@ -80,7 +110,7 @@ echo htmlSelect(array(
 echo htmlInput(array(
     "attributes" => array(
         "type" => "submit",
-        "value" => "Spara"
+        "value" => "Lägg till"
     )
 ));
 ?>

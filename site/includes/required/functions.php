@@ -1,5 +1,71 @@
 <?php
 
+function addQueryToURL(string $url, string $key, string|int $value, bool|null $replace = null): string {
+    // If the replace option is set, remove the query in case it exists
+    if(isset($replace)){
+        $url = removeQueryFromURL($url, $key);
+    }
+
+    $query = [];
+    $queryStr = "";
+    // Make sure the query string contains $key,
+    // without removing any other existing querys
+    $url = parse_url($url);
+    if(isset($url['query'])){
+        parse_str($url['query'], $query);
+    }
+    if(!isset($query[$key])){
+        $query[$key] = $value;
+    }
+    $queryStr = http_build_query($query);
+
+    $queryURL = $url['scheme'].'://'.$url['host'].$url['path'].'?'.$queryStr;
+    return $queryURL;
+}
+
+function removeQueryFromURL(string $url, string $key): string {
+    $query = [];
+    $queryStr = "";
+
+    // Remove given key if it exists in query
+    $url = parse_url($url);
+    if(isset($url['query'])){
+        parse_str($url['query'], $query);
+        if(isset($query[$key])){
+            unset($query[$key]);
+        }
+    }
+    $queryStr = http_build_query($query);
+
+    $queryURL = $url['scheme'].'://'.$url['host'].$url['path'].'?'.$queryStr;
+    return $queryURL;
+}
+
+function sanitizeQuery(string $value): string {
+    // Remove everything but lower case letters a to z and integers
+    $value = preg_replace('/[^a-z0-9]/', '', $value);
+
+    return $value;
+}
+
+function sanitizeRedirect(string $value): string {
+    // Don't yet know what to do here
+
+    return $value;
+}
+
+function splitIntoArraysByPropertyValue(array $original, string|int $key): array {
+    $new = array();
+    foreach($original as $item) {
+        $value = $item[$key];
+        if(!isset($new[$value])) {
+            $new[$value] = array();
+        }
+        array_push($new[$value], $item);
+    }
+    return $new;
+}
+
 function pgTitle(string $text): string {
     return "{$text} | {$GLOBALS['my_site']['name']}";
 }
@@ -124,6 +190,77 @@ function print_rPRE($value) {
     echo '<pre>';
     print_r($value);
     echo '</pre>';
+}
+
+// Nedanstående hör egentligen inte hemma här
+// HTML.php är tänkt till mer allmänna HTML-element
+function formActionsHTML(array $actions = ['save', 'cancel']): string {
+    $actionsHTML = "";
+
+    $actionsHTML .= '<div class="form-actions">';
+
+    foreach($actions as $action) {
+        switch($action) {
+            case "save":
+                $actionsHTML .= formActionsSaveHTML();
+                break;
+            case "cancel":
+                $actionsHTML .= formActionsCancelHTML();
+                break;
+            case "back":
+                $actionsHTML .= formActionsBackHTML();
+                break;
+        }
+    }
+
+    // if(in_array('save', $actions)){
+    //     $actionsHTML .= formActionsSaveHTML();
+    // }
+    //
+    // if(in_array('cancel', $actions)){
+    //     $actionsHTML .= formActionsCancelHTML();
+    // }
+
+    $actionsHTML .= '</div>';
+
+    return $actionsHTML;
+}
+
+function formActionsSaveHTML(): string {
+    return '<input type="submit" value="Spara">';
+}
+
+function formActionsCancelHTML(string $text = 'Avbryt'): string {
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $back_url = removeQueryFromURL($page_url, 'section');
+    return htmlWrap('a', $text, array(
+        "href" => $back_url,
+        "class" => "button"
+    ));
+}
+function formActionsBackHTML(): string {
+    return formActionsCancelHTML('Tillbaka');
+}
+
+function editMoreLinkHTML(string $title, string $sectionID, string $linkText, string $infoText): string {
+    $linkHTML = "";
+
+    $linkHTML .= htmlWrap('legend', $title);
+
+    $linkHTML .= '<div class="input-row">';
+
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
+    $section_text = htmlWrap('span', $infoText);
+    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
+        "href" => $section_url
+    )).$section_text);
+
+    $linkHTML .= "</div>";
+
+    $linkHTML = htmlWrap('fieldset', $linkHTML);
+
+    return $linkHTML;
 }
 
 ?>

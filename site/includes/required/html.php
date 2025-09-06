@@ -350,45 +350,49 @@ function htmlSelect(array $props = []): string {
     $attrStr = "";
     $optionsHTML = "";
 
-    if(isset($props['options'])) {
-        if(!isset($props['options'][0])){
-            // Om det är en associativ array gör vi om det till en indexerad array
-            // som innehåller associativa arrayer
-            $tempArr = [];
-            foreach ($props['options'] as $value => $text) {
-                array_push($tempArr, array(
-                    "value" => $value,
-                    "text" => $text,
-                ));
-            }
-            $props['options'] = $tempArr;
-        }else if(isset($props['options'][0]) && !is_array($props['options'][0])){
-            // Om det är en indexerad array med vanliga värden gör vi om det till
-            // en indexerad array som innehåller associativa arrayer
-            $tempArr = [];
-            $len = count($props['options']);
-            for ($i = 0; $i < $len; $i++) {
-                array_push($tempArr, array(
-                    "value" => $i,
-                    "text" => $props['options'][$i],
-                ));
-            }
-            $props['options'] = $tempArr;
-        }
-        foreach ($props['options'] as $item) {
-            $selected = false;
-            if(isset($props['selected']) && $props['selected'] === $item['value']){
-                $selected = true;
-            }
-
-            $disabled = $item['disabled'] ?? false;
-
-            $optionsHTML .= htmlWrap('option', $item['text'], array(
-                "value" => $item['value'],
-                "selected" => $selected,
-                "disabled" => $disabled,
-            ));
-        }
+    if(isset($props['optgroups'])) {
+        $optionsHTML .= htmlSelectOptgroups($props);
+    }
+    else if(isset($props['options'])) {
+        $optionsHTML .= htmlSelectOptions($props);
+        // if(!isset($props['options'][0])){
+        //     // Om det är en associativ array gör vi om det till en indexerad array
+        //     // som innehåller associativa arrayer
+        //     $tempArr = [];
+        //     foreach ($props['options'] as $value => $text) {
+        //         array_push($tempArr, array(
+        //             "value" => $value,
+        //             "text" => $text,
+        //         ));
+        //     }
+        //     $props['options'] = $tempArr;
+        // }else if(isset($props['options'][0]) && !is_array($props['options'][0])){
+        //     // Om det är en indexerad array med vanliga värden gör vi om det till
+        //     // en indexerad array som innehåller associativa arrayer
+        //     $tempArr = [];
+        //     $len = count($props['options']);
+        //     for ($i = 0; $i < $len; $i++) {
+        //         array_push($tempArr, array(
+        //             "value" => $i,
+        //             "text" => $props['options'][$i],
+        //         ));
+        //     }
+        //     $props['options'] = $tempArr;
+        // }
+        // foreach ($props['options'] as $item) {
+        //     $selected = false;
+        //     if(isset($props['selected']) && $props['selected'] === $item['value']){
+        //         $selected = true;
+        //     }
+        //
+        //     $disabled = $item['disabled'] ?? false;
+        //
+        //     $optionsHTML .= htmlWrap('option', $item['text'], array(
+        //         "value" => $item['value'],
+        //         "selected" => $selected,
+        //         "disabled" => $disabled,
+        //     ));
+        // }
     }
 
     if(!isset($props['attributes'])) {
@@ -410,75 +414,66 @@ function htmlSelect(array $props = []): string {
     return $html;
 }
 
-// Nedanstående hör egentligen inte hemma här
-// HTML.php är tänkt till mer allmänna HTML-element
-function formActionsHTML(array $actions = ['save', 'cancel']): string {
-    $actionsHTML = "";
+function htmlSelectOptgroups(array $props): string {
+    $groupHTML = "";
 
-    $actionsHTML .= '<div class="form-actions">';
-
-    foreach($actions as $action) {
-        switch($action) {
-            case "save":
-                $actionsHTML .= formActionsSaveHTML();
-                break;
-            case "cancel":
-                $actionsHTML .= formActionsCancelHTML();
-                break;
-            case "back":
-                $actionsHTML .= formActionsBackHTML();
-                break;
+    foreach($props['optgroups'] as $group) {
+        // If label is false that means this list is to be
+        // excluded (become regular items outside an optgroup)
+        if($group['label'] === false) {
+            $groupHTML .= htmlSelectOptions($group);
+        }else{
+            $optionsHTML = htmlSelectOptions($group);
+            $groupHTML .= htmlWrap('optgroup', $optionsHTML, array(
+                "label" => $group['label']
+            ));
         }
     }
-
-    // if(in_array('save', $actions)){
-    //     $actionsHTML .= formActionsSaveHTML();
-    // }
-    //
-    // if(in_array('cancel', $actions)){
-    //     $actionsHTML .= formActionsCancelHTML();
-    // }
-
-    $actionsHTML .= '</div>';
-
-    return $actionsHTML;
+    return $groupHTML;
 }
 
-function formActionsSaveHTML(): string {
-    return '<input type="submit" value="Spara">';
-}
+function htmlSelectOptions(array $props): string {
+    $optionsHTML = "";
 
-function formActionsCancelHTML(string $text = 'Avbryt'): string {
-    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $back_url = removeQueryFromURL($page_url, 'section');
-    return htmlWrap('a', $text, array(
-        "href" => $back_url,
-        "class" => "button"
-    ));
-}
-function formActionsBackHTML(): string {
-    return formActionsCancelHTML('Tillbaka');
-}
+    if(!isset($props['options'][0])){
+        // Om det är en associativ array gör vi om det till en indexerad array
+        // som innehåller associativa arrayer
+        $tempArr = [];
+        foreach ($props['options'] as $value => $text) {
+            array_push($tempArr, array(
+                "value" => $value,
+                "text" => $text,
+            ));
+        }
+        $props['options'] = $tempArr;
+    }else if(isset($props['options'][0]) && !is_array($props['options'][0])){
+        // Om det är en indexerad array med vanliga värden gör vi om det till
+        // en indexerad array som innehåller associativa arrayer
+        $tempArr = [];
+        $len = count($props['options']);
+        for ($i = 0; $i < $len; $i++) {
+            array_push($tempArr, array(
+                "value" => $i,
+                "text" => $props['options'][$i],
+            ));
+        }
+        $props['options'] = $tempArr;
+    }
+    foreach ($props['options'] as $item) {
+        $selected = false;
+        if(isset($props['selected']) && $props['selected'] === $item['value']){
+            $selected = true;
+        }
 
-function editMoreLinkHTML(string $title, string $sectionID, string $linkText, string $infoText): string {
-    $linkHTML = "";
+        $disabled = $item['disabled'] ?? false;
 
-    $linkHTML .= htmlWrap('legend', $title);
-
-    $linkHTML .= '<div class="input-row">';
-
-    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $section_url = addQueryToURL($page_url, 'section', $sectionID, true);
-    $section_text = htmlWrap('span', $infoText);
-    $linkHTML .= htmlWrap('p', htmlWrap('a', htmlWrap('button', $linkText), array(
-        "href" => $section_url
-    )).$section_text);
-
-    $linkHTML .= "</div>";
-
-    $linkHTML = htmlWrap('fieldset', $linkHTML);
-
-    return $linkHTML;
+        $optionsHTML .= htmlWrap('option', $item['text'], array(
+            "value" => $item['value'],
+            "selected" => $selected,
+            "disabled" => $disabled,
+        ));
+    }
+    return $optionsHTML;
 }
 
 ?>
