@@ -33,17 +33,20 @@ $allowedSections = array(
     "connections",
     "media",
     "genres",
+    "persons"
 );
 $autoSections = array(
     "general" => "Allmänt",
     "media" => "Media",
     "genres" => "Genrer",
+    "persons" => "Personer",
 );
 $sectionTexts = array(
     "general" => "Betyg, titel etc.",
     "connections" => "Serietillhörighet etc.",
     "media" => "Bilder med mera",
     "genres" => "Klassificera efter genre",
+    "persons" => "Lista folk som jobbat med filmen",
 );
 $section = null;
 
@@ -83,6 +86,8 @@ else{
     echo htmlFieldset('Redigera mera', htmlWrap('ul', $sectionsHTML));
 
     include $GLOBALS['my_dir'].'admin/edit/movie/visibility.php';
+
+    echo formActionsHTML(['done']);
 
 }
 

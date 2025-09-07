@@ -70,6 +70,19 @@ function sanitizeIntegers(string $input, int $limit=0): string|null {
     }
     return $text;
 }
+/**
+ * Returns a new array filled with sanitized values
+ * @param array $input
+ * @param int $limit
+ * @return array
+ */
+function sanitizeIntegersArray(array $input, int $limit=0): array {
+    $arr = array();
+    foreach($input as $key => $value) {
+        $arr[$key] = sanitizeIntegers($value, $limit);
+    }
+    return $arr;
+}
 
 function sanitizeLettersLower(string $text, int $limit=0): string|null {
     // Remove everything but lowercase letters
@@ -104,7 +117,7 @@ function sanitizeMultiLineText(string $text, int $limit=0): string|null {
     return $text;
 }
 
-function dbArrayToStringForBinding(array $arr): string {
+function dbArrayToColumnStringForBinding(array $arr): string {
     $result = [];
     foreach ($arr as $name) {
         array_push($result, sprintf('%s=:%s', $name, $name));

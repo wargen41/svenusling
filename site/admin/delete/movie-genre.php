@@ -10,7 +10,7 @@ $table = "movies_genres";
 //     "Number",
 //     "Number2"
 // );
-// $fieldsToSet = dbArrayToStringForBinding($columns);
+// $fieldsToSet = dbArrayToColumnStringForBinding($columns);
 
 $statement = 'DELETE FROM '.$table.' WHERE MovieID=:MovieID AND GenreID=:GenreID';
 

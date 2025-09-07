@@ -1,17 +1,14 @@
 <?php
+/* Returns all movies which have the specified genres */
 
 $errors = [];
 
 $table = "movies_genres";
 
-$columns = array(
-    "MovieID",
-    "GenreID",
-);
-$columnsStr = implode(', ', $columns);
-$fieldsToSet = dbArrayToColumnStringForBinding($columns);
+$values = sanitizeIntegersArray($_POST['genres']);
+$valuesToMatch = dbArrayToWhereStringForBinding($columns);
 
-$statement = 'INSERT INTO '.$table.' ('.$columnsStr.') VALUES(:MovieID, :GenreID)';
+$statement = 'SELECT MovieID FROM '.$table.' WHERE GenreID=:MovieID AND GenreID=:GenreID';
 
 $movieid = sanitizeIntegers($_POST['movieid']);
 $genreid = sanitizeIntegers($_POST['genreid']);
@@ -19,7 +16,6 @@ $genreid = sanitizeIntegers($_POST['genreid']);
 $stmt = $db->prepare($statement);
 $stmt->bindValue(':MovieID', $movieid, SQLITE3_NUM);
 $stmt->bindValue(':GenreID', $genreid, SQLITE3_NUM);
-
 $result = $stmt->execute();
 
 if (!$result) {

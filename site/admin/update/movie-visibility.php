@@ -7,7 +7,7 @@ $table = "movies";
 $columns = array(
     "Hidden"
 );
-$fieldsToSet = dbArrayToStringForBinding($columns);
+$fieldsToSet = dbArrayToColumnStringForBinding($columns);
 
 $statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE MovieID=:MovieID';
 

@@ -14,7 +14,7 @@ foreach($keys as $key) {
     }
 }
 
-$fieldsToSet = dbArrayToStringForBinding($langKeys);
+$fieldsToSet = dbArrayToColumnStringForBinding($langKeys);
 
 $statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE id=:id';
 

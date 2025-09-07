@@ -14,7 +14,7 @@ $columns = array(
     "ViewDate",
     "IMDbID"
 );
-$fieldsToSet = dbArrayToStringForBinding($columns);
+$fieldsToSet = dbArrayToColumnStringForBinding($columns);
 
 $statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE MovieID=:MovieID';
 

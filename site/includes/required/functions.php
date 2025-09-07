@@ -41,6 +41,13 @@ function removeQueryFromURL(string $url, string $key): string {
     return $queryURL;
 }
 
+function removeAllQueriesFromURL(string $url): string {
+    $url = parse_url($url);
+
+    $URL = $url['scheme'].'://'.$url['host'].$url['path'];
+    return $URL;
+}
+
 function sanitizeQuery(string $value): string {
     // Remove everything but lower case letters a to z and integers
     $value = preg_replace('/[^a-z0-9]/', '', $value);
@@ -192,8 +199,6 @@ function print_rPRE($value) {
     echo '</pre>';
 }
 
-// Nedanstående hör egentligen inte hemma här
-// HTML.php är tänkt till mer allmänna HTML-element
 function formActionsHTML(array $actions = ['save', 'cancel']): string {
     $actionsHTML = "";
 
@@ -209,6 +214,9 @@ function formActionsHTML(array $actions = ['save', 'cancel']): string {
                 break;
             case "back":
                 $actionsHTML .= formActionsBackHTML();
+                break;
+            case "done":
+                $actionsHTML .= formActionsDoneHTML();
                 break;
         }
     }
@@ -226,8 +234,8 @@ function formActionsHTML(array $actions = ['save', 'cancel']): string {
     return $actionsHTML;
 }
 
-function formActionsSaveHTML(): string {
-    return '<input type="submit" value="Spara">';
+function formActionsSaveHTML(string $text = 'Spara'): string {
+    return '<input type="submit" value="'.$text.'">';
 }
 
 function formActionsCancelHTML(string $text = 'Avbryt'): string {
@@ -240,6 +248,15 @@ function formActionsCancelHTML(string $text = 'Avbryt'): string {
 }
 function formActionsBackHTML(): string {
     return formActionsCancelHTML('Tillbaka');
+}
+
+function formActionsDoneHTML(string $text = 'Klar'): string {
+    $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $back_url = removeAllQueriesFromURL($page_url);
+    return htmlWrap('a', htmlWrap('button', $text), array(
+        "href" => $back_url,
+        "class" => "button"
+    ));
 }
 
 function editMoreLinkHTML(string $title, string $sectionID, string $linkText, string $infoText): string {

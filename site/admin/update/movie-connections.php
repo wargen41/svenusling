@@ -10,7 +10,7 @@ $columns = array(
     "Number",
     "Number2"
 );
-$fieldsToSet = dbArrayToStringForBinding($columns);
+$fieldsToSet = dbArrayToColumnStringForBinding($columns);
 
 $statement = 'UPDATE '.$table.' SET '.$fieldsToSet.' WHERE MovieID=:MovieID';
 
