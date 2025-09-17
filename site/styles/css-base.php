@@ -242,6 +242,9 @@ main.login
 main.login > form
 {
     margin: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
 }
 
 a
