@@ -127,6 +127,23 @@ function dbArrayToColumnStringForBinding(array $arr): string {
     return $str;
 }
 
+function dbArrayToWhereStringForBinding(array $arr, string $column, string $operator = 'AND'): string {
+    $result = [];
+    foreach ($arr as $name) {
+        array_push($result, sprintf('%s=:%s', $name, $name));
+    }
+    $str = implode(', ', $result);
+
+    return $str;
+}
+
+function dbPlaceholdersArray(int|array $count): string {
+    if(is_array($count)) {
+        $count = count($count);
+    }
+    return implode(',', array_fill(0, $count, '?'));
+}
+
 function dbCountAllRows(string $table): int {
     $query = "SELECT COUNT(*) FROM ".$table;
     $res = $GLOBALS['db']->querySingle($query);
@@ -301,6 +318,42 @@ function getArticleInAllLanguages(string $id): array {
     }
 
     return $article;
+}
+
+function dbSearch($endpoint, $postData) {
+    $url = "$endpoint.php";
+    print_rPRE($url);
+
+    // The data you want to POST
+    $postData = [
+        'genres' => ['1', '3'],
+        'limit' => '10'
+    ];
+
+    // Initialize cURL
+    $ch = curl_init($url);
+
+    // Set cURL options for POST
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // Optional: set headers if needed
+    // curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
+
+    // Execute request and get response
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+
+    // Decode JSON response
+    $data = json_decode($response, true);
+
+    if ($data && $data['status'] === 'success') {
+        echo $data['message'];
+    } else {
+        echo "Error: " . ($data['message'] ?? 'Unknown');
+    }
 }
 
 ?>
