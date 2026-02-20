@@ -1,0 +1,61 @@
+# Starta testservern
+php -S localhost:8000 -t public
+
+# 1. Register (if you haven't already)
+RESPONSE=$(curl -s -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }')
+
+echo $RESPONSE
+
+# Save the token (you'll need to extract it manually from the response)
+# It will look like: "token": "eyJ0eXAi..."
+
+TOKEN="your_token_here"
+
+# 2. Make the user an admin
+php make_admin.php testuser
+
+#### LOGGA IN EFTER ATT ANVÄNDAREN BLIVIT ADMIN
+RESPONSE=$(curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }')
+echo $RESPONSE
+
+#### Använd token från admininloggningen istället
+
+TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NzE1NzMwMDYsImV4cCI6MTc3MTU3NjYwNiwic3ViIjoxLCJyb2xlIjoiYWRtaW4ifQ.ARKlOtSro5-SNOqqP-LayoguQ8s8xt-toBgETOFR0pI"
+
+# 3. Create a movie
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "title": "The Matrix",
+    "description": "A sci-fi masterpiece",
+    "year": 1999,
+    "director": "The Wachowskis"
+  }'
+
+# 4. Get all movies
+curl http://localhost:8000/api/movies
+
+# 5. Add a review
+curl -X POST http://localhost:8000/api/reviews \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "movie_id": 1,
+    "rating": 9.5,
+    "comment": "Amazing film!"
+  }'
+
+# 6. Get the movie with reviews
+curl http://localhost:8000/api/movies/1

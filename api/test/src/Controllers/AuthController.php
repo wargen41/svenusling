@@ -12,7 +12,12 @@ class AuthController
 
     public function __construct()
     {
-        $this->db = Database::getInstance()->getConnection();
+        try {
+            $this->db = Database::getInstance()->getConnection();
+        } catch (\Exception $e) {
+            error_log('AuthController init error: ' . $e->getMessage());
+            throw $e;
+        }
     }
 
     /**
@@ -21,11 +26,15 @@ class AuthController
     public function register(Request $request, Response $response): Response
     {
         try {
+            error_log('register() called');
+            
             $data = $request->getParsedBody();
+            error_log('Parsed body: ' . json_encode($data));
 
             // Validate input
             $errors = $this->validateRegister($data);
             if (!empty($errors)) {
+                error_log('Validation errors: ' . json_encode($errors));
                 return $this->jsonResponse(
                     $response,
                     ['error' => 'Validation failed', 'details' => $errors],
@@ -33,12 +42,15 @@ class AuthController
                 );
             }
 
+            error_log('Validation passed, checking if user exists...');
+            
             // Check if user exists
             $stmt = $this->db->prepare('
                 SELECT id FROM users WHERE email = ? OR username = ?
             ');
             $stmt->execute([$data['email'], $data['username']]);
             if ($stmt->fetch()) {
+                error_log('User already exists');
                 return $this->jsonResponse(
                     $response,
                     ['error' => 'Email or username already exists'],
@@ -46,26 +58,37 @@ class AuthController
                 );
             }
 
+            error_log('User does not exist, hashing password...');
+            
             // Hash password
             $passwordHash = password_hash($data['password'], PASSWORD_BCRYPT);
+            error_log('Password hashed successfully');
 
+            error_log('Inserting new user...');
+            
             // Insert user
             $stmt = $this->db->prepare('
                 INSERT INTO users (username, email, password_hash, role)
                 VALUES (?, ?, ?, ?)
             ');
 
-            $stmt->execute([
+            $result = $stmt->execute([
                 $data['username'],
                 $data['email'],
                 $passwordHash,
                 'user'
             ]);
-
+            
+            error_log('Insert result: ' . ($result ? 'true' : 'false'));
+            
             $userId = $this->db->lastInsertId();
+            error_log('New user ID: ' . $userId);
 
+            error_log('Generating JWT token...');
+            
             // Generate token
             $token = $this->generateToken($userId, 'user');
+            error_log('Token generated successfully');
 
             return $this->jsonResponse(
                 $response,
@@ -81,10 +104,29 @@ class AuthController
                 ],
                 201
             );
-        } catch (\Exception $e) {
+        } catch (\PDOException $e) {
+            error_log('✗ PDO Error in register: ' . $e->getMessage());
+            error_log('Code: ' . $e->getCode());
+            error_log('Trace: ' . $e->getTraceAsString());
             return $this->jsonResponse(
                 $response,
-                ['error' => 'Registration failed'],
+                [
+                    'error' => 'Database error',
+                    'message' => $e->getMessage()
+                ],
+                500
+            );
+        } catch (\Exception $e) {
+            error_log('✗ Error in register: ' . $e->getMessage());
+            error_log('File: ' . $e->getFile());
+            error_log('Line: ' . $e->getLine());
+            error_log('Trace: ' . $e->getTraceAsString());
+            return $this->jsonResponse(
+                $response,
+                [
+                    'error' => 'Registration failed',
+                    'message' => $e->getMessage()
+                ],
                 500
             );
         }
@@ -96,7 +138,10 @@ class AuthController
     public function login(Request $request, Response $response): Response
     {
         try {
+            error_log('login() called');
+            
             $data = $request->getParsedBody();
+            error_log('Parsed body: ' . json_encode($data));
 
             if (empty($data['email']) || empty($data['password'])) {
                 return $this->jsonResponse(
@@ -106,6 +151,8 @@ class AuthController
                 );
             }
 
+            error_log('Getting user by email: ' . $data['email']);
+            
             // Get user
             $stmt = $this->db->prepare('
                 SELECT id, username, email, password_hash, role
@@ -114,7 +161,8 @@ class AuthController
             $stmt->execute([$data['email']]);
             $user = $stmt->fetch();
 
-            if (!$user || !password_verify($data['password'], $user['password_hash'])) {
+            if (!$user) {
+                error_log('User not found');
                 return $this->jsonResponse(
                     $response,
                     ['error' => 'Invalid credentials'],
@@ -122,6 +170,19 @@ class AuthController
                 );
             }
 
+            error_log('User found, verifying password...');
+            
+            if (!password_verify($data['password'], $user['password_hash'])) {
+                error_log('Password verification failed');
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Invalid credentials'],
+                    401
+                );
+            }
+
+            error_log('Password verified, generating token...');
+            
             // Generate token
             $token = $this->generateToken($user['id'], $user['role']);
 
@@ -137,6 +198,8 @@ class AuthController
                 ]
             ]);
         } catch (\Exception $e) {
+            error_log('✗ Error in login: ' . $e->getMessage());
+            error_log('Trace: ' . $e->getTraceAsString());
             return $this->jsonResponse(
                 $response,
                 ['error' => 'Login failed'],
@@ -147,6 +210,8 @@ class AuthController
 
     private function generateToken($userId, $role)
     {
+        error_log('generateToken called with userId: ' . $userId . ', role: ' . $role);
+        
         $issuedAt = time();
         $payload = [
             'iat' => $issuedAt,
@@ -155,11 +220,20 @@ class AuthController
             'role' => $role
         ];
 
-        return JWT::encode($payload, JWT_SECRET, JWT_ALGORITHM);
+        try {
+            $token = JWT::encode($payload, JWT_SECRET, JWT_ALGORITHM);
+            error_log('Token encoded successfully');
+            return $token;
+        } catch (\Exception $e) {
+            error_log('✗ Error encoding token: ' . $e->getMessage());
+            throw $e;
+        }
     }
 
     private function validateRegister($data)
     {
+        error_log('validateRegister called with data: ' . json_encode($data));
+        
         $errors = [];
 
         if (empty($data['username'])) {
@@ -180,6 +254,8 @@ class AuthController
             $errors['password'] = 'Password must be at least 8 characters';
         }
 
+        error_log('Validation errors: ' . json_encode($errors));
+        
         return $errors;
     }
 

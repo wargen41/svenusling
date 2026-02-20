@@ -141,17 +141,26 @@ class MovieController
     public function createMovie(Request $request, Response $response): Response
     {
         try {
+            error_log('createMovie() called');
+            
             $userId = $request->getAttribute('user_id');
             $userRole = $request->getAttribute('user_role');
+            
+            error_log('User ID from request: ' . $userId);
+            error_log('User role from request: ' . $userRole);
+            error_log('User role type: ' . gettype($userRole));
 
             // Check authorization
             if ($userRole !== 'admin') {
+                error_log('✗ User is not admin. Role is: ' . var_export($userRole, true));
                 return $this->jsonResponse(
                     $response,
                     ['error' => 'Admin access required'],
                     403
                 );
             }
+            
+            error_log('✓ User is admin, proceeding...');
 
             $data = $request->getParsedBody();
             error_log('Creating movie with data: ' . json_encode($data));

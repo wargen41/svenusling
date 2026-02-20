@@ -56,7 +56,13 @@ error_log('Step 5: Creating Slim app...');
 // Create Slim app
 $app = AppFactory::create();
 
-error_log('Step 6: Adding error middleware...');
+error_log('Step 6: Adding middleware...');
+
+// Add BodyParsingMiddleware to parse JSON request bodies
+// This is CRITICAL for POST requests with JSON data
+$app->addBodyParsingMiddleware();
+
+error_log('Step 7: Adding error middleware...');
 
 // Add error handling middleware with detailed errors in development
 $errorMiddleware = $app->addErrorMiddleware(
@@ -89,7 +95,7 @@ $errorMiddleware->setDefaultErrorHandler(function ($request, $exception, $displa
         ->withHeader('Content-Type', 'application/json');
 });
 
-error_log('Step 7: Adding CORS middleware...');
+error_log('Step 8: Adding CORS middleware...');
 
 // Add CORS middleware
 $app->add(function ($request, $handler) {
@@ -100,14 +106,14 @@ $app->add(function ($request, $handler) {
         ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 });
 
-error_log('Step 8: Adding preflight handler...');
+error_log('Step 9: Adding preflight handler...');
 
 // Handle preflight requests
 $app->options('/{routes:.+}', function ($request, $response) {
     return $response;
 });
 
-error_log('Step 9: Registering routes...');
+error_log('Step 10: Registering routes...');
 
 // Register routes
 try {
@@ -119,7 +125,7 @@ try {
     throw $e;
 }
 
-error_log('Step 10: Running application...');
+error_log('Step 11: Running application...');
 error_log('=== APPLICATION READY ===');
 
 // Run app
