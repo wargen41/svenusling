@@ -3046,3 +3046,2833 @@ curl -X POST http://localhost:8000/api/reviews \
 ✅ **Great error messages** - Clear validation feedback
 
 Would you like me to show you how to add testing, deploy this, or explain any specific part in more detail?
+
+## @wargen41
+
+I'm testing the PHP demo implementation. Started the development server without any errors mentioned. 
+But when I try to visit the API using the curl command I get: {"error":"Failed to fetch movies"}
+And in the server I get a 500 error. What could be wrong and how do I enable more error diagnostics to find out what is causing the error?
+
+## Copilot
+
+Good catch! The 500 error without details is frustrating. Let's add better error diagnostics and fix the likely issues. The problem is probably in the database initialization or the route configuration.
+
+## Step 1: Enable Error Reporting in PHP
+
+First, let's modify `public/index.php` to show errors:
+
+```php name=public/index.php url=https://github.com/slimframework/Slim-Skeleton/blob/master/public/index.php
+<?php
+// Enable error reporting for development
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config.php';
+
+use Slim\Factory\AppFactory;
+use App\Config\Database;
+use App\Routes;
+
+try {
+    // Initialize database
+    $db = Database::getInstance();
+    $db->initializeTables();
+} catch (\Exception $e) {
+    // Return error response if database fails
+    header('Content-Type: application/json');
+    http_response_code(500);
+    echo json_encode([
+        'error' => 'Database initialization failed',
+        'message' => $e->getMessage(),
+        'trace' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
+    ]);
+    exit;
+}
+
+// Create Slim app
+$app = AppFactory::create();
+
+// Add error handling middleware with detailed errors in development
+$errorMiddleware = $app->addErrorMiddleware(
+    ENVIRONMENT === 'development', // displayErrorDetails
+    true,  // logErrors
+    true   // logErrorDetails
+);
+
+// Add custom error handler
+$errorMiddleware->setDefaultErrorHandler(function ($request, $exception, $displayErrorDetails) {
+    $payload = [
+        'error' => $exception->getMessage(),
+    ];
+    
+    if ($displayErrorDetails) {
+        $payload['file'] = $exception->getFile();
+        $payload['line'] = $exception->getLine();
+        $payload['trace'] = $exception->getTraceAsString();
+    }
+    
+    $response = new \Slim\Psr7\Response();
+    $response->getBody()->write(json_encode($payload));
+    
+    return $response
+        ->withStatus($exception->getCode() ?: 500)
+        ->withHeader('Content-Type', 'application/json');
+});
+
+// Add CORS middleware
+$app->add(function ($request, $handler) {
+    $response = $handler->handle($request);
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+});
+
+// Handle preflight requests
+$app->options('/{routes:.+}', function ($request, $response) {
+    return $response;
+});
+
+// Register routes
+try {
+    Routes::register($app);
+} catch (\Exception $e) {
+    error_log('Route registration failed: ' . $e->getMessage());
+    throw $e;
+}
+
+// Run app
+$app->run();
+```
+
+## Step 2: Fix Database Configuration
+
+Update `src/Config/Database.php` to handle SQLite path issues:
+
+```php name=src/Config/Database.php url=https://github.com/example/repo
+<?php
+namespace App\Config;
+
+use PDO;
+use PDOException;
+
+class Database
+{
+    private static $instance = null;
+    private $connection;
+
+    private function __construct()
+    {
+        try {
+            // Ensure database directory exists
+            $dbDir = dirname(DB_PATH);
+            if (!is_dir($dbDir)) {
+                mkdir($dbDir, 0755, true);
+            }
+            
+            // Connect to SQLite database
+            $this->connection = new PDO(
+                'sqlite:' . DB_PATH,
+                null,
+                null,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                ]
+            );
+            
+            error_log('Database connected: ' . DB_PATH);
+        } catch (PDOException $e) {
+            error_log('Database connection failed: ' . $e->getMessage());
+            throw new \Exception('Database connection failed: ' . $e->getMessage());
+        }
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
+    }
+
+    public function initializeTables()
+    {
+        try {
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT UNIQUE NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    password_hash TEXT NOT NULL,
+                    role TEXT DEFAULT "user",
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ');
+            error_log('Users table created/verified');
+
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS movies (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT NOT NULL,
+                    description TEXT,
+                    year INTEGER,
+                    director TEXT,
+                    rating REAL DEFAULT 0,
+                    created_by INTEGER,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (created_by) REFERENCES users(id)
+                )
+            ');
+            error_log('Movies table created/verified');
+
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS reviews (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    movie_id INTEGER NOT NULL,
+                    user_id INTEGER NOT NULL,
+                    rating REAL NOT NULL,
+                    comment TEXT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (movie_id) REFERENCES movies(id),
+                    FOREIGN KEY (user_id) REFERENCES users(id)
+                )
+            ');
+            error_log('Reviews table created/verified');
+            
+        } catch (PDOException $e) {
+            error_log('Table creation failed: ' . $e->getMessage());
+            throw new \Exception('Table creation failed: ' . $e->getMessage());
+        }
+    }
+}
+```
+
+## Step 3: Fix MovieController
+
+The issue is likely in how we're catching exceptions. Let's improve error handling:
+
+```php name=src/Controllers/MovieController.php url=https://github.com/example/repo#L1-L50
+<?php
+namespace App\Controllers;
+
+use App\Config\Database;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+class MovieController
+{
+    private $db;
+
+    public function __construct()
+    {
+        try {
+            $this->db = Database::getInstance()->getConnection();
+        } catch (\Exception $e) {
+            error_log('MovieController init error: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    /**
+     * Public: Get all movies
+     */
+    public function listMovies(Request $request, Response $response): Response
+    {
+        try {
+            error_log('listMovies called');
+            
+            $stmt = $this->db->query('
+                SELECT id, title, description, year, director, rating, created_at
+                FROM movies
+                ORDER BY created_at DESC
+            ');
+            
+            if ($stmt === false) {
+                throw new \Exception('Query failed');
+            }
+            
+            $movies = $stmt->fetchAll();
+            error_log('Fetched ' . count($movies) . ' movies');
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'data' => $movies,
+                'count' => count($movies)
+            ]);
+        } catch (\PDOException $e) {
+            error_log('PDO Error in listMovies: ' . $e->getMessage());
+            return $this->jsonResponse(
+                $response,
+                [
+                    'error' => 'Database error',
+                    'message' => $e->getMessage()
+                ],
+                500
+            );
+        } catch (\Exception $e) {
+            error_log('Error in listMovies: ' . $e->getMessage());
+            error_log('Trace: ' . $e->getTraceAsString());
+            return $this->jsonResponse(
+                $response,
+                [
+                    'error' => 'Failed to fetch movies',
+                    'message' => $e->getMessage(),
+                    'trace' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
+                ],
+                500
+            );
+        }
+    }
+
+    /**
+     * Public: Get single movie with reviews
+     */
+    public function getMovie(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $movieId = $args['id'] ?? null;
+
+            if (!$movieId || !is_numeric($movieId)) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Invalid movie ID'],
+                    400
+                );
+            }
+
+            // Get movie
+            $stmt = $this->db->prepare('
+                SELECT id, title, description, year, director, rating, created_at
+                FROM movies
+                WHERE id = ?
+            ');
+            
+            if ($stmt === false) {
+                throw new \Exception('Query preparation failed');
+            }
+            
+            $stmt->execute([$movieId]);
+            $movie = $stmt->fetch();
+
+            if (!$movie) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Movie not found'],
+                    404
+                );
+            }
+
+            // Get reviews for this movie
+            $stmt = $this->db->prepare('
+                SELECT r.id, r.rating, r.comment, r.created_at, u.username
+                FROM reviews r
+                JOIN users u ON r.user_id = u.id
+                WHERE r.movie_id = ?
+                ORDER BY r.created_at DESC
+            ');
+            $stmt->execute([$movieId]);
+            $reviews = $stmt->fetchAll();
+
+            $movie['reviews'] = $reviews;
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'data' => $movie
+            ]);
+        } catch (\Exception $e) {
+            error_log('Error in getMovie: ' . $e->getMessage());
+            return $this->jsonResponse(
+                $response,
+                ['error' => 'Failed to fetch movie', 'message' => $e->getMessage()],
+                500
+            );
+        }
+    }
+
+    /**
+     * Protected: Create movie (admin only)
+     */
+    public function createMovie(Request $request, Response $response): Response
+    {
+        try {
+            $userId = $request->getAttribute('user_id');
+            $userRole = $request->getAttribute('user_role');
+
+            // Check authorization
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Admin access required'],
+                    403
+                );
+            }
+
+            $data = $request->getParsedBody();
+            error_log('Creating movie with data: ' . json_encode($data));
+
+            // Validate input
+            $errors = $this->validateMovieInput($data);
+            if (!empty($errors)) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Validation failed', 'details' => $errors],
+                    422
+                );
+            }
+
+            // Insert movie
+            $stmt = $this->db->prepare('
+                INSERT INTO movies (title, description, year, director, created_by)
+                VALUES (?, ?, ?, ?, ?)
+            ');
+
+            if ($stmt === false) {
+                throw new \Exception('Statement preparation failed');
+            }
+
+            $stmt->execute([
+                $data['title'],
+                $data['description'] ?? null,
+                $data['year'] ?? null,
+                $data['director'] ?? null,
+                $userId
+            ]);
+
+            $movieId = $this->db->lastInsertId();
+            error_log('Movie created with ID: ' . $movieId);
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => 'Movie created',
+                    'id' => (int)$movieId
+                ],
+                201
+            );
+        } catch (\Exception $e) {
+            error_log('Error in createMovie: ' . $e->getMessage());
+            return $this->jsonResponse(
+                $response,
+                ['error' => 'Failed to create movie', 'message' => $e->getMessage()],
+                500
+            );
+        }
+    }
+
+    // ... rest of the methods remain the same, with similar error logging ...
+
+    private function validateMovieInput($data)
+    {
+        $errors = [];
+
+        if (empty($data['title'])) {
+            $errors['title'] = 'Title is required';
+        } elseif (strlen($data['title']) < 2) {
+            $errors['title'] = 'Title must be at least 2 characters';
+        }
+
+        if (!empty($data['year']) && (!is_numeric($data['year']) || $data['year'] < 1800 || $data['year'] > date('Y') + 5)) {
+            $errors['year'] = 'Invalid year';
+        }
+
+        return $errors;
+    }
+
+    private function jsonResponse(Response $response, $data, $status = 200): Response
+    {
+        $response->getBody()->write(json_encode($data));
+        return $response
+            ->withStatus($status)
+            ->withHeader('Content-Type', 'application/json');
+    }
+}
+```
+
+## Step 4: Check Your Directory Structure
+
+Make sure your project structure is correct:
+
+```bash
+# From your project root, check the structure
+ls -la
+# Should show: vendor/, public/, src/, config.php, composer.json, etc.
+
+# Check if vendor/autoload.php exists
+ls vendor/autoload.php
+
+# Check if the src folder structure exists
+ls -la src/
+ls -la src/Config/
+ls -la src/Controllers/
+```
+
+## Step 5: Verify SQLite is Installed
+
+```bash
+# Check if SQLite extension is available in PHP
+php -m | grep sqlite
+
+# If not installed, install it:
+# On macOS:
+brew install php-sqlite3
+
+# On Ubuntu/Debian:
+sudo apt-get install php-sqlite3
+
+# On Windows, uncomment in php.ini:
+# extension=pdo_sqlite
+```
+
+## Step 6: Check PHP Error Logs
+
+While running the server, check for errors:
+
+```bash
+# If you can see the terminal running your server, errors should show there
+
+# Or check PHP error log (location varies by system)
+# macOS
+tail -f /usr/local/var/log/php-fpm.log
+
+# Linux
+tail -f /var/log/php-fpm.log
+
+# Or check where PHP logs go
+php -i | grep error_log
+```
+
+## Step 7: Test Database Connection Directly
+
+Create a test file to verify database connectivity:
+
+```php name=test_db.php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
+
+use App\Config\Database;
+
+try {
+    echo "Attempting to connect to database...\n";
+    $db = Database::getInstance();
+    echo "✓ Database connection successful\n";
+    
+    echo "Database path: " . DB_PATH . "\n";
+    
+    echo "Initializing tables...\n";
+    $db->initializeTables();
+    echo "✓ Tables initialized\n";
+    
+    // Test query
+    echo "Testing query...\n";
+    $conn = $db->getConnection();
+    $stmt = $conn->query('SELECT COUNT(*) as count FROM movies');
+    $result = $stmt->fetch();
+    echo "✓ Query successful. Movies count: " . $result['count'] . "\n";
+    
+} catch (\Exception $e) {
+    echo "✗ Error: " . $e->getMessage() . "\n";
+    echo "Trace:\n" . $e->getTraceAsString() . "\n";
+    exit(1);
+}
+
+echo "\n✓ All checks passed!\n";
+```
+
+Run it:
+```bash
+php test_db.php
+```
+
+## Step 8: Test with Simpler curl
+
+```bash
+# Test with minimal request
+curl -v http://localhost:8000/api/movies
+
+# The -v flag shows request/response headers which helps debug
+```
+
+Now test again with the improved error handling. The error messages should tell you exactly what's wrong. Let me know what the new error output says!
+
+## @wargen41
+
+Ah, now I get: {"error":"Database error","message":"SQLSTATE[HY000]: General error: 1 no such column: description"}
+
+## Copilot
+
+Ah! That's the real issue. The database schema doesn't match what the code expects. This happens because SQLite doesn't support `ALTER TABLE` in the same way as other databases, so if the tables were created with a different schema initially, we need to fix it.
+
+## Solution: Reset and Recreate the Database
+
+### Option 1: Delete the Database File (Easiest)
+
+```bash
+# Stop your development server (Ctrl+C)
+
+# Delete the existing database
+rm movies.db
+
+# Restart the server
+php -S localhost:8000 -t public
+```
+
+The database will be recreated fresh with the correct schema when you restart.
+
+### Option 2: Create a Database Reset Script
+
+If you want to keep the ability to reset easily, create this script:
+
+```php name=reset_db.php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
+
+use App\Config\Database;
+
+try {
+    echo "Resetting database...\n";
+    
+    // Delete database file if it exists
+    if (file_exists(DB_PATH)) {
+        unlink(DB_PATH);
+        echo "✓ Deleted old database\n";
+    }
+    
+    // Create new database with fresh schema
+    $db = Database::getInstance();
+    $db->initializeTables();
+    
+    echo "✓ Database reset successfully!\n";
+    echo "Database path: " . DB_PATH . "\n";
+    
+} catch (\Exception $e) {
+    echo "✗ Error: " . $e->getMessage() . "\n";
+    exit(1);
+}
+```
+
+Run it:
+```bash
+php reset_db.php
+```
+
+### Option 3: Manual Schema Update (If you want to keep data)
+
+If you had data you wanted to keep, you could migrate the schema, but that's more complex. For development, just delete and recreate.
+
+## Verify It Works Now
+
+After resetting the database:
+
+```bash
+# Test the movies endpoint
+curl http://localhost:8000/api/movies
+
+# Should return:
+# {"success":true,"data":[],"count":0}
+```
+
+Great! Now let's test the full flow:
+
+### 1. Register a user:
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }'
+```
+
+This should return something like:
+```json
+{
+  "success": true,
+  "message": "User registered",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGc...",
+  "user": {
+    "id": 1,
+    "username": "testuser",
+    "email": "test@example.com"
+  }
+}
+```
+
+Save that token for the next steps.
+
+### 2. To create movies as admin, you'll need to promote the user
+
+First, let's add a helper script to make users admin:
+
+```php name=make_admin.php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
+
+use App\Config\Database;
+
+$username = $argv[1] ?? 'testuser';
+
+try {
+    $db = Database::getInstance()->getConnection();
+    
+    $stmt = $db->prepare('UPDATE users SET role = ? WHERE username = ?');
+    $stmt->execute(['admin', $username]);
+    
+    if ($stmt->rowCount() > 0) {
+        echo "✓ User '$username' is now admin\n";
+    } else {
+        echo "✗ User '$username' not found\n";
+    }
+    
+} catch (\Exception $e) {
+    echo "✗ Error: " . $e->getMessage() . "\n";
+    exit(1);
+}
+```
+
+Run it:
+```bash
+php make_admin.php testuser
+```
+
+### 3. Now test creating a movie (use the token from step 1):
+
+```bash
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -d '{
+    "title": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over a number of years...",
+    "year": 1994,
+    "director": "Frank Darabont"
+  }'
+```
+
+### 4. Get all movies (public):
+```bash
+curl http://localhost:8000/api/movies
+```
+
+### 5. Get a specific movie with reviews (public):
+```bash
+curl http://localhost:8000/api/movies/1
+```
+
+### 6. Add a review (with token):
+```bash
+curl -X POST http://localhost:8000/api/reviews \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -d '{
+    "movie_id": 1,
+    "rating": 9.5,
+    "comment": "One of the greatest films ever made!"
+  }'
+```
+
+## Why This Happened
+
+SQLite creates table schemas once and they persist. If the initial schema creation had different columns (or failed partway through), the tables would have an old schema. When your code tried to query for columns that didn't exist, you got that error.
+
+This is why the error handling we added earlier was so important—it showed you exactly what the problem was!
+
+Let me know once you get it working with the reset database!
+
+## @wargen41
+
+I stopped the server and deleted the database file, but no file was recreated.
+
+## Copilot
+
+Good catch! The database file isn't being created automatically. We need to ensure it's created when the server starts. Let's fix this.
+
+## Step 1: Update the Entry Point
+
+Modify `public/index.php` to explicitly create the database file:
+
+```php name=public/index.php
+<?php
+// Enable error reporting for development
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config.php';
+
+use Slim\Factory\AppFactory;
+use App\Config\Database;
+use App\Routes;
+
+try {
+    echo "Starting application...\n";
+    error_log('Application starting');
+    
+    // Initialize database - this will create the file if it doesn't exist
+    echo "Initializing database at: " . DB_PATH . "\n";
+    $db = Database::getInstance();
+    $db->initializeTables();
+    echo "✓ Database initialized\n";
+    error_log('Database initialized successfully');
+    
+} catch (\Exception $e) {
+    // Log the error
+    error_log('Database initialization failed: ' . $e->getMessage());
+    error_log('Trace: ' . $e->getTraceAsString());
+    
+    // Return error response
+    header('Content-Type: application/json');
+    http_response_code(500);
+    echo json_encode([
+        'error' => 'Database initialization failed',
+        'message' => $e->getMessage(),
+        'trace' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
+    ]);
+    exit(1);
+}
+
+// Create Slim app
+$app = AppFactory::create();
+
+// Add error handling middleware with detailed errors in development
+$errorMiddleware = $app->addErrorMiddleware(
+    ENVIRONMENT === 'development', // displayErrorDetails
+    true,  // logErrors
+    true   // logErrorDetails
+);
+
+// Add custom error handler
+$errorMiddleware->setDefaultErrorHandler(function ($request, $exception, $displayErrorDetails) {
+    error_log('Error: ' . $exception->getMessage());
+    
+    $payload = [
+        'error' => $exception->getMessage(),
+    ];
+    
+    if ($displayErrorDetails) {
+        $payload['file'] = $exception->getFile();
+        $payload['line'] = $exception->getLine();
+        $payload['trace' => $exception->getTraceAsString();
+    }
+    
+    $response = new \Slim\Psr7\Response();
+    $response->getBody()->write(json_encode($payload));
+    
+    return $response
+        ->withStatus($exception->getCode() ?: 500)
+        ->withHeader('Content-Type', 'application/json');
+});
+
+// Add CORS middleware
+$app->add(function ($request, $handler) {
+    $response = $handler->handle($request);
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+});
+
+// Handle preflight requests
+$app->options('/{routes:.+}', function ($request, $response) {
+    return $response;
+});
+
+// Register routes
+try {
+    Routes::register($app);
+    error_log('Routes registered successfully');
+} catch (\Exception $e) {
+    error_log('Route registration failed: ' . $e->getMessage());
+    throw $e;
+}
+
+// Run app
+$app->run();
+```
+
+## Step 2: Update Database.php
+
+Make sure the database file is created with proper directory handling:
+
+```php name=src/Config/Database.php
+<?php
+namespace App\Config;
+
+use PDO;
+use PDOException;
+
+class Database
+{
+    private static $instance = null;
+    private $connection;
+
+    private function __construct()
+    {
+        try {
+            // Get the directory where the database should be stored
+            $dbDir = dirname(DB_PATH);
+            
+            // Create directory if it doesn't exist
+            if (!is_dir($dbDir)) {
+                if (!mkdir($dbDir, 0755, true)) {
+                    throw new \Exception("Could not create database directory: $dbDir");
+                }
+                error_log("Created database directory: $dbDir");
+            }
+            
+            // Check if directory is writable
+            if (!is_writable($dbDir)) {
+                throw new \Exception("Database directory is not writable: $dbDir");
+            }
+            
+            error_log("Connecting to database: " . DB_PATH);
+            
+            // Connect to SQLite database - this creates the file if it doesn't exist
+            $this->connection = new PDO(
+                'sqlite:' . DB_PATH,
+                null,
+                null,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                ]
+            );
+            
+            // Enable foreign keys
+            $this->connection->exec('PRAGMA foreign_keys = ON');
+            
+            error_log('✓ Database connected: ' . DB_PATH);
+            error_log('Database file exists: ' . (file_exists(DB_PATH) ? 'yes' : 'no'));
+            
+        } catch (PDOException $e) {
+            error_log('✗ PDO Exception: ' . $e->getMessage());
+            throw new \Exception('Database connection failed: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            error_log('✗ Exception: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
+    }
+
+    public function initializeTables()
+    {
+        try {
+            // Check if tables already exist
+            $tables = $this->connection->query("SELECT name FROM sqlite_master WHERE type='table'")->fetchAll();
+            $existingTables = array_column($tables, 'name');
+            
+            if (in_array('movies', $existingTables)) {
+                error_log('✓ Tables already exist');
+                return;
+            }
+            
+            error_log('Creating tables...');
+
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT UNIQUE NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    password_hash TEXT NOT NULL,
+                    role TEXT DEFAULT "user",
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ');
+            error_log('✓ Users table created');
+
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS movies (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT NOT NULL,
+                    description TEXT,
+                    year INTEGER,
+                    director TEXT,
+                    rating REAL DEFAULT 0,
+                    created_by INTEGER,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (created_by) REFERENCES users(id)
+                )
+            ');
+            error_log('✓ Movies table created');
+
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS reviews (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    movie_id INTEGER NOT NULL,
+                    user_id INTEGER NOT NULL,
+                    rating REAL NOT NULL,
+                    comment TEXT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (movie_id) REFERENCES movies(id),
+                    FOREIGN KEY (user_id) REFERENCES users(id)
+                )
+            ');
+            error_log('✓ Reviews table created');
+            
+            error_log('✓ All tables created successfully');
+            
+        } catch (PDOException $e) {
+            error_log('✗ PDOException in table creation: ' . $e->getMessage());
+            throw new \Exception('Table creation failed: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            error_log('✗ Exception in table creation: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+}
+```
+
+## Step 3: Verify config.php
+
+Make sure your `config.php` has the correct database path:
+
+```php name=config.php
+<?php
+// Database configuration
+// Use absolute path or relative path from project root
+$projectRoot = __DIR__;
+define('DB_PATH', $projectRoot . '/movies.db');
+
+// JWT configuration
+define('JWT_SECRET', getenv('JWT_SECRET') ?? 'your-secret-key-change-in-production');
+define('JWT_ALGORITHM', 'HS256');
+define('JWT_EXPIRATION', 3600); // 1 hour
+
+// API configuration
+define('API_VERSION', '1.0.0');
+define('ENVIRONMENT', getenv('ENVIRONMENT') ?? 'development');
+
+// CORS allowed origins
+define('ALLOWED_ORIGINS', [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://yourdomain.com'
+]);
+
+return [
+    'db_path' => DB_PATH,
+    'jwt_secret' => JWT_SECRET,
+    'jwt_algorithm' => JWT_ALGORITHM,
+    'jwt_expiration' => JWT_EXPIRATION,
+];
+```
+
+## Step 4: Start the Server and Check Logs
+
+Now start the server and watch the console output:
+
+```bash
+# Make sure you're in the project root directory
+cd /path/to/movie-api
+
+# Start the server
+php -S localhost:8000 -t public
+```
+
+You should see output like:
+```
+[Thu Feb 19 10:30:00 2026] PHP 8.1.0 Development Server (http://localhost:8000)
+[Thu Feb 19 10:30:00 2026] Listening on http://localhost:8000
+Starting application...
+Initializing database at: /path/to/movie-api/movies.db
+✓ Database initialized
+```
+
+If you see these messages, great! The database was created. Now test it:
+
+```bash
+# In another terminal, test the API
+curl http://localhost:8000/api/movies
+```
+
+Should return:
+```json
+{"success":true,"data":[],"count":0}
+```
+
+## Troubleshooting
+
+If the database still isn't being created, check these things:
+
+### 1. Check if the file was created:
+```bash
+ls -la movies.db
+
+# Or from the project root:
+ls -la *.db
+```
+
+### 2. Check PHP error log:
+```bash
+# Look at the terminal where you started the PHP server
+# Errors should be visible there
+
+# Or check system error log:
+php -i | grep "error_log"
+```
+
+### 3. Verify PHP has permission to write:
+```bash
+# Make sure the project directory is writable
+ls -ld .
+chmod 755 .  # Make directory readable/executable
+chmod 755 public/  # Make public directory readable/executable
+```
+
+### 4. Test database creation directly:
+```bash
+# Create test_connection.php
+cat > test_connection.php << 'EOF'
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$dbPath = __DIR__ . '/test.db';
+echo "Attempting to create: $dbPath\n";
+
+try {
+    $pdo = new PDO('sqlite:' . $dbPath);
+    echo "✓ Database created: $dbPath\n";
+    
+    if (file_exists($dbPath)) {
+        echo "✓ File exists\n";
+    } else {
+        echo "✗ File was not created\n";
+    }
+} catch (Exception $e) {
+    echo "✗ Error: " . $e->getMessage() . "\n";
+}
+EOF
+
+php test_connection.php
+```
+
+Let me know what output you see from the server console!
+
+## @wargen41
+
+The test_connection.php command worked. A test.db file was created. But I can't see any command like "new PDO" in the version 3 code of index.php. 
+
+## Copilot
+
+You're absolutely right! I didn't show you the complete fixed version of the code. The issue is that the `new PDO` call happens inside the `Database` class, but we need to make sure it's being called properly. Let me give you the complete, corrected `public/index.php`:
+
+```php name=public/index.php
+<?php
+// Enable error reporting for development
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config.php';
+
+use Slim\Factory\AppFactory;
+use App\Config\Database;
+use App\Routes;
+
+// Log startup
+error_log('=== APPLICATION STARTUP ===');
+error_log('Environment: ' . ENVIRONMENT);
+error_log('Database path: ' . DB_PATH);
+
+try {
+    error_log('Step 1: Getting database instance...');
+    $database = Database::getInstance();
+    error_log('Step 2: Database instance obtained');
+    
+    error_log('Step 3: Initializing tables...');
+    $database->initializeTables();
+    error_log('Step 4: Tables initialized');
+    
+    if (file_exists(DB_PATH)) {
+        error_log('✓ Database file exists: ' . DB_PATH);
+    } else {
+        error_log('✗ Database file NOT found: ' . DB_PATH);
+    }
+    
+} catch (\Exception $e) {
+    error_log('✗ FATAL ERROR during database initialization');
+    error_log('Error message: ' . $e->getMessage());
+    error_log('Error file: ' . $e->getFile());
+    error_log('Error line: ' . $e->getLine());
+    error_log('Error trace: ' . $e->getTraceAsString());
+    
+    // Return error response
+    header('Content-Type: application/json');
+    http_response_code(500);
+    echo json_encode([
+        'error' => 'Database initialization failed',
+        'message' => $e->getMessage(),
+        'file' => $e->getFile(),
+        'line' => $e->getLine(),
+        'trace' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
+    ]);
+    exit(1);
+}
+
+error_log('Step 5: Creating Slim app...');
+
+// Create Slim app
+$app = AppFactory::create();
+
+error_log('Step 6: Adding error middleware...');
+
+// Add error handling middleware with detailed errors in development
+$errorMiddleware = $app->addErrorMiddleware(
+    ENVIRONMENT === 'development', // displayErrorDetails
+    true,  // logErrors
+    true   // logErrorDetails
+);
+
+// Custom error handler to log exceptions
+$errorMiddleware->setDefaultErrorHandler(function ($request, $exception, $displayErrorDetails) {
+    error_log('✗ Request error: ' . $exception->getMessage());
+    error_log('File: ' . $exception->getFile());
+    error_log('Line: ' . $exception->getLine());
+    
+    $payload = [
+        'error' => $exception->getMessage(),
+    ];
+    
+    if ($displayErrorDetails) {
+        $payload['file'] = $exception->getFile();
+        $payload['line'] = $exception->getLine();
+        $payload['trace'] = $exception->getTraceAsString();
+    }
+    
+    $response = new \Slim\Psr7\Response();
+    $response->getBody()->write(json_encode($payload));
+    
+    return $response
+        ->withStatus($exception->getCode() ?: 500)
+        ->withHeader('Content-Type', 'application/json');
+});
+
+error_log('Step 7: Adding CORS middleware...');
+
+// Add CORS middleware
+$app->add(function ($request, $handler) {
+    $response = $handler->handle($request);
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+});
+
+error_log('Step 8: Adding preflight handler...');
+
+// Handle preflight requests
+$app->options('/{routes:.+}', function ($request, $response) {
+    return $response;
+});
+
+error_log('Step 9: Registering routes...');
+
+// Register routes
+try {
+    Routes::register($app);
+    error_log('✓ Routes registered successfully');
+} catch (\Exception $e) {
+    error_log('✗ Route registration failed: ' . $e->getMessage());
+    error_log('Trace: ' . $e->getTraceAsString());
+    throw $e;
+}
+
+error_log('Step 10: Running application...');
+error_log('=== APPLICATION READY ===');
+
+// Run app
+$app->run();
+```
+
+Now update your `src/Config/Database.php` to make absolutely sure the PDO connection is created:
+
+```php name=src/Config/Database.php
+<?php
+namespace App\Config;
+
+use PDO;
+use PDOException;
+
+class Database
+{
+    private static $instance = null;
+    private $connection;
+
+    private function __construct()
+    {
+        error_log('Database::__construct() called');
+        
+        try {
+            // Get the directory where the database should be stored
+            $dbDir = dirname(DB_PATH);
+            error_log('Database directory: ' . $dbDir);
+            
+            // Create directory if it doesn't exist
+            if (!is_dir($dbDir)) {
+                error_log('Database directory does not exist, creating...');
+                if (!mkdir($dbDir, 0755, true)) {
+                    throw new \Exception("Could not create database directory: $dbDir");
+                }
+                error_log("✓ Created database directory: $dbDir");
+            } else {
+                error_log('Database directory exists');
+            }
+            
+            // Check if directory is writable
+            if (!is_writable($dbDir)) {
+                throw new \Exception("Database directory is not writable: $dbDir");
+            }
+            
+            error_log('Database directory is writable');
+            error_log('Connecting to database: ' . DB_PATH);
+            
+            // THIS IS THE KEY LINE - Create PDO connection
+            // This will create the file if it doesn't exist
+            $this->connection = new PDO(
+                'sqlite:' . DB_PATH,
+                null,
+                null,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                ]
+            );
+            
+            error_log('✓ PDO connection created');
+            
+            // Verify file was created
+            if (file_exists(DB_PATH)) {
+                error_log('✓ Database file confirmed to exist: ' . DB_PATH);
+                $size = filesize(DB_PATH);
+                error_log('  File size: ' . $size . ' bytes');
+            } else {
+                error_log('✗ Database file NOT found after PDO creation');
+            }
+            
+            // Enable foreign keys
+            $this->connection->exec('PRAGMA foreign_keys = ON');
+            error_log('✓ Foreign keys enabled');
+            
+        } catch (PDOException $e) {
+            error_log('✗ PDOException in Database constructor: ' . $e->getMessage());
+            error_log('Code: ' . $e->getCode());
+            throw new \Exception('Database connection failed: ' . $e->getMessage(), 0, $e);
+        } catch (\Exception $e) {
+            error_log('✗ Exception in Database constructor: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    public static function getInstance()
+    {
+        error_log('Database::getInstance() called');
+        
+        if (self::$instance === null) {
+            error_log('Creating new Database instance...');
+            self::$instance = new self();
+            error_log('✓ Database instance created');
+        } else {
+            error_log('Returning existing Database instance');
+        }
+        
+        return self::$instance;
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
+    }
+
+    public function initializeTables()
+    {
+        error_log('Database::initializeTables() called');
+        
+        try {
+            // Check if tables already exist
+            error_log('Checking for existing tables...');
+            $tables = $this->connection->query("SELECT name FROM sqlite_master WHERE type='table'")->fetchAll();
+            $existingTables = array_column($tables, 'name');
+            error_log('Found tables: ' . json_encode($existingTables));
+            
+            if (in_array('movies', $existingTables)) {
+                error_log('✓ Tables already exist, skipping creation');
+                return;
+            }
+            
+            error_log('Creating users table...');
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT UNIQUE NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    password_hash TEXT NOT NULL,
+                    role TEXT DEFAULT "user",
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ');
+            error_log('✓ Users table created');
+
+            error_log('Creating movies table...');
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS movies (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT NOT NULL,
+                    description TEXT,
+                    year INTEGER,
+                    director TEXT,
+                    rating REAL DEFAULT 0,
+                    created_by INTEGER,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (created_by) REFERENCES users(id)
+                )
+            ');
+            error_log('✓ Movies table created');
+
+            error_log('Creating reviews table...');
+            $this->connection->exec('
+                CREATE TABLE IF NOT EXISTS reviews (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    movie_id INTEGER NOT NULL,
+                    user_id INTEGER NOT NULL,
+                    rating REAL NOT NULL,
+                    comment TEXT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (movie_id) REFERENCES movies(id),
+                    FOREIGN KEY (user_id) REFERENCES users(id)
+                )
+            ');
+            error_log('✓ Reviews table created');
+            
+            error_log('✓ All tables created successfully');
+            
+        } catch (PDOException $e) {
+            error_log('✗ PDOException in initializeTables: ' . $e->getMessage());
+            throw new \Exception('Table creation failed: ' . $e->getMessage(), 0, $e);
+        } catch (\Exception $e) {
+            error_log('✗ Exception in initializeTables: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+}
+```
+
+Now start the server fresh:
+
+```bash
+# Delete the old database to start clean
+rm movies.db 2>/dev/null || true
+
+# Start the server - you should see detailed logs in the console
+php -S localhost:8000 -t public
+```
+
+Watch the console output. You should see a detailed startup log like:
+
+```
+=== APPLICATION STARTUP ===
+Environment: development
+Database path: /path/to/movie-api/movies.db
+Step 1: Getting database instance...
+Database::getInstance() called
+Creating new Database instance...
+Database::__construct() called
+Database directory: /path/to/movie-api
+Database directory exists
+Database directory is writable
+Connecting to database: /path/to/movie-api/movies.db
+✓ PDO connection created
+✓ Database file confirmed to exist: /path/to/movie-api/movies.db
+  File size: 4096 bytes
+✓ Foreign keys enabled
+✓ Database instance created
+Step 2: Database instance obtained
+Step 3: Initializing tables...
+Database::initializeTables() called
+Checking for existing tables...
+Found tables: []
+Creating users table...
+✓ Users table created
+Creating movies table...
+✓ Movies table created
+Creating reviews table...
+✓ Reviews table created
+✓ All tables created successfully
+Step 4: Tables initialized
+✓ Database file exists: /path/to/movie-api/movies.db
+Step 5: Creating Slim app...
+... (more output)
+=== APPLICATION READY ===
+```
+
+Once you see those logs and the database file is created, test the API:
+
+```bash
+curl http://localhost:8000/api/movies
+```
+
+This should work now! Let me know what logs you see.
+
+## @wargen41
+
+What does this mean? "Failed to listen on localhost:8000 (reason: Address already in use)"
+
+## Copilot
+
+This means something is already running on port 8000. You likely have another PHP development server still running from before.
+
+## Quick Fix
+
+### Find and kill the process using port 8000:
+
+**On macOS/Linux:**
+```bash
+# Find what's using port 8000
+lsof -i :8000
+
+# Kill the process (replace PID with the number shown)
+kill -9 PID
+
+# Or kill all PHP processes
+killall php
+
+# Then start fresh
+php -S localhost:8000 -t public
+```
+
+**On Windows (PowerShell as admin):**
+```powershell
+# Find what's using port 8000
+netstat -ano | findstr :8000
+
+# Kill the process (replace PID with the number shown)
+taskkill /PID PID /F
+
+# Then start fresh
+php -S localhost:8000 -t public
+```
+
+### Alternative: Use a different port
+
+If you don't want to kill the other process, just use a different port:
+
+```bash
+# Use port 8001 instead
+php -S localhost:8001 -t public
+
+# Then test with:
+curl http://localhost:8001/api/movies
+```
+
+## Check if it's working
+
+Once the server starts without that error, you should see:
+
+```
+[Thu Feb 19 11:00:00 2026] PHP 8.1.0 Development Server (http://localhost:8000)
+[Thu Feb 19 11:00:00 2026] Listening on http://localhost:8000
+Press Ctrl-C to quit
+```
+
+Then test it:
+```bash
+curl http://localhost:8000/api/movies
+```
+
+Let me know if you see the startup logs now!
+
+## @wargen41
+
+OK, the application startup logs didn't trigger until I made a curl call. That threw me off for a while. But alright, seems to work now, so far.
+
+## Copilot
+
+Ah yes, that's a good catch! That's actually normal behavior for the PHP development server - it doesn't run the application initialization code until it receives the first request. It just starts listening for connections.
+
+So the sequence is:
+1. `php -S localhost:8000 -t public` starts the server and waits
+2. You make a curl request (or visit in browser)
+3. **Then** the application code in `public/index.php` runs for the first time
+4. Database gets initialized, tables created, logs appear
+
+It can definitely be confusing at first! Some frameworks or custom setup scripts run initialization on startup, but the PHP dev server doesn't by default.
+
+Now that you have it working, here are some things to test to make sure everything is functioning:
+
+```bash
+# 1. Get movies (should be empty)
+curl http://localhost:8000/api/movies
+
+# 2. Register a user
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }'
+
+# Save the token from the response, then use it below...
+
+# 3. Make the user an admin (so they can create movies)
+php make_admin.php testuser
+
+# 4. Create a movie (replace TOKEN with the actual token)
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer TOKEN" \
+  -d '{
+    "title": "The Matrix",
+    "description": "A sci-fi masterpiece",
+    "year": 1999,
+    "director": "The Wachowskis"
+  }'
+
+# 5. Get all movies again (should now show the movie you created)
+curl http://localhost:8000/api/movies
+
+# 6. Get a specific movie with reviews
+curl http://localhost:8000/api/movies/1
+
+# 7. Add a review (replace TOKEN with your token)
+curl -X POST http://localhost:8000/api/reviews \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer TOKEN" \
+  -d '{
+    "movie_id": 1,
+    "rating": 9.5,
+    "comment": "Amazing film!"
+  }'
+
+# 8. Get the movie again to see the review
+curl http://localhost:8000/api/movies/1
+```
+
+Let me know if you run into any issues with these operations, or if you'd like help with the next steps like:
+- Writing tests
+- Deploying to production
+- Adding more features
+- Comparing with the FastAPI version we built earlier
+
+## @wargen41
+
+Get movies works now. However, when I try the command to register a user there is an error:
+{"error":"Validation failed","details":{"username":"Username is required","email":"Email is required","password":"Password is required"}}
+
+## Copilot
+
+Ah! The issue is that Slim isn't automatically parsing the JSON request body. You need to add middleware to handle JSON parsing. Let me fix this.
+
+## Solution: Add JSON Parsing Middleware
+
+Update your `public/index.php` to include the JSON parsing middleware:
+
+```php name=public/index.php
+<?php
+// Enable error reporting for development
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config.php';
+
+use Slim\Factory\AppFactory;
+use App\Config\Database;
+use App\Routes;
+
+// Log startup
+error_log('=== APPLICATION STARTUP ===');
+error_log('Environment: ' . ENVIRONMENT);
+error_log('Database path: ' . DB_PATH);
+
+try {
+    error_log('Step 1: Getting database instance...');
+    $database = Database::getInstance();
+    error_log('Step 2: Database instance obtained');
+    
+    error_log('Step 3: Initializing tables...');
+    $database->initializeTables();
+    error_log('Step 4: Tables initialized');
+    
+    if (file_exists(DB_PATH)) {
+        error_log('✓ Database file exists: ' . DB_PATH);
+    } else {
+        error_log('✗ Database file NOT found: ' . DB_PATH);
+    }
+    
+} catch (\Exception $e) {
+    error_log('✗ FATAL ERROR during database initialization');
+    error_log('Error message: ' . $e->getMessage());
+    error_log('Error file: ' . $e->getFile());
+    error_log('Error line: ' . $e->getLine());
+    error_log('Error trace: ' . $e->getTraceAsString());
+    
+    // Return error response
+    header('Content-Type: application/json');
+    http_response_code(500);
+    echo json_encode([
+        'error' => 'Database initialization failed',
+        'message' => $e->getMessage(),
+        'file' => $e->getFile(),
+        'line' => $e->getLine(),
+        'trace' => ENVIRONMENT === 'development' ? $e->getTraceAsString() : null
+    ]);
+    exit(1);
+}
+
+error_log('Step 5: Creating Slim app...');
+
+// Create Slim app
+$app = AppFactory::create();
+
+error_log('Step 6: Adding middleware...');
+
+// Add BodyParsingMiddleware to parse JSON request bodies
+// This is CRITICAL for POST requests with JSON data
+$app->addBodyParsingMiddleware();
+
+error_log('Step 7: Adding error middleware...');
+
+// Add error handling middleware with detailed errors in development
+$errorMiddleware = $app->addErrorMiddleware(
+    ENVIRONMENT === 'development', // displayErrorDetails
+    true,  // logErrors
+    true   // logErrorDetails
+);
+
+// Custom error handler to log exceptions
+$errorMiddleware->setDefaultErrorHandler(function ($request, $exception, $displayErrorDetails) {
+    error_log('✗ Request error: ' . $exception->getMessage());
+    error_log('File: ' . $exception->getFile());
+    error_log('Line: ' . $exception->getLine());
+    
+    $payload = [
+        'error' => $exception->getMessage(),
+    ];
+    
+    if ($displayErrorDetails) {
+        $payload['file'] = $exception->getFile();
+        $payload['line'] = $exception->getLine();
+        $payload['trace'] = $exception->getTraceAsString();
+    }
+    
+    $response = new \Slim\Psr7\Response();
+    $response->getBody()->write(json_encode($payload));
+    
+    return $response
+        ->withStatus($exception->getCode() ?: 500)
+        ->withHeader('Content-Type', 'application/json');
+});
+
+error_log('Step 8: Adding CORS middleware...');
+
+// Add CORS middleware
+$app->add(function ($request, $handler) {
+    $response = $handler->handle($request);
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+});
+
+error_log('Step 9: Adding preflight handler...');
+
+// Handle preflight requests
+$app->options('/{routes:.+}', function ($request, $response) {
+    return $response;
+});
+
+error_log('Step 10: Registering routes...');
+
+// Register routes
+try {
+    Routes::register($app);
+    error_log('✓ Routes registered successfully');
+} catch (\Exception $e) {
+    error_log('✗ Route registration failed: ' . $e->getMessage());
+    error_log('Trace: ' . $e->getTraceAsString());
+    throw $e;
+}
+
+error_log('Step 11: Running application...');
+error_log('=== APPLICATION READY ===');
+
+// Run app
+$app->run();
+```
+
+The key line is:
+```php
+$app->addBodyParsingMiddleware();
+```
+
+This middleware automatically parses JSON request bodies and makes them available via `$request->getParsedBody()`.
+
+## Why This Happened
+
+By default, Slim doesn't automatically parse request bodies. You need to explicitly add the body parsing middleware. Without it:
+- POST requests with JSON bodies aren't parsed
+- `getParsedBody()` returns empty/null
+- Your validation fails because all fields appear missing
+
+## Test It Now
+
+Restart your server:
+
+```bash
+# Kill the old server (Ctrl+C)
+# Then restart
+php -S localhost:8000 -t public
+```
+
+Then try registering again:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }'
+```
+
+You should now get:
+```json
+{
+  "success": true,
+  "message": "User registered",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGc...",
+  "user": {
+    "id": 1,
+    "username": "testuser",
+    "email": "test@example.com"
+  }
+}
+```
+
+Let me know if it works now!
+
+## @wargen41
+
+It doesn't work yet, but there seems to be progress. The error changed to just this:
+{"error":"Registration failed"}
+
+## Copilot
+
+Good, we're making progress! The error is now less specific, which means the request body is being parsed, but something else is failing. Let's add better error logging to see what's actually happening.
+
+## Update AuthController to Show Real Errors
+
+Replace `src/Controllers/AuthController.php` with this version that logs the actual error:
+
+```php name=src/Controllers/AuthController.php
+<?php
+namespace App\Controllers;
+
+use App\Config\Database;
+use Firebase\JWT\JWT;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+class AuthController
+{
+    private $db;
+
+    public function __construct()
+    {
+        try {
+            $this->db = Database::getInstance()->getConnection();
+        } catch (\Exception $e) {
+            error_log('AuthController init error: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    /**
+     * Public: Register new user
+     */
+    public function register(Request $request, Response $response): Response
+    {
+        try {
+            error_log('register() called');
+            
+            $data = $request->getParsedBody();
+            error_log('Parsed body: ' . json_encode($data));
+
+            // Validate input
+            $errors = $this->validateRegister($data);
+            if (!empty($errors)) {
+                error_log('Validation errors: ' . json_encode($errors));
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Validation failed', 'details' => $errors],
+                    422
+                );
+            }
+
+            error_log('Validation passed, checking if user exists...');
+            
+            // Check if user exists
+            $stmt = $this->db->prepare('
+                SELECT id FROM users WHERE email = ? OR username = ?
+            ');
+            $stmt->execute([$data['email'], $data['username']]);
+            if ($stmt->fetch()) {
+                error_log('User already exists');
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Email or username already exists'],
+                    409
+                );
+            }
+
+            error_log('User does not exist, hashing password...');
+            
+            // Hash password
+            $passwordHash = password_hash($data['password'], PASSWORD_BCRYPT);
+            error_log('Password hashed successfully');
+
+            error_log('Inserting new user...');
+            
+            // Insert user
+            $stmt = $this->db->prepare('
+                INSERT INTO users (username, email, password_hash, role)
+                VALUES (?, ?, ?, ?)
+            ');
+
+            $result = $stmt->execute([
+                $data['username'],
+                $data['email'],
+                $passwordHash,
+                'user'
+            ]);
+            
+            error_log('Insert result: ' . ($result ? 'true' : 'false'));
+            
+            $userId = $this->db->lastInsertId();
+            error_log('New user ID: ' . $userId);
+
+            error_log('Generating JWT token...');
+            
+            // Generate token
+            $token = $this->generateToken($userId, 'user');
+            error_log('Token generated successfully');
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => 'User registered',
+                    'token' => $token,
+                    'user' => [
+                        'id' => (int)$userId,
+                        'username' => $data['username'],
+                        'email' => $data['email']
+                    ]
+                ],
+                201
+            );
+        } catch (\PDOException $e) {
+            error_log('✗ PDO Error in register: ' . $e->getMessage());
+            error_log('Code: ' . $e->getCode());
+            error_log('Trace: ' . $e->getTraceAsString());
+            return $this->jsonResponse(
+                $response,
+                [
+                    'error' => 'Database error',
+                    'message' => $e->getMessage()
+                ],
+                500
+            );
+        } catch (\Exception $e) {
+            error_log('✗ Error in register: ' . $e->getMessage());
+            error_log('File: ' . $e->getFile());
+            error_log('Line: ' . $e->getLine());
+            error_log('Trace: ' . $e->getTraceAsString());
+            return $this->jsonResponse(
+                $response,
+                [
+                    'error' => 'Registration failed',
+                    'message' => $e->getMessage()
+                ],
+                500
+            );
+        }
+    }
+
+    /**
+     * Public: Login user
+     */
+    public function login(Request $request, Response $response): Response
+    {
+        try {
+            error_log('login() called');
+            
+            $data = $request->getParsedBody();
+            error_log('Parsed body: ' . json_encode($data));
+
+            if (empty($data['email']) || empty($data['password'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Email and password are required'],
+                    400
+                );
+            }
+
+            error_log('Getting user by email: ' . $data['email']);
+            
+            // Get user
+            $stmt = $this->db->prepare('
+                SELECT id, username, email, password_hash, role
+                FROM users WHERE email = ?
+            ');
+            $stmt->execute([$data['email']]);
+            $user = $stmt->fetch();
+
+            if (!$user) {
+                error_log('User not found');
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Invalid credentials'],
+                    401
+                );
+            }
+
+            error_log('User found, verifying password...');
+            
+            if (!password_verify($data['password'], $user['password_hash'])) {
+                error_log('Password verification failed');
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Invalid credentials'],
+                    401
+                );
+            }
+
+            error_log('Password verified, generating token...');
+            
+            // Generate token
+            $token = $this->generateToken($user['id'], $user['role']);
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'message' => 'Login successful',
+                'token' => $token,
+                'user' => [
+                    'id' => (int)$user['id'],
+                    'username' => $user['username'],
+                    'email' => $user['email'],
+                    'role' => $user['role']
+                ]
+            ]);
+        } catch (\Exception $e) {
+            error_log('✗ Error in login: ' . $e->getMessage());
+            error_log('Trace: ' . $e->getTraceAsString());
+            return $this->jsonResponse(
+                $response,
+                ['error' => 'Login failed'],
+                500
+            );
+        }
+    }
+
+    private function generateToken($userId, $role)
+    {
+        error_log('generateToken called with userId: ' . $userId . ', role: ' . $role);
+        
+        $issuedAt = time();
+        $payload = [
+            'iat' => $issuedAt,
+            'exp' => $issuedAt + JWT_EXPIRATION,
+            'sub' => $userId,
+            'role' => $role
+        ];
+
+        try {
+            $token = JWT::encode($payload, JWT_SECRET, JWT_ALGORITHM);
+            error_log('Token encoded successfully');
+            return $token;
+        } catch (\Exception $e) {
+            error_log('✗ Error encoding token: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    private function validateRegister($data)
+    {
+        error_log('validateRegister called with data: ' . json_encode($data));
+        
+        $errors = [];
+
+        if (empty($data['username'])) {
+            $errors['username'] = 'Username is required';
+        } elseif (strlen($data['username']) < 3) {
+            $errors['username'] = 'Username must be at least 3 characters';
+        }
+
+        if (empty($data['email'])) {
+            $errors['email'] = 'Email is required';
+        } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Invalid email format';
+        }
+
+        if (empty($data['password'])) {
+            $errors['password'] = 'Password is required';
+        } elseif (strlen($data['password']) < 8) {
+            $errors['password'] = 'Password must be at least 8 characters';
+        }
+
+        error_log('Validation errors: ' . json_encode($errors));
+        
+        return $errors;
+    }
+
+    private function jsonResponse(Response $response, $data, $status = 200): Response
+    {
+        $response->getBody()->write(json_encode($data));
+        return $response
+            ->withStatus($status)
+            ->withHeader('Content-Type', 'application/json');
+    }
+}
+```
+
+Now restart the server and try registering again:
+
+```bash
+# Kill server with Ctrl+C
+# Then restart
+php -S localhost:8000 -t public
+```
+
+Then register:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }'
+```
+
+Watch your server console closely and **copy/paste the entire error log output here**. That will tell us exactly where it's failing.
+
+The logs should show something like:
+```
+register() called
+Parsed body: {"username":"testuser","email":"test@example.com","password":"TestPassword123"}
+Validation passed, checking if user exists...
+User does not exist, hashing password...
+Password hashed successfully
+Inserting new user...
+...
+```
+
+Let me see what the logs say when it fails!
+
+## @wargen41
+
+Oh, it's {"error":"Email or username already exists"}
+
+## Copilot
+
+Ah! That makes sense. The user you tried to register already exists in the database from a previous attempt.
+
+## Solution: Reset the Database
+
+```bash
+# Stop the server (Ctrl+C)
+
+# Delete the database file
+rm movies.db
+
+# Restart the server
+php -S localhost:8000 -t public
+```
+
+The database will be recreated fresh on the next request.
+
+Then try registering again with the same credentials:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }'
+```
+
+This time it should work and return a token!
+
+## Alternative: Use Different Credentials
+
+Or just register with different credentials without resetting:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "anotheruser",
+    "email": "another@example.com",
+    "password": "TestPassword123"
+  }'
+```
+
+Let me know if it works now!
+
+## @wargen41
+
+I get a different error now: {"error":"Registration failed","message":"key must be a string when using hmac"}
+
+## Copilot
+
+Ah! That's a JWT library issue. The `JWT_SECRET` constant is either not defined or not a string. Let's check your `config.php`.
+
+## Check Your config.php
+
+Make sure it looks like this:
+
+```php name=config.php
+<?php
+// Database configuration
+// Use absolute path or relative path from project root
+$projectRoot = __DIR__;
+define('DB_PATH', $projectRoot . '/movies.db');
+
+// JWT configuration
+define('JWT_SECRET', getenv('JWT_SECRET') ?? 'your-secret-key-change-in-production');
+define('JWT_ALGORITHM', 'HS256');
+define('JWT_EXPIRATION', 3600); // 1 hour
+
+// API configuration
+define('API_VERSION', '1.0.0');
+define('ENVIRONMENT', getenv('ENVIRONMENT') ?? 'development');
+
+// CORS allowed origins
+define('ALLOWED_ORIGINS', [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://yourdomain.com'
+]);
+
+return [
+    'db_path' => DB_PATH,
+    'jwt_secret' => JWT_SECRET,
+    'jwt_algorithm' => JWT_ALGORITHM,
+    'jwt_expiration' => JWT_EXPIRATION,
+];
+```
+
+The issue is that `JWT_SECRET` needs to be a non-empty string. If `getenv('JWT_SECRET')` returns something other than a string (like false or an array), it will cause this error.
+
+## Add Debug Logging to config.php
+
+Let's add a check to make sure the secret is set correctly:
+
+```php name=config.php
+<?php
+// Database configuration
+$projectRoot = __DIR__;
+define('DB_PATH', $projectRoot . '/movies.db');
+
+// JWT configuration - with debugging
+$jwtSecret = getenv('JWT_SECRET');
+if ($jwtSecret === false || $jwtSecret === '') {
+    $jwtSecret = 'your-secret-key-change-in-production';
+    error_log('⚠️  Using default JWT_SECRET (not from environment)');
+}
+
+define('JWT_SECRET', $jwtSecret);
+define('JWT_ALGORITHM', 'HS256');
+define('JWT_EXPIRATION', 3600); // 1 hour
+
+// Log config on startup
+error_log('Config loaded:');
+error_log('  JWT_SECRET type: ' . gettype(JWT_SECRET));
+error_log('  JWT_SECRET length: ' . strlen(JWT_SECRET));
+error_log('  JWT_ALGORITHM: ' . JWT_ALGORITHM);
+error_log('  JWT_EXPIRATION: ' . JWT_EXPIRATION);
+
+// API configuration
+define('API_VERSION', '1.0.0');
+define('ENVIRONMENT', getenv('ENVIRONMENT') ?? 'development');
+
+// CORS allowed origins
+define('ALLOWED_ORIGINS', [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://yourdomain.com'
+]);
+
+return [
+    'db_path' => DB_PATH,
+    'jwt_secret' => JWT_SECRET,
+    'jwt_algorithm' => JWT_ALGORITHM,
+    'jwt_expiration' => JWT_EXPIRATION,
+];
+```
+
+## Restart and Check Logs
+
+```bash
+# Kill the server (Ctrl+C)
+# Restart
+php -S localhost:8000 -t public
+```
+
+Make a request to trigger the startup:
+
+```bash
+curl http://localhost:8000/api/movies
+```
+
+Watch your server console and look for these log lines:
+```
+Config loaded:
+  JWT_SECRET type: string
+  JWT_SECRET length: 48
+  JWT_ALGORITHM: HS256
+  JWT_EXPIRATION: 3600
+```
+
+If `JWT_SECRET type` is not `string`, or the length is 0, that's your problem.
+
+**What does your server log show?**
+
+## @wargen41
+
+Great, that fixed the error. I believe you added port 8000 to allowed origins, while it wasn't there before, and that probably fixed it.
+
+## Copilot
+
+Good observation! Yes, I did add `'http://localhost:8000'` to the `ALLOWED_ORIGINS` array in the updated `config.php`:
+
+```php
+define('ALLOWED_ORIGINS', [
+    'http://localhost:3000',
+    'http://localhost:8000',      // ← Added this
+    'https://yourdomain.com'
+]);
+```
+
+However, I should clarify - the `ALLOWED_ORIGINS` is actually used for CORS (Cross-Origin Resource Sharing), which is for browser requests from different domains. Since you're testing with `curl` from the command line, CORS wouldn't have been blocking you anyway.
+
+The actual issue was the `JWT_SECRET` not being properly defined as a string. That's what was causing the "key must be a string when using hmac" error.
+
+That said, adding `http://localhost:8000` to `ALLOWED_ORIGINS` is still good practice since you might test from a browser at that URL later, and it prevents CORS issues.
+
+---
+
+Now that registration is working, you can continue testing! Try these commands:
+
+```bash
+# 1. Register (if you haven't already)
+RESPONSE=$(curl -s -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "TestPassword123"
+  }')
+
+echo $RESPONSE
+
+# Save the token (you'll need to extract it manually from the response)
+# It will look like: "token": "eyJ0eXAi..."
+
+TOKEN="your_token_here"
+
+# 2. Make the user an admin
+php make_admin.php testuser
+
+# 3. Create a movie
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "title": "The Matrix",
+    "description": "A sci-fi masterpiece",
+    "year": 1999,
+    "director": "The Wachowskis"
+  }'
+
+# 4. Get all movies
+curl http://localhost:8000/api/movies
+
+# 5. Add a review
+curl -X POST http://localhost:8000/api/reviews \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "movie_id": 1,
+    "rating": 9.5,
+    "comment": "Amazing film!"
+  }'
+
+# 6. Get the movie with reviews
+curl http://localhost:8000/api/movies/1
+```
+
+Let me know if you run into any other issues!
+
+## @wargen41
+
+I don't have the make_admin.php script
+
+## Copilot
+
+Ah right, I mentioned creating it earlier but didn't show you the full code. Here it is:
+
+Create a new file called `make_admin.php` in your project root:
+
+```php name=make_admin.php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
+
+use App\Config\Database;
+
+// Get username from command line argument
+$username = $argv[1] ?? null;
+
+if (!$username) {
+    echo "Usage: php make_admin.php <username>\n";
+    echo "Example: php make_admin.php testuser\n";
+    exit(1);
+}
+
+try {
+    error_log("Making user '$username' an admin...");
+    
+    $db = Database::getInstance()->getConnection();
+    
+    $stmt = $db->prepare('UPDATE users SET role = ? WHERE username = ?');
+    $result = $stmt->execute(['admin', $username]);
+    
+    if ($stmt->rowCount() > 0) {
+        echo "✓ User '$username' is now admin\n";
+        error_log("✓ User '$username' promoted to admin");
+    } else {
+        echo "✗ User '$username' not found\n";
+        error_log("✗ User '$username' not found");
+        exit(1);
+    }
+    
+} catch (\Exception $e) {
+    echo "✗ Error: " . $e->getMessage() . "\n";
+    error_log("✗ Error: " . $e->getMessage());
+    exit(1);
+}
+```
+
+Now you can use it:
+
+```bash
+# Make testuser an admin
+php make_admin.php testuser
+
+# Should output:
+# ✓ User 'testuser' is now admin
+```
+
+## @wargen41
+
+make_admin.php says the user is promoted to admin. However when I try to create a movie I get: {"error":"Admin access required"}
+
+## Copilot
+
+That's odd - the user should be admin. Let me add debugging to see what's happening. The issue is likely in the authentication middleware or the role isn't being passed correctly in the JWT token.
+
+## Step 1: Add Debug Logging to AuthMiddleware
+
+Update `src/Middleware/AuthMiddleware.php` to log the token details:
+
+```php name=src/Middleware/AuthMiddleware.php
+<?php
+namespace App\Middleware;
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+use Firebase\JWT\ExpiredException;
+use Firebase\JWT\SignatureInvalidException;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+
+class AuthMiddleware implements MiddlewareInterface
+{
+    public function process(Request $request, RequestHandler $handler): Response
+    {
+        error_log('AuthMiddleware processing request');
+        
+        $authHeader = $request->getHeader('Authorization');
+        error_log('Authorization header: ' . json_encode($authHeader));
+        
+        if (empty($authHeader)) {
+            error_log('✗ Missing authorization header');
+            return $this->jsonResponse(
+                ['error' => 'Missing authorization header'],
+                401
+            );
+        }
+
+        $token = str_replace('Bearer ', '', $authHeader[0]);
+        error_log('Token: ' . substr($token, 0, 20) . '...');
+
+        try {
+            error_log('Decoding token with secret length: ' . strlen(JWT_SECRET));
+            
+            $decoded = JWT::decode(
+                $token,
+                new Key(JWT_SECRET, JWT_ALGORITHM)
+            );
+            
+            error_log('✓ Token decoded successfully');
+            error_log('Decoded payload: ' . json_encode($decoded));
+            
+            // Attach user info to request
+            $request = $request
+                ->withAttribute('user_id', $decoded->sub)
+                ->withAttribute('user_role', $decoded->role)
+                ->withAttribute('user', $decoded);
+            
+            error_log('User ID: ' . $decoded->sub . ', Role: ' . $decoded->role);
+                
+        } catch (ExpiredException $e) {
+            error_log('✗ Token expired');
+            return $this->jsonResponse(['error' => 'Token expired'], 401);
+        } catch (SignatureInvalidException $e) {
+            error_log('✗ Invalid token signature');
+            return $this->jsonResponse(['error' => 'Invalid token signature'], 401);
+        } catch (\Exception $e) {
+            error_log('✗ Token validation error: ' . $e->getMessage());
+            return $this->jsonResponse(['error' => 'Invalid token'], 401);
+        }
+
+        return $handler->handle($request);
+    }
+
+    private function jsonResponse($data, $status = 200)
+    {
+        $response = new \Slim\Psr7\Response();
+        $response->getBody()->write(json_encode($data));
+        return $response
+            ->withStatus($status)
+            ->withHeader('Content-Type', 'application/json');
+    }
+}
+```
+
+## Step 2: Add Debug Logging to MovieController
+
+Update the `createMovie` method in `src/Controllers/MovieController.php`:
+
+```php name=src/Controllers/MovieController.php
+    /**
+     * Protected: Create movie (admin only)
+     */
+    public function createMovie(Request $request, Response $response): Response
+    {
+        try {
+            error_log('createMovie() called');
+            
+            $userId = $request->getAttribute('user_id');
+            $userRole = $request->getAttribute('user_role');
+            
+            error_log('User ID from request: ' . $userId);
+            error_log('User role from request: ' . $userRole);
+            error_log('User role type: ' . gettype($userRole));
+
+            // Check authorization
+            if ($userRole !== 'admin') {
+                error_log('✗ User is not admin. Role is: ' . var_export($userRole, true));
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Admin access required'],
+                    403
+                );
+            }
+            
+            error_log('✓ User is admin, proceeding...');
+
+            $data = $request->getParsedBody();
+            error_log('Creating movie with data: ' . json_encode($data));
+
+            // ... rest of the method
+```
+
+## Step 3: Test and Watch the Logs
+
+First, get a fresh token by registering or logging in:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "adminuser",
+    "email": "admin@example.com",
+    "password": "AdminPassword123"
+  }'
+```
+
+Copy the token from the response, then make the user admin:
+
+```bash
+php make_admin.php adminuser
+```
+
+Now try creating a movie and watch your server logs carefully:
+
+```bash
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -d '{
+    "title": "The Matrix",
+    "description": "A sci-fi masterpiece",
+    "year": 1999,
+    "director": "The Wachowskis"
+  }'
+```
+
+**Please copy/paste the entire server log output here** when you run that curl command. The logs will show us:
+1. Whether the token is being decoded correctly
+2. What role is in the token
+3. Why the role check is failing
+
+That will help us pinpoint the issue!
+
+## @wargen41
+
+[Fri Feb 20 08:29:36 2026] [::1]:51207 Accepted
+[Fri Feb 20 08:29:36 2026] ⚠️  Using default JWT_SECRET (not from environment)
+[Fri Feb 20 08:29:36 2026] Config loaded:
+[Fri Feb 20 08:29:36 2026]   JWT_SECRET type: string
+[Fri Feb 20 08:29:36 2026]   JWT_SECRET length: 36
+[Fri Feb 20 08:29:36 2026]   JWT_ALGORITHM: HS256
+[Fri Feb 20 08:29:36 2026]   JWT_EXPIRATION: 3600
+[Fri Feb 20 08:29:36 2026] === APPLICATION STARTUP ===
+[Fri Feb 20 08:29:36 2026] Environment: 
+[Fri Feb 20 08:29:36 2026] Database path: /usr/local/var/www/api/movies.db
+[Fri Feb 20 08:29:36 2026] Step 1: Getting database instance...
+[Fri Feb 20 08:29:36 2026] Database::getInstance() called
+[Fri Feb 20 08:29:36 2026] Creating new Database instance...
+[Fri Feb 20 08:29:36 2026] Database::__construct() called
+[Fri Feb 20 08:29:36 2026] Database directory: /usr/local/var/www/api
+[Fri Feb 20 08:29:36 2026] Database directory exists
+[Fri Feb 20 08:29:36 2026] Database directory is writable
+[Fri Feb 20 08:29:36 2026] Connecting to database: /usr/local/var/www/api/movies.db
+[Fri Feb 20 08:29:36 2026] ✓ PDO connection created
+[Fri Feb 20 08:29:36 2026] ✓ Database file confirmed to exist: /usr/local/var/www/api/movies.db
+[Fri Feb 20 08:29:36 2026]   File size: 28672 bytes
+[Fri Feb 20 08:29:36 2026] ✓ Foreign keys enabled
+[Fri Feb 20 08:29:36 2026] ✓ Database instance created
+[Fri Feb 20 08:29:36 2026] Step 2: Database instance obtained
+[Fri Feb 20 08:29:36 2026] Step 3: Initializing tables...
+[Fri Feb 20 08:29:36 2026] Database::initializeTables() called
+[Fri Feb 20 08:29:36 2026] Checking for existing tables...
+[Fri Feb 20 08:29:36 2026] Found tables: ["users","sqlite_sequence","movies","reviews"]
+[Fri Feb 20 08:29:36 2026] ✓ Tables already exist, skipping creation
+[Fri Feb 20 08:29:36 2026] Step 4: Tables initialized
+[Fri Feb 20 08:29:36 2026] ✓ Database file exists: /usr/local/var/www/api/movies.db
+[Fri Feb 20 08:29:36 2026] Step 5: Creating Slim app...
+[Fri Feb 20 08:29:36 2026] Step 6: Adding middleware...
+[Fri Feb 20 08:29:36 2026] Step 7: Adding error middleware...
+[Fri Feb 20 08:29:36 2026] Step 8: Adding CORS middleware...
+[Fri Feb 20 08:29:36 2026] Step 9: Adding preflight handler...
+[Fri Feb 20 08:29:36 2026] Step 10: Registering routes...
+[Fri Feb 20 08:29:36 2026] ✓ Routes registered successfully
+[Fri Feb 20 08:29:36 2026] Step 11: Running application...
+[Fri Feb 20 08:29:36 2026] === APPLICATION READY ===
+[Fri Feb 20 08:29:36 2026] AuthMiddleware processing request
+[Fri Feb 20 08:29:36 2026] Authorization header: ["Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NzE1NzI0NTEsImV4cCI6MTc3MTU3NjA1MSwic3ViIjoiMSIsInJvbGUiOiJ1c2VyIn0.wVJmloU8xJxcwOWGm6J33sZzEAIg0R0WVgx3MJrjVHw"]
+[Fri Feb 20 08:29:36 2026] Token: eyJ0eXAiOiJKV1QiLCJh...
+[Fri Feb 20 08:29:36 2026] Decoding token with secret length: 36
+[Fri Feb 20 08:29:36 2026] ✓ Token decoded successfully
+[Fri Feb 20 08:29:36 2026] Decoded payload: {"iat":1771572451,"exp":1771576051,"sub":"1","role":"user"}
+[Fri Feb 20 08:29:36 2026] User ID: 1, Role: user
+[Fri Feb 20 08:29:36 2026] Database::getInstance() called
+[Fri Feb 20 08:29:36 2026] Returning existing Database instance
+[Fri Feb 20 08:29:36 2026] createMovie() called
+[Fri Feb 20 08:29:36 2026] User ID from request: 1
+[Fri Feb 20 08:29:36 2026] User role from request: user
+[Fri Feb 20 08:29:36 2026] User role type: string
+[Fri Feb 20 08:29:36 2026] ✗ User is not admin. Role is: 'user'
+[Fri Feb 20 08:29:36 2026] [::1]:51207 [403]: POST /api/movies
+[Fri Feb 20 08:29:36 2026] [::1]:51207 Closing
+
+## Copilot
+
+Perfect! Now I can see the issue. The token still has `"role":"user"` even though you ran `make_admin.php`. The problem is:
+
+1. You registered the user (which created the token with `"role":"user"`)
+2. You ran `make_admin.php` to promote them to admin in the database
+3. But you're still using the **old token** from registration, which has `"role":"user"` baked into it
+
+JWTs are immutable - once created, they can't be changed. You need to **log in again** to get a new token that reflects the admin role.
+
+## Solution: Log In Again
+
+After making the user admin, log in to get a fresh token:
+
+```bash
+curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "admin@example.com",
+    "password": "AdminPassword123"
+  }'
+```
+
+Copy the new token from the response (it should now have `"role":"admin"`), then use it to create a movie:
+
+```bash
+curl -X POST http://localhost:8000/api/movies \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer NEW_TOKEN_HERE" \
+  -d '{
+    "title": "The Matrix",
+    "description": "A sci-fi masterpiece",
+    "year": 1999,
+    "director": "The Wachowskis"
+  }'
+```
+
+You should now see in the logs:
+```
+[Fri Feb 20 08:30:00 2026] Decoded payload: {"iat":...,"exp":...,"sub":"1","role":"admin"}
+[Fri Feb 20 08:30:00 2026] User ID: 1, Role: admin
+[Fri Feb 20 08:30:00 2026] ✓ User is admin, proceeding...
+```
+
+That's the key insight with JWT tokens - they're signed and contain the user's role at the time of creation. If you change a user's role in the database, you need to issue a new token for them to have the updated role.
+
+Let me know if it works now!
+
+## @wargen41
+
+Very good. Creating a movie and adding a review works now!
+
+## Copilot
+
+Excellent! You've got a fully functional API now! 🎉
+
+Let me recap what you've built with the PHP + Slim implementation:
+
+## ✅ What's Working
+
+- **Database**: SQLite with proper schema (users, movies, reviews)
+- **Authentication**: User registration and login with JWT tokens
+- **Authorization**: Role-based access control (admin vs regular user)
+- **Public endpoints**: List movies, view single movie with reviews
+- **Protected endpoints**: Create/update/delete movies (admin only), add/update/delete reviews (authenticated users)
+- **Error handling**: Detailed logging and error messages
+- **Security**: Password hashing with bcrypt, JWT token validation
+
+## Next Steps (Optional)
+
+If you want to continue building, here are some ideas:
+
+1. **Add more features**:
+   - Search/filter movies by title, year, director
+   - Pagination for movie lists
+   - User profiles
+   - Update user info
+
+2. **Improve security**:
+   - Rate limiting on auth endpoints
+   - Token refresh mechanism
+   - Email verification for registration
+
+3. **Testing**:
+   - Unit tests with PHPUnit
+   - Integration tests for endpoints
+
+4. **Deployment**:
+   - Deploy to production hosting
+   - Use a real database (MySQL/PostgreSQL) instead of SQLite
+   - Set up environment variables properly
+
+5. **Compare with FastAPI**:
+   - We built a similar Python + FastAPI version earlier
+   - You could compare the two approaches
+
+Would you like me to show you how to do any of these, or would you like to explore something else entirely?
+
+## @wargen41
+
+If I have a specific schema in mind for the database design, can you help me with adapting the API for that?
+
+## Copilot
+
+Absolutely! I can definitely help you adapt the API for a custom database schema.
+
+To give you the most useful help, please share:
+
+1. **Your database schema** - You can provide it in one of these ways:
+   - A diagram or description of your tables
+   - SQL CREATE TABLE statements
+   - A list of tables with their columns and relationships
+   - Even just a text description of what you want to store
+
+2. **Key relationships** - How do the tables relate to each other?
+   - One-to-many relationships
+   - Many-to-many relationships
+   - Foreign keys, etc.
+
+3. **Any specific requirements**:
+   - Do you need soft deletes (is_deleted flag)?
+   - Timestamps (created_at, updated_at)?
+   - Specific data types or constraints?
+   - Any audit logging or versioning?
+
+Once you share your schema, I can help you:
+- Update the SQLAlchemy/Eloquent models
+- Create/modify the database tables
+- Update the CRUD operations
+- Adjust the API endpoints to match your data structure
+- Handle any complex queries or relationships
+
+Feel free to share your schema and I'll adapt the API accordingly!
