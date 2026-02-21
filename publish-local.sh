@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to sync the contents of the 
 # "site" folder to local web server 
