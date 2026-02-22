@@ -1,3 +1,4 @@
+PRAGMA foreign_keys = ON;
 -- CREATE TABLES
 -- and set up primary keys
 CREATE TABLE media(
@@ -44,38 +45,49 @@ CREATE TABLE movies(
 );
 CREATE TABLE movies_genres(
     MovieID INTEGER NOT NULL,
-    GenreID INTEGER NOT NULL
+    GenreID INTEGER NOT NULL,
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
+    FOREIGN KEY(GenreID) REFERENCES genres(GenreID)
 );
 CREATE TABLE movies_persons(
     MovieID INTEGER NOT NULL,
     PersonID INTEGER NOT NULL,
     PersonName TEXT NOT NULL,
     Category TEXT NOT NULL,
-    Order INTEGER NOT NULL,
+    SequenceOrder INTEGER NOT NULL,
     RoleName TEXT,
-    Note TEXT
+    Note TEXT,
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
+    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
 );
 CREATE TABLE movies_trivia(
     MovieID INTEGER NOT NULL,
     sv TEXT,
-    en TEXT
+    en TEXT,
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
 );
 CREATE TABLE persons_trivia(
     PersonID INTEGER NOT NULL,
     sv TEXT,
-    en TEXT
+    en TEXT,
+    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
 );
 CREATE TABLE media_persons(
     MediaID INTEGER NOT NULL,
-    PersonID INTEGER NOT NULL
+    PersonID INTEGER NOT NULL,
+    FOREIGN KEY(MediaID) REFERENCES media(MediaID),
+    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
 );
 CREATE TABLE media_movies(
     MediaID INTEGER NOT NULL,
-    MovieID INTEGER NOT NULL
+    MovieID INTEGER NOT NULL,
+    FOREIGN KEY(MediaID) REFERENCES media(MediaID),
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
 );
 CREATE TABLE movies_quotes(
     MovieID INTEGER NOT NULL,
-    Quote TEXT NOT NULL
+    Quote TEXT NOT NULL,
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
 );
 CREATE TABLE awards(
     AwardID INTEGER PRIMARY KEY,
@@ -89,19 +101,24 @@ CREATE TABLE awards_persons(
     PersonID INTEGER,
     PersonName TEXT NOT NULL,
     Won INTEGER NOT NULL,
-    Note TEXT
+    Note TEXT,
+    FOREIGN KEY(AwardID) REFERENCES awards(AwardID),
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
+    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
 );
 CREATE TABLE awards_movies(
     AwardID INTEGER NOT NULL,
     Year TEXT,
     MovieID INTEGER,
     Won INTEGER NOT NULL,
-    Note TEXT
+    Note TEXT,
+    FOREIGN KEY(AwardID) REFERENCES awards(AwardID),
+    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
 );
 CREATE TABLE relations(
     RelationID INTEGER PRIMARY KEY,
     sv TEXT,
-    en INTEGER
+    en TEXT
 );
 CREATE TABLE relations_persons(
     PersonID INTEGER NOT NULL,
@@ -109,5 +126,8 @@ CREATE TABLE relations_persons(
     Person2Name TEXT,
     RelationID INTEGER NOT NULL,
     Date1 TEXT,
-    Date2 TEXT
+    Date2 TEXT,
+    FOREIGN KEY(PersonID) REFERENCES persons(PersonID),
+    FOREIGN KEY(Person2ID) REFERENCES persons(PersonID),
+    FOREIGN KEY(RelationID) REFERENCES relations(RelationID)
 );
