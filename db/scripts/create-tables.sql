@@ -28,7 +28,7 @@ CREATE TABLE genres(
 CREATE TABLE movies(
     id INTEGER PRIMARY KEY,
     hidden INTEGER NOT NULL,
-    add_date TEXT,
+    added_date TEXT,
     type TEXT,
     series_id INTEGER,
     season_id INTEGER,
