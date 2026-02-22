@@ -2,132 +2,162 @@ PRAGMA foreign_keys = ON;
 -- CREATE TABLES
 -- and set up primary keys
 CREATE TABLE media(
-    MediaID INTEGER PRIMARY KEY,
-    FileName TEXT NOT NULL,
-    Type TEXT NOT NULL,
-    Directory TEXT NOT NULL,
-    Caption TEXT,
-    Attribution TEXT
+    id INTEGER PRIMARY KEY,
+    file_name TEXT NOT NULL,
+    media_type TEXT NOT NULL,
+    file_directory TEXT NOT NULL,
+    caption TEXT,
+    attribution TEXT
 );
 CREATE TABLE persons(
-    PersonID INTEGER PRIMARY KEY,
-    Category TEXT NOT NULL,
-    Name TEXT NOT NULL,
-    BirthDate TEXT,
-    DeathDate TEXT,
-    PosterImageID INTEGER
+    id INTEGER PRIMARY KEY,
+    category TEXT NOT NULL,
+    name TEXT NOT NULL,
+    birth_date TEXT,
+    death_date TEXT,
+    poster_image_id INTEGER,
+    FOREIGN KEY(poster_image_id) REFERENCES media(id)
 );
 CREATE TABLE genres(
-    GenreID INTEGER PRIMARY KEY,
-    Common INTEGER NOT NULL,
+    id INTEGER PRIMARY KEY,
+    common INTEGER NOT NULL,
     sv TEXT NOT NULL,
     en TEXT NOT NULL
 );
+-- Not using foreign key for created_by, because the user might have been deleted
 CREATE TABLE movies(
-    MovieID INTEGER PRIMARY KEY,
-    Hidden INTEGER NOT NULL,
-    AddDate TEXT,
-    Type TEXT,
-    SeriesID INTEGER,
-    SeasonID INTEGER,
-    SequenceNumber INTEGER,
-    SequenceNumber2 INTEGER,
-    Title TEXT NOT NULL,
-    OriginalTitle TEXT,
-    Sorting TEXT NOT NULL,
-    Year TEXT,
-    Year2 TEXT,
-    Rating INTEGER NOT NULL,
+    id INTEGER PRIMARY KEY,
+    hidden INTEGER NOT NULL,
+    add_date TEXT,
+    type TEXT,
+    series_id INTEGER,
+    season_id INTEGER,
+    sequence_number INTEGER,
+    sequence_number_2 INTEGER,
+    title TEXT NOT NULL,
+    original_title TEXT,
+    sorting_title TEXT NOT NULL,
+    year TEXT,
+    year_2 TEXT,
+    rating INTEGER NOT NULL,
     ViewDate TEXT,
-    PosterImageID INTEGER,
-    LargeImageID INTEGER,
-    IMDbID TEXT
+    poster_image_id INTEGER,
+    large_image_id INTEGER,
+    IMDbID TEXT,
+    description TEXT,
+    created_by INTEGER,
+    created_at TEXT,
+    updated_at TEXT,
+    FOREIGN KEY(series_id) REFERENCES movies(id),
+    FOREIGN KEY(season_id) REFERENCES movies(id),
+    FOREIGN KEY(poster_image_id) REFERENCES media(id),
+    FOREIGN KEY(large_image_id) REFERENCES media(id)
 );
 CREATE TABLE movies_genres(
-    MovieID INTEGER NOT NULL,
-    GenreID INTEGER NOT NULL,
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
-    FOREIGN KEY(GenreID) REFERENCES genres(GenreID)
+    movie_id INTEGER NOT NULL,
+    genre_id INTEGER NOT NULL,
+    FOREIGN KEY(movie_id) REFERENCES movies(id),
+    FOREIGN KEY(genre_id) REFERENCES genres(id)
 );
 CREATE TABLE movies_persons(
-    MovieID INTEGER NOT NULL,
-    PersonID INTEGER NOT NULL,
-    PersonName TEXT NOT NULL,
-    Category TEXT NOT NULL,
-    SequenceOrder INTEGER NOT NULL,
-    RoleName TEXT,
-    Note TEXT,
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
-    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
+    movie_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    person_name TEXT NOT NULL,
+    category TEXT NOT NULL,
+    sequence_order INTEGER NOT NULL,
+    role_name TEXT,
+    note TEXT,
+    FOREIGN KEY(movie_id) REFERENCES movies(id),
+    FOREIGN KEY(person_id) REFERENCES persons(id)
 );
 CREATE TABLE movies_trivia(
-    MovieID INTEGER NOT NULL,
+    movie_id INTEGER NOT NULL,
     sv TEXT,
     en TEXT,
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
+    FOREIGN KEY(movie_id) REFERENCES movies(id)
 );
 CREATE TABLE persons_trivia(
-    PersonID INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
     sv TEXT,
     en TEXT,
-    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
+    FOREIGN KEY(person_id) REFERENCES persons(id)
 );
 CREATE TABLE media_persons(
-    MediaID INTEGER NOT NULL,
-    PersonID INTEGER NOT NULL,
-    FOREIGN KEY(MediaID) REFERENCES media(MediaID),
-    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
+    media_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(media_id) REFERENCES media(id),
+    FOREIGN KEY(person_id) REFERENCES persons(id)
 );
 CREATE TABLE media_movies(
-    MediaID INTEGER NOT NULL,
-    MovieID INTEGER NOT NULL,
-    FOREIGN KEY(MediaID) REFERENCES media(MediaID),
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
+    media_id INTEGER NOT NULL,
+    movie_id INTEGER NOT NULL,
+    FOREIGN KEY(media_id) REFERENCES media(id),
+    FOREIGN KEY(movie_id) REFERENCES movies(id)
 );
 CREATE TABLE movies_quotes(
-    MovieID INTEGER NOT NULL,
-    Quote TEXT NOT NULL,
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
+    movie_id INTEGER NOT NULL,
+    quote TEXT NOT NULL,
+    FOREIGN KEY(movie_id) REFERENCES movies(id)
 );
 CREATE TABLE awards(
-    AwardID INTEGER PRIMARY KEY,
-    Award TEXT NOT NULL,
-    Category TEXT
+    id INTEGER PRIMARY KEY,
+    award TEXT NOT NULL,
+    category TEXT
 );
 CREATE TABLE awards_persons(
-    AwardID INTEGER NOT NULL,
-    Year TEXT,
-    MovieID INTEGER,
-    PersonID INTEGER,
-    PersonName TEXT NOT NULL,
-    Won INTEGER NOT NULL,
-    Note TEXT,
-    FOREIGN KEY(AwardID) REFERENCES awards(AwardID),
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID),
-    FOREIGN KEY(PersonID) REFERENCES persons(PersonID)
+    award_id INTEGER NOT NULL,
+    year TEXT,
+    movie_id INTEGER,
+    person_id INTEGER,
+    person_name TEXT NOT NULL,
+    won INTEGER NOT NULL,
+    note TEXT,
+    FOREIGN KEY(award_id) REFERENCES awards(id),
+    FOREIGN KEY(movie_id) REFERENCES movies(id),
+    FOREIGN KEY(person_id) REFERENCES persons(id)
 );
 CREATE TABLE awards_movies(
-    AwardID INTEGER NOT NULL,
-    Year TEXT,
-    MovieID INTEGER,
-    Won INTEGER NOT NULL,
-    Note TEXT,
-    FOREIGN KEY(AwardID) REFERENCES awards(AwardID),
-    FOREIGN KEY(MovieID) REFERENCES movies(MovieID)
+    award_id INTEGER NOT NULL,
+    year TEXT,
+    movie_id INTEGER,
+    won INTEGER NOT NULL,
+    note TEXT,
+    FOREIGN KEY(award_id) REFERENCES awards(id),
+    FOREIGN KEY(movie_id) REFERENCES movies(id)
 );
 CREATE TABLE relations(
-    RelationID INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     sv TEXT,
     en TEXT
 );
 CREATE TABLE relations_persons(
-    PersonID INTEGER NOT NULL,
-    Person2ID INTEGER,
-    Person2Name TEXT,
-    RelationID INTEGER NOT NULL,
-    Date1 TEXT,
-    Date2 TEXT,
-    FOREIGN KEY(PersonID) REFERENCES persons(PersonID),
-    FOREIGN KEY(Person2ID) REFERENCES persons(PersonID),
-    FOREIGN KEY(RelationID) REFERENCES relations(RelationID)
+    person_id INTEGER NOT NULL,
+    person_2_id INTEGER,
+    person_2_name TEXT,
+    relation_id INTEGER NOT NULL,
+    date_1 TEXT,
+    date_2 TEXT,
+    FOREIGN KEY(person_id) REFERENCES persons(id),
+    FOREIGN KEY(person_2_id) REFERENCES persons(id),
+    FOREIGN KEY(relation_id) REFERENCES relations(id)
+);
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY,
+    username TEXT,
+    email TEXT,
+    password_hash TEXT,
+    role TEXT,
+    created_at TEXT,
+    updated_at TEXT
+);
+CREATE TABLE reviews(
+    id INTEGER PRIMARY KEY,
+    movie_id INTEGER,
+    user_id INTEGER,
+    rating INTEGER,
+    comment TEXT,
+    created_at TEXT,
+    updated_at TEXT,
+    FOREIGN KEY(movie_id) REFERENCES movies(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
