@@ -262,10 +262,10 @@ class MovieController
                 INSERT INTO movies (
                     hidden, added_date, type, series_id, season_id, 
                     sequence_number, sequence_number_2, title, original_title, 
-                    sorting_title, year, year_2, rating, view_date, 
+                    sorting_title, year, year_2, rating,
                     poster_image_id, large_image_id, imdb_id, description,
                     created_by, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ');
 
             $stmt->execute([
@@ -282,7 +282,6 @@ class MovieController
                 $data['year'] ?? null,
                 $data['year_2'] ?? null,
                 $data['rating'] ?? 0,
-                $data['view_date'] ?? null,
                 $data['poster_image_id'] ?? null,
                 $data['large_image_id'] ?? null,
                 $data['imdb_id'] ?? null,
@@ -352,7 +351,7 @@ class MovieController
             $fields = [
                 'hidden', 'type', 'series_id', 'season_id', 'sequence_number',
                 'sequence_number_2', 'title', 'original_title', 'sorting_title',
-                'year', 'year_2', 'rating', 'view_date', 'poster_image_id',
+                'year', 'year_2', 'rating', 'poster_image_id',
                 'large_image_id', 'imdb_id', 'description'
             ];
 

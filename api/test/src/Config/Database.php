@@ -157,7 +157,6 @@ class Database
                     year TEXT,
                     year_2 TEXT,
                     rating INTEGER NOT NULL,
-                    view_date TEXT,
                     poster_image_id INTEGER,
                     large_image_id INTEGER,
                     imdb_id TEXT,
