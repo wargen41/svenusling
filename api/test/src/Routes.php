@@ -2,6 +2,7 @@
 namespace App;
 
 use App\Controllers\MovieController;
+use App\Controllers\PersonController;
 use App\Controllers\ReviewController;
 use App\Controllers\AuthController;
 use App\Middleware\AuthMiddleware;
@@ -25,6 +26,18 @@ class Routes
         $app->put('/api/movies/{id}', [MovieController::class, 'updateMovie'])
             ->add(new AuthMiddleware());
         $app->delete('/api/movies/{id}', [MovieController::class, 'deleteMovie'])
+            ->add(new AuthMiddleware());
+
+        // Person routes (public read)
+        $app->get('/api/persons', [PersonController::class, 'listPersons']);
+        $app->get('/api/persons/{id}', [PersonController::class, 'getPerson']);
+
+        // Person routes (protected - admin only)
+        $app->post('/api/persons', [PersonController::class, 'createPerson'])
+            ->add(new AuthMiddleware());
+        $app->put('/api/persons/{id}', [PersonController::class, 'updatePerson'])
+            ->add(new AuthMiddleware());
+        $app->delete('/api/persons/{id}', [PersonController::class, 'deletePerson'])
             ->add(new AuthMiddleware());
 
         // Review routes (public read)
