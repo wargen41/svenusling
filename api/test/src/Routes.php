@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use App\Controllers\GenreController;
 use App\Controllers\MovieController;
 use App\Controllers\PersonController;
 use App\Controllers\ReviewController;
@@ -15,6 +16,18 @@ class Routes
         // Authentication routes (public)
         $app->post('/api/auth/register', [AuthController::class, 'register']);
         $app->post('/api/auth/login', [AuthController::class, 'login']);
+
+        // Genre routes (public read)
+        $app->get('/api/genres', [GenreController::class, 'listGenres']);
+        $app->get('/api/genres/{id}', [GenreController::class, 'getGenre']);
+
+        // Genre routes (protected - admin only)
+        $app->post('/api/genres', [GenreController::class, 'createGenre'])
+        ->add(new AuthMiddleware());
+        $app->put('/api/genres/{id}', [GenreController::class, 'updateGenre'])
+        ->add(new AuthMiddleware());
+        $app->delete('/api/genres/{id}', [GenreController::class, 'deleteGenre'])
+        ->add(new AuthMiddleware());
 
         // Movie routes (public read)
         $app->get('/api/movies', [MovieController::class, 'listMovies']);
