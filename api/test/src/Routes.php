@@ -3,6 +3,7 @@ namespace App;
 
 use App\Controllers\GenreController;
 use App\Controllers\MovieController;
+use App\Controllers\SeriesController;
 use App\Controllers\PersonController;
 use App\Controllers\ReviewController;
 use App\Controllers\AuthController;
@@ -32,6 +33,8 @@ class Routes
         // Movie routes (public read)
         $app->get('/api/movies', [MovieController::class, 'listMovies']);
         $app->get('/api/movies/{id}', [MovieController::class, 'getMovie']);
+        $app->get('/api/series/{id}', [SeriesController::class, 'getSeries']);
+        $app->get('/api/season/{id}', [SeriesController::class, 'getSeason']);
 
         // Movie routes (protected - admin only)
         $app->post('/api/movies', [MovieController::class, 'createMovie'])
