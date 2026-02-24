@@ -30,7 +30,7 @@ class MovieController
             $params = $request->getQueryParams();
             $type = $params['type'] ?? null;
             $year = $params['year'] ?? null;
-            $rating = $params['rating'] ?? null;  // minimum rating
+            $rating = $params['rating'] ?? null;
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
             $limit = min((int)($params['limit'] ?? 10), 100);
@@ -50,9 +50,9 @@ class MovieController
                 $bindings[] = $year;
             }
 
-            // Filter by minimum rating
+            // Filter by rating
             if ($rating !== null) {
-                $where[] = 'rating >= ?';
+                $where[] = 'rating = ?';
                 $bindings[] = (int)$rating;
             }
 
