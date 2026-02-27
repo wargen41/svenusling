@@ -42,7 +42,7 @@ class PersonController
             $whereClause = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
 
             $sql = "
-                SELECT id, category, name, birth_date, death_date, poster_image_id
+                SELECT id, category, name, poster_image_id
                 FROM persons
                 $whereClause
                 ORDER BY name ASC
