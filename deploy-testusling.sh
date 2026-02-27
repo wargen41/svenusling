@@ -4,8 +4,6 @@
 
 # Intermediate version which only deploys a test version of the API
 
-set -euo pipefail
-
 # Set source directory to use (without trailing slash)
 source_dir="svenusling-main/api/test"
 
@@ -18,6 +16,8 @@ fi
 # Assign the first argument to the domain variable
 domain=$1
 
+set -euo pipefail
+
 # Navigate to the domain directory
 cd ~/domains/"$domain" || { echo "Error: The domain '$domain' does not exist."; exit 1; }
 
@@ -28,7 +28,7 @@ wget https://github.com/wargen41/svenusling/archive/main.zip
 unzip main.zip "$source_dir/*"
 
 # Move files to their respective homes
-rsync -av "$source_dir/public" public_html/
+rsync -av "$source_dir/public/" public_html/
 rsync -av "$source_dir/src" ./
 mv "$source_dir/composer.json" ./
 
