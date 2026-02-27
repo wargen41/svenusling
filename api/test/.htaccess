@@ -1,5 +1,0 @@
-<IfModule mod_rewrite.c>
-   RewriteEngine on
-   RewriteRule ^$ public/ [L]
-   RewriteRule (^[^/]*$) https://helloworld.wxli.eu/$1 [L]
-</IfModule>
