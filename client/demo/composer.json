@@ -1,0 +1,11 @@
+{
+    "name": "movie-client/app",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "MovieClient\\": "src/"
+        }
+    }
+}
