@@ -17,7 +17,7 @@ try {
     foreach ($movies['data'] as $movie) {
         $id = $movie['id'];
         $title = $movie['title'];
-        echo "<a href=\"movie.php?id=$id\"><li>$title</li></a>";
+        echo "<li><a href=\"movie.php?id=$id\">$title</a></li>";
     }
     echo "</ul>";
 
