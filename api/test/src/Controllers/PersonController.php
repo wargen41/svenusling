@@ -24,7 +24,12 @@ class PersonController
             $category = $params['category'] ?? null;  // actor, director, voice
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
-            $limit = min((int)($params['limit'] ?? 10), 100);
+            $details = $params['details'] ?? null;
+            if($details === 'minimal'){
+                $limit = (int)($params['limit'] ?? -1);
+            }else{
+                $limit = min((int)($params['limit'] ?? 100), 1000);
+            }
 
             $where = [];
             $bindings = [];
@@ -41,8 +46,13 @@ class PersonController
 
             $whereClause = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
 
+            $columns = 'id, category, name, birth_date, death_date, poster_image_id';
+            if($details === 'minimal'){
+                $columns = 'id, category, name';
+            }
+
             $sql = "
-                SELECT id, category, name, poster_image_id
+                SELECT $columns
                 FROM persons
                 $whereClause
                 ORDER BY name ASC
