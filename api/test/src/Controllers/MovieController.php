@@ -74,7 +74,7 @@ class MovieController
 
             $columns = 'id, title, original_title, year, type, rating, poster_image_id, added_date';
             if($details === 'minimal'){
-                $columns = 'id, title, year, type, rating'
+                $columns = 'id, title, year, type, rating';
             }
 
             $sql = "
