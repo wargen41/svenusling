@@ -15,10 +15,13 @@ try {
 
         $title = $data['title'];
         $type = $data['type'];
-        $rating = suRating($data['rating']);
+        $rating = $data['rating'] ?? null;
 
         echo "<h1>$title ($type)</h1>";
-        echo "<p>$rating</p>";
+        if($rating){
+            $rating = suRating($rating);
+            echo "<p>$rating</p>";
+        }
 
         echo print_rPRE($movie['data']);
 

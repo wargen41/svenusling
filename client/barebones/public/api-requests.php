@@ -15,7 +15,7 @@ function print_rPRE($value) {
 }
 
 // Get movies list
-function getMovies($baseUrl, $token = null) {
+function getMovies($baseUrl) {
     $ch = curl_init();
 
     curl_setopt_array($ch, [
@@ -35,11 +35,11 @@ function getMovies($baseUrl, $token = null) {
 }
 
 // Get single movie with all data
-function getMovie($baseUrl, $movieId, $token = null) {
+function getMovie($baseUrl, $id) {
     $ch = curl_init();
 
     curl_setopt_array($ch, [
-        CURLOPT_URL => $baseUrl . '/api/movies/' . $movieId,
+        CURLOPT_URL => $baseUrl . '/api/movies/' . $id,
         CURLOPT_RETURNTRANSFER => true
     ]);
 
@@ -61,6 +61,46 @@ function getMoviesFiltered($baseUrl, $filters = []) {
 
     curl_setopt_array($ch, [
         CURLOPT_URL => $baseUrl . '/api/movies?' . $query,
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get persons list
+function getPersons($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/persons',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get single person with all data
+function getPerson($baseUrl, $id) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/persons/' . $id,
         CURLOPT_RETURNTRANSFER => true
     ]);
 
