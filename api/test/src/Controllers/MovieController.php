@@ -203,7 +203,7 @@ class MovieController
 
             // Get season info if this is an episode
             if ($movie['season_id']) {
-                $stmt = $this->db->prepare('SELECT id, title, season_number FROM movies WHERE id = ?');
+                $stmt = $this->db->prepare('SELECT id, title, sequence_number FROM movies WHERE id = ?');
                 $stmt->execute([$movie['season_id']]);
                 $movie['season'] = $stmt->fetch();
             }
