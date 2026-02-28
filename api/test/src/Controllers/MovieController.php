@@ -28,12 +28,18 @@ class MovieController
             error_log('listMovies called');
             
             $params = $request->getQueryParams();
+            $details = $params['details'] ?? null;
             $type = $params['type'] ?? null;
             $year = $params['year'] ?? null;
             $rating = $params['rating'] ?? null;
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
-            $limit = min((int)($params['limit'] ?? 100), 1000);
+            if($details === 'minimal'){
+                $limit = (int)($params['limit'] ?? 0);
+            }else{
+                $limit = min((int)($params['limit'] ?? 100), 1000);
+            }
+
 
             $where = [];
             $bindings = [];
@@ -66,8 +72,13 @@ class MovieController
 
             $whereClause = !empty($where) ? 'WHERE ' . implode(' AND ', $where) : '';
 
+            $columns = 'id, title, original_title, year, type, rating, poster_image_id, added_date';
+            if($details === 'minimal'){
+                $columns = 'id, title, year, type, rating'
+            }
+
             $sql = "
-                SELECT id, title, original_title, year, type, rating, poster_image_id, added_date
+                SELECT $columns
                 FROM movies
                 $whereClause
                 ORDER BY sorting_title ASC
