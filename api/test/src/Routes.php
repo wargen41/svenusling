@@ -4,7 +4,10 @@ namespace App;
 use App\Controllers\GenreController;
 use App\Controllers\MovieController;
 use App\Controllers\SeriesController;
+use App\Controllers\MoviePersonsController;
+use App\Controllers\MovieGenresController;
 use App\Controllers\PersonController;
+use App\Controllers\RelationsController;
 use App\Controllers\AwardsController;
 use App\Controllers\ReviewController;
 use App\Controllers\MediaController;
@@ -36,12 +39,39 @@ class Routes
         $app->put('/api/movies/{id}', [MovieController::class, 'updateMovie'])->add(new AuthMiddleware());
         $app->delete('/api/movies/{id}', [MovieController::class, 'deleteMovie'])->add(new AuthMiddleware());
 
+        // Movie persons endpoints
+        $app->get('/api/movies/{id}/persons', [MoviePersonsController::class, 'getMoviePersons']);
+        $app->get('/api/movies/{id}/persons/{category}', [MoviePersonsController::class, 'getMoviePersonsByCategory']);
+        $app->post('/api/movies/persons', [MoviePersonsController::class, 'addPersonToMovie'])->add(AuthMiddleware::class);
+        $app->put('/api/movies/{movie_id}/persons/{person_id}', [MoviePersonsController::class, 'updatePersonInMovie'])->add(AuthMiddleware::class);
+        $app->delete('/api/movies/{movie_id}/persons/{person_id}', [MoviePersonsController::class, 'removePersonFromMovie'])->add(AuthMiddleware::class);
+
+        // Movie genres endpoints
+        $app->get('/api/movies/{id}/genres', [MovieGenresController::class, 'getMovieGenres']);
+        $app->post('/api/movies/genres', [MovieGenresController::class, 'addGenreToMovie'])->add(AuthMiddleware::class);
+        $app->post('/api/movies/genres/bulk', [MovieGenresController::class, 'addGenresToMovie'])->add(AuthMiddleware::class);
+        $app->put('/api/movies/{id}/genres', [MovieGenresController::class, 'replaceMovieGenres'])->add(AuthMiddleware::class);
+        $app->delete('/api/movies/{movie_id}/genres/{genre_id}', [MovieGenresController::class, 'removeGenreFromMovie'])->add(AuthMiddleware::class);
+
         // Person routes
         $app->get('/api/persons', [PersonController::class, 'listPersons']);
         $app->get('/api/persons/{id}', [PersonController::class, 'getPerson']);
         $app->post('/api/persons', [PersonController::class, 'createPerson'])->add(new AuthMiddleware());
         $app->put('/api/persons/{id}', [PersonController::class, 'updatePerson'])->add(new AuthMiddleware());
         $app->delete('/api/persons/{id}', [PersonController::class, 'deletePerson'])->add(new AuthMiddleware());
+
+        // Relations endpoints
+        $app->get('/api/relations', [RelationsController::class, 'listRelationTypes']);
+        $app->get('/api/relations/{id}', [RelationsController::class, 'getRelationType']);
+        $app->post('/api/relations', [RelationsController::class, 'createRelationType'])->add(AuthMiddleware::class);
+        $app->put('/api/relations/{id}', [RelationsController::class, 'updateRelationType'])->add(AuthMiddleware::class);
+        $app->delete('/api/relations/{id}', [RelationsController::class, 'deleteRelationType'])->add(AuthMiddleware::class);
+
+        // Person relations endpoints
+        $app->get('/api/persons/{id}/relations', [RelationsController::class, 'getPersonRelations']);
+        $app->post('/api/persons/relations', [RelationsController::class, 'createPersonRelation'])->add(AuthMiddleware::class);
+        $app->put('/api/persons/{person_id}/relations/{relation_id}', [RelationsController::class, 'updatePersonRelation'])->add(AuthMiddleware::class);
+        $app->delete('/api/persons/{person_id}/relations/{relation_id}', [RelationsController::class, 'deletePersonRelation'])->add(AuthMiddleware::class);
 
         // Awards endpoints
         $app->get('/api/awards', [AwardsController::class, 'listAwards']);
