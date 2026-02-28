@@ -35,7 +35,7 @@ class MovieController
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
             if($details === 'minimal'){
-                $limit = (int)($params['limit'] ?? 0);
+                $limit = (int)($params['limit'] ?? -1);
             }else{
                 $limit = min((int)($params['limit'] ?? 100), 1000);
             }
