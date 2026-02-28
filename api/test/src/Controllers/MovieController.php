@@ -28,12 +28,12 @@ class MovieController
             error_log('listMovies called');
             
             $params = $request->getQueryParams();
-            $details = $params['details'] ?? null;
             $type = $params['type'] ?? null;
             $year = $params['year'] ?? null;
             $rating = $params['rating'] ?? null;
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
+            $details = $params['details'] ?? null;
             if($details === 'minimal'){
                 $limit = (int)($params['limit'] ?? -1);
             }else{
