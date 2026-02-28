@@ -33,7 +33,7 @@ class MovieController
             $rating = $params['rating'] ?? null;
             $search = $params['search'] ?? null;
             $skip = (int)($params['skip'] ?? 0);
-            $limit = min((int)($params['limit'] ?? 10), 100);
+            $limit = min((int)($params['limit'] ?? 100), 1000);
 
             $where = [];
             $bindings = [];
