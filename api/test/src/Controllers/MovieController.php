@@ -416,6 +416,288 @@ class MovieController
         }
     }
 
+    /**
+     * Public: Get all media for a movie
+     */
+    public function getMovieMedia(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $movieId = $args['id'] ?? null;
+
+            if (!$movieId || !is_numeric($movieId)) {
+                return $this->jsonResponse($response, ['error' => 'Invalid movie ID'], 400);
+            }
+
+            // Verify movie exists
+            $stmt = $this->db->prepare('SELECT id, title FROM movies WHERE id = ?');
+            $stmt->execute([$movieId]);
+            $movie = $stmt->fetch();
+
+            if (!$movie) {
+                return $this->jsonResponse($response, ['error' => 'Movie not found'], 404);
+            }
+
+            // Get all media for this movie
+            $stmt = $this->db->prepare('
+            SELECT m.*
+            FROM media m
+            JOIN media_movies mm ON mm.media_id = m.id
+            WHERE mm.movie_id = ?
+            ORDER BY m.media_type ASC, m.file_name ASC
+            ');
+            $stmt->execute([$movieId]);
+            $media = $stmt->fetchAll();
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'data' => [
+                    'movie' => $movie,
+                    'media' => $media,
+                    'count' => count($media)
+                ]
+            ]);
+
+        } catch (\Exception $e) {
+            error_log('Error in getMovieMedia: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to fetch movie media'], 500);
+        }
+    }
+
+    /**
+     * Protected: Add media to movie (admin only)
+     */
+    public function addMediaToMovie(Request $request, Response $response): Response
+    {
+        try {
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (empty($data['movie_id']) || empty($data['media_id'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'movie_id and media_id are required'],
+                    422
+                );
+            }
+
+            // Verify movie exists
+            $stmt = $this->db->prepare('SELECT id FROM movies WHERE id = ?');
+            $stmt->execute([$data['movie_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Movie not found'], 404);
+            }
+
+            // Verify media exists
+            $stmt = $this->db->prepare('SELECT id FROM media WHERE id = ?');
+            $stmt->execute([$data['media_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Media not found'], 404);
+            }
+
+            // Check if media already assigned to movie
+            $stmt = $this->db->prepare('
+            SELECT * FROM media_movies
+            WHERE movie_id = ? AND media_id = ?
+            ');
+            $stmt->execute([$data['movie_id'], $data['media_id']]);
+            if ($stmt->fetch()) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Media already assigned to movie'],
+                    409
+                );
+            }
+
+            $stmt = $this->db->prepare('
+            INSERT INTO media_movies (media_id, movie_id)
+            VALUES (?, ?)
+            ');
+
+            $stmt->execute([$data['media_id'], $data['movie_id']]);
+
+            return $this->jsonResponse(
+                $response,
+                ['success' => true, 'message' => 'Media added to movie'],
+                201
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in addMediaToMovie: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to add media to movie'], 500);
+        }
+    }
+
+    /**
+     * Protected: Add multiple media to movie (admin only)
+     */
+    public function addMultipleMediaToMovie(Request $request, Response $response): Response
+    {
+        try {
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (empty($data['movie_id']) || empty($data['media_ids']) || !is_array($data['media_ids'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'movie_id and media_ids (array) are required'],
+                                           422
+                );
+            }
+
+            // Verify movie exists
+            $stmt = $this->db->prepare('SELECT id FROM movies WHERE id = ?');
+            $stmt->execute([$data['movie_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Movie not found'], 404);
+            }
+
+            $successful = 0;
+            $failed = 0;
+            $errors = [];
+
+            $insertStmt = $this->db->prepare('
+            INSERT OR IGNORE INTO media_movies (media_id, movie_id)
+            VALUES (?, ?)
+            ');
+
+            foreach ($data['media_ids'] as $mediaId) {
+                try {
+                    // Verify media exists
+                    $stmt = $this->db->prepare('SELECT id FROM media WHERE id = ?');
+                    $stmt->execute([$mediaId]);
+                    if (!$stmt->fetch()) {
+                        $failed++;
+                        $errors[] = "Media ID $mediaId not found";
+                        continue;
+                    }
+
+                    $insertStmt->execute([$mediaId, $data['movie_id']]);
+                    $successful++;
+                } catch (\Exception $e) {
+                    $failed++;
+                    $errors[] = "Media ID $mediaId: " . $e->getMessage();
+                }
+            }
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => "Added $successful media to movie",
+                    'successful' => $successful,
+                    'failed' => $failed,
+                    'errors' => $errors
+                ],
+                201
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in addMultipleMediaToMovie: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to add media to movie'], 500);
+        }
+    }
+
+    /**
+     * Protected: Remove media from movie (admin only)
+     */
+    public function removeMediaFromMovie(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $movieId = $args['movie_id'] ?? null;
+            $mediaId = $args['media_id'] ?? null;
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $stmt = $this->db->prepare('
+            DELETE FROM media_movies
+            WHERE movie_id = ? AND media_id = ?
+            ');
+            $stmt->execute([$movieId, $mediaId]);
+
+            if ($stmt->rowCount() === 0) {
+                return $this->jsonResponse($response, ['error' => 'Media not assigned to movie'], 404);
+            }
+
+            return $this->jsonResponse($response, ['success' => true, 'message' => 'Media removed from movie']);
+
+        } catch (\Exception $e) {
+            error_log('Error in removeMediaFromMovie: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to remove media from movie'], 500);
+        }
+    }
+
+    /**
+     * Protected: Replace all media for a movie (admin only)
+     */
+    public function replaceMovieMedia(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $movieId = $args['id'] ?? null;
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (!isset($data['media_ids']) || !is_array($data['media_ids'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'media_ids (array) is required'],
+                                           422
+                );
+            }
+
+            // Verify movie exists
+            $stmt = $this->db->prepare('SELECT id FROM movies WHERE id = ?');
+            $stmt->execute([$movieId]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Movie not found'], 404);
+            }
+
+            // Delete all existing media assignments
+            $stmt = $this->db->prepare('DELETE FROM media_movies WHERE movie_id = ?');
+            $stmt->execute([$movieId]);
+
+            // Insert new media
+            $insertStmt = $this->db->prepare('
+            INSERT INTO media_movies (media_id, movie_id)
+            VALUES (?, ?)
+            ');
+
+            foreach ($data['media_ids'] as $mediaId) {
+                $insertStmt->execute([$mediaId, $movieId]);
+            }
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => 'Movie media updated',
+                    'count' => count($data['media_ids'])
+                ]
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in replaceMovieMedia: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to update movie media'], 500);
+        }
+    }
+
     private function validateMovieInput($data)
     {
         $errors = [];

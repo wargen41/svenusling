@@ -270,6 +270,288 @@ class PersonController
         }
     }
 
+    /**
+     * Public: Get all media for a person
+     */
+    public function getPersonMedia(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $personId = $args['id'] ?? null;
+
+            if (!$personId || !is_numeric($personId)) {
+                return $this->jsonResponse($response, ['error' => 'Invalid person ID'], 400);
+            }
+
+            // Verify person exists
+            $stmt = $this->db->prepare('SELECT id, name FROM persons WHERE id = ?');
+            $stmt->execute([$personId]);
+            $person = $stmt->fetch();
+
+            if (!$person) {
+                return $this->jsonResponse($response, ['error' => 'Person not found'], 404);
+            }
+
+            // Get all media for this person
+            $stmt = $this->db->prepare('
+            SELECT m.*
+            FROM media m
+            JOIN media_persons mp ON mp.media_id = m.id
+            WHERE mp.person_id = ?
+            ORDER BY m.media_type ASC, m.file_name ASC
+            ');
+            $stmt->execute([$personId]);
+            $media = $stmt->fetchAll();
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'data' => [
+                    'person' => $person,
+                    'media' => $media,
+                    'count' => count($media)
+                ]
+            ]);
+
+        } catch (\Exception $e) {
+            error_log('Error in getPersonMedia: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to fetch person media'], 500);
+        }
+    }
+
+    /**
+     * Protected: Add media to person (admin only)
+     */
+    public function addMediaToPerson(Request $request, Response $response): Response
+    {
+        try {
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (empty($data['person_id']) || empty($data['media_id'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'person_id and media_id are required'],
+                    422
+                );
+            }
+
+            // Verify person exists
+            $stmt = $this->db->prepare('SELECT id FROM persons WHERE id = ?');
+            $stmt->execute([$data['person_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Person not found'], 404);
+            }
+
+            // Verify media exists
+            $stmt = $this->db->prepare('SELECT id FROM media WHERE id = ?');
+            $stmt->execute([$data['media_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Media not found'], 404);
+            }
+
+            // Check if media already assigned to person
+            $stmt = $this->db->prepare('
+            SELECT * FROM media_persons
+            WHERE person_id = ? AND media_id = ?
+            ');
+            $stmt->execute([$data['person_id'], $data['media_id']]);
+            if ($stmt->fetch()) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'Media already assigned to person'],
+                    409
+                );
+            }
+
+            $stmt = $this->db->prepare('
+            INSERT INTO media_persons (media_id, person_id)
+            VALUES (?, ?)
+            ');
+
+            $stmt->execute([$data['media_id'], $data['person_id']]);
+
+            return $this->jsonResponse(
+                $response,
+                ['success' => true, 'message' => 'Media added to person'],
+                201
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in addMediaToPerson: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to add media to person'], 500);
+        }
+    }
+
+    /**
+     * Protected: Add multiple media to person (admin only)
+     */
+    public function addMultipleMediaToPerson(Request $request, Response $response): Response
+    {
+        try {
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (empty($data['person_id']) || empty($data['media_ids']) || !is_array($data['media_ids'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'person_id and media_ids (array) are required'],
+                                           422
+                );
+            }
+
+            // Verify person exists
+            $stmt = $this->db->prepare('SELECT id FROM persons WHERE id = ?');
+            $stmt->execute([$data['person_id']]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Person not found'], 404);
+            }
+
+            $successful = 0;
+            $failed = 0;
+            $errors = [];
+
+            $insertStmt = $this->db->prepare('
+            INSERT OR IGNORE INTO media_persons (media_id, person_id)
+            VALUES (?, ?)
+            ');
+
+            foreach ($data['media_ids'] as $mediaId) {
+                try {
+                    // Verify media exists
+                    $stmt = $this->db->prepare('SELECT id FROM media WHERE id = ?');
+                    $stmt->execute([$mediaId]);
+                    if (!$stmt->fetch()) {
+                        $failed++;
+                        $errors[] = "Media ID $mediaId not found";
+                        continue;
+                    }
+
+                    $insertStmt->execute([$mediaId, $data['person_id']]);
+                    $successful++;
+                } catch (\Exception $e) {
+                    $failed++;
+                    $errors[] = "Media ID $mediaId: " . $e->getMessage();
+                }
+            }
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => "Added $successful media to person",
+                    'successful' => $successful,
+                    'failed' => $failed,
+                    'errors' => $errors
+                ],
+                201
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in addMultipleMediaToPerson: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to add media to person'], 500);
+        }
+    }
+
+    /**
+     * Protected: Remove media from person (admin only)
+     */
+    public function removeMediaFromPerson(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $personId = $args['person_id'] ?? null;
+            $mediaId = $args['media_id'] ?? null;
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $stmt = $this->db->prepare('
+            DELETE FROM media_persons
+            WHERE person_id = ? AND media_id = ?
+            ');
+            $stmt->execute([$personId, $mediaId]);
+
+            if ($stmt->rowCount() === 0) {
+                return $this->jsonResponse($response, ['error' => 'Media not assigned to person'], 404);
+            }
+
+            return $this->jsonResponse($response, ['success' => true, 'message' => 'Media removed from person']);
+
+        } catch (\Exception $e) {
+            error_log('Error in removeMediaFromPerson: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to remove media from person'], 500);
+        }
+    }
+
+    /**
+     * Protected: Replace all media for a person (admin only)
+     */
+    public function replacePersonMedia(Request $request, Response $response, array $args): Response
+    {
+        try {
+            $personId = $args['id'] ?? null;
+            $userRole = $request->getAttribute('user_role');
+
+            if ($userRole !== 'admin') {
+                return $this->jsonResponse($response, ['error' => 'Admin access required'], 403);
+            }
+
+            $data = $request->getParsedBody();
+
+            if (!isset($data['media_ids']) || !is_array($data['media_ids'])) {
+                return $this->jsonResponse(
+                    $response,
+                    ['error' => 'media_ids (array) is required'],
+                                           422
+                );
+            }
+
+            // Verify person exists
+            $stmt = $this->db->prepare('SELECT id FROM persons WHERE id = ?');
+            $stmt->execute([$personId]);
+            if (!$stmt->fetch()) {
+                return $this->jsonResponse($response, ['error' => 'Person not found'], 404);
+            }
+
+            // Delete all existing media assignments
+            $stmt = $this->db->prepare('DELETE FROM media_persons WHERE person_id = ?');
+            $stmt->execute([$personId]);
+
+            // Insert new media
+            $insertStmt = $this->db->prepare('
+            INSERT INTO media_persons (media_id, person_id)
+            VALUES (?, ?)
+            ');
+
+            foreach ($data['media_ids'] as $mediaId) {
+                $insertStmt->execute([$mediaId, $personId]);
+            }
+
+            return $this->jsonResponse(
+                $response,
+                [
+                    'success' => true,
+                    'message' => 'Person media updated',
+                    'count' => count($data['media_ids'])
+                ]
+            );
+
+        } catch (\Exception $e) {
+            error_log('Error in replacePersonMedia: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to update person media'], 500);
+        }
+    }
+
     private function jsonResponse(Response $response, $data, $status = 200): Response
     {
         $response->getBody()->write(json_encode($data));

@@ -53,6 +53,13 @@ class Routes
         $app->put('/api/movies/{id}/genres', [MovieGenresController::class, 'replaceMovieGenres'])->add(AuthMiddleware::class);
         $app->delete('/api/movies/{movie_id}/genres/{genre_id}', [MovieGenresController::class, 'removeGenreFromMovie'])->add(AuthMiddleware::class);
 
+        // Movie media endpoints
+        $app->get('/api/movies/{id}/media', [MovieController::class, 'getMovieMedia']);
+        $app->post('/api/movies/media', [MovieController::class, 'addMediaToMovie'])->add(AuthMiddleware::class);
+        $app->post('/api/movies/media/bulk', [MovieController::class, 'addMultipleMediaToMovie'])->add(AuthMiddleware::class);
+        $app->put('/api/movies/{id}/media', [MovieController::class, 'replaceMovieMedia'])->add(AuthMiddleware::class);
+        $app->delete('/api/movies/{movie_id}/media/{media_id}', [MovieController::class, 'removeMediaFromMovie'])->add(AuthMiddleware::class);
+
         // Person routes
         $app->get('/api/persons', [PersonController::class, 'listPersons']);
         $app->get('/api/persons/{id}', [PersonController::class, 'getPerson']);
@@ -72,6 +79,13 @@ class Routes
         $app->post('/api/persons/relations', [RelationsController::class, 'createPersonRelation'])->add(AuthMiddleware::class);
         $app->put('/api/persons/{person_id}/relations/{relation_id}', [RelationsController::class, 'updatePersonRelation'])->add(AuthMiddleware::class);
         $app->delete('/api/persons/{person_id}/relations/{relation_id}', [RelationsController::class, 'deletePersonRelation'])->add(AuthMiddleware::class);
+
+        // Person media endpoints
+        $app->get('/api/persons/{id}/media', [PersonController::class, 'getPersonMedia']);
+        $app->post('/api/persons/media', [PersonController::class, 'addMediaToPerson'])->add(AuthMiddleware::class);
+        $app->post('/api/persons/media/bulk', [PersonController::class, 'addMultipleMediaToPerson'])->add(AuthMiddleware::class);
+        $app->put('/api/persons/{id}/media', [PersonController::class, 'replacePersonMedia'])->add(AuthMiddleware::class);
+        $app->delete('/api/persons/{person_id}/media/{media_id}', [PersonController::class, 'removeMediaFromPerson'])->add(AuthMiddleware::class);
 
         // Awards endpoints
         $app->get('/api/awards', [AwardsController::class, 'listAwards']);
