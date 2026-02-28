@@ -19,7 +19,7 @@ function getMovies($baseUrl) {
     $ch = curl_init();
 
     curl_setopt_array($ch, [
-        CURLOPT_URL => $baseUrl . '/api/movies',
+        CURLOPT_URL => $baseUrl . '/api/movies?details=minimal',
         CURLOPT_RETURNTRANSFER => true
     ]);
 
