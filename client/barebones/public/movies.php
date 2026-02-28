@@ -10,10 +10,15 @@ try {
     // Get all movies
     $movies = getMovies($baseUrl);
 
-    echo "<h1>Sven Usling databaskoll</h1>";
+    echo "<h1>Alla inlagda filmer</h1>";
+    echo "<p>Antal: " . $movies['pagination']['total'] . "</p>";
+
     echo "<ul>";
-    echo "<li><a href=\"movies.php\">Alla inlagda filmer</a></li>";
-    echo "<li><a href=\"persons.php\">Alla viktiga personer</a></li>";
+    foreach ($movies['data'] as $movie) {
+        $id = $movie['id'];
+        $title = $movie['title'];
+        echo "<a href=\"movie.php?id=$id\"><li>$title</li></a>";
+    }
     echo "</ul>";
 
 } catch (Exception $e) {

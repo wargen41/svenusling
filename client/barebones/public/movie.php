@@ -2,6 +2,8 @@
 require __DIR__ . '/config.php';
 require __DIR__ . '/api-requests.php';
 
+require __DIR__ . '/html-start.php';
+
 try {
     $baseUrl = API_BASE_URL;
 
@@ -32,3 +34,5 @@ try {
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+
+require __DIR__ . '/html-end.php';
