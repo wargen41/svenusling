@@ -259,7 +259,8 @@ class Database
                 CREATE TABLE IF NOT EXISTS awards (
                     id INTEGER PRIMARY KEY,
                     award TEXT NOT NULL,
-                    category TEXT
+                    category TEXT,
+                    UNIQUE (award, category)
                 )
             ');
             error_log('✓ Awards table created');
