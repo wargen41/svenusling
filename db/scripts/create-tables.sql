@@ -64,9 +64,9 @@ CREATE TABLE movies_persons(
     person_id INTEGER NOT NULL,
     person_name TEXT NOT NULL,
     category TEXT NOT NULL,
-    sequence_order INTEGER NOT NULL,
     role_name TEXT,
     note TEXT,
+    sequence_number INTEGER NOT NULL,
     FOREIGN KEY(movie_id) REFERENCES movies(id),
     FOREIGN KEY(person_id) REFERENCES persons(id)
 );

@@ -152,11 +152,11 @@ class MovieController
 
             // Get persons by category
             $stmt = $this->db->prepare('
-                SELECT p.*, mp.category, mp.sequence_order, mp.role_name, mp.note
+                SELECT p.*, mp.category, mp.sequence_number, mp.role_name, mp.note
                 FROM persons p
                 JOIN movies_persons mp ON mp.person_id = p.id
                 WHERE mp.movie_id = ?
-                ORDER BY mp.category ASC, mp.sequence_order ASC
+                ORDER BY mp.category ASC, mp.sequence_number ASC
             ');
             $stmt->execute([$movieId]);
             $persons = $stmt->fetchAll();

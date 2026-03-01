@@ -41,7 +41,7 @@ class MoviePersonsController
                 FROM movies_persons mp
                 JOIN persons p ON mp.person_id = p.id
                 WHERE mp.movie_id = ?
-                ORDER BY mp.category ASC, mp.sequence_order ASC
+                ORDER BY mp.category ASC, mp.sequence_number ASC
             ');
             $stmt->execute([$movieId]);
             $persons = $stmt->fetchAll();
@@ -102,7 +102,7 @@ class MoviePersonsController
                 FROM movies_persons mp
                 JOIN persons p ON mp.person_id = p.id
                 WHERE mp.movie_id = ? AND mp.category = ?
-                ORDER BY mp.sequence_order ASC
+                ORDER BY mp.sequence_number ASC
             ');
             $stmt->execute([$movieId, $category]);
             $persons = $stmt->fetchAll();
@@ -175,7 +175,7 @@ class MoviePersonsController
             }
 
             $stmt = $this->db->prepare('
-                INSERT INTO movies_persons (movie_id, person_id, person_name, category, sequence_order, role_name, note)
+                INSERT INTO movies_persons (movie_id, person_id, person_name, category, role_name, note, sequence_number)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
             ');
 
@@ -184,9 +184,9 @@ class MoviePersonsController
                 $data['person_id'],
                 $person['name'],
                 $data['category'],
-                $data['sequence_order'] ?? 0,
                 $data['role_name'] ?? null,
-                $data['note'] ?? null
+                $data['note'] ?? null,
+                $data['sequence_number'] ?? 0
             ]);
 
             return $this->jsonResponse(
@@ -233,9 +233,9 @@ class MoviePersonsController
                 $updates[] = 'category = ?';
                 $bindings[] = $data['category'];
             }
-            if (isset($data['sequence_order'])) {
-                $updates[] = 'sequence_order = ?';
-                $bindings[] = $data['sequence_order'];
+            if (isset($data['sequence_number'])) {
+                $updates[] = 'sequence_number = ?';
+                $bindings[] = $data['sequence_number'];
             }
             if (isset($data['role_name'])) {
                 $updates[] = 'role_name = ?';
