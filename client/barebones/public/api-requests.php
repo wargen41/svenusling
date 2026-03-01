@@ -213,3 +213,23 @@ function getPerson($baseUrl, $id) {
 
     return json_decode($response, true);
 }
+
+// Get awards list
+function getAwards($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/awards',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}

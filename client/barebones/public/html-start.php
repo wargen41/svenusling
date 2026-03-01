@@ -5,9 +5,13 @@ echo "<style>body{margin:40px auto;max-width:770px;line-height:1.6;font-size:18p
 echo "</head>";
 echo "<body>";
 echo "<nav>";
+echo "<a href=\"./\">Start</a>";
+echo " | ";
 echo "<a href=\"movies.php\">Filmlista</a>";
 echo " | ";
 echo "<a href=\"persons.php\">VIP-lista</a>";
+echo " | ";
+echo "<a href=\"awards.php\">Utmärkelser</a>";
 echo "</nav>";
 echo "<form action=search.php method=get>";
 $prefilled_value = $prefilled ?? "";
