@@ -9,4 +9,9 @@ echo "<a href=\"movies.php\">Filmlista</a>";
 echo " | ";
 echo "<a href=\"persons.php\">VIP-lista</a>";
 echo "</nav>";
+echo "<form action=search.php method=get>";
+$prefilled_value = $prefilled ?? "";
+echo "<input type=\"search\" name=\"query\" value=\"$prefilled_value\">";
+echo "<input type=\"submit\" value=\"Sök\">";
+echo "</form>";
 ?>
