@@ -7,7 +7,7 @@ $sanitized = sanitizeQuery($id);
 if($sanitized === $id){
     $location = API_BASE_URL.'/barebones/movie.php?id='.$id;
 }else{
-    $location = API_BASE_URL.'/barebones/search.php?query='.rawurlencode($id);
+    $location = API_BASE_URL.'/barebones/search-movies.php?query='.rawurlencode($id);
 }
 
 header("Location: {$location}");
