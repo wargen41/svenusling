@@ -48,6 +48,13 @@ function removeAllQueriesFromURL(string $url): string {
     return $URL;
 }
 
+function sanitizeQuery(string $value): string {
+    // Remove everything but lower case letters a to z and integers
+    $value = preg_replace('/[^0-9]/', '', $value);
+
+    return $value;
+}
+
 function suRating(int $rating): string {
     if($rating == 0){
         return '-';

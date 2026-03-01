@@ -1,4 +1,11 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+use League\CommonMark\CommonMarkConverter;
+$md_converter = new CommonMarkConverter([
+    'html_input' => 'strip',
+    'allow_unsafe_links' => false,
+]);
+
 require __DIR__ . '/config.php';
 require __DIR__ . '/api-requests.php';
 
@@ -26,6 +33,8 @@ try {
         $directors = $persons['director'] ?? null;
         $actors = $persons['actor'] ?? null;
         $voice_actors = $persons['voice_actor'] ?? null;
+
+        $trivia = $data['trivia'];
 
         echo "<h1>$title ($type)</h1>";
         if($original_title){
@@ -74,6 +83,21 @@ try {
                 $id = $item['id'];
                 $name = $item['name'];
                 echo "<li><a href=\"person.php?id=$id\">$name</a></li>";
+            }
+            echo "</ul>";
+        }
+        if(!empty($trivia)){
+            echo "<h2>Visste du?</h2>";
+            echo "<ul>";
+            foreach($trivia as $item){
+                $md = "";
+                if($item['en']){
+                    $md = $item['en'];
+                }else{
+                    $md = $item['sv'];
+                }
+                $html = $md_converter->convert($md);
+                echo "<li>$html</li>";
             }
             echo "</ul>";
         }
