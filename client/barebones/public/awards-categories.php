@@ -10,7 +10,7 @@ try {
     // Get all awards
     $categories = getAwardsCategories($baseUrl);
 
-    echo "<h1>Alla utmärkelser och kategories</h1>";
+    echo "<h1>Alla utmärkelser och kategorier</h1>";
     echo "<p>Antal: " . $categories['count'] . "</p>";
 
     echo "<dl>";
