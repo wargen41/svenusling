@@ -36,6 +36,27 @@ class AwardsController
     }
 
     /**
+     * Public: List all categories (and awards); this is the one to use for a complete list
+     */
+    public function listCategories(Request $request, Response $response): Response
+    {
+        try {
+            $stmt = $this->db->query('SELECT * FROM awards ORDER BY award ASC');
+            $awards = $stmt->fetchAll();
+
+            return $this->jsonResponse($response, [
+                'success' => true,
+                'data' => $awards,
+                'count' => count($awards)
+            ]);
+
+        } catch (\Exception $e) {
+            error_log('Error in listCategories: ' . $e->getMessage());
+            return $this->jsonResponse($response, ['error' => 'Failed to fetch awards'], 500);
+        }
+    }
+
+    /**
      * Public: Get award with nominees and winners
      */
     public function getAward(Request $request, Response $response, array $args): Response

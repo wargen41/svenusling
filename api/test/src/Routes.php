@@ -89,6 +89,7 @@ class Routes
 
         // Awards endpoints
         $app->get('/api/awards', [AwardsController::class, 'listAwards']);
+        $app->get('/api/awards/categories', [AwardsController::class, 'listCategories']);
         $app->get('/api/awards/{id}', [AwardsController::class, 'getAward']);
         $app->post('/api/awards', [AwardsController::class, 'createAward'])->add(AuthMiddleware::class);
         $app->put('/api/awards/{id}', [AwardsController::class, 'updateAward'])->add(AuthMiddleware::class);
