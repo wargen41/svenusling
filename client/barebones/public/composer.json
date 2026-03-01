@@ -1,4 +1,7 @@
 {
+    "name": "wargen41/svenusling-barebones-client",
+    "version": "1.0.0",
+    "description": "Fristående, superenkel klient skräddarsydd för att visa data från svenusling-api. Endast tänkt att användas för demo och inspektion av databasens innehåll.",
     "require": {
         "league/commonmark": "^2.8"
     }

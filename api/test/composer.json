@@ -1,7 +1,7 @@
 {
-    "name": "movie-api/slim-api",
+    "name": "wargen41/svenusling-api",
     "version": "1.0.0",
-    "description": "A movie database API built with Slim Framework",
+    "description": "API skräddarsytt för Sven Uslings filmdatabas",
     "require": {
         "php": "^8.0",
         "slim/slim": "^4.11",
