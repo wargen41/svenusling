@@ -17,6 +17,7 @@ try {
 
         $title = $data['title'];
         $original_title = $data['original_title'] ?? null;
+        $year = $data['year'];
         $type = $data['type'];
         $rating = $data['rating'] ?? null;
         $genres = $data['genres'];
@@ -29,6 +30,9 @@ try {
         echo "<h1>$title ($type)</h1>";
         if($original_title){
             echo "<p>$original_title</p>";
+        }
+        if($year){
+            echo "<p>$year</p>";
         }
         if($rating){
             $rating = suRating($rating);

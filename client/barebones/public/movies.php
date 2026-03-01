@@ -14,10 +14,15 @@ try {
     echo "<p>Antal: " . $movies['pagination']['total'] . "</p>";
 
     echo "<ul>";
-    foreach ($movies['data'] as $movie) {
-        $id = $movie['id'];
-        $title = $movie['title'];
-        echo "<li><a href=\"movie.php?id=$id\">$title</a></li>";
+    foreach ($movies['data'] as $item) {
+        $id = $item['id'];
+        $title = $item['title'];
+        $year = $item['year'] ?? null;
+        $year_str = "";
+        if($year){
+            $year_str = " ($year)";
+        }
+        echo "<li><a href=\"movie.php?id=$id\">$title$year_str</a></li>";
     }
     echo "</ul>";
 
