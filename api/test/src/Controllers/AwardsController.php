@@ -15,12 +15,12 @@ class AwardsController
     }
 
     /**
-     * Public: List all awards
+     * Public: List all awards (note: only award names without categories and no ids)
      */
     public function listAwards(Request $request, Response $response): Response
     {
         try {
-            $stmt = $this->db->query('SELECT * FROM awards ORDER BY award ASC');
+            $stmt = $this->db->query('SELECT DISTINCT award FROM awards ORDER BY award ASC');
             $awards = $stmt->fetchAll();
 
             return $this->jsonResponse($response, [
