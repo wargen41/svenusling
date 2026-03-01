@@ -233,3 +233,43 @@ function getAwards($baseUrl) {
 
     return json_decode($response, true);
 }
+
+// Get complete awards list including categories
+function getAwardsCategories($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/awards/categories',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get single award with all data
+function getAward($baseUrl, $id) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/awards/' . $id,
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}

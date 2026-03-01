@@ -11,7 +11,7 @@ echo "<a href=\"movies.php\">Filmlista</a>";
 echo " | ";
 echo "<a href=\"persons.php\">VIP-lista</a>";
 echo " | ";
-echo "<a href=\"awards.php\">Utmärkelser</a>";
+echo "<a href=\"awards-categories.php\">Utmärkelser</a>";
 echo "</nav>";
 echo "<form action=search.php method=get>";
 $prefilled_value = $prefilled ?? "";

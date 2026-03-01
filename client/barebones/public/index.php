@@ -15,6 +15,7 @@ try {
     echo "<li><a href=\"movies.php\">Alla inlagda filmer</a></li>";
     echo "<li><a href=\"persons.php\">Alla viktiga personer</a></li>";
     echo "<li><a href=\"awards.php\">Alla utmärkelser</a></li>";
+    echo "<li><a href=\"awards-categories.php\">Alla utmärkelser och kategorier</a></li>";
     echo "</ul>";
 
 } catch (Exception $e) {
