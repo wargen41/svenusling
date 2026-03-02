@@ -82,7 +82,6 @@ function searchMovies($baseUrl, $query) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -102,7 +101,6 @@ function getMovies($baseUrl) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -122,7 +120,6 @@ function getMovie($baseUrl, $id) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -143,7 +140,6 @@ function getMoviesFiltered($baseUrl, $filters = []) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -165,7 +161,6 @@ function searchPersons($baseUrl, $query) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -185,7 +180,6 @@ function getPersons($baseUrl) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -205,7 +199,6 @@ function getPerson($baseUrl, $id) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -225,7 +218,6 @@ function getAwards($baseUrl) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -245,7 +237,6 @@ function getAwardsCategories($baseUrl) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
@@ -265,7 +256,6 @@ function getAward($baseUrl, $id) {
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($httpCode !== 200) {
         throw new Exception("API Error: $httpCode - $response");
