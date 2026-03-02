@@ -8,9 +8,9 @@ try {
     $baseUrl = API_BASE_URL;
 
     // Get all movies
-    $movies = getMovies($baseUrl);
+    $movies = getMiniseriesList($baseUrl);
 
-    echo "<h1>Komplett filmlista</h1>";
+    echo "<h1>Alla miniserier</h1>";
     echo "<p>Antal: " . $movies['pagination']['total'] . "</p>";
 
     echo "<ul>";

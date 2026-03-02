@@ -109,6 +109,63 @@ function getMovies($baseUrl) {
     return json_decode($response, true);
 }
 
+// Get films list
+function getFilms($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/movies?details=minimal&type=film',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get series list
+function getSeriesList($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/movies?details=minimal&type=series',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get miniseries list
+function getMiniseriesList($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/movies?details=minimal&type=miniseries',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
 // Get single movie with all data
 function getMovie($baseUrl, $id) {
     $ch = curl_init();
