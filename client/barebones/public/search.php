@@ -12,20 +12,34 @@ try {
         $persons = searchPersons($baseUrl, $query);
         $persons_count = $persons['pagination']['total'];
 
+        $movies_open = " open";
+        if($movies_count > 10){
+            $movies_open = "";
+        }
+        $persons_open = " open";
+        if($persons_count > 10){
+            $persons_open = "";
+        }
+
         echo "<h1>Sökresultat</h1>";
 
-        echo "<details open>";
+        echo "<details$movies_open>";
         echo "<summary>Hittade $movies_count filmer</summary>";
         echo "<ul>";
         foreach ($movies['data'] as $item) {
             $id = $item['id'];
             $title = $item['title'];
-            echo "<li><a href=\"movie.php?id=$id\">$title</a></li>";
+            $year = $item['year'] ?? null;
+            $year_str = "";
+            if($year){
+                $year_str = " ($year)";
+            }
+            echo "<li><a href=\"movie.php?id=$id\">$title$year_str</a></li>";
         }
         echo "</ul>";
         echo "</details>";
 
-        echo "<details open>";
+        echo "<details$persons_open>";
         echo "<summary>Hittade $persons_count personer</summary>";
         echo "<ul>";
         foreach ($persons['data'] as $item) {

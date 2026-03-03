@@ -17,7 +17,12 @@ try {
         foreach ($movies['data'] as $item) {
             $id = $item['id'];
             $title = $item['title'];
-            echo "<li><a href=\"movie.php?id=$id\">$title</a></li>";
+            $year = $item['year'] ?? null;
+            $year_str = "";
+            if($year){
+                $year_str = " ($year)";
+            }
+            echo "<li><a href=\"movie.php?id=$id\">$title$year_str</a></li>";
         }
         echo "</ul>";
         echo "</details>";
