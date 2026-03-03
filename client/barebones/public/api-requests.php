@@ -302,6 +302,44 @@ function getPerson($baseUrl, $id) {
     return json_decode($response, true);
 }
 
+// Get relations list
+function getRelations($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/relations',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
+// Get relation list
+function getRelation($baseUrl, $id) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/relations/'.$id,
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
 // Get awards list
 function getAwards($baseUrl) {
     $ch = curl_init();

@@ -7,8 +7,15 @@ require __DIR__ . '/html-start.php';
 try {
     $baseUrl = API_BASE_URL;
 
-    // Get all movies
-    $movies = getMovies($baseUrl);
+    // Get all relations
+    $relations = getRelations($baseUrl);
+    
+    $rel_li_html = [];
+    foreach($relations['data'] as $rel){
+        $id = $rel['id'];
+        $text = $rel['sv'];
+        $rel_li_html[] = "<li><a href=\"relations.php?id=$id\">$text</a></li>";
+    }
 
     echo "<h1>Sven Usling databaskoll</h1>";
     echo "<ul>";
@@ -23,6 +30,11 @@ try {
     echo "  <ul>";
     echo "  <li><a href=\"directors.php\">Alla regissörer</a></li>";
     echo "  <li><a href=\"actors.php\">Alla skådespelare</a></li>";
+    echo "  </ul>";
+    echo "</li>";
+    echo "<li><a href=\"relations.php\">Alla relationer</a></li>";
+    echo "  <ul>";
+    echo implode("  ", $rel_li_html);
     echo "  </ul>";
     echo "</li>";
     echo "<li><a href=\"awards-categories.php\">Alla utmärkelser och kategorier</a>";
