@@ -20,8 +20,16 @@ try {
     echo "  </ul>";
     echo "</li>";
     echo "<li><a href=\"persons.php\">Alla viktiga personer</a></li>";
-    echo "<li><a href=\"awards.php\">Alla utmärkelser</a></li>";
-    echo "<li><a href=\"awards-categories.php\">Alla utmärkelser och kategorier</a></li>";
+    echo "  <ul>";
+    echo "  <li><a href=\"directors.php\">Alla regissörer</a></li>";
+    echo "  <li><a href=\"actors.php\">Alla skådespelare</a></li>";
+    echo "  </ul>";
+    echo "</li>";
+    echo "<li><a href=\"awards-categories.php\">Alla utmärkelser och kategorier</a>";
+    echo "  <ul>";
+    echo "  <li><a href=\"awards.php\">Alla utmärkelser</a></li>";
+    echo "  </ul>";
+    echo "</li>";
     echo "</ul>";
 
 } catch (Exception $e) {
