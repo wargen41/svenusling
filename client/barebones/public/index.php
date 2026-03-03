@@ -27,6 +27,7 @@ try {
     echo "  <ul>";
     echo "  <li><a href=\"directors.php\">Alla regissörer</a></li>";
     echo "  <li><a href=\"actors.php\">Alla skådespelare</a></li>";
+    echo "  <li><a href=\"voice_actors.php\">Alla röstskådespelare</a></li>";
     echo "  </ul>";
     echo "</li>";
     echo "<li><a href=\"relations.php\">Alla relationer</a></li>";
