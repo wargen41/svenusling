@@ -1,8 +1,5 @@
 <?php
-require __DIR__ . '/config.php';
-require __DIR__ . '/api-requests.php';
-
-require __DIR__ . '/html-start.php';
+require __DIR__ . '/includes.php';
 
 try {
     $baseUrl = API_BASE_URL;

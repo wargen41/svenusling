@@ -1,13 +1,5 @@
 <?php
-require __DIR__ . '/config.php';
-require __DIR__ . '/api-requests.php';
-
-if(isset($_GET) && isset($_GET['query'])){
-    $query = $_GET['query'] ?? null;
-}
-$prefilled = $query ?? "";
-
-require __DIR__ . '/html-start.php';
+require __DIR__ . '/includes.php';
 
 try {
     $baseUrl = API_BASE_URL;
