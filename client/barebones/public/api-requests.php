@@ -264,6 +264,25 @@ function getActors($baseUrl) {
     return json_decode($response, true);
 }
 
+// Get voice actors list
+function getVoiceActors($baseUrl) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $baseUrl . '/api/persons?details=minimal&category=voice_actor',
+        CURLOPT_RETURNTRANSFER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: $httpCode - $response");
+    }
+
+    return json_decode($response, true);
+}
+
 // Get directors list
 function getDirectors($baseUrl) {
     $ch = curl_init();
