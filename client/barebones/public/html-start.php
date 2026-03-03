@@ -15,7 +15,7 @@ echo "<a href=\"awards-categories.php\">Utmärkelser</a>";
 echo "</nav>";
 echo "<form action=search.php method=get>";
 $prefilled_value = $prefilled ?? "";
-echo "<input type=\"search\" name=\"query\" value=\"$prefilled_value\">";
+echo "<input type=\"search\" required name=\"query\" value=\"$prefilled_value\">";
 echo "<input type=\"submit\" value=\"Sök\">";
 echo "</form>";
 ?>
