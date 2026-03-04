@@ -10,7 +10,7 @@ try {
     echo "<h1>Alla regissörer</h1>";
     echo "<p>Antal: " . $persons['pagination']['total'] . "</p>";
 
-    echo "<ul>";
+    echo "<ul class=\"long list\">";
     foreach ($persons['data'] as $item) {
         $id = $item['id'];
         $name = $item['name'];
