@@ -14,12 +14,17 @@ try {
     foreach ($movies['data'] as $item) {
         $id = $item['id'];
         $title = $item['title'];
+        $rating = $item['rating'] ?? null;
         $year = $item['year'] ?? null;
         $year_str = "";
         if($year){
             $year_str = " ($year)";
         }
-        echo "<li><a href=\"movie.php?id=$id\">$title$year_str</a></li>";
+        $rating_str = "";
+        if($rating){
+            $rating_str = ' '.suRating($rating);
+        }
+        echo "<li><a href=\"movie.php?id=$id\">$title$year_str$rating_str</a></li>";
     }
     echo "</ul>";
 

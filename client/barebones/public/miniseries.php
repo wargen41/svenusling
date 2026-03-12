@@ -7,19 +7,24 @@ try {
     // Get all movies
     $movies = getMiniseriesList($baseUrl);
 
-    echo "<h1>Alla miniserier</h1>";
+    echo "<h1>Alla inlagda miniserier</h1>";
     echo "<p>Antal: " . $movies['pagination']['total'] . "</p>";
 
     echo "<ul class=\"long list\">";
     foreach ($movies['data'] as $item) {
         $id = $item['id'];
         $title = $item['title'];
+        $rating = $item['rating'] ?? null;
         $year = $item['year'] ?? null;
         $year_str = "";
         if($year){
             $year_str = " ($year)";
         }
-        echo "<li><a href=\"movie.php?id=$id\">$title$year_str</a></li>";
+        $rating_str = "";
+        if($rating){
+            $rating_str = ' '.suRating($rating);
+        }
+        echo "<li><a href=\"movie.php?id=$id\">$title$year_str$rating_str</a></li>";
     }
     echo "</ul>";
 
