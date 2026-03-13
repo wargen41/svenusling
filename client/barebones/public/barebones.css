@@ -206,7 +206,9 @@ a
     display: none;
     transform: translateY(-1.6rem);
 }
-label:hover + .search-widget-form
+
+.widget:hover > .search-widget-form,
+.search-widget-form:has(> .search-widget-input:active)
 {
     display: inline-block;
 }
