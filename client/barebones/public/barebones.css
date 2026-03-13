@@ -203,8 +203,12 @@ a
 
 .search-widget-form
 {
-    display: inline-block;
+    display: none;
     transform: translateY(-1.6rem);
+}
+label:hover + .search-widget-form
+{
+    display: inline-block;
 }
 
 .list.long a
