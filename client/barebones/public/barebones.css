@@ -38,10 +38,22 @@ h1,h2,h3,h4,h5,h6
 {
     --main-margin: 1.5rem;
     --main-margin-negative: calc(0rem - var(--main-margin));
+    --widget-padding-top: .5rem;
+    --widget-padding-bottom: 1rem;
+    --widget-padding-outer: 1rem;
+    --widget-padding-inner: .7rem;
+    --widget-border-radius-top-left: 0rem;
+    --widget-border-radius-top-right: .5rem;
+    --widget-border-radius-bottom-left: 1.3rem;
+    --widget-border-radius-bottom-right: 1.3rem;
+
     --background-color-default: rgb(238, 238, 238);
     --text-color-default: black;
     --background-color-alternate: #333;
     --text-color-alternate: white;
+    --background-color-splash: #002000;
+    --text-color-splash: white;
+    --text-color-splash-faint: #306030;
     --text-color-light: #333;
     --text-color-faint: #aaa;
     --background-sticky-heading: rgba(238, 238, 238, 0.85);
@@ -58,6 +70,9 @@ h1,h2,h3,h4,h5,h6
         --text-color-default: #eef6ee;
         --background-color-alternate: #111;
         --text-color-alternate: #ddd;
+        --background-color-splash: #002000;
+        --text-color-splash: white;
+        --text-color-splash-faint: #306030;
         --text-color-light: #999;
         --text-color-faint: #555;
         --background-sticky-heading: rgba(34, 34, 34, 0.85);
@@ -91,11 +106,6 @@ body *
 main>*+*
 {
     margin-top: 2em;
-}
-
-h1
-{
-    margin-bottom: .7em;
 }
 
 article>*:not(h1)+*
@@ -181,12 +191,14 @@ a
 
 .widget.left .button
 {
-    padding: .7rem 1rem 1rem .5rem;
+    padding: .5rem .7rem 1rem 1rem;
+    padding: var(--widget-padding-top) var(--widget-padding-inner) var(--widget-padding-bottom) var(--widget-padding-outer);
 }
 
 .widget.right .button
 {
     padding: .5rem 1rem 1rem .7rem;
+    padding: var(--widget-padding-top) var(--widget-padding-outer) var(--widget-padding-bottom) var(--widget-padding-inner);
 }
 
 .widget-label
@@ -201,16 +213,50 @@ a
     padding: .82rem 0 1.25rem 0;
 }
 
-.search-widget-form
-{
-    display: none;
-    transform: translateY(-1.6rem);
+.widget:has(:popover-open){
+    background-color: var(--background-color-alternate);
+    border-top-left-radius: var(--widget-border-radius-top-left);
+    border-top-right-radius: var(--widget-border-radius-top-right);
+    border-bottom-left-radius: var(--widget-border-radius-bottom-left);
+    border-bottom-right-radius: var(--widget-border-radius-bottom-right);
 }
 
-.widget:hover > .search-widget-form,
-.search-widget-form:has(> .search-widget-input:active)
+#search-widget-button
 {
-    display: inline-block;
+    anchor-name: --search-button;
+}
+
+#search-widget-form
+{
+    position: fixed;
+    margin: 0;
+    inset: auto;
+    padding: var(--widget-padding-top) var(--widget-padding-top) var(--widget-padding-top) 0;
+    margin-top: calc(0rem - var(--widget-padding-top));
+    border: none;
+    border-radius: 0 var(--widget-padding-top) var(--widget-padding-top) 0;
+    background: var(--background-color-alternate);
+    position-anchor: --search-button;
+    position-area: center right;
+
+    transition: display 0.2s, transform 0.2s ease-out, opacity 0.2s ease-in;
+    transition-behavior: allow-discrete;
+
+    transform: translateY(-7rem) translateX(-.3rem);
+    opacity: 0;
+}
+
+#search-widget-form:popover-open
+{
+    display: flex;
+
+    transform: translateY(0) translateX(-.3rem);
+    opacity: 1;
+
+    @starting-style {
+        transform: translateY(-7rem) translateX(-.3rem);
+        opacity: 0;
+    }
 }
 
 .list.long a
@@ -240,7 +286,7 @@ main>h1,main>article>h1,main>article>hgroup:first-of-type
     text-align: center;
     position: sticky;
     top: 0;
-    padding: .5rem var(--main-margin);
+    padding: .5rem 4rem;
     margin-left: var(--main-margin-negative);
     margin-right: var(--main-margin-negative);
     background: var(--background-sticky-heading);
@@ -328,14 +374,15 @@ header
     justify-content: center;
     gap: 3rem;
     flex-direction: row;
-    background: var(--background-color-alternate);
-    color: var(--text-color-alternate);
+    background: var(--background-color-splash);
+    color: var(--text-color-splash);
     border-bottom: 1px solid var(--border-color-default);
 }
 
 header a
 {
-    color: var(--text-color-alternate);
+    color: var(--text-color-splash);
+    text-decoration: 1px underline solid var(--text-color-splash-faint);
 }
 
 nav ul

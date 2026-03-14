@@ -63,6 +63,12 @@ function suRating(int $rating): string {
     return str_pad('', $rating, '+');
 }
 
+function mainHeading(string $value): string {
+    $html = "<hgroup><a href=\"#header\"><h1>$value</h1></a></hgroup>";
+
+    return $html;
+}
+
 function print_rPRE($value) {
     echo '<pre>';
     print_r($value);

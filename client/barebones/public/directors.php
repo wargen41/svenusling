@@ -7,7 +7,7 @@ try {
     // Get all directors
     $persons = getDirectors($baseUrl);
 
-    echo "<h1>Alla regissörer</h1>";
+    echo mainHeading("Alla regissörer");
     echo "<p>Antal: " . $persons['pagination']['total'] . "</p>";
 
     echo "<ul class=\"long list\">";

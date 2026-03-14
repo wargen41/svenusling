@@ -7,7 +7,7 @@ try {
     // Get all movies
     $movies = getSeriesList($baseUrl);
 
-    echo "<h1>Alla inlagda serier</h1>";
+    echo mainHeading("Alla inlagda serier");
     echo "<p>Antal: " . $movies['pagination']['total'] . "</p>";
 
     echo "<ul class=\"long list\">";

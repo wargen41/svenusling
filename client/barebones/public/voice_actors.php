@@ -7,7 +7,7 @@ try {
     // Get all voice actors
     $persons = getVoiceActors($baseUrl);
 
-    echo "<h1>Alla röstskådespelare</h1>";
+    echo mainHeading("Alla röstskådespelare");
     echo "<p>Antal: " . $persons['pagination']['total'] . "</p>";
 
     echo "<ul class=\"long list\">";

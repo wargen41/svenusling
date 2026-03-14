@@ -20,7 +20,7 @@ try {
         $movies = $data['movie_nominations'];
         $persons = $data['person_nominations'];
 
-        echo "<h1>$award_name &mdash; $category</h1>";
+        echo mainHeading("$award_name &mdash; $category");
 
         if(!empty($movies)){
             $summary = count($movies)." nomineringar";

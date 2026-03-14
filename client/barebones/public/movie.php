@@ -26,7 +26,7 @@ try {
 
         $trivia = $data['trivia'];
 
-        echo "<h1>$title ($type)</h1>";
+        echo mainHeading("$title ($type)");
         if($original_title){
             echo "<p>$original_title</p>";
         }

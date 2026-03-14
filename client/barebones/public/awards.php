@@ -7,7 +7,7 @@ try {
     // Get all awards
     $awards = getAwards($baseUrl);
 
-    echo "<h1>Alla utmärkelser</h1>";
+    echo mainHeading("Alla utmärkelser");
     echo "<p>Antal: " . $awards['count'] . "</p>";
 
     echo "<ul>";

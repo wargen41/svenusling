@@ -29,7 +29,7 @@ try {
         $relations = $data['relations'];
         $trivia = $data['trivia'];
 
-        echo "<h1>$name ($category)</h1>";
+        echo mainHeading("$name ($category)");
         if(!empty($dates)){
             $dates_str = implode('&ndash;', $dates);
             echo "<p>$dates_str</p>";

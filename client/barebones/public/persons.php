@@ -7,7 +7,7 @@ try {
     // Get all persons
     $persons = getPersons($baseUrl);
 
-    echo "<h1>Alla VIP</h1>";
+    echo mainHeading("Alla VIP");
     echo "<p>Antal: " . $persons['pagination']['total'] . "</p>";
 
     echo "<ul class=\"long list\">";

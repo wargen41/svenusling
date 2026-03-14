@@ -13,7 +13,7 @@ echo "<body>";
 echo "<a class=\"skip-link\" href=\"#main-content\">Skip to main content</a>";
 
 // Sidhuvud
-echo "<header>";
+echo "<header id=\"header\">";
 echo "<nav>";
 echo "<ul>";
 echo "<li><a href=\"./\">Start</a></li>";
@@ -27,10 +27,11 @@ echo "</header>";
 
 // Sökmojäng
 echo "<div class=\"widget left\" id=\"search-widget\">";
-echo "<label for=\"search-widget-input\" class=\"button\" title=\"Sök\">";
+echo "<button popovertarget=\"search-widget-form\" id=\"search-widget-button\" class=\"button\" title=\"Sök\">";
 echo "<img class=\"circle\" alt=\"Sök\" src=\"https://svenusling.jlxli.eu/assets/logo.jpg\">";
-echo "</label>";
-echo "<form class=\"search-widget-form\" action=search.php method=get>";
+echo "</button>";
+// Sökformulär
+echo "<form popover id=\"search-widget-form\" action=\"search.php\" method=\"get\">";
 $prefilled_value = $prefilled ?? "";
 echo "<input type=\"search\" id=\"search-widget-input\" required name=\"query\" value=\"$prefilled_value\">";
 echo "<input type=\"submit\" value=\"Sök\">";

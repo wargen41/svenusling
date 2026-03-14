@@ -19,7 +19,7 @@ try {
         }
     }
 
-    echo "<h1>Relationer</h1>";
+    echo mainHeading("Relationer");
     
     foreach($data as $cat){
         $cat_text = $cat['sv'];
