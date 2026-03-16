@@ -41,10 +41,41 @@ echo "</div>";
 // Menymojäng
 echo "<label for=\"menu-widget-button\" class=\"widget-label\" id=\"menu-widget-label\">Meny</label>";
 echo "<div class=\"widget right\" id=\"menu-widget\">";
-echo "<button class=\"button\" id=\"menu-widget-button\" title=\"Meny\">";
+echo "<button popovertarget=\"menu-main\" class=\"button\" id=\"menu-widget-button\" title=\"Meny\">";
 echo "<img class=\"circle\" alt=\"Meny\" src=\"https://svenusling.jlxli.eu/assets/logo.jpg\">";
 echo "</button>";
 echo "</div>";
+
+// Huvudmeny
+echo "<nav popover class=\"menu main\" id=\"menu-main\">";
+echo "<form action=\"search.php\" method=\"get\">";
+$prefilled_value = $prefilled ?? "";
+echo "<input autofocus type=\"search\" size=\"12\" id=\"menu-search-input\" required name=\"query\" value=\"$prefilled_value\">";
+echo "<input type=\"submit\" value=\"Sök\">";
+echo "</form>";
+echo "<ul>";
+echo "<li><button popovertarget=\"menu-movies\" class=\"button\" id=\"menu-movies-button\">Film</li>";
+echo "<li><button popovertarget=\"menu-persons\" class=\"button\" id=\"menu-persons-button\">Folk</li>";
+echo "<li><a href=\"./\">Feed</a></li>";
+echo "</ul>";
+echo "</nav>";
+// Undermeny filmer
+echo "<nav popover class=\"sub menu movies\" id=\"menu-movies\">";
+echo "<ul>";
+echo "<li><a href=\"films.php\">Filmer</a></li>";
+echo "<li><a href=\"series.php\">Series</a></li>";
+echo "<li><a href=\"miniseries.php\">Miniserier</a></li>";
+echo "</ul>";
+echo "</nav>";
+// Undermeny personer
+echo "<nav popover class=\"sub menu persons\" id=\"menu-persons\">";
+echo "<ul>";
+echo "<li><a href=\"persons.php\">VIP-lista</a></li>";
+echo "<li><a href=\"actors.php\">Skådespelare</a></li>";
+echo "<li><a href=\"directors.php\">Regissörer</a></li>";
+echo "<li><a href=\"relations.php\">Relationer</a></li>";
+echo "</ul>";
+echo "</nav>";
 
 echo "<main id=\"main-content\">";
 echo "<article>"
