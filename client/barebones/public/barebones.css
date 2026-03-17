@@ -300,7 +300,8 @@ a
 
 .menu button[popovertarget]::after
 {
-    content: " >";
+    content: ">";
+    float: right;
 }
 
 .menu form
@@ -536,6 +537,8 @@ header
     background: var(--background-color-splash);
     color: var(--text-color-splash);
     border-bottom: 1px solid var(--border-color-default);
+    
+    box-shadow: 0 2px 4px #101010;
 }
 
 header a
