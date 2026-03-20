@@ -98,6 +98,7 @@ body
     font-family: Seravek,'Gill Sans Nova',Ubuntu,Calibri,'DejaVu Sans',source-sans-pro,sans-serif;
     color: var(--text-color-default);
     background-color: var(--background-color-default);
+    border-color: var(--border-color-default);
     padding: 0;
 }
 
@@ -242,7 +243,11 @@ a
     --block-total: calc(var(--padding-block) + var(--item-gap) + var(--border-thickness) + var(--item-border-thickness));
     --sub-offset: 0.5rem;
 
+    --mobile-menu-margin: 2.8rem;
+    --close-button-width: 3em;
+
     background-color: var(--background-color-alternate);
+    color: var(--text-color-alternate);
     border: var(--border-thickness) solid var(--border-color-default);
     border-radius: var(--border-radius);
     margin: 0;
@@ -267,7 +272,6 @@ a
     display: flex;
     flex-direction: column;
 
-    color: var(--text-color-alternate);
     background-color: var(--background-color-alternate);
     border-bottom: var(--item-border-thickness) solid var(--border-color-splash);
 }
@@ -381,9 +385,37 @@ display: grid;
     padding: var(--padding-block) 0;
     inset: unset;
     top: calc(anchor(top) - var(--block-total) + var(--sub-offset));
-    right: calc(anchor(left) + var(--list-padding));
     right: anchor(left);
     position-try-fallbacks: --right-down, --left-up, --right-up, --bottom-down, --bottom-up;
+}
+
+.sub.menu:popover-open > ul
+{
+    display: block;
+}
+
+.sub.menu:popover-open > ul > *
+{
+    flex: unset;
+}
+
+.menu button[popovertargetaction=hide]
+{
+    display: none;
+    width: var(--close-button-width);
+    margin-left: calc(100% - var(--close-button-width));
+    text-align: center;
+    padding: 0;
+    min-height: 2rem;
+    background: var(--background-color-default);
+    border-radius: 0 0 0 var(--border-radius);
+    border-bottom: 1px solid var(--border-color-default);
+    border-left: 1px solid var(--border-color-default);
+}
+
+.menu button[popovertargetaction=hide]::after
+{
+    content: "×";
 }
 
 #menu-widget-button
@@ -417,6 +449,52 @@ display: grid;
 #menu-persons
 {
     position-anchor: --menu-persons-button;
+}
+
+@media (width <= 44rem) {
+    .menu:popover-open > ul
+    {
+        display: block;
+    }
+
+    .menu > ul > *
+    {
+        flex: unset;
+    }
+}
+
+@media (width <= 32rem) {
+    #menu-movies,
+    #menu-persons,
+    #menu-main
+    {
+        position-anchor: unset;
+    }
+
+    #menu-main,
+    .sub.menu
+    {
+        position: fixed;
+        max-width: unset;
+        min-width: unset;
+        width: auto;
+        height: auto;
+        top: var(--mobile-menu-margin);
+        left: var(--mobile-menu-margin);
+        right: var(--mobile-menu-margin);
+        bottom: var(--mobile-menu-margin);
+    }
+
+    .sub.menu
+    {
+        padding: 0 0 var(--padding-block) 0;
+        box-shadow: none;
+    }
+
+    .menu button[popovertargetaction=hide]
+    {
+        display: block;
+    }
 }
 
 #search-widget-button

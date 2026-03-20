@@ -45,6 +45,7 @@ echo "</div>";
 
 // Huvudmeny
 echo "<nav popover class=\"menu main\" id=\"menu-main\">";
+echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-main\"></button>";
 echo "<form action=\"search.php\" method=\"get\">";
 $prefilled_value = $prefilled ?? "";
 echo "<input autofocus type=\"search\" size=\"12\" id=\"menu-search-input\" required name=\"query\" value=\"$prefilled_value\">";
@@ -74,6 +75,7 @@ echo "</ul>";
 echo "</nav>";
 // Undermeny filmer
 echo "<nav popover class=\"sub menu movies\" id=\"menu-movies\">";
+echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-movies\"></button>";
 echo "<ul>";
 echo "<li><a href=\"movies.php\">Alla betygsatta</a></li>";
 echo "<li><button popovertarget=\"menu-movies-rating\" class=\"button\" id=\"menu-movies-rating-button\">Efter betyg</button></li>";
@@ -82,6 +84,7 @@ echo "</ul>";
 echo "</nav>";
 // Undermeny personer
 echo "<nav popover class=\"sub menu persons\" id=\"menu-persons\">";
+echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-persons\"></button>";
 echo "<ul>";
 echo "<li><a href=\"persons.php\">Alla VIP</a></li>";
 echo "<li><button popovertarget=\"menu-persons-relations\" class=\"button\" id=\"menu-persons-relations-button\">Efter relationer</button></li>";
