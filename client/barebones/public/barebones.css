@@ -399,24 +399,55 @@ display: grid;
     flex: unset;
 }
 
-.menu button[popovertargetaction=hide]
+.mobile-menu-navigation
 {
     display: none;
-    width: var(--close-button-width);
-    margin-left: calc(100% - var(--close-button-width));
+}
+
+.mobile-menu-navigation button
+{
     text-align: center;
     padding: 0;
     min-height: 2rem;
     background: var(--background-color-default);
+}
+
+.mobile-menu-navigation button:hover
+{
+    background: var(--background-color-splash);
+}
+
+.mobile-menu-navigation button[popovertarget]
+{
+    width: var(--close-button-width);
+    border-radius: 0 0 var(--border-radius) 0;
+    border-bottom: 1px solid var(--border-color-default);
+    border-right: 1px solid var(--border-color-default);
+}
+
+.mobile-menu-navigation button[popovertarget]::after
+{
+    content: "<";
+}
+
+.mobile-menu-navigation button[popovertarget=menu-main]
+{
+    width: var(--close-button-width);
     border-radius: 0 0 0 var(--border-radius);
     border-bottom: 1px solid var(--border-color-default);
     border-left: 1px solid var(--border-color-default);
+    border-right: none;
 }
 
-.menu button[popovertargetaction=hide]::after
+.mobile-menu-navigation button[popovertarget=menu-main]::after
 {
     content: "×";
 }
+
+/*.menu button[popovertargetaction=hide]::after
+{
+    content: "×";
+}*/
 
 #menu-widget-button
 {
@@ -439,6 +470,36 @@ display: grid;
 #menu-movies
 {
     position-anchor: --menu-movies-button;
+}
+
+#menu-movies-rating-button
+{
+    anchor-name: --menu-movies-rating-button;
+}
+
+#menu-movies-rating
+{
+    position-anchor: --menu-movies-rating-button;
+}
+
+#menu-movies-year-button
+{
+    anchor-name: --menu-movies-year-button;
+}
+
+#menu-movies-year
+{
+    position-anchor: --menu-movies-year-button;
+}
+
+#menu-movies-genre-button
+{
+    anchor-name: --menu-movies-genre-button;
+}
+
+#menu-movies-genre
+{
+    position-anchor: --menu-movies-genre-button;
 }
 
 #menu-persons-button
@@ -491,10 +552,25 @@ display: grid;
         box-shadow: none;
     }
 
-    .menu button[popovertargetaction=hide]
+    .mobile-menu-navigation
+    {
+        display: flex;
+    }
+
+    .main.menu .mobile-menu-navigation
+    {
+        justify-content: flex-end;
+    }
+
+    .sub.menu .mobile-menu-navigation
+    {
+        justify-content: space-between;
+    }
+
+    /*.menu button[popovertargetaction=hide]
     {
         display: block;
-    }
+    }*/
 }
 
 #search-widget-button
