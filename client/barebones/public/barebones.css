@@ -491,14 +491,14 @@ a
     right: anchor(left);
 }
 
-#menu-movies-button
+#menu-movies-type-button
 {
-    anchor-name: --menu-movies-button;
+    anchor-name: --menu-movies-type-button;
 }
 
-#menu-movies
+#menu-movies-type
 {
-    position-anchor: --menu-movies-button;
+    position-anchor: --menu-movies-type-button;
 }
 
 #menu-movies-rating-button

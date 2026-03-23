@@ -55,11 +55,12 @@ echo "<input autofocus type=\"search\" size=\"12\" id=\"menu-search-input\" requ
 echo "<input type=\"submit\" value=\"Sök\">";
 echo "</form>";
 echo "<ul>";
-echo "<li><button popovertarget=\"menu-movies\" class=\"button\" id=\"menu-movies-button\">Filmlista</button>";
+echo "<li><a href=\"movies.php\">Filmlista</a></li>";
 echo "<ul>";
-echo "<li><a href=\"films.php\">Filmer</a></li>";
-echo "<li><a href=\"series.php\">Serier</a></li>";
-echo "<li><a href=\"miniseries.php\">Miniserier</a></li>";
+echo "<li><button popovertarget=\"menu-movies-type\" class=\"button\" id=\"menu-movies-type-button\">Efter typ</button></li>";
+echo "<li><button popovertarget=\"menu-movies-rating\" class=\"button\" id=\"menu-movies-rating-button\">Efter betyg</button></li>";
+echo "<li><button popovertarget=\"menu-movies-year\" class=\"button\" id=\"menu-movies-year-button\">Efter år</button></li>";
+echo "<li><button popovertarget=\"menu-movies-genre\" class=\"button\" id=\"menu-movies-genre-button\">Efter genre</button></li>";
 echo "</ul>";
 echo "</li>";
 echo "<li><button popovertarget=\"menu-persons\" class=\"button\" id=\"menu-persons-button\">Personlista</button>";
@@ -77,18 +78,17 @@ echo "</li>";
 echo "</ul>";
 echo "</div>";
 echo "</nav>";
-// Undermeny filmer
-echo "<nav popover class=\"sub menu movies\" id=\"menu-movies\">";
+// Undermeny filmer efter typ
+echo "<nav popover class=\"sub menu movies type\" id=\"menu-movies-type\">";
 echo "<div class=\"mobile-menu-navigation\">";
-echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-movies\" id=\"back-menu-movies\"></button>";
-echo "<label for=\"back-menu-movies\">Filmlista</label>";
+echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-movies-type\" id=\"back-menu-movies-type\"></button>";
+echo "<label for=\"back-menu-movies-type\">Filmlista efter typ</label>";
 echo "<button popovertargetaction=\"hide\" popovertarget=\"menu-main\"></button>";
 echo "</div>";
 echo "<ul>";
-echo "<li><a href=\"movies.php\">Alla betygsatta</a></li>";
-echo "<li><button popovertarget=\"menu-movies-rating\" class=\"button\" id=\"menu-movies-rating-button\">Efter betyg</button></li>";
-echo "<li><button popovertarget=\"menu-movies-year\" class=\"button\" id=\"menu-movies-year-button\">Efter år</button></li>";
-echo "<li><button popovertarget=\"menu-movies-genre\" class=\"button\" id=\"menu-movies-genre-button\">Efter genre</button></li>";
+echo "<li><a href=\"films.php\">Filmer</a></li>";
+echo "<li><a href=\"series.php\">Serier</a></li>";
+echo "<li><a href=\"miniseries.php\">Miniserier</a></li>";
 echo "</ul>";
 echo "</nav>";
 // Undermeny filmer efter betyg
