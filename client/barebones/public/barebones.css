@@ -239,8 +239,9 @@ a
     --item-gap: 2px;
     --item-border-thickness: 0px;
 
-    --menu-column-width: 9.5em;
+    --menu-column-width: 10em;
     --menu-column-gap: 1.1em;
+    --menu-section-gap: 0em;
 
     --block-total: calc(var(--padding-block) + var(--item-gap) + var(--border-thickness) + var(--item-border-thickness));
     --sub-offset: 0.5rem;
@@ -264,6 +265,11 @@ a
 .menu .content
 {
     max-width: calc(var(--menu-column-width) * 3 + var(--list-padding) * 2 + var(--menu-column-gap) * 2);
+}
+
+.menu *[data-moreinfo]:hover::after
+{
+    content: " (" attr(data-moreinfo) ")";
 }
 
 .menu ul
@@ -365,7 +371,7 @@ a
 .main.menu .content > ul > li > button,
 .main.menu .content > ul > li > a
 {
-    border-bottom: 1px solid var(--text-color-faint);
+    border-top: 1px solid var(--text-color-faint);
 }
 
 .main.menu .content > ul > li > button:hover,
@@ -531,14 +537,24 @@ a
     position-anchor: --menu-movies-genre-button;
 }
 
-#menu-persons-button
+#menu-persons-type-button
 {
-    anchor-name: --menu-persons-button;
+    anchor-name: --menu-persons-type-button;
 }
 
-#menu-persons
+#menu-persons-type
 {
-    position-anchor: --menu-persons-button;
+    position-anchor: --menu-persons-type-button;
+}
+
+#menu-persons-relations-button
+{
+    anchor-name: --menu-persons-relations-button;
+}
+
+#menu-persons-relations
+{
+    position-anchor: --menu-persons-relations-button;
 }
 
 @media (width <= 44rem) {
@@ -592,6 +608,21 @@ a
         margin-top: calc(0px - (var(--padding-inline) * 1.8));
         max-height: caLc(100% - 4rem + (var(--padding-inline) * 1.8));
         overflow: auto;
+    }
+
+    .main.menu .content > ul {
+        gap: var(--menu-section-gap);
+    }
+
+    .menu ul
+    {
+        flex-direction: column;
+    }
+
+    .menu ul > li,
+    .menu ul > li > ul > li
+    {
+        flex: auto;
     }
 
     .mobile-menu-navigation
